@@ -1,0 +1,218 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ ticket?.title | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ <ion-grid>
+   <div class="ion-text-center">
+     <ion-spinner color="primary" *ngIf="isLoading"></ion-spinner>
+   </div>
+
+   <ion-row *ngIf="!isLoading">
+     <ion-col sizeSm="8" offsetSm="2">
+
+       <ion-card *ngIf="!showTaskForm">
+         <img [src]="ticket?.backgroundImageLink3" alt="">
+         <ion-card-content>
+           <div class="ticket-toolbar">
+             <div class="date">
+               <ion-icon name="time-outline"></ion-icon>
+               <span *ngIf="ticket?.labelTime">{{ ticket?.labelTime | translate }}</span>
+               <span *ngIf="!ticket?.labelTime">
+                 {{ createDate() | date: 'HH.mm' }}
+               </span>
+             </div>
+             <div class="icons">
+               <ion-icon color="ion-secondary" name="calendar-outline"
+                         *ngIf="ticket?.ticketKey !== 'videocall'"
+                         (click)="onPostPoneEvent()"></ion-icon>
+               <ion-icon class="trash" name="trash-outline" (click)="onDeleteEvent()"></ion-icon>
+             </div>
+           </div>
+
+           <h2 class="ticket-title">{{ ticket?.title }}</h2>
+           <div class="ticket-label">
+             {{ ticket?.label }}
+             <span *ngIf="ticket?.ticketCoins"> | Confi-Coins: <img [src]="confiImg" alt="" height="12" width="12"> {{
+               ticket?.ticketCoins }}</span>
+           </div>
+<!--           <div class="ticket-text" *ngIf="ticket?.text">-->
+<!--             {{ ticket?.text }}-->
+<!--           </div>-->
+
+           <div class="ticket-exec-button">
+             <ion-button
+               *ngIf="hasExecute"
+               (click)="onExecute(ticket.id, ticket.type, ticket.ticketKey,
+                      ticket.title)"
+               color="secondary"
+               expand="full">
+               {{ 'TICKET_PAGE.EXEC' | translate }}
+             </ion-button>
+           </div>
+
+           <ng-container *ngIf="ticket?.type === 'radiobutton' || ticket?.type === 'checkbox'">
+             <div class="radio">
+               <div class="radio-content" *ngFor="let val of ticket.content; let last = last">
+                 <p class="radio-question">{{ val.questions_long_text }}</p>
+                 <div class="radio-answer" *ngFor="let option of val.selectOptions">
+                   <div class="text">{{ option.answerLongtext }}</div>
+                   <ion-checkbox color="secondary"
+                                 [checked]="radioChecked"
+                                 (click)="onClickRadiobutton($event, ticket, option)"></ion-checkbox>
+                 </div>
+               </div>
+             </div>
+           </ng-container>
+
+           <ng-container *ngIf="ticket?.type === 'common'">
+             <div class="radio">
+               <div class="radio-content" >
+                 <p class="radio-question">{{ ticket.text }}</p>
+                 <div class="radio-answer" >
+                   <div class="text">{{ 'TICKET_PAGE.CLOSE_TASK.BODY' | translate }} </div>
+                   <ion-checkbox color="secondary"
+                                 [checked]="radioChecked"
+                                 (click)="onClickRadiobutton($event, ticket, 'close')"></ion-checkbox>
+
+                 </div>
+               </div>
+             </div>
+           </ng-container>
+
+           <ng-container *ngIf="ticket?.type === 'input_number'">
+             <p class="input-number-text">{{ ticket?.content[0].questions_long_text }}</p>
+             <form [formGroup]="weightForm" class="input-number">
+               <ion-item>
+                 <ion-label position="floating">{{ 'TICKET_PAGE.WEIGHT_LABEL' | translate }}</ion-label>
+                 <ion-input
+                   formControlName="weight"
+                   type="number"
+                   min="1"
+                   max="99">
+                 </ion-input>
+               </ion-item>
+             </form>
+             <ion-button
+               expand="full"
+               color="secondary"
+               class="input-number-button"
+               (click)="onUpdateWeight()"
+               [disabled]="weightForm.invalid">
+               {{ 'TICKET_PAGE.CONFIRM' | translate }}
+             </ion-button>
+           </ng-container>
+
+           <ul class="ticket-link-list">
+             <li *ngFor="let link of linkList; let i = index">
+               <div class="header">
+                 <h4 class="title">{{ link?.label }}</h4>
+                 <div (click)="openLinkContent(i)">
+                   <ion-icon *ngIf="!linkList[i]?.showContent" name="chevron-down-outline"></ion-icon>
+                   <ion-icon *ngIf="linkList[i]?.showContent" name="chevron-up-outline"></ion-icon>
+                 </div>
+               </div>
+
+               <ng-container *ngIf="linkList[i]?.showContent">
+
+                 <ng-container *ngIf="link?.url === 'guide'">
+                   <ion-slides pager="true" *ngIf="!isLoading">
+                     <ion-slide *ngFor="let page of ticket?.guide?.value">
+                       <ion-grid>
+                         <ion-row>
+                           <ion-col>
+                             <div class="ticket-instructions-content">
+                               <figure class="flex-item">
+                                 <img [src]="page.image" alt="" [ngClass]="{'is-svg': isGif}">
+                               </figure>
+                               <p>{{ page.text }}</p>
+                             </div>
+                           </ion-col>
+                         </ion-row>
+                       </ion-grid>
+                     </ion-slide>
+                   </ion-slides>
+                 </ng-container>
+
+                 <ng-container *ngIf="link?.url === 'order'">
+                   <ng-container *ngIf="ticket?.products && ticket?.products.length > 0">
+                     <app-products-container class="products" [products]="ticket?.products" [template]="noCard">
+
+                     </app-products-container>
+                   </ng-container>
+                 </ng-container>
+
+                 <ng-container *ngIf="link?.url === 'info'">
+                   <div class="ticket-info">
+                     <div class="info-image">
+                       <img [src]="ticket?.info?.image" alt="">
+                     </div>
+                     <div class="info-text">
+                       <h6>{{ ticket?.info?.info_headline }}</h6>
+                       <ul>
+                         <li *ngFor="let p of ticket?.info?.info_body">{{ p }}</li>
+                       </ul>
+                     </div>
+                   </div>
+                 </ng-container>
+               </ng-container>
+             </li>
+           </ul>
+         </ion-card-content>
+       </ion-card>
+
+
+
+       <ion-card *ngIf="showTaskForm" class="task-form">
+         <ion-card-content>
+           <h3 class="task-title">{{ 'TICKET_PAGE.POSTPONE_TASK' | translate }}</h3>
+           <form [formGroup]="form">
+             <div class="date-time">
+               <ion-item class="date">
+                 <ion-label position="floating">{{ 'TICKET_PAGE.DATE' | translate }}</ion-label>
+                 <ion-datetime displayFormat="D. MM. YYYY"
+                               min="{{ currentDay }}"
+                               [cancelText]="'TICKET_PAGE.ACTIONS.DATE_TIME_BTNS.CANCEL' | translate"
+                               [doneText]="'TICKET_PAGE.ACTIONS.DATE_TIME_BTNS.DONE' | translate"
+                               formControlName="date"></ion-datetime>
+               </ion-item>
+               <ion-item>
+                 <ion-label position="floating">{{ 'TICKET_PAGE.TIME' | translate }}</ion-label>
+                 <ion-datetime
+                   [cancelText]="'TICKET_PAGE.ACTIONS.DATE_TIME_BTNS.CANCEL' | translate"
+                   [doneText]="'TICKET_PAGE.ACTIONS.DATE_TIME_BTNS.DONE' | translate"
+                   displayFormat="HH:mm" formControlName="time" min="{{ currentDay }}"
+                 ></ion-datetime>
+               </ion-item>
+             </div>
+           </form>
+
+           <div class="form-buttons">
+             <ion-button
+               class="update-cancel-button"
+               fill="clear"
+               size="small"
+               (click)="onCancelUpdate()">
+               {{ 'TICKET_PAGE.CANCEL' | translate }}
+             </ion-button>
+             <ion-button
+               color="secondary"
+               fill="clear"
+               size="small"
+               [disabled]="form.invalid"
+               (click)="postPoneEvent()">
+               {{ 'TICKET_PAGE.CONFIRM' | translate }}
+             </ion-button>
+           </div>
+         </ion-card-content>
+       </ion-card>
+     </ion-col>
+   </ion-row>
+ </ion-grid>
+</ion-content>
+
+<ion-footer *ngIf="!isLoading">
+  <app-toolbar-footer [user]="user"></app-toolbar-footer>
+</ion-footer>

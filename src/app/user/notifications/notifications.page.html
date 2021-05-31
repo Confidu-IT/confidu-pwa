@@ -1,0 +1,142 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'NOTIFICATIONS_PAGE.TITLE' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col offsetSm="2" sizeSm="8">
+        <div class="header">
+          <img [src]="bellImg" alt="">
+          <h2>{{ 'NOTIFICATIONS_PAGE.TITLE' | translate }}</h2>
+        </div>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <div class="title">{{ 'NOTIFICATIONS_PAGE.LAB_RESULT' | translate }}</div>
+              <span *ngIf="notifications?.lab_results.push">{{ 'NOTIFICATIONS_PAGE.PUSH' | translate }}</span>
+              <span *ngIf="notifications?.lab_results.push && notifications?.lab_results.mail">, </span>
+              <span *ngIf="notifications?.lab_results.mail">{{ 'NOTIFICATIONS_PAGE.MAIL' | translate }}</span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p class="notes">{{ 'NOTIFICATIONS_PAGE.TEXT' | translate }}</p>
+          <h3>{{ 'NOTIFICATIONS_PAGE.GET_NOTIFIED' | translate }}</h3>
+          <div class="notifications">
+            <div class="content">
+              <div class="text">{{ 'NOTIFICATIONS_PAGE.PUSH_NOTIFICATION' | translate }}</div>
+              <ion-checkbox (ionChange)="onClickRadiobutton($event, 'lab_results', 'push')"
+                            [(ngModel)]="notifications?.lab_results.push"
+                            color="secondary">
+              </ion-checkbox>
+            </div>
+            <div class="content">
+              <div class="text">{{ 'NOTIFICATIONS_PAGE.MAIL' | translate }}</div>
+              <ion-checkbox (ionChange)="onClickRadiobutton($event, 'lab_results', 'mail')"
+                            [(ngModel)]="notifications?.lab_results.mail"
+                            color="secondary">
+              </ion-checkbox>
+            </div>
+          </div>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <div class="title">{{ 'NOTIFICATIONS_PAGE.TASKS_REMINDER' | translate }}</div>
+              <span *ngIf="notifications?.tasks_reminder.push">{{ 'NOTIFICATIONS_PAGE.PUSH' | translate }}</span>
+              <span *ngIf="notifications?.tasks_reminder.push && notifications?.tasks_reminder.mail">, </span>
+              <span *ngIf="notifications?.tasks_reminder.mail">{{ 'NOTIFICATIONS_PAGE.MAIL' | translate }}</span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p class="notes">{{ 'NOTIFICATIONS_PAGE.TEXT' | translate }}</p>
+          <h3>{{ 'NOTIFICATIONS_PAGE.GET_NOTIFIED' | translate }}</h3>
+          <div class="notifications">
+            <div class="content">
+              <div class="text">{{ 'NOTIFICATIONS_PAGE.PUSH_NOTIFICATION' | translate }}</div>
+              <ion-checkbox (ionChange)="onClickRadiobutton($event, 'tasks_reminder', 'push')"
+                            [(ngModel)]="notifications?.tasks_reminder.push"
+                            color="secondary">
+              </ion-checkbox>
+            </div>
+            <div class="content">
+              <div class="text">{{ 'NOTIFICATIONS_PAGE.MAIL' | translate }}</div>
+              <ion-checkbox (ionChange)="onClickRadiobutton($event, 'tasks_reminder', 'mail')"
+                            [(ngModel)]="notifications?.tasks_reminder.mail"
+                            color="secondary">
+              </ion-checkbox>
+            </div>
+          </div>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <div class="title">{{ 'NOTIFICATIONS_PAGE.RECIPE_COMMENTS' | translate }}</div>
+              <span *ngIf="notifications?.recipe_comments.push">{{ 'NOTIFICATIONS_PAGE.PUSH' | translate }}</span>
+              <span *ngIf="notifications?.recipe_comments.push && notifications?.recipe_comments.mail">, </span>
+              <span *ngIf="notifications?.recipe_comments.mail">{{ 'NOTIFICATIONS_PAGE.MAIL' | translate }}</span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p class="notes">{{ 'NOTIFICATIONS_PAGE.TEXT' | translate }}</p>
+          <h3>{{ 'NOTIFICATIONS_PAGE.GET_NOTIFIED' | translate }}</h3>
+          <div class="notifications">
+            <div class="content">
+              <div class="text">{{ 'NOTIFICATIONS_PAGE.PUSH_NOTIFICATION' | translate }}</div>
+              <ion-checkbox (ionChange)="onClickRadiobutton($event, 'recipe_comments', 'push')"
+                            [(ngModel)]="notifications?.recipe_comments.push"
+                            color="secondary">
+              </ion-checkbox>
+            </div>
+            <div class="content">
+              <div class="text">{{ 'NOTIFICATIONS_PAGE.MAIL' | translate }}</div>
+              <ion-checkbox (ionChange)="onClickRadiobutton($event, 'recipe_comments', 'mail')"
+                            [(ngModel)]="notifications?.recipe_comments.mail"
+                            color="secondary">
+              </ion-checkbox>
+            </div>
+          </div>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <div class="title">{{ 'NOTIFICATIONS_PAGE.RECIPE_RATINGS' | translate }}</div>
+              <span *ngIf="notifications?.recipe_ratings.push">{{ 'NOTIFICATIONS_PAGE.PUSH' | translate }}</span>
+              <span *ngIf="notifications?.recipe_ratings.push && notifications?.recipe_ratings.mail">, </span>
+              <span *ngIf="notifications?.recipe_ratings.mail">{{ 'NOTIFICATIONS_PAGE.MAIL' | translate }}</span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p class="notes">{{ 'NOTIFICATIONS_PAGE.TEXT' | translate }}</p>
+          <h3>{{ 'NOTIFICATIONS_PAGE.GET_NOTIFIED' | translate }}</h3>
+          <div class="notifications">
+            <div class="content">
+              <div class="text">{{ 'NOTIFICATIONS_PAGE.PUSH_NOTIFICATION' | translate }}</div>
+              <ion-checkbox (ionChange)="onClickRadiobutton($event, 'recipe_ratings', 'push')"
+                            [(ngModel)]="notifications?.recipe_ratings.push"
+                            color="secondary">
+              </ion-checkbox>
+            </div>
+            <div class="content">
+              <div class="text">{{ 'NOTIFICATIONS_PAGE.MAIL' | translate }}</div>
+              <ion-checkbox (ionChange)="onClickRadiobutton($event, 'recipe_ratings', 'mail')"
+                            [(ngModel)]="notifications?.recipe_ratings.mail"
+                            color="secondary">
+              </ion-checkbox>
+            </div>
+          </div>
+        </mat-expansion-panel>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <app-toolbar-footer [user]="user"></app-toolbar-footer>
+</ion-footer>

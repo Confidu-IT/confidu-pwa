@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        X
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeSm="8" offsetSm="2">
+        <ion-card>
+          <ion-card-content>
+            <h2>{{ 'TOOLBAR.IMG_SELECT.HEADER' | translate }}</h2>
+            <p class="subheader">{{ 'TOOLBAR.IMG_SELECT.SUBHEADER' | translate }}</p>
+            <mat-radio-group
+              class="toolbar-radio-group"
+              [(ngModel)]="selected">
+              <mat-radio-button value="lab">
+                {{ 'TOOLBAR.IMG_SELECT.LAB' | translate }}
+              </mat-radio-button>
+              <mat-radio-button value="profile" *ngIf="!isSafari">
+                {{ 'TOOLBAR.IMG_SELECT.PROFILE' | translate }}
+              </mat-radio-button>
+              <mat-radio-button value="invoice">
+                {{ 'TOOLBAR.IMG_SELECT.INVOICE' | translate }}
+              </mat-radio-button>
+            </mat-radio-group>
+
+            <div class="buttons">
+              <ion-button (click)="closeModal()" color="medium" fill="clear" size="small">
+                {{ 'TOOLBAR.IMG_SELECT.CANCEL_BUTTON' | translate }}
+              </ion-button>
+              <ion-button (click)="onConfirm()"
+                          [disabled]="!this.selected"
+                          color="secondary"
+                          fill="clear"
+                          size="small">
+                {{ 'TOOLBAR.IMG_SELECT.OK_BUTTON' | translate }}
+              </ion-button>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,123 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        X
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{ title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeSm="8" offsetSm="2">
+        <div *ngIf="isLoading" class="spinner">
+          <ion-spinner color="primary"></ion-spinner>
+        </div>
+        <ng-container *ngIf="!isLoading">
+          <ion-card>
+            <ion-card-content>
+              <figure class="product-image">
+                <img [src]="productImage" alt="" height="120" width="120">
+              </figure>
+              <div class="product-details">
+                <div>
+                  <p class="size">
+                    {{ 'PRODUCT_MODAL_PAGE.UNIT' | translate }}:
+                    {{ item.purchaseUnit }} {{ item.translated.packUnit }}
+                  </p>
+                  <p class="category" *ngIf="item?.translated.description">
+                    {{item.translated.description}}
+                  </p>
+                </div>
+                <div class="prescription-type">
+                            <span *ngIf="item?.translated.customFields.product_prescription">
+                              {{ 'PRODUCT_MODAL_PAGE.PRESCRIPTION' | translate }}
+                            </span>
+<!--                  <span *ngIf="item?.translated.customFields.product_pharmacy">-->
+<!--                              {{ 'PRODUCT_MODAL_PAGE.PHARMACY' | translate }}-->
+<!--                            </span>-->
+                </div>
+              </div>
+              <div class="product-price">
+                <span>{{ 'PRODUCT_MODAL_PAGE.PRICE' | translate }}:
+                </span>{{ item?.calculatedPrice.totalPrice }} €
+              </div>
+              <p class="product-delivery">
+                <span *ngIf="item.stock > 0">{{ 'PRODUCT_MODAL_PAGE.STOCK' | translate }} &#124;</span>
+                {{ 'PRODUCT_MODAL_PAGE.DELIVERY_TIME' | translate }}:
+                {{ item.deliveryTime.translated.name }}
+              </p>
+              <form [formGroup]="form" class="product-order">
+
+                <ion-select
+                  *ngIf="!item?.translated.customFields.product_prescription"
+                  class="product-quantity"
+                  formControlName="quantity">
+                  <ion-select-option
+                    *ngFor="let num of numbers(10); let i = index" value="{{ i + 1 }}">
+                    {{ i + 1 }}
+                  </ion-select-option>
+                </ion-select>
+                <ion-select *ngIf="item?.translated.customFields.product_prescription"
+                            class="product-quantity"
+                            formControlName="quantity">
+                  <ion-select-option [value]="medAmount">
+                    {{ medAmount }}
+                  </ion-select-option>
+                </ion-select>
+
+                <ion-button color="secondary" class="cart-button"
+                            (click)="onTakeProduct()">{{ 'PRODUCT_MODAL_PAGE.CART_BUTTON' | translate }}
+                </ion-button>
+              </form>
+              <p class="product-tax">
+                {{ 'PRODUCT_MODAL_PAGE.TAX' | translate }}
+              </p>
+              <div class="product-footer">
+                <div class="usage">
+                  <h5 class="indication-header">{{ usageInstructions.indication_header }}</h5>
+                  <p *ngIf="usageInstructions.indication_first" class="usage-text">
+                    {{ usageInstructions.indication_first }}
+                  </p>
+                  <ul *ngIf="usageInstructions.indication_firstlist" class="indication-list">
+                    <li *ngFor="let el of usageInstructions.indication_firstlist">{{ el }}</li>
+                  </ul>
+                  <p *ngIf="usageInstructions.indication_second" class="usage-text">
+                    {{ usageInstructions.indication_second }}
+                  </p>
+                  <ul *ngIf="usageInstructions.indication_secondlist" class="indication-list">
+                    <li *ngFor="let el of usageInstructions.indication_secondlist">{{ el }}</li>
+                  </ul>
+                  <p *ngIf="usageInstructions.indication_third" class="usage-text">
+                    {{ usageInstructions.indication_third }}
+                  </p>
+                  <ul *ngIf="usageInstructions.indication_thirdlist" class="indication-list">
+                    <li *ngFor="let el of usageInstructions.indication_thirdlist">{{ el }}</li>
+                  </ul>
+
+                  <p *ngIf="usageInstructions.indication_other" class="usage-text">
+                    {{ usageInstructions.indication_other }}
+                  </p>
+
+                  <p class="usage-instructions">{{ 'PRODUCT_MODAL_PAGE.INSTRUCTIONS' | translate }}</p>
+                  <div class="instructions-link" *ngIf="item?.translated?.customFields?.product_pdf_Dokument">
+                    <a [href]="instructionsLink" target="_blank">{{ 'PRODUCT_MODAL_PAGE.INST_LINK' | translate }}</a>
+                  </div>
+
+<!--                  <mat-expansion-panel>-->
+<!--                    <mat-expansion-panel-header>-->
+<!--                      {{ 'PRODUCT_MODAL_PAGE.DOSAGE' | translate }}-->
+<!--                    </mat-expansion-panel-header>-->
+<!--                  </mat-expansion-panel>-->
+                </div>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ng-container>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

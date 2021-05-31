@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        X
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <p class="text">
+          {{ 'CONSULTATION_SCHEDULER_PAGE.MODAL_HEADER' | translate }}
+        </p>
+        <form [formGroup]="form">
+
+
+          <mat-form-field>
+            <mat-label>{{ 'CONSULTATION_SCHEDULER_PAGE.FIRST_NAME' | translate }}</mat-label>
+            <input matInput formControlName="firstName">
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>{{ 'CONSULTATION_SCHEDULER_PAGE.LAST_NAME' | translate }}</mat-label>
+            <input matInput formControlName="lastName">
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>{{ 'CONSULTATION_SCHEDULER_PAGE.PHONE' | translate }}</mat-label>
+            <input matInput formControlName="phone" type="number">
+          </mat-form-field>
+
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div class="buttons">
+          <ion-button color="medium" fill="clear" size="small"
+                      (click)="closeModal()">
+            {{ 'CONSULTATION_SCHEDULER_PAGE.CANCEL' | translate }}
+          </ion-button>
+          <ion-button
+            (click)="onConfirm()"
+            [disabled] = "!form.valid"
+            color="secondary"
+            fill="clear"
+            size="small">
+            {{ 'CONSULTATION_SCHEDULER_PAGE.CONFIRM' | translate }}
+          </ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

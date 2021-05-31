@@ -1,0 +1,129 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'DISEASE_PAGE.TITLE' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="disease-page">
+  <ion-spinner class="ion-text-center" color="primary" *ngIf="isLoading"></ion-spinner>
+  <ion-grid *ngIf="!isLoading">
+    <ion-row>
+      <ion-col sizeSm="8" offsetSm="2">
+        <div class="header">
+          <h2>{{ 'DISEASE_PAGE.HEADER' | translate }}</h2>
+          <p>{{ 'DISEASE_PAGE.SUB_HEADER' | translate }}</p>
+        </div>
+        <ion-card class="disease-card">
+          <ion-card-content>
+            <mat-form-field>
+              <mat-label>{{ 'DISEASE_PAGE.DISEASES' | translate }}</mat-label>
+              <mat-select (selectionChange)="onPickDisease($event)" [(ngModel)]="medChoice">
+                <mat-option *ngFor="let disease of availableDiseases"
+                            [value]="{ name: disease.name, key: disease.key }">
+                  {{ disease.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <div class="disease-dates">
+              <ion-item>
+                <ion-label position="floating">
+                  {{ 'DISEASE_PAGE.DETECTED' | translate }}
+                </ion-label>
+                <ion-datetime
+                  [cancelText]="cancelText"
+                  [doneText]="okText"
+                  [(ngModel)]="diseaseStart"
+                  (ionChange)="onAddDiseaseStart()"
+                  displayFormat="DD.MM.YYYY"
+                  min="2000-12-31">
+                </ion-datetime>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">
+                  {{ 'DISEASE_PAGE.CURED' | translate }}
+                </ion-label>
+                <ion-datetime
+                  [cancelText]="cancelText"
+                  [doneText]="okText"
+                  [(ngModel)]="diseaseEnd"
+                  (ionChange)="onConfirmCured()"
+                  displayFormat="DD.MM.YYYY"
+                  min="2000-12-31">
+                </ion-datetime>
+              </ion-item>
+            </div>
+
+            <div class="not-cured" *ngIf="diseaseStart">
+              <mat-radio-button (change)="onDenyCured()" [checked]="disease.cured && disease.cured !== 'yes'">
+                {{ 'DISEASE_PAGE.NOT_CURED' | translate }}
+              </mat-radio-button>
+            </div>
+
+            <div class="med-findings" *ngIf="diseaseEnd || disease.cured">
+              <div class="med" (click)="onOpenModal('med')">
+                <p>{{ 'DISEASE_PAGE.MED.ADD_TEXT' | translate }}</p>
+                <div class="link">
+                  <h3>{{ 'DISEASE_PAGE.MED.ADD' | translate }}</h3>
+                  <img [src]="arrowIcon" alt="" height="16">
+                </div>
+              </div>
+              <div class="findings" (click)="onOpenModal('doc')">
+                <p>{{ 'DISEASE_PAGE.DOC.DOC_TEXT' | translate }}</p>
+                <div class="link">
+                  <h3>{{ 'DISEASE_PAGE.DOC.ADD' | translate }}</h3>
+                  <img [src]="arrowIcon" alt="" height="16">
+                </div>
+              </div>
+            </div>
+
+            <ion-button class="add-button"
+                        (click)="onAddDisease()"
+                        color="secondary"
+                        expand="full"
+                        [disabled]="!diseaseComplete && !dataComplete()">
+              {{ 'DISEASE_PAGE.BUTTONS.ADD' | translate }}
+            </ion-button>
+
+          </ion-card-content>
+        </ion-card>
+
+        <div class="infos" *ngIf="!disorder">
+          <div class="info-image">
+            <img [src]="diseaseInfoImg" alt="">
+          </div>
+          <div class="info-text">
+            <h3>{{ 'DISEASE_PAGE.EXPLANATION.TITLE' | translate }}</h3>
+            <ul>
+              <li>{{ 'DISEASE_PAGE.EXPLANATION.TEXT' | translate }}</li>
+              <li class="annotation">{{ 'DISEASE_PAGE.EXPLANATION.ANNOTATION' | translate }}</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="disorder" *ngIf="disorder">
+          <ul class="disorder-list" *ngIf="disorder.notCured">
+            <li *ngFor="let item of disorder.notCured" class="current-disorder">
+              <div class="disorder-icon">
+                <img [src]="notCuredImg" alt="" width="26">
+              </div>
+              <div class="disorder-text">
+                <h3>{{ item. name }}</h3>
+                <p>
+                  {{ 'DISEASE_PAGE.DETECTED' | translate }}
+                  {{ item.startTime | date:"dd.MM.yyyy" }}
+                </p>
+              </div>
+              <div class="disorder-link">
+                <img [src]="arrowIcon" alt="" height="16">
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

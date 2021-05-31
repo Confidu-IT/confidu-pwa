@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ 'TELEVET_EMERGENCY_PAGE.TITLE' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-spinner *ngIf="isLoading" color="primary"></ion-spinner>
+  <ion-grid *ngIf="!isLoading">
+    <ion-row>
+      <ion-col sizeXs="6" sizeSm="4" sizeXl="3" *ngFor="let item of emergencies">
+          <ion-card>
+            <ion-card-content (click)="onClickTile(item)">
+              <figure>
+                <img [src]="item.image" alt="">
+              </figure>
+              <div class="image-label">
+                {{ item.label }}
+              </div>
+            </ion-card-content>
+          </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer *ngIf="!isLoading">
+  <app-toolbar-footer [user]="user"></app-toolbar-footer>
+</ion-footer>

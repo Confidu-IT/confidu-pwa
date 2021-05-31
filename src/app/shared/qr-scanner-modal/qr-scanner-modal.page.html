@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        X
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeSm="8" offsetSm="2">
+        <zxing-scanner
+          [formats]="allowedFormats"
+          (scanSuccess)="onSuccess($event)"
+          (scanError)="onError()"
+        ></zxing-scanner>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,14 @@
+<ul class="socials-list">
+  <li *ngIf="socials.facebook">
+    <img [src]="fbImage" alt="" height="12" (click)="onclick('/')">
+  </li>
+  <li *ngIf="socials.twitter">
+    <img [src]="twitterImage" alt="" height="12" (click)="onclick('/')">
+  </li>
+  <li *ngIf="socials.mail">
+    |
+  </li>
+  <li *ngIf="socials.mail">
+    <img [src]="mailImage" alt="" height="12" (click)="onclick('/')">
+  </li>
+</ul>

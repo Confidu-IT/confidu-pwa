@@ -1,0 +1,589 @@
+::ng-deep .monthview-selected,
+::ng-deep .monthview-current,
+::ng-deep .monthview-primary-with-event,
+::ng-deep .monthview-secondary-with-event {
+  background-color: transparent !important;
+}
+
+::ng-deep .monthview-primary-with-event {
+  .day {
+    color: var(--ion-color-secondary) !important;
+    font-weight: bold;
+  }
+}
+
+::ng-deep .monthview-secondary-with-event {
+  .day {
+    color: var(--ion-color-secondary) !important;
+    font-weight: bold;
+  }
+}
+
+::ng-deep .monthview-selected .day {
+  background-color: var(--ion-color-secondary) !important;
+  color: #fff !important;
+}
+
+::ng-deep table, ::ng-deep td, ::ng-deep th  {
+  border: none !important;
+  color: rgb(102,102,102);
+}
+
+::ng-deep .monthview-current.monthview-selected {
+  .day {
+    background-color: var(--ion-color-secondary) !important;
+    color: #fff !important;
+  }
+}
+
+::ng-deep .monthview-selected {
+  .day {
+    color: rgb(102,102,102);
+  }
+}
+
+::ng-deep .monthview-current {
+  .day {
+    background-color: #f0f0f0 !important;
+  }
+}
+
+::ng-deep .table td {
+  line-height: 24px !important;
+  padding: 4px !important;
+}
+
+::ng-deep textarea::placeholder {
+  font-size: 12px;
+}
+
+.mat-expansion-panel {
+  margin-bottom: 12px;
+  padding-bottom: 0;
+}
+
+.mat-expansion-panel-header {
+  //margin-top: 8px;
+  height: 60px !important;
+  padding: 0 24px 0 0;
+}
+
+//.mat-expansion-panel-body {
+//  padding-bottom: 20px;
+//}
+
+.mat-content {
+  height: 60px;
+  color: red;
+}
+
+.panel-title-content {
+  display: flex;
+  align-items: center;
+  .img {
+    width: 60px;
+  }
+
+  img {
+
+    height: 26px;
+  }
+}
+
+ion-checkbox {
+  --size: 18px;
+  --border-color: #666;
+}
+
+.calendar-card {
+  ion-card-content {
+    padding-bottom: 10px;
+  }
+}
+
+.day {
+  border-radius: 99px;
+  font-size: 13px;
+  height: 28px;
+  width: 28px;
+  margin: auto;
+  padding-top: 2px;
+}
+
+.calendar-header {
+  color: rgb(102,102,102);
+  display: flex;
+  font-size: 16px;
+  justify-content: space-between;
+
+  .month {
+    font-weight: bold;
+  }
+
+  .prev, .next {
+    min-width: 40px;
+  }
+
+  .prev {
+    margin-left: 12px;
+  }
+
+  .next {
+    margin-right: 12px;
+    text-align: right;
+  }
+}
+
+ion-label {
+  color: #888 !important;
+  font-size: 14px !important;
+}
+
+ion-textarea {
+  margin-top: 10px;
+  color: #000;
+  font-size: 18px;
+}
+
+ion-card {
+  margin: 0;
+}
+
+ion-item {
+  margin-left: -20px;
+}
+
+.ticket {
+  &-header {
+    flex-grow: 2;
+  }
+
+  &-time {
+    font-size: 13px;
+  }
+
+  &-container {
+    box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 56px;
+    margin-bottom: 10px;
+
+    h3 {
+      font-size: 14px;
+      font-weight: 700;
+      margin: 0 0 2px;
+    }
+
+    .chevron {
+      color: rgb(102,102,102);
+      margin-right: 16px;
+    }
+  }
+}
+
+.tickets-header {
+  flex-grow: 2;
+}
+
+.task-title {
+  color: rgb(102,102,102);
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.task-button {
+  margin-top: 32px;
+}
+
+.tickets-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.pet-image {
+  height: 80px;
+  width: 80px;
+  border-radius: 99px;
+  margin-right: 24px;
+  margin-left: 24px;
+}
+
+.pet-name {
+  color: rgb(102,102,102);
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0;
+}
+
+.add-button {
+  margin-left: 16px;
+}
+
+.date-time {
+  display: flex;
+
+  ion-item {
+    flex-grow: 1;
+  }
+}
+
+.date {
+  margin-right: 20px;
+}
+
+.today-tasks {
+  color: #888;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 24px 20px 16px;
+
+  //margin: 24px 6px 16px 24px;
+
+  h2 {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  ion-fab-button {
+    height: 36px;
+    width: 36px;
+  }
+
+  ion-icon {
+    font-size: 16px;
+  }
+}
+
+.max-characters {
+  font-size: 12px;
+  color: #888;
+  text-align: right;
+}
+
+.ticket {
+  color: rgb(102,102,102);
+  margin-bottom: 6px;
+
+  &.last {
+    margin-bottom: 70px;
+  }
+
+  h3 {
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 2px;
+  }
+
+  &-header {
+    color: rgb(102,102,102);
+
+    &-image {
+      width: 85px;
+
+      img {
+        height: 60px;
+      }
+    }
+
+    &.uncommon {
+      display: flex;
+      align-items: center;
+      h3 {
+        //margin-top: 8px;
+      }
+    }
+  }
+
+  &-time {
+    font-size: 14px;
+  }
+
+  &-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 16px;
+    margin-bottom: 16px;
+    //margin-top: 6px;
+    border-top: 1px solid #e0e0e0;
+
+    h3 {
+      color: rgb(102,102,102);
+      font-size: 15px;
+      //margin-left: 6px;
+    }
+
+    &.uncommon {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+
+      .topic-list {
+        list-style: none;
+        width: 100%;
+        margin: 0;
+        padding-left: 0;
+
+        h3 {
+          font-size: 14px;
+          margin-top: 0;
+        }
+
+        ion-icon {
+          font-size: 17px;
+          margin-right: -4px;
+        }
+
+        li {
+          display: flex;
+          justify-content: space-between;
+          padding-top: 6px;
+          padding-bottom: 16px;
+          margin-bottom: 16px;
+          border-bottom: 1px solid #e0e0e0;
+        }
+
+        li:last-of-type {
+          border-bottom: none;
+          padding-bottom: 0;
+        }
+      }
+
+
+    }
+
+  }
+
+  &-check {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &-text {
+      font-size: 12px;
+      font-style: italic;
+      padding-bottom: 10px;
+    }
+
+  }
+
+  &-text {
+    font-size: 14px;
+    //margin-left: 16px;
+  }
+
+  &-footer {
+    display: flex;
+    font-size: 12px;
+    justify-content: space-between;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 24px;
+
+    .trash, .calendar {
+      font-size: 12px;
+      margin-left: 10px;
+    }
+
+    .trash {
+      color: rgb(102,102,102);
+    }
+
+    .calendar {
+      color: var(--ion-color-secondary);
+    }
+  }
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+
+  .update-cancel-button {
+    color: rgb(102,102,102);
+  }
+}
+
+.overdue {
+  color: var(--ion-color-danger);
+}
+
+.radio {
+  padding-top: 8px;
+  margin-bottom: 16px;
+  //margin-top: 6px;
+  border-top: 1px solid #e0e0e0;
+
+  &-content {}
+
+  &-question {
+    margin-bottom: 20px;
+  }
+
+  &-answer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+}
+
+.input-number {
+  &-text {
+    color: rgb(102,102,102);
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+
+  &-button {
+    margin: 20px 0;
+  }
+}
+
+.task-form {
+  margin-top: 16px;
+}
+
+.add-file {
+  border-top: 1px solid #cecece;
+  margin-top: 16px;
+  padding-top: 24px;
+
+  h3 {
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+}
+
+.file-label {
+  ion-icon {
+    color: var(--ion-color-secondary);
+    font-size: 16px;
+    padding-right: 8px;
+    vertical-align: bottom;
+  }
+
+  color: var(--ion-color-medium);
+  display: block;
+  font-size: 13px;
+  font-style: italic;
+}
+
+input[type='file'] {
+  display: none;
+}
+
+ion-progress-bar {
+  margin-top: 20px;
+}
+
+.custom-image {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .image {
+    display: flex;
+    align-items: center;
+  }
+
+  .image-name {
+    color: var(--ion-color-medium);
+    font-size: 12px;
+    margin-left: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  .calendar-card {
+    margin-right: 16px;
+  }
+
+  .task-form, .today-tasks {
+    margin-left: 16px;
+  }
+
+  .today-tasks {
+    margin-top: 0;
+    margin-bottom: 24px;
+  }
+}
+
+@media (min-width: 992px) {
+  ::ng-deep tr th small {
+    font-size: 16px !important;
+  }
+  .calendar-header {
+    font-size: 20px;
+    margin-bottom: 16px;
+    margin-top: 6px;
+  }
+
+  .day {
+    font-size: 16px;
+    height: 32px;
+    width: 32px;
+    padding-top: 4px;
+  }
+
+  .ticket-container {
+    height: 64px;
+    margin-bottom: 16px;
+  }
+
+  .ticket-header {
+    h3 {
+      font-size: 20px;
+    }
+    .ticket-time {
+      font-size: 17px;
+    }
+  }
+
+  .ticket-header-image {
+    width: 100px;
+
+    img {
+      height: 68px;
+      width: 68px;
+    }
+  }
+
+  .today-tasks {
+    margin-top: 0;
+    margin-bottom: 24px;
+
+    h2 {
+      font-size: 24px;
+    }
+
+    ion-fab-button {
+      height: 44px;
+      width: 44px;
+    }
+  }
+}
+
+
+
+//@media (min-width: 768px) {
+//  ion-card, mat-expansion-panel {
+//    margin-left: 10px;
+//    margin-right: 10px;
+//  }
+//
+//  .today-tasks {
+//    margin-top: 0;
+//  }
+//}
+
+
+// font-family: var(--ion-font-family, inherit);

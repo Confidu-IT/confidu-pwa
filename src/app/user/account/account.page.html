@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'ACCOUNT_PAGE.TITLE' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-spinner *ngIf="isLoading" color="primary"></ion-spinner>
+      <ion-col sizeSm="8" offsetSm="2" *ngIf="!isLoading">
+        <div class="header">
+          <img [src]="accountImg" alt="">
+          <h2>{{ 'ACCOUNT_PAGE.INFOS' | translate }}</h2>
+        </div>
+        <ion-card>
+          <ion-card-content>
+
+            <ul>
+              <li (click)="updateInfo('name')">
+                <div>
+                  <div class="label">{{ 'ACCOUNT_PAGE.NAME' | translate }}</div>
+                  <div class="value">
+                    <span *ngIf="firstName !== '***'">{{ firstName }} </span>
+                    <span *ngIf="lastName !== '***'">{{ lastName }}</span>
+                  </div>
+                </div>
+                <img [src]="chevron" alt="" height="20" width="20">
+              </li>
+              <li (click)="updateInfo('email')">
+                <div>
+                  <div class="label">{{ 'ACCOUNT_PAGE.MAIL' | translate }}</div>
+                  <div class="value">
+                    {{ email }}
+                  </div>
+                </div>
+                <img [src]="chevron" alt="" height="20" width="20">
+              </li>
+              <li (click)="updateInfo('phone')">
+                <div>
+                  <div class="label">{{ 'ACCOUNT_PAGE.PHONE' | translate }}</div>
+                  <div class="value">
+                    {{ phone }}
+                  </div>
+                </div>
+                <img [src]="chevron" alt="" height="20" width="20">
+              </li>
+
+              <li class="language-switcher">
+                <mat-select (selectionChange)="onPickLanguage($event)"
+                  placeholder="{{ 'ACCOUNT_PAGE.CHOOSE_LANGUAGE' | translate }}"
+                  (selectionChange)="onPickLanguage($event)">
+                  <mat-option *ngFor="let el of languages" [value]="el.value">
+                    {{ el.label }}
+                  </mat-option>
+                </mat-select>
+<!--                <mat-form-field>-->
+<!--                  <mat-label>{{ 'ACCOUNT_PAGE.CHOOSE_LANGUAGE' | translate }}</mat-label>-->
+<!--                  <mat-select (selectionChange)="onPickLanguage($event)">>-->
+<!--                    <mat-option *ngFor="let el of languages" [value]="el.value">-->
+<!--                      {{ el.label }}-->
+<!--                    </mat-option>-->
+<!--                  </mat-select>-->
+<!--                </mat-form-field>-->
+              </li>
+            </ul>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card>
+          <ion-card-content>
+            <ul>
+              <li (click)="updateInfo('pw')">
+                <div class="label">{{ 'ACCOUNT_PAGE.CHANGE_PW' | translate }}</div>
+                <img [src]="chevron" alt="" height="20" width="20">
+              </li>
+<!--              <li>-->
+<!--                <div class="label">{{ 'ACCOUNT_PAGE.DEL_ACC' | translate }}</div>-->
+<!--                <img [src]="chevron" alt="" height="20" width="20">-->
+<!--              </li>-->
+<!--              <li>-->
+<!--                <div class="label">{{ 'ACCOUNT_PAGE.BEQUEST' | translate }}</div>-->
+<!--                <img [src]="chevron" alt="" height="20" width="20">-->
+<!--              </li>-->
+            </ul>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <app-toolbar-footer [user]="user"></app-toolbar-footer>
+</ion-footer>

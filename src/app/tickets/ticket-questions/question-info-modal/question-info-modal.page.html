@@ -1,0 +1,25 @@
+<ion-content>
+  <ion-fab class="close-button" vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button color="secondary" size="small" (click)="closeModal()">
+      <ion-icon name="close-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <div class="info">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div class="info-container" [ngClass]="{'text': content.type.toLowerCase() === 'r'}">
+            <div class="info-content">
+              <img [src]="infoIcon" alt="" height="45" *ngIf="content.type.toLowerCase() === 'r'">
+              <img [src]="img" alt="" class="picture" *ngIf="content.type.toLowerCase() === 'c'">
+              <h2 *ngIf="content.headline">{{ content.headline }}</h2>
+              <p *ngIf="content.text">{{ content.text }}</p>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </div>
+
+</ion-content>

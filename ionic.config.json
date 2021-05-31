@@ -1,0 +1,7 @@
+{
+  "name": "dog-healthcare",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

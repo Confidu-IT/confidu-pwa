@@ -1,0 +1,25 @@
+<div class="uploaded-files">
+  <ng-container *ngIf="path">
+    <img
+      *ngFor="let image of uploadedFiles; let i = index"
+      (click)="onZoomImage(image)"
+      [src]="uploadImg" alt="" width="30">
+  </ng-container>
+</div>
+
+<div class="file-picker" *ngIf="uploadedFiles.length < 5" (click)="onPickDocument()">
+
+  <div class="file-label">
+    <ion-icon name="cloud-upload-outline"></ion-icon>
+    {{ 'ATTACH_DOCUMENT.ADD_DOCUMENT' | translate }}
+  </div>
+  <ion-progress-bar *ngIf="uploadProgress" color="secondary"
+                    [buffer]="(uploadProgress | async)"
+                    [value]="(uploadProgress | async)">
+
+  </ion-progress-bar>
+</div>
+
+<input #filePicker
+       accept="image/jpeg,image/gif,image/png,application/pdf"
+       (change)="onFileChosen($event)" type="file" id="file">

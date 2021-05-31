@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'CONSULTATION_SCHEDULER_PAGE.TITLE' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-text-center" *ngIf="isLoading">
+    <ion-spinner color="primary"></ion-spinner>
+  </div>
+
+  <ion-grid *ngIf="!isLoading">
+    <ion-row>
+      <ion-col sizeSm="8" offsetSm="2">
+
+        <p class="start-text">
+          {{ 'CONSULTATION_SCHEDULER_PAGE.TEXT.PART_1' | translate }}
+          {{ pet?.pet.name }}
+          {{ 'CONSULTATION_SCHEDULER_PAGE.TEXT.PART_2' | translate }}
+        </p>
+
+        <div class="next-date" *ngIf="nextAvTime">
+          <div class="next-date-header">
+            <div class="label">{{ 'CONSULTATION_SCHEDULER_PAGE.NEXT_AV_APP' | translate }}</div>
+            <div class="time">
+              {{ 'CONSULTATION_SCHEDULER_PAGE.AT' | translate }}
+              {{ nextAvTime?.minutes }}
+              {{ 'CONSULTATION_SCHEDULER_PAGE.MIN' | translate }}
+            </div>
+          </div>
+          <ion-button
+            (click)="onBook()"
+            color="secondary"
+            expand="full"
+          >
+            {{ 'CONSULTATION_SCHEDULER_PAGE.BOOK_IMMEDIATELY' | translate }}
+          </ion-button>
+        </div>
+
+        <p class="book-text">{{ 'CONSULTATION_SCHEDULER_PAGE.AHEAD_TEXT' | translate }}</p>
+
+        <div class="appointment-lists" *ngFor="let list of dateLists; let i = index;">
+          <mat-expansion-panel *ngIf="list?.val.length > 0">
+            <mat-expansion-panel-header>
+              <div class="panel-header">
+                <div class="day">
+                  <span *ngIf="i === 0">{{ 'CONSULTATION_SCHEDULER_PAGE.TODAY' | translate }}</span>
+                  <span *ngIf="i === 1">{{ 'CONSULTATION_SCHEDULER_PAGE.TOMORROW' | translate }}</span>
+                  <span *ngIf="i === 2">{{ 'CONSULTATION_SCHEDULER_PAGE.DAY_AFTER_TOMORROW' | translate }}</span>
+                </div>
+                <div class="date">{{ list.val[0].time | date: 'dd.MM.yyyy' }}</div>
+              </div>
+            </mat-expansion-panel-header>
+            <ul class="panel-list">
+              <li
+                *ngFor="let item of list.val; let i = index"
+                [ngClass]="{active: item.active}"
+                (click)="onSelectDate(i, list.name)">
+                {{ item.time | date: 'HH.mm' }}
+              </li>
+            </ul>
+            <ion-button
+              (click)="onBook()"
+              [disabled]="activeList !== list.name || !selectedDate"
+              color="secondary"
+              expand="full">
+              {{ 'CONSULTATION_SCHEDULER_PAGE.BOOK_APPOINTMENT' | translate }}
+            </ion-button>
+          </mat-expansion-panel>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer *ngIf="!isLoading">
+  <app-toolbar-footer [user]="user"></app-toolbar-footer>
+</ion-footer>

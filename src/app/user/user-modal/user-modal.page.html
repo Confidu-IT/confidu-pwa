@@ -1,0 +1,144 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{ title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col offsetSm="2" sizeSm="8">
+
+        <ion-card *ngIf="type === 'name'" class="account">
+          <ion-card-content>
+            <h2>{{ 'USER_MODAL_PAGE.NAME.NAME' | translate }}</h2>
+            <form [formGroup]="nameForm">
+              <ion-item>
+                <ion-label color="medium" position="floating">
+                  {{ 'USER_MODAL_PAGE.NAME.FIRST_NAME' | translate }}
+                </ion-label>
+                <ion-input formControlName="firstName" type="text"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label color="medium" position="floating">
+                  {{ 'USER_MODAL_PAGE.NAME.LAST_NAME' | translate }}
+                </ion-label>
+                <ion-input formControlName="lastName" type="text"></ion-input>
+              </ion-item>
+            </form>
+            <ion-button
+              (click)="onUpdateName()"
+              [disabled]="nameForm.invalid"
+              color="secondary"
+              expand="full">
+              {{ 'USER_MODAL_PAGE.NAME.BUTTON' | translate }}
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card *ngIf="type === 'phone'" class="account">
+          <ion-card-content>
+            <h2>{{ 'USER_MODAL_PAGE.PHONE.TITLE' | translate }}</h2>
+            <form [formGroup]="phoneForm">
+              <ion-item>
+                <ion-label color="medium" position="floating">
+                  {{ 'USER_MODAL_PAGE.PHONE.PHONE' | translate }}
+                </ion-label>
+                <ion-input formControlName="phone" type="text"></ion-input>
+              </ion-item>
+            </form>
+            <ion-button
+              (click)="onUpdatePhone()"
+              [disabled]="phoneForm.invalid"
+              color="secondary"
+              expand="full">
+              {{ 'USER_MODAL_PAGE.PHONE.BUTTON' | translate }}
+            </ion-button>
+          </ion-card-content>
+          <p class="explanation"> {{ 'USER_MODAL_PAGE.PHONE.EXPLANATION' | translate }}</p>
+        </ion-card>
+
+        <ion-card *ngIf="type === 'email'" class="email">
+          <ion-card-content>
+            <h2>{{ 'USER_MODAL_PAGE.EMAIL.MAIL' | translate }}</h2>
+            <div class="old-mail">{{ user.email }}</div>
+            <p class="text">{{ 'USER_MODAL_PAGE.EMAIL.TEXT' | translate }}</p>
+
+            <form class="current-pw">
+              <ion-item>
+                <ion-label color="medium" position="floating">
+                  {{ 'USER_MODAL_PAGE.PW.CURRENT_PW' | translate }}
+                </ion-label>
+                <ion-input name="currentPW" [(ngModel)]="currentPW" type="password"></ion-input>
+              </ion-item>
+            </form>
+
+            <form [formGroup]="emailForm">
+              <ion-item>
+                <ion-label color="medium" position="floating">
+                  {{ 'USER_MODAL_PAGE.EMAIL.NEW_MAIL' | translate }}
+                </ion-label>
+                <ion-input formControlName="email" type="text"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label color="medium" position="floating">
+                  {{ 'USER_MODAL_PAGE.EMAIL.CONFIRM_MAIL' | translate }}
+                </ion-label>
+                <ion-input formControlName="emailConfirmation" type="text"></ion-input>
+              </ion-item>
+            </form>
+            <ion-button
+              (click)="onChangeEmail()"
+              [disabled]="!emailFormValidator()"
+              color="secondary"
+              expand="full">
+              {{ 'USER_MODAL_PAGE.EMAIL.BUTTON' | translate }}
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card *ngIf="type === 'pw'" class="pw">
+          <ion-card-content>
+            <h2>{{ 'USER_MODAL_PAGE.PW.CHANGE_PW' | translate }}</h2>
+            <form class="current-pw">
+              <ion-item>
+                <ion-label color="medium" position="floating">
+                  {{ 'USER_MODAL_PAGE.PW.CURRENT_PW' | translate }}
+                </ion-label>
+                <ion-input name="currentPW" [(ngModel)]="currentPW" type="password"></ion-input>
+              </ion-item>
+            </form>
+
+            <form [formGroup]="passwordForm">
+              <ion-item>
+                <ion-label color="medium" position="floating">
+                  {{ 'USER_MODAL_PAGE.PW.NEW_PW' | translate }}
+                </ion-label>
+                <ion-input formControlName="password" type="password"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label color="medium" position="floating">
+                  {{ 'USER_MODAL_PAGE.PW.CONFIRM_PW' | translate }}
+                </ion-label>
+                <ion-input formControlName="confirm_password" type="password"></ion-input>
+              </ion-item>
+            </form>
+            <ion-button
+              (click)="onChangePassword()"
+              [disabled]="!pwFormValidator()"
+              color="secondary"
+              expand="full">
+              {{ 'USER_MODAL_PAGE.PW.BUTTON' | translate }}
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

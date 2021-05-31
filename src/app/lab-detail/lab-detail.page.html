@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/lab"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-spinner color="primary" *ngIf="isLoading"></ion-spinner>
+  <ion-grid *ngIf="!isLoading">
+    <ion-row>
+      <ion-col sizeSm="8" offsetSm="2">
+        <ion-card class="menu">
+          <ion-card-content>
+            <div class="menu-header">
+              <div class="menu-image">
+                <img [src]="content?.icon" alt="" height="32">
+              </div>
+              <div class="menu-headline">
+                <h3>{{ content?.title }}</h3>
+              </div>
+            </div>
+            <ul>
+              <li *ngFor="let link of content?.links" (click)="onClickLink(link.url, content.ticketKey)">
+                <h3>{{ link.label }}</h3>
+                <img [src]="chevron" alt="" height="16" width="16">
+              </li>
+            </ul>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer *ngIf="!isLoading">
+  <app-toolbar-footer [user]="user"></app-toolbar-footer>
+</ion-footer>

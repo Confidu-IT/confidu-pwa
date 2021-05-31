@@ -1,0 +1,494 @@
+h2 {
+  color: rgb(102,102,102);
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.description {
+  color: rgb(102,102,102);
+  font-size: 16px;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.main-image-container {
+  max-height: 300px;
+  position: relative;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.main-image-spots {
+  height: 100%;
+  top: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 99;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.left-icon, .poison-icon, .right-icon {
+  height: 70px;
+  width: 70px;
+}
+
+.left-icon, .right-icon {
+  margin-right: 40px;
+}
+
+.symptom, .no-symptom {
+  color: rgb(102,102,102);
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 40px;
+  margin-bottom: 0;
+  text-align: center;
+  //text-transform: capitalize;
+}
+
+.no-symptom {
+  font-size: 16px;
+}
+
+.zoom-out-button {
+  margin-top: 20px;
+}
+
+.spot, .region {
+  border-radius: 99px;
+  position: absolute;
+  //background: red;
+}
+
+.dog {
+  .butt {
+    //background: red;
+    height: 45px;
+    width: 20px;
+    margin-left: 13%;
+    margin-top: 39%;
+  }
+  .back {
+    //background: red;
+    height: 26px;
+    width: 115px;
+    margin-left: 25%;
+    margin-top: 30%;
+  }
+  .tail {
+    //background: red;
+    height: 20px;
+    width: 53px;
+    margin-left: 0;
+    margin-top: 24%;
+    transform: rotate(37deg);
+  }
+  .belly {
+    //background: red;
+    height: 57px;
+    width: 40px;
+    margin-left: 40%;
+    margin-top: 39%;
+  }
+  .abdomen {
+    //background: blue;
+    height: 50px;
+    width: 30px;
+    margin-left: 27%;
+    margin-top: 45%;
+  }
+  .chest {
+    //background: red;
+    height: 90px;
+    width: 120px;
+    margin-left: 59%;
+    margin-top: 36%;
+  }
+  .ear {
+    //background: red;
+    height: 125px;
+    width: 79px;
+    margin-left: 29%;
+    margin-top: 19%;
+  }
+  .left-leg {
+    //background: red;
+    height: 75px;
+    width: 23px;
+    margin-left: 10%;
+    margin-top: 61%;
+    transform: rotate(-5deg);
+  }
+  .right-leg {
+    //background: red;
+    height: 83px;
+    width: 23px;
+    margin-left: 67%;
+    margin-top: 58%;
+    transform: rotate(-5deg);
+  }
+  .eye {
+    //background: red;
+    height: 35px;
+    width: 35px;
+    margin-left: 60%;
+    margin-top: 18%;
+  }
+  .nose {
+    //background: red;
+    height: 30px;
+    width: 35px;
+    margin-left: 89%;
+    margin-top: 29%;
+  }
+  .mouth {
+    //background: red;
+    height: 46px;
+    width: 80px;
+    margin-left: 62%;
+    margin-top: 34%;
+    transform: rotate(10deg);
+  }
+  .head-region {
+    //background: red;
+    height: 65px;
+    width: 65px;
+    margin-left: 69%;
+    margin-top: 7%;
+  }
+  .body-region {
+    //background: blue;
+    height: 49px;
+    width: 171px;
+    margin-left: 24%;
+    margin-top: 42%;
+  }
+  .head {
+    //background: red;
+    height: 33px;
+    width: 98px;
+    margin-left: 32%;
+    margin-top: 4%;
+  }
+  .throat {
+    //background: red;
+    height: 76px;
+    margin-top: 54%;
+    width: 165px;
+    transform: rotate(40deg);
+  }
+}
+
+.cat {
+  .butt {
+    //background: red;
+    height: 45px;
+    width: 20px;
+    margin-left: 7%;
+    margin-top: 43%;
+  }
+  .back {
+    //background: red;
+    height: 26px;
+    width: 132px;
+    margin-left: 17%;
+    margin-top: 34%;
+  }
+  .tail {
+    //background: red;
+    height: 122px;
+    width: 30px;
+    margin-left: 2px;
+  }
+  .belly {
+    //background: red;
+    height: 57px;
+    width: 40px;
+    margin-left: 40%;
+    margin-top: 41%;
+  }
+  .abdomen {
+    //background: blue;
+    height: 50px;
+    width: 30px;
+    margin-left: 25%;
+    margin-top: 45%;
+  }
+  .chest {
+    //background: red;
+    height: 90px;
+    width: 120px;
+    margin-left: 56%;
+    margin-top: 33%;
+  }
+  .ear {
+    //background: red;
+    height: 49px;
+    width: 79px;
+    margin-left: 40%;
+    margin-top: 0;
+  }
+  .left-leg {
+    //background: red;
+    height: 75px;
+    width: 23px;
+    margin-left: 4%;
+    margin-top: 71%;
+    transform: rotate(-5deg);
+  }
+  .right-leg {
+    //background: red;
+    height: 83px;
+    width: 23px;
+    margin-left: 61%;
+    margin-top: 68%;
+  }
+  .eye {
+    //background: red;
+    height: 35px;
+    width: 35px;
+    margin-left: 60%;
+    margin-top: 32%;
+  }
+  .nose {
+    //background: red;
+    height: 20px;
+    width: 25px;
+    margin-left: 73%;
+    margin-top: 44%;
+  }
+  .mouth {
+    //background: red;
+    height: 33px;
+    width: 52px;
+    margin-left: 57%;
+    margin-top: 50%;
+  }
+  .head-region {
+    //background: red;
+    height: 65px;
+    width: 65px;
+    margin-left: 73%;
+    margin-top: 20%;
+  }
+  .body-region {
+    //background: blue;
+    height: 49px;
+    width: 200px;
+    margin-left: 16%;
+    margin-top: 51%;
+  }
+  .head {
+    //background: blue;
+    height: 51px;
+    width: 130px;
+    margin-left: 22%;
+    margin-top: 27%;
+    transform: rotate(-31deg);
+  }
+  .throat {
+    //background: red;
+    height: 76px;
+    margin-left: 3%;
+    margin-top: 61%;
+    width: 165px;
+    transform: rotate(23deg);
+  }
+}
+
+.progress-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 16px;
+}
+
+ion-footer {
+  margin-top: 20px;
+}
+
+::ng-deep {
+  .action-sheet-group {
+    max-height: 250px;
+    overflow-y: scroll !important;
+
+    .action-sheet-button:hover {
+      color: var(--ion-color-primary) !important;
+    }
+  }
+}
+
+//@media (min-width: 470px) {
+//  .main-image-container {
+//    max-height: 470px;
+//  }
+//
+//  .dog {
+//    .butt {
+//      height: 70px;
+//      width: 24px;
+//    }
+//    .back {
+//      height: 44px;
+//      width: 127px;
+//    }
+//    .tail {
+//      height: 30px;
+//      width: 75px;
+//    }
+//    .belly {
+//      height: 34px;
+//      width: 78px;
+//    }
+//    .chest {
+//      height: 50px;
+//      margin-left: 73%;
+//    }
+//    .ear {
+//      height: 87px;
+//      width: 46px;
+//    }
+//    .throat {
+//      height: 35px;
+//      width: 92px;
+//    }
+//    .abdomen {
+//      width: 45px;
+//      margin-left: 28%;
+//    }
+//  }
+//
+//}
+//
+//@media (min-width: 720px) {
+//  .main-image-container {
+//    max-height: 412px;
+//  }
+//
+//  .dog {
+//    .butt {
+//      height: 85px;
+//      width: 28px;
+//    }
+//    .back {
+//      height: 51px;
+//      width: 151px;
+//    }
+//    .eye {
+//      height: 22px;
+//      width: 22px;
+//    }
+//    .throat {
+//      height: 45px;
+//      width: 100px;
+//    }
+//    .abdomen {
+//
+//    }
+//  }
+//}
+//
+//@media (min-width: 880px) {
+//  .main-image-container {
+//    max-height: 574px;
+//  }
+//
+//  .dog {
+//    .butt {
+//      height: 96px;
+//      width: 30px;
+//    }
+//    .back {
+//      height: 66px;
+//      width: 187px;
+//    }
+//    .tail {
+//      height: 44px;
+//      width: 112px;
+//    }
+//    .belly {
+//      height: 47px;
+//      width: 102px;
+//    }
+//    .chest {
+//      height: 54px;
+//      width: 30px;
+//    }
+//    .ear {
+//      height: 115px;
+//      width: 67px;
+//    }
+//    .eye {
+//      height: 30px;
+//      width: 25px;
+//    }
+//    .head {
+//      height: 20px;
+//      width: 70px;
+//    }
+//    .throat {
+//      height: 55px;
+//      width: 135px;
+//    }
+//    .abdomen {
+//      height: 28px;
+//    }
+//  }
+//
+//}
+//
+//@media (min-width: 1140px) {
+//  .main-image-container {
+//    max-height: 694px;
+//  }
+//
+//  .dog {
+//    .butt {
+//      height: 128px;
+//      width: 45px;
+//    }
+//    .back {
+//      height: 96px;
+//      width: 262px;
+//    }
+//    .tail {
+//      width: 112px;
+//    }
+//    .belly {
+//      width: 125px;
+//    }
+//    .chest {
+//      height: 65px;
+//      width: 42px;
+//    }
+//    .ear {
+//      height: 150px;
+//      width: 86px;
+//    }
+//    .eye {
+//      height: 35px;
+//      width: 30px;
+//    }
+//    .head {
+//      height: 35px;
+//      width: 15px;
+//    }
+//    .throat {
+//      width: 155px;
+//    }
+//    .abdomen {
+//      .abdomen {
+//        height: 46px;
+//        width: 57px;
+//        margin-left: 27%;
+//      }
+//    }
+//  }
+//
+//}

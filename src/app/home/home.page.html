@@ -1,0 +1,246 @@
+<ion-header *ngIf="!isLoading">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+    </ion-buttons>
+    <ion-title>
+      <img [src]="logo" alt="" height="40">
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon size="small" name="chatbubble-ellipses-outline"></ion-icon>
+      </ion-button>
+      <ion-menu-button menu="end" auto-hide="false">
+        <ion-icon size="small" name="settings-outline"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-no-padding">
+  <ion-grid *ngIf="pet && !isLoading">
+
+    <ion-row>
+      <ion-col sizeSm="8" offsetSm="2">
+        <div class="pet-container">
+          <div class="left" (click)="onPickImage()">
+            <img class="pet-avatar" [src]="pet?.pet?.image" width="84" height="84" alt="">
+            <img class="cam-icon" [src]="camIcon" width="26" height="26" alt="">
+          </div>
+          <div class="right">
+            <div class="name" routerLink="/pets/pets-list">
+              <h2>{{ pet?.pet?.name }}</h2>
+              <img [src]="switchPetIcon" width="14" height="14" alt="">
+            </div>
+            <div class="icons">
+              <div class="icon" routerLink="/dashboard">
+                <img [src]="chartsIcon" width="33" height="33" alt="">
+                <div class="text">{{ 'HOME_PAGE.OVERVIEW' | translate }}</div>
+              </div>
+              <div class="icon" routerLink="/">
+                <img [src]="trophyIcon" width="33" height="33" alt="">
+                <div class="text">{{ 'HOME_PAGE.BENEFITS' | translate }}</div>
+              </div>
+              <div class="icon" routerLink="/tickets/televet-emergency">
+                <img [src]="emergencyIcon" width="33" height="33" alt="">
+                <div class="text">{{ 'HOME_PAGE.EMERGENCY' | translate }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col sizeSm="8" offsetSm="2">
+
+       <div class="task-planner">
+         <div class="planner-header" [ngClass]="{'no-tickets': tickets?.length < 1}">
+           <div class="planner-title">{{ 'HOME_PAGE.TODAY_TASKS' | translate }}</div>
+           <div class="planner-link" routerLink="/tickets">
+             {{ 'HOME_PAGE.TO_TASKS' | translate }}
+             <ion-icon name="chevron-forward-outline"></ion-icon>
+           </div>
+         </div>
+
+         <ng-container>
+           <ion-slides [options]="slideOptions">
+             <ion-slide *ngFor="let ticket of tickets">
+
+               <ion-card class="task-card" (click)="navigateToTicket(ticket?.data?.id, ticket.dateId)">
+                 <ion-card-content>
+                   <img [src]="ticket?.data?.backgroundImageLink1" alt="">
+                   <ion-card-header>
+                     <ion-card-title>{{ ticket?.data.title }}</ion-card-title>
+                   </ion-card-header>
+
+                   <ion-card-content>
+                     <div class="time">
+                       <ion-icon *ngIf="!isOverdue(ticket?.endTime)"  name="time-outline"></ion-icon>
+                       <img *ngIf="isOverdue(ticket?.endTime)" [src]="bellImage" alt="" height="18">
+                       <span *ngIf="ticket.data.type !== 'common'">{{ 'HOME_PAGE.TODAY' | translate }}</span>
+                       <span *ngIf="ticket.data.type === 'common'" [ngClass]="{ overdue: isOverdue(ticket.endTime) }">
+                                          {{ ticket.endTime.seconds * 1000 | date: 'HH:mm' }}
+                                        </span>
+                     </div>
+                   </ion-card-content>
+                 </ion-card-content>
+               </ion-card>
+             </ion-slide>
+           </ion-slides>
+         </ng-container>
+       </div>
+
+        <div class="no-tasks" *ngIf="tickets?.length < 1">
+          <ion-card>
+            <ion-card-content>
+              <img *ngIf="randomPetImg" [src]="randomPetImg" alt="">
+              <p class="text">
+                {{ 'HOME_PAGE.NO_TASKS_TEXT.PART_1' | translate }}
+                {{ 'HOME_PAGE.NO_TASKS_TEXT.PART_2' | translate }}
+              </p>
+            </ion-card-content>
+          </ion-card>
+        </div>
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+
+    </ion-row>
+    <ion-row>
+      <ion-col sizeSm="8" offsetSm="2">
+
+        <ion-card class="health-state-card">
+          <ion-card-content>
+            <div class="header">
+              <img [src]="treatIcon" alt="" class="icon" width="25">
+              <span>{{ 'HOME_PAGE.TREAT' | translate }}</span>
+            </div>
+            <div class="body">
+              <div class="left">
+                <div class="question">
+                  {{ 'HOME_PAGE.PET_STATE' | translate }}
+                  {{ pet?.pet?.name }} <span>{{ 'HOME_PAGE.TODAY' | translate }}</span>?
+                </div>
+                <div class="slider">
+                  <ion-range min="0" max="100" step="3"
+                             [(ngModel)]="rangeValue"
+                             (ionChange)="setHealthState($event)"
+                             [ngClass]="{ emergency: isEmergency }"
+                  ></ion-range>
+                  <div class="answer">{{ healthStateText }}</div>
+                </div>
+
+              </div>
+              <div class="right">
+                <img class="health-state-image" [src]="healthStateImg" height="65" alt="">
+              </div>
+            </div>
+            <ion-button
+                            color="secondary"
+                            expand="full"
+                            (click)="onOpenHealthStateModal()"
+                            *ngIf="patchButton">
+                            {{ 'HOME_PAGE.PATCH_BUTTON' | translate }}
+                          </ion-button>
+
+                          <ion-button
+                            color="danger"
+                            expand="full"
+                            routerLink="/tickets/televet-emergency"
+                            *ngIf="isEmergency">
+                            {{ 'HOME_PAGE.DANGER_BUTTON' | translate }}
+                          </ion-button>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card class="recipe-card">
+          <ion-card-content (click)="orderPrescription()">
+            <div class="header">
+              <img [src]="prescriptionIcon" alt="" class="icon" width="25">
+              <span>{{ 'HOME_PAGE.PHARMACY' | translate }}</span>
+            </div>
+            <div class="recipe">
+              <div>
+                <div class="text">
+                  <h3>{{ 'HOME_PAGE.RECIPE_HEADER' | translate }}</h3>
+                </div>
+              </div>
+              <div class="link-arrow">
+                <img [src]="chevronRight" alt="" height="16">
+              </div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="articles?.magazines || articles?.cooking">
+      <ion-col offsetSm="2" sizeSm="8">
+        <div *ngIf="articles?.magazines" class="magazines">
+          <ion-slides pager="hasPagination(articles?.magazines.length)">
+            <ion-slide *ngFor="let item of articles?.magazines">
+              <ion-card (click)="onClickArticle(item.key)" class="article-container slider">
+                <ion-card-content>
+                  <div class="title">
+                    <span><img [src]="magazineIcon" alt="" class="icon" width="25"></span>
+                    {{ 'HOME_PAGE.NEW_ARTICLES' | translate }}
+                  </div>
+                  <img *ngIf="item?.image" [src]="item?.image" alt="">
+                  <div class="header">
+                    <div class="date">
+                      {{ item?.date | date: 'dd.MM.yyy' }}
+                      <span *ngIf="item?.category">| </span>
+                    </div>
+                    <div class="category">{{ item?.category }}</div>
+                  </div>
+                  <p class="body">{{ item?.text }}</p>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
+          </ion-slides>
+        </div>
+
+        <div *ngIf="articles?.cooking" class="magazines">
+          <ion-slides pager="hasPagination(articles?.magazines.cooking)">
+            <ion-slide *ngFor="let item of articles?.cooking">
+              <ion-card (click)="onClickRecipe(item.key)" class="article-container slider">
+                <ion-card-content>
+                  <div class="title">
+                    <span><img [src]="recipeIcon" alt="" class="icon" width="25"></span>
+                    {{ 'HOME_PAGE.WEEKLY_RECIPE' | translate }}
+                  </div>
+                  <img *ngIf="item?.image" [src]="item?.image" alt="">
+                  <div class="header">
+                    <div class="category">{{ item?.category }}</div>
+                  </div>
+                  <p class="body">{{ item?.text }}</p>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
+          </ion-slides>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col sizeSm="8" offsetSm="2">
+        <ion-card class="video-call">
+          <ion-card-content>
+            <h6 class="ion-text-center">Videocall</h6>
+            <ul>
+              <li *ngFor="let item of articles?.events?.videocalls" (click)="foobar(item.resultKey)">
+                Click Me!
+              </li>
+            </ul>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <input #filePicker (change)="onFileChosen($event)" accept="image/jpeg,image/png" type="file">
+</ion-content>
+<ion-footer *ngIf="!isLoading">
+  <app-toolbar-footer [user]="user$"></app-toolbar-footer>
+</ion-footer>

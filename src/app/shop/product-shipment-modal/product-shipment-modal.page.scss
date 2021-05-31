@@ -1,0 +1,30 @@
+.info {
+  background: var(--ion-color-primary);
+  color: #fff;
+  height: 100vh;
+  text-align: center;
+
+  &-container {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+  }
+
+  &-content {
+    margin-top: -100px;
+  }
+
+  img {
+    height: 45px;
+    width: 45px;
+  }
+
+  h2 {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  p{
+    font-size: 15px;
+  }
+}

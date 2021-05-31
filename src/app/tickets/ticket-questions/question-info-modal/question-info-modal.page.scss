@@ -1,0 +1,63 @@
+.info {
+  height: 100vh;
+  text-align: center;
+  background: var(--ion-color-primary);
+
+
+
+  &-container {
+    display: flex;
+    align-items: flex-start;
+    //height: 100vh;
+    margin: 150px -16px 0;
+
+    h2 {
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 15px;
+    }
+
+    &.text {
+      align-items: center;
+      color: #fff;
+      //margin: 0;
+
+      .info-content {
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+
+  &-content {
+    color: #fff;
+    margin: 0 32px;
+    width: 100%;
+  }
+
+  img {
+    height: 45px;
+    width: 45px;
+  }
+
+  .picture {
+    margin-top: 16px;
+    height: 100%;
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 15px;
+  }
+}

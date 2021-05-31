@@ -1,0 +1,15 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button>
+  </ion-buttons>
+  <ion-title>
+    <img [src]="logo" alt="" height="40">
+  </ion-title>
+  <div class="badge"></div>
+  <ion-buttons slot="end">
+    <ion-button routerLink="/shop/cart">
+      <ion-icon *ngIf="cart" color="danger" slot="icon-only" name="cart"></ion-icon>
+      <ion-icon *ngIf="!cart" slot="icon-only" name="cart"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>

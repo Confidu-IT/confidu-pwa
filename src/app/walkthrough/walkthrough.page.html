@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ 'WALKTHROUGH_PAGE.TITLE' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeSm="8" offsetSm="2">
+        <div class="cancel" (click)="onClose()">{{ 'WALKTHROUGH_PAGE.CANCEL' | translate }}</div>
+        <ion-slides #slider pager="true" (ionSlideDidChange)="onLastSlide()">
+          <ion-slide *ngFor="let slide of slides">
+            <div class="slider-content">
+              <figure class="flex-item">
+                <img [src]=" imagePath + '/' + slide.IMG + '.png'" alt="" height="350">
+              </figure>
+              <h3>{{ slide.TITLE }}</h3>
+              <p>{{ slide.TEXT }}</p>
+            </div>
+          </ion-slide>
+        </ion-slides>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

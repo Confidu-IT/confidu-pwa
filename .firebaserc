@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "confidu": "confidu-app"
+  },
+  "targets": {
+    "confidu-app": {
+      "hosting": {
+        "production": [
+          "confidu-app"
+        ],
+        "staging": [
+           "confidu-staging"
+        ]
+      }
+    }
+  }
+}

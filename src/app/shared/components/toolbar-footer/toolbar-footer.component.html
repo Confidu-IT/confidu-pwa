@@ -1,0 +1,19 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-button routerLink="/home">
+      <ion-img class="home-img" [src]="homeImg"></ion-img>
+    </ion-button>
+    <ion-button (click)="goToCareCard()">
+      <ion-img class="page-img" [src]="pageImg"></ion-img>
+    </ion-button>
+    <ion-button (click)="handleImage()">
+      <ion-img class="cam-img" [src]="camImg"></ion-img>
+    </ion-button>
+    <ion-button>
+      <ion-img class="snout-img" [src]="snoutImg"></ion-img>
+    </ion-button>
+    <ion-menu-button menu="start" color="medium" auto-hide="false"></ion-menu-button>
+  </ion-buttons>
+</ion-toolbar>
+
+<input #filePicker (change)="onFileChosen($event)" accept="image/jpeg,image/png" type="file">

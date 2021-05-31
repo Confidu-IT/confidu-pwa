@@ -1,0 +1,632 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ 'TICKET_RESULT_PAGE.TITLE' | translate }}</ion-title>
+    <ion-buttons slot="end">
+    <ion-button>
+      <ion-icon size="small" name="chatbubble-ellipses-outline"></ion-icon>
+    </ion-button>
+    <ion-menu-button menu="end" auto-hide="false">
+      <ion-icon size="small" name="settings-outline"></ion-icon>
+    </ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+  <div *ngIf="isLoading" class="ion-text-center">
+    <ion-spinner color="primary"></ion-spinner>
+  </div>
+
+  <ion-grid *ngIf="!isLoading">
+    <ion-row>
+
+      <ion-col *ngIf="!result" offsetSm="2" sizeSm="8">
+        <p class="ion-text-center">{{ 'TICKET_RESULT_PAGE.NO_RESULT' | translate }}</p>
+      </ion-col>
+
+      <ion-col *ngIf="result" sizeSm="8" offsetSm="2">
+
+        <div class="ticket-result-header" [style.background]="'url('+ result?.backgroundImageLink +')'">
+          <div class="ticket-result-header-image">
+            <ion-img [src]="result?.iconImageLink" alt=""></ion-img>
+          </div>
+          <div class="ticket-result-header-description">
+            <h3>
+              <span>{{ result?.headerHeadlineH1 }}</span><br>
+              <span>{{ result?.headerHeadlineH2 }}</span>
+            </h3>
+          </div>
+        </div>
+
+        <ion-card  class="ticket-result-card">
+          <ion-card-content *ngIf="result?.urgency">
+            <div class="ticket-result-therapy">
+              <div class="description">
+                Dringlichkeit:<br>
+                Therapie:
+              </div>
+              <div class="recommendations">
+                <span>{{ result?.urgency }}</span><br>
+                <span>{{ result?.therapy }}</span>
+              </div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+
+        <div class="ticket-result-panels">
+
+          <ion-card *ngIf="result?.initial && result?.initial.visibility" class="is-emergency">
+            <ion-card-content>
+              <h4>
+                {{ result?.initial?.header }}
+              </h4>
+              <ul *ngIf="result?.initial?.type === 'list'" class="ticket-result-help">
+                <li *ngFor="let item of result?.initial?.body">{{ item }}</li>
+              </ul>
+              <ng-container *ngIf="result?.initial?.type === 'par'">
+                <p>{{ result?.initial?.body }}</p>
+              </ng-container>
+            </ion-card-content>
+          </ion-card>
+
+          <mat-expansion-panel *ngIf="result?.image">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{ result?.image?.header }}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <img [src]="result?.image?.link" alt="">
+          </mat-expansion-panel>
+
+          <ion-card *ngIf="result?.datesHeadline">
+            <ion-card-content>
+              <div class="vaccination-date">
+                <div class="vaccination-date-label">
+                  {{ result?.datesHeadline }}
+                </div>
+                <div>Foo</div>
+              </div>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card *ngIf="result?.findings && result?.findings.visibility" class="is-emergency">
+            <ion-card-content>
+              <h4>
+                {{ result?.findings?.header }}
+              </h4>
+
+              <div class="findings-text" *ngIf="result?.findings.body.text">
+                <p *ngFor="let el of result?.findings.body.text">{{ el }}</p>
+              </div>
+
+              <ul class="ticket-result-params-array" *ngIf="result?.findings?.body?.param">
+
+                <li class="" *ngFor="let element of result?.findings?.body?.param; let i = index">
+                  <div class="ticket-result-param-header">
+                    <div class="image" *ngIf="element?.image">
+                      <img [src]="element?.image" alt="" width="20">
+                    </div>
+                    <h4 class="title" *ngIf="element?.titel">
+                      {{ element?.titel }}
+                    </h4>
+                    <div (click)="openIngredientsList(i)" *ngIf="element.expandable" class="chevrons">
+                      <ion-icon *ngIf="!listOpen[i].val" name="chevron-down-outline"></ion-icon>
+                      <ion-icon *ngIf="listOpen[i].val" name="chevron-up-outline"></ion-icon>
+                    </div>
+                  </div>
+
+                  <div *ngIf="element?.body && listOpen[i].val" class="text-blocks">
+                    <p *ngFor="let p of element?.body">{{ p }}</p>
+                  </div>
+
+                  <ng-container *ngIf="element.list">
+                    <ul class="ticket-result-param-list" *ngFor="let item of element.list, let i = index">
+                      <li>
+                        <div class="header">
+                          <div class="image">
+                            <img [src]="item.image" alt="" width="20">
+                          </div>
+                          <div class="text">{{ item.label }}</div>
+                          <div *ngIf="item.value" class="values">
+                            <span *ngIf="item.value?.valA">{{ item.value.valA }} </span>
+                            <span *ngIf="item.unit">{{ item.unit }}</span>
+                            <span class="valB" *ngIf="item.value?.valB"> {{ item.value.valB }} </span>
+                          </div>
+                          <div (click)="openIngredientsList(i)" *ngIf="item.expandable" class="chevrons">
+                            <ion-icon *ngIf="!listOpen[i].val" name="chevron-down-outline"></ion-icon>
+                            <ion-icon *ngIf="listOpen[i].val" name="chevron-up-outline"></ion-icon>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </ng-container>
+                  <ng-container *ngIf="result?.findings?.body?.legend">
+                    <p *ngFor="let p of result?.findings?.body?.legend"
+                       class="param-legend">{{ p }}
+                    </p>
+                  </ng-container>
+                </li>
+
+              </ul>
+
+<!--              <ng-container *ngIf="result?.findings?.body?.param">-->
+<!--                <h4 class="ticket-result-param-title">{{ result?.findings.body.param.titel }}</h4>-->
+<!--                <ul class="ticket-result-param-list">-->
+<!--                  <li *ngFor="let item of result?.findings?.body?.param?.list, let i = index">-->
+
+<!--                    <div class="header">-->
+<!--                      <div class="image">-->
+<!--                        <img [src]="item.image" alt="" width="20">-->
+<!--                      </div>-->
+<!--                      <div class="text">{{ item.label }}</div>-->
+
+<!--                      <div class="values" *ngIf="item.value">-->
+<!--                      <span *ngIf="item.value?.valA">-->
+<!--                        {{ item.value.valA }}-->
+<!--                      </span>-->
+<!--                        <span *ngIf="item.value?.valB">-->
+<!--                        {{ item.value.valB.toFixed(2) }}-->
+<!--                      </span>-->
+<!--                        <span *ngIf="item.unit">-->
+<!--                        {{ item.unit }}-->
+<!--                      </span>-->
+<!--                      </div>-->
+
+<!--                      <div class="chevrons" *ngIf="item.expandable" (click)="openIngredientsList(i)">-->
+<!--                        <ion-icon *ngIf="!listOpen[i].val" name="chevron-down-outline"></ion-icon>-->
+<!--                        <ion-icon *ngIf="listOpen[i].val" name="chevron-up-outline"></ion-icon>-->
+<!--                      </div>-->
+
+<!--                    </div>-->
+
+<!--                    <div class="text-blocks" *ngIf="item.textblocks && listOpen[i].val">-->
+<!--                      <p *ngFor="let p of item.textblocks">{{ p }}</p>-->
+<!--                    </div>-->
+
+<!--                    <ul class="ingredients" *ngIf="item.ingredients && listOpen[i].val">-->
+<!--                      <li *ngFor="let ingredient of item.ingredients">-->
+<!--                        <div class="ingredient-name">{{ ingredient.name }}</div>-->
+<!--                        <div class="ingredient-val">{{ ingredient.val }}</div>-->
+<!--                        <div class="ingredient-text">{{ ingredient.text }}</div>-->
+<!--                      </li>-->
+<!--                    </ul>-->
+<!--                  </li>-->
+<!--                </ul>-->
+
+<!--                <p class="param-legend"-->
+<!--                   *ngIf="result?.findings?.body?.legend">{{ result?.findings?.body?.legend }}-->
+<!--                </p>-->
+<!--              </ng-container>-->
+
+              <ng-container *ngIf="result?.findings?.body?.answers">
+                <div *ngFor="let item of result?.findings.body.answers" class="findings-list">
+                  <ng-container
+                    *ngIf="item.questionType.toLowerCase() !== 'i' && item.questionType.toLowerCase() !==
+                'z' && item.questionType.toLowerCase() !== 'vi'">
+                    <div class="question">{{ item.questionText }}</div>
+                    <div class="answer">{{ item.values?.answer?.answerLongtext[0] }}</div>
+                  </ng-container>
+                </div>
+              </ng-container>
+
+            </ion-card-content>
+          </ion-card>
+
+          <mat-expansion-panel *ngIf="result?.findings && !result?.findings.visibility">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{ result?.findings.header }}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <div class="findings-text" *ngIf="result?.findings.body?.text">
+              <p *ngFor="let el of result?.findings.body.text">{{ el }}</p>
+            </div>
+
+            <ng-container *ngIf="result?.findings.body?.param">
+              <h4 class="ticket-result-param-title">{{ result?.findings.body.param.titel }}</h4>
+              <ul class="ticket-result-param-list">
+                <li *ngFor="let item of result?.findings.body.param.list">
+                  <div class="image">
+                    <img [src]="item.image" alt="" width="20">
+                  </div>
+                  <div class="text">{{ item.label }}</div>
+                  <div class="values">
+                    <ng-container *ngIf="item.value?.valA">
+                      {{ item.value.valA }} <br>
+                    </ng-container>
+                    <ng-container *ngIf="item.value?.valB">
+                      {{ item.value.valB.toFixed(2) }} {{ item.unit }}
+                    </ng-container>
+                  </div>
+                </li>
+              </ul>
+              <p class="param-legend"
+                 *ngIf="result?.findings?.body?.legend">{{ result?.findings.body.legend }}</p>
+            </ng-container>
+
+            <ng-container *ngIf="result?.findings?.body?.answers">
+              <div *ngFor="let item of result?.findings.body.answers" class="findings-list">
+                <ng-container *ngIf="item.questionType.toLowerCase() !== 'i' && item.questionType.toLowerCase() !==
+                'z'">
+                  <div class="question">{{ item.questionText }}</div>
+                  <div class="answer">{{ item.values.answer?.answerLongtext[0] }}</div>
+                </ng-container>
+              </div>
+            </ng-container>
+
+          </mat-expansion-panel>
+
+          <mat-expansion-panel *ngIf="result?.textA1 && !result?.textA1.visibility">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{ result?.textA1.header }}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <ul *ngIf="result?.textA1.type === 'list'" class="ticket-result-help">
+              <li *ngFor="let item of result?.textA1?.body">{{ item }}</li>
+            </ul>
+            <ng-container *ngIf="result?.textA1.type === 'par'">
+              <p class="text-body" *ngFor="let el of result?.textA1?.body">{{ el }}</p>
+            </ng-container>
+
+            <ng-container *ngIf="result?.textA1.type === 'table'">
+              <ul class="text-table">
+                <li *ngFor="let el of result?.textA1?.body">
+                  <span>{{ el.label }}</span>
+                  <span>{{ el.value }}</span>
+                </li>
+              </ul>
+            </ng-container>
+
+            <ng-container *ngIf="result?.textA1.type === 'keys'">
+              <div *ngFor="let item of result?.textA1?.body">
+                <h4 class="sub-headline" *ngIf="item?.textblockHeadline">
+                  {{ item.textblockHeadline }}
+                </h4>
+                <p class="text-body" *ngIf="item?.textblockText">
+                  {{ item?.textblockText }}
+                </p>
+                <ul  *ngIf="item?.textblockList" class="ticket-result-help">
+                  <li *ngFor="let listEl of item?.textblockList">{{ listEl }}</li>
+                </ul>
+              </div>
+            </ng-container>
+          </mat-expansion-panel>
+
+          <ion-card *ngIf="result?.textA1 && result?.textA1.visibility" class="is-emergency">
+            <ion-card-content>
+              <h4>
+                {{ result?.textA1.header }}
+              </h4>
+              <ul  *ngIf="result?.textA1.type === 'list'" class="ticket-result-help">
+                <li *ngFor="let item of result?.textA1?.body">{{ item }}</li>
+              </ul>
+              <ng-container *ngIf="result?.textA1.type === 'par'">
+                <p class="text-body" *ngFor="let el of result?.textA1.body">{{ el }}</p>
+              </ng-container>
+              <ng-container *ngIf="result?.textA1.type === 'table'">
+                <ul class="text-table">
+                  <li *ngFor="let el of result?.textA1?.body">
+                    <span>{{ el.label }}</span>
+                    <span>{{ el.value }}</span>
+                  </li>
+                </ul>
+              </ng-container>
+              <ng-container *ngIf="result?.textA1.type === 'keys'">
+                <div *ngFor="let item of result?.textA1?.body">
+                  <h4 class="sub-headline" *ngIf="item?.textblockHeadline">
+                    {{ item.textblockHeadline }}
+                  </h4>
+                  <p class="text-body" *ngIf="item?.textblockText">
+                    {{ item?.textblockText }}
+                  </p>
+                  <ul  *ngIf="item?.textblockList" class="ticket-result-help">
+                    <li *ngFor="let listEl of item?.textblockList">{{ listEl }}</li>
+                  </ul>
+                </div>
+              </ng-container>
+            </ion-card-content>
+          </ion-card>
+
+          <mat-expansion-panel *ngIf="result?.textA2 && !result?.textA2.visibility">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{ result?.textA2.header }}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <ul *ngIf="result?.textA2.type === 'list'" class="ticket-result-help">
+              <li *ngFor="let item of result?.textA2?.body">{{ item }}</li>
+            </ul>
+            <ng-container *ngIf="result?.textA2.type === 'par'">
+              <p class="text-body" *ngFor="let el of result?.textA2?.body">{{ el }}</p>
+            </ng-container>
+            <ng-container *ngIf="result?.textA2.type === 'table'">
+              <ul class="text-table">
+                <li *ngFor="let el of result?.textA2?.body">
+                  <span>{{ el.label }}</span>
+                  <span>{{ el.value }}</span>
+                </li>
+              </ul>
+            </ng-container>
+            <ng-container *ngIf="result?.textA2.type === 'keys'">
+              <div *ngFor="let item of result?.textA2?.body">
+                <h4 class="sub-headline" *ngIf="item?.textblockHeadline">
+                  {{ item.textblockHeadline }}
+                </h4>
+                <p class="text-body" *ngIf="item?.textblockText">
+                  {{ item?.textblockText }}
+                </p>
+                <ul  *ngIf="item?.textblockList" class="ticket-result-help">
+                  <li *ngFor="let listEl of item?.textblockList">{{ listEl }}</li>
+                </ul>
+              </div>
+            </ng-container>
+          </mat-expansion-panel>
+
+          <ion-card *ngIf="result?.textA2 && result?.textA2.visibility" class="is-emergency">
+            <ion-card-content>
+              <h4>
+                {{ result?.textA2.header }}
+              </h4>
+              <ul  *ngIf="result?.textA2.type === 'list'" class="ticket-result-help">
+                <li *ngFor="let item of result?.textA2?.body">{{ item }}</li>
+              </ul>
+              <ng-container *ngIf="result?.textA2.type === 'par'">
+                <p class="text-body" *ngFor="let el of result?.textA2?.body">{{ el }}</p>
+              </ng-container>
+              <ng-container *ngIf="result?.textA2.type === 'table'">
+                <ul class="text-table">
+                  <li *ngFor="let el of result?.textA2?.body">
+                    <span>{{ el.label }}</span>
+                    <span>{{ el.value }}</span>
+                  </li>
+                </ul>
+              </ng-container>
+              <ng-container *ngIf="result?.textA2.type === 'keys'">
+                <div *ngFor="let item of result?.textA2?.body">
+                  <h4 class="sub-headline" *ngIf="item?.textblockHeadline">
+                    {{ item.textblockHeadline }}
+                  </h4>
+                  <p class="text-body" *ngIf="item?.textblockText">
+                    {{ item?.textblockText }}
+                  </p>
+                  <ul  *ngIf="item?.textblockList" class="ticket-result-help">
+                    <li *ngFor="let listEl of item?.textblockList">{{ listEl }}</li>
+                  </ul>
+                </div>
+              </ng-container>
+            </ion-card-content>
+          </ion-card>
+
+          <mat-expansion-panel *ngIf="result?.textA3 && !result?.textA3.visibility">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{ result?.textA3.header }}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <ul *ngIf="result?.textA3.type === 'list'" class="ticket-result-help">
+              <li *ngFor="let item of result?.textA3?.body">{{ item }}</li>
+            </ul>
+            <ng-container *ngIf="result?.textA3.type === 'par'">
+              <p class="text-body" *ngFor="let el of result?.textA3.body">{{ el }}</p>
+            </ng-container>
+            <ng-container *ngIf="result?.textA3.type === 'table'">
+              <ul class="text-table">
+                <li *ngFor="let el of result?.textA3?.body">
+                  <span>{{ el.label }}</span>
+                  <span>{{ el.value }}</span>
+                </li>
+              </ul>
+            </ng-container>
+            <ng-container *ngIf="result?.textA3.type === 'keys'">
+              <div *ngFor="let item of result?.textA3.body">
+                <h4 class="sub-headline" *ngIf="item?.textblockHeadline">
+                  {{ item.textblockHeadline }}
+                </h4>
+                <p class="text-body" *ngIf="item?.textblockText">
+                  {{ item?.textblockText }}
+                </p>
+                <ul  *ngIf="item?.textblockList" class="ticket-result-help">
+                  <li *ngFor="let listEl of item?.textblockList">{{ listEl }}</li>
+                </ul>
+              </div>
+            </ng-container>
+          </mat-expansion-panel>
+
+          <ion-card *ngIf="result?.textA3 && result?.textA3.visibility" class="is-emergency">
+            <ion-card-content>
+              <h4>
+                {{ result?.textA3.header }}
+              </h4>
+              <ul  *ngIf="result?.textA3.type === 'list'" class="ticket-result-help">
+                <li *ngFor="let item of result?.textA3?.body">{{ item }}</li>
+              </ul>
+
+              <ng-container *ngIf="result?.textA3.type === 'par'">
+                <p class="text-body" *ngFor="let el of result?.textA3.body">{{ el }}</p>
+              </ng-container>
+              <ng-container *ngIf="result?.textA3.type === 'table'">
+                <ul class="text-table">
+                  <li *ngFor="let el of result?.textA3?.body">
+                    <span>{{ el.label }}</span>
+                    <span>{{ el.value }}</span>
+                  </li>
+                </ul>
+              </ng-container>
+              <ng-container *ngIf="result?.textA3.type === 'keys'">
+                <div *ngFor="let item of result?.textA3?.body">
+                  <h4 class="sub-headline" *ngIf="item?.textblockHeadline">
+                    {{ item.textblockHeadline }}
+                  </h4>
+                  <p class="text-body" *ngIf="item?.textblockText">
+                    {{ item?.textblockText }}
+                  </p>
+                  <ul  *ngIf="item?.textblockList" class="ticket-result-help">
+                    <li *ngFor="let listEl of item?.textblockList">{{ listEl }}</li>
+                  </ul>
+                </div>
+              </ng-container>
+
+            </ion-card-content>
+          </ion-card>
+
+          <mat-expansion-panel *ngIf="result?.textA4 && !result?.textA4.visibility">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{ result?.textA4.header }}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <ul *ngIf="result?.textA4?.type === 'list'" class="ticket-result-help">
+              <li *ngFor="let item of result?.textA4?.body">{{ item }}</li>
+            </ul>
+            <ng-container *ngIf="result?.textA4.type === 'par'">
+              <p class="text-body" *ngFor="let el of result?.textA4?.body">{{ el }}</p>
+            </ng-container>
+            <ng-container *ngIf="result?.textA4.type === 'table'">
+              <ul class="text-table">
+                <li *ngFor="let el of result?.textA4?.body">
+                  <span>{{ el.label }}</span>
+                  <span>{{ el.value }}</span>
+                </li>
+              </ul>
+            </ng-container>
+            <ng-container *ngIf="result?.textA4.type === 'keys'">
+              <div *ngFor="let item of result?.textA3.body">
+                <h4 class="sub-headline" *ngIf="item?.textblockHeadline">
+                  {{ item.textblockHeadline }}
+                </h4>
+                <p class="text-body" *ngIf="item?.textblockText">
+                  {{ item?.textblockText }}
+                </p>
+                <ul  *ngIf="item?.textblockList" class="ticket-result-help">
+                  <li *ngFor="let listEl of item?.textblockList">{{ listEl }}</li>
+                </ul>
+              </div>
+            </ng-container>
+          </mat-expansion-panel>
+
+          <ion-card *ngIf="result?.textA4 && result?.textA4.visibility" class="is-emergency">
+            <ion-card-content>
+              <h4>
+                {{ result?.textA4.header }}
+              </h4>
+              <ul  *ngIf="result?.textA4.type === 'list'" class="ticket-result-help">
+                <li *ngFor="let item of result?.textA4?.body">{{ item }}</li>
+              </ul>
+              <ng-container *ngIf="result?.textA4.type === 'par'">
+                <p class="text-body" *ngFor="let el of result?.textA4?.body">{{ el }}</p>
+              </ng-container>
+              <ng-container *ngIf="result?.textA4.type === 'table'">
+                <ul class="text-table">
+                  <li *ngFor="let el of result?.textA4?.body">
+                    <span>{{ el.label }}</span>
+                    <span>{{ el.value }}</span>
+                  </li>
+                </ul>
+              </ng-container>
+              <ng-container *ngIf="result?.textA4.type === 'keys'">
+                <div *ngFor="let item of result?.textA4?.body">
+                  <h4 class="sub-headline" *ngIf="item?.textblockHeadline">
+                    {{ item.textblockHeadline }}
+                  </h4>
+                  <p class="text-body" *ngIf="item?.textblockText">
+                    {{ item?.textblockText }}
+                  </p>
+                  <ul  *ngIf="item?.textblockList" class="ticket-result-help">
+                    <li *ngFor="let listEl of item?.textblockList">{{ listEl }}</li>
+                  </ul>
+                </div>
+              </ng-container>
+            </ion-card-content>
+          </ion-card>
+
+          <mat-expansion-panel *ngIf="result?.textA5 && !result?.textA5.visibility">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{ result?.textA5.header }}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <ul *ngIf="result?.textA5.type === 'list'" class="ticket-result-help">
+              <li *ngFor="let item of result?.textA5?.body">{{ item }}</li>
+            </ul>
+            <ng-container *ngIf="result?.textA5.type === 'par'">
+              <p class="text-body" *ngFor="let el of result?.textA5?.body">{{ el }}</p>
+            </ng-container>
+            <ng-container *ngIf="result?.textA5.type === 'table'">
+              <ul class="text-table">
+                <li *ngFor="let el of result?.textA5?.body">
+                  <span>{{ el.label }}</span>
+                  <span>{{ el.value }}</span>
+                </li>
+              </ul>
+            </ng-container>
+            <ng-container *ngIf="result?.textA5.type === 'keys'">
+              <div *ngFor="let item of result?.textA5?.body">
+                <h4 class="sub-headline" *ngIf="item?.textblockHeadline">
+                  {{ item.textblockHeadline }}
+                </h4>
+                <p class="text-body" *ngIf="item?.textblockText">
+                  {{ item?.textblockText }}
+                </p>
+                <ul  *ngIf="item?.textblockList" class="ticket-result-help">
+                  <li *ngFor="let listEl of item?.textblockList">{{ listEl }}</li>
+                </ul>
+              </div>
+            </ng-container>
+          </mat-expansion-panel>
+
+          <ion-card *ngIf="result?.textA5 && result?.textA5.visibility" class="is-emergency">
+            <ion-card-content>
+              <h4>
+                {{ result?.textA5.header }}
+              </h4>
+              <ul  *ngIf="result?.textA5.type === 'list'" class="ticket-result-help">
+                <li *ngFor="let item of result?.textA5?.body">{{ item }}</li>
+              </ul>
+              <ng-container *ngIf="result?.textA5.type === 'par'">
+                <p class="text-body" *ngFor="let el of result?.textA5?.body">{{ el }}</p>
+              </ng-container>
+              <ng-container *ngIf="result?.textA5.type === 'table'">
+                <ul class="text-table">
+                  <li *ngFor="let el of result?.textA5?.body">
+                    <span>{{ el.label }}</span>
+                    <span>{{ el.value }}</span>
+                  </li>
+                </ul>
+              </ng-container>
+              <ng-container *ngIf="result?.textA5.type === 'keys'">
+                <div *ngFor="let item of result?.textA5?.body">
+                  <h4 class="sub-headline" *ngIf="item?.textblockHeadline">
+                    {{ item.textblockHeadline }}
+                  </h4>
+                  <p class="text-body" *ngIf="item?.textblockText">
+                    {{ item?.textblockText }}
+                  </p>
+                  <ul  *ngIf="item?.textblockList" class="ticket-result-help">
+                    <li *ngFor="let listEl of item?.textblockList">{{ listEl }}</li>
+                  </ul>
+                </div>
+              </ng-container>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card *ngIf="result?.nextDate" class="is-emergency">
+            <ion-card-content>
+              <p>{{ result?.nextDate }}</p>
+            </ion-card-content>
+          </ion-card>
+        </div>
+        <ng-container *ngIf="result?.products && result?.products.length > 0">
+          <app-products-container [products]="result?.products"></app-products-container>
+        </ng-container>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <app-toolbar-footer [user]="user"></app-toolbar-footer>
+</ion-footer>

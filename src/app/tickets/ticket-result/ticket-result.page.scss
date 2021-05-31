@@ -1,0 +1,384 @@
+.ticket-result {
+
+  &-header {
+    display: flex;
+    align-items: center;
+    //padding: 32px 32px 16px;
+    padding-left: 32px;
+    padding-top: 10px;
+    margin: -16px -16px 0;
+    height: 120px;
+    //background: url('../../../assets/icons/tickets/result/televet_neu.svg');
+
+    &-image {
+      height: 75px;
+      max-height: 100%;
+      width: 75px;
+    }
+
+    &-description h3 {
+      //color: rgb(102, 102, 102);
+      font-size: 17px;
+      line-height: 24px;
+      margin: 0;
+      padding-left: 16px;
+    }
+  }
+
+  &-therapy {
+    display: flex;
+    font-size: 13px;
+    flex-direction: row;
+
+    .description {
+      font-weight: 700;
+      margin-right: 15px;
+    }
+  }
+
+  &-question {
+    color: rgb(102, 102, 102);
+
+    &-text {
+      font-size: 13px;
+      font-weight: bold;
+      line-height: 20px;
+      margin: 0 0 8px;
+    }
+
+    &-answer {
+      font-size: 13px;
+      margin: 0 0 18px;
+    }
+  }
+
+  &-emergency {
+    &-answer {
+      font-size: 15px;
+      margin: 0 0 12px;
+    }
+  }
+
+  &-reasons {
+    font-size: 15px;
+  }
+
+  &-param-title {
+    font-weight: normal;
+    font-size: 13px;
+  }
+
+  &-param-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .image {
+      padding-right: 16px;
+    }
+
+    .title {
+      //font-weight: normal;
+      font-size: 13px;
+      flex-grow: 2;
+      height: 26px;
+      line-height: 22px;
+      margin-bottom: 0;
+    }
+  }
+
+  &-params-array {
+    list-style: none;
+    margin: 24px 0 0;
+    padding: 0;
+
+    li {
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #d6d6d6;
+    }
+
+    li:last-of-type {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  &-param-list {
+    list-style: none;
+    margin: 24px 0 0;
+    padding: 0;
+
+    li {
+      font-size: 13px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #d6d6d6;
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .image {
+        padding-right: 16px;
+      }
+
+      .text {
+        flex-grow: 2;
+        height: 22px;
+        line-height: 22px;
+      }
+
+      .text-blocks {
+        margin-top: 16px;
+
+        p {
+          margin-bottom: 6px;
+        }
+      }
+
+      .ingredients {
+        list-style: none;
+        margin-top: 16px;
+        padding: 0;
+
+        li {
+          border: none;
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 8px;
+          padding-bottom: 0;
+        }
+      }
+
+      .ingredient-name, .ingredient-text {
+        font-weight: 500;
+      }
+
+      .ingredient-name {
+        width: 55%;
+      }
+
+      .ingredient-val {
+        width: 25%;
+      }
+
+      .ingredient-text {
+        color: var(--ion-color-danger);
+        text-align: right;
+        width: 20%;
+      }
+
+      .values {}
+    }
+  }
+
+  &-help {
+    color: rgb(102, 102, 102);
+    font-size: 13px;
+    list-style: disc;
+    margin-left: 16px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+
+    li {
+      margin-bottom: 6px;
+    }
+  }
+
+  &-help-headline {
+    color: rgb(102, 102, 102);
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  &-help-text {
+    color: rgb(102, 102, 102);
+    margin-top: 0;
+  }
+
+  &-needs {
+    margin-bottom: 6px;
+    margin-top: 20px;
+
+    &.emergency {
+      color: rgb(102,102,102);
+      font-weight: bold;
+    }
+  }
+}
+
+.vaccination-date {
+  display: flex;
+  font-size: 13px;
+  justify-content: space-between;
+
+  &-label {
+    font-weight: 700;
+  }
+}
+
+.ticket-order {
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+
+    img {
+      height: 21px;
+      width: 21px;
+    }
+  }
+  &-title {
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  &-description {
+    font-size: 13px;
+    margin-bottom: 32px;
+  }
+
+  &-products {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      border-bottom: 1px solid #d6d6d6;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+    }
+  }
+
+  &-buttons {
+    margin-top: 20px;
+  }
+
+  &-text {
+    margin: 12px 0;
+    text-align: center;
+  }
+}
+
+h4 {
+  color: rgb(102,102,102);
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.textblock-text {
+  color: rgb(102,102,102);
+}
+
+.expansions-panels {
+  margin-bottom: 8px;
+}
+
+.text-body {
+  margin-bottom: 8px;
+}
+
+.text-table {
+  margin-bottom: 0px;
+  list-style: none;
+  padding: 0;
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+}
+
+.findings-list {
+  color: rgb(102,102,102);
+  font-size: 13px;
+
+  .question {
+    font-weight: bold;
+  }
+
+  .answer {
+    margin-top: 8px;
+    margin-bottom: 16px;
+
+    &.last {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.findings-text {
+
+  margin: 16px 0;
+
+  p {
+    margin: 0;
+  }
+}
+
+.param-legend {
+  font-size: 11px;
+  font-style: italic;
+  color: #999;
+  //margin-bottom: 16px;
+  //margin-top: 16px;
+  //padding-bottom: 12px;
+  //border-bottom: 1px solid #d6d6d6;
+}
+
+
+//.valB {
+//  padding-left: 12px;
+//}
+
+ion-card {
+  font-size: 13px;
+  line-height: 20px;
+  margin: 0 0 8px;
+}
+
+ion-card-content {
+  h4 {
+    margin-top: 0;
+  }
+
+  .sub-headline {
+    margin-top: 16px;
+  }
+
+  p {
+    font-size: 13px;
+  }
+}
+
+ion-card-content {
+  padding: 20px;
+}
+
+ion-checkbox {
+  --size: 17px;
+}
+
+mat-expansion-panel {
+  margin-bottom: 8px;
+}
+
+.mat-expansion-panel-header-title {
+  color: rgb(102,102,102);
+  font-size: 13px;
+  font-weight: 700;
+}

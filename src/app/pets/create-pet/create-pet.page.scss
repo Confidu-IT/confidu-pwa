@@ -1,0 +1,119 @@
+input[type='file'] {
+  display: none;
+}
+
+.image-container, .spinner {
+  display: flex;
+  height: 90px;
+  justify-content: center;
+  margin-top: 20px;
+
+}
+
+.pet-images {
+  position: relative;
+  width: 90px;
+}
+
+.cam-icon {
+  right: 0;
+  top: 64px;
+  position: absolute;
+}
+
+.image {
+  border-radius: 99px;
+  //height: 90px;
+}
+
+.pet-image {
+  width: 90px;
+}
+
+.fixed-breed {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+
+.breed-label {
+  color: var(--ion-color-medium);
+}
+
+.breed-name {
+  margin-top: 8px;
+  font-size: 17px;
+}
+
+.breed-list {
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+ion-card {
+  margin: 16px 0 0;
+}
+
+ion-card-content {
+  padding-top: 12px;
+}
+
+ion-item:last-of-type {
+  margin-bottom: 25px;
+}
+
+textarea {
+  resize: unset !important;
+  &.ng-pristine {
+    height: 26px !important;
+  }
+}
+
+//::ng-deep .mat-form-field-underline {
+//  display: none !important;
+//}
+//
+//::ng-deep .mat-form-field-wrapper {
+//  padding-bottom: 0 !important;
+//  padding-top: 20px !important;
+//}
+//
+//::ng-deep .mat-form-field-label {
+//  caret-color: var(--ion-color-medium) !important;
+//  color: var(--ion-color-medium) !important;
+//  font-size: 17px !important;
+//}
+
+::ng-deep .sc-ion-picker-md {
+  .picker-prefix, .picker-suffix, .picker-opt.picker-opt-selected {
+    color: var(--ion-color-secondary) !important;
+  }
+}
+
+::ng-deep .alert-radio-inner.sc-ion-alert-md {
+  background-color: var(--ion-color-secondary);
+}
+
+::ng-deep [aria-checked=true].sc-ion-alert-md .alert-radio-icon.sc-ion-alert-md {
+  border-color: var(--ion-color-secondary);
+}
+
+::ng-deep ion-item {
+  --highlight-color-valid: var(--ion-color-secondary); // valid underline color
+}
+
+ion-select {
+  padding-bottom: 12px;
+}
+
+ion-item {
+  --background: #fff;
+  margin-left: -16px;
+}
+
+ion-button {
+  margin-left: 0;
+  margin-right: 0;
+}

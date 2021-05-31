@@ -1,0 +1,38 @@
+ion-card {
+  margin: 0;
+}
+
+h2 {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+li {
+  margin-top: 16px;
+}
+
+ul {
+  font-size: 14px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.infos {
+  display: flex;
+  margin: 16px 0;
+}
+
+.info-image {
+  width: 50px;
+
+  img {
+    display: block;
+    height: 27px;
+    min-width: 33px;
+  }
+}
+
+.info-text {
+  padding-left: 16px;
+}

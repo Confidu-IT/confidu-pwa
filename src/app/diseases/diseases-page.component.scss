@@ -1,0 +1,167 @@
+ion-card {
+  margin: 0;
+}
+
+ion-item {
+  margin-left: -16px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.disease-card {
+  margin: 20px 0 32px;
+}
+
+.add-button {
+  margin-top: 32px;
+}
+
+h2, h3 {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+h2, h3 {
+  margin: 0;
+}
+
+ul {
+  font-size: 14px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    margin-top: 8px;
+  }
+
+  .annotation {
+    font-size: 13px;
+  }
+}
+
+.header {
+  color: rgb(102,102,102);
+  margin: 8px 16px;
+
+  h2 {
+    margin: 0 0 6px;
+    font-size: 16px;
+  }
+
+  p {
+    font-size: 15px;
+    margin: 0;
+  }
+}
+
+.infos {
+  color: rgb(102,102,102);
+  display: flex;
+  margin: 16px;
+
+  h3 {
+    margin: 0 0 10px;
+  }
+}
+
+.info-image {
+  width: 50px;
+
+  img {
+    display: block;
+    height: 27px;
+    min-width: 33px;
+  }
+}
+
+.info-text {
+  padding-left: 16px;
+}
+
+.disease-dates {
+  display: flex;
+  margin-top: -16px;
+
+  ion-item {
+    flex-grow: 1;
+  }
+
+  ion-label {
+    color: #888 !important;
+    font-size: 15px !important;
+  }
+}
+
+.not-cured {
+  color: rgb(102,102,102);
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.med-findings {
+  margin-top: 32px;
+
+  h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  p {
+    margin: 0 0 16px;
+  }
+
+  .link {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .findings {
+    margin-top: 32px;
+  }
+}
+
+.disorder {
+  margin: 32px;
+
+  &-list {
+    color: rgb(102,102,102);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    h3 {
+      margin-bottom: 6px;
+    }
+  }
+
+  &-icon {
+    padding-right: 24px;
+  }
+
+  &-text {
+    flex-grow: 2;
+  }
+
+  &-link {}
+}
+
+

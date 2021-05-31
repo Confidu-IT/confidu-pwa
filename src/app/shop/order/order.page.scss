@@ -1,0 +1,126 @@
+h2 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+.article {
+  border-bottom: 1px solid #ccc;
+  color: rgb(102,102,102);
+  margin: 16px 0 32px;
+  padding-bottom: 16px;
+
+  h2 {
+    margin: 0
+  }
+
+  &-image {
+    border: 1px solid var(--ion-color-medium);
+    margin: 0;
+    height: 70px;
+    width: 70px;
+  }
+
+  &-content, &-footer {
+    display: flex;
+  }
+
+  &-footer {
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+
+  &-quantity {
+    font-size: 14px;
+    justify-content: flex-end;
+    text-align: right;
+    align-items: baseline;
+    margin-bottom: 8px;
+  }
+
+  &-details {
+    margin-left: 16px;
+    width: calc(100% - 70px);
+  }
+
+  &-price {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: right;
+  }
+}
+
+.remove-article, .delivery-time {
+  font-size: 13px;
+}
+
+.order, .shipment, .payment, .transaction {
+  color: rgb(102,102,102);
+
+}
+
+.order, .addresses, .payment, .transaction {
+  margin: 0 16px 16px;
+}
+.addresses {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 16px;
+  justify-content: space-between;
+
+  h2 {
+    margin: 0 0 8px;
+  }
+}
+
+.address {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.payment {
+  border-bottom: 1px solid #ccc;
+  font-size: 16px;
+  padding-bottom: 16px;
+}
+
+.transaction {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 14px;
+}
+
+.transaction-text, .transaction-details {
+  span {
+    display: block;
+  }
+
+  line-height: 24px;
+}
+
+.transaction-text {
+  text-align: right;
+  margin-right: 32px;
+}
+
+.delivery {
+  color: var(--ion-color-primary);
+}
+
+.shipment-price {
+  font-weight: bold;
+}
+
+.total-price {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.link {
+  color: var(--ion-color-secondary);
+  display: block;
+  font-size: 14px;
+  padding-top: 6px;
+}
+
+

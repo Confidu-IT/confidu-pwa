@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'CONSULTATION_PAGE.TITLE' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-text-center" *ngIf="isLoading">
+    <ion-spinner color="primary"></ion-spinner>
+  </div>
+
+  <ion-grid *ngIf="!isLoading">
+    <ion-row>
+      <ion-col sizeSm="8" offsetSm="2">
+        <p class="text">{{ 'CONSULTATION_PAGE.TEXT' | translate }}</p>
+        <mat-form-field class="consultation-types">
+          <mat-label>{{ 'CONSULTATION_PAGE.LABEL' | translate }}</mat-label>
+          <mat-select [(ngModel)]="appointmentType">
+            <mat-option *ngFor="let el of appointments" [value]="el.id">
+              {{ el.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <ion-button
+          (click)="onSelectAppointmentType()"
+          [disabled]="!appointmentType"
+          color="secondary"
+          expand="full"
+        >
+          {{ 'CONSULTATION_PAGE.BUTTON' | translate }}
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer *ngIf="!isLoading">
+  <app-toolbar-footer [user]="user"></app-toolbar-footer>
+</ion-footer>

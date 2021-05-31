@@ -1,0 +1,323 @@
+<ion-header>
+  <ion-toolbar *ngIf="!imageZoom">
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        X
+      </ion-button>
+    </ion-buttons>
+    <ion-title> {{ title }}</ion-title>
+  </ion-toolbar>
+
+  <div *ngIf="imageZoom" class="image-toolbar">
+    <div class="close-button" (click)="closeImage()">
+      x
+    </div>
+  </div>
+</ion-header>
+
+<ion-content>
+  <ion-spinner class="ion-text-center" color="primary" *ngIf="isLoading"></ion-spinner>
+  <ion-grid *ngIf="!isLoading" class="disease-modal">
+    <ion-row>
+      <ion-col *ngIf="!imageZoom" sizeSm="8" offsetSm="2">
+
+        <ion-card *ngIf="type === 'med'">
+          <ion-card-content>
+
+            <mat-form-field class="example-full-width">
+              <mat-label>{{ 'DISEASE_MODAL_PAGE.MED.NAME' | translate }}</mat-label>
+              <textarea type="text"
+                     [(ngModel)]="medChoice"
+                     matInput [formControl]="autoCompleteControl" [matAutocomplete]="auto">
+              </textarea>
+              <mat-autocomplete
+                                #auto="matAutocomplete"
+                                (optionSelected)="onPickMed()"
+                                [displayWith]="displayFn">
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                  {{option.name}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+
+            <div class="med-start" *ngIf="showForm">
+              <ion-item>
+                <ion-label position="floating">
+                  {{ 'DISEASE_MODAL_PAGE.MED.STARTDATE' | translate }}
+                </ion-label>
+                <ion-datetime
+                  [cancelText]="cancelText"
+                  [doneText]="okText"
+                  (ionChange)="onMedDateStart($event)"
+                  displayFormat="DD.MM.YYYY"
+                  min="2000-12-31">
+                </ion-datetime>
+              </ion-item>
+            </div>
+
+            <div *ngIf="showForm" class="med-end">
+              <ion-item>
+                <ion-label position="floating">
+                  {{ 'DISEASE_MODAL_PAGE.MED.ENDDATE' | translate }}
+                </ion-label>
+                <ion-datetime
+                  (ionChange)="onMedDateEnd($event)"
+                  [cancelText]="cancelText"
+                  [doneText]="okText"
+                  displayFormat="DD.MM.YYYY"
+                  min="2000-12-31">
+                </ion-datetime>
+              </ion-item>
+            </div>
+
+            <mat-form-field *ngIf="showForm" class="frequenzy">
+              <mat-label>{{ 'DISEASE_MODAL_PAGE.MED.FREQUENCY' | translate }}</mat-label>
+              <mat-select (selectionChange)="onPickFrequency($event)">
+                <mat-option *ngFor="let item of frequency" [value]="item">
+                  {{ item }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <ng-container *ngIf="showForm">
+
+              <div class="dose" *ngFor="let num of numbers(timeAmount); let i = index">
+
+                <div class="date-time">
+                  <ion-item>
+                    <ion-label position="floating">
+                      {{ 'DISEASE_MODAL_PAGE.MED.TIME' | translate }}
+                    </ion-label>
+                    <ion-datetime
+                      [cancelText]="cancelText"
+                      [doneText]="okText"
+                      (ionChange)="onPickMedTime($event, i)"
+                      displayFormat="HH.mm"
+                      min="2000-12-31">
+                    </ion-datetime>
+                  </ion-item>
+                </div>
+
+                <div class="pieces">
+                  <mat-form-field>
+                    <mat-label>{{ 'DISEASE_MODAL_PAGE.MED.PIECE' | translate }}</mat-label>
+                    <mat-select
+                      (selectionChange)="onPickMedAmount($event, 'medPiece', i)">
+                      <mat-option
+                        *ngFor="let item of pieces"
+                        [value]="item">
+                        {{ item }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+
+                <div class="part">
+                  <mat-form-field>
+                    <mat-label>{{ 'DISEASE_MODAL_PAGE.MED.PART' | translate }}</mat-label>
+                    <mat-select
+                      (selectionChange)="onPickMedAmount($event, 'medPart', i)">
+                      <mat-option
+                        *ngFor="let item of parts"
+                        [value]="item">
+                        {{ item }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+
+                <div class="unit">
+                  {{ packUnit }}
+                </div>
+
+              </div>
+            </ng-container>
+
+            <div class="notes" *ngIf="showForm">
+              <ion-item>
+                <ion-label position="floating">{{ 'DISEASE_MODAL_PAGE.MED.NOTES' | translate }}</ion-label>
+                <ion-textarea
+                  [(ngModel)]="medNotes"
+                  auto-grow="true"
+                  maxlength="150"
+                  type="text"></ion-textarea>
+              </ion-item>
+            </div>
+
+            <ion-button class="add-button"
+                        (click)="onAddMedication()"
+                        color="secondary"
+                        expand="full"
+                        [disabled]="!validateMedForm()">
+              {{ 'DISEASE_MODAL_PAGE.MED.BUTTON' | translate }}
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card *ngIf="type === 'doc'" class="doc-card">
+          <ion-card-content>
+            <div class="dose">
+
+              <div class="body-regions">
+                <mat-form-field>
+                  <mat-label>{{ 'DISEASE_MODAL_PAGE.DOC.TYPES.LABEL' | translate }}</mat-label>
+                  <mat-select (selectionChange)="onPickDocType($event)" [(ngModel)]="docType">
+                    <mat-option
+                      *ngFor="let region of regions"
+                      [value]="region.value">
+                      {{ region.label }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+
+              <div class="date">
+                <ion-item>
+                  <ion-label position="floating">
+                    {{ 'DISEASE_MODAL_PAGE.DOC.DATE' | translate }}
+                  </ion-label>
+                  <ion-datetime
+                    (ionChange)="onPickDocDate($event)"
+                    [(ngModel)]="docDate"
+                    [cancelText]="cancelText"
+                    [doneText]="okText"
+                    displayFormat="DD.MM.YYYY"
+                    min="2000-12-31">
+                  </ion-datetime>
+                </ion-item>
+              </div>
+            </div>
+
+            <mat-form-field *ngIf="docRegions">
+              <mat-label>{{ 'DISEASE_MODAL_PAGE.DOC.BODY_REGIONS.LABEL' | translate }}</mat-label>
+              <mat-select (selectionChange)="onPickBodyRegion($event)" [(ngModel)]="docRegion">
+                <mat-option
+                  *ngFor="let region of docRegions"
+                  [value]="{name: region.label, value: region.value}">
+                  {{ region.label }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+              <div class="uploaded-images" *ngIf="docRegions">
+                <img
+                  *ngFor="let image of uploadedFiles; let i = index"
+                  (click)="onZoomImage(image, 0, i, 'current')"
+                  [src]="currentDoc.image" alt="" width="40">
+              </div>
+
+              <div class="file-picker" *ngIf="uploadedFiles.length < 3" (click)="showActionSheet()">
+
+                <div class="file-label">
+                  <ion-icon name="cloud-upload-outline"></ion-icon>
+                  {{ 'DISEASE_MODAL_PAGE.DOC.UPLOAD' | translate }}
+                </div>
+              </div>
+
+            <input #filePicker (change)="onFileChosen($event)" type="file" id="file">
+
+              <p *ngIf="sizeWarning" class="img-size-warning">{{ 'TICKET_QUESTION_PAGE.IMAGE_TOO_LARGE' | translate }}</p>
+
+            <ion-button class="add-button"
+                        (click)="onAddDocument()"
+                        color="secondary"
+                        expand="full"
+                        [disabled]="!uploadResponse">
+              {{ 'DISEASE_MODAL_PAGE.MED.BUTTON' | translate }}
+            </ion-button>
+
+          </ion-card-content>
+        </ion-card>
+
+        <ul class="doc-list" *ngIf="type === 'doc' && docs?.length > 0">
+          <li *ngFor="let finding of docs; let i = index">
+            <div class="header" (click)="onDeleteDocument(i)">
+              <h6>
+                <span>{{ finding.name }}</span>
+                {{ 'DISEASE_MODAL_PAGE.DOC.FROM' | translate }} {{ finding.date | date:"dd.MM.yyyy" }}
+              </h6>
+              <div>
+                <ion-icon name="trash-outline"></ion-icon>
+              </div>
+            </div>
+            <div class="body-region">
+              {{ finding.region.name }}
+            </div>
+            <div class="uploaded-images-small">
+              <img
+                *ngFor="let item of finding.docs; let j = index" [src]="finding.image"
+                (click)="onZoomImage(item, i, j, 'list')"
+                alt="" height="24" width="24">
+            </div>
+          </li>
+        </ul>
+
+        <ul class="med-list" *ngIf="type === 'med' && meds?.length > 0">
+          <li *ngFor="let med of meds; let i = index">
+            <div class="med">
+              <div class="med-details">
+
+                <div class="header" (click)="onDeleteMedication(i)">
+                  <h6>{{ med.name }}</h6>
+                  <div>
+                    <ion-icon name="trash-outline"></ion-icon>
+                  </div>
+                </div>
+
+                <ul class="med-amount">
+                  <li *ngFor="let val of med.dose">
+                    {{ val.amount }}
+                    {{ 'DISEASE_MODAL_PAGE.MED.MEDS.AT' | translate }}
+                    {{ val.time | date: 'HH.mm' }} {{ 'DISEASE_MODAL_PAGE.MED.MEDS.TIME' | translate }}
+                  </li>
+                </ul>
+                <p class="treatment">
+                  {{ 'DISEASE_MODAL_PAGE.MED.MEDS.TREATMENT_PERIOD' | translate }}:
+                  {{ med.treatmentPeriod }},
+                  {{ 'DISEASE_MODAL_PAGE.MED.MEDS.FROM' | translate }}
+                  {{ med.startDate | date:"dd.MM.yyyy" }}
+                </p>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+      </ion-col>
+
+      <ion-col *ngIf="imageZoom" sizeSm="0" offsetSm="2">
+        <img *ngIf="isImg" class="zoomed-image" [src]="enlargedImg" alt="">
+        <ng-container *ngIf="isPdf">
+          <pdf-viewer [src]="enlargedPdf"
+                      [original-size]="false"
+          ></pdf-viewer>
+        </ng-container>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeSm="8" offsetSm="2">
+        <div *ngIf="!imageZoom" class="progress-buttons">
+          <ion-button (click)="closeModal()" color="medium" fill="clear" size="small">
+            {{ 'DISEASE_MODAL_PAGE.CANCEL' | translate }}
+          </ion-button>
+          <ion-button (click)="onProgress()"
+                      [disabled]="false"
+                      color="secondary"
+                      fill="clear"
+                      size="small">
+            {{ 'DISEASE_MODAL_PAGE.CONFIRM' | translate }}
+          </ion-button>
+        </div>
+        <div class="image-footer" *ngIf="imageZoom">
+          <div class="del-button" (click)="onRemoveSingleFile()">
+            <ion-icon name="trash-outline"></ion-icon>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

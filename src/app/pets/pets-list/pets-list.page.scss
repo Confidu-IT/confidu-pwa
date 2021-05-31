@@ -1,0 +1,36 @@
+ion-text {
+  align-items: center;
+  color: var(--ion-color-medium);
+  font-size: 14px;
+  display: flex;
+
+  .active {
+    background: var(--ion-color-secondary);
+    border-radius: 99px;
+    height: 6px;
+    margin-left: 6px;
+    width: 6px;
+  }
+}
+
+ion-item-sliding {
+  margin-bottom: 12px;
+}
+
+ion-thumbnail {
+  margin-left: -16px;
+}
+
+.pets-list {
+  margin-top: 16px;
+}
+
+.no-pets {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+ion-thumbnail {
+  --border-radius: 99px;
+}

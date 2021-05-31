@@ -1,0 +1,105 @@
+.intro, .timer, .done, .question {
+  color: rgb(102,102,102);
+  padding: 0 16px;
+  text-align: center;
+}
+
+.intro, .timer, .done {
+  font-size: 15px;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 16px;
+}
+
+p {
+  line-height: 20px;
+  margin: 0 0 40px;
+}
+
+.intro {
+  margin-top: 160px;
+}
+
+.timer {
+  margin-top: 32px;
+
+  .text {
+    line-height: 20px;
+    margin: 0 0 40px;
+  }
+
+  .beats {
+    margin: 32px 0;
+  }
+
+  img {
+    height: 138px;
+    width: 138px;
+  }
+
+  .countdown {
+    font-size: 36px;
+    margin: 0 0 40px;
+  }
+}
+
+.done {
+  margin-top: 32px;
+
+  img {
+    height: 270px;
+  }
+}
+
+.question {
+  margin-top: 32px;
+
+  &-image-container {
+    .image-link {
+      height: 130px;
+    }
+
+    img {
+      display: block;
+      margin: auto;
+    }
+  }
+
+  &-content {
+    //margin-top: 40px;
+    margin-top: 30px;
+  }
+
+  &-text {
+    font-size: 15px;
+    line-height: 24px;
+    text-align: center;
+    padding: 0 16px;
+
+
+    &.text-input {
+      line-height: unset;
+      margin-bottom: 0;
+      min-height: unset;
+    }
+  }
+}
+
+.weight-button {
+  display: flex;
+  justify-content: space-around;
+}
+
+ion-button {
+  --border-radius: 0;
+  --padding-end: 40px;
+  --padding-start: 40px;
+}
+
+mat-form-field {
+  margin: 40px 16px;
+  width: calc(100% - 32px);
+}

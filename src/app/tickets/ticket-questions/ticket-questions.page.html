@@ -1,0 +1,655 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'TICKET_QUESTION_PAGE.QUESTION' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-text-center" *ngIf="isLoading">
+    <ion-spinner color="primary"></ion-spinner>
+  </div>
+  <ion-grid *ngIf="!isLoading" sizeSm="8" offsetSm="2">
+    <ion-row>
+      <ion-col>
+        <div class="question" [ngClass]="{'beats-text': question?.values.questionType.toLowerCase() === 'vi'}">
+
+          <p class="beats-question" *ngIf="question?.values.questionType.toLowerCase() === 'vi'">
+            {{ question?.values.questionsLongText }}
+          </p>
+
+          <div class="question-image-container"
+               [ngClass]="{'is-gif': isGif}"
+               *ngIf="question?.values.questionType.toLowerCase() !== 'c' &&
+               question?.values.questionType.toLowerCase() !== 's'">
+            <img
+              #img
+              class="image-link"
+              (click)="onCollectBeats()"
+              *ngIf="!showVetForm && !countdownDone && question?.values.questionType.toLowerCase() === 'vi'"
+              [ngClass]="{beats: question?.values.questionType.toLowerCase() === 'vi'}"
+              [src]="question?.values.imageLink"  alt="1">
+
+            <img
+              class="image-link"
+              *ngIf="!showVetForm && !countdownDone && question?.values.questionType.toLowerCase() !== 'vi'"
+              [ngClass]="{beats: question?.values.questionType.toLowerCase() === 'vi', 'is-gif': isGif}"
+              [src]="question?.values.imageLink"  alt="2">
+
+<!--            <img-->
+<!--              class="image-link"-->
+<!--              *ngIf="!showVetForm && !countdownDone && question?.values.questionType.toLowerCase() !== 'vi'"-->
+<!--              [src]="foo"  alt="bar">-->
+
+            <img
+              class="image-link"
+              *ngIf="!showVetForm && countdownDone"
+              [ngClass]="{beats: question?.values.questionType.toLowerCase() === 'vi', 'is-gif': isGif}"
+              [src]="question?.values.imageLink"  alt="">
+
+            <img class="image-link" *ngIf="showVetForm" [src]="vetFormImage" alt="">
+
+            <div class="question-info-button"
+                 *ngIf="question?.values.questionInfoText && !showVetForm"
+                 (click)="onOpenInfoModal()">
+              <img [src]="infoButton" alt="" height="24">
+            </div>
+          </div>
+
+
+<!--          <mat-form-field>-->
+<!--            <mat-label>Favorite food</mat-label>-->
+<!--            <mat-select>-->
+<!--              <mat-option *ngFor="let food of foods" [value]="food.value" multiLineOption>-->
+<!--                <h4 mat-line>{{ food.value }}</h4>-->
+<!--                <p mat-line>{{ food.description }}</p>-->
+<!--                <p mat-line>{{ food.foo }}</p>-->
+<!--              </mat-option>-->
+<!--            </mat-select>-->
+<!--          </mat-form-field>-->
+
+          <ng-container *ngIf="question?.values.questionType.toLowerCase() === 'vi'">
+            <div class="beats-amount">{{ beats }} {{ 'TICKET_QUESTION_PAGE.BEATS' | translate }}</div>
+            <div *ngIf="!countdownDone" class="countdown" #countdown>60</div>
+          </ng-container>
+
+
+
+          <ng-container *ngIf="question?.values.questionType.toLowerCase() === 's'">
+            <figure class="range-image">
+              <img [src]="rangeStateImg" width="90" height="78" alt="">
+            </figure>
+            <p class="range-text">{{ question?.values.questionsLongText }}</p>
+            <ion-range min="0" max="100" [step]="question?.values.answerOption.length" color="secondary"
+                       [(ngModel)]="activityVal"
+                       (ionChange)="setActivityState($event)"
+            ></ion-range>
+            <div class="range-answer">
+              <ng-container *ngFor="let p of rangeAnswer; let first = first; let last = last">
+                <p *ngIf="first" class="first">{{ p }}</p>
+                <p *ngIf="last" class="last">{{ p }}</p>
+                <p *ngIf="!first && !last">{{ p }}</p>
+              </ng-container>
+            </div>
+          </ng-container>
+
+          <div class="question-content"
+               *ngIf="question?.values.questionType.toLowerCase() !== 's' &&
+               question?.values.questionType.toLowerCase() !== 'vi'">
+            <p class="question-symptom">{{ params?.symptom }}</p>
+            <p class="question-text slide"
+               *ngIf="!showVetForm"
+               [ngClass]="{'text-input': question?.values.questionType.toLowerCase() === 't'}">
+              {{ question?.values.questionsLongText }}
+            </p>
+
+            <p class="question-text"
+               *ngIf="showVetForm">
+              {{ 'TICKET_QUESTION_PAGE.VET.FORM.HEADER' | translate }}
+            </p>
+
+            <div class="question-form">
+
+              <ng-container *ngIf="question?.values.questionType.toLowerCase() === 'sei'">
+                <mat-form-field class="vaccinations">
+                  <mat-label>{{ 'TICKET_QUESTION_PAGE.PARASITES.LABEL' | translate }}</mat-label>
+                  <mat-select (selectionChange)="onPickParasite($event)">
+                    <mat-option *ngFor="let item of question?.values?.answerOption" [value]="item.value">
+                      {{ item?.answerLongtext[0] }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <div class="date-time current-vacc">
+                  <ion-item>
+                    <ion-label position="floating">
+                      {{ 'TICKET_QUESTION_PAGE.PARASITES.DATE' | translate }}
+                    </ion-label>
+                    <ion-datetime
+                      [cancelText]="cancelText"
+                      [doneText]="okText"
+                      (ionChange)="onPickParasiteTime($event)"
+                      displayFormat="DD.MM.YYYY"
+                      max="2030-12-31">
+                    </ion-datetime>
+                  </ion-item>
+                </div>
+              </ng-container>
+
+              <ng-container *ngIf="question?.values.questionType.toLowerCase() === 'se'">
+                <mat-form-field class="vaccinations">
+                  <mat-label>{{ 'TICKET_QUESTION_PAGE.VACC.SERUM' | translate }}</mat-label>
+                  <mat-select (selectionChange)="onPickVaccine($event)">
+                    <mat-option *ngFor="let item of vaccines" [value]="item.key">
+                      {{ item.vaccine }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+                <div class="date-time current-vacc">
+                  <ion-item>
+                    <ion-label position="floating">
+                      {{ 'TICKET_QUESTION_PAGE.VACC.CURRENT' | translate }}
+                    </ion-label>
+                    <ion-datetime
+                      [cancelText]="cancelText"
+                      [doneText]="okText"
+                      (ionChange)="onPickCurrentVaccTime($event)"
+                      displayFormat="DD.MM.YYYY"
+                      max="2030-12-31">
+                    </ion-datetime>
+                  </ion-item>
+                </div>
+
+                <div class="date-time" *ngIf="currentDateSet">
+                  <ion-item>
+                    <ion-label position="floating">
+                      {{ 'TICKET_QUESTION_PAGE.VACC.NEXT' | translate }}
+                    </ion-label>
+                    <ion-datetime
+                      [cancelText]="cancelText"
+                      [doneText]="okText"
+                      (ionChange)="onPickNextVaccTime($event)"
+                      displayFormat="DD.MM.YYYY"
+                      [min]="vaccination.currentDate"
+                      max="2030-12-31">
+                    </ion-datetime>
+                  </ion-item>
+                </div>
+              </ng-container>
+
+              <ng-container
+                *ngIf="question?.values?.questionType === 'MED_T_L'">
+                <div class="med-name">{{ question?.values?.answerOption[0].value }}</div>
+                <mat-form-field *ngIf="true" class="frequency">
+                  <mat-label>{{ 'TICKET_QUESTION_PAGE.MED.FREQUENCY' | translate }}</mat-label>
+                  <mat-select (selectionChange)="onPickFrequency($event)">
+                    <mat-option *ngFor="let item of frequency" [value]="item">
+                      {{ item }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+                <div *ngFor="let num of numbers(timeAmount); let i = index" class="dose">
+                  <mat-form-field class="full">
+                    <mat-label>{{ question?.values?.answerOption[0].answerUnit?.type }}</mat-label>
+                    <input (keyup)="onPickMedAmount($event, 'medPiece', i)" matInput type="number" step="any">
+                    <span matSuffix>{{ question?.values?.answerOption[0].answerUnit?.unit }}</span>
+                  </mat-form-field>
+                </div>
+              </ng-container>
+
+              <ng-container *ngIf="question?.values?.questionType.toLowerCase() === 'd'">
+                <ul class="vacc-list">
+                  <li *ngFor="let item of question?.values?.answerOption[0]?.answerValue; let i = index">
+                    <div class="name">{{ item.name }}</div>
+                    <div class="med-date-time">
+                      <ion-datetime
+                        [cancelText]="cancelText"
+                        [doneText]="okText"
+                        placeholder="{{ 'TICKET_QUESTION_PAGE.VACC.NEXT' | translate }}"
+                        (ionChange)="setNextVaccDate($event, i)"
+                        displayFormat="DD.MM.YYYY"
+                        max="2030-12-31">
+                      </ion-datetime>
+                    </div>
+                  </li>
+                </ul>
+              </ng-container>
+
+              <ng-container *ngIf="question?.values?.questionType.toLowerCase() === 'date'">
+                <div class="pregnancy">
+                  <div class="med-date-time">
+                    <mat-form-field>
+                      <mat-label>0</mat-label>
+                      <input
+                             (keyup)="pickPregDay($event)"
+                             matInput
+                             step="any" type="number">
+                    </mat-form-field>
+                  </div>
+
+                  <div class="checkbox-global med-checkbox preg-checkbox">
+                    <mat-checkbox
+                      (change)="clueless($event)"
+                    > {{ 'TICKET_QUESTION_PAGE.NO_IDEA' | translate }}</mat-checkbox>
+                  </div>
+
+                </div>
+
+              </ng-container>
+
+              <ng-container *ngIf="question?.values?.questionType.toLowerCase() === 'dose'">
+                <ul class="med-list" *ngIf="treatmentLocation && invoiceMeds">
+                  <li *ngFor="let item of question?.values?.answerOption[0]?.answerValue; let i = index">
+                    <h6 class="name">{{ item.name }}</h6>
+
+                    <mat-form-field class="treatment-select">
+                      <mat-select [(ngModel)]="treatmentLocation[i]">
+                        <mat-option *ngFor="let item of treatmentLocs" [value]="item.value">
+                          {{ item.name }}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field class="treatment-select">
+                      <mat-label>{{ 'TICKET_QUESTION_PAGE.MED.STRENGTH' | translate }}</mat-label>
+                      <mat-select (selectionChange)="setVariant($event, i)">
+                        <mat-option *ngFor="let el of item.variants" [value]="el.key">
+                          {{ el.name }}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field *ngIf="invoiceMeds[i].selectedVariant && treatmentLocation[i] === 'home'"
+                                    class="treatment-select">
+                      <mat-label>{{ 'TICKET_QUESTION_PAGE.MED.FREQUENCY' | translate }}</mat-label>
+                      <mat-select (selectionChange)="setFrequency($event, i)">
+                        <mat-option *ngFor="let item of frequency" [value]="item">
+                          {{ item }}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+
+                    <ng-container
+                      *ngIf="invoiceMeds[i].selectedVariant && timeAmount[i] && treatmentLocation[i] === 'home'">
+                      <mat-form-field class="full med-input">
+                        <mat-label>{{ question?.values?.answerOption[0].answerUnit?.type }}</mat-label>
+                        <input [(ngModel)]="invoiceMeds[i].selectedVariant.singledose"
+                               (keyup)="pickMedDose($event, i)"
+                               matInput
+                               step="any" type="number">
+                        <span matSuffix>{{ question?.values?.answerOption[0].answerUnit?.unit }}</span>
+                      </mat-form-field>
+                    </ng-container>
+
+                    <div class="med-date-time border"
+                      *ngIf="invoiceMeds[i].selectedVariant && !invoiceMeds[i].selectedVariant?.permanent && treatmentLocation[i] === 'home'">
+                      <ion-datetime
+                        [cancelText]="cancelText"
+                        [doneText]="okText"
+                        [(ngModel)]="invoiceMeds[i].selectedVariant.startDate"
+                        placeholder="{{ 'TICKET_QUESTION_PAGE.MED.STARTDATE' | translate }}"
+                        (ionChange)="onPickCurrentVaccTime($event)"
+                        displayFormat="DD.MM.YYYY"
+                        max="2030-12-31">
+                      </ion-datetime>
+                    </div>
+
+                    <div
+                      *ngIf="invoiceMeds[i].selectedVariant && !invoiceMeds[i].selectedVariant?.permanent &&
+                      treatmentLocation[i] === 'home'"
+                         class="med-date-duration">
+                      <mat-form-field class="full med-input">
+                        <mat-label>{{ 'TICKET_QUESTION_PAGE.MED.DAYS' | translate }}</mat-label>
+                        <input [(ngModel)]="invoiceMeds[i].selectedVariant.durationLength"
+                               matInput
+                               step="any" type="number">
+                      </mat-form-field>
+                    </div>
+
+                    <div class="checkbox-global med-checkbox"
+                         *ngIf="invoiceMeds[i].selectedVariant && treatmentLocation[i] === 'home'">
+                      <mat-checkbox
+                                    (change)="setMedicationPermanent($event, i)"
+                      > {{ 'TICKET_QUESTION_PAGE.MED.PERMANENT' | translate }}</mat-checkbox>
+                    </div>
+
+                  </li>
+                </ul>
+              </ng-container>
+
+              <ng-container *ngIf="question?.values?.questionType.toLowerCase() === 'ff'">
+                <ng-container *ngIf="!showVetForm">
+                  <mat-form-field class="vet-zip-code">
+                    <mat-label>{{ 'TICKET_QUESTION_PAGE.VET.ZIP_CODE' | translate }}</mat-label>
+                    <input type="number" matInput [(ngModel)]="vetZipCode" (keyup)="onPickVetZip()">
+                  </mat-form-field>
+
+                  <mat-form-field class="vets-list">
+                    <mat-label>{{ 'TICKET_QUESTION_PAGE.VET.VETS_LIST' | translate }}</mat-label>
+                    <mat-select (selectionChange)="onPickVet($event)">
+                      <mat-option *ngFor="let vet of vetsList" [value]="vet" multiLineOption>
+                        <h4 *ngIf="vet?.office?.length > 0">{{ vet.office }} </h4>
+                        <p>{{ vet.name }} </p>
+                        <p>{{ vet.address }} </p>
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                  <p *ngIf="vetError" class="vet-error">{{ 'TICKET_QUESTION_PAGE.VET.VET_ERROR' | translate }}</p>
+
+                  <p class="no-vet">
+                    {{ 'TICKET_QUESTION_PAGE.VET.NO_VET' | translate }}
+                    <span (click)="onClickVetLink()">{{ 'TICKET_QUESTION_PAGE.VET.ADD_VET' | translate }}</span>
+                  </p>
+                </ng-container>
+
+                <ng-container *ngIf="showVetForm">
+
+                  <form [formGroup]="vetForm" class="vet-form">
+                    <mat-form-field>
+                      <mat-label>
+                        {{ 'TICKET_QUESTION_PAGE.VET.FORM.DOC_OFFICE' | translate }}
+                      </mat-label>
+                      <input matInput type="text" formControlName="docOffice">
+                    </mat-form-field>
+                    <mat-form-field>
+                      <mat-label>
+                        {{ 'TICKET_QUESTION_PAGE.VET.FORM.NAME' | translate }}
+                      </mat-label>
+                      <input matInput type="text" formControlName="name">
+                    </mat-form-field>
+                    <mat-form-field>
+                      <mat-label>
+                        {{ 'TICKET_QUESTION_PAGE.VET.FORM.ADDRESS' | translate }}
+                      </mat-label>
+                      <input matInput type="text" formControlName="address">
+                    </mat-form-field>
+                    <mat-form-field>
+                      <mat-label>
+                        {{ 'TICKET_QUESTION_PAGE.VET.FORM.ZIP_CODE' | translate }}
+                      </mat-label>
+                      <input matInput type="number" formControlName="zip">
+                    </mat-form-field>
+                  </form>
+
+                </ng-container>
+
+              </ng-container>
+
+              <ion-slides pager="true" *ngIf="question?.values.questionType.toLowerCase() === 'c'"
+                          (ionSlideDidChange)="onSlideChanged()">
+
+                <ion-slide *ngFor="let item of question?.values.answerOption">
+                  <ion-card>
+                    <ion-card-content>
+                      <div class="instructions-content">
+                        <img [src]="item.imageLinkAnswer" alt="" height="120"
+                             *ngIf="item.imageLinkDetailAnswer"
+                             (click)="onClickSliderImage(item.imageLinkDetailAnswer)">
+                        <img [src]="item.imageLinkAnswer" alt="" height="120"
+                             *ngIf="!item.imageLinkDetailAnswer">
+                        <p>{{ item.answerLongtext}}</p>
+                        <mat-radio-group
+                          [(ngModel)]="selectedAnswer"
+                          (click)="onClickSliderBox(item)">
+                          <mat-radio-button [value]="item.value">
+                          </mat-radio-button>
+                        </mat-radio-group>
+                      </div>
+                    </ion-card-content>
+                  </ion-card>
+                </ion-slide>
+              </ion-slides>
+              <mat-radio-group
+                [(ngModel)]="selectedAnswer"
+                *ngIf="question?.values.questionType.toLowerCase() === 'r'"
+                class="question-radio-buttons"
+                [ngClass]="{'short': question?.values.answerOption.length <= 2 }">
+                <mat-radio-button *ngFor="let button of question?.values.answerOption"
+                                  [value]="button.value">
+                  {{ button.answerLongtext }}
+                </mat-radio-button>
+              </mat-radio-group>
+
+              <ng-container
+                *ngIf="question?.values.questionType.toLowerCase() === 'fu' ||
+                question?.values.questionType.toLowerCase() === 'ful'">
+                <div class="ration-check">
+                  <mat-form-field class="food-type">
+                    <mat-label>{{ 'TICKET_QUESTION_PAGE.FOOD.TYPE' | translate }}</mat-label>
+                    <mat-select (selectionChange)="onPickFoodType($event)" [(ngModel)]="foodType">
+                      <ng-container *ngIf="question?.values.questionType.toLowerCase() === 'fu'">
+                        <mat-option *ngFor="let food of foodTypes" [value]="food.key">
+                          {{ food.label }}
+                        </mat-option>
+                      </ng-container>
+                      <ng-container *ngIf="question?.values.questionType.toLowerCase() === 'ful'">
+                        <mat-option *ngFor="let food of snackTypes" [value]="food.key">
+                          {{ food.label }}
+                        </mat-option>
+                      </ng-container>
+                    </mat-select>
+                  </mat-form-field>
+
+                  <form [formGroup]="foodForm" *ngIf="showFoods">
+                    <mat-form-field class="food-product">
+                      <mat-label>{{ 'TICKET_QUESTION_PAGE.FOOD.CHOOSE_PRODUCT' | translate }}</mat-label>
+                      <textarea [matAutocomplete]="auto"
+                                class="food-autocomplete-list"
+                             [maxlength]="'20'"
+                             autocomplete="off"
+                             [(ngModel)]="selectedFood"
+                             formControlName="mainFood"
+                             matInput
+                             type="text">
+                      </textarea>
+
+                      <mat-autocomplete #auto="matAutocomplete"
+                                        [displayWith]="foodLabel"
+                                        [panelWidth]="300"
+                                        autoActiveFirstOption
+                                        class="food-auto-complete">
+                        <mat-option *ngFor="let option of (filteredOptions | async)" [value]="option">
+                          {{ option.name }}
+                        </mat-option>
+                      </mat-autocomplete>
+                    </mat-form-field>
+
+                    <div class="food-amount" *ngIf="selectedFood">
+                      <mat-form-field class="food-number">
+                        <mat-label>{{ 'TICKET_QUESTION_PAGE.FOOD.AMOUNT' | translate }}</mat-label>
+                        <input type="number" matInput formControlName="mainFoodAmount">
+                      </mat-form-field>
+                      <mat-form-field class="food-unit">
+                        <mat-label>{{ 'TICKET_QUESTION_PAGE.FOOD.UNIT' | translate }}</mat-label>
+                        <mat-select formControlName="mainFoodUnit">
+                          <mat-option
+                            *ngFor="let food of selectedFood.units" [value]="food">
+                            {{ food.label }}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+                  </form>
+                  <ion-button
+                    (click)="onAddRation()"
+                    [disabled]="!foodForm.valid"
+                    color="secondary"
+                    expand="full">
+                    {{ 'TICKET_QUESTION_PAGE.FOOD.ADD' | translate }}
+                  </ion-button>
+                </div>
+
+                <ul class="food-ration-list" *ngIf="foodRations">
+                  <li *ngFor="let ration of foodRations; let i = index">
+                    <div class="item">
+                      <div class="quantity">
+                        {{ ration.amount }} {{ ration.unit.label }}
+                      </div>
+                      <div class="name">
+                        {{ ration.name }}
+                      </div>
+                    </div>
+                    <div class="food-ration-delete" (click)="onRemoveRation(i)">
+                      <ion-icon name="trash-outline"></ion-icon>
+                    </div>
+                  </li>
+                </ul>
+              </ng-container>
+
+              <div class="checkbox checkbox-global" *ngIf="question?.values.questionType.toLowerCase() === 'ch2'">
+                <mat-checkbox *ngFor="let button of question?.values.answerOption; let i = index"
+                  class="checkbox-buttons"
+                             (change)="changeCheckbox($event, i)"
+                > {{ button.answerLongtext }}</mat-checkbox>
+              </div>
+
+              <div class="weigh-input">
+                <mat-form-field *ngIf="question?.values.questionType.toLowerCase() === 'z'">
+                  <mat-label>
+                    <span
+                      *ngIf="question?.values.answerOption[0].value == '*pet_weight*' ">
+                      {{ 'TICKET_QUESTION_PAGE.KG' | translate }}
+                    </span>
+                    <span
+                      *ngIf="question?.values.answerOption[0].value == '*pet_idealweight*' ">
+                      {{ 'TICKET_QUESTION_PAGE.KG' | translate }}
+                    </span>
+                    <span
+                      *ngIf="question?.values.answerOption[0].value == '*tempera*'">
+                      {{ 'TICKET_QUESTION_PAGE.TEMPERA' | translate }}
+                    </span>
+                    <span
+                      *ngIf="question?.values.answerOption[0].value == 'Morph_Q1'">
+                      {{ 'TICKET_QUESTION_PAGE.CM' | translate }}
+                    </span>
+                  </mat-label>
+                  <input type="number" matInput [(ngModel)]="selectedNumber">
+                </mat-form-field>
+              </div>
+
+              <div class="weigh-input">
+                <mat-form-field *ngIf="question?.values.questionType === 'alpha_num'">
+                  <mat-label>
+                    {{ 'TICKET_QUESTION_PAGE.CHIP' | translate }}
+                  </mat-label>
+                  <input type="text" matInput [(ngModel)]="selectedAnswer">
+                </mat-form-field>
+              </div>
+
+              <ion-item *ngIf="question?.values.questionType.toLowerCase() === 't'">
+                <ion-label position="floating">{{ 'TICKET_QUESTION_PAGE.TOY_LABEL' | translate }}</ion-label>
+                <ion-input
+                  [(ngModel)]="selectedAnswer">
+                </ion-input>
+              </ion-item>
+
+              <div class="button-question" *ngIf="question?.values.questionType.toLowerCase() === 'b'">
+                <ion-button
+                  (click)="startTimer()"
+                  class="button-question"
+                  color="secondary">
+                  {{ 'PULSE_PAGE.START' | translate }}
+                </ion-button>
+              </div>
+
+              <div class="dropdown-question" *ngIf="question?.values.questionType.toLowerCase() === 'drs'">
+                <mat-form-field>
+                  <mat-label>{{ 'TICKET_QUESTION_PAGE.CHOOSE' | translate }}</mat-label>
+                  <mat-select [(ngModel)]="dropdownOption" (selectionChange)="onPickToxicItem($event)">
+                    <mat-option *ngFor="let option of question.values.answerOption"
+                                [value]=" option.value">
+                      {{ option.answerLongtext[0] }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+
+              <div class="dropdown-question" *ngIf="question?.values.questionType.toLowerCase() === 'dr'">
+                <mat-form-field>
+                  <mat-label>{{ 'TICKET_QUESTION_PAGE.CHOOSE' | translate }}</mat-label>
+                  <mat-select [(ngModel)]="dropdownOption" (selectionChange)="onPickToxicItem($event)">
+                    <mat-option *ngFor="let option of question.values.answerOption"
+                                [value]=" option.value">
+                      {{ option.answerLongtext[0] }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+
+              <div class="dropdown-amount" *ngIf="question?.values.questionType.toLowerCase() === 'dr'">
+                <mat-form-field>
+                  <mat-label>{{ 'TICKET_QUESTION_PAGE.AMOUNT' | translate }}</mat-label>
+                  <input type="number" autocomplete="off" matInput [(ngModel)]="toxicAmount">
+                </mat-form-field>
+                <mat-form-field class="unit">
+                  <mat-label>{{ 'TICKET_QUESTION_PAGE.UNIT' | translate }}</mat-label>
+                  <mat-select [(ngModel)]="toxicUnit">
+                    <mat-option [value]="question.values.answerOption[0].answerUnit">
+                      {{ question.values.answerOption[0].answerUnit }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+
+              <ng-container *ngIf="question?.values.questionType.toLowerCase() === 'f'">
+
+                <div class="attach-docs">
+                  <app-attach-document [user]="user" [path]="uploadPath"
+                                       (attachments)="receiveAddedFiles($event)"></app-attach-document>
+                </div>
+              </ng-container>
+
+              <ng-container
+                *ngIf="question?.values.questionType.toLowerCase() === 'up'">
+
+                <div class="attach-docs">
+                  <app-attach-document [user]="user" [path]="question?.name.toLowerCase()"
+                                       (attachments)="receiveAddedFiles($event)"></app-attach-document>
+                </div>
+              </ng-container>
+
+              <ng-container *ngIf="question?.values.questionType.toLowerCase() === 'find'">
+                <div class="attach-docs">
+                  <app-attach-document [user]="user" [path]="question?.name.toLowerCase()"
+                                       (attachments)="receiveAddedFiles($event)"></app-attach-document>
+                </div>
+              </ng-container>
+
+            </div>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer *ngIf="question?.values.questionType.toLowerCase() !== 'b'">
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeSm="8" offsetSm="2">
+        <ion-progress-bar color="secondary" [value]="questionProgressValue"></ion-progress-bar>
+        <div class="question-link-buttons">
+          <ion-button [disabled]="validateBackButton" (click)="goBack()" color="medium" fill="clear" size="small">
+            {{ 'TICKET_QUESTION_PAGE.BACK_BUTTON' | translate }}
+          </ion-button>
+
+          <ion-button
+            (click)="onProgressQuestion()"
+          [disabled]="
+          validateAnswer
+          "
+                      color="secondary"
+                      fill="clear"
+                      size="small">
+            {{ 'TICKET_QUESTION_PAGE.PROGRESS_BUTTON' | translate }}
+          </ion-button>
+
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar class="toolbar">
+    <img [src]="logo" alt="" height="40">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeSm="4" offsetSm="4">
+        <h2 *ngIf="isMail">
+          {{ 'PW_RECOVERY_PAGE.RECOVER' | translate }}
+        </h2>
+        <h2 *ngIf="isPw">
+          {{ 'PW_RECOVERY_PAGE.RECOVER' | translate }}
+        </h2>
+        <h2 *ngIf="isSuccess">
+          {{ 'PW_RECOVERY_PAGE.RECOVERED' | translate }}
+        </h2>
+
+        <img *ngIf="isSuccess" [src]="successSign" alt="" height="88">
+
+        <p *ngIf="isMail">{{ 'PW_RECOVERY_PAGE.ENTER_MAIL' | translate }}</p>
+        <p *ngIf="isPw">{{ 'PW_RECOVERY_PAGE.ENTER_PW' | translate }}</p>
+        <p *ngIf="isSuccess" class="success">{{ 'PW_RECOVERY_PAGE.SUCCESS' | translate }}</p>
+        <ion-card>
+          <ion-card-content>
+            <form [formGroup]="mailForm" *ngIf="isMail">
+              <mat-form-field>
+                <mat-label>{{ 'PW_RECOVERY_PAGE.EMAIL' | translate }}</mat-label>
+                <input matInput formControlName="email">
+              </mat-form-field>
+            </form>
+            <form [formGroup]="pwForm" *ngIf="isPw">
+              <mat-form-field>
+                <mat-label>{{'SIGNUP_PAGE.PASSWORD' | translate }}</mat-label>
+                <input type="password" matInput formControlName="password">
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>{{'SIGNUP_PAGE.PASSWORD_CONFIRM' | translate }}</mat-label>
+                <input type="password" matInput formControlName="password_confirm">
+              </mat-form-field>
+              <div class="password-text">{{ 'SIGNUP_PAGE.PASSWORD_TEXT' | translate }}</div>
+            </form>
+          </ion-card-content>
+        </ion-card>
+
+        <ng-container *ngIf="!isSuccess">
+          <ion-button
+            expand="full"
+            color="secondary"
+            routerDirection="forward"
+            (click)="onSendForm()"
+            [disabled]="!validForm">
+            <span *ngIf="isMail">{{ 'PW_RECOVERY_PAGE.REQ_LINK' | translate }}</span>
+            <span *ngIf="isPw">{{ 'PW_RECOVERY_PAGE.STORE' | translate }}</span>
+          </ion-button>
+        </ng-container>
+
+        <ng-container *ngIf="isSuccess">
+          <ion-button
+            expand="full"
+            color="secondary"
+            routerLink="/signin"
+            routerDirection="forward">
+            {{ 'PW_RECOVERY_PAGE.BACK_TO_LOGIN' | translate }}
+          </ion-button>
+        </ng-container>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

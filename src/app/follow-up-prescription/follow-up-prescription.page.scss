@@ -1,0 +1,41 @@
+.image-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 250px;
+}
+
+.body-text {
+  font-size: 13px;
+  line-height: 20px;
+  text-align: center;
+  margin-top: 40px;
+  padding: 0 16px;
+}
+
+.body-list {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+
+  ul {
+    padding: 0;
+  }
+
+  li {
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+}
+
+ion-footer {
+  ion-grid, ion-col {
+    padding: 0;
+  }
+}
+
+.footer-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 6px 16px 0;
+}

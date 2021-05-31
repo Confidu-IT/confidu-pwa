@@ -1,0 +1,53 @@
+mat-expansion-panel {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  padding-top: 16px;
+}
+
+mat-panel-title {
+  display: block;
+
+  .title {
+    font-weight: 500;
+    //margin-bottom: 4px;
+  }
+}
+
+ion-checkbox {
+  --size: 18px;
+  --border-color: #666;
+}
+
+h2  {
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0 0 0 32px;
+}
+
+h3 {
+  color: rgb(102,102,102);
+  font-size: 15px;
+  font-weight: bold;
+  margin: 24px 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  color: rgba(0,0,0,0.87);
+  padding-left: 32px;
+  margin: 16px 0 24px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.notes {
+  font-size: 12px;
+  font-style: italic;
+  color: #bbb;
+}

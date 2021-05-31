@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col offsetSm="2" sizeSm="8">
+        <h2 class="headline">{{ item.questionInfo.headline }}</h2>
+        <div class="text-container">
+          <ul>
+            <li *ngFor="let el of item.questionInfo.text">{{ el }}</li>
+          </ul>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div class="buttons">
+          <ion-button (click)="closeModal()" color="medium" fill="clear" size="small">
+            {{ cancel }}
+          </ion-button>
+          <ion-button (click)="onProceed()" color="secondary" fill="clear" size="small">
+            {{ proceed }}
+          </ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

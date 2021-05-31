@@ -1,0 +1,30 @@
+mat-form-field {
+  width: 100%;
+}
+
+ion-card {
+  margin: 0;
+}
+
+.uploaded-images {
+  margin-bottom: 5px;
+  img {
+    margin: 0 10px 0 0;
+    border: 1px solid #ddd;
+  }
+}
+
+input[type='file'] {
+  display: none;
+}
+
+.file-label {
+  color: var(--ion-color-medium);
+  display: block;
+  font-size: 15px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}

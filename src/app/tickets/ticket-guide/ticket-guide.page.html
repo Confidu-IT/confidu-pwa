@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tickets"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'TICKET_GUIDE_PAGE.TITLE' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="isLoading" class="spinner">
+    <ion-spinner color="primary"></ion-spinner>
+  </div>
+  <ion-slides pager="true" *ngIf="!isLoading">
+    <ion-slide *ngFor="let page of pages">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div class="instructions-content">
+              <figure class="flex-item">
+                <img [src]="page.image" alt="">
+              </figure>
+              <p>{{ page.text }}</p>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

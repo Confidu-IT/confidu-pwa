@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Zusammenfassung</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-spinner *ngIf="isLoading" color="primary"></ion-spinner>
+  <ion-grid *ngIf="!isLoading">
+    <ion-row *ngIf="cartItems.length > 0">
+      <ion-col *ngIf="true" sizeSm="8" offsetSm="2">
+        <div class="order">
+          <h2 class="headline">Bestellung</h2>
+          <div class="article" *ngFor="let item of cartItems">
+            <div class="article-content">
+              <figure class="article-image">
+                <img [src]="item.lineItem.cover.url" alt="" width="60">
+              </figure>
+              <div class="article-details">
+                <h2>{{ item.lineItem.label }}</h2>
+                <div class="article-quantity">
+                  <span>Anzahl: {{ item.lineItem.quantity }}</span>
+                </div>
+                <div class="article-price">
+                  Preis: {{ item.lineItem.price.totalPrice.toFixed(2) }} €
+                </div>
+              </div>
+            </div>
+            <div class="article-footer">
+              <div class="remove-article" (click)="onArticleRemove(item.lineItem.id)">
+                Artikel entfernen <ion-icon name="trash-bin-outline"></ion-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="addresses">
+          <div class="shipment" routerLink="/shop/address/zahlungsadresse">
+            <h2 class="headline">Rechnung</h2>
+            <address class="address">
+            <span class="name">
+              {{ billingAddress?.firstName }} {{ billingAddress?.lastName }}
+            </span><br>
+              <span class="street">{{ billingAddress?.street }}</span><br>
+              <span class="city">
+              {{ billingAddress?.zipcode }}
+                {{ billingAddress?.city }}
+            </span><br>
+              <span class="country">{{ billingAddress?.country?.name }}</span><br>
+              <span class="link">Ändern</span>
+            </address>
+          </div>
+
+          <div class="shipment" routerLink="/shop/address/lieferadresse">
+            <h2 class="headline">Lieferung</h2>
+            <address class="address">
+            <span class="name">
+              {{ shippingAddress?.firstName }} {{ shippingAddress?.lastName }}
+            </span><br>
+              <span class="street">{{ shippingAddress?.street }}</span><br>
+              <span class="city">
+              {{ shippingAddress?.zipcode }}
+                {{ shippingAddress?.city }}
+            </span><br>
+              <span class="country">{{ shippingAddress?.country?.name }}</span><br>
+              <span class="link">Ändern</span>
+            </address>
+          </div>
+        </div>
+
+        <div class="payment" routerLink="/shop/payment">
+          <h2>Zahlungsmethode</h2>
+          <span class="payment-method">{{ payment?.translated.name }}</span>
+          <span class="link">Ändern</span>
+        </div>
+
+        <div class="transaction">
+          <p class="transaction-text">
+            <span class="delivery">Lieferung</span>
+            <span class="shipment-price">Versandkosten</span>
+            <span class="total-price">Gesamtbetrag</span>
+          </p>
+          <p class="transaction-details">
+            <span class="delivery"> {{ cartData?.deliveryDate?.latest | date: 'dd. MM. yyyy' }}</span>
+            <span class="shipment-price"> {{ cartData?.shippingCosts?.totalPrice.toFixed(2) }} €</span>
+            <span class="total-price"> {{ cartTransaction?.amount?.totalPrice.toFixed(2) }} €</span>
+          </p>
+        </div>
+
+        <ion-button
+          expand="full"
+          color="secondary"
+          routerDirection="forward"
+          (click)="onPlaceOrder()">
+          Kostenpflichtig bestellen
+        </ion-button>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,575 @@
+.question {
+  //margin-top: 50px;
+  &-image-container {
+    display: flex;
+    align-items: flex-end;
+    //border: 1px red solid;
+    //flex-direction: column;
+    justify-content: center;
+    //margin-top: 60px;
+
+    //position: relative;
+    height: 220px;
+    //width: 100%;
+
+    &.is-gif {
+      height: unset;
+    }
+
+    .type-slider {
+      height: unset;
+    }
+
+    .image-link {
+      height: 120px;
+
+      &.is-gif {
+        height: 200px;
+        width: auto;
+      }
+
+      &.beats {
+        height: 140px;
+        width: 140px;
+      }
+    }
+
+    img {
+      display: block;
+      //margin: auto;
+    }
+  }
+
+  &-content {
+
+    margin-top: 20px;
+  }
+
+  &-symptom {
+    color: #999;
+    font-size: 12px;
+    margin: 0 0 10px;
+    text-align: center;
+  }
+
+  &-text {
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    margin-top: 10px;
+    padding: 0 16px;
+
+    &.slide {
+      min-height: 48px;
+    }
+
+    &.text-input {
+      line-height: unset;
+      margin-bottom: 0;
+      min-height: unset;
+    }
+  }
+
+  &-form {
+    //display: flex;
+    //flex-direction: column;
+    //align-items: center;
+    margin-top: 24px;
+  }
+
+  &-info-button {
+    //display: flex;
+    //align-self: flex-end;
+    //margin-right: 20px;
+    //margin-top: -20px;
+    position: absolute;
+    //bottom: 0;
+    right: 20px;
+  }
+
+  &-radio-buttons {
+    display: flex;
+    font-size: 14px;
+    flex-direction: column;
+    margin-left: 40px;
+
+    &.short {
+      flex-direction: row;
+      justify-content: center;
+      margin-left: 0;
+
+      mat-radio-button:first-of-type {
+        margin-right: 40px;
+      }
+    }
+  }
+
+  &-link-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &.beats-text {
+    font-size: 15px;
+    line-height: 24px;
+    text-align: center;
+    margin-top: 32px;
+  }
+
+  .beats-question {
+    margin-bottom: 32px;
+  }
+
+  .beats-amount {
+    font-size: 15px;
+    margin: 32px 0;
+    text-align: center;
+  }
+
+  .countdown {
+    text-align: center;
+    font-size: 36px;
+    margin: 0 0 40px;
+  }
+}
+
+.uploaded-files {
+  color: rgb(102,102,102);
+  font-size: 11px;
+  margin-bottom: 24px;
+  padding: 0;
+
+  li {
+    display: flex;
+    justify-content: center;
+    //flex-direction: column;
+    margin-bottom: 12px;
+
+    span {
+      display: inline-flex;
+      width: 80px;
+    }
+
+    ion-icon {
+      //color: rgb(102.102,102);
+    }
+  }
+}
+
+.file-label {
+  ion-icon {
+    color: var(--ion-color-secondary);
+    font-size: 16px;
+    padding-right: 8px;
+    vertical-align: bottom;
+  }
+
+  color: var(--ion-color-medium);
+  display: block;
+  font-size: 13px;
+  font-style: italic;
+  text-align: center;
+}
+
+.img-size-warning {
+  color: var(--ion-color-danger);
+  font-size: 13px;
+  font-style: italic;
+  margin-top: 12px;
+  text-align: center;
+}
+
+.food-amount {
+  display: flex;
+  justify-content: space-between;
+
+  mat-select {
+    font-size: unset;
+  }
+
+  .food-number {
+    width: calc(50% - 16px);
+  }
+
+  .food-unit {
+    width: 50%;
+  }
+}
+
+.ration-check {
+  margin-left: 24px;
+  margin-right: 24px;
+
+  mat-form-field {
+    &.food-type, &.food-product {
+      width: 100%;
+    }
+  }
+
+  ion-button {
+    margin-top: 12px;
+  }
+
+}
+
+.food-ration {
+  &-list {
+    color: rgb(102,102,102);
+    font-size: 13px;
+    list-style: none;
+    margin: 30px 24px 0;
+    padding-left: 0;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+  }
+
+  &-delete {
+    display: flex;
+    justify-content: flex-end;
+    width: 30px;
+
+    ion-icon {
+
+    }
+  }
+}
+
+.food-autocomplete-list {
+  line-height: 20px;
+}
+
+ion-label {
+  font-size: 13px !important;
+  color: var(--ion-color-medium) !important;
+}
+
+ion-item {
+  margin-top: 10px;
+  width: 100%;
+}
+
+ion-title {
+  text-transform: capitalize;
+}
+
+ion-slide {
+  font-size: 14px;
+
+  ion-card {
+    margin: 0 0 36px;
+    width: 100%;
+  }
+
+  ion-card-content {
+    //padding: 0;
+  }
+}
+
+ion-slides {
+  margin-top: 32px;
+  img {
+    height: 120px;
+    margin-bottom: 16px;
+  }
+
+  mat-radio-group {
+    margin: auto;
+  }
+
+  mat-radio-button {
+    margin-top: 8px;
+  }
+
+  .instructions-content p {
+    color: var(--ion-color-medium);
+    font-size: 13px;
+    font-style: italic;
+    margin-bottom: 16px;
+    height: 54px;
+    max-height: 54px;
+
+  }
+}
+
+input[type='file'] {
+  display: none;
+}
+
+ion-range {
+  --knob-background: var(--ion-color-secondary);
+  --knob-size: 16px;
+}
+
+.range {
+  &-text {
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    padding: 0 16px;
+  }
+
+  &-answer {
+    p {
+      font-size: 14px;
+      margin: 0 16px 10px 16px;
+
+      &.first {
+        font-weight: bold;
+      }
+
+      &.last {
+        font-size: 12px;
+        line-height: 18px;
+        margin-top: 20px;
+      }
+    }
+  }
+
+  &-image {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.dropdown-question, .dropdown-amount, .weigh-input {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.dropdown-question, .weigh-input {
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+.dropdown-amount {
+  display: flex;
+  justify-content: space-between;
+
+  mat-form-field {
+    width: calc(50% - 8px);
+  }
+}
+
+.button-question {
+  display: flex;
+  justify-content: space-around;
+
+  ion-button {
+    --border-radius: 0;
+    --padding-end: 40px;
+    --padding-start: 40px
+  }
+}
+
+.dose, .frequency, .vet-zip-code, .vets-list {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 24px;
+  margin-right: 24px;
+  width: calc(100% - 48px);
+}
+
+.vet-form {
+  margin-left: 24px;
+  margin-right: 24px;
+
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+.vet-error {
+  color: var(--ion-color-danger);
+  font-size: 11px;
+  margin: -8px 20px 0;
+  //text-align: center;
+}
+
+.pieces, .part {
+  width: calc(50% - 12px);
+}
+
+.pieces.liquid, .full {
+  width: 100%;
+}
+
+.no-vet {
+  font-size: 11px;
+  line-height: 16px;
+  margin: 16px 20px 0;
+
+  span {
+    color: var(--ion-color-secondary);
+    padding-left: 4px;
+  }
+}
+
+.checkbox {
+  font-size: 13px;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+ion-progress-bar {
+  margin-bottom: 8px;
+}
+
+ion-footer::before {
+  background: unset !important;
+}
+
+mat-select, mat-input {
+  font-size: 14px;
+}
+
+mat-label {
+  font-size: 14px;
+}
+
+.vaccinations {
+  line-height: 1.9 !important;
+  margin-left: 20px !important;
+  margin-right: 16px !important;
+  width: calc(100% - 36px) !important;
+
+  .mat-form-field-infix {
+    width: unset;
+  }
+
+  .mat-form-field-underline {
+    background-color: rgb(152,154,162) !important;
+  }
+
+  mat-label {
+    color: rgb(152,154,162);
+    font-size: 14px;
+  }
+}
+
+.date-time {
+  margin-right: 16px;
+  margin-bottom: 24px;
+  &.current-vacc {
+    //margin-top: -20px;
+  }
+
+
+
+
+
+  ion-item {
+    margin: 0 16px 0 0;
+  }
+
+  ion-datetime {
+    font-size: 14px;
+  }
+
+  ion-label {
+    //color: rgba(0,0,0,0.87) !important;
+    font-size: 14px !important;
+  }
+}
+
+.treatment-select {
+  width: 100%;
+}
+
+.med-list {
+  list-style: none;
+  margin-left: 24px;
+  margin-right: 24px;
+  padding: 0;
+
+  li {
+    margin: 0 0 36px;
+
+    .name {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 0;
+    }
+  }
+
+}
+
+.med-name {
+  font-size: 14px;
+  margin: 16px 24px 20px;
+  border-bottom: 1px solid var(--ion-color-medium);
+  padding-bottom: 8px;
+}
+
+.med-date-duration {
+  //border-top: 1px solid var(--ion-color-medium);
+  margin-top: 20px;
+}
+
+.med-input {
+  font-size: 14px !important;
+}
+
+.med-checkbox {
+  font-size: 14px;
+
+  border-bottom: 1px solid var(--ion-color-medium);
+  padding-bottom: 2px;
+  padding-top: 16px;
+}
+
+.med-date-time {
+  margin-top: 20px;
+  &.border {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+
+  ion-datetime {
+    font-size: 14px !important;
+    padding-left: 0 !important;
+    padding-bottom: 6px !important;
+    padding-top: 0;
+  }
+}
+
+.vacc-list {
+  list-style: none;
+  margin-left: 16px;
+  margin-right: 16px;
+  padding: 0;
+
+  li {
+    margin-bottom: 24px;
+    margin-bottom: 24px;
+  }
+
+  .name {
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+
+.pregnancy {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.preg-checkbox {
+  border: none;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 32px;
+}
+
+.attach-docs {
+  margin-left: 16px;
+  margin-right: 16px;
+}

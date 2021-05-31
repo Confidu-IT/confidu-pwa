@@ -1,0 +1,14 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeSm="8" offsetSm="2">
+        <div class="buttons">
+          <ion-button color="primary" (click)="takePhoto()">Foto</ion-button>
+          <ion-button (click)="closeModal(null)">Abbrechen</ion-button>
+        </div>
+        <video #video playsinline autoplay></video>
+        <canvas id="canvas" #canvas></canvas>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

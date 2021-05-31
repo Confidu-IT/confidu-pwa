@@ -1,0 +1,25 @@
+.text {
+  font-size: 13px;
+  text-align: center;
+}
+
+figure {
+  margin: 40px 0;
+  display: flex;
+  justify-content: center;
+
+  img {
+    height: 100px;
+  }
+}
+
+.upload-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.footer-buttons {
+  display: flex;
+  justify-content: space-between;
+}

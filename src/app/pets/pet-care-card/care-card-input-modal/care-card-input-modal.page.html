@@ -1,0 +1,102 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        X
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{ title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeSm="8" offsetSm="2">
+        <ion-card>
+          <ion-card-content>
+            <h3>{{ headline }}</h3>
+            <p class="subheader"></p>
+
+            <ng-container *ngIf="type === 'activity'">
+              <figure>
+                <img class="range-state-image" [src]="rangeStateImg" width="90" height="78" alt="">
+              </figure>
+              <ion-range min="0" max="100" [step]="activityText?.length" color="secondary"
+                         [(ngModel)]="value"
+                         (ionChange)="setActivityState($event)"
+              ></ion-range>
+              <div class="range-answer">
+                <ng-container *ngFor="let p of rangeAnswer; let first = first; let last = last">
+                  <p *ngIf="first" class="first">{{ p }}</p>
+                  <p *ngIf="last" class="last">{{ p }}</p>
+                  <p *ngIf="!first && !last">{{ p }}</p>
+                </ng-container>
+              </div>
+            </ng-container>
+
+            <ion-item *ngIf="type === 'castration'" class="castration">
+              <ion-label color="medium"
+                         position="floating">{{ 'CARE_CARD_INPUT_MODAL_PAGE.CASTRATION.TITLE' | translate }}</ion-label>
+              <ion-select
+                [(ngModel)]="value"
+                [cancelText]="abortText"
+                [okText]="confirmText"
+              >
+                <ion-select-option value="{{ 'CARE_CARD_INPUT_MODAL_PAGE.CASTRATION.NEUTERED' | translate }}">
+                  {{ 'CARE_CARD_INPUT_MODAL_PAGE.CASTRATION.NEUTERED' | translate }}
+                </ion-select-option>
+                <ion-select-option value="{{ 'CARE_CARD_INPUT_MODAL_PAGE.CASTRATION.NOT_NEUTERED' | translate }}">
+                  {{ 'CARE_CARD_INPUT_MODAL_PAGE.CASTRATION.NOT_NEUTERED' | translate }}
+                </ion-select-option>
+              </ion-select>
+            </ion-item>
+
+            <ion-item *ngIf="type === 'id'" class="id">
+              <ion-label color="medium"
+                         position="floating">{{ 'CARE_CARD_INPUT_MODAL_PAGE.ID.INPUT' | translate }}</ion-label>
+              <ion-input  [(ngModel)]="value" type="number"></ion-input>
+            </ion-item>
+
+            <ion-button color="secondary" class="confirm-button"
+                        *ngIf="type === 'castration'"
+                        [disabled]="value !== 'Kastriert'"
+                        (click)="onConfirm()">{{ 'CARE_CARD_INPUT_MODAL_PAGE.CONFIRM' | translate }}
+            </ion-button>
+
+            <ion-button color="secondary" class="confirm-button"
+                        *ngIf="type !== 'id' && type !== 'castration'"
+                        [disabled]="!value && value !== 'Kastriert'"
+                        (click)="onConfirm()">{{ 'CARE_CARD_INPUT_MODAL_PAGE.CONFIRM' | translate }}
+            </ion-button>
+
+            <ion-button color="secondary" class="confirm-button"
+                        *ngIf="type === 'id'"
+                        [disabled]="!validator()"
+                        (click)="onConfirm()">{{ 'CARE_CARD_INPUT_MODAL_PAGE.CONFIRM' | translate }}
+            </ion-button>
+
+          </ion-card-content>
+        </ion-card>
+
+        <div class="description">{{ description }}</div>
+
+
+
+        <ng-container *ngIf="type === 'activity'">
+          <div class="range-info">
+            <div class="range-info-image">
+              <img [src]="activityIcon" alt="">
+            </div>
+            <div class="range-info-content">
+              <p class="header">{{ 'CARE_CARD_INPUT_MODAL_PAGE.ACTIVITY.INFO.HEADER' | translate }}</p>
+              <p class="text">{{ 'CARE_CARD_INPUT_MODAL_PAGE.ACTIVITY.INFO.TEXT' | translate }}</p>
+              <p class="annotation">{{ 'CARE_CARD_INPUT_MODAL_PAGE.ACTIVITY.INFO.ANNOTATION' | translate }}</p>
+            </div>
+
+          </div>
+        </ng-container>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

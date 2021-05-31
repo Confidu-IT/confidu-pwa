@@ -1,0 +1,23 @@
+
+.pets {
+  color: rgb(102,102,102);
+  display: flex;
+  justify-content: center;
+}
+
+.choose-pet {
+  color: rgb(102,102,102);
+  margin: 32px 20px 32px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+mat-radio-button {
+  color: rgb(102,102,102);
+  font-weight: 700;
+  margin-bottom: 16px;
+  width: 100%;
+}

@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-toolbar class="toolbar">
+    <img [src]="logo" alt="" height="40">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeSm="8" offsetSm="2">
+        <h2>
+          <span *ngIf="isSignup">{{ 'SIGNUP_PAGE.SIGNUP' | translate }}</span>
+          <span *ngIf="!isSignup">{{ 'SIGNUP_PAGE.SIGNIN' | translate }}</span>
+        </h2>
+        <ion-card>
+          <ion-card-content>
+
+            <form [formGroup]="signupForm" *ngIf="isSignup">
+              <mat-form-field>
+                <mat-label>{{ 'SIGNUP_PAGE.EMAIL' | translate }}</mat-label>
+                <input matInput formControlName="email">
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>{{ 'BILLING_ADDRESS_PAGE.COUNTRY' | translate }}</mat-label>
+                <mat-select formControlName="country">
+                  <mat-option *ngFor="let country of countries" [value]="country.id">
+                    {{country.translated.name}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>{{'SIGNUP_PAGE.PASSWORD' | translate }}</mat-label>
+                <input type="password" matInput formControlName="password">
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>{{'SIGNUP_PAGE.PASSWORD_CONFIRM' | translate }}</mat-label>
+                <input type="password" matInput formControlName="password_confirm">
+              </mat-form-field>
+              <div class="password-text">{{ 'SIGNUP_PAGE.PASSWORD_TEXT' | translate }}</div>
+            </form>
+
+            <form [formGroup]="signinForm" *ngIf="!isSignup">
+              <mat-form-field>
+                <mat-label>{{ 'SIGNUP_PAGE.EMAIL' | translate }}</mat-label>
+                <input matInput formControlName="email">
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>{{'SIGNUP_PAGE.PASSWORD' | translate }}</mat-label>
+                <input type="password" matInput formControlName="password">
+              </mat-form-field>
+            </form>
+          </ion-card-content>
+        </ion-card>
+
+        <div class="privacy-box" *ngIf="isSignup">
+          <div class="box">
+            <ion-checkbox color="secondary" [(ngModel)]="isChecked"></ion-checkbox>
+          </div>
+          <div class="link">
+            {{ 'SIGNUP_PAGE.COMPLIANCE.PART_1' | translate }}
+            <a [href]="conditionsLink" target="_blank">{{ 'SIGNUP_PAGE.COMPLIANCE.PRIVACY' | translate }}</a>
+            {{ 'SIGNUP_PAGE.COMPLIANCE.PART_2' | translate }}
+            <a [href]="privacyLink" target="_blank">{{ 'SIGNUP_PAGE.COMPLIANCE.CONDITIONS' | translate }}</a>
+            {{ 'SIGNUP_PAGE.COMPLIANCE.PART_3' | translate }}.
+          </div>
+        </div>
+
+        <ion-button
+          expand="full"
+          color="secondary"
+          routerDirection="forward"
+          (click)="onSendForm()"
+          [disabled]="!validForm()">
+          {{ 'SIGNUP_PAGE.SIGNIN' | translate }}
+        </ion-button>
+
+        <p class="to-link" *ngIf="isSignup">
+          <a routerLink="/signin">{{ 'SIGNUP_PAGE.TO_LOGIN' | translate }}</a>
+        </p>
+
+        <p class="to-link" *ngIf="!isSignup">
+          <span>{{ 'SIGNUP_PAGE.NO_ACCOUNT.PART_1' | translate }} </span>
+          <a routerLink="/signup">{{ 'SIGNUP_PAGE.NO_ACCOUNT.PART_2' | translate }}</a>
+        </p>
+
+        <p class="to-link" *ngIf="!isSignup">
+          <a routerLink="/account/recover">{{ 'SIGNUP_PAGE.PW_RECOVERY' | translate }}</a>
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

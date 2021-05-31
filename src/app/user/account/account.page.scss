@@ -1,0 +1,52 @@
+ion-card {
+  margin: 16px 0 0;
+  color: rgb(102,102,102);
+}
+
+h2, h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  color: rgb(102,102,102);
+}
+
+ul {
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding-left: 0;
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 4px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    color: rgb(102,102,102);
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  li:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+
+
+.label {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin: 24px 20px;
+
+  img {
+    margin-right: 32px;
+    width: 25px;
+  }
+}

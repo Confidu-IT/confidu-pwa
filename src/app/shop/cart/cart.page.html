@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Warenkorb</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-spinner *ngIf="isLoading" color="primary"></ion-spinner>
+  <ion-grid *ngIf="!isLoading">
+    <ion-row>
+      <ion-col *ngIf="cartItems.length < 1" sizeSm="8" offsetSm="2">
+        <p>Der Warenkorb ist leer.</p>
+      </ion-col>
+      <ion-col *ngIf="cartItems.length > 0" sizeSm="8" offsetSm="2">
+        <div class="article" *ngFor="let item of cartItems">
+          <div class="article-content">
+            <figure class="article-image">
+              <img [src]="item.lineItem.cover.url" alt="" width="60">
+            </figure>
+            <div class="article-details">
+              <h2>{{ item.lineItem.label }}</h2>
+              <div class="article-quantity">
+                <span>Anzahl</span>
+                  <ion-select
+                    (ionChange)="onChangeQuantity($event, item?.lineItem.id)"
+                    value="{{item?.lineItem.quantity}}"
+                  >
+                    <ion-select-option
+                      *ngFor="let num of numbers(8); let i = index" value="{{ i + 1 }}">
+                      {{ i + 1 }}
+                    </ion-select-option>
+                  </ion-select>
+              </div>
+              <div class="article-price">
+                {{ item.lineItem.price.totalPrice.toFixed(2) }} €
+              </div>
+            </div>
+          </div>
+          <div class="article-footer">
+            <div class="remove-article" (click)="onArticleRemove(item.lineItem.id)">
+              Artikel entfernen <ion-icon name="trash-bin-outline"></ion-icon>
+            </div>
+            <div class="delivery-time">
+              Lieferung am: {{ item.deliveryDate.latest | date: 'dd. MM. yyyy' }}
+            </div>
+          </div>
+        </div>
+        <div class="cart-footer">
+          <div>
+            <div class="total-text"> Gesamtbetrag</div>
+            <div class="tax-rate">
+              Preise inkl. 19% MwSt.
+            </div>
+          </div>
+          <div class="prices">
+            <div class="total-price">
+              {{ cart?.price.totalPrice.toFixed(2) }} €
+            </div>
+          </div>
+        </div>
+        <ion-button *ngIf="cartItems.length > 0"
+                    color="secondary" class="cart-button"
+                    (click)="onProgressCart()">
+          Zur Kasse
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        X
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeSm="8" offsetSm="2">
+        <div class="image-container" *ngIf="zoomedImage">
+          <img [src]="zoomedImage" alt="">
+        </div>
+        <div class="pdf-container" *ngIf="zoomedPdf">
+          <pdf-viewer [src]="zoomedPdf"
+                      [original-size]="false"
+          ></pdf-viewer>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeSm="8" offsetSm="2">
+        <div class="image-footer">
+          <div class="del-button" (click)="onRemoveFile()">
+            <ion-icon name="trash-outline"></ion-icon>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

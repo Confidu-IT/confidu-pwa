@@ -1,0 +1,26 @@
+ion-card {
+  margin: 24px 0;
+}
+
+h2 {
+  font-size: 15px;
+}
+
+mat-radio-button {
+  font-size: 14px;
+  width: 100%;
+}
+
+h2, mat-radio-button {
+  font-weight: bold;
+}
+
+
+h2, p, mat-radio-button {
+  margin-bottom: 16px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}

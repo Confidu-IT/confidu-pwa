@@ -1,0 +1,117 @@
+.confirm-button {
+  --border-radius: 0;
+  //--padding-top: 19px;
+  //--padding-bottom: 19px;
+  font-size: 14px;
+  margin-top: 24px;
+  width: 100%;
+}
+
+ion-card {
+  margin: 16px 0 0;
+}
+
+ion-card-content {
+  font-size: 14px;
+  padding: 24px 16px 12px;
+
+  h3 {
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  p {
+    color: var(--ion-color-medium);
+    font-size: 12px;
+    font-style: italic;
+    margin-top: 32px;
+  }
+}
+
+.castration, .id {
+  margin-left: -16px;
+
+  ion-label {
+    font-size: 14px;
+  }
+}
+
+ion-input {
+  font-size: 14px;
+}
+
+.range {
+  &-text {
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    padding: 0 16px;
+  }
+
+  &-answer {
+    p {
+      color: rgb(102,102,102);
+      font-size: 14px;
+      margin: 0 16px 10px 16px;
+
+      &.first {
+        font-weight: bold;
+      }
+
+      &.last {
+        font-size: 12px;
+        line-height: 18px;
+        margin-top: 20px;
+      }
+    }
+  }
+
+  &-info {
+    display: flex;
+    margin: 32px 16px 0;
+  }
+
+  &-info-image {
+    width: 50px;
+
+    img {
+      display: block;
+      height: 27px;
+      min-width: 33px;
+    }
+  }
+
+  &-info-content {
+    padding-left: 16px;
+
+    p {
+      color: rgb(102,102,102);
+      margin-bottom: 10px;
+      margin-top: 0;
+
+      &.header {
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      &.text {
+        font-size: 14px;
+      }
+
+      &.annotation {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.description {
+  color: rgb(102,102,102);
+  font-size: 14px;
+  margin: 32px 16px 0;
+}
+
+ion-range {
+  --knob-background: var(--ion-color-secondary);
+  --knob-size: 16px;
+}

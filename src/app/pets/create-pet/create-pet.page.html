@@ -1,0 +1,143 @@
+<ion-header *ngIf="!isLoading">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <img [src]="logo" alt="" height="40">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="isLoading" class="spinner">
+    <ion-spinner color="primary"></ion-spinner>
+  </div>
+
+  <ion-grid *ngIf="!isLoading">
+    <ion-row>
+      <ion-col offsetSm="2" sizeSm="8">
+        <ion-card>
+          <form [formGroup]="form" class="create-pet-form">
+            <div (click)="onPickImage()" class="image-container">
+              <div class="pet-images">
+                <img [ngClass]="{ 'pet-image': hasImage }" [src]="petImage || petAvatar"
+                     alt="" class="image" height="90">
+                <img class="cam-icon" [src]="camIcon" width="26" height="26" alt="">
+              </div>
+            </div>
+            <ion-card-content>
+
+              <ion-item>
+                <ion-label color="medium"
+                           position="floating"> {{ 'CREATE_PET_PAGE.NAME_LABEL' | translate }}</ion-label>
+                <ion-input maxlength="15" formControlName="name" type="text"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label color="medium"
+                           position="floating">{{ 'CREATE_PET_PAGE.SPECIES_LABEL' | translate }}</ion-label>
+                <ion-select
+                  (ionChange)="onSelectSpecies($event)"
+                  [(ngModel)]="selectedSpecies"
+                  [cancelText]="cancelText"
+                  [compareWith]="compareFn"
+                  [okText]="okText"
+                  formControlName="species">
+                  <ion-select-option *ngFor="let item of speciesList" [value]="item.value">
+                    {{ item.label[language] }}
+                  </ion-select-option>
+
+                </ion-select>
+              </ion-item>
+
+              <ion-item *ngIf="showBreedList" class="breed-list">
+                <mat-form-field>
+                  <textarea [matAutocomplete]="auto" formControlName="race" matInput
+
+                            name="someUnusualName" autocomplete="off"
+                            [maxlength]="'20'"
+                            type="text">
+                  </textarea>
+                  <mat-placeholder class="breed-placeholder">Rasse</mat-placeholder>
+                  <mat-autocomplete #auto="matAutocomplete" [panelWidth]="300"
+                                    [displayWith]="raceLabel"
+                                    autoActiveFirstOption>
+
+                    <mat-option *ngFor="let option of (filteredOptions | async)" [value]="option">
+                      {{ option.data.name_de }}
+                    </mat-option>
+                  </mat-autocomplete>
+                </mat-form-field>
+              </ion-item>
+
+              <ion-item>
+                <ion-label color="medium" position="floating">
+                  {{ 'CREATE_PET_PAGE.BIRTHDAY_LABEL' | translate }}
+                </ion-label>
+                <ion-datetime
+                  [cancelText]="cancelText"
+                  [doneText]="okText"
+                  displayFormat="DD.MM.YYYY"
+                  formControlName="birthday"
+                  min="2000-12-31">
+                </ion-datetime>
+              </ion-item>
+
+              <ion-item (click)="openModal()" *ngIf="fixedBreed">
+                <div class="fixed-breed">
+                  <p class="breed-label">{{ 'CREATE_PET_PAGE.BREED_LABEL' | translate }}</p>
+                  <p class="breed-name">{{ fixedBreed }}</p>
+                </div>
+              </ion-item>
+
+              <ion-item>
+                <ion-label color="medium"
+                           position="floating">{{ 'CREATE_PET_PAGE.GENDER_LABEL' | translate }}</ion-label>
+                <ion-select [cancelText]="cancelText"
+                            [okText]="okText"
+                            [selectedText]="genderLabel"
+                            formControlName="gender">
+                  <ion-select-option value="male">{{ 'CREATE_PET_PAGE.GENDER.MALE' | translate }}</ion-select-option>
+                  <ion-select-option
+                    value="female">{{ 'CREATE_PET_PAGE.GENDER.FEMALE' | translate }}</ion-select-option>
+                </ion-select>
+              </ion-item>
+
+              <ion-item>
+                <ion-label color="medium" position="floating">
+                  {{ 'CREATE_PET_PAGE.CASTRATION_LABEL' | translate }}
+                </ion-label>
+                <ion-select [cancelText]="cancelText"
+                            [okText]="okText"
+                            [selectedText]="castrationLabel"
+                            formControlName="castration">
+                  <ion-select-option
+                    value="true">{{ 'CREATE_PET_PAGE.CASTRATION_VALUES.TRUE' | translate }}</ion-select-option>
+                  <ion-select-option
+                    value="false">{{ 'CREATE_PET_PAGE.CASTRATION_VALUES.FALSE' | translate }}</ion-select-option>
+                </ion-select>
+              </ion-item>
+
+              <ion-button
+                (click)="onCreatePet()"
+                [disabled]="!form.valid"
+                color="secondary"
+                expand="full"
+                routerDirection="forward"
+              >
+                {{ 'CREATE_PET_PAGE.FORM_BUTTON' | translate }}
+              </ion-button>
+            </ion-card-content>
+          </form>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <input #filePicker (change)="onFileChosen($event)" *ngIf="usePicker" accept="image/jpeg,image/png" type="file">
+
+  </ion-grid>
+</ion-content>
+<ion-footer *ngIf="!isLoading">
+  <app-toolbar-footer [user]="user$"></app-toolbar-footer>
+</ion-footer>

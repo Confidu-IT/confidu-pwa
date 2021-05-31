@@ -1,0 +1,35 @@
+.instructions-content {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+  //margin-top: 120px;
+}
+
+img {
+  //width: 120px;
+  height: 120px;
+}
+
+figure {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  height: 220px;
+}
+
+p, figcaption {
+  font-size: 14px;
+}
+
+p {
+  height: 115px;
+  margin: 20px 60px 20px;
+}
+
+figcaption {
+  color: var(--ion-color-medium);
+  margin-top: 16px;
+  width: 100%;
+}

@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar class="toolbar">
+    <img [src]="logo" alt="" height="32">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeSm="8" offsetSm="2">
+        <ng-container *ngIf="verification">
+          <h2>{{ 'VERIFICATION_PAGE.HEADER.VERIFICATION' | translate }}</h2>
+          <img [src]="sign" alt="" height="88">
+          <p>
+            {{ 'VERIFICATION_PAGE.BODY.VERIFICATION.PART_1' | translate }}
+            <span> {{ mail }} </span>
+            {{ 'VERIFICATION_PAGE.BODY.VERIFICATION.PART_2' | translate }}
+          </p>
+        </ng-container>
+        <ng-container *ngIf="recoverySuccess">
+          <h2>{{ 'VERIFICATION_PAGE.HEADER.RECOVER_SUCCESS' | translate }}</h2>
+          <img [src]="sign" alt="" height="88">
+          <p>
+            {{ 'VERIFICATION_PAGE.BODY.RECOVER_SUCCESS.PART_1' | translate }}<br>
+            <span> {{ mail }} </span><br>
+            {{ 'VERIFICATION_PAGE.BODY.RECOVER_SUCCESS.PART_2' | translate }}
+          </p>
+          <div class="repeat-link">
+            {{ 'VERIFICATION_PAGE.BODY.LINK_REPEAT.PART_1' | translate }}
+            <a href="">{{ 'VERIFICATION_PAGE.BODY.LINK_REPEAT.PART_2' | translate }}</a>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="recoveryFail">
+          <h2>{{ 'VERIFICATION_PAGE.HEADER.RECOVER_FAIL' | translate }}</h2>
+          <img [src]="sign" alt="" height="88">
+          <p>
+            {{ 'VERIFICATION_PAGE.BODY.RECOVER_FAIL.PART_1' | translate }}
+          </p>
+        </ng-container>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>

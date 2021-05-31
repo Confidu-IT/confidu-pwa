@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        X
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h2>{{ 'HOME_MODAL_PAGE.HEADER' | translate }}</h2>
+        <mat-radio-group
+          class="toolbar-radio-group"
+          [(ngModel)]="selected">
+          <mat-radio-button value="tickets/televet-pet">
+            {{ 'HOME_MODAL_PAGE.QUESTIONNAIRE' | translate }}
+          </mat-radio-button>
+          <mat-radio-button value="consultation">
+            {{ 'HOME_MODAL_PAGE.CALL' | translate }}
+          </mat-radio-button>
+        </mat-radio-group>
+        <div class="call-description">{{ 'HOME_MODAL_PAGE.CALL_DESCRIPTION' | translate }}</div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div class="buttons">
+          <ion-button color="medium" fill="clear" size="small"
+                      (click)="closeModal()">
+            {{ 'HOME_MODAL_PAGE.CANCEL' | translate }}
+          </ion-button>
+          <ion-button
+            (click)="onConfirm()"
+            [disabled] = "!selected"
+            color="secondary"
+            fill="clear"
+            size="small">
+            {{ 'HOME_MODAL_PAGE.PROGRESS' | translate }}
+          </ion-button>
+        </div>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

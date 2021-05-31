@@ -1,0 +1,55 @@
+figure {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 75px;
+  margin: 0;
+  width: 100%;
+
+  img {
+    width: 60px;
+  }
+}
+
+.image-label {
+  font-size: 13px;
+  font-weight: 700;
+  height: 36px;
+  margin-bottom: 16px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+ion-card {
+  box-shadow: 0 1px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 0;
+  margin: 0;
+}
+
+ion-card-content {
+  padding: 16px 16px 0;
+}
+
+.tiles {
+  margin-top: 16px;
+}
+
+@media only screen and (min-width: 576px) {
+  .image-label {
+    height: unset;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  figure {
+    height: 115px;
+    img {
+      width: 90px;
+    }
+  }
+
+  .image-label {
+    font-size: 21px;
+  }
+}
+

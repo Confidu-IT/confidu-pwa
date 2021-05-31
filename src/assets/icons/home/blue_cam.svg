@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26" height="26" viewBox="0 0 26 26">
+  <defs>
+    <filter id="Pfad_4179" x="0" y="0" width="26" height="26" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feFlood flood-opacity="0.2"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path">
+      <rect width="9" height="8" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Gruppe_21119" data-name="Gruppe 21119" transform="translate(-80.997 -155.444)">
+    <g id="Gruppe_20969" data-name="Gruppe 20969" transform="translate(86.997 160.444)">
+      <g id="Gruppe_13845" data-name="Gruppe 13845" transform="translate(0 0)">
+        <g id="Gruppe_13704" data-name="Gruppe 13704" transform="translate(0 0)">
+          <g id="Gruppe_13666" data-name="Gruppe 13666" transform="translate(0)">
+            <g id="Gruppe_8178" data-name="Gruppe 8178">
+              <g transform="matrix(1, 0, 0, 1, -6, -5)" filter="url(#Pfad_4179)">
+                <g id="Pfad_4179-2" data-name="Pfad 4179" transform="translate(6 5)" fill="#00b7ff">
+                  <path d="M 7 15.49998378753662 C 2.313080072402954 15.49998378753662 -1.5 11.68690395355225 -1.5 6.999993801116943 C -1.5 2.31308388710022 2.313080072402954 -1.499996185302734 7 -1.499996185302734 C 11.68692016601562 -1.499996185302734 15.5 2.31308388710022 15.5 6.999993801116943 C 15.5 11.68690395355225 11.68692016601562 15.49998378753662 7 15.49998378753662 Z" stroke="none"/>
+                  <path d="M 7 3.814697265625e-06 C 3.134010314941406 3.814697265625e-06 0 3.134003639221191 0 6.999993801116943 C 0 10.8659839630127 3.134010314941406 13.99998378753662 7 13.99998378753662 C 10.86598968505859 13.99998378753662 14 10.8659839630127 14 6.999993801116943 C 14 3.134003639221191 10.86598968505859 3.814697265625e-06 7 3.814697265625e-06 M 7 -2.999997138977051 C 12.51401996612549 -2.999997138977051 17 1.485983848571777 17 6.999993801116943 C 17 12.51400375366211 12.51401996612549 16.99998474121094 7 16.99998474121094 C 1.485980033874512 16.99998474121094 -3 12.51400375366211 -3 6.999993801116943 C -3 1.485983848571777 1.485980033874512 -2.999997138977051 7 -2.999997138977051 Z" stroke="none" fill="#00b7ff"/>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="ic_add_a_photo_24px" transform="translate(2.003 2.544)" clip-path="url(#clip-path)">
+        <path id="ic_add_a_photo_24px-2" data-name="ic_add_a_photo_24px" d="M1.187,2.223V1h.791V2.223H3.164v.815H1.978V4.262H1.187V3.039H0V2.223ZM2.373,4.67V3.446H3.56V2.223H6.329l.724.815H8.306a.806.806,0,0,1,.791.815V8.747a.806.806,0,0,1-.791.815H1.978a.806.806,0,0,1-.791-.815V4.67Zm2.769,3.67a2.04,2.04,0,0,0,0-4.077,2.04,2.04,0,0,0,0,4.077ZM3.876,6.3A1.266,1.266,0,1,0,5.142,5,1.284,1.284,0,0,0,3.876,6.3Z" transform="translate(0 -1)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

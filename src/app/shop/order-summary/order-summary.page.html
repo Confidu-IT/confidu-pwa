@@ -1,0 +1,76 @@
+<ion-header>
+  <app-toolbar></app-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeSm="8" offsetSm="2">
+        <ion-card class="welcome">
+          <ion-card-content>
+            <div class="summary-header">
+              <div class="top">
+                <img [src]="confirmCheckIcon" alt="" height="28">
+                <h2>Vielen Dank für deine Bestellung!</h2>
+              </div>
+              <p>
+                Wir haben dir eine Bestellbestätigung an die von dir angegebene E-Mailadresse gesendet.
+              </p>
+
+              <div class="status">
+                <h3>Dein Bestellstatus</h3>
+                <div class="top">
+                  <img [src]="radioOnIcon" alt="" height="28">
+                  <div class="text">
+                    <h3>Sprechstunde und Bezahlung</h3>
+                  </div>
+                </div>
+
+                <div class="middle">
+                  <img [src]="radioOnLightIcon" alt="" height="28">
+                  <div class="text">
+                    <h3>Diagnose</h3>
+                    <p>
+                      Einer unserer Tierärzte prüft alle von dir bereitgestellten Informationen und stellt dir bei Eignung
+                      ein Rezeot aus. Sollte es Rückfragen geben, kontaktieren wir dich.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="bottom">
+                  <img [src]="radioOffLightIcon" alt="" height="24">
+                  <div class="text">
+                    <h3>Versand</h3>
+                    <p>
+                      Bei Versand der Ware erhälst du eine E-Mail mit dem Link zur Sendungsverfolgung.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </ion-card-content>
+        </ion-card>
+<!--        <ion-card class="summary">-->
+<!--          <ion-card-content>-->
+<!--            <h3>Deine Bestellung</h3>-->
+<!--            <ul class="order-list">-->
+<!--              <li *ngFor="let order of orderDetails" class="order">-->
+<!--                <div class="label">{{ order.attributes.label }}</div>-->
+<!--                <div class="quantity">{{ order.attributes.quantity }}</div>-->
+<!--                <div class="price">{{ order.attributes.totalPrice.toFixed(2) }} €</div>-->
+<!--              </li>-->
+<!--            </ul>-->
+<!--          </ion-card-content>-->
+<!--        </ion-card>-->
+        <ion-button
+          color="secondary"
+          expand="full"
+          routerDirection="forward"
+          routerLink="/home">
+          Zur Startseite
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

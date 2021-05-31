@@ -1,0 +1,73 @@
+<ion-content>
+  <div *ngIf="isLoading" class="spinner">
+    <ion-spinner color="primary"></ion-spinner>
+  </div>
+  <ion-row>
+    <ion-col sizeSm="8" offsetSm="2">
+      <ion-card>
+        <ion-card-content>
+          <p class="bold-text">
+            {{ 'BREED_PROPOSALS_MODAL.BREED_RECOGNIZED' | translate }}
+          </p>
+          <div class="proposal-list">
+            <mat-radio-group [(ngModel)]="selectedBreed" class="radio-buttons">
+              <mat-radio-button *ngFor="let proposal of proposals" [value]="proposal">
+                {{ proposal.data.name_de }}
+              </mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <p class="base-text">
+            <span class="bold-text">{{ 'BREED_PROPOSALS_MODAL.NO_BREED' | translate }}</span>
+            {{ 'BREED_PROPOSALS_MODAL.BREED_MANUAL' | translate }}
+          </p>
+          <form [formGroup]="form">
+            <ion-item>
+
+              <mat-form-field>
+                <mat-label>{{ 'BREED_PROPOSALS_MODAL.ENTER_BREED' | translate }}</mat-label>
+                <textarea [matAutocomplete]="auto"
+                       matInput
+                       formControlName="breedList"
+                       [(ngModel)]="selectedBreed">
+                </textarea>
+                <mat-autocomplete
+                  #auto="matAutocomplete"
+                  autoActiveFirstOption
+                  [displayWith]="raceLabel">
+                  <mat-option *ngFor="let option of (filteredOptions | async)" [value]="option">
+                    {{ option.data.name_de }}
+                  </mat-option><br>
+                </mat-autocomplete>
+              </mat-form-field>
+            </ion-item>
+          </form>
+          <p class="sub-text">
+            {{ 'BREED_PROPOSALS_MODAL.CHECK_BREED' | translate }}
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+  <ion-footer>
+    <ion-row>
+      <ion-col sizeSm="8" offsetSm="2">
+        <div class="modal-buttons ion-justify-content-end">
+          <ion-button
+            (click)="closeModal()"
+            color="medium"
+            fill="clear"
+            size="small">
+            {{ 'BREED_PROPOSALS_MODAL.BUTTON.CANCEL' | translate }}
+          </ion-button>
+          <ion-button (click)="passSelection()" [disabled]="false"
+                      color="secondary"
+                      fill="clear"
+                      size="small">
+            {{ 'BREED_PROPOSALS_MODAL.BUTTON.CONFIRM' | translate }}
+          </ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-footer>
+</ion-content>

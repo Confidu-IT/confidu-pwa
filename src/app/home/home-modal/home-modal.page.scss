@@ -1,0 +1,41 @@
+h2, .buttons {
+  font-size: 14px;
+}
+
+h2 {
+  font-weight: 500;
+  margin-bottom: 32px;
+  margin-left: 12px;
+}
+
+mat-radio-button {
+  color: #000;
+  font-size: 13px;
+  width: 100%;
+}
+//
+//mat-radio-button {
+//  font-weight: 700;
+//}
+
+.mat-radio-container {
+  width: 18px;
+  height: 18px;
+}
+
+
+mat-radio-button {
+  margin-left: 12px;
+  margin-bottom: 16px;
+}
+
+.call-description {
+  font-size: 12px;
+  font-weight: 300;
+  margin: 24px 12px 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}

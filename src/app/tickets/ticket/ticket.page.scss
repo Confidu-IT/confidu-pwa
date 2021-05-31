@@ -1,0 +1,277 @@
+.ticket {
+  &-toolbar {
+    color: var(--ion-color-medium);
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    justify-content: space-between;
+    margin: 8px 12px;
+
+    ion-icon {
+      font-size: 16px;
+    }
+
+    .date {
+      display: flex;
+      align-items: center;
+
+      ion-icon {
+        margin-right: 8px;
+      }
+    }
+    .icons {
+      .trash {
+        margin-left: 24px;
+      }
+    }
+  }
+
+  &-title {
+    color: rgb(102,102,102);
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 12px;
+  }
+
+  &-text {
+    font-size: 13px;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+
+  &-label {
+    color: var(--ion-color-primary);
+    font-size: 13px;
+    font-weight: 700;
+    margin: 6px 12px 24px;
+
+    img {
+      height: 12px;
+      width: 13px;
+    }
+  }
+
+  &-exec-button {
+    margin: 0 12px 12px;
+  }
+
+  &-link-list {
+    //border-top: 1px solid #cecece;
+    color: rgb(102,102,102);
+    list-style: none;
+    margin: 0 16px 0;
+    padding-left: 0;
+
+    > li {
+      border-bottom: 1px solid #cecece;
+      padding-bottom: 16px;
+      padding-top: 20px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h4 {
+        font-size: 14px;
+        font-weight: 700;
+        margin: 0;
+      }
+
+
+    }
+  }
+
+  &-info {
+    font-size: 13px;
+    display: flex;
+    margin: 20px 0 8px;
+
+    h6 {
+      font-size: 13px;
+      font-weight: 700;
+      margin: 0 0 6px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .info-image {
+      width: 40px;
+
+      img {
+        display: block;
+        height: 20px;
+        min-width: 24px;
+        //width: 24px;
+      }
+    }
+
+    .info-text {
+      padding-left: 16px;
+    }
+  }
+
+  &-instructions-content {
+    display: flex;
+    flex-direction: column;
+    //margin-bottom: 40px;
+    //margin-top: 120px;
+
+    img {
+      //width: 120px;
+      height: 120px;
+      width: auto;
+    }
+
+    .is-svg {
+      height: 200px;
+    }
+
+    figure {
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: flex-end;
+      margin: 0;
+      //height: 220px;
+    }
+
+    p, figcaption {
+      font-size: 14px;
+    }
+
+    p {
+      //height: 115px;
+      //margin: 20px 60px 20px;
+    }
+
+    figcaption {
+      color: var(--ion-color-medium);
+      margin-top: 16px;
+      width: 100%;
+    }
+  }
+
+}
+
+.radio, .input-number {
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.radio {
+  margin-bottom: 16px;
+  font-size: 13px;
+
+  &-question {
+    margin-bottom: 20px;
+  }
+
+  &-answer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    &.last {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.input-number {
+  &-text {
+    color: rgb(102,102,102);
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+
+  &-button {
+    margin: 20px 0;
+  }
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+
+  .update-cancel-button {
+    color: rgb(102,102,102);
+  }
+}
+
+.date-time {
+  display: flex;
+
+  ion-item {
+    flex-grow: 1;
+  }
+}
+
+.date {
+  margin-right: 20px;
+}
+
+.task-form {
+  margin-top: 16px;
+
+  ion-card-content {
+    padding: 20px;
+  }
+}
+
+.task-title {
+  color: rgb(102,102,102);
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.task-button {
+  margin-top: 32px;
+}
+
+ion-checkbox {
+  --size: 18px;
+  --border-color: #666;
+}
+
+ion-label {
+  color: #888 !important;
+  font-size: 14px !important;
+}
+
+ion-item {
+  margin-left: -20px;
+}
+
+ion-card {
+  margin: 0 0 12px;
+
+  img {
+    height: auto;
+    width: 100%;
+
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+ion-card-content {
+  padding: 6px 12px 12px;
+}
+
+ion-button {
+  margin: 0;
+}
+
+::ng-deep .swiper-pagination-bullets {
+  position: relative !important;
+  bottom: unset !important;
+}

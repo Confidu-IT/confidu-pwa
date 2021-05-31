@@ -1,0 +1,30 @@
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.headline {
+  color: rgb(102,102,102);
+  font-size: 15px;
+  font-weight: 700;
+  margin: 32px 16px 16px;
+  text-align: center;
+}
+
+.text-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 16px 0 42px;
+
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  color: rgb(102,102,102);
+  font-size: 13px;
+  margin-bottom: 6px;
+}

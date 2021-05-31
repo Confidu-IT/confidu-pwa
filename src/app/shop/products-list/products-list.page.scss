@@ -1,0 +1,54 @@
+ion-card {
+  margin: 6px 0;
+}
+
+ion-card-content {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+}
+
+.product-image, .product-details {
+  width: 50%;
+}
+
+.product-details {
+  padding-left: 16px;
+}
+
+h2  {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.price, h2 {
+  font-weight: bold;
+}
+
+.price {
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.product-image {
+  border: 1px solid #ddd;
+  img  {
+    margin: auto;
+    max-width: 80%;
+  }
+}
+
+.not-available, .available, .delivery-time {
+  font-size: 11px;
+}
+
+.available {
+  color: var(--ion-color-primary);
+  margin-bottom: 4px;
+}
+
+.not-available {
+  color: var(--ion-color-medium);
+  font-style: italic;
+  margin-bottom: 4px;
+}
