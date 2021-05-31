@@ -6,9 +6,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { BreedProposalsModalPage } from './breed-proposals-modal.page';
-import { MatAutocompleteModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { MatRadioModule } from '@angular/material/radio';
 import { TranslateModule } from '@ngx-translate/core';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+
 
 const routes: Routes = [
   {
