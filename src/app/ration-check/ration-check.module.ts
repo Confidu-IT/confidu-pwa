@@ -10,7 +10,7 @@ import { RationCheckPage } from './ration-check.page';
 import { TranslateModule } from '@ngx-translate/core';
 import { SharedComponentsModule } from '../shared/components/shared-components.module';
 import { FirebaseModule } from '../shared/services/firebase/firebase.module';
-import { MatSelectModule } from '@angular/material';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   imports: [

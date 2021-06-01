@@ -8,8 +8,9 @@ import { ConsultationPageRoutingModule } from './consultation-routing.module';
 
 import { ConsultationPage } from './consultation.page';
 import { TranslateModule } from '@ngx-translate/core';
-import { MatInputModule, MatSelectModule } from '@angular/material';
 import { SharedComponentsModule } from '../shared/components/shared-components.module';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   imports: [

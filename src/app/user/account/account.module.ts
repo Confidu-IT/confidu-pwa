@@ -9,7 +9,8 @@ import { AccountPageRoutingModule } from './account-routing.module';
 import { AccountPage } from './account.page';
 import { TranslateModule } from '@ngx-translate/core';
 import { SharedComponentsModule } from '../../shared/components/shared-components.module';
-import { MatInputModule, MatSelectModule } from '@angular/material';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   imports: [

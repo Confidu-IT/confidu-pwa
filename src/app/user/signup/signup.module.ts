@@ -7,7 +7,9 @@ import { IonicModule } from '@ionic/angular';
 
 import { SignupPage } from './signup.page';
 import { TranslateModule } from '@ngx-translate/core';
-import { MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
 
 const routes: Routes = [
   {
@@ -23,8 +25,8 @@ const routes: Routes = [
     IonicModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule,
     ReactiveFormsModule,
+    MatSelectModule,
     TranslateModule.forChild(),
     RouterModule.forChild(routes)
   ],

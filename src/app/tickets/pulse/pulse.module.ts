@@ -8,7 +8,8 @@ import { PulsePageRoutingModule } from './pulse-routing.module';
 
 import { PulsePage } from './pulse.page';
 import { TranslateModule } from '@ngx-translate/core';
-import { MatFormFieldModule, MatInputModule } from '@angular/material';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   imports: [

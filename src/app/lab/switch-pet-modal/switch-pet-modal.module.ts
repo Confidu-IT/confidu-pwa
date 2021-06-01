@@ -8,7 +8,7 @@ import { SwitchPetModalPageRoutingModule } from './switch-pet-modal-routing.modu
 
 import { SwitchPetModalPage } from './switch-pet-modal.page';
 import { TranslateModule } from '@ngx-translate/core';
-import { MatRadioModule } from '@angular/material';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   imports: [

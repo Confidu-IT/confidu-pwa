@@ -9,7 +9,7 @@ import { ConsultationBookingPageRoutingModule } from './consultation-booking-rou
 import { ConsultationBookingPage } from './consultation-booking.page';
 import { TranslateModule } from '@ngx-translate/core';
 import { SharedComponentsModule } from '../../shared/components/shared-components.module';
-import { MatCheckboxModule } from '@angular/material';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   imports: [

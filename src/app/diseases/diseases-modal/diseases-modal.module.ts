@@ -8,8 +8,11 @@ import { DiseasesModalPageRoutingModule } from './diseases-modal-routing.module'
 
 import { DiseasesModalPage } from './diseases-modal.page';
 import { TranslateModule } from '@ngx-translate/core';
-import { MatAutocompleteModule, MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   imports: [

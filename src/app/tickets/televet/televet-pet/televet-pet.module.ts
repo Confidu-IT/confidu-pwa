@@ -6,8 +6,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { TelevetPetPage } from './televet-pet.page';
-import { MatRadioModule } from '@angular/material';
 import { SharedComponentsModule } from '../../../shared/components/shared-components.module';
+import {MatRadioModule} from '@angular/material/radio';
 
 const routes: Routes = [
   {

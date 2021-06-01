@@ -8,7 +8,7 @@ import { ToolbarModalPageRoutingModule } from './toolbar-modal-routing.module';
 
 import { ToolbarModalPage } from './toolbar-modal.page';
 import { TranslateModule } from '@ngx-translate/core';
-import { MatRadioModule } from '@angular/material';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   imports: [

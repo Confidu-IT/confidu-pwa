@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { CommonService } from '../services/common/common.service';
-import { BarcodeFormat } from '@zxing/library';
 import { TranslateService } from '@ngx-translate/core';
+import {BarcodeFormat} from '@zxing/library';
 
 @Component({
   selector: 'app-qr-scanner-modal',

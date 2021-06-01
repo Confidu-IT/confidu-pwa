@@ -8,8 +8,8 @@ import { DiseasePageRoutingModule } from './diseases-routing.module';
 
 import { DiseasesPage } from './diseases-page.component';
 import { TranslateModule } from '@ngx-translate/core';
-import { MatSelectModule } from '@angular/material';
 import { MatRadioModule } from '@angular/material/radio';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   imports: [

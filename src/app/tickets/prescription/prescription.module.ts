@@ -8,7 +8,7 @@ import { RecipePageRoutingModule } from './prescription-routing.module';
 
 import { PrescriptionPage } from './prescription-page.component';
 import { TranslateModule } from '@ngx-translate/core';
-import { MatSelectModule } from '@angular/material';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   imports: [

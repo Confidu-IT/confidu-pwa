@@ -9,7 +9,10 @@ import { InvoiceResultPageRoutingModule } from './invoice-result-routing.module'
 import { InvoiceResultPage } from './invoice-result.page';
 import { TranslateModule } from '@ngx-translate/core';
 import { SharedComponentsModule } from '../../shared/components/shared-components.module';
-import { MatAutocompleteModule, MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 @NgModule({
   imports: [

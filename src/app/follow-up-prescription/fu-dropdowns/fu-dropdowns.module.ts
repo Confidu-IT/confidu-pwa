@@ -7,9 +7,11 @@ import { IonicModule } from '@ionic/angular';
 import { FuDropdownsPageRoutingModule } from './fu-dropdowns-routing.module';
 
 import { FuDropdownsPage } from './fu-dropdowns.page';
-import { MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
 import { TranslateModule } from '@ngx-translate/core';
 import { SharedComponentsModule } from '../../shared/components/shared-components.module';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   imports: [

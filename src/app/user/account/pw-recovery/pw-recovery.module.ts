@@ -8,8 +8,10 @@ import { PwRecoveryPageRoutingModule } from './pw-recovery-routing.module';
 
 import { PwRecoveryPage } from './pw-recovery.page';
 import { TranslateModule } from '@ngx-translate/core';
-import { MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
 import { SharedComponentsModule } from '../../../shared/components/shared-components.module';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   imports: [

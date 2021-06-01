@@ -8,9 +8,13 @@ import { IonicModule } from '@ionic/angular';
 import { TicketQuestionsPage } from './ticket-questions.page';
 import { MatRadioModule } from '@angular/material/radio';
 import { TranslateModule } from '@ngx-translate/core';
-import { MatAutocompleteModule, MatCheckboxModule, MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
 import { MultiLineOptionModule } from '../../shared/components/multi-line/multi-line-option-module';
 import { SharedComponentsModule } from '../../shared/components/shared-components.module';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 const routes: Routes = [
   {

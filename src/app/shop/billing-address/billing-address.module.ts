@@ -8,7 +8,10 @@ import { IonicModule } from '@ionic/angular';
 import { BillingAddressPage } from './billing-address.page';
 import { MatRadioModule } from '@angular/material/radio';
 import { TranslateModule } from '@ngx-translate/core';
-import { MatCheckboxModule, MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
+import {MatSelectModule} from '@angular/material/select';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 const routes: Routes = [
   {

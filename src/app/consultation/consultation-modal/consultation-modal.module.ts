@@ -8,7 +8,8 @@ import { ConsultationModalPageRoutingModule } from './consultation-modal-routing
 import { ConsultationModalPage } from './consultation-modal.page';
 import { TranslateModule } from '@ngx-translate/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatFormFieldModule, MatInputModule } from '@angular/material';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   imports: [

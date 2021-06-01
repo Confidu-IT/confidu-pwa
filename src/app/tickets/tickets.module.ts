@@ -11,9 +11,9 @@ import { registerLocaleData } from '@angular/common';
 import localeDe from '@angular/common/locales/de';
 import { NgCalendarModule } from 'ionic2-calendar';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { MatCheckboxModule } from '@angular/material';
 import { TranslateModule } from '@ngx-translate/core';
 import { SharedComponentsModule } from '../shared/components/shared-components.module';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 registerLocaleData(localeDe);
 
 const routes: Routes = [

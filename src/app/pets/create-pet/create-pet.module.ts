@@ -5,12 +5,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { CreatePetPage } from './create-pet.page';
-// import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
 import { FirebaseModule } from '../../shared/services/firebase/firebase.module';
 import { SharedComponentsModule } from '../../shared/components/shared-components.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatAutocompleteModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { TranslateModule } from '@ngx-translate/core';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 
 
@@ -32,7 +33,6 @@ const routes: Routes = [
     MatAutocompleteModule,
     MatFormFieldModule,
     MatInputModule,
-    // NgxAuthFirebaseUIModule,
     TranslateModule.forChild(),
     RouterModule.forChild(routes)
   ],
