@@ -1,6 +1,7 @@
 {
   "projects": {
-    "confidu": "confidu-app"
+    "confidu": "confidu-app",
+    "default": "confidu-app"
   },
   "targets": {
     "confidu-app": {
@@ -9,7 +10,7 @@
           "confidu-app"
         ],
         "staging": [
-           "confidu-staging"
+          "confidu-staging"
         ]
       }
     }

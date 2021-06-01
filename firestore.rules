@@ -1,0 +1,74 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+  
+  	function isOwner(userId) {
+    	return request.auth.uid == userId;
+    }
+    
+    
+    match /{document=**} {
+      //allow read: if request.auth.uid != null;
+      allow read, write: if false;
+    }
+    
+    
+    match /users/{userId}/{allPaths=**} {
+      //allow read, write: if request.auth.uid == userId;
+      allow read, write: if isOwner(userId);
+    }
+    match /shelved-tickets/{userId}/{allPaths=**} {
+      //allow read, write: if request.auth.uid == userId;
+      allow read, create: if isOwner(userId);
+    }
+    
+    match /default-diseases-to-medication/{collection}/{allPaths=**} {
+      allow read: if request.auth.uid != null;
+    }
+    match /default-question-info/{collection}/{allPaths=**} {
+      allow read: if request.auth.uid != null;
+    }
+    match /food-db/{collection}/{allPaths=**} {
+      allow read: if request.auth.uid != null;
+    }
+    match /hp-cats/{collection}/{allPaths=**} {
+      allow read: if request.auth.uid != null;
+    }
+    match /hp-dogs/{collection}/{allPaths=**} {
+      allow read: if request.auth.uid != null;
+    }
+    match /scan-db/{collection}/{allPaths=**} {
+      allow read: if request.auth.uid != null;
+    }
+    match /sw-products-categorized/{collection}/{allPaths=**} {
+      allow read: if request.auth.uid != null;
+    }
+    match /race-list-dog/{collection}/{allPaths=**} {
+      allow read: if request.auth.uid != null;
+    }
+    match /race-list-cat/{collection}/{allPaths=**} {
+      allow read: if request.auth.uid != null;
+    }
+    match /vaccines/{collection}/{allPaths=**} {
+      allow read: if request.auth.uid != null;
+    }
+    match /venom-list-cc/{collection}/{allPaths=**} {
+      allow read: if request.auth.uid != null;
+    }
+    match /vet-list/{collection}/{allPaths=**} {
+      allow read: if request.auth.uid != null;
+    }
+    match /default-tickets/{collection}/{allPaths=**} {
+      allow get: if request.auth.uid != null;
+    }
+    
+     
+    //match /users/{userId} {
+      //allow read: if get(/databases/confidu-app/documents/accounts/$(request.auth.uid)).userPrivilages.premiumAccount == true;
+    //}
+    //match /users/{userId} {
+      //allow read, write: if request.auth.token.premiumAccount == true;
+    //}
+     
+  }
+}
