@@ -8,7 +8,7 @@ import { HomeModalPageRoutingModule } from './home-modal-routing.module';
 
 import { HomeModalPage } from './home-modal.page';
 import { TranslateModule } from '@ngx-translate/core';
-import { MatRadioModule } from '@angular/material';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   imports: [

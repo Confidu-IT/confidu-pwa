@@ -25,7 +25,7 @@ export class AuthService {
   public logOut(): void {
     this.router.navigateByUrl('/signin')
       .then(() => {
-        this.afAuth.auth.signOut()
+        this.afAuth.signOut()
           .then(() => {
             this.shopwareService.signout();
             localStorage.clear();
@@ -48,6 +48,6 @@ export class AuthService {
     let token = await this.createToken(obj.id);
     token = token.customToken;
     localStorage.setItem('user_uid', token);
-    await this.afAuth.auth.signInWithCustomToken(token);
+    await this.afAuth.signInWithCustomToken(token);
   }
 }

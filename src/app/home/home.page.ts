@@ -169,7 +169,7 @@ export class HomePage {
     species = `${species}s`;
     this.firebaseService.getPetPics(species)
       .subscribe(images => {
-        const el = Math.floor(Math.random() * (images.length - 1));
+        const el = Math.floor(Math.random() * (images?.length - 1));
         this.randomPetImg = images[el].image;
         // this.isLoading = false;
       });
