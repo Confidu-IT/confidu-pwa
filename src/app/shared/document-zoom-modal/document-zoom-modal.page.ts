@@ -54,7 +54,7 @@ export class DocumentZoomModalPage {
       `${this.path}/${this.link}`,
       `user-docs`,
       localStorage.getItem('activePet'),
-      this.user.ma
+      this.user.za
     ).subscribe(data => {
       if (data) {
         const str = data.url;

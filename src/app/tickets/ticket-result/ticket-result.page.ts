@@ -75,7 +75,7 @@ export class TicketResultPage implements CanDeactivateGuard {
           return this.ticketService.getResult(
             this.user.uid,
             // this.user.refreshToken,
-            this.user.ma,
+            this.user.za,
             this.petId,
             this.params.symptom,
             this.params.type,
@@ -154,7 +154,7 @@ export class TicketResultPage implements CanDeactivateGuard {
                 this.ticketService.confirmSave(
                   this.eventId, 'cancel',
                   this.petId,
-                  this.user.uid, this.user.ma,
+                  this.user.uid, this.user.za,
                   this.commonService.language
                 ).subscribe( () => {
                 });

@@ -89,7 +89,7 @@ export class ToolbarFooterComponent {
     }
     const headers = {
       'Content-Type': 'application/json',
-      'firebase-context-token': this.user.ma,
+      'firebase-context-token': this.user.za,
       'sw-context-token': localStorage.getItem('sw-token')
     };
 
@@ -183,7 +183,7 @@ export class ToolbarFooterComponent {
   }
 
   private registerCode() {
-    this.commonService.registerProductKey(this.regNr, this.user.uid, localStorage.getItem('activePet'), this.user.ma)
+    this.commonService.registerProductKey(this.regNr, this.user.uid, localStorage.getItem('activePet'), this.user.za)
       .subscribe(response => {
         this.regNr = null;
         this.validated = false;

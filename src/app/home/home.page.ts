@@ -123,7 +123,7 @@ export class HomePage {
           this.petId = localStorage.getItem('activePet');
           this.getActivePet(user.uid, this.petId);
           this.getTickets(user.uid, this.petId);
-          this.getArticles(this.petId, user.uid, user.ma);
+          this.getArticles(this.petId, user.uid, user.za);
           this.isLoading = false;
         } else if (localStorage.getItem('showWalkthrough')) {
           console.log('walkthrough');

@@ -41,7 +41,7 @@ export class OrderPage {
     this.subscription = this.userAuth.user$
       .subscribe(user => {
         this.user = user;
-        this.shopwareService.headers['firebase-context-token'] = this.user.ma;
+        this.shopwareService.headers['firebase-context-token'] = this.user.za;
 
         this.shopwareService.getProfile()
           .then(profile => {
@@ -68,7 +68,7 @@ export class OrderPage {
   }
 
   private deleteCartItem(id): Promise<any> {
-    this.shopwareService.headers['firebase-context-token'] = this.user.ma;
+    this.shopwareService.headers['firebase-context-token'] = this.user.za;
     return this.shopwareService.deleteLineItem(id)
       .then(product => {
         if (product.errors) {
@@ -123,7 +123,7 @@ export class OrderPage {
       return false;
     }
     this.presentLoading();
-    this.shopwareService.headers['firebase-context-token'] = this.user.ma;
+    this.shopwareService.headers['firebase-context-token'] = this.user.za;
     const petId = localStorage.getItem('activePet');
     this.shopwareService.orderProducts({ petId })
       .then(order => {

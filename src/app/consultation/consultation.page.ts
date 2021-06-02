@@ -37,7 +37,7 @@ export class ConsultationPage {
       switchMap(user => {
         if (user) {
           this.user = user;
-          return this.commonService.getAppointmentTypes(this.user.ma);
+          return this.commonService.getAppointmentTypes(this.user.za);
         } else {
           this.router.navigateByUrl('/');
         }

@@ -104,7 +104,7 @@ export class RationCheckPage {
       return this.router.navigateByUrl(`tickets/ticket/${this.ration}/${this.label}/${id}/questions`);
     } else {
       return this.router.navigateByUrl(`tickets/ticket/${this.ration}/${this.label}/null/questions`);
-      // this.ticketService.getTicket(this.user.uid, this.user.ma, this.petId, this.link, this.language, false)
+      // this.ticketService.getTicket(this.user.uid, this.user.za, this.petId, this.link, this.language, false)
       //   .subscribe(ticket => {
       //     // console.log('ticket', ticket);
       //     return this.router.navigateByUrl(`tickets/ticket/${this.link}/${this.label}/${ticket.id}/questions`);

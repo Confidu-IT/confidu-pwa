@@ -162,7 +162,7 @@ export class PetCareCardPage {
     const url = `${baseUrl}/${this.language}/carecard`;
     const headers = {
       'Content-Type': 'application/json',
-      'firebase-context-token': this.user.ma,
+      'firebase-context-token': this.user.za,
       'sw-context-token': localStorage.getItem('sw-token') || null
     };
     const body = {

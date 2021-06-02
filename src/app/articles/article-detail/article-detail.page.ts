@@ -53,9 +53,9 @@ export class ArticleDetailPage {
         }
         this.user = user;
         if (this.params.type === 'magazine') {
-          return this.commonService.getArticleById(this.user.ma, this.params.id);
+          return this.commonService.getArticleById(this.user.za, this.params.id);
         } else if (this.params.type === 'recipe') {
-          return this.commonService.getRecipeById(this.user.ma, this.params.id);
+          return this.commonService.getRecipeById(this.user.za, this.params.id);
         }
       })
     ).subscribe(article => {

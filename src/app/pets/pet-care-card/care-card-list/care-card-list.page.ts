@@ -151,7 +151,7 @@ export class CareCardListPage {
       link,
       `user-docs`,
       localStorage.getItem('activePet'),
-      this.user.ma
+      this.user.za
     ).subscribe(data => {
       if (data) {
         const str = data.url;
@@ -179,7 +179,7 @@ export class CareCardListPage {
       return this.router.navigateByUrl(`tickets/ticket/${this.link}/${this.label}/${id}/questions`);
     } else {
       return this.router.navigateByUrl(`tickets/ticket/${this.link}/${this.label}/null/questions`);
-      // this.ticketService.getTicket(this.user.uid, this.user.ma, this.petId, this.link, this.language, false)
+      // this.ticketService.getTicket(this.user.uid, this.user.za, this.petId, this.link, this.language, false)
       //   .subscribe(ticket => {
       //     return this.router.navigateByUrl(`tickets/ticket/${this.link}/${this.label}/${ticket.id}/questions`);
       //   });
@@ -191,7 +191,7 @@ export class CareCardListPage {
     const url = `${baseUrl}/${this.language}/carecard/${this.key}`;
     const headers = {
       'Content-Type': 'application/json',
-      'firebase-context-token': this.user.ma,
+      'firebase-context-token': this.user.za,
       'sw-context-token': localStorage.getItem('sw-token') || null
     };
     const body = {

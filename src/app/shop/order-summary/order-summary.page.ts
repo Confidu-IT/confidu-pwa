@@ -52,7 +52,7 @@ export class OrderSummaryPage {
         const fbtoken = localStorage.getItem('user_uid');
         if (orderId && uid && petId && fbtoken) {
           try {
-            this.shopwareService.headers['firebase-context-token'] = this.user.ma;
+            this.shopwareService.headers['firebase-context-token'] = this.user.za;
             this.shopwareService.sendOrderId(orderId, uid, petId, 'sdd', this.language)
               .then(data => {
                 console.log('data', data);

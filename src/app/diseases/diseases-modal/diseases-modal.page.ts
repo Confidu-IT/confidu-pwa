@@ -264,7 +264,7 @@ export class DiseasesModalPage {
       `findings/${link}`,
       `user-docs`,
       localStorage.getItem('activePet'),
-      this.user.ma
+      this.user.za
     ).subscribe(data => {
       if (data) {
         console.log('data', data);

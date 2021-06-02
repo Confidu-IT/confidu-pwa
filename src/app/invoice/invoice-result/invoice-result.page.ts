@@ -112,7 +112,7 @@ export class InvoiceResultPage {
         } else {
           key = this.params.key;
         }
-        return this.commonService.getInvoiceResult(this.user.ma, this.petId, this.user.uid, key);
+        return this.commonService.getInvoiceResult(this.user.za, this.petId, this.user.uid, key);
       })
     ).subscribe(result => {
       console.log('result', result);
@@ -172,7 +172,7 @@ export class InvoiceResultPage {
     this.result.medication.list = this.meds;
     this.result.therapy.list = this.theraps;
     // console.log('result', this.result);
-    this.commonService.getKeyFromInvoiceData(this.user.ma, this.petId, this.user.uid, this.result)
+    this.commonService.getKeyFromInvoiceData(this.user.za, this.petId, this.user.uid, this.result)
       .subscribe(data => {
         if (data.scanKey) {
           this.router.navigateByUrl(`tickets/invoice/${data.scanKey}/${this.vetVisit}/null/questions`);

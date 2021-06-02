@@ -66,7 +66,7 @@ export class AccountPage {
         }
         this.user = user;
 
-        this.shopwareService.headers['firebase-context-token'] = this.user.ma;
+        this.shopwareService.headers['firebase-context-token'] = this.user.za;
         this.shopwareService.getCustomer()
           .then(response => {
             console.log('response', response);

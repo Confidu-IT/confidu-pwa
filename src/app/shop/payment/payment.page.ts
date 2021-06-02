@@ -32,7 +32,7 @@ export class PaymentPage {
     this.subscription = this.userAuth.user$
       .subscribe(user => {
         this.user = user;
-        this.shopwareService.headers['firebase-context-token'] = this.user.ma;
+        this.shopwareService.headers['firebase-context-token'] = this.user.za;
       });
 
     this.shopwareService.getPayments()
@@ -43,7 +43,7 @@ export class PaymentPage {
   }
 
   public onProgress() {
-    this.shopwareService.headers['firebase-context-token'] = this.user.ma;
+    this.shopwareService.headers['firebase-context-token'] = this.user.za;
     this.shopwareService.setPaymentMethod(this.paymentId)
       .then(() => {
         this.router.navigateByUrl('/shop/order');

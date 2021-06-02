@@ -90,7 +90,7 @@ export class ConsultationBookingPage {
 
     if (this.appointmentText || this.addedFiles) {
       this.commonService.addAttachmentsToAppointment(
-        this.user.ma,
+        this.user.za,
         this.params.id,
         this.user.uid,
         petId,
@@ -110,7 +110,7 @@ export class ConsultationBookingPage {
   }
 
   private progressBooking(): void {
-    this.shopwareService.headers['firebase-context-token'] = this.user.ma;
+    this.shopwareService.headers['firebase-context-token'] = this.user.za;
     this.shopwareService.getProfile()
       .then(response => {
         if (response.errors?.length > 0) {

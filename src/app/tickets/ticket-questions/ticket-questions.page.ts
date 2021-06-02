@@ -225,7 +225,7 @@ export class TicketQuestionsPage {
           this.params.type,
           this.params.code,
           this.user.uid,
-          this.user.ma,
+          this.user.za,
           this.petId,
           this.commonService.language
         );

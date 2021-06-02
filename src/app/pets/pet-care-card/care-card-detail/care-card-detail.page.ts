@@ -165,7 +165,7 @@ export class CareCardDetailPage {
       path,
       `user-docs`,
       localStorage.getItem('activePet'),
-      this.user.ma
+      this.user.za
     ).subscribe(link => {
       this.docDownloadLink = link.url;
       console.log('docDownloadLink', this.docDownloadLink);
@@ -243,7 +243,7 @@ export class CareCardDetailPage {
     let url = `${environment.baseUrl}/${this.language}/carecard/${this.params.key}/${this.params.venom}`;
     const headers = {
       'Content-Type': 'application/json',
-      'firebase-context-token': this.user.ma,
+      'firebase-context-token': this.user.za,
     };
     const body: any = {
       uid: this.user.uid,
@@ -265,7 +265,7 @@ export class CareCardDetailPage {
     const url = `${this.baseUrL}/${this.language}/carecard/terminate-event/${this.params.key}`;
     const headers = {
       'Content-Type': 'application/json',
-      'firebase-context-token': this.user.ma
+      'firebase-context-token': this.user.za
     };
     const body = {
       level3Id: this.params.id,
@@ -280,7 +280,7 @@ export class CareCardDetailPage {
     console.log(url);
     const headers = {
       'Content-Type': 'application/json',
-      'firebase-context-token': this.user.ma
+      'firebase-context-token': this.user.za
     };
     const body = {
       petId: localStorage.getItem('activePet'),

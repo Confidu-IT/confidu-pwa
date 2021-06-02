@@ -31,7 +31,7 @@ export class CartPage implements OnInit {
     this.subscription = this.userAuth.user$
       .subscribe(user => {
         this.user = user;
-        this.shopwareService.headers['firebase-context-token'] = this.user.ma;
+        this.shopwareService.headers['firebase-context-token'] = this.user.za;
       });
 
     this.shopwareService.getCart()
@@ -57,7 +57,7 @@ export class CartPage implements OnInit {
   }
 
   private updateCartItem(id, quantity) {
-    this.shopwareService.headers['firebase-context-token'] = this.user.ma;
+    this.shopwareService.headers['firebase-context-token'] = this.user.za;
     this.shopwareService.changeLineItemQuantity(id, quantity)
       .then(product => {
         if (product.errors. length > 0) {
@@ -72,7 +72,7 @@ export class CartPage implements OnInit {
   }
 
   private deleteCartItem(id) {
-    this.shopwareService.headers['firebase-context-token'] = this.user.ma;
+    this.shopwareService.headers['firebase-context-token'] = this.user.za;
     this.shopwareService.deleteLineItem(id)
       .then(product => {
         if (product.errors) {
@@ -97,7 +97,7 @@ export class CartPage implements OnInit {
   }
 
   public onProgressCart(): void {
-    this.shopwareService.headers['firebase-context-token'] = this.user.ma;
+    this.shopwareService.headers['firebase-context-token'] = this.user.za;
     this.shopwareService.getProfile()
       .then(response => {
         console.log('response', response);

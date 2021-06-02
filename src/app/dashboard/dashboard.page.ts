@@ -37,7 +37,7 @@ export class DashboardPage {
         this.petId = localStorage.getItem('activePet');
         if (user && this.petId) {
           this.user = user;
-          return this.commonService.getDashBoardContent(user.uid, this.petId, user.ma);
+          return this.commonService.getDashBoardContent(user.uid, this.petId, user.za);
         } else {
           this.router.navigateByUrl('/');
         }

@@ -71,7 +71,7 @@ export class ConsultationSchedulerPage {
       switchMap(pet => {
         this.pet = pet;
         console.log('pet', this.pet);
-        return this.commonService.getAvailableAppointments(this.user.ma, this.params.id);
+        return this.commonService.getAvailableAppointments(this.user.za, this.params.id);
       })
     ).subscribe( response => {
       console.log('response', response);
@@ -103,7 +103,7 @@ export class ConsultationSchedulerPage {
 
   public onBook(): void {
     this.bookDate = !this.selectedDate ? this.nextAvTime.time : this.selectedDate;
-    this.shopwareService.headers['firebase-context-token'] = this.user.ma;
+    this.shopwareService.headers['firebase-context-token'] = this.user.za;
     this.shopwareService.getProfile()
       .then(response => {
         console.log('response', response);
@@ -131,7 +131,7 @@ export class ConsultationSchedulerPage {
   }
 
   private updateAccount(data: any): void {
-    this.shopwareService.headers['firebase-context-token'] = this.user.ma;
+    this.shopwareService.headers['firebase-context-token'] = this.user.za;
     this.shopwareService.updateSWUser(data)
       .then(response => {
         console.log('response', response);
@@ -145,7 +145,7 @@ export class ConsultationSchedulerPage {
 
   private progressBooking(): void {
     this.commonService.bookAppointment(
-      this.user.ma,
+      this.user.za,
       this.appointmentTypeID,
       this.bookDate,
       this.petId

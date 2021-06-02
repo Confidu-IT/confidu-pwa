@@ -24,7 +24,7 @@ export class ProductsListPage implements OnInit {
     this.subscription = this.userAuth.user$
       .subscribe(user => {
         this.user = user;
-        this.shopwareService.headers['firebase-context-token'] = this.user.ma;
+        this.shopwareService.headers['firebase-context-token'] = this.user.za;
       });
     this.shopwareService.getProducts()
       .then(products => {

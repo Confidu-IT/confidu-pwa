@@ -104,7 +104,7 @@ export class LabPage {
   }
 
   public onRegisterCode() {
-    this.commonService.registerProductKey(this.regNr, this.user.uid, this.petId, this.user.ma)
+    this.commonService.registerProductKey(this.regNr, this.user.uid, this.petId, this.user.za)
       .subscribe(response => {
           console.log('response', response);
           this.regNr = null;
