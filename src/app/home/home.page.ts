@@ -109,6 +109,7 @@ export class HomePage {
         this.healthWorse = values.HEALTH_STATE_TEXT.WORSE;
       });
 
+
     this.subscription = this.userAuth.user$
       .subscribe((user) => {
         console.log('user', user);

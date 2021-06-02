@@ -252,7 +252,7 @@
                 <ng-container *ngIf="item.questionType.toLowerCase() !== 'i' && item.questionType.toLowerCase() !==
                 'z'">
                   <div class="question">{{ item.questionText }}</div>
-                  <div class="answer">{{ item.values.answer?.answerLongtext[0] }}</div>
+                  <div *ngIf="item.values?.answer?.answerLongtext" class="answer">{{ item.values?.answer?.answerLongtext[0] }}</div>
                 </ng-container>
               </div>
             </ng-container>
