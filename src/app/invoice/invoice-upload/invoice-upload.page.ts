@@ -76,7 +76,7 @@ export class InvoiceUploadPage {
     // if (this.pages?.length > 0 || !petId) {
     //   return;
     // }
-    this.commonService.sendInvoice(this.user.a, petId, this.pages)
+    this.commonService.sendInvoice(this.user.za, petId, this.pages)
       .subscribe(response => {
         this.pages = [];
         this.uploadPath = undefined;
