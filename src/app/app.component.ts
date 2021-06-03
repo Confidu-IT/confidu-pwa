@@ -26,10 +26,11 @@ export class AppComponent {
   ) {
     this.initializeApp();
     translate.addLangs(['en', 'de']);
-    translate.setDefaultLang('de');
+    translate.setDefaultLang('en');
 
-    const browserLang = translate.getBrowserLang();
-    translate.use(browserLang.match(/en|de/) ? browserLang : 'de');
+    // const browserLang = translate.getBrowserLang();
+    // translate.use(browserLang.match(/en|de/) ? browserLang : 'de');
+    translate.use('en');
   }
 
   public toggleMenu(link: string) {

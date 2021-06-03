@@ -5,8 +5,7 @@ import { environment } from '../../../../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-import {AngularFireAnalyticsModule} from '@angular/fire/analytics';
-// import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
+import {AngularFireAnalyticsModule, ScreenTrackingService, UserTrackingService} from '@angular/fire/analytics';
 
 
 @NgModule({
@@ -18,11 +17,10 @@ import {AngularFireAnalyticsModule} from '@angular/fire/analytics';
     AngularFireAuthModule,
     AngularFireStorageModule,
     AngularFireAnalyticsModule
-    // NgxAuthFirebaseUIModule.forRoot(
-    //   environment.firebase,
-    //   null,
-    //   { toastMessageOnAuthSuccess: false, toastMessageOnAuthError: false },
-    // )
+  ],
+  providers: [
+    ScreenTrackingService,
+    UserTrackingService
   ]
 })
 export class FirebaseModule {
