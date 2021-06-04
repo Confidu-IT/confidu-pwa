@@ -38,7 +38,7 @@ export class TicketPage {
   public form: FormGroup;
   public weightForm: FormGroup;
   public listOpen = [];
-  public linkList = [];
+  public linkList: any[];
   public showTaskForm = false;
   public currentDay: string;
   public eventTime: Date;
@@ -253,6 +253,7 @@ export class TicketPage {
     if (!links) {
       return;
     }
+    this.linkList = [];
     for (const link of links) {
       if (link.label === 'Durchführen') {
         this.hasExecute = true;

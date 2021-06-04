@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Zusammenfassung</ion-title>
+    <ion-title>{{ 'ORDER_PAGE.TITLE' | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -13,25 +13,25 @@
     <ion-row *ngIf="cartItems.length > 0">
       <ion-col *ngIf="true" sizeSm="8" offsetSm="2">
         <div class="order">
-          <h2 class="headline">Bestellung</h2>
+          <h2 class="headline">{{ 'ORDER_PAGE.ORDER' | translate }}</h2>
           <div class="article" *ngFor="let item of cartItems">
             <div class="article-content">
               <figure class="article-image">
-                <img [src]="item.lineItem.cover.url" alt="" width="60">
+                <img [src]="item.lineItem.cover.url" alt="">
               </figure>
               <div class="article-details">
                 <h2>{{ item.lineItem.label }}</h2>
                 <div class="article-quantity">
-                  <span>Anzahl: {{ item.lineItem.quantity }}</span>
+                  <span>{{ 'ORDER_PAGE.AMOUNT' | translate }}: {{ item.lineItem.quantity }}</span>
                 </div>
                 <div class="article-price">
-                  Preis: {{ item.lineItem.price.totalPrice.toFixed(2) }} €
+                  {{ 'ORDER_PAGE.PRICE' | translate }}: {{ item.lineItem.price.totalPrice.toFixed(2) }} €
                 </div>
               </div>
             </div>
             <div class="article-footer">
               <div class="remove-article" (click)="onArticleRemove(item.lineItem.id)">
-                Artikel entfernen <ion-icon name="trash-bin-outline"></ion-icon>
+                {{ 'ORDER_PAGE.REMOVE' | translate }} <ion-icon name="trash-outline"></ion-icon>
               </div>
             </div>
           </div>
@@ -39,7 +39,7 @@
 
         <div class="addresses">
           <div class="shipment" routerLink="/shop/address/zahlungsadresse">
-            <h2 class="headline">Rechnung</h2>
+            <h2 class="headline">{{ 'ORDER_PAGE.INVOICE' | translate }}</h2>
             <address class="address">
             <span class="name">
               {{ billingAddress?.firstName }} {{ billingAddress?.lastName }}
@@ -50,12 +50,12 @@
                 {{ billingAddress?.city }}
             </span><br>
               <span class="country">{{ billingAddress?.country?.name }}</span><br>
-              <span class="link">Ändern</span>
+              <span class="link">{{ 'ORDER_PAGE.CHANGE' | translate }}</span>
             </address>
           </div>
 
           <div class="shipment" routerLink="/shop/address/lieferadresse">
-            <h2 class="headline">Lieferung</h2>
+            <h2 class="headline">{{ 'ORDER_PAGE.DELIVERY' | translate }}</h2>
             <address class="address">
             <span class="name">
               {{ shippingAddress?.firstName }} {{ shippingAddress?.lastName }}
@@ -66,36 +66,36 @@
                 {{ shippingAddress?.city }}
             </span><br>
               <span class="country">{{ shippingAddress?.country?.name }}</span><br>
-              <span class="link">Ändern</span>
+              <span class="link">{{ 'ORDER_PAGE.CHANGE' | translate }}</span>
             </address>
           </div>
         </div>
 
         <div class="payment" routerLink="/shop/payment">
-          <h2>Zahlungsmethode</h2>
+          <h2>{{ 'ORDER_PAGE.BILLING' | translate }}</h2>
           <span class="payment-method">{{ payment?.translated.name }}</span>
-          <span class="link">Ändern</span>
+          <span class="link">{{ 'ORDER_PAGE.CHANGE' | translate }}</span>
         </div>
 
         <div class="transaction">
           <p class="transaction-text">
-            <span class="delivery">Lieferung</span>
-            <span class="shipment-price">Versandkosten</span>
-            <span class="total-price">Gesamtbetrag</span>
+            <span class="shipment-price">{{ 'ORDER_PAGE.SHIPMENT' | translate }}</span>
+            <span class="total-price">{{ 'ORDER_PAGE.SUMMARY' | translate }}</span>
+            <span class="tax">{{ 'ORDER_PAGE.TAX' | translate }}</span>
           </p>
           <p class="transaction-details">
-            <span class="delivery"> {{ cartData?.deliveryDate?.latest | date: 'dd. MM. yyyy' }}</span>
             <span class="shipment-price"> {{ cartData?.shippingCosts?.totalPrice.toFixed(2) }} €</span>
             <span class="total-price"> {{ cartTransaction?.amount?.totalPrice.toFixed(2) }} €</span>
           </p>
         </div>
 
         <ion-button
+          class="order-button"
           expand="full"
           color="secondary"
           routerDirection="forward"
           (click)="onPlaceOrder()">
-          Kostenpflichtig bestellen
+          {{ 'ORDER_PAGE.ORDER_NOW' | translate }}
         </ion-button>
       </ion-col>
 

@@ -5,6 +5,7 @@ import { LoadingController } from '@ionic/angular';
 import { CommonService } from '../../shared/services/common/common.service';
 import { AuthService } from '../../user/auth.service';
 import { Subscription } from 'rxjs';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-order',
@@ -22,6 +23,7 @@ export class OrderPage {
   public shippingAddress: any;
   public billingAddress: any;
   public payment: any;
+  public language: string;
 
   public user: any;
   private subscription: Subscription;
@@ -32,11 +34,15 @@ export class OrderPage {
     private router: Router,
     private commonService: CommonService,
     private userAuth: AuthService,
-    private loadingCtrl: LoadingController
+    private loadingCtrl: LoadingController,
+    private translateService: TranslateService,
   ) { }
 
   ionViewWillEnter() {
     this.isLoading = true;
+    this.language = this.commonService.language;
+    this.translateService.setDefaultLang(this.language); // fallback
+    this.translateService.use(this.translateService.getBrowserLang());
 
     this.subscription = this.userAuth.user$
       .subscribe(user => {

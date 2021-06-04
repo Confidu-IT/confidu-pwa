@@ -4,13 +4,16 @@ h2, .buttons {
 
 h2 {
   font-weight: 500;
-  margin-bottom: 32px;
-  margin-left: 12px;
+  margin-bottom: 24px;
+  margin-left: 24px;
+  margin-top: 40px;
 }
 
 mat-radio-button {
   color: #000;
   font-size: 13px;
+  margin-left: 24px;
+  margin-bottom: 16px;
   width: 100%;
 }
 //
@@ -24,15 +27,11 @@ mat-radio-button {
 }
 
 
-mat-radio-button {
-  margin-left: 12px;
-  margin-bottom: 16px;
-}
-
 .call-description {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 300;
-  margin: 24px 12px 0;
+  line-height: 15px;
+  margin: 24px 24px 0;
 }
 
 .buttons {

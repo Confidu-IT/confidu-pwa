@@ -10,6 +10,7 @@ import { CommonService } from '../../shared/services/common/common.service';
 })
 export class HomeModalPage {
   public selected: string;
+  public showNotes = false;
 
   constructor(
     private modalCtrl: ModalController,
@@ -32,8 +33,13 @@ export class HomeModalPage {
     });
   }
 
+  public onSelectLink(): void {
+    this.showNotes = this.selected === 'consultation';
+  }
+
   ionViewWillLeave() {
     this.selected = null;
+    this.showNotes = false;
   }
 
 }

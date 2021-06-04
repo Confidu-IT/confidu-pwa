@@ -49,8 +49,16 @@
         </ul>
 
         <ion-button
-          *ngIf="careCard?.button"
+          *ngIf="careCard?.button && careCard?.button?.action !== 'inactive'"
           (click)="onClickButton(careCard.button.action)"
+          color="secondary"
+          expand="full">
+          {{ careCard?.button?.label }}
+        </ion-button>
+
+        <ion-button
+          [disabled]="true"
+          *ngIf="careCard?.button?.action === 'inactive'"
           color="secondary"
           expand="full">
           {{ careCard?.button?.label }}

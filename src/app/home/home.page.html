@@ -224,20 +224,20 @@
       </ion-col>
     </ion-row>
 
-    <ion-row>
-      <ion-col sizeSm="8" offsetSm="2">
-        <ion-card class="video-call">
-          <ion-card-content>
-            <h6 class="ion-text-center">Videocall</h6>
-            <ul>
-              <li *ngFor="let item of articles?.events?.videocalls" (click)="foobar(item.resultKey)">
-                Click Me!
-              </li>
-            </ul>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
+<!--    <ion-row>-->
+<!--      <ion-col sizeSm="8" offsetSm="2">-->
+<!--        <ion-card class="video-call">-->
+<!--          <ion-card-content>-->
+<!--            <h6 class="ion-text-center">Videocall</h6>-->
+<!--            <ul>-->
+<!--              <li *ngFor="let item of articles?.events?.videocalls" (click)="foobar(item.resultKey)">-->
+<!--                Click Me!-->
+<!--              </li>-->
+<!--            </ul>-->
+<!--          </ion-card-content>-->
+<!--        </ion-card>-->
+<!--      </ion-col>-->
+<!--    </ion-row>-->
   </ion-grid>
   <input #filePicker (change)="onFileChosen($event)" accept="image/jpeg,image/png" type="file">
 </ion-content>

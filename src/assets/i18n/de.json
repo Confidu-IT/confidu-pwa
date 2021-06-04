@@ -467,7 +467,7 @@
     "HEADER": "Bitte wähle die Art der Konsultation aus:",
     "QUESTIONNAIRE": "Diagnose Finder (kostenlos)",
     "CALL": "Videoanruf buchen (14,99 €)",
-    "CALL_DESCRIPTION": "Der Videoanruf wird nach dem Kauf im Planer hinterlegt. Rufe den Termin auf, um zum Link des Videoanrufs zu gelangen und mit unseren Tierärzt:innen überr dein Anliegen zu sprechen.",
+    "CALL_DESCRIPTION": "Der Videoanruf wird nach dem Kauf im Planer hinterlegt. Rufe den Termin auf, um zum Link des Videoanrufs zu gelangen und mit unseren Tierärzt:innen über dein Anliegen zu sprechen.",
     "CANCEL": "Abbrechen",
     "PROGRESS": "Weiter"
   },
@@ -521,7 +521,7 @@
     "PRESCRIPTION": "Rezeptpflichtig",
     "PHARMACY": "Aphotekenpflichtig",
     "UNIT": "Größe",
-    "TAX": "Alle Preise zzg. MWST. und Versand | Verkauf durch",
+    "TAX": "Alle Preise inkl. MwSt., zzgl. Versand | Verkauf durch",
     "CART_BUTTON": "In den Warenkorb",
     "PRICE": "Einzelpreis",
     "STOCK": "Auf Lager",
@@ -910,14 +910,14 @@
     "TODAY": "Heute",
     "TOMORROW": "Morgen",
     "DAY_AFTER_TOMORROW": "Übermorgen",
-    "NEXT_AV_APP": "Nächster freier Termin",
+    "NEXT_AV_APP": "Nächster freier Termin:",
     "AT": "in",
     "MIN": "min",
     "BOOK_IMMEDIATELY": "Sofort buchen",
     "BOOK_APPOINTMENT": "Termin buchen",
     "TEXT": {
       "PART_1": "Wir haben für dich und",
-      "PART_2": "folgende Termine gefunden"
+      "PART_2": "folgende Termine gefunden."
     },
     "AHEAD_TEXT": "Termine können bis zu 2 Tage im Voraus gebucht werden. Wähle den Tag und die Uhrzeit aus, an dem du mit einem Tierarzt sprechen möchtest.",
     "FIRST_NAME": "Vorname *",
@@ -930,23 +930,23 @@
   },
   "CONSULTATION_BOOKING_PAGE": {
     "TITLE": "Videoanruf",
-    "ADD_DOCUMENT": "Dokument hinzufügen (jpg(pdf max 5 MB)",
+    "ADD_DOCUMENT": "Dokument hinzufügen (jpg, png, pdf)",
     "ANNOTATIONS": "Bemerkungen",
     "CHARS": "Zeichen",
     "ADD_DOCS": "Du kannst uns auch Bilder oder Dokumente hochladen.",
     "BUTTON": "Zur Kasse",
     "CHECKBOX": {
       "CARECARD": {
-        "1": "Hiermit besttätige ich, dass ich einen Videoanruf für mein Tier",
+        "1": "Hiermit bestätige ich, dass ich einen Videoanruf für mein Tier",
         "2": "geb. am",
         "3": "buchen möchte."
       },
       "AGB": {
-        "1": "Mit Klicken dieser Box bestätigst Du, dass Du die",
+        "1": "Ich bestätige, die",
         "2": "AGB",
         "3": "&",
         "4": "Datenschutzerklärung",
-        "5": " gelesen hast und diese akzeptierst."
+        "5": " gelesen zu haben und akzeptiere sie."
       }
     }
   },
@@ -956,7 +956,7 @@
     "CANCEL": "Abbrechen"
   },
   "ATTACH_DOCUMENT": {
-    "ADD_DOCUMENT": "Dokument hinzufügen (jpg/png/pdf max 5 MB)"
+    "ADD_DOCUMENT": "Dokument hinzufügen (jpg, png, pdf)"
   },
   "ACCOUNT_PAGE": {
     "NAME": "Name",
@@ -987,6 +987,21 @@
     "REQ_LINK": "Link anfordern",
     "BACK_TO_LOGIN": "Zurück zum Login",
     "STORE": "Speichern"
+  },
+  "ORDER_PAGE": {
+    "ORDER": "Bestellung",
+    "REMOVE": "Artikel entfernen",
+    "CHANGE": "Ändern",
+    "DELIVERY": "Lieferung",
+    "SHIPMENT": "Versandkosten",
+    "SUMMARY": "Gesamtbetrag",
+    "ORDER_NOW": "Kostenpflichtig bestellen",
+    "TAX": "(incl. MWSt.)",
+    "AMOUNT": "Anzahl",
+    "PRICE": "Preis",
+    "TITLE": "Zusammenfassung",
+    "INVOICE": "Rechnung",
+    "BILLING": "Zahlunsmethode"
   },
   "USER_MODAL_PAGE": {
     "NAME": {

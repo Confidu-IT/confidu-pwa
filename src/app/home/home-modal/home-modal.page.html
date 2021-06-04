@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-buttons slot="end">
       <ion-button (click)="closeModal()">
-        X
+        <ion-icon name="close-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -15,6 +15,7 @@
         <h2>{{ 'HOME_MODAL_PAGE.HEADER' | translate }}</h2>
         <mat-radio-group
           class="toolbar-radio-group"
+          (change)="onSelectLink()"
           [(ngModel)]="selected">
           <mat-radio-button value="tickets/televet-pet">
             {{ 'HOME_MODAL_PAGE.QUESTIONNAIRE' | translate }}
@@ -23,7 +24,7 @@
             {{ 'HOME_MODAL_PAGE.CALL' | translate }}
           </mat-radio-button>
         </mat-radio-group>
-        <div class="call-description">{{ 'HOME_MODAL_PAGE.CALL_DESCRIPTION' | translate }}</div>
+        <div *ngIf="showNotes" class="call-description">{{ 'HOME_MODAL_PAGE.CALL_DESCRIPTION' | translate }}</div>
       </ion-col>
     </ion-row>
   </ion-grid>
