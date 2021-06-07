@@ -11,6 +11,9 @@
         ],
         "staging": [
           "confidu-staging"
+        ],
+        "confidu-test": [
+          "test"
         ]
       }
     }
