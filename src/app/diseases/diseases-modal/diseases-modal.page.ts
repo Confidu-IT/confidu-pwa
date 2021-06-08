@@ -9,6 +9,7 @@ import { DiseasesService } from '../diseases.service';
 import { CameraModalPage } from '../../shared/camera-modal/camera-modal.page';
 import { Observable, Subscription } from 'rxjs';
 import { FormControl } from '@angular/forms';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-diseases-modal',
@@ -69,7 +70,7 @@ export class DiseasesModalPage {
   public uploadImg = `${this.iconPath}/upload-img.svg`;
   public imageZoom: boolean;
   public enlargedImg: string;
-  public enlargedPdf: string;
+  public enlargedPdf: any;
 
   public isImg: boolean;
   public isPdf: boolean;
@@ -89,7 +90,8 @@ export class DiseasesModalPage {
     private commonService: CommonService,
     private diseasesService: DiseasesService,
     private actionSheetCtrl: ActionSheetController,
-    private alertCtrl: AlertController
+    private alertCtrl: AlertController,
+    private sanitizer: DomSanitizer
   ) {
   }
 
@@ -273,7 +275,8 @@ export class DiseasesModalPage {
         if (x !== -1) {
           console.log('pdf');
           this.isPdf = true;
-          this.enlargedPdf = data.url;
+          // this.enlargedPdf = data.url;
+          this.enlargedPdf = this.sanitizer.bypassSecurityTrustResourceUrl(data.url);
         } else {
           console.log('img');
           this.isImg = true;

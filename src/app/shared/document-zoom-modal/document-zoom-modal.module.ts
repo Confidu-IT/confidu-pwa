@@ -8,7 +8,6 @@ import { DocumentZoomModalPageRoutingModule } from './document-zoom-modal-routin
 
 import { DocumentZoomModalPage } from './document-zoom-modal.page';
 import { TranslateModule } from '@ngx-translate/core';
-import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 @NgModule({
   imports: [
@@ -16,7 +15,6 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     FormsModule,
     IonicModule,
     TranslateModule.forChild(),
-    PdfViewerModule,
     DocumentZoomModalPageRoutingModule
   ],
   declarations: [DocumentZoomModalPage]

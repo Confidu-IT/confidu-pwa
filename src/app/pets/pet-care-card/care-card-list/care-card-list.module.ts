@@ -10,7 +10,6 @@ import { CareCardListPage } from './care-card-list.page';
 import { TranslateModule } from '@ngx-translate/core';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { SharedComponentsModule } from '../../../shared/components/shared-components.module';
-import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 @NgModule({
   imports: [
@@ -20,7 +19,6 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     TranslateModule.forChild(),
     MatExpansionModule,
     SharedComponentsModule,
-    PdfViewerModule,
     CareCardListPageRoutingModule
   ],
   declarations: [CareCardListPage]

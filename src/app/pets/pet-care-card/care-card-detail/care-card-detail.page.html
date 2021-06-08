@@ -686,9 +686,7 @@
     <ion-grid>
       <ion-row>
         <ion-col sizeSm="8" offsetSm="2">
-          <pdf-viewer [src]="docDownloadLink"
-                      [original-size]="false"
-          ></pdf-viewer>
+          <iframe [src]="docDownloadLink" width="100%" height="800px"></iframe>
         </ion-col>
       </ion-row>
     </ion-grid>

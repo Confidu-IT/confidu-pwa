@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { AlertController, ModalController } from '@ionic/angular';
 import { CommonService } from '../services/common/common.service';
 import { TranslateService } from '@ngx-translate/core';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-document-zoom-modal',
@@ -14,7 +15,7 @@ export class DocumentZoomModalPage {
   @Input() link;
 
   public zoomedImage: string;
-  public zoomedPdf: string;
+  public zoomedPdf: any;
 
   private delImageMsg: string;
   private delBtn: string;
@@ -25,7 +26,8 @@ export class DocumentZoomModalPage {
     private modalCtrl: ModalController,
     private alertCtrl: AlertController,
     private commonService: CommonService,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private sanitizer: DomSanitizer
   ) { }
 
   ionViewWillEnter() {
@@ -60,11 +62,11 @@ export class DocumentZoomModalPage {
         const str = data.url;
         const x = str.search('pdf');
         if (x !== -1) {
-          console.log('pdf');
-          this.zoomedPdf = data.url;
-          console.log('this.zoomedPdf', this.zoomedPdf);
+          // console.log('pdf');
+          // this.zoomedPdf = data.url;
+          this.zoomedPdf = this.sanitizer.bypassSecurityTrustResourceUrl(data.url);
         } else {
-          console.log('img');
+          // console.log('img');
           this.zoomedImage = data.url;
         }
       }

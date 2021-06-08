@@ -121,11 +121,7 @@
       <ion-col *ngIf="imageZoom" sizeSm="8" offsetSm="2" class="zoom-view">
         <img *ngIf="isImg" class="zoomed-image" [src]="enlargedImg" alt="">
         <ng-container *ngIf="isPdf">
-<!--          <pdf-viewer [src]="enlargedPdf"-->
-<!--                      [original-size]="false"-->
-<!--          ></pdf-viewer>-->
-          <embed [src]="enlargedPdf" type="application/pdf" width="100%" height="800px">
-<!--          <embed src="http://www.africau.edu/images/default/sample.pdf" type="application/pdf">-->
+          <iframe [src]="enlargedPdf" width="100%" height="800px"></iframe>
         </ng-container>
       </ion-col>
     </ion-row>

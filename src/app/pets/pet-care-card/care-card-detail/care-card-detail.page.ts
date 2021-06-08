@@ -10,6 +10,7 @@ import { environment } from '../../../../environments/environment';
 import { AlertController, IonSlides, ModalController } from '@ionic/angular';
 import { DiseasesModalPage } from '../../../diseases/diseases-modal/diseases-modal.page';
 import { ProductModalPage } from '../../../shop/product-modal/product-modal.page';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-care-card-detail',
@@ -25,7 +26,7 @@ export class CareCardDetailPage {
   public eyeIcon = `${this.iconPath}/eye.svg`;
   public cartCheckIcon = `${this.iconPath}/product-check.svg`;
   public medications: any[];
-  public docDownloadLink: string;
+  public docDownloadLink: any;
   public pdfZoom: boolean;
   public listOpenVaccines = [];
   public listOpenMedication = [];
@@ -62,7 +63,8 @@ export class CareCardDetailPage {
     private translateService: TranslateService,
     private commonService: CommonService,
     private modalCtrl: ModalController,
-    private alertCtrl: AlertController
+    private alertCtrl: AlertController,
+    private sanitizer: DomSanitizer
   ) {
     this.routeSub = this.activatedRoute.params
       .subscribe(params => {
@@ -167,8 +169,9 @@ export class CareCardDetailPage {
       localStorage.getItem('activePet'),
       this.user.za
     ).subscribe(link => {
-      this.docDownloadLink = link.url;
+      // this.docDownloadLink = link.url;
       console.log('docDownloadLink', this.docDownloadLink);
+      this.docDownloadLink = this.sanitizer.bypassSecurityTrustResourceUrl(link.url);
       this.pdfZoom = true;
     });
   }

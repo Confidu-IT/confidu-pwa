@@ -16,9 +16,10 @@
           <img [src]="zoomedImage" alt="">
         </div>
         <div class="pdf-container" *ngIf="zoomedPdf">
-          <pdf-viewer [src]="zoomedPdf"
-                      [original-size]="false"
-          ></pdf-viewer>
+<!--          <pdf-viewer [src]="zoomedPdf"-->
+<!--                      [original-size]="false"-->
+<!--          ></pdf-viewer>-->
+          <iframe [src]="zoomedPdf" width="100%" height="800px"></iframe>
         </div>
       </ion-col>
     </ion-row>
