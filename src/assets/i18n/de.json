@@ -577,7 +577,7 @@
   "CARE_CARD_LIST_PAGE": {
     "HISTORY": "Historie",
     "ADD_DOC": "Befund hinzufügen",
-    "FINDING_PDF": "Befund-PDF",
+    "FINDING_PDF": "Anhang",
     "UPLOAD": "Rechnungsupload",
     "MANUAL": "Manuelle Eingabe"
   },
@@ -637,7 +637,7 @@
     "MANUAL_CHOICE": "Bitte wähle das Medikament aus, welches du anfragen möchtest. Wir versuchen es zu besorgen und benachrichtigen dich",
     "ALERT": {
       "TITLE": "Vielen Dank für deine Anfrage!",
-      "TEXT": "Wir prügen deine Angaben und benachrichtigen dich schnellstmöglich",
+      "TEXT": "Wir prüfen deine Angaben und benachrichtigen dich schnellstmöglich",
       "BUTTONS": {
         "CANCEL": "Abbrechen",
         "DONE": "Fertig"
@@ -660,6 +660,7 @@
     "DATE_TIME_BTNS_CANCEL": "Abbrechen",
     "DATE_TIME_BTNS_DONE": "Übernehmen",
     "ADD_THERAPY": "Therapie eingeben",
+    "ADD_FINDING": "Befunde eingeben",
     "ADD_DIAGNOSIS": "Erkrankung eingeben",
     "VET_VISIT": "Tierarztbesuch",
     "PROGRESS": "Weiter",
