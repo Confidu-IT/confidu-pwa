@@ -98,7 +98,7 @@
                     <ng-container *ngIf="result.findings">
                       <div class="doc"
                            *ngFor="let doc of result.findings"
-                           (click)="onOpenDocument(doc.docs[0])">
+                           (click)="onOpenDocument(doc?.docs[0])">
                         <span><img [src]="paperclip" alt="" height="14">
                           {{ 'CARE_CARD_LIST_PAGE.FINDING_PDF' | translate }}</span>
                       </div>
@@ -118,12 +118,14 @@
         </div>
       </ion-col>
 
-      <ion-col *ngIf="imageZoom" sizeSm="8" offsetSm="2">
+      <ion-col *ngIf="imageZoom" sizeSm="8" offsetSm="2" class="zoom-view">
         <img *ngIf="isImg" class="zoomed-image" [src]="enlargedImg" alt="">
         <ng-container *ngIf="isPdf">
-          <pdf-viewer [src]="enlargedPdf"
-                      [original-size]="false"
-          ></pdf-viewer>
+<!--          <pdf-viewer [src]="enlargedPdf"-->
+<!--                      [original-size]="false"-->
+<!--          ></pdf-viewer>-->
+          <embed [src]="enlargedPdf" type="application/pdf" width="100%" height="800px">
+<!--          <embed src="http://www.africau.edu/images/default/sample.pdf" type="application/pdf">-->
         </ng-container>
       </ion-col>
     </ion-row>

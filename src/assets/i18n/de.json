@@ -516,6 +516,14 @@
       }
     }
   },
+  "CART_PAGE": {
+    "TITLE": "Warenkorb",
+    "EMPTY": "Der Warenkorb ist leer.",
+    "AMOUNT": "Anzahl",
+    "REMOVE": "Artikel entfernen",
+    "TOTAL": "Gesamtbetrag",
+    "TAX": "Preise inkl. MWSt."
+  },
   "PRODUCT_MODAL_PAGE": {
     "DELIVERY_TIME": "Lieferzeit",
     "PRESCRIPTION": "Rezeptpflichtig",

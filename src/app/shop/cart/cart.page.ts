@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { CommonService } from '../../shared/services/common/common.service';
 import { AuthService } from '../../user/auth.service';
 import { Subscription } from 'rxjs';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-cart',
@@ -14,20 +15,26 @@ export class CartPage implements OnInit {
   public cartItems: any[] = [];
   public cart: any;
   public isLoading: boolean;
+  public totalPrice: number;
 
   public user: any;
   private subscription: Subscription;
+  private language: string;
 
   constructor(
     private shopwareService: ShopwareService,
     private router: Router,
     private userAuth: AuthService,
-    private commonService: CommonService
+    private commonService: CommonService,
+    private translateService: TranslateService
   ) {
   }
 
   ngOnInit() {
     this.isLoading = true;
+    this.language = this.commonService.language;
+    this.translateService.setDefaultLang(this.language); // fallback
+    this.translateService.use(this.translateService.getBrowserLang());
     this.subscription = this.userAuth.user$
       .subscribe(user => {
         this.user = user;
@@ -43,6 +50,7 @@ export class CartPage implements OnInit {
           if (cart.deliveries.length > 0) {
             this.cart = cart;
             this.cartItems = this.cart?.deliveries[0]?.positions;
+            this.totalPrice = cart?.price?.totalPrice;
           }
         }
         this.isLoading = false;
@@ -65,7 +73,10 @@ export class CartPage implements OnInit {
         } else {
           this.shopwareService.getCart()
             .then(cart => {
+              console.log('cart', cart)
               this.cartItems = cart.deliveries[0].positions;
+              console.log('this.cart?.price?.totalPrice', this.cart?.price?.totalPrice)
+              this.totalPrice = cart?.price?.totalPrice;
             });
         }
       });
@@ -75,8 +86,8 @@ export class CartPage implements OnInit {
     this.shopwareService.headers['firebase-context-token'] = this.user.za;
     this.shopwareService.deleteLineItem(id)
       .then(product => {
-        if (product.errors) {
-          this.commonService.handleShopErrors(product.errors[0].status);
+        if (product?.errors?.length > 0) {
+          this.commonService.handleShopErrors(product?.errors[0]?.status);
         } else {
           this.shopwareService.getCart()
             .then(cart => {

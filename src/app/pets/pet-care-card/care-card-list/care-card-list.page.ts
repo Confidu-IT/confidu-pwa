@@ -12,6 +12,7 @@ import { TicketService } from '../../../tickets/ticket-service/ticket-service';
 import { switchMap, tap } from 'rxjs/operators';
 import { ActionSheetController, ModalController } from '@ionic/angular';
 import { DiseasesModalPage } from '../../../diseases/diseases-modal/diseases-modal.page';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-care-card-list',
@@ -27,7 +28,7 @@ export class CareCardListPage {
   public listOpen = false;
   public imageZoom: boolean;
   public enlargedImg: string;
-  public enlargedPdf: string;
+  public enlargedPdf: any;
   public isImg: boolean;
   public isPdf: boolean;
   public doUpload: string;
@@ -59,7 +60,8 @@ export class CareCardListPage {
     private router: Router,
     private http: HttpClient,
     private actionSheetCtrl: ActionSheetController,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    private sanitizer: DomSanitizer
   ) {
     this.routeSub = this.activatedRoute.params
       .subscribe(params => {
@@ -158,7 +160,8 @@ export class CareCardListPage {
         const x = str.search('pdf');
         if (x !== -1) {
           this.isPdf = true;
-          this.enlargedPdf = data.url;
+          // this.enlargedPdf = data.url;
+          this.enlargedPdf = this.sanitizer.bypassSecurityTrustResourceUrl(data.url);
         } else {
           this.isImg = true;
           this.enlargedImg = data.url;

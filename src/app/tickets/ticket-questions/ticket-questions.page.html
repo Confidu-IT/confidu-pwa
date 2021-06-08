@@ -141,8 +141,8 @@
                 <mat-form-field class="vaccinations">
                   <mat-label>{{ 'TICKET_QUESTION_PAGE.VACC.SERUM' | translate }}</mat-label>
                   <mat-select (selectionChange)="onPickVaccine($event)">
-                    <mat-option *ngFor="let item of vaccines" [value]="item.key">
-                      {{ item.vaccine }}
+                    <mat-option *ngFor="let item of question?.values?.answerOption" [value]="item.value">
+                      {{ item?.answerLongtext[0] }}
                     </mat-option>
                   </mat-select>
                 </mat-form-field>
