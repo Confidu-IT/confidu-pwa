@@ -1184,5 +1184,25 @@
       "OK_BUTTON": "Weiter",
       "CANCEL_BUTTON": "Abbrechen"
     }
+  },
+  "MAIN_NAV": {
+    "FEEDING": "Füttern",
+    "FOOD_CHECK": "Rations-Check",
+    "BOWL": "Mein Napf",
+    "RESEARCH": "Forschen",
+    "LAB": "Labor",
+    "URINE_TEST": "Harnsticktest",
+    "PROTECT": "Schützen",
+    "CONTRACT": "Vertrag",
+    "DAMAGE": "Schaden",
+    "SHOP": "Shop"
+  },
+  "SIDE_NAV": {
+    "SETTINGS": "Einstellungen",
+    "ACCOUNT": "Account",
+    "ORDER": "Bestellungen",
+    "NOTIFICATIONS": "Benachrichtigungen",
+    "HELP": "Hilfe",
+    "LOGOUT": "Abmelden"
   }
 }

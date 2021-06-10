@@ -14,6 +14,7 @@ import { switchMap, tap } from 'rxjs/operators';
 export class DashboardPage {
   private subscription: Subscription;
   private petId: string;
+  private language: string;
 
   public user: any;
   public isLoading: boolean;
@@ -28,8 +29,8 @@ export class DashboardPage {
   ) { }
 
   ionViewWillEnter() {
-    this.translateService.setDefaultLang(this.commonService.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.language = this.commonService.language;
+    this.translateService.use(this.language);
     this.isLoading = true;
     this.subscription = this.userAuth.user$.pipe(
       tap(user => user),

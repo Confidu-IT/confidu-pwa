@@ -88,6 +88,13 @@ export class HomePage {
   ) {
 
 
+    // if (localStorage.getItem('country')) {
+    //   console.log('localStorage.getItem(country)', localStorage.getItem('country'))
+    //   translateService.use(localStorage.getItem('country'));
+    // }
+
+    translateService.use(this.commonService.language);
+
   }
 
   ionViewWillEnter() {
@@ -98,11 +105,13 @@ export class HomePage {
     //     (error) => { console.error(error); }
     //   );
     // this.healthState = 0;
+    // this.language = this.commonService.language;
+    // this.language = 'en';
     this.language = this.commonService.language;
-    this.translateService.setDefaultLang(this.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.translateService.use(this.language);
     this.translateService.get('HOME_PAGE')
       .subscribe(values => {
+        console.log('values', values)
         this.healthExcellent = values.HEALTH_STATE_TEXT.EXCELLENT;
         this.healthGood = values.HEALTH_STATE_TEXT.GOOD;
         this.healthBad = values.HEALTH_STATE_TEXT.BAD;
@@ -178,7 +187,6 @@ export class HomePage {
   private getTickets(userId: string, petId: string): void {
     this.firebaseService.getTicketsByPet(userId, petId)
       .subscribe(data => {
-        console.log('data', data);
         if (data) {
           const tickets = [];
           this.tickets = data;
@@ -292,7 +300,7 @@ export class HomePage {
     }
     const headers = {
       'Content-Type': 'application/json',
-      'firebase-context-token': this.user$.ma,
+      'firebase-context-token': this.user$.za,
       'sw-context-token': localStorage.getItem('sw-token')
     };
 
@@ -308,6 +316,8 @@ export class HomePage {
       let result = reader.result;
       const url = `${environment.baseUrl}/${this.language}/label_detection`;
 
+      console.log('url', url)
+
       if (typeof result === 'string') {
         if (result.indexOf('image/jpeg;base64') > -1) {
           result = result.replace('data:image/jpeg;base64,', '');
@@ -321,7 +331,6 @@ export class HomePage {
 
         this.http.post(url, body, { headers })
           .subscribe((res: any) => {
-            console.log('res', res);
             this.updatePetImage(res.image);
           });
       }

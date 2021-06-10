@@ -208,8 +208,8 @@ export class SignupPage implements OnInit {
           localStorage.setItem('activePet', data.activePet);
         }
 
-        if (data?.language) {
-          localStorage.setItem('language', data.language);
+        if (data?.country) {
+          localStorage.setItem('country', data.country);
         }
         this.loadingCtrl.dismiss(null);
         this.router.navigateByUrl('/');

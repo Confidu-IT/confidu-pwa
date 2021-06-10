@@ -51,9 +51,8 @@ export class ToolbarFooterComponent {
     public userAuth: AuthService,
     private http: HttpClient
   ) {
-    this.language = this.commonService.language;
-    this.translateService.setDefaultLang(this.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.language = commonService.language;
+    translateService.use(this.language);
     this.translateService.get('REGISTER_CODE')
       .subscribe(values => {
         this.invalidCode = values.INVALID_CODE;

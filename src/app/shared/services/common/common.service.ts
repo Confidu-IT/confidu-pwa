@@ -3,7 +3,7 @@ import { ToastController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../user/auth.service';
-import { Observable } from 'rxjs';
+import {BehaviorSubject, Observable} from 'rxjs';
 import { environment } from '../../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 
@@ -13,14 +13,21 @@ import { HttpClient } from '@angular/common/http';
 export class CommonService {
   private errorMessages: any;
   private baseUrl = environment.baseUrl;
+  private appLanguage$ = new BehaviorSubject<any>('');
+
 
   public get language(): string {
-    const browserLanguage = this.translateService.getBrowserLang();
-    if (browserLanguage === 'de' || browserLanguage === 'dk' || browserLanguage === 'fr') {
-      return browserLanguage;
+    if (localStorage.getItem('country')) {
+      return localStorage.getItem('country');
+    } else {
+      const browserLanguage = this.translateService.getBrowserLang();
+      if (browserLanguage === 'de' || browserLanguage === 'dk' || browserLanguage === 'fr') {
+        return browserLanguage;
+      }
     }
     return 'de';
   }
+
 
   constructor(
     private toastController: ToastController,
@@ -38,7 +45,13 @@ export class CommonService {
       });
   }
 
+  public get appLanguage(): Observable<any> {
+    return this.appLanguage$.asObservable();
+  }
 
+  public setAppLanguage(locale): void {
+    this.appLanguage$.next(locale);
+  }
 
   public getInvoiceResult(
     token: string,

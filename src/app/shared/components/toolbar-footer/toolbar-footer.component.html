@@ -1,16 +1,16 @@
 <ion-toolbar>
   <ion-buttons slot="start">
     <ion-button routerLink="/home">
-      <ion-img class="home-img" [src]="homeImg"></ion-img>
+      <img class="home-img" [src]="homeImg">
     </ion-button>
     <ion-button (click)="goToCareCard()">
-      <ion-img class="page-img" [src]="pageImg"></ion-img>
+      <img class="page-img" [src]="pageImg">
     </ion-button>
     <ion-button (click)="handleImage()">
-      <ion-img class="cam-img" [src]="camImg"></ion-img>
+      <img class="cam-img" [src]="camImg">
     </ion-button>
     <ion-button>
-      <ion-img class="snout-img" [src]="snoutImg"></ion-img>
+      <img class="snout-img" [src]="snoutImg">
     </ion-button>
     <ion-menu-button menu="start" color="medium" auto-hide="false"></ion-menu-button>
   </ion-buttons>

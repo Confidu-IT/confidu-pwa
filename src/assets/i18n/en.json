@@ -66,13 +66,73 @@
   },
   "TOOLBAR": {
     "IMG_SELECT": {
-      "HEADER": "Foto-Schnell-Upload",
-      "SUBHEADER": "Wähle aus, für welche Funktion du den Upload nutzen möchtest:",
-      "LAB": "Labortest aktivieren",
-      "PROFILE": "Profilbild wechseln",
-      "INVOICE": "Tierarztrechnung hochladen",
-      "OK_BUTTON": "Weiter",
-      "CANCEL_BUTTON": "Abbrechen"
+      "HEADER": "Photo Upload",
+      "SUBHEADER": "Choose the function for your upload:",
+      "LAB": "Activate lab test",
+      "PROFILE": "Switch profile image",
+      "INVOICE": "Upload vet invoice",
+      "OK_BUTTON": "Proceed",
+      "CANCEL_BUTTON": "Cancel"
+    }
+  },
+  "MAIN_NAV": {
+    "FEEDING": "Feeding",
+    "FOOD_CHECK": "Food Check",
+    "BOWL": "My Bowl",
+    "RESEARCH": "Research",
+    "LAB": "Lab",
+    "URINE_TEST": "Urinestick Test",
+    "PROTECT": "Protect",
+    "CONTRaCt": "Contract",
+    "DAMAGE": "Damage",
+    "SHOP": "Shop"
+  },
+  "SIDE_NAV": {
+    "SETTINGS": "Settings",
+    "ACCOUNT": "Account",
+    "ORDER": "Order",
+    "NOTIFICATIONS": "Notifications",
+    "HELP": "Help",
+    "LOGOUT": "Logout"
+  },
+  "CREATE_PET_PAGE": {
+    "CASTRATION_VALUES": {
+      "TRUE": "Neutered",
+      "FALSE": "Not neutered"
+    },
+    "GENDER": {
+      "MALE": "male",
+      "FEMALE": "female"
+    },
+    "SPECIES_LIST": {
+      "CAT": "Katze",
+      "DOG": "Hund"
+    },
+    "OK_BUTTON": "Save",
+    "CANCEL_BUTTON": "Cancel",
+    "NAME_LABEL": "Pet name",
+    "SPECIES_LABEL": "Species",
+    "BREED_LABEL": "Breed",
+    "GENDER_LABEL": "Sex",
+    "CASTRATION_LABEL": "Castration status",
+    "BIRTHDAY_LABEL": "Birthday",
+    "FORM_BUTTON": "Create Pet"
+  },
+  "ACCOUNT_PAGE": {
+    "NAME": "Name",
+    "ADDRESS": "Address",
+    "MAIL": "E-Mail",
+    "PHONE": "Phone",
+    "TITLE": "Account",
+    "INFOS": "Personal Infos",
+    "CHANGE_PW": "Change password",
+    "DEL_ACC": "Account löschen",
+    "BEQUEST": "Foobar",
+    "CHOOSE_LANGUAGE": "Choose Language",
+    "LANGUAGES": {
+      "GERMAN": "German",
+      "ENGLISH": "English",
+      "DANISH": "Dansk"
     }
   }
 }

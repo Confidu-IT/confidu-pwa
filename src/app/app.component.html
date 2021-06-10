@@ -22,47 +22,47 @@
 <!--        </ion-menu-toggle>-->
         <ion-menu-toggle>
           <div class="divider">
-            <h6>Füttern</h6>
+            <h6>{{ 'MAIN_NAV.FEEDING' | translate }}</h6>
             <ion-item lines="none" routerLink="/">
               <img [src]="iconPath + '/foodcheck.svg'" alt="">
-              <ion-label>Rations-Check</ion-label>
+              <ion-label>{{ 'MAIN_NAV.FOOD_CHECK' | translate }}</ion-label>
             </ion-item>
             <ion-item lines="none" class="last" routerLink="/">
               <img [src]="iconPath + '/mybowl.svg'" alt="">
-              <ion-label>Mein Napf</ion-label>
+              <ion-label>{{ 'MAIN_NAV.BOWL' | translate }}</ion-label>
             </ion-item>
           </div>
         </ion-menu-toggle>
         <ion-menu-toggle>
           <div class="divider">
-            <h6>Forschen</h6>
+            <h6>{{ 'MAIN_NAV.RESEARCH' | translate }}</h6>
             <ion-item lines="none" routerLink="/lab-detail/stickpro">
               <img [src]="iconPath + '/urinetest.svg'" alt="">
-              <ion-label>Harnsticktest</ion-label>
+              <ion-label>{{ 'MAIN_NAV.URINE_TEST' | translate }}</ion-label>
             </ion-item>
             <ion-item lines="none" class="last" routerLink="/lab">
               <img [src]="iconPath + '/lab.svg'" alt="">
-              <ion-label>Labor</ion-label>
+              <ion-label>{{ 'MAIN_NAV.LAB' | translate }}</ion-label>
             </ion-item>
           </div>
         </ion-menu-toggle>
         <ion-menu-toggle>
           <div class="divider">
-            <h6>Schützen</h6>
+            <h6>{{ 'MAIN_NAV.PROTECT' | translate }}</h6>
             <ion-item lines="none" routerLink="/">
               <img [src]="iconPath + '/contract.svg'" alt="">
-              <ion-label>Vertrag</ion-label>
+              <ion-label>{{ 'MAIN_NAV.CONTRACT' | translate }}</ion-label>
             </ion-item>
             <ion-item lines="none" class="last" routerLink="/">
               <img [src]="iconPath + '/damage.svg'" alt="">
-              <ion-label>Schaden</ion-label>
+              <ion-label>{{ 'MAIN_NAV.DAMAGE' | translate }}</ion-label>
             </ion-item>
           </div>
         </ion-menu-toggle>
         <ion-menu-toggle>
             <ion-item lines="none" routerLink="/shop/cart" class="shop">
               <img [src]="iconPath + '/shop.svg'" alt="">
-              <ion-label>Shop</ion-label>
+              <ion-label>{{ 'MAIN_NAV.SHOP' | translate }}</ion-label>
             </ion-item>
         </ion-menu-toggle>
       </ion-list>
@@ -76,31 +76,31 @@
       </ion-toolbar>
     </ion-header>
     <ion-content>
-      <h6 class="account-menu">Einstellungen</h6>
+      <h6 class="account-menu">{{ 'SIDE_NAV.SETTINGS' | translate }}</h6>
       <ion-list class="account-menu">
         <ion-item lines="none" (click)="toggleMenu('user/account')">
           <div class="nav-img">
             <img [src]="iconPath + '/account-2.svg'" alt="">
           </div>
-          <ion-label>Account</ion-label>
+          <ion-label>{{ 'SIDE_NAV.ACCOUNT' | translate }}</ion-label>
         </ion-item>
         <ion-item lines="none" (click)="toggleMenu('shop/order-history')">
           <div class="nav-img">
             <img [src]="iconPath + '/order-2.svg'" alt="">
           </div>
-          <ion-label>Bestellungen</ion-label>
+          <ion-label>{{ 'SIDE_NAV.ORDER' | translate }}</ion-label>
         </ion-item>
         <ion-item lines="none" (click)="toggleMenu('user/notifications')">
           <div class="nav-img">
             <img [src]="iconPath + '/notifications-2.svg'" alt="">
           </div>
-          <ion-label>Benachrichtigungen</ion-label>
+          <ion-label>{{ 'SIDE_NAV.NOTIFICATIONS' | translate }}</ion-label>
         </ion-item>
         <ion-item lines="none" (click)="toggleMenu('/')">
           <div class="nav-img">
             <img [src]="iconPath + '/help-2.svg'" alt="">
           </div>
-          <ion-label>Hilfe</ion-label>
+          <ion-label>{{ 'SIDE_NAV.HELP' | translate }}</ion-label>
         </ion-item>
       </ion-list>
     </ion-content>
@@ -110,7 +110,7 @@
         <div class="nav-img">
           <img [src]="iconPath + '/logout.svg'" alt="">
         </div>
-        <ion-label>Abmelden</ion-label>
+        <ion-label>{{ 'SIDE_NAV.LOGOUT' | translate }}</ion-label>
       </ion-item>
     </ion-footer>
   </ion-menu>

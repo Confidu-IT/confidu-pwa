@@ -38,7 +38,7 @@ export class FirebaseService {
   }
 
   public setUserLanguage(userId: string, lang: any): Promise<any> {
-    const data = { language: lang };
+    const data = { country: lang };
     return this.userCollection.doc(userId).set(data, { merge: true });
   }
 

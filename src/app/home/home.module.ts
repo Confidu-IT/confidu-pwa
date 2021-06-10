@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
 import { FirebaseModule } from '../shared/services/firebase/firebase.module';
-import { TranslateModule } from '@ngx-translate/core';
+import {TranslateModule} from '@ngx-translate/core';
 import { SharedComponentsModule } from '../shared/components/shared-components.module';
 import {MatExpansionModule} from '@angular/material/expansion';
 

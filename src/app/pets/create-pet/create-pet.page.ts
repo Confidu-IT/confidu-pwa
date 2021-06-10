@@ -82,6 +82,7 @@ export class CreatePetPage implements OnInit {
     private translateService: TranslateService,
     private http: HttpClient
   ) {
+
   }
 
   ionViewWillEnter() {
@@ -90,18 +91,23 @@ export class CreatePetPage implements OnInit {
         this.user$ = user;
       });
 
-  }
-
-  ngOnInit(): void {
     this.language = this.commonService.language;
-    this.translateService.setDefaultLang(this.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
-
+    this.translateService.use(this.language);
     this.translateService.get('CREATE_PET_PAGE')
       .subscribe(values => {
+        console.log('values', values)
         this.okText = values.OK_BUTTON;
         this.cancelText = values.CANCEL_BUTTON;
       });
+
+  }
+
+  ngOnInit(): void {
+
+    // this.translateService.setDefaultLang(this.language); // fallback
+    // this.translateService.use(this.translateService.getBrowserLang());
+
+
 
     this.form = new FormGroup({
       name: new FormControl(null, {
@@ -204,7 +210,7 @@ export class CreatePetPage implements OnInit {
     }
     const headers = {
       'Content-Type': 'application/json',
-      'firebase-context-token': this.user$.ma,
+      'firebase-context-token': this.user$.za,
       'sw-context-token': localStorage.getItem('sw-token')
     };
 
@@ -219,6 +225,8 @@ export class CreatePetPage implements OnInit {
     reader.onload = (success) => {
       let result = reader.result;
       const url = `${environment.baseUrl}/${this.language}/label_detection`;
+
+      console.log('url', url)
 
       if (typeof result === 'string') {
         if (result.indexOf('image/jpeg;base64') > -1) {

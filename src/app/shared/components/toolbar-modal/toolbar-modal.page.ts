@@ -13,16 +13,16 @@ export class ToolbarModalPage {
   public selected: string;
   public isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
+  private language: string;
+
   constructor(
     private modalCtrl: ModalController,
     private translateService: TranslateService,
     private commonService: CommonService,
     private router: Router
-  ) { }
-
-  ionViewWillEnter() {
-    this.translateService.setDefaultLang(this.commonService.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+  ) {
+    this.language = commonService.language;
+    translateService.use(this.language);
   }
 
   public closeModal() {

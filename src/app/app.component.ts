@@ -21,15 +21,32 @@ export class AppComponent {
     private router: Router,
     private afAuth: AngularFireAuth,
     private authService: AuthService,
-    public translate: TranslateService,
+    public translateService: TranslateService,
     public menuCtrl: MenuController
   ) {
     this.initializeApp();
-    translate.addLangs(['en', 'de']);
-    translate.setDefaultLang('de');
+    translateService.addLangs(['en', 'de']);
+    console.log('this.commonService.language', this.commonService.language)
+    // translateService.use(this.commonService.language);
 
-    const browserLang = translate.getBrowserLang();
-    translate.use(browserLang.match(/en|de/) ? browserLang : 'de');
+    // if (localStorage.getItem('country')) {
+    //   console.log('localStorage.getItem(country)', localStorage.getItem('country'))
+    //   translateService.use(localStorage.getItem('country'));
+    // }
+
+    // translateService.use('en');
+    // if (localStorage.getItem('country')) {
+    //   translateService.use(localStorage.getItem('country'));
+    // } else {
+    //   translateService.use(this.commonService.language);
+    // }
+    this.commonService.appLanguage
+      .subscribe(lang => {
+        console.log('lang', lang)
+        if (lang) {
+          this.translateService.use(lang);
+        }
+      });
   }
 
   public toggleMenu(link: string) {
@@ -42,14 +59,6 @@ export class AppComponent {
     this.menuCtrl.close().then(() => {
       this.authService.logOut();
     });
-
-    // if (this.afAuth.auth) {
-    //   this.afAuth.auth.signOut()
-    //     .then(() => {
-    //       localStorage.clear();
-    //       this.router.navigateByUrl('/signup');
-    //     });
-    // }
   }
 
   initializeApp() {

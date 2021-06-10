@@ -6,14 +6,17 @@
   "targets": {
     "confidu-app": {
       "hosting": {
-        "production": [
-          "confidu-app"
-        ],
         "staging": [
           "confidu-staging"
         ],
         "confidu-test": [
           "test"
+        ],
+        "test": [
+          "confidu-test"
+        ],
+        "production": [
+          "confidu-app"
         ]
       }
     }

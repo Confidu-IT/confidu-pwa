@@ -20,6 +20,7 @@ export class PetsListPage {
   public race: any;
   public user$: any;
   private subscription: Subscription;
+  private language: string;
 
   constructor(
     private firebaseService: FirebaseService,
@@ -31,8 +32,8 @@ export class PetsListPage {
   }
 
   ionViewWillEnter(): void {
-    this.translateService.setDefaultLang(this.commonService.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.language = this.commonService.language;
+    this.translateService.use(this.language);
     this.activePet = localStorage.getItem('activePet');
     // console.log('this.activePet', this.activePet);
     this.subscription = this.userAuth.user$.pipe(

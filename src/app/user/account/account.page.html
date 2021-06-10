@@ -49,14 +49,20 @@
                 <img [src]="chevron" alt="" height="20" width="20">
               </li>
 
-              <li class="language-switcher">
-                <mat-select (selectionChange)="onPickLanguage($event)"
-                  placeholder="{{ 'ACCOUNT_PAGE.CHOOSE_LANGUAGE' | translate }}"
-                  (selectionChange)="onPickLanguage($event)">
-                  <mat-option *ngFor="let el of languages" [value]="el.value">
-                    {{ el.label }}
-                  </mat-option>
-                </mat-select>
+              <li class="language-switcher" *ngIf="selectedLanguage">
+                <mat-form-field>
+                  <mat-label>{{ 'ACCOUNT_PAGE.CHOOSE_LANGUAGE' | translate }}</mat-label>
+                  <mat-select
+                    [(value)]="selectedLanguage"
+                    (selectionChange)="onPickLanguage($event)"
+                  >
+
+                    <mat-option *ngFor="let el of languages" [value]="el.value">
+                      {{ el.label }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+
 <!--                <mat-form-field>-->
 <!--                  <mat-label>{{ 'ACCOUNT_PAGE.CHOOSE_LANGUAGE' | translate }}</mat-label>-->
 <!--                  <mat-select (selectionChange)="onPickLanguage($event)">>-->

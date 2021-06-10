@@ -30,6 +30,7 @@ export class AccountPage {
   public email: string;
   public phone: string;
   public languages: any;
+  public selectedLanguage: any;
 
   constructor(
     private userAuth: AuthService,
@@ -44,10 +45,10 @@ export class AccountPage {
   ionViewWillEnter() {
     this.isLoading = true;
     this.language = this.commonService.language;
-    this.translateService.setDefaultLang(this.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.translateService.use(this.language);
     this.translateService.get('ACCOUNT_PAGE')
       .subscribe(values => {
+        console.log('values', values);
         this.title = values.TITLE;
         const ger = values.LANGUAGES.GERMAN;
         const en = values.LANGUAGES.ENGLISH;
@@ -59,6 +60,9 @@ export class AccountPage {
           { label: dk, value: 'dk' }
         ];
       });
+
+    this.selectedLanguage = localStorage.getItem('country') || 'de';
+
     this.subscription = this.userAuth.user$
       .subscribe(user => {
         if (!user) {
@@ -69,7 +73,6 @@ export class AccountPage {
         this.shopwareService.headers['firebase-context-token'] = this.user.za;
         this.shopwareService.getCustomer()
           .then(response => {
-            console.log('response', response);
             if (response.errors) {
               this.commonService.handleShopErrors(response.errors[0].status);
             } else {
@@ -89,7 +92,8 @@ export class AccountPage {
   }
 
   public onPickLanguage(event): void {
-    console.log(event);
+    this.commonService.setAppLanguage(event.value);
+    localStorage.setItem('country', event.value);
     this.firebaseService.setUserLanguage(this.user.uid, event.value);
   }
 
@@ -112,7 +116,6 @@ export class AccountPage {
         }
 
         if (response.role === 'phone') {
-          console.log(response);
           this.phone = response.data.phone;
         }
       });
