@@ -53,13 +53,13 @@
     "MSG": {},
     "HTTP_ERRORS": {
       "PRODUCTS": {
-        "400": "Produkt nicht gefunden",
+        "400": "Product not found",
         "451": "Produkt nicht gefunden",
-        "403": "Benutzer nicht eingelogt"
+        "403": "User not signed in"
       },
       "LOGIN": {
-        "400": "E-Mail bereits in Verwendung",
-        "401": "Ungültige E-Mail oder Passwort",
+        "400": "E-Mail already used",
+        "401": "Invalid E-Mail oder Password",
         "403": "FOOBAR"
       }
     }
@@ -83,7 +83,7 @@
     "LAB": "Lab",
     "URINE_TEST": "Urinestick Test",
     "PROTECT": "Protect",
-    "CONTRaCt": "Contract",
+    "CONTRACT": "Contract",
     "DAMAGE": "Damage",
     "SHOP": "Shop"
   },
@@ -134,5 +134,8 @@
       "ENGLISH": "English",
       "DANISH": "Dansk"
     }
+  },
+  "PETS_LIST_PAGE": {
+    "TITLE": "My pets"
   }
 }

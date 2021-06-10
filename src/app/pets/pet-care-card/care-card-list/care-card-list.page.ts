@@ -65,7 +65,7 @@ export class CareCardListPage {
   ) {
     this.routeSub = this.activatedRoute.params
       .subscribe(params => {
-        console.log('params', params);
+        // console.log('params', params);
         this.petId = params.petId;
         this.key = params.key;
         this.label = params.label;
@@ -100,10 +100,16 @@ export class CareCardListPage {
         console.log('data', data);
         // console.log('this.tickets', this.tickets);
         if (data.currentList) {
-          data.currentList = data.currentList.reverse();
+          data.currentList.sort((a, b) => {
+            // @ts-ignore
+            return new Date(b.eventDate) - new Date(a.eventDate);
+          });
           }
         if (data.terminatedList) {
-          data.terminatedList = data.terminatedList.reverse();
+          data.terminatedList.sort((a, b) => {
+            // @ts-ignore
+            return new Date(b.eventDate) - new Date(a.eventDate);
+          });
         }
         this.careCard = data;
         this.link = this.careCard.link;
