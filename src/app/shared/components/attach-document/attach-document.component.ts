@@ -16,6 +16,7 @@ import { TicketService } from '../../../tickets/ticket-service/ticket-service';
 })
 export class AttachDocumentComponent {
   private petId = localStorage.getItem('activePet');
+  private language: string;
 
   public uploadedFiles: any[] = [];
   public uploadImg = `../../assets/icons/hook2.svg`;
@@ -34,8 +35,8 @@ export class AttachDocumentComponent {
     private ticketService: TicketService,
     private modalCtrl: ModalController
   ) {
-    this.translateService.setDefaultLang(this.translateService.getBrowserLang()); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.language = commonService.language;
+    translateService.use(this.language);
 
     this.ticketService.uploadDocs
       .subscribe(data => {

@@ -88,8 +88,7 @@ export class InvoiceResultPage {
   ionViewWillEnter() {
     this.isLoading = true;
     this.language = this.commonService.language;
-    this.translateService.setDefaultLang(this.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.translateService.use(this.language);
     this.translateService.get('PRESCRIPTION_RESULT_PAGE')
       .subscribe(values => {
         this.vetVisit = values.VET_VISIT;

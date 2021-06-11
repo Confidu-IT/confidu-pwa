@@ -43,10 +43,10 @@ export class InvoiceUploadPage {
 
   ionViewWillEnter() {
     this.language = this.commonService.language;
-    this.translateService.setDefaultLang(this.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.translateService.use(this.language);
     this.translateService.get('PRESCRIPTION_UPLOAD_PAGE')
       .subscribe(values => {
+        console.log('values', values)
        this.label = values.LABEL;
       });
     this.subscription = this.userAuth.user$

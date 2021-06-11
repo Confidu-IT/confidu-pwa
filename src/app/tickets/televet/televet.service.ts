@@ -13,12 +13,14 @@ export class TelevetService {
     return this.buttonData$.asObservable();
   }
 
+  private language: string;
+
   constructor(
     private translateService: TranslateService,
     private commonService: CommonService
   ) {
-    this.translateService.setDefaultLang(this.commonService.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.language = this.commonService.language;
+    this.translateService.use(this.language);
     this.translateService.get('TELEVET_PET_PAGE')
       .subscribe(televet => {
         // console.log('televet', televet);

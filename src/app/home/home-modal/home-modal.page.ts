@@ -12,6 +12,8 @@ export class HomeModalPage {
   public selected: string;
   public showNotes = false;
 
+  private language: string;
+
   constructor(
     private modalCtrl: ModalController,
     private translateService: TranslateService,
@@ -19,8 +21,8 @@ export class HomeModalPage {
   ) { }
 
   ionViewWillEnter() {
-    this.translateService.setDefaultLang(this.commonService.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.language = this.commonService.language;
+    this.translateService.use(this.language);
   }
 
   public closeModal() {

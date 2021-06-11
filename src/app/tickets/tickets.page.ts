@@ -1,14 +1,14 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { FirebaseService } from '../shared/services/firebase/firebase.service';
-import { Subscription } from 'rxjs';
-import { Router } from '@angular/router';
-import { AuthService } from '../user/auth.service';
-import { CommonService } from '../shared/services/common/common.service';
-import { AlertController } from '@ionic/angular';
-import { TranslateService } from '@ngx-translate/core';
-import { AngularFireStorage } from '@angular/fire/storage';
-import { TicketService } from './ticket-service/ticket-service';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {FirebaseService} from '../shared/services/firebase/firebase.service';
+import {Subscription} from 'rxjs';
+import {Router} from '@angular/router';
+import {AuthService} from '../user/auth.service';
+import {CommonService} from '../shared/services/common/common.service';
+import {AlertController} from '@ionic/angular';
+import {TranslateService} from '@ngx-translate/core';
+import {AngularFireStorage} from '@angular/fire/storage';
+import {TicketService} from './ticket-service/ticket-service';
 
 @Component({
   selector: 'app-tickets',
@@ -16,23 +16,8 @@ import { TicketService } from './ticket-service/ticket-service';
   styleUrls: ['./tickets.page.scss'],
 })
 export class TicketsPage implements OnInit {
-  private isToday: boolean;
-
-  private petId: string;
-  private events = [];
-  private subscription: Subscription;
-  private selectedDate: Date;
-  private actions: any;
-  private alert: any;
-  private offset = new Date().getTimezoneOffset();
-  private tickets: any[];
-  private currentEvent: any;
-  private pet: any;
-
   public date: any;
   public time: any;
-
-
   public radioChecked: any;
   public user: any;
   public checkboxChecked: boolean;
@@ -49,13 +34,19 @@ export class TicketsPage implements OnInit {
   public showTaskForm = false;
   public currentDay: string;
   public imagePath = '../../../assets/icons/tickets';
-  public calendar = {
-    mode: 'month',
-    locale: 'de-DE',
-    currentDate: new Date()
-  };
-
+  public calendar: any;
   @ViewChild('filePicker') filePickerRef: ElementRef<HTMLInputElement>;
+  private isToday: boolean;
+  private petId: string;
+  private events = [];
+  private subscription: Subscription;
+  private selectedDate: Date;
+  private actions: any;
+  private alert: any;
+  private offset = new Date().getTimezoneOffset();
+  private tickets: any[];
+  private currentEvent: any;
+  private pet: any;
 
   constructor(
     private firebaseService: FirebaseService,
@@ -71,12 +62,30 @@ export class TicketsPage implements OnInit {
 
   ngOnInit(): void {
     this.language = this.commonService.language;
-    this.translateService.setDefaultLang(this.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.translateService.use(this.language);
+
+    let local;
+
+    if (this.language === 'de') {
+      local = 'de-DE';
+    } else if (this.language === 'en') {
+      local = 'en-EN';
+    } else if (this.language === 'dk') {
+      local = 'dk-DK';
+    } else {
+      local = 'de-DE';
+    }
+
+    this.calendar = {
+      mode: 'month',
+      locale: local,
+      currentDate: new Date()
+    };
 
     this.translateService.get('TICKETS_PAGE')
       .subscribe(values => {
-      this.actions = {
+        console.log('values', values);
+        this.actions = {
           close: {
             msg: values.ACTIONS.CLOSE.MSG,
             btn: values.ACTIONS.CLOSE.BTN,
@@ -262,6 +271,16 @@ export class TicketsPage implements OnInit {
     return this.router.navigateByUrl(`ticket/${id}/${date}`);
   }
 
+  ionViewWillLeave() {
+    this.eventSource = null;
+    this.tickets = null;
+    this.currentEvent = null;
+    this.checkboxChecked = false;
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
+
   private getPet(userId: string, petId: string): void {
     this.firebaseService.getPetById(userId, petId)
       .subscribe(pet => {
@@ -347,16 +366,6 @@ export class TicketsPage implements OnInit {
     this.eventSource = this.events;
     console.log('this.eventSource', this.eventSource);
 
-  }
-
-  ionViewWillLeave() {
-    this.eventSource = null;
-    this.tickets = null;
-    this.currentEvent = null;
-    this.checkboxChecked = false;
-    if (this.subscription) {
-      this.subscription.unsubscribe();
-    }
   }
 
 }

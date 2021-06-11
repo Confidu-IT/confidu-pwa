@@ -37,6 +37,7 @@ export class TelevetPetPage {
   private code: string;
   private gender: string;
   public user: any;
+  private language: string;
 
 
   constructor(
@@ -73,8 +74,8 @@ export class TelevetPetPage {
         }
       });
 
-    this.translateService.setDefaultLang(this.commonService.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.language = this.commonService.language;
+    this.translateService.use(this.language);
     this.translateService.get('TELEVET_PET_PAGE')
       .subscribe(televet => {
         this.televet = televet;

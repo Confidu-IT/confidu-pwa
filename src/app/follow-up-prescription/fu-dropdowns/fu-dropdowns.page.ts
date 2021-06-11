@@ -43,8 +43,7 @@ export class FuDropdownsPage {
   ionViewWillEnter() {
     this.isLoading = true;
     this.language = this.commonService.language;
-    this.translateService.setDefaultLang(this.commonService.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.translateService.use(this.language);
     this.translateService.get('FU_PAGE')
       .subscribe(values => {
        this.alertWindow = values.ALERT;

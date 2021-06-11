@@ -45,17 +45,20 @@
                 </div>
               </div>
 
-              <calendar [eventSource]="eventSource"
-                        [calendarMode]="calendar.mode"
-                        [locale]="calendar.locale"
-                        [showEventDetail] = false
-                        [lockSwipes] = true
-                        [currentDate]="calendar.currentDate"
-                        (onCurrentDateChanged)="onCurrentDateChanged($event)"
-                        (onTitleChanged)="onViewTitleChanged($event)"
-                        [monthviewDisplayEventTemplate]="template"
-              >
-              </calendar>
+              <ng-container *ngIf="calendar">
+                <calendar [eventSource]="eventSource"
+                          [calendarMode]="calendar.mode"
+                          [locale]="calendar.locale"
+                          [showEventDetail] = false
+                          [lockSwipes] = true
+                          [currentDate]="calendar.currentDate"
+                          (onCurrentDateChanged)="onCurrentDateChanged($event)"
+                          (onTitleChanged)="onViewTitleChanged($event)"
+                          [monthviewDisplayEventTemplate]="template"
+                >
+                </calendar>
+              </ng-container>
+
             </div>
           </ion-card-content>
         </ion-card>

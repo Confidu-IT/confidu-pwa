@@ -137,5 +137,248 @@
   },
   "PETS_LIST_PAGE": {
     "TITLE": "My pets"
+  },
+  "TELEVET_PET_PAGE": {
+    "PET_SPOT_TEXT": {
+      "CANCEL_BUTTON": "Cancel",
+      "SWELLING": "swelling/bump/node",
+      "STIFFNESS":"stiffness",
+      "MUSCULAR_DYSTROPHY": "muscle atrophy",
+      "FLATULENCE": "flatulence",
+      "DIARRHAE": "diarrhea",
+      "VOMITING": "vomiting",
+      "VOMITING_DIARRHAE": "vomiting and diarrhea",
+      "ITCHING": "itching",
+      "CONSTIPATION": "constipation",
+      "BITE": "bite injury",
+      "SUCKLES": "swelling of the teat",
+      "STOMACH_PAIN": "abdominal pain",
+      "TRAVEL_SICKNESS": "travel sickness",
+      "COUGH": "cough",
+      "VOMIT": "vomiting",
+      "SNORING": "snoring/loud breathing sounds",
+      "EARS_HEARING": "Impaired hearing",
+      "EARS_SCRATCH": "Ear scratching",
+      "EARS_DISCHARGE": "ear discharge",
+      "EARS_STINKY": "Unpleasant smelling ear",
+      "EARS_SWOLLEN": "Swollen ear",
+      "EARS_INJURY": "ear injury",
+      "EYES_IMPAIRED": "Impaired vision",
+      "EYES_CHANGES": "eye changes",
+      "SWELLING_VULVA": "Swelling of the vulva",
+      "TESTICLES_CHANGES": "Altered testis",
+      "UNWANTED_PREGNANCY": "Unwanted Coverage",
+      "VAGINAL_DISCHARGE": "Vaginal discharge",
+      "PENIS_DISCHARGE": "penile discharge",
+      "PENIS_ISSUE": "penile prolapse",
+      "URINATION_PAIN": "pain on urination",
+      "URINATION_CHANGE": "altered urine",
+      "URINATION_LOW": "Low urine output",
+      "URINATION_HIGH_DRINKING": "Increased urination and drinking",
+      "URINATION_HIGH": "Frequent urination",
+      "HEAT": "heat",
+      "EAT_FECES": "Feces-eating",
+      "EAT_GRASS": "grass-eating",
+      "EAT_NONE": "Does not eat",
+      "DRINKING_HIGH": "Increased drinking",
+      "VOICE_CHANGES":  "voice change",
+      "FOOT_ODOR": "mouth odor",
+      "NOSE_DRY": "dry nose",
+      "NOSE_BLEEDING": "nosebleed",
+      "NOSE_DISCHARGE": "nasal discharge",
+      "SNEEZE": "sneezing",
+      "LAMENESS": "lameness",
+      "SWELLING_JOINT": "joint swelling",
+      "INJURY_CLAW": "claw injury",
+      "INJURY_PAW": "paw injury",
+      "INJURY_BITE": "bite injury",
+      "BUMPINESS": "rollover",
+      "HYPOCRISY": "false pregnancy",
+      "FEVER":  "fever",
+      "TEMPERATURE_LOW": "undertemperature",
+      "BEHAVIOUR_CHANGE": "behavior change",
+      "WEAKNESS": "weakness",
+      "WEIGHT_LOSS": "weight loss",
+      "WEIGHT_GAIN": "weight gain",
+      "FUR_SHAGGY": "Dull, shaggy coat",
+      "FLEA_INVESTATION": "flea infestation",
+      "SKIN_STINKY": "Unpleasant smelling skin",
+      "FUR_LOSS": "loss of fur without itching",
+      "FUR_LOSS_ITCHING": "Fur loss with itching",
+      "INJURY_SKIN": "skin injury",
+      "WOUND": "wound/bruise",
+      "CHOCOLATE": "chocolate",
+      "MEDS": "medication",
+      "TOBACCO": "tobacco/nicotine",
+      "MISC": "other food products",
+      "BREATH_SHORTNESS": "shortness of breath",
+      "EMERGENCY_BIRTH": "emergency at birth",
+      "EYES_INJURY": "eye injury",
+      "HEAVY_STOMACH_PAIN": "Severe abdominal pain",
+      "HEATSTROKE": "Heatstroke",
+      "NO_URINE": "Unable to pass urine",
+      "SEIZURE": "seizure",
+      "PARALYSIS": "paralysis",
+      "BROKEN_BONE": "Open fracture",
+      "HEAVY_BLEEDING": "Heavy bleeding",
+      "APNEA": "Respiratory and cardiac arrest",
+      "GASTRIC_TORSION": "gastric torsion",
+      "UNCONSCIOUSNESS": "unconsciousness",
+      "SHOCK":  "shock",
+      "POISONING": "poisoning"
+    },
+    "CLICK_SPOT": {
+      "BUTT": {
+        "LABEL": "butt",
+        "SPOT": "butt"
+      },
+      "BACK": {
+        "LABEL": "back",
+        "SPOT": "back"
+      },
+      "BELLY": {
+        "LABEL": "belly",
+        "SPOT": "belly"
+      },
+      "TAIL": {
+        "LABEL": "tail",
+        "SPOT": "tail"
+      },
+      "LEGS": {
+        "LABEL": "legs",
+        "SPOT": "legs"
+      },
+      "CHEST": {
+        "LABEL": "chest",
+        "SPOT": "chest"
+      },
+      "EAR": {
+        "LABEL": "ear",
+        "SPOT": "ear"
+      },
+      "EYE": {
+        "LABEL": "eye",
+        "SPOT": "eye"
+      },
+      "NOSE": {
+        "LABEL": "nose",
+        "SPOT": "nose"
+      },
+      "MOUTH": {
+        "LABEL": "mouth",
+        "SPOT": "mouth"
+      },
+      "HEAD_REGION": {
+        "SPOT": "head-region"
+      },
+      "BODY_REGION": {
+        "SPOT": "body-region"
+      },
+      "HEAD": {
+        "LABEL": "head",
+        "SPOT": "head"
+      },
+      "THROAT": {
+        "LABEL": "throat",
+        "SPOT": "throat"
+      },
+      "ABDOMEN": {
+        "LABEL": "abdomen",
+        "SPOT": "abdomen"
+      },
+      "GENERAL": {
+        "LABEL": "general",
+        "SPOT": "general"
+      },
+      "FUR": {
+        "LABEL": "fur",
+        "SPOT": "fur"
+      },
+      "POISON": {
+        "LABEL": "poison",
+        "SPOT": "poison"
+      }
+    },
+    "HEADER": "Where do symptoms appear?",
+    "POISON_HEADER": "What was eaten?",
+    "DESCRIPTION": "In scope",
+    "ACTION": "Tap on the affected area",
+    "PROGRESS_BUTTON": "Next",
+    "ZOOM_BUTTON": "Back",
+    "TITLE": "Vet"
+  },
+  "PRESCRIPTION_UPLOAD_PAGE": {
+    "TITLE": "Invoice upload",
+    "TEXT": "please upload all pages of your invoice",
+    "LABEL": "Vet visit"
+  },
+  "FU_PAGE": {
+    "TITLE": "doctoring",
+    "BUTTONS": {
+      "BACK": "back",
+      "FORWARD": "next"
+    },
+    "INTRO_TEXT": "In order to write the prescription and send you the medicine, we need you to send us an invoice from your veterinarian with the following information",
+    "INTRO_LIST": [
+      "Name and address of veterinarian",
+      "Name and date of birth of the animal",
+      "your name and address",
+      "diagnosis",
+      "Name of Medication"
+    ],
+    "CHOOSE": "Please select the disease and medicine you want to order for your pet:",
+    "MANUAL_CHOICE": "Please select the medicine you want to request. We will try to get it and notify you",
+    "ALERT": {
+      "TITLE": "Thank you for your request!",
+      "TEXT": "We will check your information and notify you as soon as possible",
+      "BUTTONS": {
+        "CANCEL": "Cancel",
+        "DONE": "Done"
+      }
+    },
+    "DISEASES": "select disease",
+    "MEDS": "drug name",
+    "NO_MED": "Your medicine is not included?",
+    "REQ_MED": "Request preparation"
+
+  },
+  "TICKETS_PAGE": {
+    "HEADER": "Planner of",
+    "EXEC": "Perform",
+    "UPLOAD": "add image (jpg/png)",
+    "ADD_IMAGE": "cover image for this task (optional)",
+    "ACTIONS": {
+      "CLOSE": {
+        "MSG": "Please confirm your input and the task will be closed.",
+        "BTN": "Apply"
+      },
+      "DELETE": {
+        "MSG": "Are you sure you want to delete this task?",
+        "BTN": "Delete"
+      },
+      "DATE_TIME_BTNS": {
+        "CANCEL": "Cancel",
+        "DONE": "Apply"
+      }
+    },
+    "WEIGHT_LABEL": "weight in kg",
+    "TITLE": "Planner",
+    "HOMEWORK": "planner",
+    "TODAY_TASKS": "My Tasks",
+    "DONE":  "Done",
+    "DELETE": "delete",
+    "POSTPONE": "postpone appointment",
+    "NEW_TASK": "create new task",
+    "NO_TASKS": "There are no tasks to be done today",
+    "CREATE_TASK": "Create task",
+    "CANCEL": "Cancel",
+    "CONFIRM": "Apply",
+    "POSTPONE_TASK": "postpone appointment",
+    "NAME_TASK": "name task",
+    "DATE": "date",
+    "TIME": "time",
+    "MAX_CHARS": "160 characters",
+    "WHOLEDAY": "During the day"
+
   }
 }

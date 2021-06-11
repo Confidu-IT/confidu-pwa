@@ -18,6 +18,7 @@ export class FollowUpPrescriptionPage {
   public listItems: any;
 
   private subscription: Subscription;
+  private language: string;
 
   constructor(
     private translateService: TranslateService,
@@ -27,8 +28,8 @@ export class FollowUpPrescriptionPage {
 
   ionViewWillEnter() {
     this.isLoading = true;
-    this.translateService.setDefaultLang(this.commonService.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.language = this.commonService.language;
+    this.translateService.use(this.language);
     this.translateService.get('FU_PAGE')
       .subscribe(values => {
        this.listItems = values.INTRO_LIST;
