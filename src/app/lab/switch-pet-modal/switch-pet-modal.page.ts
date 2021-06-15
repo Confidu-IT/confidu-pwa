@@ -25,8 +25,7 @@ export class SwitchPetModalPage {
   ionViewWillEnter() {
     this.chosenId = this.currentPet;
     this.language = this.commonService.language;
-    this.translateService.setDefaultLang(this.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.translateService.use(this.language);
   }
 
   public closeModal() {

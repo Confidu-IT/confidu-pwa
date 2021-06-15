@@ -75,8 +75,7 @@ export class CareCardListPage {
   ionViewWillEnter() {
     this.isLoading = true;
     this.language = this.commonService.language;
-    this.translateService.setDefaultLang(this.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.translateService.use(this.language);
     this.translateService.get('CARE_CARD_LIST_PAGE')
       .subscribe(values => {
         this.modalTitle = {

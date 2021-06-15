@@ -20,7 +20,8 @@
     "GENDER_LABEL": "Geschlecht",
     "CASTRATION_LABEL": "Kastrationsstatus",
     "BIRTHDAY_LABEL": "Geburtsdatum",
-    "FORM_BUTTON": "Neues Tier anlegen"
+    "FORM_BUTTON": "Neues Tier anlegen",
+    "WAITING": "Bitte warten ..."
   },
   "DASHBOARD_PAGE": {
     "TITLE": "Überblick",
@@ -209,6 +210,7 @@
   "TICKET_QUESTION_PAGE": {
     "QUESTION": "Frage",
     "BEATS": "Schläge",
+    "PULSE": "Atemzüge",
     "PROGRESS_BUTTON": "Weiter",
     "BACK_BUTTON": "Zurück",
     "CANCEL_BUTTON": "Abbrechen",

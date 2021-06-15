@@ -30,8 +30,7 @@ export class ConsultationPage {
 
   ionViewWillEnter() {
     this.language = this.commonService.language;
-    this.translateService.setDefaultLang(this.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.translateService.use(this.language);
     this.subscription = this.userAuth.user$.pipe(
       tap(user => user),
       switchMap(user => {
@@ -43,7 +42,7 @@ export class ConsultationPage {
         }
       })
     ).subscribe( response => {
-      console.log('response', response);
+      // console.log('response', response);
       this.appointments = response.appointmentTypes;
       this.isLoading = false;
     });

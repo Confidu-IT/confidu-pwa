@@ -33,8 +33,7 @@ export class DocumentZoomModalPage {
   ionViewWillEnter() {
     this.fetchDocument();
     this.language = this.commonService.language;
-    this.translateService.setDefaultLang(this.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.translateService.use(this.language);
     this.translateService.get('ZOOM_MODAL_PAGE')
       .subscribe(values => {
         this.delImageMsg = values.DELETE_MSG;

@@ -21,6 +21,7 @@ export class TicketResultPage implements CanDeactivateGuard {
   private params: any;
   private eventId: string;
   private petId: string;
+  private language: string;
 
   public user: any;
 
@@ -54,8 +55,8 @@ export class TicketResultPage implements CanDeactivateGuard {
   ionViewWillEnter() {
     this.isLoading = true;
 
-    this.translateService.setDefaultLang(this.commonService.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.language = this.commonService.language;
+    this.translateService.use(this.language);
     this.subscription = this.userAuth.user$.pipe(
       tap(user => user),
       switchMap(user => {

@@ -66,6 +66,7 @@ export class CreatePetPage implements OnInit {
   private uploadSub: Subscription;
   private breedModal: any;
   private subscription: Subscription;
+  private waiting: string;
 
   @ViewChild('filePicker') filePickerRef: ElementRef<HTMLInputElement>;
 
@@ -80,6 +81,7 @@ export class CreatePetPage implements OnInit {
     private commonService: CommonService,
     private modalCtrl: ModalController,
     private translateService: TranslateService,
+    public loadingController: LoadingController,
     private http: HttpClient
   ) {
 
@@ -95,9 +97,11 @@ export class CreatePetPage implements OnInit {
     this.translateService.use(this.language);
     this.translateService.get('CREATE_PET_PAGE')
       .subscribe(values => {
-        console.log('values', values)
+        // console.log('values', values)
         this.okText = values.OK_BUTTON;
         this.cancelText = values.CANCEL_BUTTON;
+        this.waiting = values.WAITING;
+        console.log(this.waiting)
       });
 
   }
@@ -199,6 +203,8 @@ export class CreatePetPage implements OnInit {
   }
 
   public onFileChosen(data): any {
+    this.presentLoading();
+
     let file;
     let isTypeFile: boolean;
 
@@ -226,7 +232,7 @@ export class CreatePetPage implements OnInit {
       let result = reader.result;
       const url = `${environment.baseUrl}/${this.language}/label_detection`;
 
-      console.log('url', url)
+      // console.log('url', url)
 
       if (typeof result === 'string') {
         if (result.indexOf('image/jpeg;base64') > -1) {
@@ -241,11 +247,11 @@ export class CreatePetPage implements OnInit {
 
         this.http.post(url, body, { headers })
           .subscribe((res: any) => {
-            console.log('res', res);
             this.form.patchValue({ image: res.image });
             this.hasImage = true;
             this.petImage = res.image;
             this.isLoading = false;
+            this.loadingController.dismiss();
             if (res.race.length > 0) {
               try {
                 this.species = this.speciesList.filter(item => item.value === res.species.value);
@@ -269,6 +275,7 @@ export class CreatePetPage implements OnInit {
   }
 
   public onPickImage(): void {
+
     this.filePickerRef.nativeElement.click();
   }
 
@@ -387,6 +394,18 @@ export class CreatePetPage implements OnInit {
           return this.filterRace(races, value);
         })
       );
+  }
+
+  async presentLoading() {
+    const loading = await this.loadingController.create({
+      cssClass: 'my-custom-class',
+      message:  this.waiting,
+      duration: 10000
+    });
+    await loading.present();
+
+    const { role, data } = await loading.onDidDismiss();
+    console.log('Loading dismissed!');
   }
 
   private async presentBreedProposalsModal(proposedBreeds, breedList): Promise<void> {

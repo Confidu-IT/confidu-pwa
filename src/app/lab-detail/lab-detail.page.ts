@@ -44,8 +44,7 @@ export class LabDetailPage {
   ionViewWillEnter() {
     this.isLoading = true;
     this.language = this.commonService.language;
-    this.translateService.setDefaultLang(this.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.translateService.use(this.language);
     this.translateService.get('LAB_PAGE')
       .subscribe(values => {
         switch (this.params.type) {

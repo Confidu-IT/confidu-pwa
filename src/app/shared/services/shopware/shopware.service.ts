@@ -8,10 +8,12 @@ import { environment } from '../../../../environments/environment';
 export class ShopwareService {
   private cartState$ = new BehaviorSubject<boolean>(null);
   private baseUrl = environment.baseUrl;
-  private uri = `${this.baseUrl}/de/sw`;
+  private uri: string
 
   constructor(
   ) {
+    const language = localStorage.getItem('country') || 'de';
+    this.uri = `${this.baseUrl}/${language}/sw`;
   }
 
   headers = {

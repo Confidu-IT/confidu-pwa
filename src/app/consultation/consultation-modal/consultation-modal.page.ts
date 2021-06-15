@@ -11,6 +11,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class ConsultationModalPage {
   public form: FormGroup;
+  private language: string;
 
   constructor(
     private modalCtrl: ModalController,
@@ -33,10 +34,8 @@ export class ConsultationModalPage {
   }
 
   ionViewWillEnter() {
-    this.translateService.setDefaultLang(this.commonService.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
-
-
+    this.language = this.commonService.language;
+    this.translateService.use(this.language);
   }
 
   public closeModal() {

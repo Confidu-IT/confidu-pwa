@@ -21,6 +21,7 @@ export class ConsultationBookingPage {
   public appointmentText: string;
   public uploadPath: string;
   public pet: any;
+  // change this
   public privacyLink = `https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/pdf%2Famoxitab_dog_cat_50mg_pil_de.pdf?alt=media&token=80f09b0f-871b-425f-9f7a-2260b499d8ff`;
   public conditionsLink = `https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/pdf%2Famoxitab_dog_cat_50mg_pil_de.pdf?alt=media&token=80f09b0f-871b-425f-9f7a-2260b499d8ff`;
   public get isChecked(): boolean {
@@ -31,6 +32,7 @@ export class ConsultationBookingPage {
   private readonly routeSub: Subscription;
   private params: any;
   private addedFiles: string[];
+  private language: string;
 
   constructor(
     private userAuth: AuthService,
@@ -50,8 +52,8 @@ export class ConsultationBookingPage {
 
   ionViewWillEnter() {
     this.isLoading = true;
-    this.translateService.setDefaultLang(this.commonService.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.language = this.commonService.language;
+    this.translateService.use(this.language);
     this.subscription = this.userAuth.user$.pipe(
       tap(user => user),
       switchMap(user => {

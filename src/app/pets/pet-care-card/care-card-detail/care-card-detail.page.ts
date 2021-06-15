@@ -77,8 +77,7 @@ export class CareCardDetailPage {
     this.isLoading = true;
     this.baseUrL = environment.baseUrl;
     this.language = this.commonService.language;
-    this.translateService.setDefaultLang(this.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.translateService.use(this.language);
     this.translateService.get('DISEASE_PAGE')
       .subscribe(values => {
         this.modalTitle = {

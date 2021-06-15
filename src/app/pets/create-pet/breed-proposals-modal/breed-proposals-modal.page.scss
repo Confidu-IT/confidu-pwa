@@ -6,8 +6,7 @@
 }
 
 form {
-  margin-left: -16px;
-  margin-right: 16px;
+margin-top: 12px;
 }
 
 .proposal-list {
@@ -23,7 +22,7 @@ form {
 .bold-text {
   display: block;
   font-weight: bold;
-  margin-bottom: 4px;
+  margin-bottom: 12px;
 }
 
 .sub-text {
@@ -49,6 +48,14 @@ textarea {
   }
 }
 
-::ng-deep .mat-form-field-label {
-  font-size: 16px !important;
+mat-form-field {
+  width: 100%;
 }
+
+mat-label {
+  font-size: 14px;
+}
+
+//::ng-deep .mat-form-field-label {
+//  font-size: 16px !important;
+//}

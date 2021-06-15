@@ -64,17 +64,6 @@
       }
     }
   },
-  "TOOLBAR": {
-    "IMG_SELECT": {
-      "HEADER": "Photo Upload",
-      "SUBHEADER": "Choose the function for your upload:",
-      "LAB": "Activate lab test",
-      "PROFILE": "Switch profile image",
-      "INVOICE": "Upload vet invoice",
-      "OK_BUTTON": "Proceed",
-      "CANCEL_BUTTON": "Cancel"
-    }
-  },
   "MAIN_NAV": {
     "FEEDING": "Feeding",
     "FOOD_CHECK": "Food Check",
@@ -116,7 +105,8 @@
     "GENDER_LABEL": "Sex",
     "CASTRATION_LABEL": "Castration status",
     "BIRTHDAY_LABEL": "Birthday",
-    "FORM_BUTTON": "Create Pet"
+    "FORM_BUTTON": "Create Pet",
+    "WAITING": "Please wait ..."
   },
   "ACCOUNT_PAGE": {
     "NAME": "Name",
@@ -312,6 +302,19 @@
     "TEXT": "please upload all pages of your invoice",
     "LABEL": "Vet visit"
   },
+  "PRESCRIPTION_RESULT_PAGE": {
+    "TITLE": "Invoice Data",
+    "ADD": "Add",
+    "ADD_MED": "Add prepararation",
+    "DATE_TIME_BTNS_CANCEL": "Canceel",
+    "DATE_TIME_BTNS_DONE": "Apply",
+    "ADD_THERAPY": "Enter therapy",
+    "ADD_FINDING": "Enter finding",
+    "ADD_DIAGNOSIS": "Enter diagnosis",
+    "VET_VISIT": "vet visit",
+    "PROGRESS": "Proceed",
+    "REPEAT": "Repeat"
+  },
   "FU_PAGE": {
     "TITLE": "doctoring",
     "BUTTONS": {
@@ -380,5 +383,405 @@
     "MAX_CHARS": "160 characters",
     "WHOLEDAY": "During the day"
 
+  },
+  "TICKET_QUESTION_PAGE": {
+    "QUESTION": "Question",
+    "BEATS": "Beats",
+    "PULSE": "Pulse",
+    "PROGRESS_BUTTON": "Next",
+    "BACK_BUTTON": "Back",
+    "CANCEL_BUTTON": "Cancel",
+    "OK_BUTTON": "Apply",
+    "UPLOAD_IMAGE": "Add images (max. 3, max. 5 MB)",
+    "IMAGE_TOO_LARGE": "The image is too big",
+    "TELEVET_TITLE": "doctoring",
+    "WEIGHT_LABEL": "Example: 8.25",
+    "TOY_LABEL": "insert toy",
+    "CHOOSE": "Please select",
+    "AMOUNT": "quantity",
+    "UNIT": "unit",
+    "KG": "kg",
+    "CM": "cm",
+    "CHIP": "chip no.",
+    "TEMPERA": "°C",
+    "NO_IDEA": "don't know",
+    "TREATMENT": {
+      "HOME": "Given for treatment at home",
+      "VET": "Administered once at the doctor's office"
+    },
+    "MED": {
+      "NAME": "active ingredient or preparation nam",
+      "DAILY": "daily",
+      "DAYS": "day(s)",
+      "PIECE": "piece",
+      "PART": "part",
+      "PERMANENT": "permanent entry",
+      "FREQUENCY": "input frequency",
+      "STARTDATE": "entry start datee",
+      "ENDDATE": "end date of intake",
+      "TIME": "o'clock",
+      "AMOUNT": "quantity",
+      "TREATMENT_PERIOD": "treatment period",
+      "NOTES": "Your notes (150 characters)",
+      "CHARS": "150 characters",
+      "BUTTON": "Add",
+      "STRENGTH": "select effect strength",
+      "MEDS": {
+        "TIME": "o'clock",
+        "DAYS": "days",
+        "TREATMENT_PERIOD": "treatment period",
+        "FROM": "from",
+        "AT": "at"
+      }
+    },
+    "VET": {
+      "ZIP_CODE": "enter zip code",
+      "VETS_LIST": "select vet",
+      "NO_VET": "Can't find your vet?",
+      "ADD_VET": "Here you can enter the data manually",
+      "VET_ERROR": "Sorry, we did not find any vets for this zip code",
+      "FORM": {
+        "HEADER": "Please enter the data of your veterinarian:",
+        "DOC_OFFICE": "Name of practice (optional)",
+        "NAME": "name of veterinarian",
+        "ADDRESS": "street, house number",
+        "ZIP_CODE": "zip code"
+      }
+    },
+    "VACC": {
+      "SERUM": "Vaccine",
+      "CURRENT": "date of vaccination",
+      "NEXT": "date of next vaccination"
+    },
+    "FOOD": {
+      "ADD": "Add",
+      "TYPES": {
+        "DRY": "dry food",
+        "WET": "wet food",
+        "FOODS": "foods",
+        "SNACKS": "snacks",
+        "VMIN": "supplemental feed"
+      },
+      "TYPE": "Food Type",
+      "CHOOSE_PRODUCT": "Select product",
+      "AMOUNT": "Quantity",
+      "UNIT": "Units"
+    },
+    "PARASITES": {
+      "LABEL": "preparation",
+      "DATE": "date of administration"
+    }
+  },
+  "TICKET_RESULT_PAGE": {
+    "TITLE": "Evaluation",
+    "DIAG_HEADER": "diagnosis",
+    "NO_RESULT": "No result available yet",
+    "URGENCY": "Urgency",
+    "THERAPY": "therapy",
+    "DIAGNOSIS": "findings",
+    "REASONS": "common causes",
+    "HOW_TO": "How can I help my pet?",
+    "GO_BACK": "return to home page",
+    "HELP": "help?",
+    "NEEDS": "what you need for this",
+    "ORDER_TITLE": "order medicines directly online",
+    "ORDER_DESCRIPTION": "We have compiled the medications needed for therapy. Add your products to the shopping cart.",
+    "TICK": "select/deselect product",
+    "OR": "or",
+    "ORDER_TEXT": "save to cart",
+    "ORDER_BUTTON": "checkout",
+    "CART_BUTTON": "Add to Cart",
+    "AMOUNT": "quantity",
+    "DELIVERY_TIME": "delivery time",
+    "PRESCRIPTION": "Prescription",
+    "PHARMACY": "pharmacy required",
+    "UNIT": "size",
+    "SAVED_CART": "product saved in your cart",
+    "CHOICE_QUESTION": "Have you made your selection?",
+    "CHOICE_TEXT": "If your selection is complete, then proceed to cart",
+    "CHOICE_ANNOTATION": "Please note that you cannot subsequently receive products for therapy without consulting the online vet again."
+  },
+  "CARE_CARD_PAGE": {
+    "NO_DATA": "Not specified",
+    "HEADER": "Carecard of",
+    "BASE_DATA": {
+      "TITLE": "Base Data",
+      "LIST": {
+        "NAME": "Name",
+        "GENDER": "Sex",
+        "CASTRATION": "Neuter Status",
+        "BREED": "Breed",
+        "BIRTHDAY": "Birthday",
+        "ID": "Identifications No."
+      }
+    },
+    "PREVENTION": {
+      "TITLE": "Preventive Care"
+    },
+    "NUTRITION": {
+      "TITLE": "Nutrition"
+    },
+    "MED_TEST": {
+      "TITLE": "Medical Tests"
+    },
+    "DISEASES": {
+      "TITLE": "Diseases"
+    },
+    "INSURANCE": {
+      "TITLE": "Insurance"
+    },
+    "LIFESTYLE": {
+      "TITLE": "Lifestyle",
+      "ACTIVITY": {
+        "TITLE": "Activity Level"
+      }
+    }
+  },
+  "CARE_CARD_LIST_PAGE": {
+    "HISTORY": "History",
+    "ADD_DOC": "Add Attachment",
+    "FINDING_PDF": "Attachment",
+    "UPLOAD": "Invoise Upload",
+    "MANUAL": "Manual Input"
+  },
+  "CARE_CARD_DETAIL_PAGE": {
+    "DOWNLOAD": "PDF Download",
+    "PRESCRIPTION": "Prescription required",
+    "PHARMACY": "Pharmacy required",
+    "SAVED_CART": "Product saved in cart",
+    "CHOICE_QUESTION": "Have you made your selection?",
+    "CHOICE_TEXT": "If your selection is complete, then proceed to car",
+    "CART_BUTTON": "To cart",
+    "MED": {
+      "NAME": "Active ingredient or preparation name",
+      "DAILY": "daily",
+      "DAYS": "day(s)",
+      "PIECE": "pcs.",
+      "PART": "part",
+      "PERMANENT": "Permanent",
+      "FREQUENCY": "Input Frequency",
+      "STARTDATE": "Start Date",
+      "ENDDATE": "End Date",
+      "TIME": "Time",
+      "AMOUNT": "Quantity",
+      "TREATMENT_PERIOD": "Treatment Period",
+      "NOTES": "Your notes (150 characters)",
+      "CHARS": "150 characters",
+      "BUTTON": "Add",
+
+      "MEDS": {
+        "TIME": "o'clock",
+        "DAYS": "Tage",
+        "TREATMENT_PERIOD": "Treatment Period",
+        "FROM": "from",
+        "AT": "at"
+      }
+    },
+    "DOC": {
+      "SYMPTOMS": "Symptoms",
+      "DIAGNOSIS": "Diagnosis"
+    }
+  },
+  "DISEASE_PAGE": {
+    "TITLE": "ADD DISEASE",
+    "HEADER": "Current Health Status",
+    "SUB_HEADER": "No disease has been deposited yet",
+    "DISEASES": "Name of disease",
+    "MEDICATION":  "Medication",
+    "NOT_CURED":  "Not cured",
+    "CURED": "Cured on:",
+    "DETECTED": "Detected on:",
+    "UPDATE_SUCCESS": "Entry successful",
+    "UPDATE_ERROR": "Entry failed",
+
+    "EXPLANATION": {
+      "TITLE": "documentation of diseases",
+      "TEXT": "Lorem ipsum dolor sit amet, ligula eget dolor. Aenean  nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.",
+      "ANNOTATION": "faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. "
+    },
+    "DATE_TIME": {
+      "CANCEL": "Cancel",
+      "CONFIRM": "Confirm"
+    },
+    "BUTTONS": {
+      "ADD": "Add"
+    },
+    "MED": {
+      "ADD": "Add Medication",
+      "ADD_TEXT": "What medication, if known, was used to treat the condition? (multiple choice)"
+    },
+    "DOC": {
+      "ADD": "Add finding",
+      "DOC_TEXT": "If you have findings related to the disease, you can attach them. (e.g., blood work, X-ray, CT scan, or other)"
+    }
+  },
+  "CONSULTATION_PAGE": {
+    "TITLE": "Video call",
+    "TEXT": "To connect you with one of our specialists, please select the reason for consultation",
+    "LABEL": "Select consultation reason",
+    "BUTTON": "Find appointment"
+  },
+  "CONSULTATION_SCHEDULER_PAGE": {
+    "TITLE": "Video call",
+    "TODAY": "Today",
+    "TOMORROW": "Tomorrow",
+    "DAY_AFTER_TOMORROW": "Day after tomorrow",
+    "NEXT_AV_APP": "Next available appointment:",
+    "AT": "at",
+    "MIN": "min",
+    "BOOK_IMMEDIATELY": "Book immediately",
+    "BOOK_APPOINTMENT": "Book appointment",
+    "TEXT": {
+      "PART_1": "We have for you and",
+      "PART_2": "found the following dates."
+    },
+    "AHEAD_TEXT": "Appointments can be booked up to 2 days in advance. Select the day and time you would like to speak with a vet.",
+    "FIRST_NAME": "first name *",
+    "LAST_NAME": "last name *",
+    "PHONE": "phone",
+    "MODAL_HEADER": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
+    "CANCEL": "Cancel",
+    "CONFIRM": "Accept"
+  },
+  "CONSULTATION_BOOKING_PAGE": {
+    "TITLE": "Video call",
+    "ADD_DOCUMENT": "Add document (jpg, png, pdf)",
+    "ANNOTATIONS": "Annotations",
+    "CHARS": "chars",
+    "ADD_DOCS": "You can also upload images or documents to us.",
+    "BUTTON": "Checkout",
+    "CHECKBOX": {
+      "CARECARD": {
+        "1": "I hereby confirm that I have a video call for my pet",
+        "2": "born at",
+        "3": "would like to book."
+      },
+      "AGB": {
+        "1": "I confirm that",
+        "2": "T&C",
+        "3": "&",
+        "4": "privacy policy",
+        "5": " have read and accepted."
+      }
+    }
+  },
+  "DASHBOARD_PAGE": {
+    "TITLE": "Overview",
+    "HEADER": "Your overview",
+    "SUBHEADER": "Here you can keep track of all your pet's health data and lab tests."
+  },
+  "DISEASE_MODAL_PAGE": {
+    "CANCEL": "Cancel",
+    "CONFIRM":  "Apply",
+    "MED": {
+      "NAME": "active ingredient or preparation name",
+      "DAILY": "daily",
+      "DAYS": "day(s)",
+      "PIECE": "pcs",
+      "PART": "part",
+      "PERMANENT": "permanent",
+      "FREQUENCY": "input frequency",
+      "STARTDATE": "entry start date",
+      "ENDDATE": "end date of intake",
+      "TIME":  "o'clock",
+      "AMOUNT": "quantity",
+      "TREATMENT_PERIOD": "treatment period",
+      "NOTES": "Your notes (150 characters)",
+      "CHARS": "150 characters",
+      "BUTTON": "Add",
+      "MEDS": {
+        "TIME": "o'clock",
+        "DAYS": "days",
+        "TREATMENT_PERIOD": "treatment period",
+        "FROM": "from",
+        "AT": "at"
+      }
+
+    },
+    "DOC": {
+      "DATE": "Datum",
+      "ADD": "Dokument hinzufügen (jpg, pdf - max 5 MB)",
+      "DELETE": "Dokument unwiderruflich löschen",
+      "BUTTON": "Hinzufügen",
+      "UPLOAD": "Dokument hinzufügen (jpg, pdf - max 5 MB)",
+      "FROM": "vom",
+      "BODY_REGIONS": {
+        "LABEL": "Körperregion",
+        "ITEMS": {
+          "LEFT_FRONTLEG": "Linkes Vorderbein",
+          "RIGHT_FRONTLEG": "Rechtes Vorderbein",
+          "LEFT_HINDLEG": "Linkes Hinterbein",
+          "RIGHT_HINDLEG": "Rechtes Hinterbein",
+          "TEETH": "Zähne",
+          "HEAD": "Kopf",
+          "THROAT": "Hals",
+          "BREAST": "Brust",
+          "BACK": "Rücken",
+          "STOMACH": "Bauch",
+          "TAIL": "Schwanz",
+          "PELVIS": "Beckenregion",
+          "BLOOD": "Blut",
+          "URINE": "Urin",
+          "FECES": "Kot",
+          "BODY_TISSUE": "Gewebe",
+          "OTHER": "Sonstiges"
+        }
+      },
+      "TYPES": {
+        "LABEL": "Dokumentart",
+        "CT": "CT",
+        "MRT": "MRT",
+        "X_RAY": "Röntgenbild",
+        "ULTRASONIC": "Ultraschall",
+        "PHOTO": "Foto",
+        "LAB_RESULT": "Laborbericht"
+      }
+    }
+  },
+  "LAB_PAGE": {
+    "TITLE": "laboratory tests",
+    "PARASITES": "Parasite test",
+    "URINE": "Urine Stick Test",
+    "DIARRHEA": "Diarrhea Analysis",
+    "DIARRHEA_PLUS": "Diarrhea Analysis Plus",
+    "GIARDIA": "Giardia Control",
+    "FLORA": "Intestinal flora",
+    "PREVENTION": "Preventive Care Combo",
+    "OK_BUTTON": "Apply",
+    "CANCEL_BUTTON": "Cancel",
+    "SWITCH_PET": "Change animal",
+    "CHOOSE_PET": "Select the pet for which you want to activate the explorer box."
+
+  },
+  "QR_CODE_MODAL": {
+    "ERROR": "Code not recognized"
+  },
+  "RATION_CHECK_PAGE": {
+    "TITLE": "Food Calculator",
+    "AMOUNT": "Quantity",
+    "MEAL": "Meal",
+    "MEALS": "Meals",
+    "QUESTION": {
+      "PREFIX": "How many meals received",
+      "SUFFIX": "a day?"
+    },
+    "BUTTONS": {
+      "BACK": "Back",
+      "FORWARD": "Next"
+    }
+  },
+  "ATTACH_DOCUMENT": {
+    "ADD_DOCUMENT": "Add document (jpg, png, pdf)"
+  },
+  "TOOLBAR": {
+    "IMG_SELECT": {
+      "HEADER": "Photo Quick Upload",
+      "SUBHEADER": "select which function you want to use the upload for:",
+      "LAB": "enable lab test",
+      "PROFILE": "Change profile picture",
+      "INVOICE": "Upload vet invoice",
+      "OK_BUTTON": "Next",
+      "CANCEL_BUTTON": "Cancel"
+    }
   }
 }

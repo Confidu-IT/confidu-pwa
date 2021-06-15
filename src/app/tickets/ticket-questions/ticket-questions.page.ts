@@ -168,8 +168,7 @@ export class TicketQuestionsPage {
     this.questions = [];
     this.uploadedFiles = [];
     this.language = this.commonService.language;
-    this.translateService.setDefaultLang(this.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.translateService.use(this.language);
     this.uploadPath = `questionnaire/${this.commonService.createShortID()}`;
     this.vaccination = {
       key: undefined,
@@ -183,27 +182,28 @@ export class TicketQuestionsPage {
 
     this.translateService.get('TICKET_QUESTION_PAGE')
       .subscribe(values => {
-        this.daily = values.MED.DAILY;
+        console.log('values', values);
+        this.daily = values?.MED?.DAILY;
         this.frequency = [];
         for (let i = 1; i <= 5; i++) {
           this.frequency.push(`${i}x ${this.daily}`);
         }
-        this.cancelText = values.CANCEL_BUTTON;
-        this.okText = values.OK_BUTTON;
+        this.cancelText = values?.CANCEL_BUTTON;
+        this.okText = values?.OK_BUTTON;
         this.treatmentLocs = [
-          { name: values.TREATMENT.VET, value: 'vet' },
-          { name: values.TREATMENT.HOME, value: 'home' }
+          { name: values?.TREATMENT?.VET, value: 'vet' },
+          { name: values?.TREATMENT?.HOME, value: 'home' }
         ];
 
         this.foodTypes = [
-          { label: values.FOOD.TYPES.DRY, key: 'dry' },
-          { label: values.FOOD.TYPES.WET, key: 'wet' },
-          { label: values.FOOD.TYPES.FOODS, key: 'foods' },
-          { label: values.FOOD.TYPES.VMIN, key: 'vmin' },
+          { label: values?.FOOD?.TYPES?.DRY, key: 'dry' },
+          { label: values?.FOOD?.TYPES?.WET, key: 'wet' },
+          { label: values?.FOOD?.TYPES?.FOODS, key: 'foods' },
+          { label: values?.FOOD?.TYPES?.VMIN, key: 'vmin' },
         ];
         this.snackTypes = [
-          { label: values.FOOD.TYPES.SNACKS, key: 'snacks' },
-          { label: values.FOOD.TYPES.FOODS, key: 'foods' }
+          { label: values?.FOOD?.TYPES?.SNACKS, key: 'snacks' },
+          { label: values?.FOOD?.TYPES?.FOODS, key: 'foods' }
         ];
       });
 
@@ -434,7 +434,7 @@ export class TicketQuestionsPage {
       // console.log('load vets');
       this.firebaseService.getVetsByZipCode(this.language, String(this.vetZipCode))
         .subscribe(vets => {
-          // console.log('vets', vets);
+          console.log('vets', vets);
           this.vetsList = vets;
           if (this.vetsList.length < 1) {
             this.vetError = true;

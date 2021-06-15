@@ -63,8 +63,7 @@ export class DiseasesPage {
   ionViewWillEnter(): void {
     this.isLoading = true;
     this.language = this.commonService.language;
-    this.translateService.setDefaultLang(this.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.translateService.use(this.language);
     this.translateService.get('DISEASE_PAGE')
       .subscribe(values => {
         this.okText = values.DATE_TIME.CONFIRM;

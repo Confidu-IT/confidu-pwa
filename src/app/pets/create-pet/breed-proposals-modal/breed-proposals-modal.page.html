@@ -21,25 +21,22 @@
             {{ 'BREED_PROPOSALS_MODAL.BREED_MANUAL' | translate }}
           </p>
           <form [formGroup]="form">
-            <ion-item>
-
-              <mat-form-field>
-                <mat-label>{{ 'BREED_PROPOSALS_MODAL.ENTER_BREED' | translate }}</mat-label>
-                <textarea [matAutocomplete]="auto"
-                       matInput
-                       formControlName="breedList"
-                       [(ngModel)]="selectedBreed">
+            <mat-form-field>
+              <mat-label>{{ 'BREED_PROPOSALS_MODAL.ENTER_BREED' | translate }}</mat-label>
+              <textarea [matAutocomplete]="auto"
+                        matInput
+                        formControlName="breedList"
+                        [(ngModel)]="selectedBreed">
                 </textarea>
-                <mat-autocomplete
-                  #auto="matAutocomplete"
-                  autoActiveFirstOption
-                  [displayWith]="raceLabel">
-                  <mat-option *ngFor="let option of (filteredOptions | async)" [value]="option">
-                    {{ option.data.name_de }}
-                  </mat-option><br>
-                </mat-autocomplete>
-              </mat-form-field>
-            </ion-item>
+              <mat-autocomplete
+                #auto="matAutocomplete"
+                autoActiveFirstOption
+                [displayWith]="raceLabel">
+                <mat-option *ngFor="let option of (filteredOptions | async)" [value]="option">
+                  {{ option.data.name_de }}
+                </mat-option><br>
+              </mat-autocomplete>
+            </mat-form-field>
           </form>
           <p class="sub-text">
             {{ 'BREED_PROPOSALS_MODAL.CHECK_BREED' | translate }}

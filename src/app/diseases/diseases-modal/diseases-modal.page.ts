@@ -107,8 +107,7 @@ export class DiseasesModalPage {
     this.meds = this.disease?.meds || [];
     this.regions = this.diseasesService.regions;
     this.language = this.commonService.language;
-    this.translateService.setDefaultLang(this.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.translateService.use(this.language);
     this.translateService.get('DISEASE_MODAL_PAGE')
       .subscribe(values => {
         this.delImageMsg = values.DOC.DELETE;

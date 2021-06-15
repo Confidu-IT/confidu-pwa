@@ -111,7 +111,7 @@ export class HomePage {
     this.translateService.use(this.language);
     this.translateService.get('HOME_PAGE')
       .subscribe(values => {
-        console.log('values', values)
+        // console.log('values', values)
         this.healthExcellent = values.HEALTH_STATE_TEXT.EXCELLENT;
         this.healthGood = values.HEALTH_STATE_TEXT.GOOD;
         this.healthBad = values.HEALTH_STATE_TEXT.BAD;
@@ -169,7 +169,7 @@ export class HomePage {
   private getArticles(petId: string, uid: string, token: any): void {
     this.commonService.getArticles(petId, uid, token)
       .subscribe(articles => {
-        console.log('articles', articles);
+        // console.log('articles', articles);
         this.articles = articles;
       });
   }

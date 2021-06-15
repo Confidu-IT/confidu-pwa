@@ -49,8 +49,7 @@ export class RationCheckPage {
     // change this
 
     this.language = this.commonService.language;
-    this.translateService.setDefaultLang(this.commonService.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.translateService.use(this.language);
     this.translateService.get('RATION_CHECK_PAGE')
       .subscribe(values => {
         const meal = values.MEAL;

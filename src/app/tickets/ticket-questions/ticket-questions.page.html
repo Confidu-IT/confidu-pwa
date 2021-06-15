@@ -71,7 +71,13 @@
 <!--          </mat-form-field>-->
 
           <ng-container *ngIf="question?.values.questionType.toLowerCase() === 'vi'">
-            <div class="beats-amount">{{ beats }} {{ 'TICKET_QUESTION_PAGE.BEATS' | translate }}</div>
+            <div class="beats-amount" *ngIf="question?.name === 'breathe_Q2'">
+              {{ beats }} {{ 'TICKET_QUESTION_PAGE.BEATS' | translate }}
+            </div>
+
+            <div class="beats-amount" *ngIf="question?.name === 'pulse_Q2'">
+              {{ beats }} {{ 'TICKET_QUESTION_PAGE.PULSE' | translate }}
+            </div>
             <div *ngIf="!countdownDone" class="countdown" #countdown>60</div>
           </ng-container>
 
@@ -280,7 +286,7 @@
                                (keyup)="pickMedDose($event, i)"
                                matInput
                                step="any" type="number">
-                        <span matSuffix>{{ question?.values?.answerOption[0].answerUnit?.unit }}</span>
+                        <span matSuffix>{{ question?.values?.answerOption[0].answerValue[0]?.unit }}</span>
                       </mat-form-field>
                     </ng-container>
 
