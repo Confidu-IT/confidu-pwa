@@ -24,9 +24,6 @@
            <div class="product-price">
              {{ setTotalPrice(product.calculatedPrice.unitPrice, +this.form.value.quantity) }} €
            </div>
-           <p class="product-delivery">
-             <span>auf Lager &#124;</span> Lieferzeit: {{ product?.deliveryTime.name }}
-           </p>
            <form [formGroup]="form" class="product-order">
              <ion-select formControlName="quantity" class="product-quantity">
                <ion-select-option
@@ -35,7 +32,7 @@
                </ion-select-option>
              </ion-select>
              <ion-button color="secondary" class="cart-button"
-                         (click)="onTakeProduct()">In den Warenkorb</ion-button>
+                         (click)="onTakeProduct()">{{ 'PRODUCT_DETAIL_PAGE.TO_CART' | translate }}</ion-button>
            </form>
            <p class="product-tax">
              Alle Preise inkl. MWSt., zzgl. Versand &#124; Kostenloser Versand ab 75 €

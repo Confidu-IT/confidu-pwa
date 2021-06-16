@@ -46,9 +46,6 @@ const routes: Routes = [
     path: 'pets/pet-care-card-detail/:key/:list/:venom/:id/:label',
     loadChildren: () => import('./pets/pet-care-card/care-card-detail/care-card-detail.module').then( m => m.CareCardDetailPageModule)
   },
-  { path: 'shop/products',
-    loadChildren: () => import('./shop/products-list/products-list.module').then(m => m.ProductsListPageModule)
-  },
   { path: 'shop/product/:productId',
     loadChildren: () => import('./shop/product-detail/product-detail.module').then(m => m.ProductDetailPageModule)
   },

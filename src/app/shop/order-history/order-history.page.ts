@@ -41,8 +41,7 @@ export class OrderHistoryPage {
     this.isLoading = true;
     this.selectedProducts = [];
     this.language = this.commonService.language;
-    this.translateService.setDefaultLang(this.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.translateService.use(this.language);
 
     this.subscription = this.userAuth.user$
       .subscribe(user => {

@@ -10,9 +10,27 @@ export class ShopwareService {
   private baseUrl = environment.baseUrl;
   private uri: string
 
+  get browserLang() {
+    if (typeof window === 'undefined' || typeof window.navigator === 'undefined') {
+      return undefined;
+    }
+    let browserLang = window.navigator.languages ? window.navigator.languages[0] : null;
+    browserLang = browserLang || window.navigator.language;
+    if (typeof browserLang === 'undefined') {
+      return undefined;
+    }
+    if (browserLang.indexOf('-') !== -1) {
+      browserLang = browserLang.split('-')[0];
+    }
+    if (browserLang.indexOf('_') !== -1) {
+      browserLang = browserLang.split('_')[0];
+    }
+    return browserLang;
+  }
+
   constructor(
   ) {
-    const language = localStorage.getItem('country') || 'de';
+    const language = localStorage.getItem('country') || this.browserLang;
     this.uri = `${this.baseUrl}/${language}/sw`;
   }
 

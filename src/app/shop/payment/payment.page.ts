@@ -17,6 +17,7 @@ export class PaymentPage {
 
   public user: any;
   private subscription: Subscription;
+  private language: string;
 
   constructor(
     private shopwareService: ShopwareService,
@@ -27,8 +28,8 @@ export class PaymentPage {
   ) { }
 
   ionViewWillEnter() {
-    this.translateService.setDefaultLang(this.translateService.getBrowserLang()); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.language = this.commonService.language;
+    this.translateService.use(this.language);
     this.subscription = this.userAuth.user$
       .subscribe(user => {
         this.user = user;

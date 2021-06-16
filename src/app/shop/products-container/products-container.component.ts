@@ -3,6 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { ModalController } from '@ionic/angular';
 import { ProductModalPage } from '../product-modal/product-modal.page';
 import { ProductShipmentModalPage } from '../product-shipment-modal/product-shipment-modal.page';
+import {CommonService} from '../../shared/services/common/common.service';
 
 @Component({
   selector: 'app-products-container',
@@ -11,6 +12,7 @@ import { ProductShipmentModalPage } from '../product-shipment-modal/product-ship
 })
 export class ProductsContainerComponent {
   private iconPath = '../../../../assets/icons/shop';
+  private language: string;
 
   public selectedProducts: string[] = [];
   public eyeIcon = `${this.iconPath}/eye.svg`;
@@ -22,12 +24,14 @@ export class ProductsContainerComponent {
 
   constructor(
     private translateService: TranslateService,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    private commonService: CommonService
   ) {
     if (!this.template) {
       this.template = 'card';
     }
-    console.log('template', this.template);
+    this.language = this.commonService.language;
+    this.translateService.use(this.language);
   }
 
   public onClickInfo(): void {

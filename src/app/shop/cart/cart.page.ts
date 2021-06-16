@@ -33,8 +33,7 @@ export class CartPage implements OnInit {
   ngOnInit() {
     this.isLoading = true;
     this.language = this.commonService.language;
-    this.translateService.setDefaultLang(this.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.translateService.use(this.language);
     this.subscription = this.userAuth.user$
       .subscribe(user => {
         this.user = user;

@@ -26,23 +26,9 @@ export class AppComponent {
   ) {
     this.initializeApp();
     translateService.addLangs(['en', 'de']);
-    console.log('this.commonService.language', this.commonService.language)
-    // translateService.use(this.commonService.language);
 
-    // if (localStorage.getItem('country')) {
-    //   console.log('localStorage.getItem(country)', localStorage.getItem('country'))
-    //   translateService.use(localStorage.getItem('country'));
-    // }
-
-    // translateService.use('en');
-    // if (localStorage.getItem('country')) {
-    //   translateService.use(localStorage.getItem('country'));
-    // } else {
-    //   translateService.use(this.commonService.language);
-    // }
     this.commonService.appLanguage
       .subscribe(lang => {
-        console.log('lang', lang)
         if (lang) {
           this.translateService.use(lang);
         }

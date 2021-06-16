@@ -20,14 +20,15 @@ export class SignupPage implements OnInit {
   public signinForm: FormGroup;
   public isSignup: boolean;
   public isChecked: boolean;
-  public privacyLink = `https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/pdf%2Famoxitab_dog_cat_50mg_pil_de.pdf?alt=media&token=80f09b0f-871b-425f-9f7a-2260b499d8ff`;
-  public conditionsLink = `https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/pdf%2Famoxitab_dog_cat_50mg_pil_de.pdf?alt=media&token=80f09b0f-871b-425f-9f7a-2260b499d8ff`;
+  public privacyLink = '';
+  public conditionsLink = '';
   public countries: any[];
   private userId: string;
   private readonly subscription: Subscription;
   private readonly routeSub: Subscription;
   private mail: string;
   private params: any;
+  private language: string;
 
   constructor(
     private commonService: CommonService,
@@ -48,8 +49,8 @@ export class SignupPage implements OnInit {
   ngOnInit() {
     this.isSignup = this.router.url === '/signup';
     this.isChecked = false;
-    this.translateService.setDefaultLang(this.commonService.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.language = this.commonService.language;
+    this.translateService.use(this.language);
     this.shopwareService.getCountries()
       .then(response => {
         if (response.errors) {

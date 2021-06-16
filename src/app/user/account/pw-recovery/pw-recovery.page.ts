@@ -27,6 +27,7 @@ export class PwRecoveryPage implements OnInit {
   private readonly routeSub: Subscription;
   private params: any;
   private subscription: Subscription;
+  private language: string;
 
   constructor(
     private commonService: CommonService,
@@ -44,8 +45,8 @@ export class PwRecoveryPage implements OnInit {
   }
 
   ngOnInit() {
-    this.translateService.setDefaultLang(this.commonService.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.language = this.commonService.language;
+    this.translateService.use(this.language);
 
     this.mailForm = new FormGroup({
       email: new FormControl(null, {

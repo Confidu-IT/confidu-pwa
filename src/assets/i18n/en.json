@@ -783,5 +783,318 @@
       "OK_BUTTON": "Next",
       "CANCEL_BUTTON": "Cancel"
     }
+  },
+  "BILLING_ADDRESS_PAGE": {
+    "BILLING": "billing address",
+    "SHIPMENT": "shipping address",
+    "FIRST_NAME": "first name",
+    "LAST_NAME": "last name",
+    "ADDRESS": "street, number",
+    "ZIPCODE": "postal code",
+    "CITY": "city",
+    "COUNTRY": "country",
+    "EQUAL_ADDRESSES": "billing address equals shipping address",
+    "SUBMIT": "Continue"
+
+  },
+  "CART_PAGE": {
+    "TITLE": "Cart",
+    "EMPTY": "Cart is empty.",
+    "AMOUNT": "Quantity",
+    "REMOVE": "Remove article",
+    "TOTAL": "Total price",
+    "TAX": "Price incl. tax"
+  },
+  "ORDER_PAGE": {
+    "ORDER": "order",
+    "REMOVE": "remove item",
+    "CHANGE": "change",
+    "DELIVERY":  "Lieferung",
+    "SHIPMENT": "shipping cost",
+    "SUMMARY": "total amount",
+    "ORDER_NOW": "Order with costs",
+    "TAX": "(incl. VAT)",
+    "AMOUNT": "quantity",
+    "PRICE": "Preis",
+    "TITLE": "Summary",
+    "INVOICE": "Invoice",
+    "BILLING": "Payment method"
+
+  },
+  "ORDER_HISTORY_PAGE": {
+    "TITLE": "orders",
+    "ORDERS": "orders:",
+    "YOUR_ORDERS": "Your orders",
+    "NO_ORDERS": "There are no orders yet",
+    "DELIVERED": "Delivered",
+    "DELIVERED_AT": "Delivered on:",
+    "ORDERED_AT": "Ordered on:",
+    "PRICE": "Total:",
+    "BUY_AGAIN": "Buy again",
+    "GET_PRESCRIPTION": "Order follow-up prescription",
+    "SAVED_CART": "Product saved in your cart"
+
+  },
+  "PAYMENT_PAGE": {
+    "SUBMIT": "continue",
+    "TITLE": "payment_method"
+  },
+  "PRODUCT_MODAL_PAGE": {
+    "DELIVERY_TIME": "delivery time",
+    "PRESCRIPTION": "prescription required",
+    "PHARMACY": "pharmacy only",
+    "UNIT": "size",
+    "TAX": "All prices include tax, plus shipping | sold by",
+    "CART_BUTTON": "Add to Cart",
+    "PRICE": "Unit Price",
+    "STOCK": "In Stock",
+    "USAGE": "area of application",
+    "INSTRUCTIONS": "For risks and side effects, read the package insert and ask your doctor or pharmacist",
+    "INST_LINK": "Download package insert",
+    "DOSAGE": "Dosage"
+
+  },
+  "PRODUCT_SHIPMENT_INFO_MODAL": {
+    "TITLE": "product_shipment_info",
+    "TEXT": "All prescription and pharmacy products are sold and shipped exclusively by mail order pharmacies from Germany."
+  },
+  "PRODUCTS_CONTAINER": {
+    "ORDER_TITLE": "Order medications directly online",
+    "ORDER_DESCRIPTION": "We have collected the most needed medications for therapy. Add your Auwahl to the shopping cart.",
+    "TICK": "select/deselect product",
+    "OR": "or",
+    "ORDER_TEXT": "save to cart",
+    "ORDER_BUTTON": "checkout",
+    "CART_BUTTON": "Add to Cart",
+    "AMOUNT": "quantity",
+    "DELIVERY_TIME": "delivery time",
+    "PRESCRIPTION": "Prescription",
+    "PHARMACY": "pharmacy required",
+    "UNIT": "size",
+    "SAVED_CART": "product saved in your cart",
+    "CHOICE_QUESTION": "Have you made your selection?",
+    "CHOICE_TEXT": "If your selection is complete, then proceed to cart"
+  },
+  "PRESCRIPTION_PAGE": {
+    "DISEASES": "diseases",
+    "MEDICATION": "medication",
+    "CANCEL": "cancel",
+    "CONFIRM": "continue",
+    "PRESCRIPTION": {
+      "ADD_INVOICE": "add invoicen",
+      "ADD_PAGE": "add another page"
+    }
+  },
+  "PULSE_PAGE": {
+    "TITLE": {
+      "BREATHE": "respiratory rate",
+      "PULSE": "heartbeat"
+    },
+    "INTRO": {
+      "HEADER": "get ready",
+      "TEXT": {
+        "BREATHE": "Start the timer and, while the countdown is running, tap the icon with each breath your quadruped takes",
+        "PULSE": "Start the timer and, while the countdown is running, tap the heart icon every time your quadruped's heart beats"
+      }
+    },
+    "TIMER": {
+      "TEXT": {
+        "BREATHE": "Now tap the icon every time you take a breath",
+        "PULSE": "Now tap the icon every time your heart beats"
+        },
+      "BEATS": "Beats"
+    },
+    "DONE": {
+      "HEADER": "DONE!",
+      "TEXT": "Now look at your evaluation."
+    }
+  },
+  "TELEVET_EMERGENCY_PAGE": {
+    "TITLE": "Emergency",
+    "BUTTONS": {
+      "CANCEL": "Cancel",
+      "CONFIRM": "Continue"
+    }
+  },
+  "TELEVET_EMERGENCY_MODAL_PAGE": {
+    "BUTTONS": {
+      "CANCEL": "Abbrechen",
+      "PROCEED": "Weiter"
+    }
+  },
+  "TICKET_PAGE": {
+    "EXEC": "Durchführen",
+    "UPLOAD": "Bild hinzufügen (jpg/png)",
+    "ADD_IMAGE": "Titelbild für diese Aufgabe (optional)",
+    "ACTIONS": {
+      "CLOSE": {
+        "MSG": "Bitte bestätige deine Eingabe und die Aufgabe wird geschlossen.",
+        "BTN": "Übernehmen"
+      },
+      "DELETE": {
+        "MSG": "Bist du sicher, dass du diese Aufgabe löschen möchtest?",
+        "BTN": "Löschen"
+      },
+      "DATE_TIME_BTNS": {
+        "CANCEL": "Abbrechen",
+        "DONE": "Übernehmen"
+      }
+    },
+    "WEIGHT_LABEL": "Gewicht in kg",
+    "TITLE": "Ticket",
+    "HOMEWORK": "Planer",
+    "TODAY_TASKS": "Meine Aufgaben",
+    "DONE": "erledigt",
+    "DELETE": "Löschen",
+    "POSTPONE": "Termin verschieben",
+    "NEW_TASK": "Neue Aufgabe erstellen",
+    "CREATE_TASK": "Aufgabe anlegen",
+    "CLOSE_TASK": {
+      "BODY": "Diese Aufgabe schließen?",
+      "POPUP": {
+        "TEXT": "Bitte bestätige deine Eingabe und die Aufgabe wird geschlossen.",
+        "BUTTON": {
+          "CANCEL": {
+            "ACTION": "cancel",
+            "LABEL": "Abbrechen"
+          },
+          "CONFIRM": {
+            "ACTION": "save",
+            "LABEL": "Übernehmen"
+          }
+        }
+      }
+    },
+
+    "CANCEL": "Abbrechen",
+    "CONFIRM": "Übernehmen",
+    "POSTPONE_TASK": "Termin verschieben",
+    "NAME_TASK": "Aufgabe benennen",
+    "DATE": "Datum",
+    "TIME": "Uhrzeit",
+    "MAX_CHARS": "160 Zeichen",
+    "WHOLEDAY": "Im Laufe des Tages"
+  },
+  "TICKET_GUIDE_PAGE": {
+    "TITLE": "Instruction"
+  },
+  "TICKET_INFO_PAGE": {
+    "TITLE": "Information"
+  },
+  "TICKET_ORDER_PAGE": {
+    "TITLE": "Shop"
+  },
+  "PW_RECOVERY_PAGE": {
+    "RECOVER": "password reset",
+    "RECOVERED": "password resetted",
+    "ENTER_MAIL": "Please enter the email address you used to sign in to the confidu app. We'll send the a link to reset your password afterwards.",
+    "ENTER_PW": "Now type in your new password.",
+    "EMAIL": "email address",
+    "PASSWORD": "New password",
+    "PASSWORD_REPEAT": "Repeat new password",
+    "SUCCESS": "Your password has been successfully changed. It is valid from now on.",
+    "REQ_LINK": "Request link",
+    "BACK_TO_LOGIN": "Return to login",
+    "STORE": "Save",
+    "NOTIFICATIONS_PAGE": {
+      "TITLE": "notifications",
+      "LAB_RESULT": "laboratory findings",
+        "RECIPE_RATINGS": "Ratings (cooking recipe)",
+        "TASKS_REMINDER": "reminders (tasks)",
+        "RECIPE_COMMENTS": "comments (cooking recipe)",
+        "PUSH":  "Push",
+        "PUSH_NOTIFICATION": "Push Notification",
+        "MAIL": "e-mail",
+        "TEXT": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
+        "GET_NOTIFIED": "Notifications Received"
+      }
+  },
+  "SIGNUP_PAGE": {
+    "SIGNUP": "Create your new confidu account",
+    "NO_ACCOUNT": {
+      "PART_1": "You don't have an account yet?",
+      "PART_2": "Create an account now."
+    },
+    "PW_RECOVERY":  "Forgot your password?",
+    "TO_LOGIN": "Log in with existing account",
+    "SIGNIN": "Login",
+    "EMAIL": "email",
+    "PASSWORD": "password",
+    "PASSWORD_CONFIRM": "Confirm Password",
+    "PASSWORD_TEXT": "7 or more characters, min 1 uppercase and 1 numeric",
+    "COMPLIANCE": {
+      "PART_1": "I accept the",
+      "PART_2": "and agree to the",
+      "PART_3": "agree",
+      "PRIVACY": "privacy policy",
+      "CONDITIONS": "terms of use"
+    }
+
+  },
+  "VERIFICATION_PAGE": {
+    "HEADER": {
+      "VERIFICATION": "verify your account",
+      "RECOVER_SUCCESS": "link sent",
+      "RECOVER_FAIL": "Error while sending"
+    },
+    "BODY": {
+      "VERIFICATION": {
+        "PART_1": "We sent you a confirmation link to the address you provided to activate your account",
+        "PART_2": "sent. Clicking on the link will activate the address."
+      },
+      "RECOVER_SUCCESS": {
+        "PART_1": "the link was successfully sent to",
+        "PART_2": "sent."
+      },
+      "RECOVER_FAIL": {
+        "PART_1": "No confidu account could be associated with the email address you provided. Please use the email address you registered with confidu."
+      },
+      "LINK_REPEAT": {
+        "PART_1": "No email received?",
+        "PART_2": "Request link again."
+      }
+    }
+  },
+  "WALKTHROUGH_PAGE": {
+    "TITLE": "walkthrough",
+    "CANCEL": "skip",
+    "START": "let's go",
+      "SLIDES": [
+        {
+          "TITLE": "Care Card",
+          "TEXT": "Carry your pet's patient record with you at all times - all health data bundled in one app.",
+          "IMG": "carecard"
+        },
+        {
+          "TITLE": "Urine Stick Test",
+          "TEXT": "Detect and monitor potential diseases from the comfort of your home.",
+          "IMG": "urine stick test"
+        },
+        {
+          "TITLE": "medical tests",
+          "TEXT": "Based on fecal or urine samples, test your pet's health.",
+          "IMG": "medicine tests"
+        },
+        {
+          "TITLE": "My Bowl",
+          "TEXT": "Create feeding plans according to your pet's individual nutrient and energy needs like a pro.",
+          "IMG": "my_bowl"
+        },
+        {
+          "TITLE": "Planner",
+          "TEXT": "Keep track of all your pet's important tasks with our planner - from medication dispensing to ear care to your own appointments.",
+          "IMG": "planner"
+        },
+        {
+          "TITLE": "TeleVet",
+          "TEXT": "State symptom, answer questions, start treatment - our online vet will help you right away.",
+          "IMG": "televet_guide"
+        },
+        {
+          "TITLE": "insurance",
+          "TEXT": "Conveniently manage insurance records and benefits from your pets.",
+          "IMG": "insurance"
+        }
+      ]
   }
 }

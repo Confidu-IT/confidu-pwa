@@ -23,6 +23,7 @@ export class ProductModalPage implements OnInit {
   @Input() item: any;
 
   private subscription: Subscription;
+  private language: string;
   public user: any;
 
   constructor(
@@ -39,8 +40,8 @@ export class ProductModalPage implements OnInit {
         this.user = user;
         this.shopwareService.headers['firebase-context-token'] = this.user.za;
       });
-    this.translateService.setDefaultLang(this.commonService.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.language = this.commonService.language;
+    this.translateService.use(this.language);
     console.log('item', this.item);
     this.title = this.item.translated.name;
     this.productImage = this.item.cover.media.url;

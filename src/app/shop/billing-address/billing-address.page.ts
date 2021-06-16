@@ -40,8 +40,7 @@ export class BillingAddressPage {
 
   ionViewWillEnter() {
     this.language = this.commonService.language;
-    this.translateService.setDefaultLang(this.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.translateService.use(this.language);
     this.form = new FormGroup({
       firstName: new FormControl(null, {
         updateOn: 'change',

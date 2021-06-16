@@ -48,8 +48,7 @@ export class TicketGuidePage {
   ionViewWillEnter(): void {
     this.isLoading = true;
     this.language = this.commonService.language;
-    this.translateService.setDefaultLang(this.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.translateService.use(this.language);
 
     this.subscription = this.userAuth.user$.pipe(
       tap(user => user),

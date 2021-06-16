@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { CommonService } from '../../../../shared/services/common/common.service';
 import { ModalController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-emergency-modal',
@@ -11,17 +12,19 @@ import { Router } from '@angular/router';
 export class EmergencyModalPage {
   @Input() item;
   public title: string;
-  public cancel = 'Abbrechen';
-  public proceed = 'weiter';
+  private language: string;
 
   constructor(
     private modalCtrl: ModalController,
     private commonService: CommonService,
+    private translateService: TranslateService,
     private router: Router
   ) { }
 
   ionViewWillEnter() {
     this.title = this.item.label;
+    this.language = this.commonService.language;
+    this.translateService.use(this.language);
   }
 
   public closeModal(): void {

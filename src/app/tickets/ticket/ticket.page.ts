@@ -92,8 +92,7 @@ export class TicketPage {
     this.noCard = 'no-card';
     this.currentDay = new Date().toISOString();
     this.language = this.commonService.language;
-    this.translateService.setDefaultLang(this.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.translateService.use(this.language);
     this.translateService.get('TICKET_PAGE')
       .subscribe(values => {
         this.closeTask = values.CLOSE_TASK;

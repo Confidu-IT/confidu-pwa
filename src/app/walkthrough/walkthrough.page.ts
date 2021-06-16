@@ -15,6 +15,8 @@ export class WalkthroughPage implements OnInit {
   public imagePath = '../../../assets/icons/walkthrough';
   @ViewChild('slider') slider: IonSlides;
 
+  private language: string;
+
   constructor(
     private translateService: TranslateService,
     private commonService: CommonService,
@@ -23,8 +25,8 @@ export class WalkthroughPage implements OnInit {
 
   ngOnInit() {
     this.isLoading = true;
-    this.translateService.setDefaultLang(this.commonService.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.language = this.commonService.language;
+    this.translateService.use(this.language);
     this.translateService.get('WALKTHROUGH_PAGE')
       .subscribe(data => {
         this.slides = data.SLIDES;

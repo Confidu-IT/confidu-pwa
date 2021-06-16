@@ -63,8 +63,7 @@ export class PulsePage {
 
   ionViewWillEnter() {
     this.language = this.commonService.language;
-    this.translateService.setDefaultLang(this.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.translateService.use(this.language);
     this.translateService.get('PULSE_PAGE')
       .subscribe(values => {
        this.question = values.WEIGHT_QUESTION;

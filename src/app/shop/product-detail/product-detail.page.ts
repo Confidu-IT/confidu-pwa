@@ -6,6 +6,7 @@ import { CommonService } from '../../shared/services/common/common.service';
 import { IonSlides } from '@ionic/angular';
 import { FormControl, FormGroup } from '@angular/forms';
 import { AuthService } from '../../user/auth.service';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-product-detail',
@@ -26,12 +27,14 @@ export class ProductDetailPage implements OnInit  {
   private productId: string;
   private routeSub: Subscription;
   private subscription: Subscription;
+  private language: string;
   public user: any;
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private shopwareService: ShopwareService,
     private commonService: CommonService,
+    private translateService: TranslateService,
     private userAuth: AuthService,
     private router: Router
   ) {
@@ -42,6 +45,8 @@ export class ProductDetailPage implements OnInit  {
   }
 
   ngOnInit(): void {
+    this.language = this.commonService.language;
+    this.translateService.use(this.language);
     this.subscription = this.userAuth.user$
       .subscribe(user => {
         this.user = user;

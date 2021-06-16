@@ -15,6 +15,7 @@ export class ProductShipmentModalPage implements OnInit {
   public infoIcon = `${this.iconPath}/shipment-modal-info.svg`;
 
   private subscription: Subscription;
+  private language: string;
 
   constructor(
     private commonService: CommonService,
@@ -24,8 +25,8 @@ export class ProductShipmentModalPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.translateService.setDefaultLang(this.commonService.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.language = this.commonService.language;
+    this.translateService.use(this.language);
   }
 
   public closeModal(): void {

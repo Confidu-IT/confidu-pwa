@@ -38,6 +38,12 @@
       "CONFIRM": "Weiter"
     }
   },
+  "TELEVET_EMERGENCY_MODAL_PAGE": {
+    "BUTTONS": {
+      "CANCEL": "Abbrechen",
+      "PROCEED": "Weiter"
+    }
+  },
   "TELEVET_PET_PAGE": {
     "PET_SPOT_TEXT": {
       "CANCEL_BUTTON": "Abbrechen",
@@ -421,6 +427,9 @@
   "TICKET_GUIDE_PAGE": {
     "TITLE": "Anleitung"
   },
+  "TICKET_ORDER_PAGE": {
+    "TITLE": "Shop"
+  },
   "HOME_PAGE": {
     "CARE_CARD": "CareCard",
     "COINS": "Confi-Coins",
@@ -529,7 +538,7 @@
   "PRODUCT_MODAL_PAGE": {
     "DELIVERY_TIME": "Lieferzeit",
     "PRESCRIPTION": "Rezeptpflichtig",
-    "PHARMACY": "Aphotekenpflichtig",
+    "PHARMACY": "Apothekenpflichtig",
     "UNIT": "Größe",
     "TAX": "Alle Preise inkl. MwSt., zzgl. Versand | Verkauf durch",
     "CART_BUTTON": "In den Warenkorb",
@@ -1206,5 +1215,10 @@
     "NOTIFICATIONS": "Benachrichtigungen",
     "HELP": "Hilfe",
     "LOGOUT": "Abmelden"
+  },
+  "PRODUCT_DETAIL_PAGE": {
+    "TO_CART": "In den Warenkorb",
+    "TAX": "Alle Preise inkl. MWSt., zzgl. Versand",
+    "DESCRIPTION": "Artikelbeschreibung"
   }
 }
