@@ -1220,5 +1220,9 @@
     "TO_CART": "In den Warenkorb",
     "TAX": "Alle Preise inkl. MWSt., zzgl. Versand",
     "DESCRIPTION": "Artikelbeschreibung"
+  },
+  "NOTIFICATIONS_LIST_PAGE": {
+    "TITLE": "Benachrichtigungen",
+    "HEADER": "Deine Benachrichtigungen"
   }
 }

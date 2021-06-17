@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ 'NOTIFICATIONS_LIST_PAGE.TITLE' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-text-center" *ngIf="isLoading">
+    <ion-spinner color="primary"></ion-spinner>
+  </div>
+  <ion-grid *ngIf="!isLoading">
+    <ion-row>
+      <ion-col>
+        <h2>{{ 'NOTIFICATIONS_LIST_PAGE.HEADER' | translate }}</h2>
+        <ul class="notifications-list">
+          <li *ngFor="let item of notes">
+            <ion-img [src]="item.notification.image"></ion-img>
+            <div class="notification">
+              <div class="author">{{ item.notification.author }}</div>
+              <div class="header">{{ item.notification.header }}</div>
+              <div class="body">{{ item.notification.body }}</div>
+              <div class="date">{{ item.date.seconds * 1000 | date: 'dd.MM.yyyy' }}</div>
+            </div>
+          </li>
+        </ul>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer *ngIf="!isLoading">
+  <app-toolbar-footer [user]="user"></app-toolbar-footer>
+</ion-footer>

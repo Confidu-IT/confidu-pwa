@@ -188,6 +188,10 @@ const routes: Routes = [
     path: 'article/:type/:id',
     loadChildren: () => import('./articles/article-detail/article-detail.module').then(m => m.ArticleDetailPageModule)
   },
+  {
+    path: 'user/notifications-list',
+    loadChildren: () => import('./user/notifications/notifications-list/notifications-list.module').then(m => m.NotificationsListPageModule)
+  },
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
 

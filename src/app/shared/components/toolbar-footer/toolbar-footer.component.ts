@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import {Component, ElementRef, Input, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import { Router } from '@angular/router';
 import { ToolbarModalPage } from '../toolbar-modal/toolbar-modal.page';
 import { ModalController } from '@ionic/angular';
@@ -17,7 +17,7 @@ import { environment } from '../../../../environments/environment';
   templateUrl: './toolbar-footer.component.html',
   styleUrls: ['./toolbar-footer.component.scss'],
 })
-export class ToolbarFooterComponent {
+export class ToolbarFooterComponent implements OnInit, OnDestroy {
   public camImg = '../../assets/icons/toolbar-footer/cam.svg';
   public snoutImg = '../../assets/icons/toolbar-footer/notifications_disabled.svg';
   public pageImg = '../../assets/icons/toolbar-footer/carecard_disabled.svg';
@@ -31,9 +31,8 @@ export class ToolbarFooterComponent {
   @Input() user: any;
   @ViewChild('filePicker') filePickerRef: ElementRef<HTMLInputElement>;
 
-  private uploadSub: Subscription;
   private subscription: Subscription;
-  private downloadURL$: Observable<string>;
+  private notificationsSubscription: Subscription;
   private action: string;
   private invalidCode: string;
   private usedCode: string;
@@ -60,6 +59,18 @@ export class ToolbarFooterComponent {
         this.assignment = values.ASSIGNMENT;
         this.regSuccess = values.REG_SUCCESS;
       });
+  }
+
+  ngOnInit(): void {
+
+    if (this.user) {
+      this.checkForNotifications();
+    }
+
+  }
+
+  public goToNotifications() {
+    this.router.navigateByUrl(`user/notifications-list`);
   }
 
   public goToCareCard(): void {
@@ -163,7 +174,6 @@ export class ToolbarFooterComponent {
           if (this.action === 'profile') {
             this.filePickerRef.nativeElement.click();
           } else if (this.action === 'lab') {
-            console.log('r', response.data);
             this.qrScannerModal();
           }
         }
@@ -171,13 +181,21 @@ export class ToolbarFooterComponent {
     return await modal.present();
   }
 
+  private checkForNotifications() {
+    this.notificationsSubscription = this.firebaseService.checkForNewNotifications(this.user.uid)
+      .subscribe((response: any) => {
+        console.log('resp', response);
+        if (!response.read) {
+          this.snoutImg = '../../assets/icons/toolbar-footer/notifications_disabled.svg';
+        }
+      })
+  }
+
   private updatePetImage(imageUrl: string): void {
     this.subscription = this.firebaseService.getPetById(this.user.uid, localStorage.getItem('activePet'))
       .subscribe(pet => {
         pet.pet.image = imageUrl;
-        this.firebaseService.updatePet(this.user.uid, localStorage.getItem('activePet'), pet).then(() => {
-          this.subscription.unsubscribe();
-        });
+        this.firebaseService.updatePet(this.user.uid, localStorage.getItem('activePet'), pet);
       });
   }
 
@@ -223,4 +241,13 @@ export class ToolbarFooterComponent {
     return await modal.present();
   }
 
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+
+    if (this.notificationsSubscription) {
+      this.notificationsSubscription.unsubscribe();
+    }
+  }
 }

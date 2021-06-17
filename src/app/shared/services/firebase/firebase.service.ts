@@ -28,8 +28,29 @@ export class FirebaseService {
   public urineTestCollection: AngularFirestoreCollection = this.afs.collection('urine-stick');
   public userCollection: AngularFirestoreCollection = this.afs.collection('users');
   public activePetsCollection: any;
+  public notificationsReadCollection: AngularFirestoreCollection;
+  public notificationsListCollection: AngularFirestoreCollection;
 
   constructor(private afs: AngularFirestore) {
+  }
+
+  public getNotifications(userId: string): Observable<any[]> {
+    this.notificationsListCollection = this.afs.collection(`notifications/${userId}/data`, (ref) => ref.orderBy('date', 'desc'));
+    return this.notificationsListCollection.snapshotChanges().pipe(
+      map(actions => actions.map(a => {
+        const data = a.payload.doc.data();
+        data.id = a.payload.doc.id;
+        return { ...data };
+      }))
+    );
+  }
+
+  public markNotificationsAsRead(userId: string) {
+    return this.afs.doc(`notifications/${userId}`).set({read: true});
+  }
+
+  public checkForNewNotifications(userId: string) {
+    return this.afs.doc(`notifications/${userId}`).valueChanges();
   }
 
   public creatNotificationPermissions(userId: string, obj: any): Promise<any> {
