@@ -46,8 +46,7 @@ export class NotificationsListPage {
     ).subscribe( (data: any) => {
       console.log('data', data);
       for (const item of data) {
-        item.notification.header = item.notification.header[this.language];
-        item.notification.body = item.notification.body[this.language];
+        item.notification.body = item?.notification?.body[this.language];
       }
       this.notes = data;
       this.isLoading = false;
