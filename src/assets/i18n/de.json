@@ -992,7 +992,11 @@
     "LANGUAGES": {
       "GERMAN": "Deutsch",
       "ENGLISH": "Englisch",
-      "DANISH": "Dänisch"
+      "DANISH": "Dänisch",
+      "ITALIAN": "Italienisch",
+      "FRENCH": "Französisch",
+      "SPANISH": "Spanisch",
+      "POLISH": "Polnisch"
     }
   },
   "PW_RECOVERY_PAGE": {
@@ -1024,6 +1028,19 @@
     "BILLING": "Zahlunsmethode"
   },
   "USER_MODAL_PAGE": {
+    "LANGUAGES": {
+      "GERMAN": "Deutsch",
+      "ENGLISH": "Englisch",
+      "DANISH": "Dänisch",
+      "ITALIAN": "Italienisch",
+      "FRENCH": "Französisch",
+      "SPANISH": "Spanisch",
+      "POLISH": "Polnisch"
+    },
+    "LANGUAGE": {
+      "TITLE": "SPRACHE",
+      "CHOOSE": "Sprache wählen"
+    },
     "NAME": {
       "TITLE": "Name",
       "NAME": "Dein Name",

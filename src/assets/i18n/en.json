@@ -122,7 +122,11 @@
     "LANGUAGES": {
       "GERMAN": "German",
       "ENGLISH": "English",
-      "DANISH": "Dansk"
+      "DANISH": "Dansk",
+      "ITALIAN": "Italian",
+      "FRENCH": "French",
+      "SPANISH": "Spanish",
+      "POLISH": "Polish"
     }
   },
   "PETS_LIST_PAGE": {
@@ -1100,5 +1104,70 @@
   "NOTIFICATIONS_LIST_PAGE": {
     "TITLE": "Notifications",
     "HEADER": "Your notifications"
+  },
+  "USER_MODAL_PAGE": {
+    "LANGUAGES": {
+      "GERMAN": "German",
+      "ENGLISH": "English",
+      "DANISH": "Dansk",
+      "ITALIAN": "Italian",
+      "FRENCH": "French",
+      "SPANISH": "Spanish",
+      "POLISH": "Polish"
+    },
+    "LANGUAGE": {
+      "TITLE": "Language",
+      "CHOOSE": "Choose language"
+    },
+    "NAME": {
+      "TITLE": "Name",
+      "NAME": "Your name",
+      "FIRST_NAME": "first name",
+      "LAST_NAME": "last name",
+      "BUTTON": "save"
+    },
+    "PHONE": {
+      "TITLE": "Phone",
+      "PHONE": "phone",
+      "BUTTON": "save",
+      "EXPLANATION": "Lorem Ipsum"
+    },
+    "PW": {
+      "TITLE": "Password",
+      "CHANGE_PW": "Change password",
+      "CURRENT_PW": "Current password",
+      "CONFIRM_PW": "Repeat new password",
+      "NEW_PW": "New Password",
+      "BUTTON": "Chane Password"
+    },
+    "EMAIL": {
+      "TITLE": "Email",
+      "MAIL": "Your email",
+      "NEW_MAIL": "New email",
+      "CONFIRM_MAIL": "Repeat new email",
+      "TEXT": "Your email has changed? Please enter your new email in order to link it to your account.",
+      "PASSWORD": "Password",
+      "BUTTON": "Change email"
+    }
+  },
+  "HOME_MODAL_PAGE": {
+    "HEADER": "Please choose the kind of consultation:",
+    "QUESTIONNAIRE": "Diagnosis finder (free)",
+    "CALL": "Book video call (14,99 €)",
+    "CALL_DESCRIPTION": "After purchase the video call get stored inside the planner. Choose the according date to get to your video call link and talk with our vets about your issue.",
+    "CANCEL": "Cancel",
+    "PROGRESS": "Proceed"
+  },
+  "REGISTER_CODE": {
+    "REG_TEXT": "Enter the registration code that accompanies your sample material here.",
+    "EG": "e.g. 0123456789",
+    "WRONG_PET": "Logged in with the wrong animal?",
+    "INVALID_CODE": "Invalid code",
+    "USED_CODE": "Code already used",
+    "CHANGE_PET": "Switch pet",
+    "REG_SUCCESS": "Registration successful",
+    "ASSIGNMENT": [
+      "Product", "has been", "successfully assigned."
+    ]
   }
 }

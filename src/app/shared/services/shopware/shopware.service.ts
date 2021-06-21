@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from '../../../../environments/environment';
+import {TranslateService} from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
@@ -10,28 +11,44 @@ export class ShopwareService {
   private baseUrl = environment.baseUrl;
   private uri: string
 
-  get browserLang() {
-    if (typeof window === 'undefined' || typeof window.navigator === 'undefined') {
-      return undefined;
+  // get browserLang() {
+  //   if (typeof window === 'undefined' || typeof window.navigator === 'undefined') {
+  //     return undefined;
+  //   }
+  //   let browserLang = window.navigator.languages ? window.navigator.languages[0] : null;
+  //   browserLang = browserLang || window.navigator.language;
+  //   if (typeof browserLang === 'undefined') {
+  //     return undefined;
+  //   }
+  //   if (browserLang.indexOf('-') !== -1) {
+  //     browserLang = browserLang.split('-')[0];
+  //   }
+  //   if (browserLang.indexOf('_') !== -1) {
+  //     browserLang = browserLang.split('_')[0];
+  //   }
+  //   return browserLang;
+  // }
+
+  public get browserLang(): string {
+    if (localStorage.getItem('country')) {
+      return localStorage.getItem('country');
+    } else {
+      const browserLanguage = this.translateService.getBrowserLang();
+      if (
+        browserLanguage === 'de' || browserLanguage === 'dk' || browserLanguage === 'en' ||
+        browserLanguage === 'fr' || browserLanguage === 'it' || browserLanguage === 'es' ||
+        browserLanguage === 'pl'
+      ) {
+        return browserLanguage;
+      }
     }
-    let browserLang = window.navigator.languages ? window.navigator.languages[0] : null;
-    browserLang = browserLang || window.navigator.language;
-    if (typeof browserLang === 'undefined') {
-      return undefined;
-    }
-    if (browserLang.indexOf('-') !== -1) {
-      browserLang = browserLang.split('-')[0];
-    }
-    if (browserLang.indexOf('_') !== -1) {
-      browserLang = browserLang.split('_')[0];
-    }
-    return browserLang;
+    return 'en';
   }
 
   constructor(
+    private translateService: TranslateService
   ) {
-    const language = localStorage.getItem('country') || this.browserLang;
-    this.uri = `${this.baseUrl}/${language}/sw`;
+    this.uri = `${this.baseUrl}/${this.browserLang}/sw`;
   }
 
   headers = {

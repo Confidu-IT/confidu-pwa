@@ -14,6 +14,23 @@
     <ion-row>
       <ion-col offsetSm="2" sizeSm="8">
 
+        <ion-card *ngIf="type === 'language' && selectedLanguage" class="language">
+          <ion-card-content>
+            <mat-form-field>
+              <mat-label>{{ 'ACCOUNT_PAGE.CHOOSE_LANGUAGE' | translate }}</mat-label>
+              <mat-select
+                [(value)]="selectedLanguage"
+                (selectionChange)="onPickLanguage($event)"
+              >
+
+                <mat-option *ngFor="let el of languages" [value]="el.value">
+                  {{ el.label }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </ion-card-content>
+        </ion-card>
+
         <ion-card *ngIf="type === 'name'" class="account">
           <ion-card-content>
             <h2>{{ 'USER_MODAL_PAGE.NAME.NAME' | translate }}</h2>
@@ -66,7 +83,7 @@
         <ion-card *ngIf="type === 'email'" class="email">
           <ion-card-content>
             <h2>{{ 'USER_MODAL_PAGE.EMAIL.MAIL' | translate }}</h2>
-            <div class="old-mail">{{ user.email }}</div>
+            <div class="old-mail">{{ user?.email }}</div>
             <p class="text">{{ 'USER_MODAL_PAGE.EMAIL.TEXT' | translate }}</p>
 
             <form class="current-pw">

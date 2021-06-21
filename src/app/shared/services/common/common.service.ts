@@ -15,18 +15,22 @@ export class CommonService {
   private baseUrl = environment.baseUrl;
   private appLanguage$ = new BehaviorSubject<any>('');
 
-
   public get language(): string {
     if (localStorage.getItem('country')) {
       return localStorage.getItem('country');
     } else {
       const browserLanguage = this.translateService.getBrowserLang();
-      if (browserLanguage === 'de' || browserLanguage === 'dk' || browserLanguage === 'fr') {
+      if (
+        browserLanguage === 'de' || browserLanguage === 'dk' || browserLanguage === 'en' ||
+        browserLanguage === 'fr' || browserLanguage === 'it' || browserLanguage === 'es' ||
+        browserLanguage === 'pl'
+      ) {
         return browserLanguage;
       }
     }
-    return 'de';
+    return 'en';
   }
+  public languages: any[];
 
 
   constructor(
@@ -37,7 +41,11 @@ export class CommonService {
     private http: HttpClient
   ) {
     this.translateService.setDefaultLang(this.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    // this.translateService.use(this.translateService.getBrowserLang());
+
+    this.translateService.use(this.language);
+
+    console.log('this.language', this.language)
 
     this.translateService.get('COMMON')
       .subscribe(common => {

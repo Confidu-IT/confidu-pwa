@@ -5,6 +5,9 @@ import { AngularFireStorage } from '@angular/fire/storage';
 import { CommonService } from '../../shared/services/common/common.service';
 import { ShopwareService } from '../../shared/services/shopware/shopware.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {FirebaseService} from '../../shared/services/firebase/firebase.service';
+import {AuthService} from '../auth.service';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-user-modal',
@@ -13,7 +16,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class UserModalPage {
   @Input() type;
-  @Input() user;
 
   public title: string;
   public currentPW: string;
@@ -21,17 +23,24 @@ export class UserModalPage {
   public emailForm: FormGroup;
   public passwordForm: FormGroup;
   public phoneForm: FormGroup;
+  public selectedLanguage: string;
+  public languages: any[];
+  public language: string;
+  public user: any;
 
   private salutationId: string;
-  private countryId: string;
   private isPhone: boolean;
+  private subscription: Subscription;
+  private languageSub: Subscription;
 
   constructor(
     private modalCtrl: ModalController,
     private translateService: TranslateService,
     private storage: AngularFireStorage,
     private commonService: CommonService,
-    private shopwareService: ShopwareService
+    private firebaseService: FirebaseService,
+    private shopwareService: ShopwareService,
+    private userAuth: AuthService
   ) {
     this.nameForm = new FormGroup({
       firstName: new FormControl(null, {
@@ -99,9 +108,14 @@ export class UserModalPage {
     };
   }
 
+
   ionViewWillEnter() {
+    this.language = this.commonService.language;
+    this.translateService.use(this.language);
+
     this.translateService.get('USER_MODAL_PAGE')
       .subscribe(values => {
+        console.log('value', values)
         if (this.type === 'name') {
           this.title = values.NAME.TITLE;
         }
@@ -114,7 +128,39 @@ export class UserModalPage {
         if (this.type === 'email') {
           this.title = values.EMAIL.TITLE;
         }
+        if (this.type === 'language') {
+          this.title = values.LANGUAGE.TITLE;
+        }
+
+        this.translateService.get('USER_MODAL_PAGE')
+          .subscribe(values => {
+            const ger = values.LANGUAGES.GERMAN;
+            const en = values.LANGUAGES.ENGLISH;
+            const dk = values.LANGUAGES.DANISH;
+            const it = values.LANGUAGES.ITALIAN;
+            const fr = values.LANGUAGES.FRENCH;
+            const es = values.LANGUAGES.SPANISH;
+            const pl = values.LANGUAGES.POLISH;
+
+            this.languages = [
+              { label: dk, value: 'dk' },
+              { label: ger, value: 'de' },
+              { label: en, value: 'en' },
+              { label: fr, value: 'fr' },
+              { label: it, value: 'it' },
+              { label: es, value: 'es' },
+              { label: pl, value: 'pl' },
+            ];
+          });
+
+        // this.languages = this.commonService.languages;
+        const country: any[] = this.languages.filter(lang => lang.value === this.language);
+        this.selectedLanguage = country.length > 0 ? this.selectedLanguage = country[0].value : 'en';
       });
+
+
+    this.subscription = this.userAuth.user$
+      .subscribe(user => this.user = user);
 
     this.shopwareService.getProfile()
       .then(response => {
@@ -126,6 +172,14 @@ export class UserModalPage {
           // this.countryId = response.defaultBillingAddress.countryId;
         }
       });
+  }
+
+  public onPickLanguage(event): void {
+    this.commonService.setAppLanguage(event.value);
+    localStorage.setItem('country', event.value);
+    this.firebaseService.setUserLanguage(this.user.uid, event.value).then(() => {
+      this.modalCtrl.dismiss(null, 'language');
+    });
   }
 
   public onUpdateName() {
@@ -200,5 +254,15 @@ export class UserModalPage {
           }
         }
       });
+  }
+
+  ionViewWillLeave() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+
+    if (this.languageSub) {
+      this.languageSub.unsubscribe();
+    }
   }
 }

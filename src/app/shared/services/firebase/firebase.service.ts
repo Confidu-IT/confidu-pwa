@@ -278,7 +278,7 @@ export class FirebaseService {
 
   public getAllMeds(language: string): Observable<any[]> {
     this.medicationCollection =
-      this.afs.collection(`medication-db/medication-list/${language}`, ref => ref.orderBy('name', 'asc'));
+      this.afs.collection(`scan-db/medication/${language}`, ref => ref.orderBy('name', 'asc'));
     return this.medicationCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
         return a.payload.doc.data();

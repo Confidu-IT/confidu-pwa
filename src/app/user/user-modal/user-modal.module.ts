@@ -8,6 +8,7 @@ import { UserModalPageRoutingModule } from './user-modal-routing.module';
 
 import { UserModalPage } from './user-modal.page';
 import { TranslateModule } from '@ngx-translate/core';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { TranslateModule } from '@ngx-translate/core';
     FormsModule,
     IonicModule,
     TranslateModule.forChild(),
+    MatSelectModule,
     ReactiveFormsModule,
     UserModalPageRoutingModule
   ],

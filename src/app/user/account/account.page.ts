@@ -44,24 +44,33 @@ export class AccountPage {
 
   ionViewWillEnter() {
     this.isLoading = true;
-    this.language = this.commonService.language;
-    this.translateService.use(this.language);
+
     this.translateService.get('ACCOUNT_PAGE')
       .subscribe(values => {
-        console.log('values', values);
         this.title = values.TITLE;
+      });
+    this.translateService.get('USER_MODAL_PAGE')
+      .subscribe(values => {
         const ger = values.LANGUAGES.GERMAN;
         const en = values.LANGUAGES.ENGLISH;
         const dk = values.LANGUAGES.DANISH;
+        const it = values.LANGUAGES.ITALIAN;
+        const fr = values.LANGUAGES.FRENCH;
+        const es = values.LANGUAGES.SPANISH;
+        const pl = values.LANGUAGES.POLISH;
 
         this.languages = [
+          { label: dk, value: 'dk' },
           { label: ger, value: 'de' },
           { label: en, value: 'en' },
-          { label: dk, value: 'dk' }
+          { label: fr, value: 'fr' },
+          { label: it, value: 'it' },
+          { label: es, value: 'es' },
+          { label: pl, value: 'pl' },
         ];
       });
 
-    this.selectedLanguage = localStorage.getItem('country') || 'de';
+
 
     this.subscription = this.userAuth.user$
       .subscribe(user => {
@@ -76,33 +85,35 @@ export class AccountPage {
             if (response.errors) {
               this.commonService.handleShopErrors(response.errors[0].status);
             } else {
-              this.isLoading = false;
+
               this.account = response;
               this.firstName = response.firstName;
               this.lastName = response.lastName;
               this.email = response.email;
               this.phone = response?.customFields?.custom_customers_tel;
+              this.updateLanguage();
+              this.isLoading = false;
             }
           });
       });
+  }
+
+  private updateLanguage(): string {
+    this.language = this.commonService.language;
+    this.translateService.use(this.language);
+    const country: any[] = this.languages.filter(lang => lang.value === this.language);
+    return this.selectedLanguage = country.length > 0 ? this.selectedLanguage = country[0].label : '';
   }
 
   public updateInfo(type: string) {
     this.presentModal(type);
   }
 
-  public onPickLanguage(event): void {
-    this.commonService.setAppLanguage(event.value);
-    localStorage.setItem('country', event.value);
-    this.firebaseService.setUserLanguage(this.user.uid, event.value);
-  }
-
   private async presentModal(type: string) {
     const modal = await this.modalCtrl.create({
       component: UserModalPage,
       componentProps: {
-        type,
-        user: this.account
+        type
       }
     });
     modal.onDidDismiss()
@@ -117,6 +128,9 @@ export class AccountPage {
 
         if (response.role === 'phone') {
           this.phone = response.data.phone;
+        }
+        if (response.role === 'language') {
+          this.updateLanguage();
         }
       });
     return await modal.present();
