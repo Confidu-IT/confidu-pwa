@@ -26,7 +26,7 @@ export class CreatePetPage implements OnInit {
   public genderLabel: string;
   public logo = environment.logo;
   public iconPath = '../../assets/icons';
-  public petAvatar = `${this.iconPath}/pets_blue_cam.svg`;
+  public petAvatar = `${this.iconPath}/symbiose.svg`;
   public camIcon = `${this.iconPath}/home/blue_cam.svg`;
   public user$: any;
   public filteredOptions: Observable<any[]>;

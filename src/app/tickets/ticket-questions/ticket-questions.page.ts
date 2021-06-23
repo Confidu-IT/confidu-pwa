@@ -948,7 +948,7 @@ export class TicketQuestionsPage {
 
   private validateVaccDates(): boolean {
     const dateStrings = [];
-    this.question.values.answerOption[0].answerValue.map((value, index) => {
+    this.question.values.answerOption[0]?.answerValue?.map((value, index) => {
       dateStrings.push(value.nextDate);
     });
     return dateStrings.includes(null);

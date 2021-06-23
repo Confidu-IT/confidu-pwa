@@ -7,7 +7,7 @@
     "PHARMACY": "Pharmacy",
     "FEEDING": "Feeding",
     "CURRENT_FEEDING": "Current Feeding",
-    "SWITCH_RATION": "TTip on ration to switch.",
+    "SWITCH_RATION": "Tip on ration to switch.",
     "DETAILS": "Details",
     "STATUS": {
       "1": "How is",
@@ -15,12 +15,12 @@
       "INSTRUCTIONS": "Tippe mehrmals auf das Hundesymbol und bestätige den passenden Zustand mit dem Häkchen."
     },
     "OVERVIEW": "Overview",
-    "CHANGE_PET": "Change Pet",
+    "CHANGE_PET": "Change pet",
     "TO_TASKS": "Planner",
-    "TODAY_TASKS": "Today's Tasks",
+    "TODAY_TASKS": "Today's tasks",
     "TODAY": "Today",
     "TASK": "Task",
-    "RECIPE_HEADER": "Order Medication",
+    "RECIPE_HEADER": "Order medication",
     "RECIPE_TEXT": "Lorem ipsum dolor sit amet",
     "PATCH_BUTTON": "Treatment",
     "DANGER_BUTTON": "Emergency",
@@ -41,11 +41,11 @@
   },
   "NAVIGATION": {
     "RATION": "Rations-Check",
-    "BOWL": "Mein Napf",
-    "HARNSTICK": "Harnsticktest",
-    "LAB": "Labor",
-    "CONTRACT": "Vertrag",
-    "DAMAGE": "Schaden",
+    "BOWL": "My bowl",
+    "HARNSTICK": "Urine stick test",
+    "LAB": "Laboratory",
+    "CONTRACT": "Contract",
+    "DAMAGE": "Claim",
     "HOME": "Home",
     "SIGNOUT": "Logout"
   },
@@ -58,22 +58,22 @@
         "403": "User not signed in"
       },
       "LOGIN": {
-        "400": "E-Mail already used",
-        "401": "Invalid E-Mail oder Password",
+        "400": "Email already used",
+        "401": "Invalid email or password",
         "403": "FOOBAR"
       }
     }
   },
   "MAIN_NAV": {
     "FEEDING": "Feeding",
-    "FOOD_CHECK": "Food Check",
+    "FOOD_CHECK": "Food check",
     "BOWL": "My Bowl",
     "RESEARCH": "Research",
-    "LAB": "Lab",
-    "URINE_TEST": "Urinestick Test",
+    "LAB": "Laboratory",
+    "URINE_TEST": "Urine stick test",
     "PROTECT": "Protect",
     "CONTRACT": "Contract",
-    "DAMAGE": "Damage",
+    "DAMAGE": "Claims",
     "SHOP": "Shop"
   },
   "SIDE_NAV": {
@@ -90,12 +90,12 @@
       "FALSE": "Not neutered"
     },
     "GENDER": {
-      "MALE": "male",
-      "FEMALE": "female"
+      "MALE": "Male",
+      "FEMALE": "Female"
     },
     "SPECIES_LIST": {
-      "CAT": "Katze",
-      "DOG": "Hund"
+      "CAT": "Cat",
+      "DOG": "Dog"
     },
     "OK_BUTTON": "Save",
     "CANCEL_BUTTON": "Cancel",
@@ -105,20 +105,20 @@
     "GENDER_LABEL": "Sex",
     "CASTRATION_LABEL": "Castration status",
     "BIRTHDAY_LABEL": "Birthday",
-    "FORM_BUTTON": "Create Pet",
+    "FORM_BUTTON": "Create pet",
     "WAITING": "Please wait ..."
   },
   "ACCOUNT_PAGE": {
     "NAME": "Name",
     "ADDRESS": "Address",
-    "MAIL": "E-Mail",
+    "MAIL": "Email",
     "PHONE": "Phone",
     "TITLE": "Account",
-    "INFOS": "Personal Infos",
+    "INFOS": "Personal information",
     "CHANGE_PW": "Change password",
-    "DEL_ACC": "Account löschen",
+    "DEL_ACC": "Delete account",
     "BEQUEST": "Foobar",
-    "CHOOSE_LANGUAGE": "Choose Language",
+    "CHOOSE_LANGUAGE": "Choose language",
     "LANGUAGES": {
       "GERMAN": "German",
       "ENGLISH": "English",
@@ -135,225 +135,225 @@
   "TELEVET_PET_PAGE": {
     "PET_SPOT_TEXT": {
       "CANCEL_BUTTON": "Cancel",
-      "SWELLING": "swelling/bump/node",
-      "STIFFNESS":"stiffness",
-      "MUSCULAR_DYSTROPHY": "muscle atrophy",
-      "FLATULENCE": "flatulence",
-      "DIARRHAE": "diarrhea",
-      "VOMITING": "vomiting",
-      "VOMITING_DIARRHAE": "vomiting and diarrhea",
-      "ITCHING": "itching",
-      "CONSTIPATION": "constipation",
-      "BITE": "bite injury",
-      "SUCKLES": "swelling of the teat",
-      "STOMACH_PAIN": "abdominal pain",
-      "TRAVEL_SICKNESS": "travel sickness",
-      "COUGH": "cough",
-      "VOMIT": "vomiting",
-      "SNORING": "snoring/loud breathing sounds",
+      "SWELLING": "Swelling/bump/node",
+      "STIFFNESS":"Stiffness",
+      "MUSCULAR_DYSTROPHY": "Muscle atrophy",
+      "FLATULENCE": "Flatulence",
+      "DIARRHAE": "Diarrhea",
+      "VOMITING": "Vomiting",
+      "VOMITING_DIARRHAE": "Vomiting and diarrhea",
+      "ITCHING": "Itching",
+      "CONSTIPATION": "Constipation",
+      "BITE": "Bite injury",
+      "SUCKLES": "Swelling of the teat",
+      "STOMACH_PAIN": "Abdominal pain",
+      "TRAVEL_SICKNESS": "Travel sickness",
+      "COUGH": "Cough",
+      "VOMIT": "Vomiting",
+      "SNORING": "Snoring/loud breathing sounds",
       "EARS_HEARING": "Impaired hearing",
       "EARS_SCRATCH": "Ear scratching",
-      "EARS_DISCHARGE": "ear discharge",
+      "EARS_DISCHARGE": "Ear discharge",
       "EARS_STINKY": "Unpleasant smelling ear",
       "EARS_SWOLLEN": "Swollen ear",
-      "EARS_INJURY": "ear injury",
+      "EARS_INJURY": "Ear injury",
       "EYES_IMPAIRED": "Impaired vision",
-      "EYES_CHANGES": "eye changes",
+      "EYES_CHANGES": "Eye changes",
       "SWELLING_VULVA": "Swelling of the vulva",
       "TESTICLES_CHANGES": "Altered testis",
-      "UNWANTED_PREGNANCY": "Unwanted Coverage",
+      "UNWANTED_PREGNANCY": "Unwanted coverage",
       "VAGINAL_DISCHARGE": "Vaginal discharge",
-      "PENIS_DISCHARGE": "penile discharge",
-      "PENIS_ISSUE": "penile prolapse",
-      "URINATION_PAIN": "pain on urination",
-      "URINATION_CHANGE": "altered urine",
+      "PENIS_DISCHARGE": "Penile discharge",
+      "PENIS_ISSUE": "Penile prolapse",
+      "URINATION_PAIN": "Pain during urination",
+      "URINATION_CHANGE": "Altered urine",
       "URINATION_LOW": "Low urine output",
       "URINATION_HIGH_DRINKING": "Increased urination and drinking",
       "URINATION_HIGH": "Frequent urination",
-      "HEAT": "heat",
-      "EAT_FECES": "Feces-eating",
-      "EAT_GRASS": "grass-eating",
+      "HEAT": "Heat",
+      "EAT_FECES": "Feces eating",
+      "EAT_GRASS": "Grass eating",
       "EAT_NONE": "Does not eat",
       "DRINKING_HIGH": "Increased drinking",
-      "VOICE_CHANGES":  "voice change",
-      "FOOT_ODOR": "mouth odor",
-      "NOSE_DRY": "dry nose",
-      "NOSE_BLEEDING": "nosebleed",
-      "NOSE_DISCHARGE": "nasal discharge",
-      "SNEEZE": "sneezing",
-      "LAMENESS": "lameness",
-      "SWELLING_JOINT": "joint swelling",
-      "INJURY_CLAW": "claw injury",
-      "INJURY_PAW": "paw injury",
-      "INJURY_BITE": "bite injury",
-      "BUMPINESS": "rollover",
-      "HYPOCRISY": "false pregnancy",
-      "FEVER":  "fever",
-      "TEMPERATURE_LOW": "undertemperature",
-      "BEHAVIOUR_CHANGE": "behavior change",
-      "WEAKNESS": "weakness",
-      "WEIGHT_LOSS": "weight loss",
-      "WEIGHT_GAIN": "weight gain",
+      "VOICE_CHANGES":  "Voice change",
+      "FOOT_ODOR": "Mouth odor",
+      "NOSE_DRY": "Dry nose",
+      "NOSE_BLEEDING": "Nosebleed",
+      "NOSE_DISCHARGE": "Nasal discharge",
+      "SNEEZE": "Sneezing",
+      "LAMENESS": "Lameness",
+      "SWELLING_JOINT": "Joint swelling",
+      "INJURY_CLAW": "Claw injury",
+      "INJURY_PAW": "Paw injury",
+      "INJURY_BITE": "Bite injury",
+      "BUMPINESS": "Rollover",
+      "HYPOCRISY": "False pregnancy",
+      "FEVER":  "Fever",
+      "TEMPERATURE_LOW": "Low temperature",
+      "BEHAVIOUR_CHANGE": "Behavior change",
+      "WEAKNESS": "Weakness",
+      "WEIGHT_LOSS": "Weight loss",
+      "WEIGHT_GAIN": "Weight gain",
       "FUR_SHAGGY": "Dull, shaggy coat",
-      "FLEA_INVESTATION": "flea infestation",
+      "FLEA_INVESTATION": "Flea infestation",
       "SKIN_STINKY": "Unpleasant smelling skin",
-      "FUR_LOSS": "loss of fur without itching",
+      "FUR_LOSS": "Fur loss without itching",
       "FUR_LOSS_ITCHING": "Fur loss with itching",
-      "INJURY_SKIN": "skin injury",
-      "WOUND": "wound/bruise",
-      "CHOCOLATE": "chocolate",
-      "MEDS": "medication",
-      "TOBACCO": "tobacco/nicotine",
-      "MISC": "other food products",
-      "BREATH_SHORTNESS": "shortness of breath",
-      "EMERGENCY_BIRTH": "emergency at birth",
-      "EYES_INJURY": "eye injury",
+      "INJURY_SKIN": "Skin injury",
+      "WOUND": "Wound/bruise",
+      "CHOCOLATE": "Chocolate",
+      "MEDS": "Medication",
+      "TOBACCO": "Tobacco/nicotine",
+      "MISC": "Other food products",
+      "BREATH_SHORTNESS": "Shortness of breath",
+      "EMERGENCY_BIRTH": "Emergency at birth",
+      "EYES_INJURY": "Eye injury",
       "HEAVY_STOMACH_PAIN": "Severe abdominal pain",
       "HEATSTROKE": "Heatstroke",
       "NO_URINE": "Unable to pass urine",
-      "SEIZURE": "seizure",
-      "PARALYSIS": "paralysis",
+      "SEIZURE": "Seizure",
+      "PARALYSIS": "Paralysis",
       "BROKEN_BONE": "Open fracture",
       "HEAVY_BLEEDING": "Heavy bleeding",
       "APNEA": "Respiratory and cardiac arrest",
-      "GASTRIC_TORSION": "gastric torsion",
-      "UNCONSCIOUSNESS": "unconsciousness",
-      "SHOCK":  "shock",
-      "POISONING": "poisoning"
+      "GASTRIC_TORSION": "Gastric torsion",
+      "UNCONSCIOUSNESS": "Unconsciousness",
+      "SHOCK":  "Shock",
+      "POISONING": "Poisoning"
     },
     "CLICK_SPOT": {
       "BUTT": {
-        "LABEL": "butt",
-        "SPOT": "butt"
+        "LABEL": "Butt",
+        "SPOT": "Butt"
       },
       "BACK": {
-        "LABEL": "back",
-        "SPOT": "back"
+        "LABEL": "Back",
+        "SPOT": "Back"
       },
       "BELLY": {
-        "LABEL": "belly",
-        "SPOT": "belly"
+        "LABEL": "Belly",
+        "SPOT": "Belly"
       },
       "TAIL": {
-        "LABEL": "tail",
-        "SPOT": "tail"
+        "LABEL": "Tail",
+        "SPOT": "Tail"
       },
       "LEGS": {
-        "LABEL": "legs",
-        "SPOT": "legs"
+        "LABEL": "Legs",
+        "SPOT": "Legs"
       },
       "CHEST": {
-        "LABEL": "chest",
-        "SPOT": "chest"
+        "LABEL": "Chest",
+        "SPOT": "Chest"
       },
       "EAR": {
-        "LABEL": "ear",
-        "SPOT": "ear"
+        "LABEL": "Ear",
+        "SPOT": "Ear"
       },
       "EYE": {
-        "LABEL": "eye",
-        "SPOT": "eye"
+        "LABEL": "Eye",
+        "SPOT": "Eye"
       },
       "NOSE": {
-        "LABEL": "nose",
-        "SPOT": "nose"
+        "LABEL": "Nose",
+        "SPOT": "Nose"
       },
       "MOUTH": {
-        "LABEL": "mouth",
-        "SPOT": "mouth"
+        "LABEL": "Mouth",
+        "SPOT": "Mouth"
       },
       "HEAD_REGION": {
-        "SPOT": "head-region"
+        "SPOT": "Head-region"
       },
       "BODY_REGION": {
-        "SPOT": "body-region"
+        "SPOT": "Body-region"
       },
       "HEAD": {
-        "LABEL": "head",
-        "SPOT": "head"
+        "LABEL": "Head",
+        "SPOT": "Head"
       },
       "THROAT": {
-        "LABEL": "throat",
-        "SPOT": "throat"
+        "LABEL": "Throat",
+        "SPOT": "Throat"
       },
       "ABDOMEN": {
-        "LABEL": "abdomen",
-        "SPOT": "abdomen"
+        "LABEL": "Abdomen",
+        "SPOT": "Abdomen"
       },
       "GENERAL": {
-        "LABEL": "general",
-        "SPOT": "general"
+        "LABEL": "General condition",
+        "SPOT": "General condition"
       },
       "FUR": {
-        "LABEL": "fur",
-        "SPOT": "fur"
+        "LABEL": "Fur",
+        "SPOT": "Fur"
       },
       "POISON": {
-        "LABEL": "poison",
-        "SPOT": "poison"
+        "LABEL": "Poison",
+        "SPOT": "Poison"
       }
     },
     "HEADER": "Where do symptoms appear?",
     "POISON_HEADER": "What was eaten?",
     "DESCRIPTION": "In scope",
-    "ACTION": "Tap on the affected area",
+    "ACTION": "Tap on the affected area.",
     "PROGRESS_BUTTON": "Next",
     "ZOOM_BUTTON": "Back",
     "TITLE": "Vet"
   },
   "PRESCRIPTION_UPLOAD_PAGE": {
     "TITLE": "Invoice upload",
-    "TEXT": "please upload all pages of your invoice",
+    "TEXT": "Please upload all pages of your invoice.",
     "LABEL": "Vet visit"
   },
   "PRESCRIPTION_RESULT_PAGE": {
-    "TITLE": "Invoice Data",
+    "TITLE": "Invoice data",
     "ADD": "Add",
-    "ADD_MED": "Add prepararation",
-    "DATE_TIME_BTNS_CANCEL": "Canceel",
+    "ADD_MED": "Add preparation",
+    "DATE_TIME_BTNS_CANCEL": "Cancel",
     "DATE_TIME_BTNS_DONE": "Apply",
     "ADD_THERAPY": "Enter therapy",
     "ADD_FINDING": "Enter finding",
     "ADD_DIAGNOSIS": "Enter diagnosis",
-    "VET_VISIT": "vet visit",
+    "VET_VISIT": "Vet visit",
     "PROGRESS": "Proceed",
     "REPEAT": "Repeat"
   },
   "FU_PAGE": {
-    "TITLE": "doctoring",
+    "TITLE": "Medicate",
     "BUTTONS": {
-      "BACK": "back",
-      "FORWARD": "next"
+      "BACK": "Back",
+      "FORWARD": "Next"
     },
     "INTRO_TEXT": "In order to write the prescription and send you the medicine, we need you to send us an invoice from your veterinarian with the following information",
     "INTRO_LIST": [
       "Name and address of veterinarian",
-      "Name and date of birth of the animal",
-      "your name and address",
-      "diagnosis",
-      "Name of Medication"
+      "Name and date of birth of your pet",
+      "Your name and address",
+      "Diagnosis",
+      "Name of drug"
     ],
-    "CHOOSE": "Please select the disease and medicine you want to order for your pet:",
-    "MANUAL_CHOICE": "Please select the medicine you want to request. We will try to get it and notify you",
+    "CHOOSE": "Please select the disease and drug you want to order for your pet:",
+    "MANUAL_CHOICE": "Please select the medicine you want to request. We will try to get it and notify you.",
     "ALERT": {
       "TITLE": "Thank you for your request!",
-      "TEXT": "We will check your information and notify you as soon as possible",
+      "TEXT": "We will check your information and notify you as soon as possible.",
       "BUTTONS": {
         "CANCEL": "Cancel",
         "DONE": "Done"
       }
     },
-    "DISEASES": "select disease",
-    "MEDS": "drug name",
-    "NO_MED": "Your medicine is not included?",
-    "REQ_MED": "Request preparation"
+    "DISEASES": "Select disease",
+    "MEDS": "Drug name",
+    "NO_MED": "Your drug is not included?",
+    "REQ_MED": "Request drug"
 
   },
   "TICKETS_PAGE": {
     "HEADER": "Planner of",
     "EXEC": "Perform",
-    "UPLOAD": "add image (jpg/png)",
-    "ADD_IMAGE": "cover image for this task (optional)",
+    "UPLOAD": "Add image (jpg/png)",
+    "ADD_IMAGE": "Cover image for this task (optional)",
     "ACTIONS": {
       "CLOSE": {
         "MSG": "Please confirm your input and the task will be closed.",
@@ -368,22 +368,22 @@
         "DONE": "Apply"
       }
     },
-    "WEIGHT_LABEL": "weight in kg",
+    "WEIGHT_LABEL": "Weight in kg",
     "TITLE": "Planner",
-    "HOMEWORK": "planner",
+    "HOMEWORK": "Planner",
     "TODAY_TASKS": "My Tasks",
     "DONE":  "Done",
-    "DELETE": "delete",
-    "POSTPONE": "postpone appointment",
-    "NEW_TASK": "create new task",
-    "NO_TASKS": "There are no tasks to be done today",
+    "DELETE": "Delete",
+    "POSTPONE": "Postpone appointment",
+    "NEW_TASK": "Create new task",
+    "NO_TASKS": "There are no tasks to be done today.",
     "CREATE_TASK": "Create task",
     "CANCEL": "Cancel",
     "CONFIRM": "Apply",
-    "POSTPONE_TASK": "postpone appointment",
-    "NAME_TASK": "name task",
-    "DATE": "date",
-    "TIME": "time",
+    "POSTPONE_TASK": "Postpone appointment",
+    "NAME_TASK": "Task name",
+    "DATE": "Date",
+    "TIME": "Time",
     "MAX_CHARS": "160 characters",
     "WHOLEDAY": "During the day"
 
@@ -397,74 +397,74 @@
     "CANCEL_BUTTON": "Cancel",
     "OK_BUTTON": "Apply",
     "UPLOAD_IMAGE": "Add images (max. 3, max. 5 MB)",
-    "IMAGE_TOO_LARGE": "The image is too big",
-    "TELEVET_TITLE": "doctoring",
+    "IMAGE_TOO_LARGE": "The image is too big.",
+    "TELEVET_TITLE": "Medicate",
     "WEIGHT_LABEL": "Example: 8.25",
-    "TOY_LABEL": "insert toy",
+    "TOY_LABEL": "Insert toy",
     "CHOOSE": "Please select",
-    "AMOUNT": "quantity",
-    "UNIT": "unit",
+    "AMOUNT": "Quantity",
+    "UNIT": "Unit",
     "KG": "kg",
     "CM": "cm",
-    "CHIP": "chip no.",
+    "CHIP": "Chip no.",
     "TEMPERA": "°C",
-    "NO_IDEA": "don't know",
+    "NO_IDEA": "I don't know",
     "TREATMENT": {
       "HOME": "Given for treatment at home",
       "VET": "Administered once at the doctor's office"
     },
     "MED": {
-      "NAME": "active ingredient or preparation nam",
-      "DAILY": "daily",
-      "DAYS": "day(s)",
-      "PIECE": "piece",
-      "PART": "part",
-      "PERMANENT": "permanent entry",
-      "FREQUENCY": "input frequency",
-      "STARTDATE": "entry start datee",
-      "ENDDATE": "end date of intake",
+      "NAME": "Active ingredient or preparation nam",
+      "DAILY": "Daily",
+      "DAYS": "Day(s)",
+      "PIECE": "Piece",
+      "PART": "Part",
+      "PERMANENT": "Permanent administration",
+      "FREQUENCY": "Input frequency",
+      "STARTDATE": "Start date",
+      "ENDDATE": "End date",
       "TIME": "o'clock",
-      "AMOUNT": "quantity",
-      "TREATMENT_PERIOD": "treatment period",
+      "AMOUNT": "Quantity",
+      "TREATMENT_PERIOD": "Treatment period",
       "NOTES": "Your notes (150 characters)",
       "CHARS": "150 characters",
       "BUTTON": "Add",
-      "STRENGTH": "select effect strength",
+      "STRENGTH": "Select effect strength",
       "MEDS": {
         "TIME": "o'clock",
-        "DAYS": "days",
-        "TREATMENT_PERIOD": "treatment period",
+        "DAYS": "Days",
+        "TREATMENT_PERIOD": "Treatment period",
         "FROM": "from",
         "AT": "at"
       }
     },
     "VET": {
-      "ZIP_CODE": "enter zip code",
-      "VETS_LIST": "select vet",
+      "ZIP_CODE": "Enter zip code",
+      "VETS_LIST": "Select vet",
       "NO_VET": "Can't find your vet?",
-      "ADD_VET": "Here you can enter the data manually",
-      "VET_ERROR": "Sorry, we did not find any vets for this zip code",
+      "ADD_VET": "You can enter the data manually here.",
+      "VET_ERROR": "Sorry, we did not find any vets for this zip code.",
       "FORM": {
         "HEADER": "Please enter the data of your veterinarian:",
-        "DOC_OFFICE": "Name of practice (optional)",
-        "NAME": "name of veterinarian",
-        "ADDRESS": "street, house number",
-        "ZIP_CODE": "zip code"
+        "DOC_OFFICE": "Name of doctor's office' (optional)",
+        "NAME": "Name of veterinarian",
+        "ADDRESS": "Street, house number",
+        "ZIP_CODE": "Zip code"
       }
     },
     "VACC": {
       "SERUM": "Vaccine",
-      "CURRENT": "date of vaccination",
-      "NEXT": "date of next vaccination"
+      "CURRENT": "Date of vaccination",
+      "NEXT": "Date of next vaccination"
     },
     "FOOD": {
       "ADD": "Add",
       "TYPES": {
-        "DRY": "dry food",
-        "WET": "wet food",
-        "FOODS": "foods",
-        "SNACKS": "snacks",
-        "VMIN": "supplemental feed"
+        "DRY": "Dry food",
+        "WET": "Wet food",
+        "FOODS": "Food",
+        "SNACKS": "Snacks",
+        "VMIN": "Supplements"
       },
       "TYPE": "Food Type",
       "CHOOSE_PRODUCT": "Select product",
@@ -472,61 +472,61 @@
       "UNIT": "Units"
     },
     "PARASITES": {
-      "LABEL": "preparation",
-      "DATE": "date of administration"
+      "LABEL": "Drug",
+      "DATE": "Date of administration"
     }
   },
   "TICKET_RESULT_PAGE": {
     "TITLE": "Evaluation",
-    "DIAG_HEADER": "diagnosis",
-    "NO_RESULT": "No result available yet",
+    "DIAG_HEADER": "Diagnosis",
+    "NO_RESULT": "No result available yet.",
     "URGENCY": "Urgency",
-    "THERAPY": "therapy",
-    "DIAGNOSIS": "findings",
-    "REASONS": "common causes",
+    "THERAPY": "Therapy",
+    "DIAGNOSIS": "Findings",
+    "REASONS": "Common causes",
     "HOW_TO": "How can I help my pet?",
-    "GO_BACK": "return to home page",
-    "HELP": "help?",
-    "NEEDS": "what you need for this",
-    "ORDER_TITLE": "order medicines directly online",
-    "ORDER_DESCRIPTION": "We have compiled the medications needed for therapy. Add your products to the shopping cart.",
-    "TICK": "select/deselect product",
+    "GO_BACK": "Return to home page",
+    "HELP": "Help?",
+    "NEEDS": "What you need:",
+    "ORDER_TITLE": "Order drugs directly online",
+    "ORDER_DESCRIPTION": "We compiled the medications needed for therapy. Add your products to the shopping cart.",
+    "TICK": "Select/deselect product",
     "OR": "or",
-    "ORDER_TEXT": "save to cart",
-    "ORDER_BUTTON": "checkout",
+    "ORDER_TEXT": "Save to cart",
+    "ORDER_BUTTON": "Checkout",
     "CART_BUTTON": "Add to Cart",
-    "AMOUNT": "quantity",
-    "DELIVERY_TIME": "delivery time",
+    "AMOUNT": "Quantity",
+    "DELIVERY_TIME": "Delivery time",
     "PRESCRIPTION": "Prescription",
-    "PHARMACY": "pharmacy required",
-    "UNIT": "size",
-    "SAVED_CART": "product saved in your cart",
+    "PHARMACY": "Pharmacy required",
+    "UNIT": "Size",
+    "SAVED_CART": "Product saved in your cart",
     "CHOICE_QUESTION": "Have you made your selection?",
-    "CHOICE_TEXT": "If your selection is complete, then proceed to cart",
+    "CHOICE_TEXT": "If your selection is complete, proceed to cart",
     "CHOICE_ANNOTATION": "Please note that you cannot subsequently receive products for therapy without consulting the online vet again."
   },
   "CARE_CARD_PAGE": {
     "NO_DATA": "Not specified",
-    "HEADER": "Carecard of",
+    "HEADER": "CareCard of",
     "BASE_DATA": {
-      "TITLE": "Base Data",
+      "TITLE": "Base data",
       "LIST": {
         "NAME": "Name",
         "GENDER": "Sex",
-        "CASTRATION": "Neuter Status",
+        "CASTRATION": "Castration status",
         "BREED": "Breed",
         "BIRTHDAY": "Birthday",
-        "ID": "Identifications No."
+        "ID": "Identification no."
       }
     },
     "PREVENTION": {
-      "TITLE": "Preventive Care"
+      "TITLE": "Preventive care"
     },
     "NUTRITION": {
       "TITLE": "Nutrition"
     },
     "MED_TEST": {
-      "TITLE": "Medical Tests"
+      "TITLE": "Medical tests"
     },
     "DISEASES": {
       "TITLE": "Diseases"
@@ -537,46 +537,46 @@
     "LIFESTYLE": {
       "TITLE": "Lifestyle",
       "ACTIVITY": {
-        "TITLE": "Activity Level"
+        "TITLE": "Activity level"
       }
     }
   },
   "CARE_CARD_LIST_PAGE": {
     "HISTORY": "History",
-    "ADD_DOC": "Add Attachment",
+    "ADD_DOC": "Add attachment",
     "FINDING_PDF": "Attachment",
-    "UPLOAD": "Invoise Upload",
-    "MANUAL": "Manual Input"
+    "UPLOAD": "Invoise upload",
+    "MANUAL": "Manual input"
   },
   "CARE_CARD_DETAIL_PAGE": {
-    "DOWNLOAD": "PDF Download",
+    "DOWNLOAD": "PDF download",
     "PRESCRIPTION": "Prescription required",
     "PHARMACY": "Pharmacy required",
     "SAVED_CART": "Product saved in cart",
     "CHOICE_QUESTION": "Have you made your selection?",
-    "CHOICE_TEXT": "If your selection is complete, then proceed to car",
+    "CHOICE_TEXT": "If your selection is complete, proceed to car",
     "CART_BUTTON": "To cart",
     "MED": {
       "NAME": "Active ingredient or preparation name",
-      "DAILY": "daily",
-      "DAYS": "day(s)",
-      "PIECE": "pcs.",
-      "PART": "part",
+      "DAILY": "Daily",
+      "DAYS": "Day(s)",
+      "PIECE": "Piece",
+      "PART": "Part",
       "PERMANENT": "Permanent",
-      "FREQUENCY": "Input Frequency",
-      "STARTDATE": "Start Date",
-      "ENDDATE": "End Date",
+      "FREQUENCY": "Input frequency",
+      "STARTDATE": "Start date",
+      "ENDDATE": "End date",
       "TIME": "Time",
       "AMOUNT": "Quantity",
-      "TREATMENT_PERIOD": "Treatment Period",
+      "TREATMENT_PERIOD": "Treatment period",
       "NOTES": "Your notes (150 characters)",
       "CHARS": "150 characters",
       "BUTTON": "Add",
 
       "MEDS": {
         "TIME": "o'clock",
-        "DAYS": "Tage",
-        "TREATMENT_PERIOD": "Treatment Period",
+        "DAYS": "Day(s)",
+        "TREATMENT_PERIOD": "Treatment period",
         "FROM": "from",
         "AT": "at"
       }
@@ -588,7 +588,7 @@
   },
   "DISEASE_PAGE": {
     "TITLE": "ADD DISEASE",
-    "HEADER": "Current Health Status",
+    "HEADER": "Current health status",
     "SUB_HEADER": "No disease has been deposited yet",
     "DISEASES": "Name of disease",
     "MEDICATION":  "Medication",
@@ -599,7 +599,7 @@
     "UPDATE_ERROR": "Entry failed",
 
     "EXPLANATION": {
-      "TITLE": "documentation of diseases",
+      "TITLE": "Documentation of diseases",
       "TEXT": "Lorem ipsum dolor sit amet, ligula eget dolor. Aenean  nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.",
       "ANNOTATION": "faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. "
     },
@@ -611,7 +611,7 @@
       "ADD": "Add"
     },
     "MED": {
-      "ADD": "Add Medication",
+      "ADD": "Add medication",
       "ADD_TEXT": "What medication, if known, was used to treat the condition? (multiple choice)"
     },
     "DOC": {
@@ -640,9 +640,9 @@
       "PART_2": "found the following dates."
     },
     "AHEAD_TEXT": "Appointments can be booked up to 2 days in advance. Select the day and time you would like to speak with a vet.",
-    "FIRST_NAME": "first name *",
-    "LAST_NAME": "last name *",
-    "PHONE": "phone",
+    "FIRST_NAME": "First name *",
+    "LAST_NAME": "Last name *",
+    "PHONE": "Phone",
     "MODAL_HEADER": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
     "CANCEL": "Cancel",
     "CONFIRM": "Accept"
@@ -651,8 +651,8 @@
     "TITLE": "Video call",
     "ADD_DOCUMENT": "Add document (jpg, png, pdf)",
     "ANNOTATIONS": "Annotations",
-    "CHARS": "chars",
-    "ADD_DOCS": "You can also upload images or documents to us.",
+    "CHARS": "Chars",
+    "ADD_DOCS": "You can also upload images or documents.",
     "BUTTON": "Checkout",
     "CHECKBOX": {
       "CARECARD": {
@@ -678,90 +678,90 @@
     "CANCEL": "Cancel",
     "CONFIRM":  "Apply",
     "MED": {
-      "NAME": "active ingredient or preparation name",
-      "DAILY": "daily",
-      "DAYS": "day(s)",
-      "PIECE": "pcs",
-      "PART": "part",
-      "PERMANENT": "permanent",
-      "FREQUENCY": "input frequency",
-      "STARTDATE": "entry start date",
-      "ENDDATE": "end date of intake",
+      "NAME": "Active ingredient or preparation name",
+      "DAILY": "Daily",
+      "DAYS": "Day(s)",
+      "PIECE": "Piece",
+      "PART": "Part",
+      "PERMANENT": "Permanent",
+      "FREQUENCY": "Input frequency",
+      "STARTDATE": "Start date",
+      "ENDDATE": "End date",
       "TIME":  "o'clock",
-      "AMOUNT": "quantity",
-      "TREATMENT_PERIOD": "treatment period",
+      "AMOUNT": "Quantity",
+      "TREATMENT_PERIOD": "Treatment period",
       "NOTES": "Your notes (150 characters)",
       "CHARS": "150 characters",
       "BUTTON": "Add",
       "MEDS": {
         "TIME": "o'clock",
-        "DAYS": "days",
-        "TREATMENT_PERIOD": "treatment period",
+        "DAYS": "Days",
+        "TREATMENT_PERIOD": "Treatment period",
         "FROM": "from",
         "AT": "at"
       }
 
     },
     "DOC": {
-      "DATE": "Datum",
-      "ADD": "Dokument hinzufügen (jpg, pdf - max 5 MB)",
-      "DELETE": "Dokument unwiderruflich löschen",
-      "BUTTON": "Hinzufügen",
-      "UPLOAD": "Dokument hinzufügen (jpg, pdf - max 5 MB)",
-      "FROM": "vom",
+      "DATE": "Date",
+      "ADD": "Add document (jpg, pdf - max 5 MB)",
+      "DELETE": "Delete document",
+      "BUTTON": "Add",
+      "UPLOAD": "Add document (jpg, pdf - max 5 MB)",
+      "FROM": "from",
       "BODY_REGIONS": {
-        "LABEL": "Körperregion",
+        "LABEL": "Body region",
         "ITEMS": {
-          "LEFT_FRONTLEG": "Linkes Vorderbein",
-          "RIGHT_FRONTLEG": "Rechtes Vorderbein",
-          "LEFT_HINDLEG": "Linkes Hinterbein",
-          "RIGHT_HINDLEG": "Rechtes Hinterbein",
-          "TEETH": "Zähne",
-          "HEAD": "Kopf",
-          "THROAT": "Hals",
-          "BREAST": "Brust",
-          "BACK": "Rücken",
-          "STOMACH": "Bauch",
-          "TAIL": "Schwanz",
-          "PELVIS": "Beckenregion",
-          "BLOOD": "Blut",
-          "URINE": "Urin",
-          "FECES": "Kot",
-          "BODY_TISSUE": "Gewebe",
-          "OTHER": "Sonstiges"
+          "LEFT_FRONTLEG": "Left front leg",
+          "RIGHT_FRONTLEG": "Right front leg",
+          "LEFT_HINDLEG": "Left hind leg",
+          "RIGHT_HINDLEG": "Right hind leg",
+          "TEETH": "Teeth",
+          "HEAD": "Head",
+          "THROAT": "Throat",
+          "BREAST": "Chest",
+          "BACK": "Back",
+          "STOMACH": "Abdomen",
+          "TAIL": "Tail",
+          "PELVIS": "Pelvis",
+          "BLOOD": "Blood",
+          "URINE": "Urine",
+          "FECES": "Feces",
+          "BODY_TISSUE": "Body tissue",
+          "OTHER": "Other"
         }
       },
       "TYPES": {
-        "LABEL": "Dokumentart",
+        "LABEL": "Document type",
         "CT": "CT",
-        "MRT": "MRT",
-        "X_RAY": "Röntgenbild",
-        "ULTRASONIC": "Ultraschall",
-        "PHOTO": "Foto",
-        "LAB_RESULT": "Laborbericht"
+        "MRT": "MRI",
+        "X_RAY": "X-ray image",
+        "ULTRASONIC": "Sonography",
+        "PHOTO": "Photo",
+        "LAB_RESULT": "Laboratory report"
       }
     }
   },
   "LAB_PAGE": {
-    "TITLE": "laboratory tests",
+    "TITLE": "Laboratory tests",
     "PARASITES": "Parasite test",
-    "URINE": "Urine Stick Test",
-    "DIARRHEA": "Diarrhea Analysis",
-    "DIARRHEA_PLUS": "Diarrhea Analysis Plus",
-    "GIARDIA": "Giardia Control",
+    "URINE": "Urine stick test",
+    "DIARRHEA": "Diarrhea analysis",
+    "DIARRHEA_PLUS": "Diarrhea analysis plus",
+    "GIARDIA": "Giardia control",
     "FLORA": "Intestinal flora",
-    "PREVENTION": "Preventive Care Combo",
+    "PREVENTION": "Preventive care combo",
     "OK_BUTTON": "Apply",
     "CANCEL_BUTTON": "Cancel",
     "SWITCH_PET": "Change animal",
-    "CHOOSE_PET": "Select the pet for which you want to activate the explorer box."
+    "CHOOSE_PET": "Select the pet you would like to activate the explorer box for."
 
   },
   "QR_CODE_MODAL": {
     "ERROR": "Code not recognized"
   },
   "RATION_CHECK_PAGE": {
-    "TITLE": "Food Calculator",
+    "TITLE": "Food calculator",
     "AMOUNT": "Quantity",
     "MEAL": "Meal",
     "MEALS": "Meals",
@@ -779,9 +779,9 @@
   },
   "TOOLBAR": {
     "IMG_SELECT": {
-      "HEADER": "Photo Quick Upload",
-      "SUBHEADER": "select which function you want to use the upload for:",
-      "LAB": "enable lab test",
+      "HEADER": "Photo quick upload",
+      "SUBHEADER": "Select which function you want to use the upload for:",
+      "LAB": "Enable lab test",
       "PROFILE": "Change profile picture",
       "INVOICE": "Upload vet invoice",
       "OK_BUTTON": "Next",
@@ -789,15 +789,15 @@
     }
   },
   "BILLING_ADDRESS_PAGE": {
-    "BILLING": "billing address",
-    "SHIPMENT": "shipping address",
-    "FIRST_NAME": "first name",
-    "LAST_NAME": "last name",
-    "ADDRESS": "street, number",
-    "ZIPCODE": "postal code",
-    "CITY": "city",
-    "COUNTRY": "country",
-    "EQUAL_ADDRESSES": "billing address equals shipping address",
+    "BILLING": "Billing address",
+    "SHIPMENT": "Shipping address",
+    "FIRST_NAME": "First name",
+    "LAST_NAME": "Last name",
+    "ADDRESS": "Street, number",
+    "ZIPCODE": "Zip code",
+    "CITY": "City",
+    "COUNTRY": "Country",
+    "EQUAL_ADDRESSES": "Billing address equals shipping address",
     "SUBMIT": "Continue"
 
   },
@@ -810,24 +810,24 @@
     "TAX": "Price incl. tax"
   },
   "ORDER_PAGE": {
-    "ORDER": "order",
-    "REMOVE": "remove item",
-    "CHANGE": "change",
-    "DELIVERY":  "Lieferung",
-    "SHIPMENT": "shipping cost",
-    "SUMMARY": "total amount",
+    "ORDER": "Order",
+    "REMOVE": "Remove item",
+    "CHANGE": "Change",
+    "DELIVERY":  "Delivery",
+    "SHIPMENT": "Shipping cost",
+    "SUMMARY": "Total amount",
     "ORDER_NOW": "Order with costs",
     "TAX": "(incl. VAT)",
-    "AMOUNT": "quantity",
-    "PRICE": "Preis",
+    "AMOUNT": "Quantity",
+    "PRICE": "Price",
     "TITLE": "Summary",
     "INVOICE": "Invoice",
     "BILLING": "Payment method"
 
   },
   "ORDER_HISTORY_PAGE": {
-    "TITLE": "orders",
-    "ORDERS": "orders:",
+    "TITLE": "Orders",
+    "ORDERS": "Orders:",
     "YOUR_ORDERS": "Your orders",
     "NO_ORDERS": "There are no orders yet",
     "DELIVERED": "Delivered",
@@ -840,18 +840,18 @@
 
   },
   "PAYMENT_PAGE": {
-    "SUBMIT": "continue",
-    "TITLE": "payment_method"
+    "SUBMIT": "Continue",
+    "TITLE": "Payment method"
   },
   "PRODUCT_MODAL_PAGE": {
-    "DELIVERY_TIME": "delivery time",
-    "PRESCRIPTION": "prescription required",
-    "PHARMACY": "pharmacy only",
-    "UNIT": "size",
+    "DELIVERY_TIME": "Delivery time",
+    "PRESCRIPTION": "Prescription required",
+    "PHARMACY": "Pharmacy only",
+    "UNIT": "Size",
     "TAX": "All prices include tax, plus shipping | sold by",
-    "CART_BUTTON": "Add to Cart",
-    "PRICE": "Unit Price",
-    "STOCK": "In Stock",
+    "CART_BUTTON": "Add to cart",
+    "PRICE": "Unit price",
+    "STOCK": "In stock",
     "USAGE": "area of application",
     "INSTRUCTIONS": "For risks and side effects, read the package insert and ask your doctor or pharmacist",
     "INST_LINK": "Download package insert",
@@ -859,58 +859,58 @@
 
   },
   "PRODUCT_SHIPMENT_INFO_MODAL": {
-    "TITLE": "product_shipment_info",
+    "TITLE": "Product shipment info",
     "TEXT": "All prescription and pharmacy products are sold and shipped exclusively by mail order pharmacies from Germany."
   },
   "PRODUCTS_CONTAINER": {
     "ORDER_TITLE": "Order medications directly online",
-    "ORDER_DESCRIPTION": "We have collected the most needed medications for therapy. Add your Auwahl to the shopping cart.",
-    "TICK": "select/deselect product",
+    "ORDER_DESCRIPTION": "We have collected the most needed medications for therapy. Add your selection to the shopping cart.",
+    "TICK": "Select/deselect product",
     "OR": "or",
     "ORDER_TEXT": "save to cart",
-    "ORDER_BUTTON": "checkout",
+    "ORDER_BUTTON": "Checkout",
     "CART_BUTTON": "Add to Cart",
-    "AMOUNT": "quantity",
-    "DELIVERY_TIME": "delivery time",
+    "AMOUNT": "Quantity",
+    "DELIVERY_TIME": "Delivery time",
     "PRESCRIPTION": "Prescription",
-    "PHARMACY": "pharmacy required",
-    "UNIT": "size",
-    "SAVED_CART": "product saved in your cart",
+    "PHARMACY": "Pharmacy required",
+    "UNIT": "Size",
+    "SAVED_CART": "Product saved in your cart",
     "CHOICE_QUESTION": "Have you made your selection?",
-    "CHOICE_TEXT": "If your selection is complete, then proceed to cart"
+    "CHOICE_TEXT": "If your selection is complete, proceed to cart"
   },
   "PRESCRIPTION_PAGE": {
-    "DISEASES": "diseases",
-    "MEDICATION": "medication",
-    "CANCEL": "cancel",
-    "CONFIRM": "continue",
+    "DISEASES": "Diseases",
+    "MEDICATION": "Medication",
+    "CANCEL": "Cancel",
+    "CONFIRM": "Continue",
     "PRESCRIPTION": {
-      "ADD_INVOICE": "add invoicen",
-      "ADD_PAGE": "add another page"
+      "ADD_INVOICE": "Add invoice",
+      "ADD_PAGE": "Add another page"
     }
   },
   "PULSE_PAGE": {
     "TITLE": {
-      "BREATHE": "respiratory rate",
-      "PULSE": "heartbeat"
+      "BREATHE": "Respiratory rate",
+      "PULSE": "Heartbeat"
     },
     "INTRO": {
-      "HEADER": "get ready",
+      "HEADER": "Get ready",
       "TEXT": {
-        "BREATHE": "Start the timer and, while the countdown is running, tap the icon with each breath your quadruped takes",
-        "PULSE": "Start the timer and, while the countdown is running, tap the heart icon every time your quadruped's heart beats"
+        "BREATHE": "Start the timer and, while the countdown is running, tap the icon with each breath your pet takes",
+        "PULSE": "Start the timer and, while the countdown is running, tap the heart icon every time your pet's heart beats"
       }
     },
     "TIMER": {
       "TEXT": {
-        "BREATHE": "Now tap the icon every time you take a breath",
-        "PULSE": "Now tap the icon every time your heart beats"
-        },
+        "BREATHE": "Now tap the icon every time your pet takes a breath",
+        "PULSE": "Now tap the icon every time your pet's heart beats"
+      },
       "BEATS": "Beats"
     },
     "DONE": {
       "HEADER": "DONE!",
-      "TEXT": "Now look at your evaluation."
+      "TEXT": "Proceed to the evaluation."
     }
   },
   "TELEVET_EMERGENCY_PAGE": {
@@ -922,62 +922,62 @@
   },
   "TELEVET_EMERGENCY_MODAL_PAGE": {
     "BUTTONS": {
-      "CANCEL": "Abbrechen",
-      "PROCEED": "Weiter"
+      "CANCEL": "Cancel",
+      "PROCEED": "Continue"
     }
   },
   "TICKET_PAGE": {
-    "EXEC": "Durchführen",
-    "UPLOAD": "Bild hinzufügen (jpg/png)",
-    "ADD_IMAGE": "Titelbild für diese Aufgabe (optional)",
+    "EXEC": "Carry out",
+    "UPLOAD": "Add image (jpg/png)",
+    "ADD_IMAGE": "Cover image for this task (optional)",
     "ACTIONS": {
       "CLOSE": {
-        "MSG": "Bitte bestätige deine Eingabe und die Aufgabe wird geschlossen.",
-        "BTN": "Übernehmen"
+        "MSG": "Please confirm your data and the task will be closed.",
+        "BTN": "Confirm"
       },
       "DELETE": {
-        "MSG": "Bist du sicher, dass du diese Aufgabe löschen möchtest?",
-        "BTN": "Löschen"
+        "MSG": "Are you sure you want to delete this task?",
+        "BTN": "Delete"
       },
       "DATE_TIME_BTNS": {
-        "CANCEL": "Abbrechen",
-        "DONE": "Übernehmen"
+        "CANCEL": "Cancel",
+        "DONE": "Confirm"
       }
     },
-    "WEIGHT_LABEL": "Gewicht in kg",
+    "WEIGHT_LABEL": "Weight in kg",
     "TITLE": "Ticket",
-    "HOMEWORK": "Planer",
-    "TODAY_TASKS": "Meine Aufgaben",
-    "DONE": "erledigt",
-    "DELETE": "Löschen",
-    "POSTPONE": "Termin verschieben",
-    "NEW_TASK": "Neue Aufgabe erstellen",
-    "CREATE_TASK": "Aufgabe anlegen",
+    "HOMEWORK": "Planner",
+    "TODAY_TASKS": "My tasks",
+    "DONE": "Done",
+    "DELETE": "Delete",
+    "POSTPONE": "Postpone task",
+    "NEW_TASK": "Create new task",
+    "CREATE_TASK": "Create task",
     "CLOSE_TASK": {
-      "BODY": "Diese Aufgabe schließen?",
+      "BODY": "Do you want to close this task?",
       "POPUP": {
-        "TEXT": "Bitte bestätige deine Eingabe und die Aufgabe wird geschlossen.",
+        "TEXT": "Please confirm your data and the task will be closed.",
         "BUTTON": {
           "CANCEL": {
-            "ACTION": "cancel",
-            "LABEL": "Abbrechen"
+            "ACTION": "Cancel",
+            "LABEL": "Cancel"
           },
           "CONFIRM": {
-            "ACTION": "save",
-            "LABEL": "Übernehmen"
+            "ACTION": "Save",
+            "LABEL": "Save"
           }
         }
       }
     },
 
-    "CANCEL": "Abbrechen",
-    "CONFIRM": "Übernehmen",
-    "POSTPONE_TASK": "Termin verschieben",
-    "NAME_TASK": "Aufgabe benennen",
-    "DATE": "Datum",
-    "TIME": "Uhrzeit",
+    "CANCEL": "Cancel",
+    "CONFIRM": "Confirm",
+    "POSTPONE_TASK": "Postpone appointment",
+    "NAME_TASK": "Task name",
+    "DATE": "Date",
+    "TIME": "Time",
     "MAX_CHARS": "160 Zeichen",
-    "WHOLEDAY": "Im Laufe des Tages"
+    "WHOLEDAY": "During the day"
   },
   "TICKET_GUIDE_PAGE": {
     "TITLE": "Instruction"
@@ -989,11 +989,11 @@
     "TITLE": "Shop"
   },
   "PW_RECOVERY_PAGE": {
-    "RECOVER": "password reset",
-    "RECOVERED": "password resetted",
+    "RECOVER": "Password reset",
+    "RECOVERED": "Password resetted",
     "ENTER_MAIL": "Please enter the email address you used to sign in to the confidu app. We'll send the a link to reset your password afterwards.",
     "ENTER_PW": "Now type in your new password.",
-    "EMAIL": "email address",
+    "EMAIL": "Email address",
     "PASSWORD": "New password",
     "PASSWORD_REPEAT": "Repeat new password",
     "SUCCESS": "Your password has been successfully changed. It is valid from now on.",
@@ -1001,17 +1001,17 @@
     "BACK_TO_LOGIN": "Return to login",
     "STORE": "Save",
     "NOTIFICATIONS_PAGE": {
-      "TITLE": "notifications",
-      "LAB_RESULT": "laboratory findings",
-        "RECIPE_RATINGS": "Ratings (cooking recipe)",
-        "TASKS_REMINDER": "reminders (tasks)",
-        "RECIPE_COMMENTS": "comments (cooking recipe)",
-        "PUSH":  "Push",
-        "PUSH_NOTIFICATION": "Push Notification",
-        "MAIL": "e-mail",
-        "TEXT": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
-        "GET_NOTIFIED": "Notifications Received"
-      }
+      "TITLE": "Notifications",
+      "LAB_RESULT": "Laboratory findings",
+      "RECIPE_RATINGS": "Ratings (cooking recipe)",
+      "TASKS_REMINDER": "Reminders (tasks)",
+      "RECIPE_COMMENTS": "Comments (cooking recipe)",
+      "PUSH":  "Push",
+      "PUSH_NOTIFICATION": "Push notification",
+      "MAIL": "Email",
+      "TEXT": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
+      "GET_NOTIFIED": "Notifications received"
+    }
   },
   "SIGNUP_PAGE": {
     "SIGNUP": "Create your new confidu account",
@@ -1022,9 +1022,9 @@
     "PW_RECOVERY":  "Forgot your password?",
     "TO_LOGIN": "Log in with existing account",
     "SIGNIN": "Login",
-    "EMAIL": "email",
-    "PASSWORD": "password",
-    "PASSWORD_CONFIRM": "Confirm Password",
+    "EMAIL": "Email",
+    "PASSWORD": "Password",
+    "PASSWORD_CONFIRM": "Confirm password",
     "PASSWORD_TEXT": "7 or more characters, min 1 uppercase and 1 numeric",
     "COMPLIANCE": {
       "PART_1": "I accept the",
@@ -1037,18 +1037,18 @@
   },
   "VERIFICATION_PAGE": {
     "HEADER": {
-      "VERIFICATION": "verify your account",
-      "RECOVER_SUCCESS": "link sent",
+      "VERIFICATION": "Verify your account",
+      "RECOVER_SUCCESS": "Link sent",
       "RECOVER_FAIL": "Error while sending"
     },
     "BODY": {
       "VERIFICATION": {
         "PART_1": "We sent you a confirmation link to the address you provided to activate your account",
-        "PART_2": "sent. Clicking on the link will activate the address."
+        "PART_2": "Sent. Clicking on the link will activate the address."
       },
       "RECOVER_SUCCESS": {
-        "PART_1": "the link was successfully sent to",
-        "PART_2": "sent."
+        "PART_1": "The link was successfully sent to",
+        "PART_2": "Sent."
       },
       "RECOVER_FAIL": {
         "PART_1": "No confidu account could be associated with the email address you provided. Please use the email address you registered with confidu."
@@ -1060,46 +1060,46 @@
     }
   },
   "WALKTHROUGH_PAGE": {
-    "TITLE": "walkthrough",
-    "CANCEL": "skip",
-    "START": "let's go",
-      "SLIDES": [
-        {
-          "TITLE": "Care Card",
-          "TEXT": "Carry your pet's patient record with you at all times - all health data bundled in one app.",
-          "IMG": "carecard"
-        },
-        {
-          "TITLE": "Urine Stick Test",
-          "TEXT": "Detect and monitor potential diseases from the comfort of your home.",
-          "IMG": "urine stick test"
-        },
-        {
-          "TITLE": "medical tests",
-          "TEXT": "Based on fecal or urine samples, test your pet's health.",
-          "IMG": "medicine tests"
-        },
-        {
-          "TITLE": "My Bowl",
-          "TEXT": "Create feeding plans according to your pet's individual nutrient and energy needs like a pro.",
-          "IMG": "my_bowl"
-        },
-        {
-          "TITLE": "Planner",
-          "TEXT": "Keep track of all your pet's important tasks with our planner - from medication dispensing to ear care to your own appointments.",
-          "IMG": "planner"
-        },
-        {
-          "TITLE": "TeleVet",
-          "TEXT": "State symptom, answer questions, start treatment - our online vet will help you right away.",
-          "IMG": "televet_guide"
-        },
-        {
-          "TITLE": "insurance",
-          "TEXT": "Conveniently manage insurance records and benefits from your pets.",
-          "IMG": "insurance"
-        }
-      ]
+    "TITLE": "Walkthrough",
+    "CANCEL": "Skip",
+    "START": "Let's go",
+    "SLIDES": [
+      {
+        "TITLE": "CareCard",
+        "TEXT": "Carry your pet's patient record with you at all times - all health data bundled in one app.",
+        "IMG": "care card"
+      },
+      {
+        "TITLE": "Urine stick test",
+        "TEXT": "Detect and monitor potential diseases from the comfort of your home.",
+        "IMG": "urine test stick"
+      },
+      {
+        "TITLE": "Medical tests",
+        "TEXT": "Based on fecal or urine samples, test your pet's health.",
+        "IMG": "medicine tests"
+      },
+      {
+        "TITLE": "My Bowl",
+        "TEXT": "Create feeding plans according to your pet's individual nutrient and energy needs like a pro.",
+        "IMG": "My bowl"
+      },
+      {
+        "TITLE": "Planner",
+        "TEXT": "Keep track of all your pet's important tasks with our planner - from medication dispensing to ear care to your own appointments.",
+        "IMG": "planner"
+      },
+      {
+        "TITLE": "TeleVet",
+        "TEXT": "State symptom, answer questions, start treatment - our online vet will help you right away.",
+        "IMG": "televet_guide"
+      },
+      {
+        "TITLE": "Insurance",
+        "TEXT": "Conveniently manage insurance records and benefits from your pets.",
+        "IMG": "insurance"
+      }
+    ]
   },
   "NOTIFICATIONS_LIST_PAGE": {
     "TITLE": "Notifications",
@@ -1122,14 +1122,14 @@
     "NAME": {
       "TITLE": "Name",
       "NAME": "Your name",
-      "FIRST_NAME": "first name",
-      "LAST_NAME": "last name",
-      "BUTTON": "save"
+      "FIRST_NAME": "First name",
+      "LAST_NAME": "Last name",
+      "BUTTON": "Save"
     },
     "PHONE": {
       "TITLE": "Phone",
-      "PHONE": "phone",
-      "BUTTON": "save",
+      "PHONE": "Phone",
+      "BUTTON": "Save",
       "EXPLANATION": "Lorem Ipsum"
     },
     "PW": {
@@ -1137,8 +1137,8 @@
       "CHANGE_PW": "Change password",
       "CURRENT_PW": "Current password",
       "CONFIRM_PW": "Repeat new password",
-      "NEW_PW": "New Password",
-      "BUTTON": "Chane Password"
+      "NEW_PW": "New password",
+      "BUTTON": "Chane password"
     },
     "EMAIL": {
       "TITLE": "Email",
