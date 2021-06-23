@@ -78,6 +78,7 @@
                   <ion-label position="floating">{{ 'TICKETS_PAGE.DATE' | translate }}</ion-label>
                   <ion-datetime displayFormat="DD.MM.YYYY"
                                 min="{{ currentDay }}"
+                                max="2030-12-31"
                                 [cancelText]="'TICKETS_PAGE.ACTIONS.DATE_TIME_BTNS.CANCEL' | translate"
                                 [doneText]="'TICKETS_PAGE.ACTIONS.DATE_TIME_BTNS.DONE' | translate"
                                 formControlName="date"></ion-datetime>

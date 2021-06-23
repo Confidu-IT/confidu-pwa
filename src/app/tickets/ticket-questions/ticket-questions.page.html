@@ -538,6 +538,15 @@
               </div>
 
               <div class="weigh-input">
+                <mat-form-field *ngIf="question?.values.questionType === 'Z_OPT'">
+                  <mat-label>
+                    {{ 'TICKET_QUESTION_PAGE.KG' | translate }}
+                  </mat-label>
+                  <input type="number" matInput [(ngModel)]="selectedNumber">
+                </mat-form-field>
+              </div>
+
+              <div class="weigh-input">
                 <mat-form-field *ngIf="question?.values.questionType === 'alpha_num'">
                   <mat-label>
                     {{ 'TICKET_QUESTION_PAGE.CHIP' | translate }}

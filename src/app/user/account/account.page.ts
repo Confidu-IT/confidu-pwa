@@ -131,6 +131,7 @@ export class AccountPage {
         }
         if (response.role === 'language') {
           this.updateLanguage();
+          location.reload();
         }
       });
     return await modal.present();

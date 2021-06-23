@@ -964,7 +964,11 @@ export class TicketQuestionsPage {
       return this.validateMedAnswer();
     } else if (this.question?.values?.questionType.toLowerCase() === 'd') { // vaccination dates
       return this.validateVaccDates();
-    } else if (this.question?.values?.questionType.toLowerCase() === 'i' || this.question?.values?.questionType.toLowerCase() === 'find') { // info
+    } else if (
+      this.question?.values?.questionType.toLowerCase() === 'i' ||
+      this.question?.values?.questionType.toLowerCase() === 'find' ||
+      this.question?.values?.questionType === 'Z_OPT'
+    ) {
       return false;
     } else if (this.question?.values?.questionType.toLowerCase() === 'z') {
       return !this.validNumber(this.selectedNumber);
