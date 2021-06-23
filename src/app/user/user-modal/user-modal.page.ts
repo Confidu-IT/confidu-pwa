@@ -115,7 +115,6 @@ export class UserModalPage {
 
     this.translateService.get('USER_MODAL_PAGE')
       .subscribe(values => {
-        console.log('value', values)
         if (this.type === 'name') {
           this.title = values.NAME.TITLE;
         }

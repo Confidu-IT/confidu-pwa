@@ -343,10 +343,11 @@ export class HomePage {
     });
     modal.onDidDismiss()
       .then((response: any) => {
-        if (response.data.link) {
-          console.log('r', response.data);
-          this.router.navigateByUrl(response.data.link);
+        const link = response?.data?.link;
+        if (!link) {
+         return;
         }
+        this.router.navigateByUrl(response.data.link);
       });
     return await modal.present();
   }

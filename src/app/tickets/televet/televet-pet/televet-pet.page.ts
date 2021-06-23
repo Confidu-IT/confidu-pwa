@@ -78,6 +78,7 @@ export class TelevetPetPage {
     this.translateService.use(this.language);
     this.translateService.get('TELEVET_PET_PAGE')
       .subscribe(televet => {
+        console.log('televet', televet)
         this.televet = televet;
       });
 
@@ -90,9 +91,11 @@ export class TelevetPetPage {
   }
 
   public onClickSpot(spot: string, label: string, event: any): void {
-    // console.log('spot', spot);
-    // console.log('label', label);
-    // console.log('event', event);
+    // spot = spot.toLowerCase();
+    console.log('spot', spot);
+    console.log('label', label);
+    console.log('event', event);
+
     this.isPoison = false;
     this.spot = spot;
     this.leftIcon = `${this.imagePath}/general_condition.svg`;

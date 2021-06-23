@@ -224,73 +224,73 @@
     "CLICK_SPOT": {
       "BUTT": {
         "LABEL": "Butt",
-        "SPOT": "Butt"
+        "SPOT": "butt"
       },
       "BACK": {
         "LABEL": "Back",
-        "SPOT": "Back"
+        "SPOT": "back"
       },
       "BELLY": {
         "LABEL": "Belly",
-        "SPOT": "Belly"
+        "SPOT": "belly"
       },
       "TAIL": {
         "LABEL": "Tail",
-        "SPOT": "Tail"
+        "SPOT": "tail"
       },
       "LEGS": {
         "LABEL": "Legs",
-        "SPOT": "Legs"
+        "SPOT": "legs"
       },
       "CHEST": {
         "LABEL": "Chest",
-        "SPOT": "Chest"
+        "SPOT": "chest"
       },
       "EAR": {
         "LABEL": "Ear",
-        "SPOT": "Ear"
+        "SPOT": "ear"
       },
       "EYE": {
         "LABEL": "Eye",
-        "SPOT": "Eye"
+        "SPOT": "eye"
       },
       "NOSE": {
         "LABEL": "Nose",
-        "SPOT": "Nose"
+        "SPOT": "nose"
       },
       "MOUTH": {
         "LABEL": "Mouth",
-        "SPOT": "Mouth"
+        "SPOT": "mouth"
       },
       "HEAD_REGION": {
-        "SPOT": "Head-region"
+        "SPOT": "head-region"
       },
       "BODY_REGION": {
-        "SPOT": "Body-region"
+        "SPOT": "body-region"
       },
       "HEAD": {
         "LABEL": "Head",
-        "SPOT": "Head"
+        "SPOT": "head"
       },
       "THROAT": {
         "LABEL": "Throat",
-        "SPOT": "Throat"
+        "SPOT": "throat"
       },
       "ABDOMEN": {
         "LABEL": "Abdomen",
-        "SPOT": "Abdomen"
+        "SPOT": "abdomen"
       },
       "GENERAL": {
         "LABEL": "General condition",
-        "SPOT": "General condition"
+        "SPOT": "general"
       },
       "FUR": {
         "LABEL": "Fur",
-        "SPOT": "Fur"
+        "SPOT": "fur"
       },
       "POISON": {
         "LABEL": "Poison",
-        "SPOT": "Poison"
+        "SPOT": "poison"
       }
     },
     "HEADER": "Where do symptoms appear?",
