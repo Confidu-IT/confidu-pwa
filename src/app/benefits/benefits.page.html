@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'BENEFITS_PAGE.YOUR_BENEFITS' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-text-center" *ngIf="isLoading">
+    <ion-spinner color="primary"></ion-spinner>
+  </div>
+  <ion-grid *ngIf="!isLoading">
+    <ion-row>
+      <ion-col sizeSm="8" offsetSm="2">
+        <ion-card>
+          <ion-card-content>
+            <div class="results">
+              <div class="results-header">
+                <div class="icon">
+                  <img [src]="cupIcon" alt="" width="30">
+                </div>
+                <h2>{{ 'BENEFITS_PAGE.YOUR_BENEFITS' | translate }}</h2>
+              </div>
+              <div class="results-body">
+                <div class="left">
+                  <h2>{{ 'BENEFITS_PAGE.CONFI_COINS.HEADER' | translate }}</h2>
+                  <p class="text">{{ 'BENEFITS_PAGE.CONFI_COINS.TEXT' | translate }}</p>
+                </div>
+                <div class="right">
+                  <div class="icon">
+                    <img [src]="coinsIcon" alt="" width="20">
+                  </div>
+                  <div class="points">{{ data?.points }}</div>
+                </div>
+              </div>
+            </div>
+            <div class="cups">
+              <div class="cups-header">
+                <h2> {{ 'BENEFITS_PAGE.CUPS.HEADER' | translate }}</h2>
+                <p class="text">{{ 'BENEFITS_PAGE.CUPS.TEXT' | translate }}</p>
+              </div>
+              <ul class="cups-list">
+                <li *ngFor="let item of data?.cups">
+                  <div class="left">
+                    <h3> {{item.label }}</h3>
+                    <div class="rank">{{ item.section }} | {{ item.rank }}</div>
+                    <div class="text">{{ item.text }}</div>
+                  </div>
+                  <div class="right"></div>
+                  <img [src]="item.image" alt="" width="60">
+                </li>
+              </ul>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer *ngIf="!isLoading">
+  <app-toolbar-footer [user]="user"></app-toolbar-footer>
+</ion-footer>

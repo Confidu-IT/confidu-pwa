@@ -1241,5 +1241,18 @@
   "NOTIFICATIONS_LIST_PAGE": {
     "TITLE": "Benachrichtigungen",
     "HEADER": "Deine Benachrichtigungen"
+  },
+  "BENEFITS_PAGE": {
+    "TITLE": "Erfolge",
+    "YOUR_BENEFITS": "Deine Erfolge",
+    "BUTTONS_TEXT": "Einlösen",
+    "CONFI_COINS": {
+      "HEADER": "Gesammelte Confi-Coins",
+      "TEXT": "Löse Confi-Coins ein und erhalte Rabatte auf viele unserer Produkte und Leistungen."
+    },
+    "CUPS": {
+      "HEADER": "Erreichte Pokale",
+      "TEXT": "Lorem ipsum dolor bla bla bla"
+    }
   }
 }

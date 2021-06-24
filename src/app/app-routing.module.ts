@@ -192,7 +192,11 @@ const routes: Routes = [
     path: 'user/notifications-list',
     loadChildren: () => import('./user/notifications/notifications-list/notifications-list.module').then(m => m.NotificationsListPageModule)
   },
-  { path: '**', redirectTo: 'home', pathMatch: 'full' },
+  {
+    path: 'benefits',
+    loadChildren: () => import('./benefits/benefits.module').then( m => m.BenefitsPageModule)
+  },
+  { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ];
 
 @NgModule({

@@ -1169,5 +1169,18 @@
     "ASSIGNMENT": [
       "Product", "has been", "successfully assigned."
     ]
+  },
+  "BENEFITS_PAGE": {
+    "TITLE": "Results",
+    "YOUR_BENEFITS": "Your results",
+    "BUTTONS_TEXT": "Redeem",
+    "CONFI_COINS": {
+      "HEADER": "Collected Confi-Coins",
+      "TEXT": "Redeem your Confi-Coins und get discounts for many of our products and services."
+    },
+    "CUPS": {
+      "HEADER": "Achieved cups",
+      "TEXT": "Lorem ipsum dolor bla bla bla"
+    }
   }
 }

@@ -1,0 +1,101 @@
+.results {
+  border-bottom: 1px solid #d6d6d6;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+
+  &-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+
+    .icon {
+      width: 60px;
+    }
+  }
+
+  &-body {
+    display: flex;
+
+    h2 {
+      margin-bottom: 8px;
+    }
+
+    .text {
+      font-size: 13px;
+    }
+
+    .left {
+      margin-right: 36px;
+    }
+
+    .right {
+      display: flex;
+      font-size: 14px;
+      font-weight: 700;
+
+      .icon {
+        width: 32px;
+      }
+    }
+  }
+}
+
+.cups {
+  &-header {
+    margin-bottom: 24px;
+
+    h2 {
+      margin-bottom: 6px;
+    }
+  }
+
+  &-list {
+    margin-bottom: 0;
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    li:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .left {
+      margin-right: 32px;
+    }
+
+    h3 {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .rank {
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .text {
+      color: #666;
+      font-size: 8px;
+    }
+  }
+}
+
+h2 {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ion-card {
+  margin: 12px 0 0;
+}
