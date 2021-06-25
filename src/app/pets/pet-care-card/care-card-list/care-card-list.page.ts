@@ -135,7 +135,7 @@ export class CareCardListPage {
       let ticketId;
       for (const ticket of this.tickets) {
         if (ticket.ticketKey === this.link) {
-          console.log('Bingo');
+          // console.log('Bingo');
           ticketId = ticket.id;
           this.hasTicket = true;
           break;

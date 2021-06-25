@@ -233,13 +233,13 @@ export class TicketPage {
   private getTicket(userId: string, petId: string, ticketId: string): void {
     this.firebaseService.getTicketById(userId, petId, ticketId)
       .subscribe(data => {
-        console.log('data', data);
+        // console.log('data', data);
         if (data) {
           this.ticket = data;
           if (data?.guide?.value) {
             this.checkForGIF(data.guide.value);
           }
-          console.log('this.ticket', this.ticket);
+          // console.log('this.ticket', this.ticket);
           this.createLinkList(data.links);
           this.isLoading = false;
         } else {
