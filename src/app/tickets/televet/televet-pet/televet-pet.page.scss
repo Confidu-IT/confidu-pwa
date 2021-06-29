@@ -8,13 +8,16 @@ h2 {
 .description {
   color: rgb(102,102,102);
   font-size: 16px;
-  margin-bottom: 30px;
+  //margin-bottom: 30px;
+  margin: 16px 8px 0;
+  min-height: 42px;
   text-align: center;
   text-transform: capitalize;
 }
 
 .main-image-container {
   max-height: 300px;
+  margin-top: -15px;
   position: relative;
   margin-left: 16px;
   margin-right: 16px;
@@ -31,12 +34,13 @@ h2 {
 .icons {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  //margin-top: 40px;
+  margin-top: 10px;
 }
 
 .left-icon, .poison-icon, .right-icon {
-  height: 70px;
-  width: 70px;
+  height: 60px;
+  //width: 70px;
 }
 
 .left-icon, .right-icon {
@@ -45,9 +49,10 @@ h2 {
 
 .symptom, .no-symptom {
   color: rgb(102,102,102);
-  font-size: 20px;
-  font-weight: bold;
-  margin-top: 40px;
+  //font-size: 20px;
+  //font-weight: bold;
+  //margin-top: 40px;
+  height: 42px;
   margin-bottom: 0;
   text-align: center;
   //text-transform: capitalize;

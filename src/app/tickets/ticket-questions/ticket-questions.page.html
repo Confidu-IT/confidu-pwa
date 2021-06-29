@@ -227,13 +227,25 @@
               <ng-container *ngIf="question?.values?.questionType.toLowerCase() === 'date'">
                 <div class="pregnancy">
                   <div class="med-date-time">
-                    <mat-form-field>
-                      <mat-label>0</mat-label>
-                      <input
-                             (keyup)="pickPregDay($event)"
-                             matInput
-                             step="any" type="number">
-                    </mat-form-field>
+<!--                    <mat-form-field>-->
+<!--                      <mat-label>0</mat-label>-->
+<!--                      <input-->
+<!--                             (keyup)="pickPregDay($event)"-->
+<!--                             matInput-->
+<!--                             step="any" type="number">-->
+<!--                    </mat-form-field>-->
+                    <ion-item>
+                      <ion-label position="floating">
+                        {{ 'TICKET_QUESTION_PAGE.PREG_DATE' | translate }}
+                      </ion-label>
+                      <ion-datetime
+                        [cancelText]="cancelText"
+                        [doneText]="okText"
+                        (ionChange)="pickPregDay($event)"
+                        displayFormat="DD.MM.YYYY"
+                        max="2030-12-31">
+                      </ion-datetime>
+                    </ion-item>
                   </div>
 
                   <div class="checkbox-global med-checkbox preg-checkbox">

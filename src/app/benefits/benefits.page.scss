@@ -1,7 +1,5 @@
 .results {
-  border-bottom: 1px solid #d6d6d6;
-  margin-bottom: 24px;
-  padding-bottom: 20px;
+  margin-bottom: 48px;
 
   &-header {
     display: flex;
@@ -15,18 +13,9 @@
 
   &-body {
     display: flex;
-
-    h2 {
-      margin-bottom: 8px;
-    }
-
-    .text {
-      font-size: 13px;
-    }
-
-    .left {
-      margin-right: 36px;
-    }
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
 
     .right {
       display: flex;
@@ -37,6 +26,10 @@
         width: 32px;
       }
     }
+  }
+
+  &-text {
+    font-size: 13px;
   }
 }
 
@@ -56,10 +49,13 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      border-bottom: 1px solid #d6d6d6;
       margin-bottom: 24px;
+      padding-bottom: 24px;
     }
 
     li:last-of-type {
+      border-bottom: none;
       margin-bottom: 0;
     }
 

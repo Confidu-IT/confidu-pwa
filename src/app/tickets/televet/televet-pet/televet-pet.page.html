@@ -16,12 +16,15 @@
           <span *ngIf="!isPoison">{{ televet?.HEADER }}</span>
           <span *ngIf="isPoison">{{ televet?.POISON_HEADER }}</span>
         </h2>
+        <p class="no-symptom" *ngIf="!symptom && !bodyPart">{{ televet?.ACTION }}</p>
+<!--        <p class="symptom">{{ symptom }}</p>-->
 <!--        <h2>-->
 <!--          <span *ngIf="bodyPart">{{ televet?.HEADER }}</span>-->
 <!--        </h2>-->
-        <p class="description">
+        <p class="description"  *ngIf="bodyPart">
           <span *ngIf="bodyPart && !isPoison">{{ televet?.DESCRIPTION }}: {{ bodyPart }}</span>
           <span *ngIf="bodyPart && isPoison">{{ bodyPart }}</span>
+          <span *ngIf="symptom"> | {{ symptom }}</span>
         </p>
 
         <div class="main-image-container  {{ species }}">
@@ -138,8 +141,7 @@
             [src]="poisonIcon"
             alt="" class="poison-icon">
         </div>
-        <p class="no-symptom" *ngIf="!symptom">{{ televet?.ACTION }}</p>
-        <p class="symptom">{{ symptom }}</p>
+
       </ion-col>
     </ion-row>
   </ion-grid>

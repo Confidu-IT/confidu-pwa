@@ -238,6 +238,7 @@
       "HOME": "Zur Behandlung zu Hause mitgegeben",
       "VET": "In der Praxis einmalig verabreicht"
     },
+    "PREG_DATE": "Geburtstermin",
     "MED": {
       "NAME": "Wirkstoff oder Präparatname",
       "DAILY": "täglich",
@@ -687,7 +688,7 @@
     },
     "ID": {
       "TITLE": "Identifikations-Nr.",
-      "INPUT": "Tattoo- oder Chip-Nr.",
+      "INPUT": "Chip-Nr.",
       "HEADLINE": "Bitte trage die Identifikations-Nr. ein",
       "DESCRIPTION": "Prinzipiell ist das Chippen von Hunden und Katzen in Deutschland bislang nicht in allen Bundesländern einheitlich geregelt. Während in einigen Ländern beispielsweise eine Kennzeichnungspflicht für alle Hunderassen herrscht, ist sie in anderen lediglich für sogenannte Listenhunde vorgeschrieben."
     },
@@ -1248,11 +1249,7 @@
     "BUTTONS_TEXT": "Einlösen",
     "CONFI_COINS": {
       "HEADER": "Gesammelte Confi-Coins",
-      "TEXT": "Löse Confi-Coins ein und erhalte Rabatte auf viele unserer Produkte und Leistungen."
-    },
-    "CUPS": {
-      "HEADER": "Erreichte Pokale",
-      "TEXT": "Lorem ipsum dolor bla bla bla"
+      "TEXT": "Kümmere dich um die Gesundheit deines Tieres, in dem du Aufgaben im Planer erledigst. Werde mict Confi-Coins belohnt und steige im Rang auf. Zusätzlich warten Überrraschungen aus unserem Shop auf dich."
     }
   }
 }

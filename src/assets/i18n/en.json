@@ -1171,16 +1171,62 @@
     ]
   },
   "BENEFITS_PAGE": {
-    "TITLE": "Achievements",
-    "YOUR_BENEFITS": "Your achievements",
-    "BUTTONS_TEXT": "Redeem",
+    "TITLE": "Erfolge",
+    "YOUR_BENEFITS": "Deine Erfolge",
+    "BUTTONS_TEXT": "Einlösen",
     "CONFI_COINS": {
-      "HEADER": "Collected Confi-Coins",
-      "TEXT": "Redeem your Confi-Coins und get discounts for many of our products and services."
-    },
-    "CUPS": {
-      "HEADER": "Achieved cups",
-      "TEXT": "Lorem ipsum dolor bla bla bla"
+      "HEADER": "Gesammelte Confi-Coins",
+      "TEXT": "Kümmere dich um die Gesundheit deines Tieres, in dem du Aufgaben im Planer erledigst. Werde mict Confi-Coins belohnt und steige im Rang auf. Zusätzlich warten Überrraschungen aus unserem Shop auf dich."
     }
+  },
+  "CARE_CARD_INPUT_MODAL_PAGE": {
+    "CASTRATION": {
+      "TITLE": "Kastrationsstatus",
+      "NEUTERED": "Kastriert",
+      "NOT_NEUTERED": "Unkastriert",
+      "HEADLINE": "Trage ein, ob dein Tier kastriert wurde. Die Eingabe ist nicht rückgängig zu machen.",
+      "DESCRIPTION": "Der Kastrationsstatus ist eine wichtige Information für die Rationsberechnung und den Ausschluss oder die Diagnose von Erkrankungen. Denn der veränderte Hormonhaushalt hat Einfluss auf den Aktivitätsgrad und somit den Energiebedarf des Tieres. Zudem gibt es Erkrankungen, die eher bei unkastrierten Tieren auftreten und umgekehrt."
+    },
+    "ID": {
+      "TITLE": "Identifikations-Nr.",
+      "INPUT": "Chip-Nr.",
+      "HEADLINE": "Bitte trage die Identifikations-Nr. ein",
+      "DESCRIPTION": "Prinzipiell ist das Chippen von Hunden und Katzen in Deutschland bislang nicht in allen Bundesländern einheitlich geregelt. Während in einigen Ländern beispielsweise eine Kennzeichnungspflicht für alle Hunderassen herrscht, ist sie in anderen lediglich für sogenannte Listenhunde vorgeschrieben."
+    },
+    "ACTIVITY": {
+      "TITLE": "Aktivitätsgrad",
+      "STATUS": {
+        "LOW": [
+          "Geringe Aktivität",
+          "insgesamt weniger als 1 Std. Bewegung pro Tag",
+          "Beispiele: Fortbewegung vorwiegend im Schritt, Spaziergänge an der Leine, spielt nicht oder kaum (wenig spielerische Aktivität)"
+        ],
+        "MODERATE": [
+          "Moderate Aktivität",
+          "insgesamt circa 1-3 Std. Bewegung pro Tag",
+          "Beispiele: Fortbewegung vorwiegend im Schritt und Trab.Spaziergänge sowohl an der Leine, als auch im Freilauf, kurze Spielepisoden über den Tag verteilt (mäßige spielerische Aktivität)."
+        ],
+        "HIGH": [
+          "Hohe Aktivität",
+          "insgesamt circa 1-3 Std. Bewegung pro Tag",
+          "Beispiele: Fortbewegung vorwiegend im Trab und Galopp, Spaziergänge weitestgehend im Freilauf, Begleithund beim Joggen oder Fahrradfahren, spielt sehr viel und gerne, Hundesport wie Agility, private jagdliche Ausbildung, Zughundesport etc."
+        ],
+        "EXTREME": [
+          "Besonders hohe Aktivität",
+          "insgesamt circa 3-6 Std. Bewegung pro Tag",
+          "Arbeitshund mit besonders hohem Leistungsniveau (aktiv im Dienst/ Training), Beispiele: jagdlich geführter Hund, Blindenhund, Behindertenbegleithund, Polizei-/Zollhund, Rettungshund, Hütehund in der Herde"
+        ]
+      },
+      "NONE": "Es wurde noch kein Aktivitätsgrad hinterlegt.",
+      "BUTTON": "Aktivitätsgrad aktualisieren",
+      "HEADLINE": "Aktueller Aktivitätsgrad",
+      "INFO": {
+        "HEADER": "Aktivitätsgrad definieren",
+        "TEXT": "Wofür wird der Aktivitätsgrad verwendet. Lorem ipsum dolor sit amet, consetutor",
+        "ANNOTATION": "(Nach Expertenempfehlungen des ESCCAP. European Scientific Counsel Companion Animal Parasites)"
+      }
+    },
+    "CONFIRM": "Übernehmen",
+    "ABORT": "Abbrechen"
   }
 }

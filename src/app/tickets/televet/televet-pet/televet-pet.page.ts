@@ -52,14 +52,11 @@ export class TelevetPetPage {
   ) { }
 
   ionViewWillEnter() {
-    // console.log('ionViewWillEnter', this.symptom);
     this.symptom = '';
     this.isPoison = false;
-    // console.log('symptom', this.symptom);
 
     this.subscription = this.userAuth.user$
       .subscribe(user => {
-        // console.log('user', user);
         this.user = user;
         const petId = localStorage.getItem('activePet');
 
@@ -78,13 +75,12 @@ export class TelevetPetPage {
     this.translateService.use(this.language);
     this.translateService.get('TELEVET_PET_PAGE')
       .subscribe(televet => {
-        console.log('televet', televet)
         this.televet = televet;
       });
 
     this.buttonSub = this.televetService.buttonData
       .subscribe(data => {
-        console.log('data', data);
+        // console.log('data', data);
         this.symptom = data.symptom;
         this.code = data.code;
       });
@@ -92,10 +88,10 @@ export class TelevetPetPage {
 
   public onClickSpot(spot: string, label: string, event: any): void {
     // spot = spot.toLowerCase();
-    console.log('spot', spot);
-    console.log('label', label);
-    console.log('event', event);
-
+    // console.log('spot', spot);
+    // console.log('label', label);
+    // console.log('event', event);
+    this.symptom = null;
     this.isPoison = false;
     this.spot = spot;
     this.leftIcon = `${this.imagePath}/general_condition.svg`;

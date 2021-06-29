@@ -486,9 +486,13 @@ export class TicketQuestionsPage {
   }
 
   public pickPregDay(event): void {
-    const val = event.target.value;
-    if (val.toString().length > 9 && val.toString().length < 16) {
-      this.selectedAnswer = val;
+    // const val = event.target.value;
+    // if (val.toString().length > 9 && val.toString().length < 16) {
+    //   this.selectedAnswer = val;
+    // }
+
+    if (event.target.value) {
+      this.selectedAnswer = event.target.value;
     }
   }
 
