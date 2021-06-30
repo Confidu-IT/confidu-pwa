@@ -1126,7 +1126,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.MISC,
-                        code: 'POIN'
+                        code: 'p+POIN'
                       });
                     }
                   },
@@ -2315,7 +2315,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.MISC,
-                        code: 'POIN'
+                        code: 'p+POIN'
                       });
                     }
                   },
@@ -3556,7 +3556,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.MISC,
-                        code: 'POIN'
+                        code: 'p+POIN'
                       });
                     }
                   },
@@ -4745,7 +4745,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.MISC,
-                        code: 'POIN'
+                        code: 'p+POIN'
                       });
                     }
                   },
@@ -5918,7 +5918,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.MISC,
-                        code: 'POIN'
+                        code: 'p+POIN'
                       });
                     }
                   },
@@ -7077,7 +7077,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.MISC,
-                        code: 'POIN'
+                        code: 'p+POIN'
                       });
                     }
                   },
@@ -8278,7 +8278,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.MISC,
-                        code: 'POIN'
+                        code: 'p+POIN'
                       });
                     }
                   },
@@ -9447,7 +9447,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.MISC,
-                        code: 'POIN'
+                        code: 'p+POIN'
                       });
                     }
                   },

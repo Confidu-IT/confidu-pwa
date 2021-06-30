@@ -98,13 +98,16 @@ export class PetCareCardPage {
       })
     ).subscribe(pet => {
       console.log('pet', pet);
-      const species = pet.pet.species.value === 'dog' ? 'base_data_dog' : 'base_data_cat';
+      if (pet.pet.species.value === 'dog') {
+        this.baseDataImg = 'https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/carecard%2Ficons%2Fsvg%2Fdog.svg?alt=media&token=71d653b8-6e0d-4e9f-bf28-c09420a25f25';
+      } else {
+        this.baseDataImg = 'https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/carecard%2Ficons%2Fsvg%2Fcat.svg?alt=media&token=4fdc9eea-eaf9-4fbc-b3cf-48cd455cb535';
+      }
       this.pet = pet;
       // tslint:disable-next-line:no-eval
       this.isCastrated = eval(pet.pet.castration.value);
       this.hasId = pet.pet.petIdent;
       this.breed = this.language === 'de' ? pet.pet.breed.data.name_de : pet.pet.breed.data.name_en;
-      this.baseDataImg = `${this.iconPath}/${species}.png`;
       this.nutritionImg = `${this.iconPath}/nutrition-${pet.pet.species.value}.svg`;
       // this.presentModal('activity');
       this.isLoading = false;

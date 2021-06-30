@@ -47,17 +47,13 @@ export class BenefitsPage {
 
   public foo = {
     points: '128',
-    button: {
-      text: 'Einlösen',
-      action: 'do something'
-    },
     cups: [
       {
         label: 'Du bist: Chefpfleger',
         section: 'Pflege',
         rank: 'Rang 2/3',
         image: `${this.iconPath}/trashme.svg`,
-        text: 'noch 17 Punkte bis zum nächsten Pokal'
+        text: 'noch 17 Punkte bis zum nächsten Pokal',
       }
     ]
   }

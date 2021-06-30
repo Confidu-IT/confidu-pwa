@@ -96,12 +96,14 @@
                     </div>
 
                     <ng-container *ngIf="result.findings">
-                      <div class="doc"
-                           *ngFor="let doc of result.findings"
-                           (click)="onOpenDocument(doc?.docs[0])">
+                      <ng-container *ngFor="let item of result.findings">
+                        <div class="doc"
+                             *ngFor="let doc of item.docs"
+                             (click)="onOpenDocument(doc)">
                         <span><img [src]="paperclip" alt="" height="14">
                           {{ 'CARE_CARD_LIST_PAGE.FINDING_PDF' | translate }}</span>
-                      </div>
+                        </div>
+                      </ng-container>
                     </ng-container>
 
                   </div>

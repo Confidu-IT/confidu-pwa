@@ -1,1 +1,1187 @@
-{}
+{
+  "HOME_PAGE": {
+    "CARE_CARD": "CareCard",
+    "COINS": "Confi-Coins",
+    "BENEFITS": "Avantages",
+    "TREAT": "Traitement",
+    "PHARMACY": "Pharmacie",
+    "FEEDING": "Alimentation",
+    "CURRENT_FEEDING": "Alimentation",
+    "SWITCH_RATION": "Conseil sur la ration à changer.",
+    "DETAILS": "Détails",
+    "STATUS": {
+      "1": "Comment est",
+      "2": "aujourd'hui ?",
+      "INSTRUCTIONS": "Tippe mehrmals auf das Hundesymbol und bestätige den passenden Zustand mit dem Häkchen."
+    },
+    "OVERVIEW": "Aperçu",
+    "CHANGE_PET": "Modifierr l'animal de compagnie",
+    "TO_TASKS": "Planificateur",
+    "TODAY_TASKS": "Tâches d'aujourd'hui",
+    "TODAY": "Aujourd'hui",
+    "TASK": "Tâche",
+    "RECIPE_HEADER": "Commander des médicaments",
+    "RECIPE_TEXT": "Lorem ipsum dolor sit amet",
+    "PATCH_BUTTON": "Traitement",
+    "DANGER_BUTTON": "Urgence",
+    "EMERGENCY": "Urgence",
+    "PET_STATE": "Comment est",
+    "HEALTH_STATE_TEXT": {
+      "EXCELLENT": "Bon",
+      "GOOD": "Mauvais",
+      "BAD": "Malade",
+      "WORSE": "Urgence"
+    },
+    "NO_TASKS_TEXT": {
+      "PART_1": "Aujourd'hui sont",
+      "PART_2": "aucune tâche"
+    },
+    "NEW_ARTICLES": "Magazine",
+    "WEEKLY_RECIPE": "Frais au bol"
+  },
+  "NAVIGATION": {
+    "RATION": "Ration -Contrôle",
+    "BOWL": "Mon bol",
+    "HARNSTICK": "Test du bâtonnet d'urine",
+    "LAB": "Laboratoire",
+    "CONTRACT": "Contrat",
+    "DAMAGE": "Demande de remboursement",
+    "HOME": "Accueil",
+    "SIGNOUT": "Déconnexion"
+  },
+  "COMMON": {
+    "MSG": {},
+    "HTTP_ERRORS": {
+      "PRODUCTS": {
+        "400": "Produit non trouvé",
+        "451": "Produit non trouvé",
+        "403": "L'utilisateur n'est pas connecté"
+      },
+      "LOGIN": {
+        "400": "L'email est déjà utilisé",
+        "401": "Courriel ou mot de passe invalide",
+        "403": "FOOBAR"
+      }
+    }
+  },
+  "MAIN_NAV": {
+    "FEEDING": "Alimentation",
+    "FOOD_CHECK": "Vérification de la nourriture",
+    "BOWL": "Mon bol",
+    "RESEARCH": "Recherche",
+    "LAB": "Laboratoire",
+    "URINE_TEST": "Test du bâtonnet d'urine",
+    "PROTECT": "Protéger",
+    "CONTRACT": "Contrat",
+    "DAMAGE": "Demande de remboursements",
+    "SHOP": "Boutique"
+  },
+  "SIDE_NAV": {
+    "SETTINGS": "Paramètres",
+    "ACCOUNT": "Compte",
+    "ORDER": "Commande",
+    "NOTIFICATIONS": "Notifications",
+    "HELP": "Aide",
+    "LOGOUT": "Déconnexion"
+  },
+  "CREATE_PET_PAGE": {
+    "CASTRATION_VALUES": {
+      "TRUE": "Castré",
+      "FALSE": "Non castré"
+    },
+    "GENDER": {
+      "MALE": "Mâle",
+      "FEMALE": "Femelle"
+    },
+    "SPECIES_LIST": {
+      "CAT": "Chat",
+      "DOG": "Chien"
+    },
+    "OK_BUTTON": "Sauvegarder",
+    "CANCEL_BUTTON": "Annuler",
+    "NAME_LABEL": "Nom de l'animal",
+    "SPECIES_LABEL": "Espèce",
+    "BREED_LABEL": "Race",
+    "GENDER_LABEL": "Sexe",
+    "CASTRATION_LABEL": "Statut de castration",
+    "BIRTHDAY_LABEL": "Anniversaire",
+    "FORM_BUTTON": "Créer un animal",
+    "WAITING": "S'il vous plaît attendre ..."
+  },
+  "ACCOUNT_PAGE": {
+    "NAME": "Nom",
+    "ADDRESS": "Adresse",
+    "MAIL": "Courriel",
+    "PHONE": "Téléphone",
+    "TITLE": "Compte",
+    "INFOS": "Informationss personnelles",
+    "CHANGE_PW": "Modifier le mot de passe",
+    "DEL_ACC": "Supprimer le compte",
+    "BEQUEST": "Foobar",
+    "CHOOSE_LANGUAGE": "Choisis la langue",
+    "LANGUAGES": {
+      "GERMAN": "Allemand",
+      "ENGLISH": "Anglais",
+      "DANISH": "Dansk",
+      "ITALIAN": "Italien",
+      "FRENCH": "Français",
+      "SPANISH": "Espagnol",
+      "POLISH": "Polonais"
+    }
+  },
+  "PETS_LIST_PAGE": {
+    "TITLE": "Mes animaux de compagnie"
+  },
+  "TELEVET_PET_PAGE": {
+    "PET_SPOT_TEXT": {
+      "CANCEL_BUTTON": "Annuler",
+      "SWELLING": "Gonflement/bosse/nœud",
+      "STIFFNESS":"Raideur",
+      "MUSCULAR_DYSTROPHY": "Atrophie musculaire",
+      "FLATULENCE": "Flatulence",
+      "DIARRHAE": "Diarrhée",
+      "VOMITING": "Vomissements",
+      "VOMITING_DIARRHAE": "Vomissements et diarrhée",
+      "ITCHING": "Démangeaisons",
+      "CONSTIPATION": "Constipation",
+      "BITE": "Blessure par morsure",
+      "SUCKLES": "Gonflement de la tétine",
+      "STOMACH_PAIN": "Douleur abdominale",
+      "TRAVEL_SICKNESS": "Mal des transports",
+      "COUGH": "Toux",
+      "VOMIT": "Vomissements",
+      "SNORING": "Ronflement/sons respiratoires forts",
+      "EARS_HEARING": "Troubles de l'audition",
+      "EARS_SCRATCH": "Grattage d'oreille",
+      "EARS_DISCHARGE": "Écoulement de l'oreille",
+      "EARS_STINKY": "Oreille à l'odeur désagréable",
+      "EARS_SWOLLEN": "Oreille gonflée",
+      "EARS_INJURY": "Blessure à l'oreille",
+      "EYES_IMPAIRED": "Troubles de la vision",
+      "EYES_CHANGES": "Modifierments dans les yeux",
+      "SWELLING_VULVA": "Gonflement de la vulve",
+      "TESTICLES_CHANGES": "Testicule altéré",
+      "UNWANTED_PREGNANCY": "Couverture indésirable",
+      "VAGINAL_DISCHARGE": "Écoulement vaginal",
+      "PENIS_DISCHARGE": "Écoulement pénien",
+      "PENIS_ISSUE": "Prolapsus du pénis",
+      "URINATION_PAIN": "Douleur pendant la miction",
+      "URINATION_CHANGE": "Urine altérée",
+      "URINATION_LOW": "Faible débit d'urine",
+      "URINATION_HIGH_DRINKING": "Augmentation de la quantité d'urine et de boisson",
+      "URINATION_HIGH": "Miction fréquente",
+      "HEAT": "Chaleur",
+      "EAT_FECES": "Mange des excréments",
+      "EAT_GRASS": "Mange de l'herbe",
+      "EAT_NONE": "Ne mange pas",
+      "DRINKING_HIGH": "Augmentation de la consommation d'alcool",
+      "VOICE_CHANGES":  "Modifierment de voix",
+      "FOOT_ODOR": "Odeur dans la bouche",
+      "NOSE_DRY": "Nez sec",
+      "NOSE_BLEEDING": "Saignement de nez",
+      "NOSE_DISCHARGE": "Écoulement nasal",
+      "SNEEZE": "Éternuement",
+      "LAMENESS": "Boiterie",
+      "SWELLING_JOINT": "Gonflement des articulations",
+      "INJURY_CLAW": "Blessure aux griffes",
+      "INJURY_PAW": "Blessure à la patte",
+      "INJURY_BITE": "Blessure par morsure",
+      "BUMPINESS": "Renversement",
+      "HYPOCRISY": "Fausse grossesse",
+      "FEVER":  "Fièvre",
+      "TEMPERATURE_LOW": "Basse température",
+      "BEHAVIOUR_CHANGE": "Modifierment de comportement",
+      "WEAKNESS": "Faiblesse",
+      "WEIGHT_LOSS": "Perte de poids",
+      "WEIGHT_GAIN": "Prise de poids",
+      "FUR_SHAGGY": "Pelage terne et hirsute",
+      "FLEA_INVESTATION": "Infestation de puces",
+      "SKIN_STINKY": "Peau à l'odeur désagréable",
+      "FUR_LOSS": "Perte de fourrure sans démangeaisons",
+      "FUR_LOSS_ITCHING": "Perte de poils avec démangeaisons",
+      "INJURY_SKIN": "Blessure de la peau",
+      "WOUND": "Plaie/brûlure",
+      "CHOCOLATE": "Chocolat",
+      "MEDS": "Médicaments",
+      "TOBACCO": "Tabac/nicotine",
+      "MISC": "Autres produits alimentaires",
+      "BREATH_SHORTNESS": "Essoufflement",
+      "EMERGENCY_BIRTH": "Urgence à la naissance",
+      "EYES_INJURY": "Blessure aux yeux",
+      "HEAVY_STOMACH_PAIN": "Douleurs abdominales sévères",
+      "HEATSTROKE": "Coup de chaleur",
+      "NO_URINE": "Impossibilité d'uriner",
+      "SEIZURE": "Crise d'épilepsie",
+      "PARALYSIS": "Paralysie",
+      "BROKEN_BONE": "Fracture ouverte",
+      "HEAVY_BLEEDING": "Hémorragie abondante",
+      "APNEA": "Arrêt respiratoire et cardiaque",
+      "GASTRIC_TORSION": "Torsion gastrique",
+      "UNCONSCIOUSNESS": "Inconscience",
+      "SHOCK":  "Choc",
+      "POISONING": "Empoisonnement"
+    },
+    "CLICK_SPOT": {
+      "BUTT": {
+        "LABEL": "Butt",
+        "SPOT": "butt"
+      },
+      "BACK": {
+        "LABEL": "Dos",
+        "SPOT": "back"
+      },
+      "BELLY": {
+        "LABEL": "Ventre",
+        "SPOT": "belly"
+      },
+      "TAIL": {
+        "LABEL": "Queue",
+        "SPOT": "tail"
+      },
+      "LEGS": {
+        "LABEL": "Jambes",
+        "SPOT": "legs"
+      },
+      "CHEST": {
+        "LABEL": "Poitrine",
+        "SPOT": "chest"
+      },
+      "EAR": {
+        "LABEL": "Oreille",
+        "SPOT": "ear"
+      },
+      "EYE": {
+        "LABEL": "Oeil",
+        "SPOT": "eye"
+      },
+      "NOSE": {
+        "LABEL": "Nez",
+        "SPOT": "nose"
+      },
+      "MOUTH": {
+        "LABEL": "Bouche",
+        "SPOT": "mouth"
+      },
+      "HEAD_REGION": {
+        "SPOT": "head-region"
+      },
+      "BODY_REGION": {
+        "SPOT": "body-region"
+      },
+      "HEAD": {
+        "LABEL": "Tête",
+        "SPOT": "head"
+      },
+      "THROAT": {
+        "LABEL": "Gorge",
+        "SPOT": "throat"
+      },
+      "ABDOMEN": {
+        "LABEL": "Abdomen",
+        "SPOT": "abdomen"
+      },
+      "GENERAL": {
+        "LABEL": "État général",
+        "SPOT": "general"
+      },
+      "FUR": {
+        "LABEL": "Fourrure",
+        "SPOT": "fur"
+      },
+      "POISON": {
+        "LABEL": "Poison",
+        "SPOT": "poison"
+      }
+    },
+    "HEADER": "Où les symptômes apparaissent-ils ?",
+    "POISON_HEADER": "Qu'est-ce qui a été mangé ?",
+    "DESCRIPTION": "Dans la portée",
+    "ACTION": "Tape sur la zone affectée.",
+    "PROGRESS_BUTTON": "Suivant",
+    "ZOOM_BUTTON": "Dos",
+    "TITLE": "Vétérinaire"
+  },
+  "PRESCRIPTION_UPLOAD_PAGE": {
+    "TITLE": "Téléchargement de la facture",
+    "TEXT": "Merci de télécharger toutes les pages de ta facture.",
+    "LABEL": "Visite du vétérinaire"
+  },
+  "PRESCRIPTION_RESULT_PAGE": {
+    "TITLE": "Données de la facture",
+    "ADD": "Ajoute",
+    "ADD_MED": "Ajouter une préparation",
+    "DATE_TIME_BTNS_CANCEL": "Annuler",
+    "DATE_TIME_BTNS_DONE": "Appliquer",
+    "ADD_THERAPY": "Entrer la thérapie",
+    "ADD_FINDING": "Entrer la découverte",
+    "ADD_DIAGNOSIS": "Entrer le diagnostic",
+    "VET_VISIT": "Visite du vétérinaire",
+    "PROGRESS": "Procéder",
+    "REPEAT": "Répéter"
+  },
+  "FU_PAGE": {
+    "TITLE": "Médicamenter",
+    "BUTTONS": {
+      "BACK": "Retour",
+      "FORWARD": "Suivant"
+    },
+    "INTRO_TEXT": "Afin de rédiger l'ordonnance et de t'envoyer le médicament, nous avons besoin que tu nous envoies une facture de ton vétérinaire avec les informations suivantes",
+    "INTRO_LIST": [
+      "Nom et adresse du vétérinaire",
+      "Nom et date de naissance de ton animal",
+      "Ton nom et ton adresse",
+      "Diagnostic",
+      "Nom du médicament"
+    ],
+    "CHOOSE": "Veuillez sélectionner la maladie et le médicament que tu veux commander pour ton animal :",
+    "MANUAL_CHOICE": "Veuillez sélectionner le médicament que tu veux demander. Nous essaierons de l'obtenir et de t'en informer.",
+    "ALERT": {
+      "TITLE": "Merci pour ta demande !",
+      "TEXT": "Nous allons vérifier tes informations et te prévenir dès que possible.",
+      "BUTTONS": {
+        "CANCEL": "Annuler",
+        "DONE": "Terminé"
+      }
+    },
+    "DISEASES": "Sélectionne la maladie",
+    "MEDS": "Nom du médicament",
+    "NO_MED": "Ton médicament n'est pas inclus ?",
+    "REQ_MED": "Demande le médicament"
+
+  },
+  "TICKETS_PAGE": {
+    "HEADER": "Planificateur de",
+    "EXEC": "Effectuer",
+    "UPLOAD": "Ajoute une image (jpg/png)",
+    "ADD_IMAGE": "Image de couverture pour cette tâche (facultatif)",
+    "ACTIONS": {
+      "CLOSE": {
+        "MSG": "Confirme ta saisie et la tâche sera fermée.",
+        "BTN": "Appliquer"
+      },
+      "DELETE": {
+        "MSG": "Es-tu sûr de vouloir supprimer cette tâche ?",
+        "BTN": "Supprimer"
+      },
+      "DATE_TIME_BTNS": {
+        "CANCEL": "Annuler",
+        "DONE": "Appliquer"
+      }
+    },
+    "WEIGHT_LABEL": "Poids en kg",
+    "TITLE": "Planificateur",
+    "HOMEWORK": "Planificateur",
+    "TODAY_TASKS": "My Tâches",
+    "DONE":  "Terminé",
+    "DELETE": "Supprimer",
+    "POSTPONE": "Repousser le rendez-vous",
+    "NEW_TASK": "Créer une nouvelle tâche",
+    "NO_TASKS": "There are aucune tâche to be done today.",
+    "CREATE_TASK": "Créer une tâche",
+    "CANCEL": "Annuler",
+    "CONFIRM": "Appliquer",
+    "POSTPONE_TASK": "Repousser le rendez-vous",
+    "NAME_TASK": "Tâche name",
+    "DATE": "Date",
+    "TIME": "Heure",
+    "MAX_CHARS": "160 caractères",
+    "WHOLEDAY": "Pendant la journée"
+
+  },
+  "TICKET_QUESTION_PAGE": {
+    "QUESTION": "Question",
+    "BEATS": "Battements",
+    "PULSE": "Impulsion",
+    "PROGRESS_BUTTON": "Suivant",
+    "BACK_BUTTON": "Retour",
+    "CANCEL_BUTTON": "Annuler",
+    "OK_BUTTON": "Appliquer",
+    "UPLOAD_IMAGE": "Ajouter images (max. 3, max. 5 MB)",
+    "IMAGE_TOO_LARGE": "L'image est trop grande.",
+    "TELEVET_TITLE": "Médicamenter",
+    "WEIGHT_LABEL": "Exemple : 8.25",
+    "TOY_LABEL": "Insérer un jouet",
+    "CHOOSE": "Veuillez choisir",
+    "AMOUNT": "Quantité",
+    "UNIT": "Unité",
+    "KG": "kg",
+    "CM": "cm",
+    "CHIP": "N° de puce",
+    "TEMPERA": "°C",
+    "NO_IDEA": "Je ne sais pas",
+    "TREATMENT": {
+      "HOME": "Administré pour le traitement à la maison",
+      "VET": "Administré une fois au cabinet du médecin"
+    },
+    "PREG_DATE": "Afleveringsdato",
+    "MED": {
+      "NAME": "Nom de l'ingrédient actif ou de la préparation",
+      "DAILY": "Quotidiennement",
+      "DAYS": "Jour(s)",
+      "PIECE": "Pièce",
+      "PART": "Pièce",
+      "PERMANENT": "Administration permanente",
+      "FREQUENCY": "Fréquence de saisie",
+      "STARTDATE": "Date de début",
+      "ENDDATE": "Date de fin",
+      "TIME": "o'clock",
+      "AMOUNT": "Quantité",
+      "TREATMENT_PERIOD": "Période de traitement",
+      "NOTES": "Tes notes (150 caractères)",
+      "CHARS": "150 caractères",
+      "BUTTON": "Ajoute",
+      "STRENGTH": "Sélectionne la force de l'effet",
+      "MEDS": {
+        "TIME": "o'clock",
+        "DAYS": "Days",
+        "TREATMENT_PERIOD": "Période de traitement",
+        "FROM": "à partir de",
+        "AT": "à"
+      }
+    },
+    "VET": {
+      "ZIP_CODE": "Saisis le code postal",
+      "VETS_LIST": "Choisis ton vétérinaire",
+      "NO_VET": "Tu ne trouves pas ton vétérinaire ?",
+      "ADD_VET": "Tu peux entrer les données manuellement ici.",
+      "VET_ERROR": "Désolé, nous n'avons pas trouvé de vétérinaires pour ce code postal.",
+      "FORM": {
+        "HEADER": "S'il te plaît, entre les données de ton vétérinaire :",
+        "DOC_OFFICE": "Nom du cabinet médical' (facultatif)",
+        "NAME": "Nom du vétérinaire",
+        "ADDRESS": "Numéro de rue",
+        "ZIP_CODE": "Code postal"
+      }
+    },
+    "VACC": {
+      "SERUM": "Vaccin",
+      "CURRENT": "Date de la vaccination",
+      "NEXT": "Date de la prochaine vaccination"
+    },
+    "FOOD": {
+      "ADD": "Ajoute",
+      "TYPES": {
+        "DRY": "Nourriture sèche",
+        "WET": "Nourriture humide",
+        "FOODS": "Nourriture",
+        "SNACKS": "Snacks",
+        "VMIN": "Aliment complémentaire"
+      },
+      "TYPE": "Type d'aliment",
+      "CHOOSE_PRODUCT": "Sélectionne le produit",
+      "AMOUNT": "Quantité",
+      "UNIT": "Unités"
+    },
+    "PARASITES": {
+      "LABEL": "Médicament",
+      "DATE": "Date d'administration"
+    }
+  },
+  "TICKET_RESULT_PAGE": {
+    "TITLE": "Évaluation",
+    "DIAG_HEADER": "Diagnostic",
+    "NO_RESULT": "Aucun résultat disponible pour le moment.",
+    "URGENCY": "Urgence",
+    "THERAPY": "Thérapie",
+    "DIAGNOSIS": "Constatations",
+    "REASONS": "Causes communes",
+    "HOW_TO": "Comment puis-je aider mon animal ?",
+    "GO_BACK": "Retourner à la page d'accueil",
+    "HELP": "Aide?",
+    "NEEDS": "Ce dont tu as besoin :",
+    "ORDER_TITLE": "Commande de médicaments directement en ligne",
+    "ORDER_DESCRIPTION": "Nous avons compilé les médicaments nécessaires à la thérapie. Ajoute tes produits au panier.",
+    "TICK": "Sélectionne/désélectionne le produit",
+    "OR": "ou",
+    "ORDER_TEXT": "Sauvegarder to cart",
+    "ORDER_BUTTON": "Commander",
+    "CART_BUTTON": "Ajouter au panier",
+    "AMOUNT": "Quantité",
+    "DELIVERY_TIME": "Délai de livraison",
+    "PRESCRIPTION": "Ordonnance",
+    "PHARMACY": "Pharmacie requise",
+    "UNIT": "Taille",
+    "SAVED_CART": "Produit enregistré dans ton panier",
+    "CHOICE_QUESTION": "As-tu fait ta sélection ?",
+    "CHOICE_TEXT": "Si ta sélection est complète, passe au panier",
+    "CHOICE_ANNOTATION": "Veuillez noter que vous ne pouvez pas recevoir ultérieurement des produits pour la thérapie sans consulter à nouveau le vétérinaire en ligne."
+  },
+  "CARE_CARD_PAGE": {
+    "NO_DATA": "Non spécifié",
+    "HEADER": "CareCard de",
+    "BASE_DATA": {
+      "TITLE": "Données de base",
+      "LIST": {
+        "NAME": "Nom",
+        "GENDER": "Sexe",
+        "CASTRATION": "Statut de castration",
+        "BREED": "Race",
+        "BIRTHDAY": "Anniversaire",
+        "ID": "N° d'identification"
+      }
+    },
+    "PREVENTION": {
+      "TITLE": "Soins préventifs"
+    },
+    "NUTRITION": {
+      "TITLE": "Nutrition"
+    },
+    "MED_TEST": {
+      "TITLE": "Tests médicaux"
+    },
+    "DISEASES": {
+      "TITLE": "Maladies"
+    },
+    "INSURANCE": {
+      "TITLE": "Assurance"
+    },
+    "LIFESTYLE": {
+      "TITLE": "Mode de vie",
+      "ACTIVITY": {
+        "TITLE": "Niveau d'activité"
+      }
+    }
+  },
+  "CARE_CARD_LIST_PAGE": {
+    "HISTORY": "Historique",
+    "ADD_DOC": "Ajouter une pièce jointe",
+    "FINDING_PDF": "Pièce jointe",
+    "UPLOAD": "Téléchargement de la facture",
+    "MANUAL": "Saisie manuelle"
+  },
+  "CARE_CARD_DETAIL_PAGE": {
+    "DOWNLOAD": "Téléchargement PDF",
+    "PRESCRIPTION": "Ordonnance requise",
+    "PHARMACY": "Pharmacie requise",
+    "SAVED_CART": "Produit enregistré dans le panier",
+    "CHOICE_QUESTION": "As-tu fait ta sélection ?",
+    "CHOICE_TEXT": "Si ta sélection est complète, passe à la voiture",
+    "CART_BUTTON": "Vers le panier",
+    "MED": {
+      "NAME": "Nom de l'ingrédient actif ou de la préparatione",
+      "DAILY": "Quotidiennement",
+      "DAYS": "Jour(s)",
+      "PIECE": "Pièce",
+      "PART": "Pièce",
+      "PERMANENT": "Permanent",
+      "FREQUENCY": "Fréquence de saisie",
+      "STARTDATE": "Date de début",
+      "ENDDATE": "Date de fin",
+      "TIME": "Heure",
+      "AMOUNT": "Quantité",
+      "TREATMENT_PERIOD": "Période de traitement",
+      "NOTES": "Tes notes (150 caractères)",
+      "CHARS": "150 caractères",
+      "BUTTON": "Ajoute",
+
+      "MEDS": {
+        "TIME": "o'clock",
+        "DAYS": "Jour(s)",
+        "TREATMENT_PERIOD": "Période de traitement",
+        "FROM": "à partir de",
+        "AT": "à"
+      }
+    },
+    "DOC": {
+      "SYMPTOMS": "Symptômes",
+      "DIAGNOSIS": "Diagnostic"
+    }
+  },
+  "DISEASE_PAGE": {
+    "TITLE": "ADD DISEASE",
+    "HEADER": "État de santé actuel",
+    "SUB_HEADER": "Aucune maladie n'a encore été déposée",
+    "DISEASES": "Nom de la maladie",
+    "MEDICATION":  "Médicaments",
+    "NOT_CURED":  "Pas guéri",
+    "CURED": "Guéri le :",
+    "DETECTED": "Détectée le",
+    "UPDATE_SUCCESS": "Entrée réussie",
+    "UPDATE_ERROR": "Entrée échouée",
+
+    "EXPLANATION": {
+      "TITLE": "Documentation de la maladies",
+      "TEXT": "Lorem ipsum dolor sit amet, ligula eget dolor. Aenean  nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.",
+      "ANNOTATION": "faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Terminéc sodales sagittis magna. "
+    },
+    "DATE_TIME": {
+      "CANCEL": "Annuler",
+      "CONFIRM": "Confirme"
+    },
+    "BUTTONS": {
+      "ADD": "Ajoute"
+    },
+    "MED": {
+      "ADD": "Ajouter medication",
+      "ADD_TEXT": "Quel médicament, s'il est connu, a été utilisé pour traiter l'affection ? (choix multiple)"
+    },
+    "DOC": {
+      "ADD": "Ajouter une constatation",
+      "DOC_TEXT": "Si tu as des constatations liées à la maladie, tu peux les joindre. (par exemple, analyses de sang, radiographie, scanner ou autre))"
+    }
+  },
+  "CONSULTATION_PAGE": {
+    "TITLE": "Appel vidéo",
+    "TEXT": "Pour te mettre en relation avec l'un de nos spécialistes, sélectionne le motif de la consultation.",
+    "LABEL": "Sélectionne le motif de la consultation",
+    "BUTTON": "Trouver un rendez-vous"
+  },
+  "CONSULTATION_SCHEDULER_PAGE": {
+    "TITLE": "Appel vidéo",
+    "TODAY": "Aujourd'hui",
+    "TOMORROW": "Demain",
+    "DAY_AFTER_TOMORROW": "Après-demain",
+    "NEXT_AV_APP": "Prochain rendez-vous disponible ::",
+    "AT": "à",
+    "MIN": "min",
+    "BOOK_IMMEDIATELY": "Réserver immédiatement",
+    "BOOK_APPOINTMENT": "Réserver un rendez-vous",
+    "TEXT": {
+      "PART_1": "Nous avons pour toi et",
+      "PART_2": "trouvé les dates suivantes."
+    },
+    "AHEAD_TEXT": "Les rendez-vous peuvent être réservés jusqu'à 2 jours à l'avance. Choisis le jour et l'heure auxquels tu souhaites parler avec un vétérinaire.",
+    "FIRST_NAME": "Prénom",
+    "LAST_NAME": "Nom de famille *",
+    "PHONE": "Téléphone",
+    "MODAL_HEADER": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
+    "CANCEL": "Annuler",
+    "CONFIRM": "Accept"
+  },
+  "CONSULTATION_BOOKING_PAGE": {
+    "TITLE": "Appel vidéo",
+    "ADD_DOCUMENT": "Ajouter document (jpg, png, pdf)",
+    "ANNOTATIONS": "Annotations",
+    "CHARS": "Chars",
+    "ADD_DOCS": "Tu peux aussi télécharger des images ou des documents.",
+    "BUTTON": "Commander",
+    "CHECKBOX": {
+      "CARECARD": {
+        "1": "Je confirme par la présente que j'ai un appel vidéo pour mon animal de compagnie",
+        "2": "né à",
+        "3": "souhaite réserver"
+      },
+      "AGB": {
+        "1": "Je confirme que",
+        "2": "T&C",
+        "3": "&",
+        "4": "politique de confidentialité",
+        "5": " ont été lues et acceptées."
+      }
+    }
+  },
+  "DASHBOARD_PAGE": {
+    "TITLE": "Aperçu",
+    "HEADER": "Ton aperçu",
+    "SUBHEADER": "Ici, tu peux suivre toutes les données de santé et les tests de laboratoire de ton animal."
+  },
+  "DISEASE_MODAL_PAGE": {
+    "CANCEL": "Annuler",
+    "CONFIRM":  "Appliquer",
+    "MED": {
+      "NAME": "Nom de l'ingrédient actif ou de la préparatione",
+      "DAILY": "Quotidiennement",
+      "DAYS": "Jour(s)",
+      "PIECE": "Pièce",
+      "PART": "Pièce",
+      "PERMANENT": "Permanent",
+      "FREQUENCY": "Fréquence d'entrée",
+      "STARTDATE": "Date de début",
+      "ENDDATE": "Date de fin",
+      "TIME":  "o'clock",
+      "AMOUNT": "Quantité",
+      "TREATMENT_PERIOD": "Période de traitement",
+      "NOTES": "Tes notes (150 caractères)",
+      "CHARS": "150 caractères",
+      "BUTTON": "Ajoute",
+      "MEDS": {
+        "TIME": "o'clock",
+        "DAYS": "Days",
+        "TREATMENT_PERIOD": "Période de traitement",
+        "FROM": "à partir de",
+        "AT": "à"
+      }
+
+    },
+    "DOC": {
+      "DATE": "Date",
+      "ADD": "Ajouter un document (jpg pdf - max 5 MB)",
+      "DELETE": "Supprimer le document",
+      "BUTTON": "Ajoute",
+      "UPLOAD": "Ajouter un document (jpg pdf - max 5 MB)",
+      "FROM": "à partir de",
+      "BODY_REGIONS": {
+        "LABEL": "Région du corps",
+        "ITEMS": {
+          "LEFT_FRONTLEG": "Jambe avant gauche",
+          "RIGHT_FRONTLEG": "Patte avant droite",
+          "LEFT_HINDLEG": "Patte arrière gauche",
+          "RIGHT_HINDLEG": "Patte arrière droite",
+          "TEETH": "Dents",
+          "HEAD": "Tête",
+          "THROAT": "Gorge",
+          "BREAST": "Poitrine",
+          "BACK": "Dos",
+          "STOMACH": "Abdomen",
+          "TAIL": "Queue",
+          "PELVIS": "Pelvis",
+          "BLOOD": "Sang",
+          "URINE": "Urine",
+          "FECES": "Selles",
+          "BODY_TISSUE": "Tissu corporel",
+          "OTHER": "Autre"
+        }
+      },
+      "TYPES": {
+        "LABEL": "Type de document",
+        "CT": "CT",
+        "MRT": "IRM",
+        "X_RAY": "Image à rayons X",
+        "ULTRASONIC": "Sonographie",
+        "PHOTO": "Photo",
+        "LAB_RESULT": "Rapport de laboratoire"
+      }
+    }
+  },
+  "LAB_PAGE": {
+    "TITLE": "Tests de laboratoire",
+    "PARASITES": "Test de parasite",
+    "URINE": "Test du bâtonnet d'urine",
+    "DIARRHEA": "Analyse de la diarrhée",
+    "DIARRHEA_PLUS": "Analyse de la diarrhée plus",
+    "GIARDIA": "Contrôle de la Giardia",
+    "FLORA": "Flore intestinale",
+    "PREVENTION": "Combinaison de soins préventifs",
+    "OK_BUTTON": "Appliquer",
+    "CANCEL_BUTTON": "Annuler",
+    "SWITCH_PET": "Modifierr d'animal",
+    "CHOOSE_PET": "Sélectionne l'animal pour lequel tu souhaites activer la boîte d'exploration."
+
+  },
+  "QR_CODE_MODAL": {
+    "ERROR": "Code non reconnu"
+  },
+  "RATION_CHECK_PAGE": {
+    "TITLE": "Calculateur de nourriture",
+    "AMOUNT": "Quantité",
+    "MEAL": "Repas",
+    "MEALS": "Repas",
+    "QUESTION": {
+      "PREFIX": "Combien de repas reçus",
+      "SUFFIX": "par jour ?"
+    },
+    "BUTTONS": {
+      "BACK": "Retour",
+      "FORWARD": "Suivant"
+    }
+  },
+  "ATTACH_DOCUMENT": {
+    "ADD_DOCUMENT": "Ajouter document (jpg, png, pdf)"
+  },
+  "TOOLBAR": {
+    "IMG_SELECT": {
+      "HEADER": "Téléchargement rapide de photos",
+      "SUBHEADER": "Sélectionne la fonction pour laquelle tu veux utiliser le téléchargement :",
+      "LAB": "Activer le test de laboratoire",
+      "PROFILE": "Modifierr la photo de profil",
+      "INVOICE": "Télécharger la facture du vétérinaire",
+      "OK_BUTTON": "Suivant",
+      "CANCEL_BUTTON": "Annuler"
+    }
+  },
+  "BILLING_ADDRESS_PAGE": {
+    "BILLING": "Adresse de facturation",
+    "SHIPMENT": "Adresse d'expédition",
+    "FIRST_NAME": "Prénom",
+    "LAST_NAME": "Nom de famille",
+    "ADDRESS": "Numéro de rue",
+    "ZIPCODE": "Code postal",
+    "CITY": "Ville",
+    "COUNTRY": "Pays",
+    "EQUAL_ADDRESSES": "L'adresse de facturation est égale à l'adresse de livraison",
+    "SUBMIT": "Continuer"
+
+  },
+  "CART_PAGE": {
+    "TITLE": "Panier",
+    "EMPTY": "Le panier est vide.",
+    "AMOUNT": "Quantité",
+    "REMOVE": "Retirer l'article",
+    "TOTAL": "Prix total",
+    "TAX": "Prix TTC"
+  },
+  "ORDER_PAGE": {
+    "ORDER": "Commande",
+    "REMOVE": "Supprimer l'article",
+    "CHANGE": "Modifier",
+    "DELIVERY":  "Livraison",
+    "SHIPMENT": "Frais d'expédition",
+    "SUMMARY": "Montant total",
+    "ORDER_NOW": "Commande avec frais",
+    "TAX": "(TVA incluse)",
+    "AMOUNT": "Quantité",
+    "PRICE": "Prix",
+    "TITLE": "Résumé",
+    "INVOICE": "Facture",
+    "BILLING": "Mode de paiement"
+
+  },
+  "ORDER_HISTORY_PAGE": {
+    "TITLE": "Commandes",
+    "ORDERS": "Commandes:",
+    "YOUR_ORDERS": "Tes commandes",
+    "NO_ORDERS": "Il n'y a pas encore de commandes",
+    "DELIVERED": "Livré à",
+    "DELIVERED_AT": "Livré le :",
+    "ORDERED_AT": "Commandé le :",
+    "PRICE": "Total:",
+    "BUY_AGAIN": "Acheter à nouveau",
+    "GET_PRESCRIPTION": "Commander une ordonnance de suivi",
+    "SAVED_CART": "Produit enregistré dans ton panier"
+
+  },
+  "PAYMENT_PAGE": {
+    "SUBMIT": "Continuer",
+    "TITLE": "Mode de paiement"
+  },
+  "PRODUCT_MODAL_PAGE": {
+    "DELIVERY_TIME": "Délai de livraison",
+    "PRESCRIPTION": "Ordonnance requise",
+    "PHARMACY": "En pharmacie uniquement",
+    "UNIT": "Taille",
+    "TAX": "Tous les prix incluent la taxe et les frais d'expédition | vendu par",
+    "CART_BUTTON": "Ajouter au panier",
+    "PRICE": "Prix unitaire",
+    "STOCK": "En stock",
+    "USAGE": "Zone d'application",
+    "INSTRUCTIONS": "Pour les risques et les effets secondaires, lis la notice et demande à ton médecin ou à ton pharmacien.",
+    "INST_LINK": "Télécharger la notice d'emballage",
+    "DOSAGE": "Dosage"
+
+  },
+  "PRODUCT_SHIPMENT_INFO_MODAL": {
+    "TITLE": "Informationss sur l'expédition des produits",
+    "TEXT": "Tous les produits sur ordonnance et en pharmacie sont vendus et expédiés exclusivement par des pharmacies de vente par correspondance d'Allemagne."
+  },
+  "PRODUCTS_CONTAINER": {
+    "ORDER_TITLE": "Commande des médicamentss directly online",
+    "ORDER_DESCRIPTION": "Nous avons rassemblé les médicaments les plus nécessaires à la thérapie. Ajoute ta sélection au panier.",
+    "TICK": "Sélectionne/désélectionne le produit",
+    "OR": "ou",
+    "ORDER_TEXT": "enregistrer dans le panier",
+    "ORDER_BUTTON": "Commander",
+    "CART_BUTTON": "Ajouter au panier",
+    "AMOUNT": "Quantité",
+    "DELIVERY_TIME": "Délai de livraison",
+    "PRESCRIPTION": "Ordonnance",
+    "PHARMACY": "Pharmacie requise",
+    "UNIT": "Taille",
+    "SAVED_CART": "Produit enregistré dans ton panier",
+    "CHOICE_QUESTION": "As-tu fait ta sélection ?",
+    "CHOICE_TEXT": "Si ta sélection est complète, passe au panier"
+  },
+  "PRESCRIPTION_PAGE": {
+    "DISEASES": "Maladies",
+    "MEDICATION": "Médicaments",
+    "CANCEL": "Annuler",
+    "CONFIRM": "Continuer",
+    "PRESCRIPTION": {
+      "ADD_INVOICE": "Ajouter invoice",
+      "ADD_PAGE": "Ajouter une autre page"
+    }
+  },
+  "PULSE_PAGE": {
+    "TITLE": {
+      "BREATHE": "Fréquence respiratoire",
+      "PULSE": "Rythme cardiaque"
+    },
+    "INTRO": {
+      "HEADER": "Prépare-toi",
+      "TEXT": {
+        "BREATHE": "Démarre le minuteur et pendant le compte à rebours, touche l'icône à chaque fois que ton animal respire.",
+        "PULSE": "Lance le minuteur et pendant le compte à rebours, touche l'icône du cœur à chaque fois que le cœur de ton animal bat."
+      }
+    },
+    "TIMER": {
+      "TEXT": {
+        "BREATHE": "Appuie maintenant sur l'icône chaque fois que ton animal respire",
+        "PULSE": "Appuie maintenant sur l'icône à chaque fois que le cœur de ton animal bat"
+      },
+      "BEATS": "Battements"
+    },
+    "DONE": {
+      "HEADER": "C'EST FAIT !",
+      "TEXT": "Passe à l'évaluation."
+    }
+  },
+  "TELEVET_EMERGENCY_PAGE": {
+    "TITLE": "Urgence",
+    "BUTTONS": {
+      "CANCEL": "Annuler",
+      "CONFIRM": "Continuer"
+    }
+  },
+  "TELEVET_EMERGENCY_MODAL_PAGE": {
+    "BUTTONS": {
+      "CANCEL": "Annuler",
+      "PROCEED": "Continuer"
+    }
+  },
+  "TICKET_PAGE": {
+    "EXEC": "Transporter",
+    "UPLOAD": "Ajoute une image (jpg/png)",
+    "ADD_IMAGE": "Image de couverture pour cette tâche (facultatif)",
+    "ACTIONS": {
+      "CLOSE": {
+        "MSG": "Confirme tes données et la tâche sera fermée.",
+        "BTN": "Confirm"
+      },
+      "DELETE": {
+        "MSG": "Es-tu sûr de vouloir supprimer cette tâche ?",
+        "BTN": "Supprimer"
+      },
+      "DATE_TIME_BTNS": {
+        "CANCEL": "Annuler",
+        "DONE": "Confirm"
+      }
+    },
+    "WEIGHT_LABEL": "Poids en kg",
+    "TITLE": "Ticket",
+    "HOMEWORK": "Planificateur",
+    "TODAY_TASKS": "My tasks",
+    "DONE": "Terminé",
+    "DELETE": "Supprimer",
+    "POSTPONE": "Repousser la tâche",
+    "NEW_TASK": "Créer une nouvelle tâche",
+    "CREATE_TASK": "Créer une tâche",
+    "CLOSE_TASK": {
+      "BODY": "Veux-tu fermer cette tâche ?",
+      "POPUP": {
+        "TEXT": "Confirme tes données et la tâche sera fermée.",
+        "BUTTON": {
+          "CANCEL": {
+            "ACTION": "Annuler",
+            "LABEL": "Annuler"
+          },
+          "CONFIRM": {
+            "ACTION": "Sauvegarder",
+            "LABEL": "Sauvegarder"
+          }
+        }
+      }
+    },
+
+    "CANCEL": "Annuler",
+    "CONFIRM": "Confirme",
+    "POSTPONE_TASK": "Repousser le rendez-vous",
+    "NAME_TASK": "Tâche name",
+    "DATE": "Date",
+    "TIME": "Heure",
+    "MAX_CHARS": "160 personnage",
+    "WHOLEDAY": "Pendant la journée"
+  },
+  "TICKET_GUIDE_PAGE": {
+    "TITLE": "Instruction"
+  },
+  "TICKET_INFO_PAGE": {
+    "TITLE": "Informations"
+  },
+  "TICKET_ORDER_PAGE": {
+    "TITLE": "Boutique"
+  },
+  "PW_RECOVERY_PAGE": {
+    "RECOVER": "Réinitialisation du mot de passe",
+    "RECOVERED": "Réinitialisation du mot de passeted",
+    "ENTER_MAIL": "Veuillez saisir l'adresse e-mail que vous avez utilisée pour vous connecter à l'application confidu. Nous t'enverrons ensuite un lien pour réinitialiser ton mot de passe.",
+    "ENTER_PW": "Tape maintenant ton nouveau mot de passe.",
+    "EMAIL": "Adresse e-mail",
+    "PASSWORD": "Nouveau mot de passe",
+    "PASSWORD_REPEAT": "Répète le nouveau mot de passe",
+    "SUCCESS": "Ton mot de passe a été modifié avec succès. Il est valable à partir de maintenant.",
+    "REQ_LINK": "Demande le lien",
+    "BACK_TO_LOGIN": "Retourner à la connexion",
+    "STORE": "Sauvegarder",
+    "NOTIFICATIONS_PAGE": {
+      "TITLE": "Notifications",
+      "LAB_RESULT": "Résultats du laboratoire",
+      "RECIPE_RATINGS": "Évaluations (recette de cuisine)",
+      "TASKS_REMINDER": "Rappels (tâches)",
+      "RECIPE_COMMENTS": "Commentaires (recette de cuisine)",
+      "PUSH":  "Push",
+      "PUSH_NOTIFICATION": "Notification pousser",
+      "MAIL": "Courriel",
+      "TEXT": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
+      "GET_NOTIFIED": "Notifications reçues"
+    }
+  },
+  "SIGNUP_PAGE": {
+    "SIGNUP": "Crée ton nouveau compte confidu",
+    "NO_ACCOUNT": {
+      "PART_1": "Tu n'as pas encore de compte ?",
+      "PART_2": "Crée un compte maintenant."
+    },
+    "PW_RECOVERY":  " Tu as oublié ton mot de passe ?",
+    "TO_LOGIN": "Connecte-toi avec ton compte existant",
+    "SIGNIN": "Connexion",
+    "EMAIL": "Courriel",
+    "PASSWORD": "Mot de passe",
+    "PASSWORD_CONFIRM": "Confirme le mot de passe",
+    "PASSWORD_TEXT": "7 caractères ou plus, min 1 majuscule et 1 numérique",
+    "COMPLIANCE": {
+      "PART_1": "J'accepte le",
+      "PART_2": "et accepte le",
+      "PART_3": "accepte",
+      "PRIVACY": "politique de confidentialité",
+      "CONDITIONS": "les conditions d'utilisation"
+    }
+
+  },
+  "VERIFICATION_PAGE": {
+    "HEADER": {
+      "VERIFICATION": "Vérifie ton compte",
+      "RECOVER_SUCCESS": "Lien envoyé",
+      "RECOVER_FAIL": "Erreur lors de l'envoi"
+    },
+    "BODY": {
+      "VERIFICATION": {
+        "PART_1": "Nous t'avons envoyé un lien de confirmation à l'adresse que tu as fournie pour activer ton compte.",
+        "PART_2": "Envoyé. En cliquant sur le lien, tu activeras l'adresse."
+      },
+      "RECOVER_SUCCESS": {
+        "PART_1": "Le lien a été envoyé avec succès à",
+        "PART_2": "Envoyé."
+      },
+      "RECOVER_FAIL": {
+        "PART_1": "Aucun compte confidu n'a pu être associé à l'adresse e-mail que tu as fournie. Veuillez utiliser l'adresse e-mail que tu as enregistrée auprès de confidu."
+      },
+      "LINK_REPEAT": {
+        "PART_1": "Aucun email reçu ?",
+        "PART_2": "Demande à nouveau le lien."
+      }
+    }
+  },
+  "WALKTHROUGH_PAGE": {
+    "TITLE": "Walkthrough",
+    "CANCEL": "Sauter",
+    "START": "Allons-y",
+    "SLIDES": [
+      {
+        "TITLE": "CareCard",
+        "TEXT": "Emporte le dossier patient de ton animal à tout moment - toutes les données de santé regroupées dans une seule application.",
+        "IMG": "care card"
+      },
+      {
+        "TITLE": "Test du bâtonnet d'urine",
+        "TEXT": "Détecte et surveille les maladies potentielles depuis le confort de ta maison.",
+        "IMG": "urine test stick"
+      },
+      {
+        "TITLE": "Tests médicaux",
+        "TEXT": "A partir d'échantillons de selles ou d'urine, teste la santé de ton animal.",
+        "IMG": "medicine tests"
+      },
+      {
+        "TITLE": "Mon bol",
+        "TEXT": "Crée des plans d'alimentation en fonction des besoins individuels de ton animal en nutriments et en énergie comme un pro.",
+        "IMG": "Mon bol"
+      },
+      {
+        "TITLE": "Planificateur",
+        "TEXT": "Garde une trace de toutes les tâches importantes de ton animal avec notre planificateur - de la distribution des médicaments aux soins des oreilles en passant par tes propres rendez-vous.",
+        "IMG": "planner"
+      },
+      {
+        "TITLE": "TeleVétérinaire",
+        "TEXT": "Symptôme d'état répondre aux questions commencer le traitement - notre vétérinaire en ligne t'aidera tout de suite.",
+        "IMG": "televet_guide"
+      },
+      {
+        "TITLE": "Assurance",
+        "TEXT": "Gère de manière pratique les dossiers d'assurance et les prestations de tes animaux de compagnie.",
+        "IMG": "insurance"
+      }
+    ]
+  },
+  "NOTIFICATIONS_LIST_PAGE": {
+    "TITLE": "Notifications",
+    "HEADER": "Tes notifications"
+  },
+  "USER_MODAL_PAGE": {
+    "LANGUAGES": {
+      "GERMAN": "Allemand",
+      "ENGLISH": "Anglais",
+      "DANISH": "Dansk",
+      "ITALIAN": "Italien",
+      "FRENCH": "Français",
+      "SPANISH": "Espagnol",
+      "POLISH": "Polonais"
+    },
+    "LANGUAGE": {
+      "TITLE": "Langue",
+      "CHOOSE": "Choisis la langue"
+    },
+    "NAME": {
+      "TITLE": "Nom",
+      "NAME": "Ton nom",
+      "FIRST_NAME": "Prénom",
+      "LAST_NAME": "Nom de famille",
+      "BUTTON": "Sauvegarder"
+    },
+    "PHONE": {
+      "TITLE": "Téléphone",
+      "PHONE": "Téléphone",
+      "BUTTON": "Sauvegarder",
+      "EXPLANATION": "Lorem Ipsum"
+    },
+    "PW": {
+      "TITLE": "Mot de passe",
+      "CHANGE_PW": "Modifier le mot de passe",
+      "CURRENT_PW": "Mot de passe actuel",
+      "CONFIRM_PW": "Répète le nouveau mot de passe",
+      "NEW_PW": "Nouveau mot de passe",
+      "BUTTON": "Modifier le mot de passe"
+    },
+    "EMAIL": {
+      "TITLE": "Courriel",
+      "MAIL": "Ton email",
+      "NEW_MAIL": "Nouvel email",
+      "CONFIRM_MAIL": "Répète le nouvel email",
+      "TEXT": "Ton email a changé ? S'il te plaît, entre ton nouvel email afin de le lier à ton compte.",
+      "PASSWORD": "Mot de passe",
+      "BUTTON": "Changer d'email"
+    }
+  },
+  "HOME_MODAL_PAGE": {
+    "HEADER": "Veuillez choisir le type de consultation :",
+    "QUESTIONNAIRE": "Recherche de diagnostic (gratuit)",
+    "CALL": "Réserver un appel vidéo (14,99 €)",
+    "CALL_DESCRIPTION": "Après l'achat, l'appel vidéo est enregistré dans le planificateur. Choisis la date qui convient pour accéder à ton lien d'appel vidéo et parle de ton problème avec nos vétérinaires.",
+    "CANCEL": "Annuler",
+    "PROGRESS": "Procéder"
+  },
+  "REGISTER_CODE": {
+    "REG_TEXT": "Saisis ici le code d'enregistrement qui accompagne ton matériel d'échantillonnage.",
+    "EG": "Par exemple, 0123456789",
+    "WRONG_PET": "Tu t'es connecté avec le mauvais animal ?",
+    "INVALID_CODE": "Code invalide",
+    "USED_CODE": "Code déjà utilisé",
+    "CHANGE_PET": "Changer d'animal",
+    "REG_SUCCESS": "Inscription réussie",
+    "ASSIGNMENT": [
+      "Le produit", "a été attribué", "avec succès."
+    ]
+  },
+  "BENEFITS_PAGE": {
+    "TITLE": "Résultats",
+    "YOUR_BENEFITS": "Vos résultats",
+    "BUTTONS_TEXT": "Racheter",
+    "CONFI_COINS": {
+      "HEADER": "Collecté Confi-Coins",
+      "TEXT": "Échangez vos Confi-Coins et obtenez des réductions sur plusieurs de nos produits et services."
+    },
+    "CUPS": {
+      "HEADER": "Coupes obtenues",
+      "TEXT": "Lorem ipsum dolor bla bla bla"
+    }
+  }
+}

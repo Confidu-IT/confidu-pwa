@@ -71,14 +71,12 @@
             </ion-card-content>
           </ion-card>
 
-          <mat-expansion-panel *ngIf="result?.image">
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                {{ result?.image?.header }}
-              </mat-panel-title>
-            </mat-expansion-panel-header>
-            <img [src]="result?.image?.link" alt="">
-          </mat-expansion-panel>
+          <ion-card *ngIf="result?.image">
+            <ion-card-content>
+              <h4 *ngIf="result?.image?.header"></h4>
+              <img [src]="result?.image?.link" alt="">
+            </ion-card-content>
+          </ion-card>
 
           <ion-card *ngIf="result?.datesHeadline">
             <ion-card-content>

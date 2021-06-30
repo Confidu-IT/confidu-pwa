@@ -519,10 +519,11 @@
               </ng-container>
 
               <div class="checkbox checkbox-global" *ngIf="question?.values.questionType.toLowerCase() === 'ch2'">
-                <mat-checkbox *ngFor="let button of question?.values.answerOption; let i = index"
+                <mat-checkbox
+                  *ngFor="let button of question?.values.answerOption[0].answerLongtext; let i = index"
                   class="checkbox-buttons"
                              (change)="changeCheckbox($event, i)"
-                > {{ button.answerLongtext }}</mat-checkbox>
+                > {{ button }}</mat-checkbox>
               </div>
 
               <div class="weigh-input">
@@ -641,7 +642,9 @@
 
               <ng-container *ngIf="question?.values.questionType.toLowerCase() === 'find'">
                 <div class="attach-docs">
-                  <app-attach-document [user]="user" [path]="question?.name.toLowerCase()"
+                  <app-attach-document
+                    [user]="user"
+                    [path]="question?.values?.answerOption[0]?.answerValue?.category_key + '/' + question?.values?.answerOption[0]?.answerValue?.key"
                                        (attachments)="receiveAddedFiles($event)"></app-attach-document>
                 </div>
               </ng-container>

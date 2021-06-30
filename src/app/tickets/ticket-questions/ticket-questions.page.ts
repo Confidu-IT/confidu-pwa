@@ -705,10 +705,8 @@ export class TicketQuestionsPage {
       val = val[0];
       val.answerValue = arr;
     } else if (this.question.values.questionType.toLowerCase() === 'ch2') {
-      console.log('agb');
       val = this.question.values.answerOption;
       val = val[0];
-      val.value = 'FUP_Q16_true';
     }
 
     // no file upload
@@ -831,7 +829,7 @@ export class TicketQuestionsPage {
   public changeCheckbox(event, index) {
     this.selectedAnswer = false;
     this.checkBoxValues[index] = event.checked.toString();
-    if (this.question.values.answerOption.length === this.checkBoxValues.length && !this.checkBoxValues.includes('false')) {
+    if (this.question.values.answerOption[0].answerLongtext.length === this.checkBoxValues.length && !this.checkBoxValues.includes('false')) {
       this.selectedAnswer = true;
     }
   }

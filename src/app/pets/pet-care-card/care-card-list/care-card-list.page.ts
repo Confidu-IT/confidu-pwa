@@ -142,7 +142,9 @@ export class CareCardListPage {
         }
       }
       this.manageTicket(ticketId);
-    } else if (action !== 'update') {
+    } else if (action === 'purchase') {
+      return this.router.navigateByUrl(`lab`);
+    } else {
       console.log(this.modalTitle);
       this.presentModal(this.user, 'doc', this.modalTitle.doc);
     }

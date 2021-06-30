@@ -12,7 +12,7 @@
     <ion-spinner *ngIf="isLoading" color="primary"></ion-spinner>
     <ion-row *ngIf="!isLoading" class="pet-spot-buttons" (click)="zoomOut()">
       <ion-col offsetSm="2" sizeSm="8">
-        <h2>
+        <h2 *ngIf="!bodyPart">
           <span *ngIf="!isPoison">{{ televet?.HEADER }}</span>
           <span *ngIf="isPoison">{{ televet?.POISON_HEADER }}</span>
         </h2>
@@ -21,7 +21,7 @@
 <!--        <h2>-->
 <!--          <span *ngIf="bodyPart">{{ televet?.HEADER }}</span>-->
 <!--        </h2>-->
-        <p class="description"  *ngIf="bodyPart">
+        <p class="description" *ngIf="bodyPart">
           <span *ngIf="bodyPart && !isPoison">{{ televet?.DESCRIPTION }}: {{ bodyPart }}</span>
           <span *ngIf="bodyPart && isPoison">{{ bodyPart }}</span>
           <span *ngIf="symptom"> | {{ symptom }}</span>
