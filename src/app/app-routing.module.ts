@@ -196,7 +196,11 @@ const routes: Routes = [
     path: 'benefits',
     loadChildren: () => import('./benefits/benefits.module').then( m => m.BenefitsPageModule)
   },
-  { path: '**', redirectTo: 'home', pathMatch: 'full' }
+  {
+    path: 'help',
+    loadChildren: () => import('./help/help.module').then( m => m.HelpPageModule)
+  },
+  { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
 
 @NgModule({
