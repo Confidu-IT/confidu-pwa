@@ -14,6 +14,10 @@ import {CommonService} from '../shared/services/common/common.service';
 export class HelpPage {
   public isLoading: boolean;
   public user: any;
+  public iconPath = '../../assets/icons/help';
+  public helpIcon = `${this.iconPath}/help.svg`;
+  public formText: string;
+  public uploadPath: string;
 
   private subscription: Subscription;
   private addedFiles: string[];
@@ -31,10 +35,21 @@ export class HelpPage {
     this.isLoading = true;
     this.language = this.commonService.language;
     this.translateService.use(this.language);
+    this.uploadPath = `support-doc`;
+    // user-docs/uid/petId/support/datum
     this.subscription = this.userAuth.user$
       .subscribe(user => {
         this.user = user;
+        this.isLoading = false;
       })
+  }
+
+  public receiveAddedFiles(event) {
+    this.addedFiles = event;
+  }
+
+  public onSendForm() {
+
   }
 
   ionViewWillLeave() {

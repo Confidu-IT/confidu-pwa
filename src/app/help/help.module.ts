@@ -10,6 +10,7 @@ import { HelpPage } from './help.page';
 import {TranslateModule} from '@ngx-translate/core';
 import {SharedComponentsModule} from '../shared/components/shared-components.module';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     TranslateModule.forChild(),
     SharedComponentsModule,
     MatCheckboxModule,
+    MatExpansionModule,
     HelpPageRoutingModule
   ],
   declarations: [HelpPage]

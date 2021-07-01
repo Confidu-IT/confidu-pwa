@@ -1228,5 +1228,16 @@
     },
     "CONFIRM": "Übernehmen",
     "ABORT": "Abbrechen"
+  },
+  "HELP_PAGE": {
+    "TITLE": "Help",
+    "HEADER": "Help Desk",
+    "SUPPORT": "Technical Support",
+    "SUBHEADER": "Lorem Ipsum Bla bla bla",
+    "SOLUTION_FORM": "Troubleshooting by contact form",
+    "YOUR_MESSAGE": "Your message",
+    "CHARS": "1500 chars",
+    "BUTTON": "send",
+    "FAQ": "Frequently asked questions"
   }
 }

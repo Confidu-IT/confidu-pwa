@@ -77,7 +77,7 @@ export class OrderPage {
     return this.shopwareService.deleteLineItem(id)
       .then(product => {
         if (product.errors) {
-          this.commonService.handleShopErrors(product.errors[0].status);
+          this.commonService.handleShopErrors(product?.errors[0]?.status);
         } else {
           this.shopwareService.getCart()
             .then(cart => {

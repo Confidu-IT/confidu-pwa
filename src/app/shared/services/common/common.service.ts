@@ -44,9 +44,6 @@ export class CommonService {
     // this.translateService.use(this.translateService.getBrowserLang());
 
     this.translateService.use(this.language);
-
-    console.log('this.language', this.language)
-
     this.translateService.get('COMMON')
       .subscribe(common => {
         this.errorMessages = common.HTTP_ERRORS;

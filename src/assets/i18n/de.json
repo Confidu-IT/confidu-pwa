@@ -1251,5 +1251,16 @@
       "HEADER": "Gesammelte Confi-Coins",
       "TEXT": "Kümmere dich um die Gesundheit deines Tieres, in dem du Aufgaben im Planer erledigst. Werde mict Confi-Coins belohnt und steige im Rang auf. Zusätzlich warten Überrraschungen aus unserem Shop auf dich."
     }
+  },
+  "HELP_PAGE": {
+    "TITLE": "Hilfe",
+    "HEADER": "Hilfe-Bereich",
+    "SUPPORT": "Technischer Support",
+    "SUBHEADER": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmm voluptua. At vero e",
+    "SOLUTION_FORM": "Problemlösung per Kontaktformular",
+    "YOUR_MESSAGE": "Deine Nachricht",
+    "CHARS": "1500 Zeichen",
+    "BUTTON": "Senden",
+    "FAQ": "Häufig gestellte Fragen"
   }
 }
