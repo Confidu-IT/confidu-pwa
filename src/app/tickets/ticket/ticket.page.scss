@@ -68,6 +68,10 @@
       padding-top: 20px;
     }
 
+    > li:last-of-type {
+      border-bottom: none;
+    }
+
     .header {
       display: flex;
       justify-content: space-between;

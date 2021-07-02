@@ -37,7 +37,6 @@
           <div class="article-body">
             <ul>
               <li *ngFor="let block of result?.content" class="article-textblock">
-                <h4 *ngIf="block.text.header">{{ block.text.header }}</h4>
                 <div *ngIf="block.text.image" class="text-image">
                   <img [src]="block.text.image.url" alt="">
                   <div *ngIf="block.text.image.author || block.text.image.provider"
@@ -47,6 +46,8 @@
                     <div *ngIf="block.text.image.subtitle" class="image-subtitle"></div>
                   </div>
                 </div>
+
+                <h4 *ngIf="block.text.header">{{ block.text.header }}</h4>
 
                 <ul *ngIf="block.text.style === 'par'" class="paragraphs">
                   <li *ngFor="let p of block.text.body"
@@ -60,6 +61,10 @@
                     {{ p }}
                   </li>
                 </ul>
+
+
+
+
               </li>
             </ul>
             <div class="article-source" *ngIf="result?.header?.source">
@@ -94,7 +99,7 @@
       <ion-col *ngIf="params?.type === 'recipe'" offsetSm="2" sizeSm="8">
 
         <div class="image-author recipe-author">
-          {{ result?.image?.header }} |
+          {{ result?.image?.header }}
         </div>
 
         <ion-card *ngIf="result?.initial && result?.initial.visibility" class="is-emergency">

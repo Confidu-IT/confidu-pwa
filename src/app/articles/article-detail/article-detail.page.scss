@@ -32,7 +32,7 @@ ion-card-content {
 .image-author, .image-subtitle {
   color: #aaa;
   font-size: 11px;
-  font-style: italic;
+  //font-style: italic;
   //margin-top: -8px;
 }
 
@@ -65,15 +65,16 @@ ion-card-content {
     }
 
     h2 {
-      font-size: 24px;
-      font-weight: 300;
-      margin: 16px 0 12px;
+      font-size: 17px;
+      font-weight: 500;
+      margin: 16px 0 6px;
     }
 
     h3 {
-      font-size: 16px;
+      font-size: 14px;
       font-style: italic;
-      font-weight: 500;
+      font-weight: normal;
+      margin-top: 0;
     }
 
 
@@ -113,7 +114,8 @@ ion-card-content {
       font-size: 14px;
       font-weight: 700;
       line-height: 1.4;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
+      margin-top: 24px;
     }
 
     .text-image {
@@ -126,8 +128,9 @@ ion-card-content {
 
     .paragraphs, .lists {
       li {
-        font-size: 12px;
-        margin-bottom: 12px;
+        font-size: 13px;
+        line-height: 18px;
+        margin-bottom: 6px;
       }
     }
 
@@ -138,6 +141,7 @@ ion-card-content {
 
     .lists {
       list-style-type: disc;
+      padding-left: 30px;
     }
 
   }
@@ -426,6 +430,7 @@ ion-card-content {
 }
 
 .recipe-author {
+  margin-left: 20px;
   margin-bottom: 16px;
 }
 

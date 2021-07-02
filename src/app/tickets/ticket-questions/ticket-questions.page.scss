@@ -9,12 +9,12 @@
     //margin-top: 60px;
 
     //position: relative;
-    height: 220px;
+    height: 140px;
     //width: 100%;
 
-    &.is-gif {
-      height: unset;
-    }
+    //&.is-gif {
+    //  height: unset;
+    //}
 
     .type-slider {
       height: unset;
@@ -29,8 +29,8 @@
       }
 
       &.beats {
-        height: 140px;
-        width: 140px;
+        height: 120px;
+        width: 120px;
       }
     }
 
@@ -360,6 +360,7 @@ ion-range {
   justify-content: space-around;
 
   ion-button {
+    margin-top: 30px;
     --border-radius: 0;
     --padding-end: 40px;
     --padding-start: 40px
