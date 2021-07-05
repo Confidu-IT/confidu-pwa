@@ -124,6 +124,7 @@ export class HomePage {
         if (!user) {
           return this.router.navigateByUrl('/signup');
         }
+        console.log('user', user);
         this.user$ = user;
         this.patchButton = false;
         this.healthStateIcon = this.statusCheckInactiveImg;

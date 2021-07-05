@@ -17,10 +17,17 @@
             <ion-img [src]="item.notification.image"></ion-img>
             <div class="notification">
               <div class="content">
-                <span class="author">{{ item.notification.author }}: </span>
+                <span class="author">{{ item.notification.author }} </span>
                 {{ item.notification.body }}
               </div>
-              <div class="date">{{ item.date.seconds * 1000 | date: 'dd.MM.yyyy' }}</div>
+              <div class="notification-footer">
+                <div class="date">{{ item.notification.date.seconds * 1000 | date: 'dd.MM.yyyy' }}</div>
+                <div class="footer-link"
+                     *ngIf="item.notification.link.extern || item.notification.link.intern"
+                     (click)="onClick(item.notification.link)">
+                  <ion-icon color="secondary" name="link-outline"></ion-icon>
+                </div>
+              </div>
             </div>
           </li>
         </ul>

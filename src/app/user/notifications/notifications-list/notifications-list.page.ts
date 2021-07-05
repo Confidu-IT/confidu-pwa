@@ -53,6 +53,15 @@ export class NotificationsListPage {
     });
   }
 
+  public onClick(link: any): any {
+    if (link.extern) {
+      return;
+    }
+    if (link.intern) {
+      return this.router.navigateByUrl(`tickets/${link.intern}/${link.key}/null/result`);
+    }
+  }
+
   ionViewWillLeave() {
     this.notes = undefined;
     this.subscription.unsubscribe();

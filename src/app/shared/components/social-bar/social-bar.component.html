@@ -1,14 +1,17 @@
 <ul class="socials-list">
-  <li *ngIf="socials.facebook">
-    <img [src]="fbImage" alt="" height="12" (click)="onclick('/')">
+  <li>
+    <img [src]="fbImage" alt="" height="12" (click)="onclick('facebook')">
   </li>
-  <li *ngIf="socials.twitter">
-    <img [src]="twitterImage" alt="" height="12" (click)="onclick('/')">
+  <li>
+    <img [src]="twitterImage" alt="" height="12" (click)="onclick('twitter')">
   </li>
-  <li *ngIf="socials.mail">
+  <li class="to-divider">
+    <img [src]="whatsAppImage" alt="" height="12" (click)="onclick('whatsapp')">
+  </li>
+  <li class="from-divider">
     |
   </li>
-  <li *ngIf="socials.mail">
-    <img [src]="mailImage" alt="" height="12" (click)="onclick('/')">
+  <li>
+    <img [src]="mailImage" alt="" height="11" (click)="onclick('mail')">
   </li>
 </ul>

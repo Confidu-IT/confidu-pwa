@@ -15,17 +15,13 @@ export class ArticleDetailPage {
   public user: any;
   public result: any;
   public isLoading: boolean;
-  public socials = {
-    facebook: true,
-    twitter: true,
-    mail: true
-  };
   public slideOptions = {
     initialSlide: 0,
     slidesPerView: 2,
     spaceBetween: 12
   };
   public params: any;
+
   private subscription: Subscription;
   private readonly routeSub: Subscription;
 

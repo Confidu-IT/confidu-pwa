@@ -27,8 +27,8 @@
                 {{ 'ARTICLE_DETAIL_PAGE.FROM' | translate }}
                 {{ result?.header?.date | date: 'dd.MM.yyyy' }}
               </div>
-              <ng-container *ngIf="socials">
-                <app-social-bar [socials]="socials"></app-social-bar>
+              <ng-container *ngIf="result?.share?.link">
+                <app-social-bar [link]="result?.share?.link" [title]="result?.header?.headline"></app-social-bar>
               </ng-container>
             </div>
             <h2>{{ result?.header?.headline }}</h2>

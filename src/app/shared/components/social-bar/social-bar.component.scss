@@ -5,10 +5,18 @@
 
   li {
     display: inline-block;
-    margin-right: 25px;
+    margin-right: 20px;
   }
 
   li:last-of-type {
     margin-right: 0;
+  }
+
+  .to-divider {
+    margin-right: 15px;
+  }
+
+  .from-divider {
+    margin-right: 17px;
   }
 }
