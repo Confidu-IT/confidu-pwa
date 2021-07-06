@@ -88,7 +88,7 @@ export class CommonService {
     const headers = {
       'Content-Type': 'application/json',
       'firebase-context-token': token,
-      'sw-context-token': localStorage.getItem('sw-token') || null
+      // 'sw-context-token': localStorage.getItem('sw-token')
     };
     const body = {
       petId: petID,
@@ -96,6 +96,26 @@ export class CommonService {
       scanData: data
     };
     return this.http.post(url, body, { headers });
+  }
+
+  public notifyBackend(petId: string, uid: string, userToken: string): Promise<any> {
+    const headers = {
+      "Content-Type": "application/json",
+      "firebase-context-token": userToken,
+      "sw-context-token": localStorage.getItem('sw-token')
+    };
+    const body = JSON.stringify({petId, uid});
+    const url = `${environment.baseUrl}/${this.language}/pet-registration`;
+    return fetch(url, { method: 'POST', headers, body })
+      .then((resp) => {
+        if (!resp.ok) {
+          throw resp.json();
+        }
+        return resp.json();
+      })
+      .catch(e => {
+        return e;
+      });
   }
 
   public sendInvoice(

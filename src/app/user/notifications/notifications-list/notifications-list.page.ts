@@ -55,7 +55,7 @@ export class NotificationsListPage {
 
   public onClick(link: any): any {
     if (link.extern) {
-      return;
+      return window.open(link.extern, '_blank');
     }
     if (link.intern) {
       return this.router.navigateByUrl(`tickets/${link.intern}/${link.key}/null/result`);

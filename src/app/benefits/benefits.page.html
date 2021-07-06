@@ -39,16 +39,7 @@
             </div>
             <div class="cups">
               <ul class="cups-list">
-                <li *ngFor="let item of data?.cups">
-                  <div class="left">
-                    <h3> {{item.label }}</h3>
-                    <div class="rank">{{ item.section }} | {{ item.rank }}</div>
-                    <div class="text">{{ item.text }}</div>
-                  </div>
-                  <div class="right"></div>
-                  <img [src]="item.image" alt="" width="60">
-                </li>
-                <li *ngFor="let item of data?.cups">
+                <li *ngFor="let item of data?.cups" (click)="onClickLink(item.section)">
                   <div class="left">
                     <h3> {{item.label }}</h3>
                     <div class="rank">{{ item.section }} | {{ item.rank }}</div>

@@ -200,6 +200,10 @@ const routes: Routes = [
     path: 'help',
     loadChildren: () => import('./help/help.module').then( m => m.HelpPageModule)
   },
+  {
+    path: 'benefits-detail/:type',
+    loadChildren: () => import('./benefits/benefits-detail/benefits-detail.module').then( m => m.BenefitsDetailPageModule)
+  },
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
 

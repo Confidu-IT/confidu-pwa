@@ -3,6 +3,7 @@ import {TranslateService} from '@ngx-translate/core';
 import {CommonService} from '../shared/services/common/common.service';
 import {Subscription} from 'rxjs';
 import {AuthService} from '../user/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-benefits',
@@ -23,6 +24,7 @@ export class BenefitsPage {
     private translateService: TranslateService,
     private commonService: CommonService,
     private userAuth: AuthService,
+    private router: Router
   ) { }
 
   ionViewWillEnter() {
@@ -35,8 +37,8 @@ export class BenefitsPage {
       });
   }
 
-  public onRedeem(): void {
-
+  public onClickLink(link: string): void {
+    this.router.navigateByUrl(`benefits-detail/${link}`);
   }
 
   ionViewWillLeave() {

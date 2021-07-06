@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>benefits-detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-text-center" *ngIf="isLoading">
+    <ion-spinner color="primary"></ion-spinner>
+  </div>
+  <ion-grid *ngIf="!isLoading">
+    <ion-row>
+      <ion-col sizeSm="8" offsetSm="2">
+        <ion-card class="base-card">
+          <ion-card-content>
+            <div class="left">
+              <h2>{{ data?.header?.headline }}</h2>
+              <p class="body">{{ data?.header?.body }}</p>
+            </div>
+            <div class="right">
+              <img [src]="data?.header?.image" alt="" height="60" width="60">
+            </div>
+          </ion-card-content>
+        </ion-card>
+
+        <ul>
+          <li *ngFor="let item of data?.achievements">
+            <ion-card>
+              <ion-card-content>
+                <h2>{{ item.headline }}</h2>
+                <p class="body">{{ item.body }}</p>
+                <ul>
+                  <li *ngFor="let ranking of item.rankings" class="achievements">
+                    <div class="cup">
+                      <img [src]="ranking.image" alt="" height="39" width="39">
+                    </div>
+                  </li>
+                </ul>
+              </ion-card-content>
+            </ion-card>
+          </li>
+        </ul>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer *ngIf="!isLoading">
+  <app-toolbar-footer [user]="user"></app-toolbar-footer>
+</ion-footer>

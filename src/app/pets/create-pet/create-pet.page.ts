@@ -367,9 +367,10 @@ export class CreatePetPage implements OnInit {
     // console.log('pet', pet);
     this.createFireBasePet(this.user$.uid, pet)
       .then((res) => {
-        // console.log('res', res);
+        console.log('res', res);
         this.form.reset();
         this.petAvatar = `${this.iconPath}/pets_blue_cam.svg`;
+        this.loadingController.dismiss();
         this.router.navigateByUrl('home');
       })
       .catch((error) => {
@@ -379,8 +380,10 @@ export class CreatePetPage implements OnInit {
   }
 
   private async createFireBasePet(userId, pet): Promise<any> {
+    this.presentLoading();
     const data = await this.firebaseService.createPet(this.user$.uid, pet);
     localStorage.setItem('activePet', data.id);
+    await this.commonService.notifyBackend(data.id, userId, this.user$.za);
     return this.firebaseService.createActivePetId(userId, data.id);
   }
 
