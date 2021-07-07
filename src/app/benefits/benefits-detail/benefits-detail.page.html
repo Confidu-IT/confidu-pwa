@@ -32,10 +32,12 @@
               <ion-card-content>
                 <h2>{{ item.headline }}</h2>
                 <p class="body">{{ item.body }}</p>
-                <ul>
-                  <li *ngFor="let ranking of item.rankings" class="achievements">
-                    <div class="cup">
-                      <img [src]="ranking.image" alt="" height="39" width="39">
+                <ul class="achievements">
+                  <li *ngFor="let ranking of item.rankings">
+                    <img [src]="ranking.image" alt="" height="39" width="39">
+                    <div class="rank">
+                      {{ ranking.type }}<br>
+                      {{ ranking.rank }}
                     </div>
                   </li>
                 </ul>

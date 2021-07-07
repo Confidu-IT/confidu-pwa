@@ -50,7 +50,7 @@ export class BenefitsDetailPage {
    achievements: [
      {
        headline: 'Hermanns Pflege-Erfolge',
-       body: '27 von 64 Aufgaben in dieser Kategorie geschafft',
+       body: '27 von 64 Aufgaben in dieser Kategorie geschafft.',
        rankings: [
          {
            image: 'https://biblicalpreaching.files.wordpress.com/2013/02/example.jpg',
