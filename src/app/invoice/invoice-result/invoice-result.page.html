@@ -84,7 +84,8 @@
             </ng-container>
             <div class="input-data">
               <mat-form-field>
-                <input matInput placeholder="z.B. 37.99" [(ngModel)]="result.invoicePrice.data">
+                <input matInput [placeholder]="'PRESCRIPTION_RESULT_PAGE.PRICE' | translate"
+                       [(ngModel)]="result.invoicePrice.data">
                 <span matSuffix>€</span>
               </mat-form-field>
             </div>

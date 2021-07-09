@@ -74,7 +74,7 @@
   h2  {
     font-size: 14px;
     padding-right: 16px;
-    margin: 2px 0;
+    margin: 0;
   }
 
   &-price {
@@ -105,13 +105,20 @@
     font-size: 12px;
     font-style: italic;
     margin-top: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
 
   .prescription-type {
     color: var(--ion-color-primary);
     font-size: 11px;
     margin-bottom: 6px;
+  }
+
+  .med-category {
+    color: var(--ion-color-medium);
+    font-size: 11px;
+    margin-bottom: 6px;
+    margin-top: 6px;
   }
 
   .eye {

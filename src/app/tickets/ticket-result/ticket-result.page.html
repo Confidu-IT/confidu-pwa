@@ -110,12 +110,12 @@
                       {{ element?.titel }}
                     </h4>
                     <div (click)="openIngredientsList(i)" *ngIf="element.expandable" class="chevrons">
-                      <ion-icon *ngIf="!listOpen[i].val" name="chevron-down-outline"></ion-icon>
-                      <ion-icon *ngIf="listOpen[i].val" name="chevron-up-outline"></ion-icon>
+                      <ion-icon *ngIf="!listOpen[i]?.val" name="chevron-down-outline"></ion-icon>
+                      <ion-icon *ngIf="listOpen[i]?.val" name="chevron-up-outline"></ion-icon>
                     </div>
                   </div>
 
-                  <div *ngIf="element?.body && listOpen[i].val" class="text-blocks">
+                  <div *ngIf="element?.body && listOpen[i]?.val" class="text-blocks">
                     <p *ngFor="let p of element?.body">{{ p }}</p>
                   </div>
 
@@ -133,8 +133,8 @@
                             <span class="valB" *ngIf="item.value?.valB"> {{ item.value.valB }} </span>
                           </div>
                           <div (click)="openIngredientsList(i)" *ngIf="item.expandable" class="chevrons">
-                            <ion-icon *ngIf="!listOpen[i].val" name="chevron-down-outline"></ion-icon>
-                            <ion-icon *ngIf="listOpen[i].val" name="chevron-up-outline"></ion-icon>
+                            <ion-icon *ngIf="!listOpen[i]?.val" name="chevron-down-outline"></ion-icon>
+                            <ion-icon *ngIf="listOpen[i]?.val" name="chevron-up-outline"></ion-icon>
                           </div>
                         </div>
                       </li>
@@ -616,10 +616,44 @@
               <p>{{ result?.nextDate }}</p>
             </ion-card-content>
           </ion-card>
+
+          <ul class="actions-list" *ngIf="result?.actions">
+            <li *ngFor="let element of result?.actions">
+              <ion-card *ngIf="element.visibility">
+                <ion-card-content>
+                  <h4 *ngIf="element.header">{{ element.header }}</h4>
+                  <p *ngIf="element.body" class="text-body">{{ element.body }}</p>
+                  <ion-button expand="full" color="secondary"
+                              class="action-button"
+                              *ngIf="element.label"
+                              (click)="onClickActionButton(element.link)">
+                    {{ element.label }}
+                  </ion-button>
+                </ion-card-content>
+              </ion-card>
+
+              <mat-expansion-panel *ngIf="!element.visibility">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    {{ element.header }}
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <p *ngIf="element.body" class="text-body">{{ element.body }}</p>
+                <ion-button expand="full" color="secondary"
+                            class="action-button"
+                            *ngIf="element.label"
+                            (click)="onClickActionButton(element.link)">
+                  {{ element.label }}
+                </ion-button>
+              </mat-expansion-panel>
+            </li>
+          </ul>
         </div>
+
         <ng-container *ngIf="result?.products && result?.products.length > 0">
           <app-products-container [products]="result?.products"></app-products-container>
         </ng-container>
+
       </ion-col>
     </ion-row>
   </ion-grid>

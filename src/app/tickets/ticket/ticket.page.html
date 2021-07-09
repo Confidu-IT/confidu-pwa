@@ -67,6 +67,19 @@
              </div>
            </ng-container>
 
+           <ng-container *ngIf="ticket?.type === 'redirect'">
+             <div class="videocall">
+               <div class="videocall-text">{{ ticket?.content[0]?.questions_long_text }}</div>
+               <ion-button
+                 expand="full"
+                 color="secondary"
+                 class="input-number-button"
+                 (click)="goToCall(ticket?.content[0]?.url)">
+                 {{ 'TICKET_PAGE.START_CALL' | translate }}
+               </ion-button>
+             </div>
+           </ng-container>
+
            <ng-container *ngIf="ticket?.type === 'common'">
              <div class="radio">
                <div class="radio-content" >

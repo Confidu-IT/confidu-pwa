@@ -18,14 +18,15 @@
                   <img [src]="item?.data.cover.media.url" alt="">
                 </div>
                 <div class="product-details">
-                  <div class="prescription-type">
-                    <span *ngIf="item?.med_header">
-                      {{ item?.med_header }}
-                    </span>
+                  <div class="prescription-type" *ngIf="item?.med_header">
+                    {{ item.med_header }}
                   </div>
                   <h2>{{item?.data.translated.name}}</h2>
-                  <div *ngIf="item?.data.translated.description" class="category">
-                    {{item?.data.translated.description}}
+                  <div class="med-category" *ngIf="item?.med_category">
+                    {{ item.med_category }}
+                  </div>
+                  <div *ngIf="item?.data?.translated?.description" class="category">
+                    {{item.data.translated.description}}
                   </div>
                   <div class="product-price">
                     <div class="price">{{item?.data.calculatedPrice.totalPrice}} €</div>

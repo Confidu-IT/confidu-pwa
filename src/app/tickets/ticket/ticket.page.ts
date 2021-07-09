@@ -205,6 +205,10 @@ export class TicketPage {
 
   }
 
+  public goToCall(link: string) {
+    window.open(link, 'blank');
+  }
+
   public onDeleteEvent(): void {
     this.presentAlert(this.actions.delete.msg, this.actions.delete.btn, 'deleted');
   }
@@ -233,7 +237,7 @@ export class TicketPage {
   private getTicket(userId: string, petId: string, ticketId: string): void {
     this.firebaseService.getTicketById(userId, petId, ticketId)
       .subscribe(data => {
-        // console.log('data', data);
+        console.log('data', data);
         if (data) {
           this.ticket = data;
           if (data?.guide?.value) {

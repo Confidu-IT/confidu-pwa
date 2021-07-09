@@ -382,7 +382,8 @@
     "DATE": "Datum",
     "TIME": "Uhrzeit",
     "MAX_CHARS": "160 Zeichen",
-    "WHOLEDAY": "Im Laufe des Tages"
+    "WHOLEDAY": "Im Laufe des Tages",
+    "START_CALL": "Konsultation starten"
   },
   "TICKETS_PAGE": {
     "HEADER": "Planer von",
@@ -668,6 +669,7 @@
   "PRESCRIPTION_RESULT_PAGE": {
     "TITLE": "Rechnungsdaten",
     "ADD": "Hinzufügen",
+    "PRICE": "z.B. 37,99",
     "ADD_MED": "Präparat eingeben",
     "DATE_TIME_BTNS_CANCEL": "Abbrechen",
     "DATE_TIME_BTNS_DONE": "Übernehmen",

@@ -67,7 +67,7 @@ export class TicketResultPage implements CanDeactivateGuard {
         this.petId = localStorage.getItem('activePet');
 
         // delete this
-        // this.result = this.ticketService.blah;
+        // this.result = this.ticketService.foo;
         // console.log('this.result', this.result);
         // this.createChevrons();
 
@@ -116,6 +116,10 @@ export class TicketResultPage implements CanDeactivateGuard {
       'HOE', 'FIE', 'UNT', 'SEH', 'GRA', 'KOT', 'FRI', 'WEA', 'VEH', 'NIE'
     ];
     return emergencySymptoms.includes(this.params.symptom);
+  }
+
+  public onClickActionButton(key): void {
+    console.log('key', key);
   }
 
   public openIngredientsList(index) {

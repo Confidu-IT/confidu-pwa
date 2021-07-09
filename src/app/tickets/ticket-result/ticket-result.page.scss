@@ -340,6 +340,15 @@ h4 {
   //border-bottom: 1px solid #d6d6d6;
 }
 
+.actions-list {
+  padding-left: 0;
+  list-style: none;
+
+  .action-button {
+    margin-top: 32px;
+  }
+}
+
 
 //.valB {
 //  padding-left: 12px;

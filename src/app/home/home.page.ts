@@ -170,7 +170,7 @@ export class HomePage {
   private getArticles(petId: string, uid: string, token: any): void {
     this.commonService.getArticles(petId, uid, token)
       .subscribe(articles => {
-        // console.log('articles', articles);
+        console.log('articles', articles);
         this.articles = articles;
       });
   }
