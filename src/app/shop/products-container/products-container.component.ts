@@ -39,7 +39,7 @@ export class ProductsContainerComponent {
   }
 
   public onClickProduct(product: any): void {
-    this.presentProductModal(product.data);
+    this.presentProductModal(product);
   }
 
   public toCartAdded(id: string): boolean {

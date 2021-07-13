@@ -18,7 +18,6 @@ export class ProductModalPage implements OnInit {
   public productImage: string;
   public form: FormGroup;
   public medAmount: string;
-  public usageInstructions: any;
   public instructionsLink: string;
   @Input() item: any;
 
@@ -43,18 +42,9 @@ export class ProductModalPage implements OnInit {
     this.language = this.commonService.language;
     this.translateService.use(this.language);
     console.log('item', this.item);
-    this.title = this.item.translated.name;
-    this.productImage = this.item.cover.media.url;
-
-    let str = this.item.translated.customFields.product_json_description;
-    str = str.replace(/^"|"$/g, '');
-    str = str.replace(/'/g, '"');
-
-    this.usageInstructions = JSON.parse(str);
-    // this.usageInstructions = '';
-    console.log('this.usageInstructions', this.usageInstructions);
-
-    this.instructionsLink = this.item.translated.customFields.product_pdf_Dokument;
+    this.title = this.item.med_name;
+    this.productImage = this.item?.data?.cover?.media.url;
+    this.instructionsLink = this.item?.product_pdf_dokument;
     this.medAmount = this.item.med_amount ? this.item.med_amount.toString() : '1';
     this.form = new FormGroup( {
       quantity: new FormControl(null, {

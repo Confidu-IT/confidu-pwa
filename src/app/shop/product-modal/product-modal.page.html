@@ -26,34 +26,31 @@
                 <div>
                   <p class="size">
                     {{ 'PRODUCT_MODAL_PAGE.UNIT' | translate }}:
-                    {{ item.purchaseUnit }} {{ item.translated.packUnit }}
+<!--                    {{ item.data.purchaseUnit }} {{ item.data.translated.packUnit }}-->
+                    {{ item?.med_package_ges }}
                   </p>
-                  <p class="category" *ngIf="item?.translated.description">
-                    {{item.translated.description}}
+                  <p class="category" *ngIf="item?.med_category">
+                    {{item?.med_category}}
                   </p>
                 </div>
                 <div class="prescription-type">
-                            <span *ngIf="item?.translated.customFields.product_prescription">
+                            <span *ngIf="item?.data?.translated.customFields.product_prescription">
                               {{ 'PRODUCT_MODAL_PAGE.PRESCRIPTION' | translate }}
                             </span>
-<!--                  <span *ngIf="item?.translated.customFields.product_pharmacy">-->
+<!--                  <span *ngIf="item?.data?.translated.customFields.product_pharmacy">-->
 <!--                              {{ 'PRODUCT_MODAL_PAGE.PHARMACY' | translate }}-->
 <!--                            </span>-->
                 </div>
               </div>
               <div class="product-price">
                 <span>{{ 'PRODUCT_MODAL_PAGE.PRICE' | translate }}:
-                </span>{{ item?.calculatedPrice.totalPrice }} €
+                </span>{{ item?.data?.calculatedPrice?.totalPrice.toFixed(2) }} €
               </div>
-              <p class="product-delivery">
-                <span *ngIf="item.stock > 0">{{ 'PRODUCT_MODAL_PAGE.STOCK' | translate }} &#124;</span>
-                {{ 'PRODUCT_MODAL_PAGE.DELIVERY_TIME' | translate }}:
-                {{ item.deliveryTime.translated.name }}
-              </p>
+
               <form [formGroup]="form" class="product-order">
 
                 <ion-select
-                  *ngIf="!item?.translated.customFields.product_prescription"
+                  *ngIf="!item?.data?.translated?.customFields?.product_prescription"
                   class="product-quantity"
                   formControlName="quantity">
                   <ion-select-option
@@ -61,7 +58,7 @@
                     {{ i + 1 }}
                   </ion-select-option>
                 </ion-select>
-                <ion-select *ngIf="item?.translated.customFields.product_prescription"
+                <ion-select *ngIf="item?.data?.translated?.customFields?.product_prescription"
                             class="product-quantity"
                             formControlName="quantity">
                   <ion-select-option [value]="medAmount">
@@ -78,40 +75,48 @@
               </p>
               <div class="product-footer">
                 <div class="usage">
-                  <h5 class="indication-header">{{ usageInstructions.indication_header }}</h5>
-                  <p *ngIf="usageInstructions.indication_first" class="usage-text">
-                    {{ usageInstructions.indication_first }}
-                  </p>
-                  <ul *ngIf="usageInstructions.indication_firstlist" class="indication-list">
-                    <li *ngFor="let el of usageInstructions.indication_firstlist">{{ el }}</li>
-                  </ul>
-                  <p *ngIf="usageInstructions.indication_second" class="usage-text">
-                    {{ usageInstructions.indication_second }}
-                  </p>
-                  <ul *ngIf="usageInstructions.indication_secondlist" class="indication-list">
-                    <li *ngFor="let el of usageInstructions.indication_secondlist">{{ el }}</li>
-                  </ul>
-                  <p *ngIf="usageInstructions.indication_third" class="usage-text">
-                    {{ usageInstructions.indication_third }}
-                  </p>
-                  <ul *ngIf="usageInstructions.indication_thirdlist" class="indication-list">
-                    <li *ngFor="let el of usageInstructions.indication_thirdlist">{{ el }}</li>
-                  </ul>
+                  <h5 class="indication-header">{{ item?.indication?.header }}</h5>
 
-                  <p *ngIf="usageInstructions.indication_other" class="usage-text">
-                    {{ usageInstructions.indication_other }}
-                  </p>
+                  <ng-container *ngIf="item?.indication?.body?.indicationFirst">
+                    <p *ngIf="item?.indication?.body?.indicationFirst?.header" class="usage-text">
+                      {{ item?.indication?.body?.indicationFirst?.header }}
+                    </p>
+                    <ul *ngIf="item?.indication?.body?.indicationFirst?.body" class="indication-list">
+                      <li *ngFor="let el of item?.indication?.body?.indicationFirst?.body">{{ el }}</li>
+                    </ul>
+                  </ng-container>
 
+                  <ng-container *ngIf="item?.indication?.body?.indicationSecond">
+                    <p *ngIf="item?.indication?.body?.indicationSecond?.header" class="usage-text">
+                      {{ item?.indication?.body?.indicationSecond?.header }}
+                    </p>
+                    <ul *ngIf="item?.indication?.body?.indicationSecond?.body" class="indication-list">
+                      <li *ngFor="let el of item?.indication?.body?.indicationSecond?.body">{{ el }}</li>
+                    </ul>
+                  </ng-container>
+
+                  <ng-container *ngIf="item?.indication?.body?.indicationThird">
+                    <p *ngIf="item?.indication?.body?.indicationThird?.header" class="usage-text">
+                      {{ item?.indication?.body?.indicationThird?.header }}
+                    </p>
+                    <ul *ngIf="item?.indication?.body?.indicationThird?.body" class="indication-list">
+                      <li *ngFor="let el of item?.indication?.body?.indicationThird?.body">{{ el }}</li>
+                    </ul>
+                  </ng-container>
+
+                  <ng-container *ngIf="item?.indication?.body?.indicationOther">
+                    <p *ngIf="item?.indication?.body?.indicationOther?.header" class="usage-text">
+                      {{ item?.indication?.body?.indicationOther?.header }}
+                    </p>
+                    <ul *ngIf="item?.indication?.body?.indicationOther?.body" class="indication-list">
+                      <li *ngFor="let el of item?.indication?.body?.indicationOther?.body">{{ el }}</li>
+                    </ul>
+                  </ng-container>
                   <p class="usage-instructions">{{ 'PRODUCT_MODAL_PAGE.INSTRUCTIONS' | translate }}</p>
-                  <div class="instructions-link" *ngIf="item?.translated?.customFields?.product_pdf_Dokument">
+                  <div class="instructions-link" *ngIf="item?.product_pdf_dokumentt">
                     <a [href]="instructionsLink" target="_blank">{{ 'PRODUCT_MODAL_PAGE.INST_LINK' | translate }}</a>
                   </div>
 
-<!--                  <mat-expansion-panel>-->
-<!--                    <mat-expansion-panel-header>-->
-<!--                      {{ 'PRODUCT_MODAL_PAGE.DOSAGE' | translate }}-->
-<!--                    </mat-expansion-panel-header>-->
-<!--                  </mat-expansion-panel>-->
                 </div>
               </div>
             </ion-card-content>

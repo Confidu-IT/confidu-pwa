@@ -1,1 +1,1243 @@
-{}
+{
+  "HOME_PAGE": {
+    "CARE_CARD": "CareCard",
+    "COINS": "Confi-Coins",
+    "BENEFITS": "Beneficios",
+    "TREAT": "Tratamiento",
+    "PHARMACY": "Farmacia",
+    "FEEDING": "Alimentación",
+    "CURRENT_FEEDING": "Alimentación actual",
+    "SWITCH_RATION": "Consejo sobre la ración a cambiar.",
+    "DETAILS": "Detalles",
+    "STATUS": {
+      "1": "¿Cómo es",
+      "2": "hoy?",
+      "INSTRUCTIONS": "Tippe mehrmals auf das Hundesymbol und bestätige den passenden Zustand mit dem Häkchen."
+    },
+    "OVERVIEW": "Resumen",
+    "CHANGE_PET": "Cambiar mascota",
+    "TO_TASKS": "Planificador",
+    "TODAY_TASKS": "Tareas de hoy",
+    "TODAY": "Hoy",
+    "TASK": "Tarea",
+    "RECIPE_HEADER": "Pedir medicación",
+    "RECIPE_TEXT": "Lorem ipsum dolor sit amet",
+    "PATCH_BUTTON": "Tratamiento",
+    "DANGER_BUTTON": "Emergencia",
+    "EMERGENCY": "Emergencia",
+    "PET_STATE": "¿Cómo es",
+    "HEALTH_STATE_TEXT": {
+      "EXCELLENT": "Bueno",
+      "GOOD": "Malo",
+      "BAD": "Enfermo",
+      "WORSE": "Emergencia"
+    },
+    "NO_TASKS_TEXT": {
+      "PART_1": "Hoy son",
+      "PART_2": "ninguna tarea"
+    },
+    "NEW_ARTICLES": "Revista",
+    "WEEKLY_RECIPE": "Fresco al cuenco"
+  },
+  "NAVIGATION": {
+    "RATION": "Raciones-Comprueba",
+    "BOWL": "Mi cuenco",
+    "HARNSTICK": "Prueba de la varilla de orina",
+    "LAB": "Laboratorio",
+    "CONTRACT": "Contrata",
+    "DAMAGE": "Reclamación",
+    "HOME": "Inicio",
+    "SIGNOUT": "Cerrar la sesión"
+  },
+  "COMMON": {
+    "MSG": {},
+    "HTTP_ERRORS": {
+      "PRODUCTS": {
+        "400": "Producto no encontrado",
+        "451": "Producto no encontrado",
+        "403": "El usuario no ha iniciado sesión"
+      },
+      "LOGIN": {
+        "400": "Correo electrónico ya utilizado",
+        "401": "Correo electrónico o contraseña no válidos",
+        "403": "FOOBAR"
+      }
+    }
+  },
+  "MAIN_NAV": {
+    "FEEDING": "Alimentación",
+    "FOOD_CHECK": "Comprobación de la comida",
+    "BOWL": "Mi cuenco",
+    "RESEARCH": "Investigación",
+    "LAB": "Laboratorio",
+    "URINE_TEST": "Prueba de la varilla de orina",
+    "PROTECT": "Proteger",
+    "CONTRACT": "Contrata",
+    "DAMAGE": "Reclamacións",
+    "SHOP": "Shop"
+  },
+  "SIDE_NAV": {
+    "SETTINGS": "Configuración",
+    "ACCOUNT": "Cuenta",
+    "ORDER": "Pedido",
+    "NOTIFICATIONS": "Notificaciones",
+    "HELP": "Ayuda",
+    "LOGOUT": "Cerrar la sesión"
+  },
+  "CREATE_PET_PAGE": {
+    "CASTRATION_VALUES": {
+      "TRUE": "Esterilizado",
+      "FALSE": "No castrado"
+    },
+    "GENDER": {
+      "MALE": "Macho",
+      "FEMALE": "Hembra"
+    },
+    "SPECIES_LIST": {
+      "CAT": "Gato",
+      "DOG": "Perro"
+    },
+    "OK_BUTTON": "Guardar",
+    "CANCEL_BUTTON": "Cancelar",
+    "NAME_LABEL": "Nombre de la mascota",
+    "SPECIES_LABEL": "Especie",
+    "BREED_LABEL": "Raza",
+    "GENDER_LABEL": "Sexo",
+    "CASTRATION_LABEL": "Estado de castración",
+    "BIRTHDAY_LABEL": "Cumpleaños",
+    "FORM_BUTTON": "Crear mascota",
+    "WAITING": "Por favor, espera..."
+  },
+  "ACCOUNT_PAGE": {
+    "NAME": "Nombre",
+    "ADDRESS": "Dirección",
+    "MAIL": "Correo electrónico",
+    "PHONE": "Teléfono",
+    "TITLE": "Cuenta",
+    "INFOS": "Información personal",
+    "CHANGE_PW": "Cambiar la contraseña",
+    "DEL_ACC": "Eliminar la cuenta",
+    "BEQUEST": "Foobar",
+    "CHOOSE_LANGUAGE": "Elegir idioma",
+    "LANGUAGES": {
+      "GERMAN": "Alemán",
+      "ENGLISH": "Inglés",
+      "DANISH": "Dansk",
+      "ITALIAN": "Italiano",
+      "FRENCH": "Francés",
+      "SPANISH": "Español",
+      "POLISH": "Polaco"
+    }
+  },
+  "PETS_LIST_PAGE": {
+    "TITLE": "Mis mascotas"
+  },
+  "TELEVET_PET_PAGE": {
+    "PET_SPOT_TEXT": {
+      "CANCEL_BUTTON": "Cancelar",
+      "SWELLING": "Hinchazón/grupo/nodo",
+      "STIFFNESS":"Rigidez",
+      "MUSCULAR_DYSTROPHY": "Atrofia muscular",
+      "FLATULENCE": "Flatulencia",
+      "DIARRHAE": "Diarrea",
+      "VOMITING": "Vómitos",
+      "VOMITING_DIARRHAE": "Vómitos y diarrea",
+      "ITCHING": "Picor",
+      "CONSTIPATION": "Estreñimiento",
+      "BITE": "Mordedura",
+      "SUCKLES": "Hinchazón de la teta",
+      "STOMACH_PAIN": "Dolor abdominal",
+      "TRAVEL_SICKNESS": "Enfermedad de viaje",
+      "COUGH": "Tos",
+      "VOMIT": "Vómitos",
+      "SNORING": "Ronquidos/sonidos respiratorios fuertes",
+      "EARS_HEARING": "Deterioro de la audición",
+      "EARS_SCRATCH": "Rascarse el oído",
+      "EARS_DISCHARGE": "Secreción del oído",
+      "EARS_STINKY": "Oído con olor desagradable",
+      "EARS_SWOLLEN": "Oído hinchado",
+      "EARS_INJURY": "Lesión en el oído",
+      "EYES_IMPAIRED": "Deterioro de la visión",
+      "EYES_CHANGES": "Cambios en los ojos",
+      "SWELLING_VULVA": "Hinchazón de la vulva",
+      "TESTICLES_CHANGES": "Alteración de los testículos",
+      "UNWANTED_PREGNANCY": "Cobertura no deseada",
+      "VAGINAL_DISCHARGE": "Flujo vaginal",
+      "PENIS_DISCHARGE": "Secreción del pene",
+      "PENIS_ISSUE": "Prolapso del pene",
+      "URINATION_PAIN": "Dolor al orinar",
+      "URINATION_CHANGE": "Orina alterada",
+      "URINATION_LOW": "Baja producción de orina",
+      "URINATION_HIGH_DRINKING": "Aumento de la micción y de la bebida",
+      "URINATION_HIGH": "Orinar con frecuencia",
+      "HEAT": "Calor",
+      "EAT_FECES": "Comer heces",
+      "EAT_GRASS": "Come hierba",
+      "EAT_NONE": "No come",
+      "DRINKING_HIGH": "Aumento de la bebida",
+      "VOICE_CHANGES":  "Cambio de voz",
+      "FOOT_ODOR": "Olor de la boca",
+      "NOSE_DRY": "Nariz seca",
+      "NOSE_BLEEDING": "Hemorragia nasal",
+      "NOSE_DISCHARGE": "Secreción nasal",
+      "SNEEZE": "Estornudos",
+      "LAMENESS": "Cojera",
+      "SWELLING_JOINT": "Hinchazón de las articulaciones",
+      "INJURY_CLAW": "Lesión en las garras",
+      "INJURY_PAW": "Lesión en la pata",
+      "INJURY_BITE": "Mordedura",
+      "BUMPINESS": "Vuelco",
+      "HYPOCRISY": "Falso embarazo",
+      "FEVER":  "Fiebre",
+      "TEMPERATURE_LOW": "Temperatura baja",
+      "BEHAVIOUR_CHANGE": "Cambio de comportamiento",
+      "WEAKNESS": "Debilidad",
+      "WEIGHT_LOSS": "Pérdida de peso",
+      "WEIGHT_GAIN": "Aumento de peso",
+      "FUR_SHAGGY": "Pelaje desaliñado y sin brillo",
+      "FLEA_INVESTATION": "Infestación de pulgas",
+      "SKIN_STINKY": "Piel con olor desagradable",
+      "FUR_LOSS": "Pérdida de pelo sin picores",
+      "FUR_LOSS_ITCHING": "Pérdida de pelo con picores",
+      "INJURY_SKIN": "Lesión en la piel",
+      "WOUND": "Herida/contratiempo",
+      "CHOCOLATE": "Chocolate",
+      "MEDS": "Medicación",
+      "TOBACCO": "Tabaco/nicotina",
+      "MISC": "Otros productos alimenticios",
+      "BREATH_SHORTNESS": "Falta de aliento",
+      "EMERGENCY_BIRTH": "Emergencia al nacer",
+      "EYES_INJURY": "Lesión ocular",
+      "HEAVY_STOMACH_PAIN": "Dolor abdominal intenso",
+      "HEATSTROKE": "Golpe de calor",
+      "NO_URINE": "Imposibilidad de orinar",
+      "SEIZURE": "Convulsión",
+      "PARALYSIS": "Parálisis",
+      "BROKEN_BONE": "Fractura abierta",
+      "HEAVY_BLEEDING": "Hemorragia intensa",
+      "APNEA": "Parada respiratoria y cardíaca",
+      "GASTRIC_TORSION": "Torsión gástrica",
+      "UNCONSCIOUSNESS": "Inconsciencia",
+      "SHOCK":  "Choque",
+      "POISONING": "Envenenamiento"
+    },
+    "CLICK_SPOT": {
+      "BUTT": {
+        "LABEL": "Culata",
+        "SPOT": "butt"
+      },
+      "BACK": {
+        "LABEL": "Moverse",
+        "SPOT": "back"
+      },
+      "BELLY": {
+        "LABEL": "Vientre",
+        "SPOT": "belly"
+      },
+      "TAIL": {
+        "LABEL": "Cola",
+        "SPOT": "tail"
+      },
+      "LEGS": {
+        "LABEL": "Piernas",
+        "SPOT": "legs"
+      },
+      "CHEST": {
+        "LABEL": "Pecho",
+        "SPOT": "chest"
+      },
+      "EAR": {
+        "LABEL": "Oreja",
+        "SPOT": "ear"
+      },
+      "EYE": {
+        "LABEL": "Ojo",
+        "SPOT": "eye"
+      },
+      "NOSE": {
+        "LABEL": "Nariz",
+        "SPOT": "nose"
+      },
+      "MOUTH": {
+        "LABEL": "Boca",
+        "SPOT": "mouth"
+      },
+      "HEAD_REGION": {
+        "SPOT": "head-region"
+      },
+      "BODY_REGION": {
+        "SPOT": "body-region"
+      },
+      "HEAD": {
+        "LABEL": "Cabeza",
+        "SPOT": "head"
+      },
+      "THROAT": {
+        "LABEL": "Garganta",
+        "SPOT": "throat"
+      },
+      "ABDOMEN": {
+        "LABEL": "Abdomen",
+        "SPOT": "abdomen"
+      },
+      "GENERAL": {
+        "LABEL": "Estado general",
+        "SPOT": "general"
+      },
+      "FUR": {
+        "LABEL": "Pieles",
+        "SPOT": "fur"
+      },
+      "POISON": {
+        "LABEL": "Veneno",
+        "SPOT": "poison"
+      }
+    },
+    "HEADER": "¿Dónde aparecen los síntomas?",
+    "POISON_HEADER": "¿Qué se ha comido?",
+    "DESCRIPTION": "En el ámbito",
+    "ACTION": "Toca en la zona afectada.",
+    "PROGRESS_BUTTON": "Siguiente",
+    "ZOOM_BUTTON": "Espalda",
+    "TITLE": "Veterinario"
+  },
+  "PRESCRIPTION_UPLOAD_PAGE": {
+    "TITLE": "Carga de la factura",
+    "TEXT": "Sube todas las páginas de tu factura.",
+    "LABEL": "Visita del veterinario"
+  },
+  "PRESCRIPTION_RESULT_PAGE": {
+    "TITLE": "Datos de la factura",
+    "ADD": "Añade",
+    "ADD_MED": "Añadir preparación",
+    "DATE_TIME_BTNS_CANCEL": "Cancelar",
+    "DATE_TIME_BTNS_DONE": "Aplicar",
+    "ADD_THERAPY": "Introducir terapia",
+    "ADD_FINDING": "Introducir hallazgo",
+    "ADD_DIAGNOSIS": "Introducir diagnóstico",
+    "VET_VISIT": "Visita del veterinario",
+    "PROGRESS": "Proceder",
+    "REPEAT": "Repetir"
+  },
+  "FU_PAGE": {
+    "TITLE": "Medicar",
+    "BUTTONS": {
+      "BACK": "Espalda",
+      "FORWARD": "Siguiente"
+    },
+    "INTRO_TEXT": "Para poder hacer la receta y enviarte el medicamento necesitamos que nos envíes una factura de tu veterinario con la siguiente información",
+    "INTRO_LIST": [
+      "Nombre y dirección del veterinario",
+      "Nombre y fecha de nacimiento de tu mascota",
+      "Tu nombre y dirección",
+      "Diagnóstico",
+      "Nombre del medicamento"
+    ],
+    "CHOOSE": "Por favor, selecciona la enfermedad y el medicamento que quieres pedir para tu mascota:",
+    "MANUAL_CHOICE": "Por favor, selecciona el medicamento que quieres solicitar. Intentaremos conseguirlo y te avisaremos.",
+    "ALERT": {
+      "TITLE": "Gracias por tu solicitud.",
+      "TEXT": "Comprobaremos tus datos y te avisaremos lo antes posible.",
+      "BUTTONS": {
+        "CANCEL": "Cancelar",
+        "DONE": "Hecho"
+      }
+    },
+    "DISEASES": "Selecciona la enfermedad",
+    "MEDS": "Nombre del medicamento",
+    "NO_MED": "¿Tu medicamento no está incluido?",
+    "REQ_MED": "Solicita un medicamento"
+
+  },
+  "TICKETS_PAGE": {
+    "HEADER": "Planificador de",
+    "EXEC": "Realiza",
+    "UPLOAD": "Añadir imagen (jpg/png)",
+    "ADD_IMAGE": "Imagen de portada para esta tarea (opcional)",
+    "ACTIONS": {
+      "CLOSE": {
+        "MSG": "Por favor, confirma tu entrada y la tarea se cerrará.",
+        "BTN": "Aplicar"
+      },
+      "DELETE": {
+        "MSG": "¿Estás seguro de que quieres eliminar esta tarea?",
+        "BTN": "Eliminar"
+      },
+      "DATE_TIME_BTNS": {
+        "CANCEL": "Cancelar",
+        "DONE": "Aplicar"
+      }
+    },
+    "WEIGHT_LABEL": "Peso en kg",
+    "TITLE": "Planificador",
+    "HOMEWORK": "Planificador",
+    "TODAY_TASKS": "Mis Tareas",
+    "DONE":  "Hecho",
+    "DELETE": "Eliminar",
+    "POSTPONE": "Aplazar cita",
+    "NEW_TASK": "Crear una nueva tarea",
+    "NO_TASKS": "No hay tareas que hacer hoy.",
+    "CREATE_TASK": "Crear tarea",
+    "CANCEL": "Cancelar",
+    "CONFIRM": "Aplicar",
+    "POSTPONE_TASK": "Aplazar cita",
+    "NAME_TASK": "Nombre de la tarea",
+    "DATE": "Fecha",
+    "TIME": "Hora",
+    "MAX_CHARS": "160 caracteres",
+    "WHOLEDAY": "Durante el día"
+
+  },
+  "TICKET_QUESTION_PAGE": {
+    "QUESTION": "Pregunta",
+    "BEATS": "Latidos",
+    "PULSE": "Pulso",
+    "PROGRESS_BUTTON": "Siguiente",
+    "BACK_BUTTON": "Espalda",
+    "CANCEL_BUTTON": "Cancelar",
+    "OK_BUTTON": "Aplicar",
+    "UPLOAD_IMAGE": "Añadir imágenes (máx. 3 máx. 5 MB)",
+    "IMAGE_TOO_LARGE": "La imagen es demasiado grande.",
+    "TELEVET_TITLE": "Medicar",
+    "WEIGHT_LABEL": "Ejemplo: 8,25",
+    "TOY_LABEL": "Insertar juguete",
+    "CHOOSE": "Por favor, selecciona",
+    "AMOUNT": "Cantidad",
+    "UNIT": "Unidad",
+    "KG": "kg",
+    "CM": "cm",
+    "CHIP": "Nº de chip",
+    "TEMPERA": "°C",
+    "NO_IDEA": "No sé",
+    "TREATMENT": {
+      "HOME": "Administrado para el tratamiento en casa",
+      "VET": "Administrado una vez en la consulta del médico"
+    },
+    "MED": {
+      "NAME": "Ingrediente activo o preparado nam",
+      "DAILY": "Diariamente",
+      "DAYS": "Día(s)",
+      "PIECE": "Pieza",
+      "PART": "Parte",
+      "PERMANENT": "Administración permanente",
+      "FREQUENCY": "Frecuencia de entrada",
+      "STARTDATE": "Fecha de inicio",
+      "ENDDATE": "Fecha de finalización",
+      "TIME": "en punto",
+      "AMOUNT": "Cantidad",
+      "TREATMENT_PERIOD": "Tratamiento period",
+      "NOTES": "Tus notas (150 caracteres)",
+      "CHARS": "150 caracteres",
+      "BUTTON": "Añade",
+      "STRENGTH": "Selecciona la fuerza del efecto",
+      "MEDS": {
+        "TIME": "en punto",
+        "DAYS": "Días",
+        "TREATMENT_PERIOD": "Tratamiento period",
+        "FROM": "de",
+        "AT": "en"
+      }
+    },
+    "VET": {
+      "ZIP_CODE": "Introduce el código postal",
+      "VETS_LIST": "Selecciona el veterinario",
+      "NO_VET": "¿No encuentras tu veterinario?",
+      "ADD_VET": "Puedes introducir los datos manualmente aquí.",
+      "VET_ERROR": "Lo sentimos, no hemos encontrado ningún veterinario para este código postal.",
+      "FORM": {
+        "HEADER": "Por favor, introduce los datos de tu veterinario:",
+        "DOC_OFFICE": "Nombre del consultorio (opcional)",
+        "NAME": "Nombre del veterinario",
+        "ADDRESS": "Número de la calle",
+        "ZIP_CODE": "Código postal"
+      }
+    },
+    "VACC": {
+      "SERUM": "Vacuna",
+      "CURRENT": "Fecha de vacunación",
+      "NEXT": "Fecha de la próxima vacunación"
+    },
+    "FOOD": {
+      "ADD": "Añade",
+      "TYPES": {
+        "DRY": "Comida seca",
+        "WET": "Comida húmeda",
+        "FOODS": "Comida",
+        "SNACKS": "Snacks",
+        "VMIN": "Alimento complementario"
+      },
+      "TYPE": "Tipo de alimento",
+      "CHOOSE_PRODUCT": "Selecciona el producto",
+      "AMOUNT": "Cantidad",
+      "UNIT": "Unidades"
+    },
+    "PARASITES": {
+      "LABEL": "Medicamento",
+      "DATE": "Fecha de administración"
+    }
+  },
+  "TICKET_RESULT_PAGE": {
+    "TITLE": "Evaluación",
+    "DIAG_HEADER": "Diagnóstico",
+    "NO_RESULT": "No hay resultados disponibles todavía.",
+    "URGENCY": "Urgencia",
+    "THERAPY": "Terapia",
+    "DIAGNOSIS": "Hallazgos",
+    "REASONS": "Causas comunes",
+    "HOW_TO": "¿Cómo puedo ayudar a mi mascota?",
+    "GO_BACK": "Volver a la página de inicio",
+    "HELP": "¿Ayuda?",
+    "NEEDS": "Lo que necesitas",
+    "ORDER_TITLE": "Pide los medicamentos directamente en línea",
+    "ORDER_DESCRIPTION": "Hemos recopilado los medicamentos necesarios para la terapia. Añade tus productos a la cesta de la compra.",
+    "TICK": "Selecciona/deselecciona el producto",
+    "OR": "o",
+    "ORDER_TEXT": "Save to cart",
+    "ORDER_BUTTON": "Comprobar",
+    "CART_BUTTON": "Añadir a la cesta",
+    "AMOUNT": "Cantidad",
+    "DELIVERY_TIME": "Tiempo de entrega",
+    "PRESCRIPTION": "Prescripción",
+    "PHARMACY": "Farmacia requerida",
+    "UNIT": "Talla",
+    "SAVED_CART": "Producto guardado en tu cesta",
+    "CHOICE_QUESTION": "¿Has hecho tu selección?",
+    "CHOICE_TEXT": "Si tu selección está completa, pasa a la cesta",
+    "CHOICE_ANNOTATION": "Ten en cuenta que no puedes recibir posteriormente los productos para la terapia sin consultar de nuevo al veterinario online."
+  },
+  "CARE_CARD_PAGE": {
+    "NO_DATA": "No especificado",
+    "HEADER": "CareCard de",
+    "BASE_DATA": {
+      "TITLE": "Datos básicos",
+      "LIST": {
+        "NAME": "Nombre",
+        "GENDER": "Sexo",
+        "CASTRATION": "Estado de castración",
+        "BREED": "Raza",
+        "BIRTHDAY": "Cumpleaños",
+        "ID": "Nº de identificación"
+      }
+    },
+    "PREVENTION": {
+      "TITLE": "Cuidados preventivos"
+    },
+    "NUTRITION": {
+      "TITLE": "Nutrición"
+    },
+    "MED_TEST": {
+      "TITLE": "Pruebas médicas"
+    },
+    "DISEASES": {
+      "TITLE": "Enfermedades"
+    },
+    "INSURANCE": {
+      "TITLE": "Seguro"
+    },
+    "LIFESTYLE": {
+      "TITLE": "Estilo de vida",
+      "ACTIVITY": {
+        "TITLE": "Nivel de actividad"
+      }
+    }
+  },
+  "CARE_CARD_LIST_PAGE": {
+    "HISTORY": "Historial",
+    "ADD_DOC": "Agregar archivo adjunto",
+    "FINDING_PDF": "Archivo adjunto",
+    "UPLOAD": "Carga de la factura",
+    "MANUAL": "Entrada manual"
+  },
+  "CARE_CARD_DETAIL_PAGE": {
+    "DOWNLOAD": "Descarga de PDF",
+    "PRESCRIPTION": "Receta requerida",
+    "PHARMACY": "Farmacia requerida",
+    "SAVED_CART": "Producto guardado en la cesta",
+    "CHOICE_QUESTION": "¿Has hecho tu selección?",
+    "CHOICE_TEXT": "Si tu selección está completa, pasa a la cesta",
+    "CART_BUTTON": "A la cesta",
+    "MED": {
+      "NAME": "Ingrediente activo o preparado name",
+      "DAILY": "Diariamente",
+      "DAYS": "Día(s)",
+      "PIECE": "Pieza",
+      "PART": "Parte",
+      "PERMANENT": "Permanente",
+      "FREQUENCY": "Frecuencia de entrada",
+      "STARTDATE": "Fecha de inicio",
+      "ENDDATE": "Fecha de finalización",
+      "TIME": "Hora",
+      "AMOUNT": "Cantidad",
+      "TREATMENT_PERIOD": "Tratamiento period",
+      "NOTES": "Tus notas (150 caracteres)",
+      "CHARS": "150 caracteres",
+      "BUTTON": "Añade",
+
+      "MEDS": {
+        "TIME": "en punto",
+        "DAYS": "Día(s)",
+        "TREATMENT_PERIOD": "Tratamiento period",
+        "FROM": "de",
+        "AT": "en"
+      }
+    },
+    "DOC": {
+      "SYMPTOMS": "Síntomas",
+      "DIAGNOSIS": "Diagnóstico"
+    }
+  },
+  "DISEASE_PAGE": {
+    "TITLE": "ADD DISEASE",
+    "HEADER": "Estado de salud actual",
+    "SUB_HEADER": "Todavía no se ha depositado ninguna enfermedad",
+    "DISEASES": "Nombre de la enfermedad",
+    "MEDICATION":  "Medicación",
+    "NOT_CURED":  "No se ha curado",
+    "CURED": "Curada el:",
+    "DETECTED": "Detectada el:",
+    "UPDATE_SUCCESS": "Entrada con éxito",
+    "UPDATE_ERROR": "Entrada fallida",
+
+    "EXPLANATION": {
+      "TITLE": "Documentación de la enfermedads",
+      "TEXT": "Lorem ipsum dolor sit amet, ligula eget dolor. Aenean  nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.",
+      "ANNOTATION": "faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Hechoc sodales sagittis magna. "
+    },
+    "DATE_TIME": {
+      "CANCEL": "Cancelar",
+      "CONFIRM": "Confirmar"
+    },
+    "BUTTONS": {
+      "ADD": "Añade"
+    },
+    "MED": {
+      "ADD": "Añadir medicación",
+      "ADD_TEXT": "¿Qué medicación, si la conoces, se utilizó para tratar la enfermedad? (opción múltiple)"
+    },
+    "DOC": {
+      "ADD": "Añadir hallazgo",
+      "DOC_TEXT": "Si tienes hallazgos relacionados con la enfermedad, puedes adjuntarlos. (por ejemplo, análisis de sangre, radiografías, tomografía computarizada u otros))"
+    }
+  },
+  "CONSULTATION_PAGE": {
+    "TITLE": "Videollamada",
+    "TEXT": "Para ponerte en contacto con uno de nuestros especialistas, selecciona el motivo de consulta",
+    "LABEL": "Selecciona el motivo de consulta",
+    "BUTTON": "Buscar cita"
+  },
+  "CONSULTATION_SCHEDULER_PAGE": {
+    "TITLE": "Videollamada",
+    "TODAY": "Hoy",
+    "TOMORROW": "Mañana",
+    "DAY_AFTER_TOMORROW": "Pasado mañana",
+    "NEXT_AV_APP": "Próxima cita disponible:",
+    "AT": "en",
+    "MIN": "min",
+    "BOOK_IMMEDIATELY": "Reservar inmediatamente",
+    "BOOK_APPOINTMENT": "Reservar cita",
+    "TEXT": {
+      "PART_1": "Tenemos para ti y",
+      "PART_2": "encontrado las siguientes fechas."
+    },
+    "AHEAD_TEXT": "Las citas se pueden reservar hasta con 2 días de antelación. Selecciona el día y la hora en que quieres hablar con un veterinario.",
+    "FIRST_NAME": "Nombre *",
+    "LAST_NAME": "Apellido *",
+    "PHONE": "Teléfono",
+    "MODAL_HEADER": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
+    "CANCEL": "Cancelar",
+    "CONFIRM": "Aceptar"
+  },
+  "CONSULTATION_BOOKING_PAGE": {
+    "TITLE": "Videollamada",
+    "ADD_DOCUMENT": "Añadir documento (jpg, png, pdf)",
+    "ANNOTATIONS": "Anotaciones",
+    "CHARS": "Chars",
+    "ADD_DOCS": "También puedes subir imágenes o documentos.",
+    "BUTTON": "Comprobar",
+    "CHECKBOX": {
+      "CARECARD": {
+        "1": "Confirmo que tengo una videollamada para mi mascota",
+        "2": "nacido en",
+        "3": "me gustaría reservar."
+      },
+      "AGB": {
+        "1": "Confirmo que",
+        "2": "T&C",
+        "3": "&",
+        "4": "política de privacidad",
+        "5": " he leído y aceptado."
+      }
+    }
+  },
+  "DASHBOARD_PAGE": {
+    "TITLE": "Resumen",
+    "HEADER": "Tu visión general",
+    "SUBHEADER": "Aquí puedes hacer un seguimiento de todos los datos de salud y pruebas de laboratorio de tu mascota."
+  },
+  "DISEASE_MODAL_PAGE": {
+    "CANCEL": "Cancelar",
+    "CONFIRM":  "Aplicar",
+    "MED": {
+      "NAME": "Ingrediente activo o preparado name",
+      "DAILY": "Diariamente",
+      "DAYS": "Día(s)",
+      "PIECE": "Pieza",
+      "PART": "Parte",
+      "PERMANENT": "Permanente",
+      "FREQUENCY": "Frecuencia de entrada",
+      "STARTDATE": "Fecha de inicio",
+      "ENDDATE": "Fecha de finalización",
+      "TIME":  "en punto",
+      "AMOUNT": "Cantidad",
+      "TREATMENT_PERIOD": "Tratamiento period",
+      "NOTES": "Tus notas (150 caracteres)",
+      "CHARS": "150 caracteres",
+      "BUTTON": "Añade",
+      "MEDS": {
+        "TIME": "en punto",
+        "DAYS": "Días",
+        "TREATMENT_PERIOD": "Tratamiento period",
+        "FROM": "de",
+        "AT": "en"
+      }
+
+    },
+    "DOC": {
+      "DATE": "Fecha",
+      "ADD": "Añadir documento (jpg pdf - máximo 5 MB)",
+      "DELETE": "Eliminar documento",
+      "BUTTON": "Añade",
+      "UPLOAD": "Añadir documento (jpg, pdf - máximo 5 MB)",
+      "FROM": "de",
+      "BODY_REGIONS": {
+        "LABEL": "Región del cuerpo",
+        "ITEMS": {
+          "LEFT_FRONTLEG": "Pierna delantera izquierda",
+          "RIGHT_FRONTLEG": "Pata delantera derecha",
+          "LEFT_HINDLEG": "Pata trasera izquierda",
+          "RIGHT_HINDLEG": "Pata trasera derecha",
+          "TEETH": "Dientes",
+          "HEAD": "Cabeza",
+          "THROAT": "Garganta",
+          "BREAST": "Pecho",
+          "BACK": "Moverse",
+          "STOMACH": "Abdomen",
+          "TAIL": "Cola",
+          "PELVIS": "Pelvis",
+          "BLOOD": "Sangre",
+          "URINE": "Orina",
+          "FECES": "Heces",
+          "BODY_TISSUE": "Tejido corporal",
+          "OTHER": "Otros"
+        }
+      },
+      "TYPES": {
+        "LABEL": "Tipo de documento",
+        "CT": "TAC",
+        "MRT": "RMN",
+        "X_RAY": "Imagen de rayos X",
+        "ULTRASONIC": "Sonografía",
+        "PHOTO": "Foto",
+        "LAB_RESULT": "Informe de laboratorio"
+      }
+    }
+  },
+  "LAB_PAGE": {
+    "TITLE": "Pruebas de laboratorio",
+    "PARASITES": "Prueba de parásitos",
+    "URINE": "Prueba de la varilla de orina",
+    "DIARRHEA": "Análisis de diarrea",
+    "DIARRHEA_PLUS": "Análisis de diarrea más",
+    "GIARDIA": "Control de giardia",
+    "FLORA": "Flora intestinal",
+    "PREVENTION": "Combinación de cuidados preventivos",
+    "OK_BUTTON": "Aplicar",
+    "CANCEL_BUTTON": "Cancelar",
+    "SWITCH_PET": "Cambiar de animal",
+    "CHOOSE_PET": "Selecciona la mascota para la que quieres activar el cuadro explorador."
+
+  },
+  "QR_CODE_MODAL": {
+    "ERROR": "Código no reconocido"
+  },
+  "RATION_CHECK_PAGE": {
+    "TITLE": "Calculadora de alimentos",
+    "AMOUNT": "Cantidad",
+    "MEAL": "Comida",
+    "MEALS": "Comidas",
+    "QUESTION": {
+      "PREFIX": "¿Cuántas comidas recibes",
+      "SUFFIX": "al día?"
+    },
+    "BUTTONS": {
+      "BACK": "Espalda",
+      "FORWARD": "Siguiente"
+    }
+  },
+  "ATTACH_DOCUMENT": {
+    "ADD_DOCUMENT": "Añadir documento (jpg, png, pdf)"
+  },
+  "TOOLBAR": {
+    "IMG_SELECT": {
+      "HEADER": "Carga rápida de fotos",
+      "SUBHEADER": "Selecciona para qué función quieres utilizar la carga:",
+      "LAB": "Activar la prueba de laboratorio",
+      "PROFILE": "Cambiar la foto del perfil",
+      "INVOICE": "Subir la factura del veterinario",
+      "OK_BUTTON": "Siguiente",
+      "CANCEL_BUTTON": "Cancelar"
+    }
+  },
+  "BILLING_ADDRESS_PAGE": {
+    "BILLING": "Dirección de facturación",
+    "SHIPMENT": "Dirección de envío",
+    "FIRST_NAME": "Nombre",
+    "LAST_NAME": "Apellido",
+    "ADDRESS": "Número de la calle",
+    "ZIPCODE": "Código postal",
+    "CITY": "Ciudad",
+    "COUNTRY": "País",
+    "EQUAL_ADDRESSES": "La dirección de facturación es igual a la dirección de envío",
+    "SUBMIT": "Continuar"
+
+  },
+  "CART_PAGE": {
+    "TITLE": "Cesta",
+    "EMPTY": "La cesta está vacía.",
+    "AMOUNT": "Cantidad",
+    "REMOVE": "Eliminar artículo",
+    "TOTAL": "Precio total",
+    "TAX": "Precio con impuestos incluidos"
+  },
+  "ORDER_PAGE": {
+    "ORDER": "Pedido",
+    "REMOVE": "Eliminar artículo",
+    "CHANGE": "Cambiar",
+    "DELIVERY":  "Entrega",
+    "SHIPMENT": "Gastos de envío",
+    "SUMMARY": "Importe total",
+    "ORDER_NOW": "Pedido con costes",
+    "TAX": "(IVA incluido)",
+    "AMOUNT": "Cantidad",
+    "PRICE": "Precio",
+    "TITLE": "Resumen",
+    "INVOICE": "Factura",
+    "BILLING": "Forma de pago"
+
+  },
+  "ORDER_HISTORY_PAGE": {
+    "TITLE": "Pedidos",
+    "ORDERS": "Pedidos:",
+    "YOUR_ORDERS": "Tus pedidos",
+    "NO_ORDERS": "Todavía no hay pedidos",
+    "DELIVERED": "Entregado",
+    "DELIVERED_AT": "Entregado el:",
+    "ORDERED_AT": "Ordenado el:",
+    "PRICE": "Total:",
+    "BUY_AGAIN": "Volver a comprar",
+    "GET_PRESCRIPTION": "Pedir una receta de seguimiento",
+    "SAVED_CART": "Producto guardado en tu cesta"
+
+  },
+  "PAYMENT_PAGE": {
+    "SUBMIT": "Continuar",
+    "TITLE": "Forma de pago"
+  },
+  "PRODUCT_MODAL_PAGE": {
+    "DELIVERY_TIME": "Tiempo de entrega",
+    "PRESCRIPTION": "Receta requerida",
+    "PHARMACY": "Sólo en farmacia",
+    "UNIT": "Talla",
+    "TAX": "Todos los precios incluyen impuestos más gastos de envío | vendido por",
+    "CART_BUTTON": "Añadir a la cesta",
+    "PRICE": "Precio por unidad",
+    "STOCK": "En stock",
+    "USAGE": "área de aplicación",
+    "INSTRUCTIONS": "Para conocer los riesgos y efectos secundarios, lee el prospecto y pregunta a tu médico o farmacéutico",
+    "INST_LINK": "Descargar el prospecto",
+    "DOSAGE": "Dosificación"
+
+  },
+  "PRODUCT_SHIPMENT_INFO_MODAL": {
+    "TITLE": "Información sobre el envío del producto",
+    "TEXT": "Todos los productos de prescripción y de farmacia son vendidos y enviados exclusivamente por farmacias de venta por correo de Alemania."
+  },
+  "PRODUCTS_CONTAINER": {
+    "ORDER_TITLE": "Pide los medicamentos directamente en línea",
+    "ORDER_DESCRIPTION": "Hemos reunido los medicamentos más necesarios para la terapia. Añade tu selección a la cesta de la compra.",
+    "TICK": "Selecciona/deselecciona el producto",
+    "OR": "o",
+    "ORDER_TEXT": "guardar en la cesta",
+    "ORDER_BUTTON": "Comprobar",
+    "CART_BUTTON": "Añadir a la cesta",
+    "AMOUNT": "Cantidad",
+    "DELIVERY_TIME": "Tiempo de entrega",
+    "PRESCRIPTION": "Prescripción",
+    "PHARMACY": "Farmacia requerida",
+    "UNIT": "Talla",
+    "SAVED_CART": "Producto guardado en tu cesta",
+    "CHOICE_QUESTION": "¿Has hecho tu selección?",
+    "CHOICE_TEXT": "Si tu selección está completa, pasa a la cesta"
+  },
+  "PRESCRIPTION_PAGE": {
+    "DISEASES": "Enfermedades",
+    "MEDICATION": "Medicación",
+    "CANCEL": "Cancelar",
+    "CONFIRM": "Continuar",
+    "PRESCRIPTION": {
+      "ADD_INVOICE": "Añadir factura",
+      "ADD_PAGE": "Añadir otra página"
+    }
+  },
+  "PULSE_PAGE": {
+    "TITLE": {
+      "BREATHE": "Frecuencia respiratoria",
+      "PULSE": "Latidos del corazón"
+    },
+    "INTRO": {
+      "HEADER": "Prepárate",
+      "TEXT": {
+        "BREATHE": "Inicia el temporizador y mientras la cuenta atrás está en marcha, toca el icono con cada respiración de tu mascota",
+        "PULSE": "Inicia el temporizador y mientras la cuenta atrás está en marcha, toca el icono del corazón cada vez que el corazón de tu mascota lata"
+      }
+    },
+    "TIMER": {
+      "TEXT": {
+        "BREATHE": "Ahora toca el icono cada vez que tu mascota respire",
+        "PULSE": "Ahora toca el icono cada vez que el corazón de tu mascota lata"
+      },
+      "BEATS": "Latidos"
+    },
+    "DONE": {
+      "HEADER": "¡YA ESTÁ HECHO!",
+      "TEXT": "Procede a la evaluación."
+    }
+  },
+  "TELEVET_EMERGENCY_PAGE": {
+    "TITLE": "Emergencia",
+    "BUTTONS": {
+      "CANCEL": "Cancelar",
+      "CONFIRM": "Continuar"
+    }
+  },
+  "TELEVET_EMERGENCY_MODAL_PAGE": {
+    "BUTTONS": {
+      "CANCEL": "Cancelar",
+      "PROCEED": "Continuar"
+    }
+  },
+  "TICKET_PAGE": {
+    "EXEC": "Llevar a cabo",
+    "UPLOAD": "Añadir imagen (jpg/png)",
+    "ADD_IMAGE": "Imagen de portada para esta tarea (opcional)",
+    "ACTIONS": {
+      "CLOSE": {
+        "MSG": "Por favor, confirma tus datos y la tarea se cerrará.",
+        "BTN": "Confirmar"
+      },
+      "DELETE": {
+        "MSG": "¿Estás seguro de que quieres eliminar esta tarea?",
+        "BTN": "Eliminar"
+      },
+      "DATE_TIME_BTNS": {
+        "CANCEL": "Cancelar",
+        "DONE": "Confirmar"
+      }
+    },
+    "WEIGHT_LABEL": "Peso en kg",
+    "TITLE": "Billete",
+    "HOMEWORK": "Planificador",
+    "TODAY_TASKS": "Mis Tareas",
+    "DONE": "Hecho",
+    "DELETE": "Eliminar",
+    "POSTPONE": "Aplazar tarea",
+    "NEW_TASK": "Crear una nueva tarea",
+    "CREATE_TASK": "Crear tarea",
+    "CLOSE_TASK": {
+      "BODY": "¿Quieres cerrar esta tarea?",
+      "POPUP": {
+        "TEXT": "Por favor, confirma tus datos y la tarea se cerrará.",
+        "BUTTON": {
+          "CANCEL": {
+            "ACTION": "Cancelar",
+            "LABEL": "Cancelar"
+          },
+          "CONFIRM": {
+            "ACTION": "Guardar",
+            "LABEL": "Guardar"
+          }
+        }
+      }
+    },
+
+    "CANCEL": "Cancelar",
+    "CONFIRM": "Confirmar",
+    "POSTPONE_TASK": "Aplazar cita",
+    "NAME_TASK": "Nombre de la tarea",
+    "DATE": "Fecha",
+    "TIME": "Hora",
+    "MAX_CHARS": "160 personaje",
+    "WHOLEDAY": "Durante el día"
+  },
+  "TICKET_GUIDE_PAGE": {
+    "TITLE": "Instrucción"
+  },
+  "TICKET_INFO_PAGE": {
+    "TITLE": "Información"
+  },
+  "TICKET_ORDER_PAGE": {
+    "TITLE": "Shop"
+  },
+  "PW_RECOVERY_PAGE": {
+    "RECOVER": "Restablecimiento de la contraseña",
+    "RECOVERED": "Restablecimiento de la contraseña",
+    "ENTER_MAIL": "Por favor, introduce la dirección de correo electrónico que utilizaste para registrarte en la aplicación confidu. Después te enviaremos un enlace para restablecer tu contraseña.",
+    "ENTER_PW": "Ahora escribe tu nueva contraseña.",
+    "EMAIL": "Dirección de correo electrónico",
+    "PASSWORD": "Nueva contraseña",
+    "PASSWORD_REPEAT": "Repite la nueva contraseña",
+    "SUCCESS": "Tu contraseña ha sido cambiada con éxito. Es válida a partir de ahora.",
+    "REQ_LINK": "Solicitar enlace",
+    "BACK_TO_LOGIN": "Volver al inicio de sesión",
+    "STORE": "Guardar",
+    "NOTIFICATIONS_PAGE": {
+      "TITLE": "Notificaciones",
+      "LAB_RESULT": "Resultados del laboratorio",
+      "RECIPE_RATINGS": "Valoraciones (receta de cocina)",
+      "TASKS_REMINDER": "Recordatorios (tareas)",
+      "RECIPE_COMMENTS": "Comentarios (receta de cocina)",
+      "PUSH":  "Empujar",
+      "PUSH_NOTIFICATION": "Notificación push",
+      "MAIL": "Correo electrónico",
+      "TEXT": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
+      "GET_NOTIFIED": "Notificaciones recibidas"
+    }
+  },
+  "SIGNUP_PAGE": {
+    "SIGNUP": "Crea tu nueva cuenta confidu",
+    "NO_ACCOUNT": {
+      "PART_1": "¿Aún no tienes una cuenta?",
+      "PART_2": "Crea una cuenta ahora."
+    },
+    "PW_RECOVERY":  "¿Has olvidado tu contraseña?",
+    "TO_LOGIN": "Acceder con una cuenta existente",
+    "SIGNIN": "Entrar en",
+    "EMAIL": "Correo electrónico",
+    "PASSWORD": "Contraseña",
+    "PASSWORD_CONFIRM": "Confirmar contraseña",
+    "PASSWORD_TEXT": "7 o más caracteres min 1 mayúscula y 1 numérico",
+    "COMPLIANCE": {
+      "PART_1": "Acepto el",
+      "PART_2": "y estoy de acuerdo con el",
+      "PART_3": "acepto",
+      "PRIVACY": "política de privacidad",
+      "CONDITIONS": "condiciones de uso"
+    }
+
+  },
+  "VERIFICATION_PAGE": {
+    "HEADER": {
+      "VERIFICATION": "Verifica tu cuenta",
+      "RECOVER_SUCCESS": "Enlace enviado",
+      "RECOVER_FAIL": "Error en el envío"
+    },
+    "BODY": {
+      "VERIFICATION": {
+        "PART_1": "Te hemos enviado un enlace de confirmación a la dirección que nos has facilitado para activar tu cuenta",
+        "PART_2": "Enviado. Al hacer clic en el enlace se activará la dirección."
+      },
+      "RECOVER_SUCCESS": {
+        "PART_1": "El enlace se ha enviado con éxito a",
+        "PART_2": "Enviado."
+      },
+      "RECOVER_FAIL": {
+        "PART_1": "No se ha podido asociar ninguna cuenta de confidu con la dirección de correo electrónico que has proporcionado. Por favor, utiliza la dirección de correo electrónico que registraste en confidu."
+      },
+      "LINK_REPEAT": {
+        "PART_1": "¿No has recibido ningún correo electrónico?",
+        "PART_2": "Vuelve a solicitar el enlace."
+      }
+    }
+  },
+  "WALKTHROUGH_PAGE": {
+    "TITLE": "Paseo por",
+    "CANCEL": "Salta a",
+    "START": "Vamos",
+    "SLIDES": [
+      {
+        "TITLE": "CareCard",
+        "TEXT": "Lleva siempre contigo el historial de tu mascota: todos los datos sanitarios agrupados en una sola aplicación.",
+        "IMG": "care card"
+      },
+      {
+        "TITLE": "Prueba de la varilla de orina",
+        "TEXT": "Detecta y controla posibles enfermedades desde la comodidad de tu casa.",
+        "IMG": "urine test stick"
+      },
+      {
+        "TITLE": "Pruebas médicas",
+        "TEXT": "A partir de muestras de heces u orina, comprueba la salud de tu mascota.",
+        "IMG": "medicine tests"
+      },
+      {
+        "TITLE": "Mi cuenco",
+        "TEXT": "Crea planes de alimentación según las necesidades individuales de nutrientes y energía de tu mascota como un profesional.",
+        "IMG": "My Bowl"
+      },
+      {
+        "TITLE": "Planificador",
+        "TEXT": "Lleva la cuenta de todas las tareas importantes de tu mascota con nuestro planificador, desde la administración de medicamentos hasta el cuidado de los oídos y tus propias citas.",
+        "IMG": "planner"
+      },
+      {
+        "TITLE": "TeleVet",
+        "TEXT": "Responde a las preguntas sobre los síntomas e inicia el tratamiento: nuestro veterinario online te ayudará de inmediato.",
+        "IMG": "televet_guide"
+      },
+      {
+        "TITLE": "Seguro",
+        "TEXT": "Gestiona cómodamente los registros del seguro y las prestaciones de tus mascotas.",
+        "IMG": "insurance"
+      }
+    ]
+  },
+  "NOTIFICATIONS_LIST_PAGE": {
+    "TITLE": "Notificaciones",
+    "HEADER": "Tus notificaciones"
+  },
+  "USER_MODAL_PAGE": {
+    "LANGUAGES": {
+      "GERMAN": "Alemán",
+      "ENGLISH": "Inglés",
+      "DANISH": "Dansk",
+      "ITALIAN": "Italiano",
+      "FRENCH": "Francés",
+      "SPANISH": "Español",
+      "POLISH": "Polaco"
+    },
+    "LANGUAGE": {
+      "TITLE": "Idioma",
+      "CHOOSE": "Elegir idioma"
+    },
+    "NAME": {
+      "TITLE": "Nombre",
+      "NAME": "Tu nombre",
+      "FIRST_NAME": "Nombre",
+      "LAST_NAME": "Apellido",
+      "BUTTON": "Guardar"
+    },
+    "PHONE": {
+      "TITLE": "Teléfono",
+      "PHONE": "Teléfono",
+      "BUTTON": "Guardar",
+      "EXPLANATION": "Lorem Ipsum"
+    },
+    "PW": {
+      "TITLE": "Contraseña",
+      "CHANGE_PW": "Cambiar la contraseña",
+      "CURRENT_PW": "Contraseña actual",
+      "CONFIRM_PW": "Repite la nueva contraseña",
+      "NEW_PW": "Nueva contraseña",
+      "BUTTON": "Cambiar la contraseña"
+    },
+    "EMAIL": {
+      "TITLE": "Correo electrónico",
+      "MAIL": "Tu correo electrónico",
+      "NEW_MAIL": "Nuevo correo electrónico",
+      "CONFIRM_MAIL": "Repite el nuevo correo electrónico",
+      "TEXT": "¿Tu correo electrónico ha cambiado? Por favor, introduce tu nuevo correo electrónico para vincularlo a tu cuenta.",
+      "PASSWORD": "Contraseña",
+      "BUTTON": "Cambiar el correo electrónico"
+    }
+  },
+  "HOME_MODAL_PAGE": {
+    "HEADER": "Por favor, elige el tipo de consulta:",
+    "QUESTIONNAIRE": "Buscador de diagnósticos (gratuito)",
+    "CALL": "Reservar videollamada (14,99 €)",
+    "CALL_DESCRIPTION": "Tras la compra, la videollamada se almacena en el planificador. Elige la fecha correspondiente para acceder a tu enlace de videollamada y hablar con nuestros veterinarios sobre tu problema.",
+    "CANCEL": "Cancelar",
+    "PROGRESS": "Proceder"
+  },
+  "REGISTER_CODE": {
+    "REG_TEXT": "Introduce aquí el código de registro que acompaña a tu material de muestra.",
+    "EG": "Por ejemplo, 0123456789",
+    "WRONG_PET": "¿Te has registrado con el animal equivocado?",
+    "INVALID_CODE": "Código no válido",
+    "USED_CODE": "Código ya utilizado",
+    "CHANGE_PET": "Cambia de mascota",
+    "REG_SUCCESS": "Registro realizado con éxito",
+    "ASSIGNMENT": [
+      "El producto", "ha sido", "asignado con éxito."
+    ]
+  },
+  "BENEFITS_PAGE": {
+    "TITLE": "Resultado",
+    "YOUR_BENEFITS": "Tus resultados",
+    "BUTTONS_TEXT": "Redimir",
+    "CONFI_COINS": {
+      "HEADER": "Confi-Coins recolectadas",
+      "TEXT": "Cuida la salud de tu mascota completando tareas en el planificador. Obtén recompensas con Confi-Coins y sube de rango. Además, te esperan sorpresas de nuestra tienda."
+    }
+  },
+  "CARE_CARD_INPUT_MODAL_PAGE": {
+    "CASTRATION": {
+      "TITLE": "Estado de esterilización",
+      "NEUTERED": "castrado",
+      "NOT_NEUTERED": "no castrado",
+      "HEADLINE": "Ingrese el estado de esterilización de su mascota. No puede cambiar sus datos posteriormente. ",
+      "DESCRIPTION": "El estado de esterilización es una información importante para calcular la cantidad correcta de alimentos y diagnosticar enfermedades. Los cambios en los niveles hormonales influyen en el nivel de actividad y, por lo tanto, en las necesidades energéticas. Además, algunas enfermedades aparecen con más frecuencia en mascotas castradas y viceversa. "
+    },
+    "ID": {
+      "TITLE": "Número de identificación.",
+      "INPUT": "Chip no.",
+      "HEADLINE": "Por favor ingrese el número de identificación.",
+      "DESCRIPTION": "No existe una reglamentación general para el astillado en perros y gatos en Alemania. Algunos estados obligan a los dueños de mascotas a marcar a todos los perros, mientras que en otros, los dueños de mascotas solo tienen que marcar los perros de la lista. "
+    },
+    "ACTIVITY": {
+      "TITLE": "Nivel de actividad",
+      "STATUS": {
+        "LOW": [
+          "Baja actividad",
+          "menos de 1 hora de actividad por día ",
+          "Ej .: actividad con pasos lentos, camina solo con correa, no juega en absoluto o rara vez "
+        ],
+        "MODERATE": [
+          "Actividad moderada",
+          "Actividad de 1-3 horas por día",
+          "Ej .: actividad solo con pasos lentos o trote. Paseos con o sin correa, episodios breves de juego repartidos a lo largo de los días (actividad de juego moderada) "
+        ],
+        "HIGH": [
+          "Alta actividad",
+          "Actividad de 1-3 horas por día",
+          "Ej .: actividad principalmente trote y galop, camina en gran parte sin correa, acompañar mientras trota o va en bicicleta, le encanta jugar mucho, practicar deportes caninos como agilidad, entrenamiento de caza privado, actividad de tirar del perro"
+        ],
+        "EXTREME": [
+          "Actividad muy alta",
+          "3-6 horas de actividad al día",
+          "Perro de trabajo con un alto rendimiento (activo en servicio / adiestramiento), por ejemplo: perro de caza, perro guía, perro de compañía para discapacitados, perro policía / de aduanas, perro de rescate, perro de pastoreo"
+        ]
+      },
+      "NONE": "Aún no se ha depositado ningún nivel de actividad.",
+      "BUTTON": "Actualizar el nivel de actividad",
+      "HEADLINE": "Nivel de actividad actual",
+      "INFO": {
+        "HEADER": "Definir nivel de actividad",
+        "TEXT": "Para qué se utiliza el nivel de actividad. Lorem ipsum",
+        "ANNOTATION": "Siguiendo las pautas de ESSCAP (European Scientific Counsel Companion Animal Parasites)"
+      }
+    },
+    "CONFIRM": "Confirmar",
+    "ABORT": "Cancelar"
+  },
+  "HELP_PAGE": {
+    "TITLE": "Ayuda",
+    "HEADER": "Mesa de ayuda",
+    "SUPPORT": "Apoyo técnico",
+    "SUBHEADER": "Lorem Ipsum Bla bla bla",
+    "SOLUTION_FORM": "Solución de problemas mediante formulario de contacto",
+    "YOUR_MESSAGE": "Tu mensaje",
+    "CHARS": "1500 caracteres",
+    "BUTTON": "Enviar",
+    "FAQ": "Preguntas frecuentes "
+  }
+}

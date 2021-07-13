@@ -26,7 +26,7 @@ export class RationCheckPage {
   public label = 'Futter Rechner';
   public petId: string;
   public key = 'foodcheck_cc';
-  public rationImg = `${this.iconPath}/ration.gif`;
+  public rationImg = `https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/Ticket_grafics%2FRationscheck%2Fmahlzeiten-min.png?alt=media&token=787235a4-e9c7-43ca-a6b9-abe3284e8821`;
   public user: any;
   public isLoading: boolean;
   public pet: any;

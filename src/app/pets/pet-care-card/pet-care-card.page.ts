@@ -99,9 +99,9 @@ export class PetCareCardPage {
     ).subscribe(pet => {
       console.log('pet', pet);
       if (pet.pet.species.value === 'dog') {
-        this.baseDataImg = 'https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/carecard%2Ficons%2Fsvg%2Fdog.svg?alt=media&token=71d653b8-6e0d-4e9f-bf28-c09420a25f25';
+        this.baseDataImg = 'https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/carecard%2Ficons%2Fsvg%2Fbasedata_dog.svg?alt=media&token=71a2427e-17b9-4b0c-a0a6-9757d69ebe09';
       } else {
-        this.baseDataImg = 'https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/carecard%2Ficons%2Fsvg%2Fcat.svg?alt=media&token=4fdc9eea-eaf9-4fbc-b3cf-48cd455cb535';
+        this.baseDataImg = 'https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/carecard%2Ficons%2Fsvg%2Fbasedata_cat.svg?alt=media&token=d4e521e7-daba-484d-9c05-3f380f989e79';
       }
       this.pet = pet;
       // tslint:disable-next-line:no-eval

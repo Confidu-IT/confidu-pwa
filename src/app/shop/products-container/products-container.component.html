@@ -21,7 +21,7 @@
                   <div class="prescription-type" *ngIf="item?.med_header">
                     {{ item.med_header }}
                   </div>
-                  <h2>{{item?.data.translated.name}}</h2>
+                  <h2>{{item?.med_name}}</h2>
                   <div class="med-category" *ngIf="item?.med_category">
                     {{ item.med_category }}
                   </div>
@@ -29,7 +29,7 @@
                     {{item.data.translated.description}}
                   </div>
                   <div class="product-price">
-                    <div class="price">{{item?.data.calculatedPrice.totalPrice}} €</div>
+                    <div class="price">{{item?.data?.calculatedPrice?.totalPrice.toFixed(2)}} €</div>
                     <img [src]="eyeIcon" alt="" class="eye" height="26" width="26">
                   </div>
                 </div>
