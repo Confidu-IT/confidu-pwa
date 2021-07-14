@@ -155,7 +155,6 @@ export class CareCardListPage {
   }
 
   public onOpenDocument(link: string) {
-    console.log('link', link);
     this.commonService.getSecureLink(
       link,
       `user-docs`,
@@ -167,7 +166,6 @@ export class CareCardListPage {
         const x = str.search('pdf');
         if (x !== -1) {
           this.isPdf = true;
-          // this.enlargedPdf = data.url;
           this.enlargedPdf = this.sanitizer.bypassSecurityTrustResourceUrl(data.url);
         } else {
           this.isImg = true;
@@ -181,7 +179,8 @@ export class CareCardListPage {
 
   public closeImage(): void {
     this.imageZoom = false;
-    this.enlargedImg = null;
+    this.isImg = false;
+    this.isPdf = false;
   }
 
   private manageTicket(id: string): Promise<any> {

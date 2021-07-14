@@ -583,8 +583,8 @@
             <ion-card-content>
               <div class="vet-header">
                 <p class="description">{{ result?.vet?.body }}</p>
-                <div class="add-link" (click)="onOpenModal('med')">
-                  <h3>{{ result?.vet?.header }}</h3>
+                <div class="add-link" >
+                  <h3>{{ result?.vet?.header1 }}</h3>
                   <img [src]="chevron" alt="" height="16" width="16">
                 </div>
               </div>
@@ -595,7 +595,7 @@
             <ion-card-content>
               <div class="prep-header">
                 <p class="description">{{ result?.prep?.body }}</p>
-                <div class="add-link" (click)="onOpenModal('med')">
+                <div class="add-link">
                   <h3>{{ result?.prep?.header }}</h3>
                   <img [src]="chevron" alt="" height="16" width="16">
                 </div>
@@ -603,7 +603,6 @@
 
               <ul class="prep-list" *ngIf="result?.prep?.list">
                 <li
-                  (click)="onDeleteItem(i, 'preps', med)"
                   *ngFor="let med of result?.prep?.list; let i = index">
 
                   <div class="prep-image">
@@ -625,10 +624,6 @@
                       {{ 'CARE_CARD_DETAIL_PAGE.MED.MEDS.FROM' | translate }}
                       {{ med.startDate | date:"dd.MM.yyyy" }}
                     </p>
-                  </div>
-
-                  <div>
-                    <ion-icon name="trash-outline"></ion-icon>
                   </div>
 
                 </li>
