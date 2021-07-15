@@ -312,7 +312,13 @@ ion-grid {
   margin-bottom: 16px;
 }
 
-.findings, .prep, .vet, .medication-properties, .medication-interaction {
+.vet {
+  .description {
+    margin-bottom: 0;
+  }
+}
+
+.findings, .prep, .medication-properties, .medication-interaction {
 
   &-header {
     border-bottom: 1px solid #e0e0e0;

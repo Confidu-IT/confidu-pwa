@@ -321,6 +321,10 @@ export class TicketQuestionsPage {
       });
   }
 
+  public onPickFindingType(event) {
+    this.selectedAnswer = event.value;
+  }
+
   public onPickFoodType(event): void {
     this.showFoods = true;
     this.firebaseService.getFoodByType(this.language, this.pet.pet.species.value, event.value)
@@ -652,6 +656,9 @@ export class TicketQuestionsPage {
       val = this.question.values.answerOption.filter(option => option.value === this.selectedAnswer);
       val = val[0];
       val.answerValue = this.toxicAmount;
+    } else if (this.question.values.questionType === 'DR_F') {
+      val = this.question.values.answerOption.filter(option => option.value === this.selectedAnswer);
+      val.answerValue = this.selectedAnswer;
     } else if (this.question.values.questionType.toLowerCase() === 'vi') {
       val = this.question.values.answerOption;
       val = val[0];
@@ -728,6 +735,7 @@ export class TicketQuestionsPage {
 
     this.checkBoxValues = [];
     this.addedFiles = [];
+
     // this.uploadedFiles = [];
     this.foodRations = [];
     this.selectedNumber = null;

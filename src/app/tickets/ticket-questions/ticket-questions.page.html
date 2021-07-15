@@ -72,11 +72,12 @@
 
           <ng-container *ngIf="question?.values.questionType.toLowerCase() === 'vi'">
             <div class="beats-amount" *ngIf="question?.name === 'breathe_Q2'">
-              {{ beats }} {{ 'TICKET_QUESTION_PAGE.BEATS' | translate }}
+
+              {{ beats }} {{ 'TICKET_QUESTION_PAGE.PULSE' | translate }}
             </div>
 
             <div class="beats-amount" *ngIf="question?.name === 'pulse_Q2'">
-              {{ beats }} {{ 'TICKET_QUESTION_PAGE.PULSE' | translate }}
+              {{ beats }} {{ 'TICKET_QUESTION_PAGE.BEATS' | translate }}
             </div>
             <div *ngIf="!countdownDone" class="countdown" #countdown>60</div>
           </ng-container>
@@ -582,6 +583,18 @@
                   color="secondary">
                   {{ 'PULSE_PAGE.START' | translate }}
                 </ion-button>
+              </div>
+
+              <div class="dropdown-question" *ngIf="question?.values.questionType === 'DR_F'">
+                <mat-form-field>
+                  <mat-label>{{ 'TICKET_QUESTION_PAGE.CHOOSE' | translate }}</mat-label>
+                  <mat-select (selectionChange)="onPickFindingType($event)">
+                    <mat-option *ngFor="let option of question?.values?.answerOption"
+                                [value]="option.value">
+                      {{ 'Foo' }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
               </div>
 
               <div class="dropdown-question" *ngIf="question?.values.questionType.toLowerCase() === 'drs'">

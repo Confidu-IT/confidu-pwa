@@ -21,6 +21,7 @@ export class ArticleDetailPage {
     spaceBetween: 12
   };
   public params: any;
+  public buttonText = '';
 
   private subscription: Subscription;
   private readonly routeSub: Subscription;

@@ -26,6 +26,8 @@
                 <span>{{ 'CART_PAGE.AMOUNT' | translate }}</span>
                   <ion-select
                     (ionChange)="onChangeQuantity($event, item?.lineItem.id)"
+                    [cancelText]="cancelText"
+                    [okText]="okText"
                     value="{{item?.lineItem.quantity}}"
                   >
                     <ion-select-option
@@ -64,7 +66,7 @@
         <ion-button *ngIf="cartItems.length > 0"
                     color="secondary" class="cart-button"
                     (click)="onProgressCart()">
-          Zur Kasse
+          {{ 'CART_PAGE.CHECKOUT' | translate }}
         </ion-button>
       </ion-col>
     </ion-row>

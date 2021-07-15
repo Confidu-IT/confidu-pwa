@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-buttons slot="end">
       <ion-button (click)="closeModal()">
-        X
+        <ion-icon name="close-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
     <ion-title>{{ title }}</ion-title>
@@ -71,7 +71,7 @@
                 </ion-button>
               </form>
               <p class="product-tax">
-                {{ 'PRODUCT_MODAL_PAGE.TAX' | translate }}
+                {{ 'PRODUCT_MODAL_PAGE.TAX' | translate }} {{ item?.med_delivery }}
               </p>
               <div class="product-footer">
                 <div class="usage">

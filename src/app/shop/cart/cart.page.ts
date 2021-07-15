@@ -16,6 +16,8 @@ export class CartPage implements OnInit {
   public cart: any;
   public isLoading: boolean;
   public totalPrice: number;
+  public cancelText: string;
+  public okText: string;
 
   public user: any;
   private subscription: Subscription;
@@ -34,6 +36,13 @@ export class CartPage implements OnInit {
     this.isLoading = true;
     this.language = this.commonService.language;
     this.translateService.use(this.language);
+    this.translateService.get('CART_PAGE')
+      .subscribe(values => {
+        // console.log('values', values)
+        this.okText = values.OK_BUTTON;
+        this.cancelText = values.CANCEL_BUTTON;
+
+      });
     this.subscription = this.userAuth.user$
       .subscribe(user => {
         this.user = user;

@@ -100,7 +100,7 @@
                 </div>
               </div>
 
-              <div *ngIf="toCartAdded(item?.data.id)" class="cart-message">
+              <div *ngIf="toCartAdded(item?.data?.id)" class="cart-message">
                 <img [src]="cartCheckIcon" alt="" height="20" width="20">
                 <p>{{ 'PRODUCTS_CONTAINER.SAVED_CART' | translate }}</p>
               </div>

@@ -32,6 +32,10 @@ export class ProductsContainerComponent {
     }
     this.language = this.commonService.language;
     this.translateService.use(this.language);
+
+    setTimeout(() => {
+      console.log('products', this.products)
+    }, 100)
   }
 
   public onClickInfo(): void {
@@ -50,7 +54,7 @@ export class ProductsContainerComponent {
     const modal = await this.modalCtrl.create({
       component: ProductModalPage,
       componentProps: {
-        item: product,
+        item: product
       }
     });
     modal.onDidDismiss()

@@ -535,7 +535,10 @@
     "AMOUNT": "Anzahl",
     "REMOVE": "Artikel entfernen",
     "TOTAL": "Gesamtbetrag",
-    "TAX": "Preise inkl. MWSt."
+    "TAX": "Preise inkl. MWSt.",
+    "CHECKOUT": "Zur Kasse",
+    "OK_BUTTON": "Übernehmen",
+    "CANCEL_BUTTON": "Abbrechen"
   },
   "PRODUCT_MODAL_PAGE": {
     "DELIVERY_TIME": "Lieferzeit",
@@ -1028,7 +1031,7 @@
     "PRICE": "Preis",
     "TITLE": "Zusammenfassung",
     "INVOICE": "Rechnung",
-    "BILLING": "Zahlunsmethode"
+    "BILLING": "Zahlungsmethode"
   },
   "USER_MODAL_PAGE": {
     "LANGUAGES": {

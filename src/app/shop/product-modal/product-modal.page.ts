@@ -65,13 +65,13 @@ export class ProductModalPage implements OnInit {
   public onTakeProduct() {
     this.shopwareService.headers['firebase-context-token'] = this.user.za;
     this.shopwareService.setCartState(true);
-    this.shopwareService.addProductToCart(this.item.id, +this.form.value.quantity)
+    this.shopwareService.addProductToCart(this.item.data.id, +this.form.value.quantity)
       .then(product => {
         if (product.errors) {
           this.commonService.handleShopErrors(product.errors[0].status);
         } else {
           this.commonService.presentToast('Zum Warenkorb hinzugefügt', 'secondary');
-          this.modalCtrl.dismiss(this.item.id);
+          this.modalCtrl.dismiss(this.item?.data?.id);
         }
       });
   }

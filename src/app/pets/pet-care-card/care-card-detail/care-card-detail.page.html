@@ -582,11 +582,11 @@
           <ion-card *ngIf="result?.vet" class="vet">
             <ion-card-content>
               <div class="vet-header">
-                <p class="description">{{ result?.vet?.body }}</p>
+
                 <div class="add-link" >
                   <h3>{{ result?.vet?.header1 }}</h3>
-                  <img [src]="chevron" alt="" height="16" width="16">
                 </div>
+                <p class="description">{{ result?.vet?.body }}</p>
               </div>
             </ion-card-content>
           </ion-card>
@@ -594,11 +594,11 @@
           <ion-card *ngIf="result?.prep" class="prep">
             <ion-card-content>
               <div class="prep-header">
-                <p class="description">{{ result?.prep?.body }}</p>
+
                 <div class="add-link">
                   <h3>{{ result?.prep?.header }}</h3>
-                  <img [src]="chevron" alt="" height="16" width="16">
                 </div>
+                <p class="description">{{ result?.prep?.body }}</p>
               </div>
 
               <ul class="prep-list" *ngIf="result?.prep?.list">

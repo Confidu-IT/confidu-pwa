@@ -67,7 +67,7 @@ export class TicketResultPage implements CanDeactivateGuard {
         this.petId = localStorage.getItem('activePet');
 
         // delete this
-        // this.result = this.ticketService.foo;
+        // this.result = this.ticketService.blah;
         // console.log('this.result', this.result);
         // this.createChevrons();
 

@@ -516,13 +516,14 @@ ion-item {
     padding-top: 0;
   }
 
-  .mat-input-element, .mat-form-field-label {
+  .mat-input-element {
     height: unset;
   }
 
   .mat-form-field-label {
     color: #cecece;
     display: flex;
+    height: 22px;
   }
 
   .mat-form-field-flex {
