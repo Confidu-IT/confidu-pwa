@@ -293,6 +293,7 @@
         <ion-button expand="full" color="secondary"
                     class="progress-button"
                     (click)="onProgress()"
+                    [disabled]="!result?.invoiceDate?.data"
                     *ngIf="!result?.error"
         >
           {{ 'PRESCRIPTION_RESULT_PAGE.PROGRESS' | translate }}
