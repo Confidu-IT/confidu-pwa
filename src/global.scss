@@ -490,11 +490,11 @@ ion-item {
   padding-bottom: 20px !important;
 }
 
-// invoice
+ invoice
 .scan-result-card {
-  .mat-form-field-appearance-legacy .mat-form-field-infix {
-    padding: 10px 0 0;
-  }
+  //.mat-form-field-appearance-legacy .mat-form-field-infix {
+  //  padding: 10px 0 0;
+  //}
 
   .mat-input-element, .mat-form-field-label {
     font-size: 13px;
@@ -517,7 +517,7 @@ ion-item {
   }
 
   .mat-input-element {
-    height: 22px;
+    height: 22px !important;
   }
 
   .mat-form-field-label {

@@ -25,7 +25,6 @@
             </h3>
           </div>
         </div>
-
         <ion-card *ngIf="result?.error" class="scan-result-card error">
           <ion-card-content>
             <h3>{{ result.error.header }}</h3>
@@ -86,6 +85,7 @@
               <mat-form-field>
                 <mat-label>{{  'PRESCRIPTION_RESULT_PAGE.PRICE' | translate}}</mat-label>
                 <input matInput
+                       type="number"
                        [(ngModel)]="result.invoicePrice.data">
                 <span matSuffix>€</span>
               </mat-form-field>

@@ -591,7 +591,7 @@
                   <mat-select (selectionChange)="onPickFindingType($event)">
                     <mat-option *ngFor="let option of question?.values?.answerOption"
                                 [value]="option.value">
-                      {{ 'Foo' }}
+                      {{ option.answerLongtext[0] }}
                     </mat-option>
                   </mat-select>
                 </mat-form-field>

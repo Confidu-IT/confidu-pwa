@@ -120,6 +120,9 @@ export class TicketResultPage implements CanDeactivateGuard {
 
   public onClickActionButton(key): void {
     console.log('key', key);
+    if (key === 'consultation') {
+      this.router.navigateByUrl(key);
+    }
   }
 
   public openIngredientsList(index) {

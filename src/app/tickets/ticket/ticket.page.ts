@@ -198,7 +198,11 @@ export class TicketPage {
 
   public onExecute(id: string, type: string, key: string, title: string) {
     if (this.ticket?.type === 'questionnaire' || this.ticket?.type === 'timer') {
-      this.router.navigateByUrl(`tickets/ticket/${key}/${title}/${id}/questions`);
+      if (this.ticket?.ticketKey === 'foodplan') {
+        this.router.navigateByUrl('ration-check');
+      } else {
+        this.router.navigateByUrl(`tickets/ticket/${key}/${title}/${id}/questions`);
+      }
     } else if (this.ticket?.type === 'redirect') {
 
     }
