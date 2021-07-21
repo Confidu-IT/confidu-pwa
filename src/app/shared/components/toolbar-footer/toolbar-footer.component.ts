@@ -1,5 +1,5 @@
 import {Component, ElementRef, Input, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import { Router } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { ToolbarModalPage } from '../toolbar-modal/toolbar-modal.page';
 import { ModalController } from '@ionic/angular';
 import { Observable, Subscription } from 'rxjs';
@@ -18,10 +18,19 @@ import { environment } from '../../../../environments/environment';
   styleUrls: ['./toolbar-footer.component.scss'],
 })
 export class ToolbarFooterComponent implements OnInit, OnDestroy {
+  private snoutIcon = '../../assets/icons/toolbar-footer/notifications_disabled.svg';
+  private pageIcon = '../../assets/icons/toolbar-footer/carecard_disabled.svg';
+  private homeIcon = '../../assets/icons/toolbar-footer/home_disabled.svg';
+
+  private activeSnoutIcon = '../../assets/icons/toolbar-footer/notifications_active.svg';
+  private activePageIcon = '../../assets/icons/toolbar-footer/carecard_active.svg';
+  private activeHomeIcon = '../../assets/icons/toolbar-footer/home_active.svg';
+
   public camImg = '../../assets/icons/toolbar-footer/cam.svg';
-  public snoutImg = '../../assets/icons/toolbar-footer/notifications_disabled.svg';
-  public pageImg = '../../assets/icons/toolbar-footer/carecard_disabled.svg';
-  public homeImg = '../../assets/icons/toolbar-footer/home_active.svg';
+  public snoutImg: string;
+  public pageImg: string;
+  public homeImg: string;
+
   public usePicker = false;
   public isLoading: boolean;
   public successText: string;
@@ -39,6 +48,16 @@ export class ToolbarFooterComponent implements OnInit, OnDestroy {
   private assignment: any;
   private regSuccess: string;
   private readonly language: string;
+
+  get isHomePage() {
+    return this.router.url.indexOf('home') > -1;
+  }
+  get isCarecardPage() {
+    return this.router.url.indexOf('pet-care-card') > -1;
+  }
+  get isNotificationPage() {
+    return this.router.url.indexOf('notifications-list') > -1;
+  }
 
   constructor(
     private router: Router,
@@ -59,9 +78,15 @@ export class ToolbarFooterComponent implements OnInit, OnDestroy {
         this.assignment = values.ASSIGNMENT;
         this.regSuccess = values.REG_SUCCESS;
       });
+      console.log('this.ishome', this.isHomePage)
+
+
   }
 
   ngOnInit(): void {
+    this.homeImg = this.isHomePage ? this.activeHomeIcon : this.homeIcon;
+    this.pageImg = this.isCarecardPage ? this.activePageIcon : this.pageIcon;
+    this.snoutImg = this.isNotificationPage ? this.activeSnoutIcon : this.snoutIcon;
 
     if (this.user) {
       this.checkForNotifications();
