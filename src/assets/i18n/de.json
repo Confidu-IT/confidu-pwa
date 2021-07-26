@@ -266,10 +266,10 @@
     },
     "VET": {
       "ZIP_CODE": "Postleitzahl eingeben",
-      "VETS_LIST": "Tierarzt wählen",
-      "NO_VET": "Du kannst deinen Tierarzt nicht finden?",
+      "VETS_LIST": "Tierarztpraxis wählen",
+      "NO_VET": "Du kannst deine Tierarztpraxis nicht finden?",
       "ADD_VET": "Hier kannst du die Daten manuell erfassen",
-      "VET_ERROR": "Zu dieser Postleitzahl haben wir leider keine Tierärzte gefunden",
+      "VET_ERROR": "Zu dieser Postleitzahl haben wir leider keine Tierarztpraxen gefunden",
       "FORM": {
         "HEADER": "Bitte trage die Daten deines Tierarztes ein:",
         "DOC_OFFICE": "Name der Praxis (optional)",
@@ -550,7 +550,7 @@
     "PRICE": "Einzelpreis",
     "STOCK": "Auf Lager",
     "USAGE": "Anwendungsgebiet",
-    "INSTRUCTIONS": "Zu Risiken und Nebenwirkungen lese die Packungsbeilage und frage deinen Tierarzt oder Apotheker",
+    "INSTRUCTIONS": "Zu Risiken und Nebenwirkungen lese die Packungsbeilage und frage deinen Tierarzt oder Apotheker.",
     "INST_LINK": "Packungsbeilage zum Herunterladen",
     "DOSAGE": "Dosierung"
   },
@@ -945,7 +945,7 @@
       "PART_1": "Wir haben für dich und",
       "PART_2": "folgende Termine gefunden."
     },
-    "AHEAD_TEXT": "Termine können bis zu 2 Tage im Voraus gebucht werden. Wähle den Tag und die Uhrzeit aus, an dem du mit einem Tierarzt sprechen möchtest.",
+    "AHEAD_TEXT": "Termine können bis zu 2 Tage im Voraus gebucht werden. Wähle den Tag und die Uhrzeit aus, an dem du mit einem Tierarzt oder einer Tierärztin sprechen möchtest.",
     "FIRST_NAME": "Vorname *",
     "LAST_NAME": "Nachnahme *",
 

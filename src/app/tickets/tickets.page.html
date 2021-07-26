@@ -15,14 +15,14 @@
 
   <ion-grid *ngIf="!isLoading">
     <ion-row>
-      <ion-col>
-        <div class="tickets-header">
-          <img class="pet-image" [src]="petImage" alt="">
-          <h2 class="pet-name">
-            {{ 'TICKETS_PAGE.HEADER' | translate }}<br> {{ petName }}
-          </h2>
-        </div>
-      </ion-col>
+<!--      <ion-col>-->
+<!--        <div class="tickets-header">-->
+<!--          <img class="pet-image" [src]="petImage" alt="">-->
+<!--          <h2 class="pet-name">-->
+<!--            {{ 'TICKETS_PAGE.HEADER' | translate }}<br> {{ petName }}-->
+<!--          </h2>-->
+<!--        </div>-->
+<!--      </ion-col>-->
     </ion-row>
     <ion-row>
       <ion-col sizeMd="6">
@@ -127,7 +127,7 @@
                  (click)="onClickTicket(item.data.id, item.dateId)"
             >
               <div class="ticket-header-image">
-                <img [src]="item.data.backgroundImageLink2" height="60" width="60" alt="">
+                <img [src]="item.data.backgroundImageLink2" height="56" width="56" alt="">
               </div>
               <div class="ticket-header">
                 <h3 [ngClass]="{ overdue: isOverdue(item.endTime) }">{{ item.data.title }}</h3>

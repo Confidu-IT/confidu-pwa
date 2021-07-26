@@ -67,6 +67,13 @@
           </ion-button>
         </ng-container>
 
+        <p
+          class="to-login"
+          *ngIf="!isSuccess"
+          routerLink="/signin">
+          {{ 'PW_RECOVERY_PAGE.BACK_TO_LOGIN' | translate }}
+        </p>
+
       </ion-col>
     </ion-row>
   </ion-grid>

@@ -79,12 +79,16 @@
 
         <div class="transaction">
           <p class="transaction-text">
-            <span class="shipment-price">{{ 'ORDER_PAGE.SHIPMENT' | translate }}</span>
+            <span class="shipment-price" *ngIf="cartData?.shippingCosts?.totalPrice != 0">
+              {{ 'ORDER_PAGE.SHIPMENT' | translate }}
+            </span>
             <span class="total-price">{{ 'ORDER_PAGE.SUMMARY' | translate }}</span>
             <span class="tax">{{ 'ORDER_PAGE.TAX' | translate }}</span>
           </p>
           <p class="transaction-details">
-            <span class="shipment-price"> {{ cartData?.shippingCosts?.totalPrice.toFixed(2) }} €</span>
+            <span class="shipment-price" *ngIf="cartData?.shippingCosts?.totalPrice != 0">
+              {{ cartData?.shippingCosts?.totalPrice.toFixed(2) }} €
+            </span>
             <span class="total-price"> {{ cartTransaction?.amount?.totalPrice.toFixed(2) }} €</span>
           </p>
         </div>
@@ -102,3 +106,7 @@
     </ion-row>
   </ion-grid>
 </ion-content>
+
+<ion-footer *ngIf="!isLoading">
+  <app-toolbar-footer [user]="user"></app-toolbar-footer>
+</ion-footer>

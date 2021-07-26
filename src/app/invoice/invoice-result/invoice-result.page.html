@@ -59,7 +59,7 @@
 
         <ion-card *ngIf="result?.invoiceDate" class="scan-result-card date">
           <ion-card-content>
-            <h3>{{ result.invoiceDate.header }}</h3>
+            <h3>{{ result.invoiceDate.header }}<sup>*</sup></h3>
             <ng-container *ngIf="result.invoiceDate.body">
               <p *ngFor="let el of result.invoiceDate.body" class="body">{{ el }}</p>
             </ng-container>
@@ -77,7 +77,7 @@
 
         <ion-card *ngIf="result?.invoicePrice" class="scan-result-card price">
           <ion-card-content>
-            <h3>{{ result.invoicePrice.header }}</h3>
+            <h3>{{ result.invoicePrice.header }}<sup>*</sup></h3>
             <ng-container *ngIf="result.invoicePrice.body">
               <p *ngFor="let el of result.invoicePrice.body" class="body">{{ el }}</p>
             </ng-container>
@@ -290,14 +290,14 @@
           </ion-card-content>
         </ion-card>
 
-        <ion-button expand="full" color="secondary"
-                    class="progress-button"
-                    (click)="onProgress()"
-                    [disabled]="!result?.invoiceDate?.data"
-                    *ngIf="!result?.error"
-        >
-          {{ 'PRESCRIPTION_RESULT_PAGE.PROGRESS' | translate }}
-        </ion-button>
+<!--        <ion-button expand="full" color="secondary"-->
+<!--                    class="progress-button"-->
+<!--                    (click)="onProgress()"-->
+<!--                    [disabled]="!result?.invoiceDate?.data || !result?.invoicePrice?.data"-->
+<!--                    *ngIf="!result?.error"-->
+<!--        >-->
+<!--          {{ 'PRESCRIPTION_RESULT_PAGE.PROGRESS' | translate }}-->
+<!--        </ion-button>-->
 
         <ion-button expand="full" color="secondary"
                     class="progress-button repeat"
@@ -313,5 +313,26 @@
 </ion-content>
 
 <ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeSm="8" offsetSm="2">
+        <div class="footer-buttons">
+          <ion-button routerLink="/invoice-upload" color="medium" fill="clear" size="small">
+            {{ 'TICKET_QUESTION_PAGE.BACK_BUTTON' | translate }}
+          </ion-button>
+
+          <ion-button
+            (click)="onProgress()"
+            [disabled]="!result?.invoiceDate?.data || !result?.invoicePrice?.data"
+            *ngIf="!result?.error"
+            color="secondary"
+            fill="clear"
+            size="small">
+            {{ 'TICKET_QUESTION_PAGE.PROGRESS_BUTTON' | translate }}
+          </ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   <app-toolbar-footer [user]="user"></app-toolbar-footer>
 </ion-footer>

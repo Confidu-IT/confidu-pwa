@@ -176,7 +176,7 @@ export class TicketPage {
       this.firebaseService.updateTicket(this.user.uid, this.petId, this.params.ticketId, this.ticket)
         .then(() => {
           this.form.reset();
-          this.router.navigateByUrl('/');
+          this.router.navigateByUrl('tickets');
         });
     } catch (e) {
       this.showTaskForm = false;
@@ -217,14 +217,14 @@ export class TicketPage {
     this.presentAlert(this.actions.delete.msg, this.actions.delete.btn, 'deleted');
   }
 
-  public createDate(): string {
+  public createDate(): number {
     if (!this.ticket?.schedule) {
       return;
     }
 
     for (const item of this.ticket?.schedule) {
       if (item.id === this.params.dateId) {
-        return item.endTime.seconds;
+        return parseInt(item.endTime?.seconds) * 1000;
       }
     }
   }
@@ -319,7 +319,7 @@ export class TicketPage {
         this.firebaseService.updateTicket(this.user.uid, this.petId, this.params.ticketId, this.ticket)
           .then(resp => {
             this.commonService.presentToast('Aktion erfolgreich', 'primary');
-            this.router.navigateByUrl('/');
+            this.router.navigateByUrl('tickets');
           });
       } catch (e) {
         this.commonService.presentToast('Aktion fehlgeschlagen', 'danger');
@@ -328,7 +328,7 @@ export class TicketPage {
       try {
         this.moveTicket(this.user.uid, this.petId, this.params.ticketId, this.ticket)
           .then(resp => {
-            this.router.navigateByUrl('/');
+            this.router.navigateByUrl('tickets');
           });
       } catch (e) {
         this.commonService.presentToast('Aktion fehlgeschlagen', 'danger');

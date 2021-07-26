@@ -636,6 +636,7 @@ export class TicketQuestionsPage {
     else if (this.question.values.questionType.toLowerCase() === 't') {
       val = this.question.values.answerOption[0];
       val.answerValue = this.selectedAnswer;
+      val.answerLongtext = [];
       val.answerLongtext.push(this.selectedAnswer);
     } else if (
       this.question.values.questionType.toLowerCase() === 's'

@@ -118,10 +118,11 @@ export class TicketResultPage implements CanDeactivateGuard {
     return emergencySymptoms.includes(this.params.symptom);
   }
 
-  public onClickActionButton(key): void {
-    console.log('key', key);
-    if (key === 'consultation') {
-      this.router.navigateByUrl(key);
+  public onClickActionButton(el: any): void {
+    if (el.key === 'consultation') {
+      this.router.navigateByUrl(el.key);
+    } else {
+      this.router.navigateByUrl(`tickets/${el.event}/${el.key}/null/null/questions`);
     }
   }
 
