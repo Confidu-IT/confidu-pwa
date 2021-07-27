@@ -16,6 +16,7 @@ export class CartPage implements OnInit {
   public cart: any;
   public isLoading: boolean;
   public totalPrice: number;
+  public shipment: number;
   public cancelText: string;
   public okText: string;
 
@@ -59,6 +60,7 @@ export class CartPage implements OnInit {
             this.cart = cart;
             this.cartItems = this.cart?.deliveries[0]?.positions;
             this.totalPrice = cart?.price?.totalPrice;
+            this.shipment = cart.deliveries[0].shippingCosts?.totalPrice;
           }
         }
         this.isLoading = false;
@@ -83,8 +85,8 @@ export class CartPage implements OnInit {
             .then(cart => {
               console.log('cart', cart)
               this.cartItems = cart.deliveries[0].positions;
-              console.log('this.cart?.price?.totalPrice', this.cart?.price?.totalPrice)
               this.totalPrice = cart?.price?.totalPrice;
+              this.shipment = cart.deliveries[0].shippingCosts?.totalPrice;
             });
         }
       });
@@ -101,6 +103,8 @@ export class CartPage implements OnInit {
             .then(cart => {
                 if (cart.deliveries[0]) {
                   this.cartItems = cart.deliveries[0].positions;
+                  this.totalPrice = cart?.price?.totalPrice;
+                  this.shipment = cart.deliveries[0].shippingCosts?.totalPrice;
                 } else {
                   this.cartItems = [];
                   localStorage.removeItem('sw-token');

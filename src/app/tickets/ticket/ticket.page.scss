@@ -89,33 +89,34 @@
 
   &-info {
     font-size: 13px;
-    display: flex;
+
     margin: 20px 0 8px;
+
+    &-header {
+      display: flex;
+      margin-bottom: 8px;
+
+      .info-image {
+        display: flex;
+        //width: 40px;
+
+        img {
+          height: 20px;
+          width: unset;
+          //width: 24px;
+        }
+      }
+    }
 
     h6 {
       font-size: 13px;
       font-weight: 700;
-      margin: 0 0 6px;
+      margin-left: 8px;
     }
 
     ul {
       list-style: none;
       padding-left: 0;
-    }
-
-    .info-image {
-      width: 40px;
-
-      img {
-        display: block;
-        height: 20px;
-        min-width: 24px;
-        //width: 24px;
-      }
-    }
-
-    .info-text {
-      padding-left: 16px;
     }
   }
 
@@ -262,6 +263,7 @@ ion-label {
 
 ion-item {
   margin-left: -20px;
+  --background: #fff;
 }
 
 ion-card {

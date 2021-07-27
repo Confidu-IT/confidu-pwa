@@ -52,12 +52,16 @@
         </div>
         <div class="cart-footer">
           <div>
+            <div class="shipment">{{ 'CART_PAGE.SHIPMENT' | translate }}</div>
             <div class="total-text"> {{ 'CART_PAGE.TOTAL' | translate }}</div>
             <div class="tax-rate">
               {{ 'CART_PAGE.TAX' | translate }}
             </div>
           </div>
           <div class="prices">
+            <div class="shipment">
+              {{ shipment.toFixed(2) }} €
+            </div>
             <div class="total-price">
               {{ totalPrice.toFixed(2) }} €
             </div>
@@ -72,3 +76,7 @@
     </ion-row>
   </ion-grid>
 </ion-content>
+
+<ion-footer *ngIf="!isLoading">
+  <app-toolbar-footer [user]="user"></app-toolbar-footer>
+</ion-footer>

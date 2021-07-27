@@ -536,6 +536,7 @@
     "REMOVE": "Artikel entfernen",
     "TOTAL": "Gesamtbetrag",
     "TAX": "Preise inkl. MWSt.",
+    "SHIPMENT": "Versandkosten",
     "CHECKOUT": "Zur Kasse",
     "OK_BUTTON": "Übernehmen",
     "CANCEL_BUTTON": "Abbrechen"

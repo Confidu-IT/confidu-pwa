@@ -162,11 +162,14 @@
 
                  <ng-container *ngIf="link?.url === 'info'">
                    <div class="ticket-info">
-                     <div class="info-image">
-                       <img [src]="ticket?.info?.image" alt="">
+                     <div class="ticket-info-header">
+                       <div class="info-image">
+                         <img [src]="ticket?.info?.image" alt="">
+                       </div>
+                       <h6>{{ ticket?.info?.info_headline }}</h6>
                      </div>
                      <div class="info-text">
-                       <h6>{{ ticket?.info?.info_headline }}</h6>
+
                        <ul>
                          <li *ngFor="let p of ticket?.info?.info_body">{{ p }}</li>
                        </ul>
