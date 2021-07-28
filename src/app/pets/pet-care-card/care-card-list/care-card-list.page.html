@@ -74,7 +74,8 @@
         <!-- -->
 
 
-        <div class="history-container" *ngIf="careCard?.terminatedList.length > 0">
+        <div class="history-container"
+             *ngIf="careCard?.terminatedList.length > 0 && careCard?.currentList.length > 0">
           <div class="history-container-header" (click)="openList()">
             <span>{{ 'CARE_CARD_LIST_PAGE.HISTORY' | translate }}</span>
             <ion-icon *ngIf="!listOpen" name="chevron-down-outline"></ion-icon>
@@ -117,6 +118,48 @@
               </li>
             </ul>
           </ng-container>
+        </div>
+
+        <div class="history-container"
+             *ngIf="careCard?.terminatedList.length > 0 && careCard?.currentList.length === 0">
+          <div class="history-container-header">
+            <span>{{ 'CARE_CARD_LIST_PAGE.PROGRESS' | translate }}</span>
+          </div>
+
+          <ul class="history">
+            <li *ngFor="let result of careCard?.terminatedList">
+              <div class="left">
+                <div class="date">
+                  {{ result.eventDate | date: 'dd.MM.yyyy' }}
+                </div>
+                <div class="finding">
+                  <div class="finding-title">
+                    <span *ngIf="result.label">{{ result.label }} </span>
+                    <span *ngIf="result.valA"><br>{{ result.valA }}</span>
+                    <span *ngIf="result.valB"><br>{{ result.valB }}</span>
+                  </div>
+
+                  <ng-container *ngIf="result.findings">
+                    <ng-container *ngFor="let item of result.findings">
+                      <div class="doc"
+                           *ngFor="let doc of item.docs"
+                           (click)="onOpenDocument(doc)">
+                        <span><img [src]="paperclip" alt="" height="14">
+                          {{ 'CARE_CARD_LIST_PAGE.FINDING_PDF' | translate }}</span>
+                      </div>
+                    </ng-container>
+                  </ng-container>
+
+                </div>
+              </div>
+
+              <div *ngIf="result.level3Id"
+                   class="arrow-right"
+                   (click)="onClickLink('terminatedList', result.level1_cc_key, result.venomKey,result.level3Id)">
+                <img [src]="chevron" alt="" height="16" width="16">
+              </div>
+            </li>
+          </ul>
         </div>
       </ion-col>
 

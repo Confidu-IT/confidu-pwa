@@ -25,7 +25,7 @@ export class ConsultationBookingPage {
   public privacyLink = `https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/pdf%2Famoxitab_dog_cat_50mg_pil_de.pdf?alt=media&token=80f09b0f-871b-425f-9f7a-2260b499d8ff`;
   public conditionsLink = `https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/pdf%2Famoxitab_dog_cat_50mg_pil_de.pdf?alt=media&token=80f09b0f-871b-425f-9f7a-2260b499d8ff`;
   public get isChecked(): boolean {
-    return this.careCard && this.agb;
+    return this.careCard;
   }
 
   private subscription: Subscription;

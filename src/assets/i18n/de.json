@@ -593,6 +593,7 @@
   },
   "CARE_CARD_LIST_PAGE": {
     "HISTORY": "Historie",
+    "PROGRESS": "Verlauf",
     "ADD_DOC": "Befund hinzufügen",
     "FINDING_PDF": "Anhang",
     "UPLOAD": "Rechnungsupload",
