@@ -119,8 +119,8 @@ export class TicketResultPage implements CanDeactivateGuard {
   }
 
   public onClickActionButton(el: any): void {
-    if (el.key === 'consultation') {
-      this.router.navigateByUrl(el.key);
+    if (el.link === 'consultation') {
+      this.router.navigateByUrl('consultation');
     } else {
       this.router.navigateByUrl(`tickets/${el.event}/${el.key}/null/null/questions`);
     }
@@ -176,9 +176,10 @@ export class TicketResultPage implements CanDeactivateGuard {
                 this.ticketService.confirmSave(
                   this.eventId, 'confirm',
                   this.petId,
-                  this.user.uid, '1448',
+                  this.user.uid, this.user.za,
                   this.commonService.language
                 ).subscribe( () => {
+
                 });
                 resolve(true);
               }

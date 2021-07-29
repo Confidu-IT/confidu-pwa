@@ -479,8 +479,8 @@
   "HOME_MODAL_PAGE": {
     "HEADER": "Bitte wähle die Art der Konsultation aus:",
     "QUESTIONNAIRE": "Diagnose Finder (kostenlos)",
-    "CALL": "Videoanruf buchen (14,99 €)",
-    "CALL_DESCRIPTION": "Der Videoanruf wird nach dem Kauf im Planer hinterlegt. Rufe den Termin auf, um zum Link des Videoanrufs zu gelangen und mit unseren Tierärzt:innen über dein Anliegen zu sprechen.",
+    "CALL": "Videoanruf buchen (19,99 €)",
+    "CALL_DESCRIPTION": "Wir nehmen uns ausreichend\nZeit, um dir und deinem Vierbeiner\nzu helfen. \nUm jeden Videoanruf termingerecht annehmen zu können, begrenzen wir die Gesprächszeit auf maximal 20 Minuten. ",
     "CANCEL": "Abbrechen",
     "PROGRESS": "Weiter"
   },
@@ -949,10 +949,10 @@
     },
     "AHEAD_TEXT": "Termine können bis zu 2 Tage im Voraus gebucht werden. Wähle den Tag und die Uhrzeit aus, an dem du mit einem Tierarzt oder einer Tierärztin sprechen möchtest.",
     "FIRST_NAME": "Vorname *",
-    "LAST_NAME": "Nachnahme *",
+    "LAST_NAME": "Nachname *",
 
     "PHONE": "Tel.",
-    "MODAL_HEADER": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
+    "MODAL_HEADER": "Videoanruf buchen kannst, gib bitte deine Kontaktdaten an.",
     "CANCEL": "Abbrechen",
     "CONFIRM": "Übernehmen"
   },
