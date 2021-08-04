@@ -110,7 +110,7 @@ export class LabPage {
           this.validated = true;
           const message = this.regSuccess;
           this.successText = `
-          ${this.assignment[0]} ${response.product} ${this.assignment[1]} ${this.pet.name} ${this.assignment[2]}
+          ${this.assignment[0]} ${this.assignment[1]} ${this.pet.name} ${this.assignment[2]}
           `;
           this.commonService.presentToast(message, 'secondary');
         },

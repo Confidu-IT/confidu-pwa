@@ -164,7 +164,8 @@
                       [doneText]="okText"
                       (ionChange)="onPickCurrentVaccTime($event)"
                       displayFormat="DD.MM.YYYY"
-                      max="2030-12-31">
+                      min="2008-12-31">
+                      [max]="lastVacMax">
                     </ion-datetime>
                   </ion-item>
                 </div>
@@ -179,7 +180,7 @@
                       [doneText]="okText"
                       (ionChange)="onPickNextVaccTime($event)"
                       displayFormat="DD.MM.YYYY"
-                      [min]="vaccination.currentDate"
+                      [min]="lastVacMax"
                       max="2030-12-31">
                     </ion-datetime>
                   </ion-item>

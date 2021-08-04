@@ -187,6 +187,7 @@ export class TicketPage {
   }
 
   public onClickRadiobutton(event, item, option) {
+    console.log('option', option)
     this.option = option;
     const popup = 'popupOption1';
     this.radioButtonAlert(event, item, option[popup]);
@@ -201,6 +202,7 @@ export class TicketPage {
       if (this.ticket?.ticketKey === 'foodplan') {
         this.router.navigateByUrl('ration-check');
       } else {
+        console.log('url', `tickets/ticket/${key}/${title}/${id}/questions`)
         this.router.navigateByUrl(`tickets/ticket/${key}/${title}/${id}/questions`);
       }
     } else if (this.ticket?.type === 'redirect') {
@@ -294,8 +296,11 @@ export class TicketPage {
             } else if (action === 'save2') {
               this.closeEvent('accomplished');
               this.openRadioAlert2(item);
-            } else if (action === 'link') {
-              this.router.navigateByUrl('/ticket/televet-pet');
+            } else if (action === 'consultation') {
+              // this.router.navigateByUrl('/ticket/televet-pet');
+              this.router.navigateByUrl('/consultation');
+            } else if (action === 'share') {
+
             }
           }
         }

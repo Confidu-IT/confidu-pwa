@@ -11,6 +11,7 @@ ion-card {
 
 ion-card-content {
   font-size: 13px;
+  padding-bottom: 12px;
   padding-left: 20px;
   padding-right: 20px;
 
@@ -534,4 +535,9 @@ ion-grid {
 
 .bcs {
   margin-bottom: 8px;
+}
+
+.table-label {
+  min-width: 90px;
+  max-width: 90px;
 }

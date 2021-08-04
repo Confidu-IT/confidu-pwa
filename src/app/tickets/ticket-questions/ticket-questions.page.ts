@@ -107,6 +107,7 @@ export class TicketQuestionsPage {
   public parasite: any;
   public uploadPath: string;
   private addedFiles: string[];
+  public lastVacMax = new Date().toISOString();
 
   // delete this
   public foo = '../../assets/icons/trash1.svg';
@@ -182,7 +183,7 @@ export class TicketQuestionsPage {
 
     this.translateService.get('TICKET_QUESTION_PAGE')
       .subscribe(values => {
-        console.log('values', values);
+        // console.log('values', values);
         this.daily = values?.MED?.DAILY;
         this.frequency = [];
         for (let i = 1; i <= 5; i++) {

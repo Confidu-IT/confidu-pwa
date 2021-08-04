@@ -287,7 +287,7 @@ ion-item {
   color: var(--ion-color-secondary) !important;
 }
 
-[aria-checked=true] .alert-radio-inner {
+[aria-checked=true] .alert-radio-inner, [aria-checked=true] .alert-radio-icon {
   border-color: var(--ion-color-secondary) !important;
 }
 
@@ -490,7 +490,7 @@ ion-item {
   padding-bottom: 20px !important;
 }
 
- invoice
+ // invoice
 .scan-result-card {
   //.mat-form-field-appearance-legacy .mat-form-field-infix {
   //  padding: 10px 0 0;
@@ -567,7 +567,17 @@ ion-button.button-disabled {
   }
 }
 
+.item-has-focus{
+  --highlight-background: var(--in-color-secondary) !important;
+}
 
+.alert-radio-inner {
+  background-color: var(--ion-color-secondary) !important;
+}
+
+//.sc-ion-alert-md {
+//  border-color: var(--ion-color-secondary) !important;
+//}
 
 
 //

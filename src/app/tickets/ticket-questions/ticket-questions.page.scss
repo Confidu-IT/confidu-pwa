@@ -577,5 +577,10 @@ mat-label {
 
 .toy {
   margin-right: 16px;
+  padding-left: 12px;
   width: unset;
+}
+
+:host(.item-interactive.ion-valid) {
+  --highlight-background: var(--ion-color-secondary) !important;
 }

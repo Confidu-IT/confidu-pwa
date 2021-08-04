@@ -210,7 +210,7 @@ export class ToolbarFooterComponent implements OnInit, OnDestroy {
     this.notificationsSubscription = this.firebaseService.checkForNewNotifications(this.user.uid)
       .subscribe((response: any) => {
         if (!response.read) {
-          this.snoutImg = '../../assets/icons/toolbar-footer/notifications_receive.svg';
+          this.snoutImg = '../../assets/icons/toolbar-footer/notifications_receive_animated.gif';
         }
       })
   }

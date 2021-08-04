@@ -56,14 +56,20 @@
             </ion-card-content>
           </ion-card>
 
-          <mat-expansion-panel *ngIf="result?.image" class="bcs">
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                {{ result?.image?.header }}
-              </mat-panel-title>
-            </mat-expansion-panel-header>
-            <img [src]="result?.image?.link" alt="">
-          </mat-expansion-panel>
+          <ion-card *ngIf="result?.image">
+            <ion-card-content>
+              <img [src]="result?.image?.link" alt="">
+            </ion-card-content>
+          </ion-card>
+
+<!--          <mat-expansion-panel *ngIf="result?.image" class="bcs">-->
+<!--            <mat-expansion-panel-header>-->
+<!--              <mat-panel-title>-->
+<!--                {{ result?.image?.header }}-->
+<!--              </mat-panel-title>-->
+<!--            </mat-expansion-panel-header>-->
+<!--            <img [src]="result?.image?.link" alt="">-->
+<!--          </mat-expansion-panel>-->
 
           <ion-card *ngIf="result?.textA1 && result?.textA1.visibility">
             <ion-card-content>
@@ -75,8 +81,8 @@
               </ul>
               <ul *ngIf="result?.textA1.type === 'table'" class="result-table">
                 <li *ngFor="let item of result?.textA1?.body">
-                  <div>{{ item.label }}</div>
-                  <div>{{ item.value }}</div>
+                  <div class="table-label">{{ item.label }}</div>
+                  <div class="table-value">{{ item.value }}</div>
                 </li>
               </ul>
               <ng-container *ngIf="result?.textA1.type === 'par'">
@@ -108,8 +114,8 @@
               </ul>
               <ul *ngIf="result?.textA1.type === 'table'" class="result-table">
                 <li *ngFor="let item of result?.textA1?.body">
-                  <div>{{ item.label }}</div>
-                  <div>{{ item.value }}</div>
+                  <div class="table-label">{{ item.label }}</div>
+                  <div class="table-value">{{ item.value }}</div>
                 </li>
               </ul>
               <ng-container *ngIf="result?.textA1.type === 'par'">
@@ -141,8 +147,8 @@
               </ul>
               <ul *ngIf="result?.textA2.type === 'table'" class="result-table">
                 <li *ngFor="let item of result?.textA2?.body">
-                  <div>{{ item.label }}</div>
-                  <div>{{ item.value }}</div>
+                  <div class="table-label">{{ item.label }}</div>
+                  <div class="table-value">{{ item.value }}</div>
                 </li>
               </ul>
               <ng-container *ngIf="result?.textA2.type === 'par'">
@@ -174,8 +180,8 @@
               </ul>
               <ul *ngIf="result?.textA2.type === 'table'" class="result-table">
                 <li *ngFor="let item of result?.textA2?.body">
-                  <div>{{ item.label }}</div>
-                  <div>{{ item.value }}</div>
+                  <div class="table-label">{{ item.label }}</div>
+                  <div class="table-value">{{ item.value }}</div>
                 </li>
               </ul>
               <ng-container *ngIf="result?.textA2.type === 'par'">
@@ -207,8 +213,8 @@
               </ul>
               <ul *ngIf="result?.textA3.type === 'table'" class="result-table">
                 <li *ngFor="let item of result?.textA3?.body">
-                  <div>{{ item.label }}</div>
-                  <div>{{ item.value }}</div>
+                  <div class="table-label">{{ item.label }}</div>
+                  <div class="table-value">{{ item.value }}</div>
                 </li>
               </ul>
               <ng-container *ngIf="result?.textA3.type === 'par'">
@@ -240,8 +246,8 @@
               </ul>
               <ul *ngIf="result?.textA3.type === 'table'" class="result-table">
                 <li *ngFor="let item of result?.textA3?.body">
-                  <div>{{ item.label }}</div>
-                  <div>{{ item.value }}</div>
+                  <div class="table-label">{{ item.label }}</div>
+                  <div class="table-value">{{ item.value }}</div>
                 </li>
               </ul>
               <ng-container *ngIf="result?.textA3.type === 'par'">
@@ -273,8 +279,8 @@
               </ul>
               <ul *ngIf="result?.textA4.type === 'table'" class="result-table">
                 <li *ngFor="let item of result?.textA4?.body">
-                  <div>{{ item.label }}</div>
-                  <div>{{ item.value }}</div>
+                  <div class="table-label">{{ item.label }}</div>
+                  <div class="table-value">{{ item.value }}</div>
                 </li>
               </ul>
               <ng-container *ngIf="result?.textA4.type === 'par'">
@@ -306,8 +312,8 @@
               </ul>
               <ul *ngIf="result?.textA4.type === 'table'" class="result-table">
                 <li *ngFor="let item of result?.textA4?.body">
-                  <div>{{ item.label }}</div>
-                  <div>{{ item.value }}</div>
+                  <div class="table-label">{{ item.label }}</div>
+                  <div class="table-value">{{ item.value }}</div>
                 </li>
               </ul>
               <ng-container *ngIf="result?.textA4.type === 'par'">
@@ -339,8 +345,8 @@
               </ul>
               <ul *ngIf="result?.textA5.type === 'table'" class="result-table">
                 <li *ngFor="let item of result?.textA5?.body">
-                  <div>{{ item.label }}</div>
-                  <div>{{ item.value }}</div>
+                  <div class="table-label">{{ item.label }}</div>
+                  <div class="table-value">{{ item.value }}</div>
                 </li>
               </ul>
               <ng-container *ngIf="result?.textA5.type === 'par'">
@@ -372,8 +378,8 @@
               </ul>
               <ul *ngIf="result?.textA5.type === 'table'" class="result-table">
                 <li *ngFor="let item of result?.textA5?.body">
-                  <div>{{ item.label }}</div>
-                  <div>{{ item.value }}</div>
+                  <div class="table-label">{{ item.label }}</div>
+                  <div class="table-value">{{ item.value }}</div>
                 </li>
               </ul>
               <ng-container *ngIf="result?.textA5.type === 'par'">

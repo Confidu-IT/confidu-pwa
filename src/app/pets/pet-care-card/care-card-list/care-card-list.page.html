@@ -142,10 +142,10 @@
                   <ng-container *ngIf="result.findings">
                     <ng-container *ngFor="let item of result.findings">
                       <div class="doc"
-                           *ngFor="let doc of item.docs"
+                           *ngFor="let doc of item.docs; let i = index"
                            (click)="onOpenDocument(doc)">
                         <span><img [src]="paperclip" alt="" height="14">
-                          {{ 'CARE_CARD_LIST_PAGE.FINDING_PDF' | translate }}</span>
+                          {{ 'CARE_CARD_LIST_PAGE.FINDING_PDF' | translate }} {{ i + 1 }}</span>
                       </div>
                     </ng-container>
                   </ng-container>
