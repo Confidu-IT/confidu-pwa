@@ -66,6 +66,10 @@ export class TelevetEmergencyPage {
         this.emergencies = data.filter(item => {
           return item.key !== 'NOG';
         });
+      } else if (this.pet.pet.gender.value === 'female') {
+        this.emergencies = data.filter(item => {
+          return item.key !== 'NOU';
+        });
       } else {
         this.emergencies = data;
       }

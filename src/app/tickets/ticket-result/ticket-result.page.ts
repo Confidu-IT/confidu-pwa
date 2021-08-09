@@ -35,6 +35,7 @@ export class TicketResultPage implements CanDeactivateGuard {
   public infoButton = `${this.iconPath}/info-button.svg`;
 
   public listOpen: any[];
+  public isFoodCheck: boolean;
 
   constructor(
     public userAuth: AuthService,
@@ -90,6 +91,7 @@ export class TicketResultPage implements CanDeactivateGuard {
         }
       })
     ).subscribe(data => {
+      this.isFoodCheck = this.params.symptom === 'foodcheck';
       this.result = data;
       this.createChevrons();
       console.log('data', data);
@@ -119,8 +121,13 @@ export class TicketResultPage implements CanDeactivateGuard {
   }
 
   public onClickActionButton(el: any): void {
+    if (!el) {
+      return;
+    }
     if (el.link === 'consultation') {
       this.router.navigateByUrl('consultation');
+    } else if (el.link === 'fup') {
+      this.router.navigateByUrl('follow-up-prescription');
     } else {
       this.router.navigateByUrl(`tickets/${el.event}/${el.key}/null/null/questions`);
     }

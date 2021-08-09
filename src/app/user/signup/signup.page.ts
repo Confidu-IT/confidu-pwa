@@ -146,8 +146,9 @@ export class SignupPage implements OnInit {
             this.commonService.handleLoginErrors(res.errors[0].status);
             this.signupForm.reset();
             this.isChecked = false;
+            return;
           } else if (res) {
-            console.log('res', res);
+            // console.log('res', res);
             this.loadingCtrl.dismiss(null);
             this.router.navigateByUrl(`verification/account/${this.mail}`);
           }
@@ -157,8 +158,8 @@ export class SignupPage implements OnInit {
       this.signinUser(email, password)
         .then(res => {
           if (res?.errors) {
-            this.loadingCtrl.dismiss(null);
             this.commonService.handleLoginErrors(res.errors[0].status);
+            this.loadingCtrl.dismiss(null);
             return;
           } else if (res) {
             this.userId = res.id;

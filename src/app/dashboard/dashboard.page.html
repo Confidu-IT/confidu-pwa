@@ -42,11 +42,5 @@
 </ion-content>
 
 <ion-footer *ngIf="!isLoading">
-  <ion-grid>
-    <ion-row>
-      <ion-col sizeSm="8" offsetSm="2">
-        <app-toolbar-footer [user]="user"></app-toolbar-footer>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <app-toolbar-footer [user]="user"></app-toolbar-footer>
 </ion-footer>

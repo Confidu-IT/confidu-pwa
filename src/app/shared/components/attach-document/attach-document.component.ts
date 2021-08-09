@@ -19,7 +19,7 @@ export class AttachDocumentComponent {
   private language: string;
 
   public uploadedFiles: any[] = [];
-  public uploadImg = `../../assets/icons/hook2.svg`;
+  public uploadImg = `../../assets/icons/doc_upload.svg`;
   public uploadProgress: Observable<number>;
 
   @Input() user: any;

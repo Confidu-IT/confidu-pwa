@@ -32,6 +32,7 @@ export class CareCardDetailPage {
   public listOpenMedication = [];
   public listOpenMedicalTests = [];
   public explSliderOpen = false;
+  public listOpen: any[];
 
   public slideOptions = {
     initialSlide: 0,
@@ -124,6 +125,10 @@ export class CareCardDetailPage {
       //
       // this.presentModal(this.user, 'med', this.modalTitle.med, disease);
     });
+  }
+
+  public openIngredientsList(index) {
+    this.listOpen[index].val = this.listOpen[index].val === false;
   }
 
   public hasRecovered(): void {
@@ -351,6 +356,7 @@ export class CareCardDetailPage {
     this.listOpenVaccines = [];
     this.listOpenMedication = [];
     this.listOpenMedicalTests = [];
+    this.listOpen = [];
     if (this.subscription) {
       this.subscription.unsubscribe();
     }

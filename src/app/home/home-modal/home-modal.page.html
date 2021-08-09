@@ -24,7 +24,8 @@
             {{ 'HOME_MODAL_PAGE.CALL' | translate }}
           </mat-radio-button>
         </mat-radio-group>
-        <div *ngIf="showNotes" class="call-description">{{ 'HOME_MODAL_PAGE.CALL_DESCRIPTION' | translate }}</div>
+        <div *ngIf="showCallNotes" class="call-description">{{ 'HOME_MODAL_PAGE.CALL_DESCRIPTION' | translate }}</div>
+        <div *ngIf="showDiagNotes" class="call-description">{{ 'HOME_MODAL_PAGE.DIAG_DESCRIPTION' | translate }}</div>
       </ion-col>
     </ion-row>
   </ion-grid>

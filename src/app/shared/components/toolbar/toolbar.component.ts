@@ -1,8 +1,9 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import { AuthService } from '../../../user/auth.service';
 import { environment } from '../../../../environments/environment';
 import { ShopwareService } from '../../services/shopware/shopware.service';
 import { Subscription } from 'rxjs';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-toolbar',
@@ -10,43 +11,45 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./toolbar.component.scss'],
 })
 export class ToolbarComponent implements OnInit, OnDestroy {
-  public logo = environment.logo;
-  public cart: boolean;
-  public cartSubscription: Subscription;
+  @Input() backButton: boolean;
+  @Input() menu: boolean;
+  @Input() logo: boolean;
+  @Input() title: string;
+  @Input() settings: boolean;
+  @Input() cart: boolean;
+
+  public confidu = environment.logo;
+  public backButtonText = '';
+  // public cart: boolean;
+  // public cartSubscription: Subscription;
+  public cartIcon: string;
+
+  private pristineCartIcon = '../../assets/icons/shop/cart_empty.svg';
+  private dirtyCartIcon = '../../assets/icons/shop/cart_items.svg';
 
   constructor(
-    public userAuth: AuthService,
+    private userAuth: AuthService,
+    private router: Router,
     private shopwareService: ShopwareService
   ) {
-    this.shopwareService.cartState
-      .subscribe(state => {
-        console.log('cardState', state);
-        this.cart = state;
-      });
-
   }
 
 
   ngOnInit() {
-    // ToDo: Refactor this
-    const headers = this.shopwareService.headers;
+    console.log('init');
+    this.cartIcon = this.pristineCartIcon;
 
-    // if (!headers['sw-context-token']) {
-    //   const validToken = this.shopwareService.tokenFromLocalStorage;
-    //   if (validToken) {
-    //     this.shopwareService.getCart()
-    //       .then(cart => {
-    //         if (cart.data.deliveries.length) {
-    //           this.cart = true;
-    //         }
-    //       });
-    //   }
-    // }
+  }
+
+  ionViewWillEnter() {
+    console.log('enter');
+  }
+
+  inViewWillLeave() {
+    console.log('leave');
   }
 
   ngOnDestroy(): void {
-    if (this.cartSubscription) {
-      this.cartSubscription.unsubscribe();
-    }
+    console.log('destroy');
   }
 }

@@ -101,13 +101,13 @@ export class CareCardListPage {
         if (data.currentList) {
           data.currentList.sort((a, b) => {
             // @ts-ignore
-            return new Date(b.eventDate) - new Date(a.eventDate);
+            return new Date(b.currentDate) - new Date(a.currentDate);
           });
           }
         if (data.terminatedList) {
           data.terminatedList.sort((a, b) => {
             // @ts-ignore
-            return new Date(b.eventDate) - new Date(a.eventDate);
+            return new Date(b.currentDate) - new Date(a.currentDate);
           });
         }
         this.careCard = data;

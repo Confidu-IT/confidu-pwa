@@ -2883,16 +2883,6 @@ export class TelevetService {
                     }
                   },
                   {
-                    text: text.NO_URINE,
-                    cssClass: 'petspot-actionsheet-button',
-                    handler: () => {
-                      this.buttonData$.next({
-                        symptom: text.NO_URINE,
-                        code: 'NOU'
-                      });
-                    }
-                  },
-                  {
                     text: text.URINATION_PAIN,
                     cssClass: 'petspot-actionsheet-button',
                     handler: () => {
@@ -4068,16 +4058,6 @@ export class TelevetService {
                       this.buttonData$.next({
                         symptom: text.VAGINAL_DISCHARGE,
                         code: 'VAG'
-                      });
-                    }
-                  },
-                  {
-                    text: text.NO_URINE,
-                    cssClass: 'petspot-actionsheet-button',
-                    handler: () => {
-                      this.buttonData$.next({
-                        symptom: text.NO_URINE,
-                        code: 'NOU'
                       });
                     }
                   },

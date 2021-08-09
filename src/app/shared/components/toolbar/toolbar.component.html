@@ -1,15 +1,22 @@
 <ion-toolbar>
-  <ion-buttons slot="start">
-    <ion-menu-button></ion-menu-button>
+  <ion-buttons slot="start" *ngIf="backButton">
+    <ion-back-button
+      [text]="backButtonText"
+      defaultHref="/">
+    </ion-back-button>
   </ion-buttons>
-  <ion-title>
-    <img [src]="logo" alt="" height="40">
+  <ion-title *ngIf="logo && !title">
+    <img [src]="confidu" alt="" height="40">
   </ion-title>
-  <div class="badge"></div>
-  <ion-buttons slot="end">
-    <ion-button routerLink="/shop/cart">
-      <ion-icon *ngIf="cart" color="danger" slot="icon-only" name="cart"></ion-icon>
-      <ion-icon *ngIf="!cart" slot="icon-only" name="cart"></ion-icon>
+  <ion-title *ngIf="!logo && title">
+    {{ title }}
+  </ion-title>
+  <ion-buttons slot="end" *ngIf="settings || cart">
+    <ion-button *ngIf="cart">
+      <img [src]="cartIcon" alt="" height="20" width="20">
     </ion-button>
+    <ion-menu-button menu="end" auto-hide="false" *ngIf="settings">
+      <ion-icon size="small" name="settings-outline"></ion-icon>
+    </ion-menu-button>
   </ion-buttons>
 </ion-toolbar>

@@ -139,127 +139,227 @@ export class TicketService {
 
   public foo = {};
 
-  public blah = {
-    "iconImageLink": "https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/evaluations%2Fevaluation_parasites.svg?alt=media&token=602ddef7-949f-4bb8-93d5-f784aad05eda",
-    "headerHeadlineH2": "Advocate 100 mg + 25 mg",
+  public blah ={
+    "findings": {
+      "header": "Befunde",
+      "body": {
+        "answers": null,
+        "legend": [
+          "Welche Menge Theobromin ist giftig?",
+          "\nAb 20 mg/kg Körpergewicht bei dunkler Schokolade",
+          "Ab 40 mg/kg bei Milchschokolade",
+          "Tödliche Dosis ab 250 mg/kg Körpergewicht"
+        ],
+        "param": [
+          {
+            "titel": "Aufgenommer Wirkstoff",
+            "visibility": true,
+            "expandable": false,
+            "body": null,
+            "image": null,
+            "list": [
+              {
+                "label": "Theobromin",
+                "key": "tox_eat",
+                "image": "https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/evaluations%2Fparameter_signals%2Fwarning.svg?alt=media&token=e658932b-9cc0-4703-93ef-c2ca92622311",
+                "value": {
+                  "valB": null,
+                  "valA": "21500.0"
+                },
+                "unit": "mg/kg"
+              }
+            ]
+          }
+        ],
+        "text": null
+      },
+      "visibility": true
+    },
+    "fupKeys": [],
+    "magazinKeys": [],
+    "textA3": null,
+    "urgency": "hoch",
+    "textA5": null,
+    "ticketKeys": [],
+    "headerHeadlineH1": "Achtung!",
+    "textA1": {
+      "visibility": null,
+      "header": "Wirkung",
+      "type": "par",
+      "body": [
+        "Theobromin und Koffein wirken erregend auf Herz und Nervensystem."
+      ]
+    },
+    "recipeKeys": [],
+    "image": null,
+    "eventDate": null,
+    "headerHeadlineH2": "Vergiftung",
+    "iconImageLink": "https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/evaluations%2Fevaluation_medical_negative.svg?alt=media&token=96756222-d842-4c82-a19a-e551e4d0d75e",
+    "isPdf": true,
+    "textA2": {
+      "header": "Wie kann ich helfen?",
+      "type": "par",
+      "body": [
+        "Atme tief durch und bewahre Ruhe.",
+        "Schütze dich selbst (Tiere in starker Erregung oder in Panik beißen manchmal um sich).",
+        "Notiere wichtige Informationen zur Schokoladenaufnahme: Welche Sorte (Hier kann dem/der Tierärzt:in auch ein Foto helfen)? Wann gefressen? Wieviel?",
+        "Suche schnellstmöglich eine Tierarztpraxis oder -klinik auf."
+      ],
+      "visibility": true
+    },
+    "therapy": "Tierarztbesuch nötig",
+    "actions": null,
+    "initial": {
+      "type": "par",
+      "body": [
+        "Theobromin und Koffein sind giftig für Hunde und rufen innerhalb von 6-12 Stunden Symptome wie Durchfall, Erbrechen, starke Erregung, Herzrasen und Krämpfe hervor."
+      ],
+      "header": "Was bedeutet das?",
+      "visibility": true
+    },
+    "slider": null,
+    "textA4": null,
+    "nextDate": null,
     "popup": {
+      "popupOptionText": "Möchtest du die Diagnose in der CareCard ablegen? Dort kannst du sie jederzeit wieder einsehen. Klicke hierzu auf speichern. Wenn nicht, wird die Auswertung automatisch verworfen.",
+      "buttonConfirm": {
+        "label": "SPEICHERN",
+        "type": "confirm"
+      },
       "buttonCancel": {
         "type": "cancel",
         "label": "VERWERFEN"
-      },
-      "popupOptionText": "Möchtest du das Ergebnis in der CareCard von Wuffel 5 abspeichern?",
-      "buttonConfirm": {
-        "type": "confirm",
-        "label": "SPEICHERN"
       }
     },
-    "isPdf": false,
-    "magazinKeys": [],
-    "findings": {
-      "visibility": true,
-      "body": {
-        "answers": null,
-        "text": null,
-        "param": [
-          {
-            "titel": "Spulwürmer",
-            "visibility": true,
-            "expandable": true,
-            "body": [
-              "Dein Haustier kann sich über kontaminierten Kot oder Spulwurmeier in der Umgebung (beispielsweise Wiesenflächen) anstecken. Symptome eines Spulwurmbefalls sind unter anderem Durchfall, Erbrechen, stumpfes Fell, Blutarmut und Wachstumsstörungen bei jungen Tieren. Auch Menschen können sich mit einigen Spulwurmarten anstecken."
-            ],
-            "image": "https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/evaluations%2Fparameter_signals%2Fokay.svg?alt=media&token=1db64170-46a7-499a-bf0f-a3df3afe8315",
-            "list": null
-          },
-          {
-            "titel": "andere Endoparasiten",
-            "visibility": true,
-            "expandable": true,
-            "body": [
-              "Das verwendete Präparat wirkt gegen weitere Endoparasiten. Da diese jedoch eher selten auftreten, haben wir sie nicht aufgeführt. Lies im Beipackzettel des Medikaments für weitere Details nach."
-            ],
-            "image": "https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/evaluations%2Fparameter_signals%2Fokay.svg?alt=media&token=1db64170-46a7-499a-bf0f-a3df3afe8315",
-            "list": null
-          },
-          {
-            "titel": "Ektoparasiten",
-            "visibility": true,
-            "expandable": true,
-            "body": [
-              "Das Medikament ist ein sogenanntes Endektozid. Das bedeutet, dass es auch eine Wirkung auf Ektoparasiten hat. Welche dies genau betrifft, findest du in der CareCard unter Ektoparasitenrisiko."
-            ],
-            "image": "https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/evaluations%2Fparameter_signals%2Fokay.svg?alt=media&token=1db64170-46a7-499a-bf0f-a3df3afe8315",
-            "list": null
-          }
-        ],
-        "legend": null
-      },
-      "header": "Wirkumfang des Präparats"
-    },
-    "ticketKeys": [],
-    "initial": null,
-    "fupKeys": [],
-    "nextDate": "Nächster Termin: 01.09.2021",
-    "textA5": null,
-    "textA1": null,
-    "therapy": null,
-    "urgency": null,
-    "products": null,
-    "textA4": null,
-    "headerHeadlineH1": null,
-    "textA3": null,
     "venomList": [
-      "ADVDO1010000003_endopar"
+      "1097_tox_D",
+      "1097_tox_D_CC"
     ],
-    "image": null,
-    "slider": null,
-    "recipeKeys": [],
-    "textA2": null,
-    "actions": [
-      {
-        "header": "Du möchtest Medikamente gegen Parasiten geben?",
-        "label": "Antiparasitikum bestellen",
-        "body": "Klicke auf „Antiparasitikum bestellen“, wenn du Wuffel 5 mit einem verschreibungspflichtigen Präparat gegen Parasiten schützen möchtest. Dann gelangst du zur Abfrage bezüglich Gegenanzeigen und Wechselwirkungen.",
-        "link": null,
-        "event": null,
-        "visibility": true,
-        "key": null
-      }
-    ],
+    "products": null,
     "backgroundImageLink": "https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/evaluations%2Ftelevet.svg?alt=media&token=2ce7f7a2-83a9-44bc-b255-59bef8882ce5",
-    "eventDate": "Angewendet am: 04.08.2021",
     "carecard": [
       {
-        "level3Id": "36c399f0-d9b0-4ba2-a386-3df1a2d77001",
-        "resultKey": "ADVDO1010000003_endopar",
-        "level1_valA": null,
+        "level3Id": "492cd57c-39b1-48db-a7cf-58d382da6adb",
+        "resultKey": "tox_dog_choc2",
+        "level1_valA": "2",
         "level1_valB": null,
-        "valA": null,
+        "valA": "2",
         "valB": null,
-        "venomKey": "ADVDO1010000003_endopar",
+        "venomKey": "w+weightac_variable_nores",
         "level0_cc_key": "prevention_cc",
-        "level1_cc_key": "endopar_cc",
+        "level1_cc_key": "w+weightac",
+        "cc_status": "variable_nores",
+        "priority": 9,
+        "param": null,
+        "downloadPath": null,
+        "eventDate": "2021-08-09T12:13:28.100493+02:00",
+        "nextDate": null,
+        "isTerminated": false,
+        "currentDate": "2021-08-09T12:13:28.286420+02:00",
+        "eventId": "cc8b6768-8cac-44fb-94f2-abb7263202a6",
+        "findings": [
+          {
+            "currentDate": "2021-08-09T12:13:28.286420+02:00",
+            "docs": [
+              "findings/3c6e19e1-e1cb-4c31-8f86-38711d47a880.pdf"
+            ],
+            "id": null,
+            "name": "name",
+            "image": null,
+            "region": {
+              "name": null,
+              "value": null
+            },
+            "type": "pdf"
+          }
+        ],
+        "currentWeight": 2,
+        "event": "televet"
+      },
+      {
+        "level3Id": "acc9021c-7cad-4a5d-9840-8dd5b2e3107c",
+        "resultKey": "tox_dog_choc2",
+        "level1_valA": "21500.0",
+        "level1_valB": null,
+        "valA": "21500.0",
+        "valB": null,
+        "venomKey": "1097_tox_D",
+        "level0_cc_key": "diseases_cc",
+        "level1_cc_key": "healthstatus_cc",
+        "cc_status": "sick",
+        "priority": 3,
+        "param": null,
+        "downloadPath": null,
+        "eventDate": "2021-08-09T12:13:28.100493+02:00",
+        "nextDate": "2021-08-09T10:13:28.141096+00:00",
+        "isTerminated": false,
+        "currentDate": "2021-08-09T12:13:28.286420+02:00",
+        "eventId": "cc8b6768-8cac-44fb-94f2-abb7263202a6",
+        "findings": [
+          {
+            "currentDate": "2021-08-09T12:13:28.286420+02:00",
+            "docs": [
+              "findings/3c6e19e1-e1cb-4c31-8f86-38711d47a880.pdf"
+            ],
+            "id": null,
+            "name": "name",
+            "image": null,
+            "region": {
+              "name": null,
+              "value": null
+            },
+            "type": "pdf"
+          }
+        ],
+        "currentWeight": 2,
+        "event": "televet"
+      },
+      {
+        "level3Id": "1a74a1d0-3a66-4228-acb4-7c708623f79f",
+        "resultKey": "tox_dog_choc2",
+        "level1_valA": "21500.0",
+        "level1_valB": null,
+        "valA": "21500.0",
+        "valB": null,
+        "venomKey": "1097_tox_D_CC",
+        "level0_cc_key": "diseases_cc",
+        "level1_cc_key": "consultation_cc",
         "cc_status": "available",
         "priority": 3,
         "param": null,
         "downloadPath": null,
-        "eventDate": "2021-08-04T15:29:33.428000+02:00",
-        "nextDate": "2021-09-01T15:29:41.159535+02:00",
+        "eventDate": "2021-08-09T12:13:28.100493+02:00",
+        "nextDate": "2021-08-09T10:13:28.141096+00:00",
         "isTerminated": false,
-        "currentDate": "2021-08-04T15:29:41.377081+02:00",
-        "eventId": "e7cf3c94-cce7-4aca-afe6-2bef02e02e55",
-        "findings": [],
-        "currentWeight": 0,
-        "event": "ticket"
+        "currentDate": "2021-08-09T12:13:28.286420+02:00",
+        "eventId": "cc8b6768-8cac-44fb-94f2-abb7263202a6",
+        "findings": [
+          {
+            "currentDate": "2021-08-09T12:13:28.286420+02:00",
+            "docs": [
+              "findings/3c6e19e1-e1cb-4c31-8f86-38711d47a880.pdf"
+            ],
+            "id": null,
+            "name": "name",
+            "image": null,
+            "region": {
+              "name": null,
+              "value": null
+            },
+            "type": "image"
+          }
+        ],
+        "currentWeight": 2,
+        "event": "televet"
       }
     ],
     "internal": {
-      "diseaseKey": "ADVDO1010000003_endopar",
-      "eventDate": "2021-08-04T15:29:33.428000+02:00"
+      "diseaseKey": "tox_dog_choc2",
+      "eventDate": "2021-08-09T12:13:28.100493+02:00"
     },
-    "currentDate": "2021-08-04T15:29:41.377081+02:00",
-    "eventId": "e7cf3c94-cce7-4aca-afe6-2bef02e02e55",
-    "ticketId": "KKEr0jRJn19qHxTLpjln"
+    "currentDate": "2021-08-09T12:13:28.286420+02:00",
+    "eventId": "cc8b6768-8cac-44fb-94f2-abb7263202a6",
+    "ticketId": null
   }
 
 }

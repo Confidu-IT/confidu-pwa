@@ -33,6 +33,8 @@
   },
   "TELEVET_EMERGENCY_PAGE": {
     "TITLE": "Notfall",
+    "HEADER": "Notdienstbesuch nötig?",
+    "TEXT": "Nicht alles, was im ersten Moment wie ein Notfall erscheint, ist auch einer. Wir helfen dir, die Situation richtig einzuschätzen.\nHier findest du die häufigsten medizinischen Notfälle mit Beschreibungen und erfährst, wie du helfen kannst.",
     "BUTTONS": {
       "CANCEL": "Abbrechen",
       "CONFIRM": "Weiter"
@@ -480,7 +482,8 @@
     "HEADER": "Bitte wähle die Art der Konsultation aus:",
     "QUESTIONNAIRE": "Diagnose Finder (kostenlos)",
     "CALL": "Videoanruf buchen (19,99 €)",
-    "CALL_DESCRIPTION": "Wir nehmen uns ausreichend\nZeit, um dir und deinem Vierbeiner\nzu helfen. \nUm jeden Videoanruf termingerecht annehmen zu können, begrenzen wir die Gesprächszeit auf maximal 20 Minuten. ",
+    "CALL_DESCRIPTION": "Im persönlichen Gespräch mit unseren Tierärzten kannst du in Ruhe Probleme besprechen und sie direkt an deinem Vierbeiner zeigen. Um jeden Videoanruf termingerecht annehmen zu können, begrenzen wir die Gesprächszeit auf maximal 20 Minuten.",
+    "DIAG_DESCRIPTION": "Ohne Wartezeit und immer verfügbar! Gib das Symptom an, das deinen Vierbeiner plagt, und beantworte darauf abgestimmte Fragen. Du erhältst eine Auswertung mit Diagnose, Einschätzung der Dringlichkeit und Handlungsempfehlungen. Benötigte Präparate kannst du direkt bestellen.",
     "CANCEL": "Abbrechen",
     "PROGRESS": "Weiter"
   },
@@ -605,7 +608,7 @@
     "PHARMACY": "Apothekenpflichtig",
     "SAVED_CART": "Produkt in deinem Warenkorb gespeichert",
     "CHOICE_QUESTION": "Hast du deine Auswahl getroffen?",
-    "CHOICE_TEXT": "Wenn deine Auswahl vollständig ist, dann gehe weiter zum Warenkorb",
+    "CHOICE_TEXT": "Wenn deine Auswahl vollständig ist, dann gehe weiter zum Warenkorb.",
     "CART_BUTTON": "Zum Warenkorb",
     "MED": {
       "NAME": "Wirkstoff oder Präparatname",
@@ -651,7 +654,7 @@
       "Diagnose",
       "Name des Medikaments"
     ],
-    "CHOOSE": "Wähle die Erkrankung und das Medikament aus, welches du für dein Tier bestellen möchtest:",
+    "CHOOSE": "Wähle zwischen Erkrankung und Parasitenphropylaxe aus und ergänze das gewünschte Präparat.",
     "MANUAL_CHOICE": "Bitte wähle das Medikament aus, welches du anfragen möchtest. Wir versuchen es zu besorgen und benachrichtigen dich",
     "ALERT": {
       "TITLE": "Vielen Dank für deine Anfrage!",

@@ -2,8 +2,8 @@
   <ion-card-content>
     <ng-container *ngFor="let element of products">
 
-      <div class="order-header" *ngIf="element.header">
-        <h4 class="order-title">{{ element.header }}</h4>
+      <div class="order-header" *ngIf="element.header || element.headline">
+        <h4 class="order-title">{{ element.header || element.headline }}</h4>
         <img *ngIf="element.info" (click)="onClickInfo()" [src]="infoButton" alt="" height="28">
       </div>
 

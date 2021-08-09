@@ -119,6 +119,25 @@
                     <p *ngFor="let p of element?.body">{{ p }}</p>
                   </div>
 
+                  <ng-container *ngIf="element?.list && !isFoodCheck">
+                    <ul class="ticket-result-param-list" *ngFor="let item of element.list, let i = index">
+                      <li>
+                        <div class="header">
+                          <div class="image">
+                            <img [src]="item.image" alt="" width="20">
+                          </div>
+                          <div class="text">{{ item.label }}</div>
+                          <div *ngIf="item.value" class="values">
+                            <span class="valB" *ngIf="item.value?.valB"> {{ item.value.valB }} </span>
+                            <span *ngIf="item.value?.valA">{{ item.value.valA }}
+                              <span *ngIf="item.unit">{{ item.unit }}</span>
+                            </span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </ng-container>
+
                   <ng-container *ngIf="element?.list && listOpen[i]?.val">
                     <ul class="ticket-result-param-list" *ngFor="let item of element.list, let i = index">
                       <li>
@@ -128,9 +147,10 @@
                           </div>
                           <div class="text">{{ item.label }}</div>
                           <div *ngIf="item.value" class="values">
-                            <span *ngIf="item.value?.valA">{{ item.value.valA }} </span>
-                            <span *ngIf="item.unit">{{ item.unit }}</span><br>
                             <span class="valB" *ngIf="item.value?.valB"> {{ item.value.valB }} </span>
+                            <span *ngIf="item.value?.valA">{{ item.value.valA }}
+                              <span *ngIf="item.unit">{{ item.unit }}</span>
+                            </span>
                           </div>
                           <div (click)="openIngredientsList(i)" *ngIf="item.expandable" class="chevrons">
                             <ion-icon *ngIf="!listOpen[i]?.val" name="chevron-down-outline"></ion-icon>
@@ -140,6 +160,7 @@
                       </li>
                     </ul>
                   </ng-container>
+
                   <ng-container *ngIf="result?.findings?.body?.legend">
                     <p *ngFor="let p of result?.findings?.body?.legend"
                        class="param-legend">{{ p }}
@@ -148,55 +169,6 @@
                 </li>
 
               </ul>
-
-<!--              <ng-container *ngIf="result?.findings?.body?.param">-->
-<!--                <h4 class="ticket-result-param-title">{{ result?.findings.body.param.titel }}</h4>-->
-<!--                <ul class="ticket-result-param-list">-->
-<!--                  <li *ngFor="let item of result?.findings?.body?.param?.list, let i = index">-->
-
-<!--                    <div class="header">-->
-<!--                      <div class="image">-->
-<!--                        <img [src]="item.image" alt="" width="20">-->
-<!--                      </div>-->
-<!--                      <div class="text">{{ item.label }}</div>-->
-
-<!--                      <div class="values" *ngIf="item.value">-->
-<!--                      <span *ngIf="item.value?.valA">-->
-<!--                        {{ item.value.valA }}-->
-<!--                      </span>-->
-<!--                        <span *ngIf="item.value?.valB">-->
-<!--                        {{ item.value.valB.toFixed(2) }}-->
-<!--                      </span>-->
-<!--                        <span *ngIf="item.unit">-->
-<!--                        {{ item.unit }}-->
-<!--                      </span>-->
-<!--                      </div>-->
-
-<!--                      <div class="chevrons" *ngIf="item.expandable" (click)="openIngredientsList(i)">-->
-<!--                        <ion-icon *ngIf="!listOpen[i].val" name="chevron-down-outline"></ion-icon>-->
-<!--                        <ion-icon *ngIf="listOpen[i].val" name="chevron-up-outline"></ion-icon>-->
-<!--                      </div>-->
-
-<!--                    </div>-->
-
-<!--                    <div class="text-blocks" *ngIf="item.textblocks && listOpen[i].val">-->
-<!--                      <p *ngFor="let p of item.textblocks">{{ p }}</p>-->
-<!--                    </div>-->
-
-<!--                    <ul class="ingredients" *ngIf="item.ingredients && listOpen[i].val">-->
-<!--                      <li *ngFor="let ingredient of item.ingredients">-->
-<!--                        <div class="ingredient-name">{{ ingredient.name }}</div>-->
-<!--                        <div class="ingredient-val">{{ ingredient.val }}</div>-->
-<!--                        <div class="ingredient-text">{{ ingredient.text }}</div>-->
-<!--                      </li>-->
-<!--                    </ul>-->
-<!--                  </li>-->
-<!--                </ul>-->
-
-<!--                <p class="param-legend"-->
-<!--                   *ngIf="result?.findings?.body?.legend">{{ result?.findings?.body?.legend }}-->
-<!--                </p>-->
-<!--              </ng-container>-->
 
               <ng-container *ngIf="result?.findings?.body?.answers">
                 <div *ngFor="let item of result?.findings.body.answers" class="findings-list">
@@ -231,13 +203,11 @@
                     <img [src]="item.image" alt="" width="20">
                   </div>
                   <div class="text">{{ item.label }}</div>
-                  <div class="values">
-                    <ng-container *ngIf="item.value?.valA">
-                      {{ item.value.valA }} <br>
-                    </ng-container>
-                    <ng-container *ngIf="item.value?.valB">
-                      {{ item.value.valB.toFixed(2) }} {{ item.unit }}
-                    </ng-container>
+                  <div *ngIf="item.value" class="values">
+                    <span class="valB" *ngIf="item.value?.valB"> {{ item.value.valB }} </span>
+                    <span *ngIf="item.value?.valA">{{ item.value.valA }}
+                      <span *ngIf="item.unit">{{ item.unit }}</span>
+                            </span>
                   </div>
                 </li>
               </ul>

@@ -10,7 +10,8 @@ import { CommonService } from '../../shared/services/common/common.service';
 })
 export class HomeModalPage {
   public selected: string;
-  public showNotes = false;
+  public showCallNotes = false;
+  public showDiagNotes = false;
 
   private language: string;
 
@@ -36,12 +37,19 @@ export class HomeModalPage {
   }
 
   public onSelectLink(): void {
-    this.showNotes = this.selected === 'consultation';
+    this.showCallNotes = false;
+    this.showDiagNotes = false;
+    if (this.selected === 'consultation' ) {
+      this.showCallNotes = true;
+    } else if (this.selected === 'tickets/televet-pet') {
+      this.showDiagNotes = true;
+    }
   }
 
   ionViewWillLeave() {
     this.selected = null;
-    this.showNotes = false;
+    this.showCallNotes = false;
+    this.showDiagNotes = false;
   }
 
 }
