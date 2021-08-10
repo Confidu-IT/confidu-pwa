@@ -967,8 +967,13 @@ export class TicketQuestionsPage {
 
   }
 
-  private validNumber(num: number) {
-    return (num > 0 && num < 120);
+  private validWeight(num: number) {
+    if (this.pet.pet.species.value === 'dog') {
+      return (num > 0 && num < 121);
+    } else if (this.pet.pet.species.value === 'cat') {
+      return (num > 0 && num < 21);
+    }
+
   }
 
   get validateAnswer(): boolean {
@@ -983,7 +988,7 @@ export class TicketQuestionsPage {
     ) {
       return false;
     } else if (this.question?.values?.questionType.toLowerCase() === 'z') {
-      return !this.validNumber(this.selectedNumber);
+      return !this.validWeight(this.selectedNumber);
     } else if (this.question?.values?.questionType.toLowerCase() === 'ff' && this.showVetForm) {
       return !this.vetForm.valid;
     } else if (!this.selectedAnswer) {

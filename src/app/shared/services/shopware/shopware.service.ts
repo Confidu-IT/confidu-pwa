@@ -429,27 +429,26 @@ export class ShopwareService {
       .catch(e => e);
   }
 
-  generateQrCode(order: string, id: string, pet: string, fbtoken: string): Promise<any> {
-    const obj = {
-      orderId: order,
-      uid: id,
-      petId: pet,
-      token: fbtoken
-    };
-    const headers = this.headers;
-    const url = `${this.baseUrl}/postmethod_qrcode_generator`;
-    const body = JSON.stringify(obj);
-    return fetch(url, { method: 'POST', headers, body })
-      .then((resp) => resp.json())
-      .then(({ data }) => data);
-  }
+  // generateQrCode(order: string, id: string, pet: string, fbtoken: string): Promise<any> {
+  //   const obj = {
+  //     orderId: order,
+  //     uid: id,
+  //     petId: pet,
+  //     token: fbtoken
+  //   };
+  //   const headers = this.headers;
+  //   const url = `${this.baseUrl}/postmethod_qrcode_generator`;
+  //   const body = JSON.stringify(obj);
+  //   return fetch(url, { method: 'POST', headers, body })
+  //     .then((resp) => resp.json())
+  //     .then(({ data }) => data);
+  // }
 
-  sendOrderId(order: string, user: string, pet: string, activationKey: any, language: string): Promise<any> {
+  sendOrderId(order: string, user: string, pet: string): Promise<any> {
     const obj = {
       orderId: order,
       uid: user,
-      petId: pet,
-      qrActivationKey: activationKey
+      petId: pet
     };
 
     const headers = this.headers;
@@ -464,7 +463,6 @@ export class ShopwareService {
         return resp;
       })
       .then((resp) => resp.json())
-      .then(({ data }) => data)
       .catch(e => e);
   }
 }

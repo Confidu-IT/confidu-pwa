@@ -96,7 +96,7 @@ export class TicketOrderPage {
   ): void {
     this.ticketService.getTicket(userID, token, petID, ticketId, language, true)
       .subscribe(data => {
-        // console.log('ticket', data);
+        console.log('ticket', data);
         if (data) {
           this.products = data.products;
           this.isLoading = false;

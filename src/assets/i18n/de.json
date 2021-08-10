@@ -434,6 +434,9 @@
   "TICKET_ORDER_PAGE": {
     "TITLE": "Shop"
   },
+  "ORDER_SUMMARY_PAGE": {
+    "ORDER_STATE": "Dein Bestellstatus"
+  },
   "HOME_PAGE": {
     "CARE_CARD": "CareCard",
     "COINS": "Confi-Coins",

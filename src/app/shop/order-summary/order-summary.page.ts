@@ -18,7 +18,7 @@ export class OrderSummaryPage {
   private language: string;
   private iconPath = '../../../../assets/icons/shop';
   public user: any;
-
+  public isLoading: boolean
   public radioOnIcon = `${this.iconPath}/radio_on.svg`;
   public radioOffLightIcon = `${this.iconPath}/radio_off_light.svg`;
   public radioOnLightIcon = `${this.iconPath}/radio_on_light.svg`;
@@ -40,24 +40,31 @@ export class OrderSummaryPage {
   }
 
   ionViewWillEnter() {
+    this.isLoading = true;
     this.language = this.commonService.language;
     this.translateService.use(this.language);
     this.subscription = this.userAuth.user$
       .subscribe(user => {
+        console.log('user', user);
         this.user = user;
         const orderId = this.params.orderId;
         const uid = user.uid;
         const petId = localStorage.getItem('activePet');
-        const fbtoken = localStorage.getItem('user_uid');
-        if (orderId && uid && petId && fbtoken) {
+        if (orderId && uid && petId) {
           try {
             this.shopwareService.headers['firebase-context-token'] = this.user.za;
-            this.shopwareService.sendOrderId(orderId, uid, petId, 'sdd', this.language)
+            this.shopwareService.sendOrderId(orderId, uid, petId)
               .then(data => {
                 console.log('data', data);
                 this.orderDetails = data;
+                this.isLoading = false;
               });
-          } catch (e) {}
+          } catch (e) {
+            console.log('e', e);
+
+          }
+        } else {
+          console.log('bleh')
         }
       });
   }
