@@ -112,8 +112,10 @@
                       <li *ngFor="let el of item?.indication?.body?.indicationOther?.body">{{ el }}</li>
                     </ul>
                   </ng-container>
-                  <p class="usage-instructions">{{ 'PRODUCT_MODAL_PAGE.INSTRUCTIONS' | translate }}</p>
-                  <div class="instructions-link" *ngIf="item?.product_pdf_dokumentt">
+                  <p class="usage-instructions" *ngIf="item?.prescription">
+                    {{ 'PRODUCT_MODAL_PAGE.INSTRUCTIONS' | translate }}
+                  </p>
+                  <div class="instructions-link" *ngIf="item?.product_pdf_dokument">
                     <a [href]="instructionsLink" target="_blank">{{ 'PRODUCT_MODAL_PAGE.INST_LINK' | translate }}</a>
                   </div>
 
