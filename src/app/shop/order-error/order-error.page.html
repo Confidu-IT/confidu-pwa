@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>order-error</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div class="ion-text-center" *ngIf="isLoading">
+  <ion-spinner color="primary"></ion-spinner>
+</div>
+  <ion-grid *ngIf="!isLoading">
+    <ion-row>
+      <ion-col>
+        <h2>Something went terrible wrong</h2>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer *ngIf="!isLoading">
+  <app-toolbar-footer [user]="user"></app-toolbar-footer>
+</ion-footer>

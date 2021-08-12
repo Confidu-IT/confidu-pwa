@@ -204,7 +204,11 @@ const routes: Routes = [
     path: 'benefits-detail/:type',
     loadChildren: () => import('./benefits/benefits-detail/benefits-detail.module').then( m => m.BenefitsDetailPageModule)
   },
-  { path: '**', redirectTo: 'home', pathMatch: 'full' },
+  {
+    path: 'order-error',
+    loadChildren: () => import('./shop/order-error/order-error.module').then( m => m.OrderErrorPageModule)
+  },
+  { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ];
 
 @NgModule({

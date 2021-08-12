@@ -61,7 +61,9 @@
                                     [displayWith]="raceLabel"
                                     autoActiveFirstOption>
 
-                    <mat-option *ngFor="let option of (filteredOptions | async)" [value]="option">
+                    <mat-option *ngFor="let option of (filteredOptions | async)"
+                                (onSelectionChange)="onValueChange($event)"
+                                [value]="option">
                       {{ option.data.name_de }}
                     </mat-option>
                   </mat-autocomplete>
@@ -118,7 +120,7 @@
 
               <ion-button
                 (click)="onCreatePet()"
-                [disabled]="!form.valid"
+                [disabled]="!form.valid || !validBreed()"
                 color="secondary"
                 expand="full"
                 routerDirection="forward"

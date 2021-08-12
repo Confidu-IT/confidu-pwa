@@ -162,6 +162,18 @@ export class CreatePetPage implements OnInit {
     }
   }
 
+  public onValueChange(event: any): void {
+    if (!event.isUserInput) {
+      return;
+    }
+    this.breed = event.source?.value;
+
+    console.log('this.breed', this.breed);
+  }
+  public validBreed() {
+    return typeof this.breed !== 'string';
+  }
+
   public raceLabel(race?: any): any {
     return race ? race.data.name_de : undefined;
   }
@@ -364,19 +376,19 @@ export class CreatePetPage implements OnInit {
       recipes: []
     };
 
-    // console.log('pet', pet);
-    this.createFireBasePet(this.user$.uid, pet)
-      .then((res) => {
-        console.log('res', res);
-        this.form.reset();
-        this.petAvatar = `${this.iconPath}/pets_blue_cam.svg`;
-        this.loadingController.dismiss();
-        this.router.navigateByUrl('home');
-      })
-      .catch((error) => {
-        console.log('error', error);
-        this.commonService.presentToast('Eintrag fehlgeschlagen', 'danger');
-      });
+    console.log('pet', pet);
+    // this.createFireBasePet(this.user$.uid, pet)
+    //   .then((res) => {
+    //     console.log('res', res);
+    //     this.form.reset();
+    //     this.petAvatar = `${this.iconPath}/pets_blue_cam.svg`;
+    //     this.loadingController.dismiss();
+    //     this.router.navigateByUrl('home');
+    //   })
+    //   .catch((error) => {
+    //     console.log('error', error);
+    //     this.commonService.presentToast('Eintrag fehlgeschlagen', 'danger');
+    //   });
   }
 
   private async createFireBasePet(userId, pet): Promise<any> {
