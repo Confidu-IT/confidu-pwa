@@ -1,21 +1,9 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>{{ 'PETS_LIST_PAGE.TITLE' | translate }}</ion-title>
-    <ion-buttons slot="primary">
-      <ion-button routerLink="/pets/pet-create">
-        <ion-icon name="add" slot="icon-only"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-
-<!--  <app-toolbar-->
-<!--    [backButton]="true"-->
-<!--    [createPet]="true"-->
-<!--    title="{{ 'PETS_LIST_PAGE.TITLE' | translate }}">-->
-<!--  </app-toolbar>-->
+  <app-toolbar
+    [backButton]="true"
+    [createPet]="true"
+    title="{{ 'PETS_LIST_PAGE.TITLE' | translate }}">
+  </app-toolbar>
 </ion-header>
 
 <ion-content>

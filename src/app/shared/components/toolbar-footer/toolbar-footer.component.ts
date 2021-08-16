@@ -78,9 +78,6 @@ export class ToolbarFooterComponent implements OnInit, OnDestroy {
         this.assignment = values.ASSIGNMENT;
         this.regSuccess = values.REG_SUCCESS;
       });
-      console.log('this.ishome', this.isHomePage)
-
-
   }
 
   ngOnInit(): void {

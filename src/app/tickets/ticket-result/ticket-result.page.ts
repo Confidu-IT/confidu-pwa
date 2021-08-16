@@ -5,7 +5,7 @@ import { TicketService } from '../ticket-service/ticket-service';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { switchMap, tap } from 'rxjs/operators';
-import { ActivatedRoute, Router } from '@angular/router';
+import {ActivatedRoute, ActivatedRouteSnapshot, Router, RouterStateSnapshot} from '@angular/router';
 import { AlertController, ModalController } from '@ionic/angular';
 import { CanDeactivateGuard } from '../can-deactivate-guard.service';
 
@@ -18,10 +18,12 @@ export class TicketResultPage implements CanDeactivateGuard {
   private subscription: Subscription;
   private iconPath = '../../../../assets/icons/tickets/result';
   private readonly routeSub: Subscription;
+  private routerSub: Subscription;
   private params: any;
   private eventId: string;
   private petId: string;
   private language: string;
+  routingDestination: string;
 
   public user: any;
 
@@ -51,6 +53,12 @@ export class TicketResultPage implements CanDeactivateGuard {
       .subscribe((params: any) => {
         this.params = params;
       });
+
+    this.routerSub = this.router.events
+      .subscribe((el: any) => {
+        this.routingDestination = el.url;
+      })
+
   }
 
   ionViewWillEnter() {
@@ -154,7 +162,19 @@ export class TicketResultPage implements CanDeactivateGuard {
     }
   }
 
-  canDeactivate(): Promise<boolean> | boolean {
+  canDeactivate(
+  ): Promise<boolean> | boolean {
+    if (this.routingDestination.search('cart')) {
+      this.ticketService.confirmSave(
+        this.eventId, 'confirm',
+        this.petId,
+        this.user.uid, this.user.za,
+        this.commonService.language
+      ).subscribe( () => {
+
+      });
+      return true;
+    }
     if (this.result && this.result.popup) {
       const data = this.result.popup;
       return new Promise(async resolve => {
@@ -207,6 +227,9 @@ export class TicketResultPage implements CanDeactivateGuard {
     }
     if (this.routeSub) {
       this.routeSub.unsubscribe();
+    }
+    if (this.routerSub) {
+      this.routerSub.unsubscribe();
     }
   }
 

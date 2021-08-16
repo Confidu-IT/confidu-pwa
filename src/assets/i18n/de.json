@@ -462,14 +462,14 @@
     "RECIPE_HEADER": "Medikamente nachbestellen",
     "RECIPE_TEXT": "Lorem ipsum dolor sit amet",
     "PATCH_BUTTON": "Verarzten",
-    "DANGER_BUTTON": "Notfall",
+    "DANGER_BUTTON": "Sehr krank",
     "EMERGENCY": "Notfall",
     "PET_STATE": "Wie geht es",
     "HEALTH_STATE_TEXT": {
       "EXCELLENT": "Gut",
       "GOOD": "Schlapp",
       "BAD": "Krank",
-      "WORSE": "Notfall"
+      "WORSE": "Sehr krank"
     },
     "NO_TASKS_TEXT": {
       "PART_1": "Heute sind keine",
@@ -689,6 +689,7 @@
     "ADD_FINDING": "Befunde eingeben",
     "ADD_DIAGNOSIS": "Erkrankung eingeben",
     "VET_VISIT": "Tierarztbesuch",
+    "OBLIGATORY": "Mit Sternchen markierte Felder sind Pflichtfelder.",
     "PROGRESS": "Weiter",
     "REPEAT": "Wiederholen"
   },

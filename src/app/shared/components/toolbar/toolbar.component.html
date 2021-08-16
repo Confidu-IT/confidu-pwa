@@ -11,8 +11,8 @@
   <ion-title *ngIf="!logo && title">
     {{ title }}
   </ion-title>
-  <ion-buttons slot="end" *ngIf="settings || cart">
-    <ion-button *ngIf="cart">
+  <ion-buttons slot="end" *ngIf="settings || cart || createPet">
+    <ion-button routerLink="/shop/cart" *ngIf="cart">
       <img [src]="cartIcon" alt="" height="20" width="20">
     </ion-button>
     <ion-menu-button menu="end" auto-hide="false" *ngIf="settings">

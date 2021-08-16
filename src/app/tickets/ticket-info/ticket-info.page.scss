@@ -3,8 +3,9 @@ ion-card {
 }
 
 h2 {
-  font-weight: bold;
-  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0;
 }
 
 li {
@@ -23,8 +24,13 @@ ul {
 }
 
 .infos {
-  display: flex;
+  //display: flex;
   margin: 16px 0;
+}
+
+.info-header {
+  display: flex;
+  align-items: center;
 }
 
 .info-image {
@@ -35,12 +41,4 @@ ul {
     height: 27px;
     min-width: 33px;
   }
-}
-
-.info-text {
-  padding-left: 16px;
-}
-
-h2 {
-  font-size: 14px;
 }
