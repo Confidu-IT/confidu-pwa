@@ -20,16 +20,17 @@ figure {
 }
 
 p, figcaption {
-  font-size: 14px;
+  font-size: 13px;
 }
 
 p {
   height: 115px;
   margin: 20px 60px 20px;
+  color: rgb(102,102,102);
 }
 
 figcaption {
-  color: var(--ion-color-medium);
+  color: rgb(102,102,102);
   margin-top: 16px;
   width: 100%;
 }

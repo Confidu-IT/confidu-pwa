@@ -11,6 +11,10 @@ h2 {
 .header {
   margin: 16px 24px 0;
 
+  .headline {
+    font-size: 16px;
+  }
+
   .top {
     display: flex;
     align-items: center;
@@ -23,6 +27,7 @@ h2 {
   .support {
     margin-top: 24px;
     margin-bottom: 4px;
+
   }
 
   .text {

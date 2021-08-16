@@ -1,10 +1,5 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/lab"></ion-back-button>
-    </ion-buttons>
-    <ion-title>{{ title }}</ion-title>
-  </ion-toolbar>
+  <app-toolbar [backButton]="true" [cart]="true" [title]="title"></app-toolbar>
 </ion-header>
 
 <ion-content>

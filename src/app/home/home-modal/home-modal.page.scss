@@ -7,10 +7,11 @@ h2 {
   margin-bottom: 24px;
   margin-left: 24px;
   margin-top: 40px;
+  color: rgb(102, 102,102);
 }
 
 mat-radio-button {
-  color: #000;
+  color: rgb(102, 102,102);
   font-size: 13px;
   margin-left: 24px;
   margin-bottom: 16px;
@@ -29,7 +30,8 @@ mat-radio-button {
 
 .call-description {
   font-size: 11px;
-  font-weight: 300;
+  //font-weight: 300;
+  color: rgb(102,102,102);
   line-height: 15px;
   margin: 24px 24px 0;
 }

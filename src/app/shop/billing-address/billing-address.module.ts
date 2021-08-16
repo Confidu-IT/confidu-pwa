@@ -12,6 +12,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {SharedComponentsModule} from '../../shared/components/shared-components.module';
 
 const routes: Routes = [
   {
@@ -31,6 +32,7 @@ const routes: Routes = [
     MatCheckboxModule,
     MatFormFieldModule,
     MatInputModule,
+    SharedComponentsModule,
     TranslateModule.forChild(),
     RouterModule.forChild(routes)
   ],

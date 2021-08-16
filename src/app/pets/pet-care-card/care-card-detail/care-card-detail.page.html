@@ -1,10 +1,7 @@
 <ion-header>
-  <ion-toolbar *ngIf="!pdfZoom">
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
-    </ion-buttons>
-    <ion-title>{{ result?.l3Label }}</ion-title>
-  </ion-toolbar>
+  <ng-container  *ngIf="!pdfZoom">
+    <app-toolbar [backButton]="true" title="{{ result?.l3Label }}"></app-toolbar>
+  </ng-container>
 
   <div *ngIf="pdfZoom" class="zoom-toolbar">
     <a class="toolbar-download-link"

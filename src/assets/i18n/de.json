@@ -20,8 +20,9 @@
     "GENDER_LABEL": "Geschlecht",
     "CASTRATION_LABEL": "Kastrationsstatus",
     "BIRTHDAY_LABEL": "Geburtsdatum",
-    "FORM_BUTTON": "Neues Tier anlegen",
-    "WAITING": "Bitte warten ..."
+    "FORM_BUTTON": "Speichern",
+    "WAITING": "Bitte warten ...",
+    "TITLE": "Tier anlegen"
   },
   "DASHBOARD_PAGE": {
     "TITLE": "Überblick",
@@ -649,9 +650,9 @@
       "BACK": "Zurück",
       "FORWARD": "Weiter"
     },
-    "INTRO_TEXT": "Um das Rezept auszustellen und dir das Medikament zuschicken zu können, benötigen wir von dir eine Rechnung von deinem Tierazt mit den folgenden Informationen",
+    "INTRO_TEXT": "Um das Rezept auszustellen und dir das Medikament zuschicken zu können, benötigen wir eine Rechnung deiner Tierarztpraxis mit den folgenden Informationen",
     "INTRO_LIST": [
-      "Name und Anschrift des Tieraztes",
+      "Name und Anschrift der Tierarztpraxis",
       "Name und Geburtsdatum des Tieres",
       "Dein Name und deine Adresse",
       "Diagnose",

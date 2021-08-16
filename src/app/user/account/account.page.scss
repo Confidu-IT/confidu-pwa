@@ -17,6 +17,7 @@ ul {
   padding-left: 0;
 
   li {
+    font-size: 14px;
     display: flex;
     justify-content: space-between;
     padding-top: 4px;
@@ -53,4 +54,8 @@ ul {
 
 mat-form-field {
   width: 100%;
+}
+
+.pw-change {
+  margin-top: 8px;
 }

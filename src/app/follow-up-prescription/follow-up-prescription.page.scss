@@ -15,9 +15,11 @@
   text-align: center;
   margin-top: 40px;
   padding: 0 16px;
+  color: rgb(102,102,102);
 }
 
 .body-list {
+  color: rgb(102,102,102);
   display: flex;
   justify-content: center;
   margin-top: 24px;
@@ -40,6 +42,6 @@ ion-footer {
 
 .footer-buttons {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   margin: 6px 16px 0;
 }

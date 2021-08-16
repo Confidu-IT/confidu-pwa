@@ -7,10 +7,10 @@ ion-item {
 }
 
 .menu {
-  margin: 12px 0;
+  //margin: 12px 0;
 
   h3 {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bold;
   }
 
@@ -24,6 +24,10 @@ ion-item {
 
   &-headline {
     margin-left: 32px;
+
+    h3 {
+      font-size: 16px;
+    }
   }
 
   ul {
@@ -50,9 +54,14 @@ ion-item {
 }
 
 .reg {
+
   &-field {
     display: flex;
     align-items: flex-end;
+  }
+
+  &-card {
+    margin-top: 8px;
   }
 
   &-nr {
@@ -62,7 +71,7 @@ ion-item {
   }
 
   &-text {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   ion-button {

@@ -18,7 +18,7 @@ export class TicketGuidePage {
   private params: any;
   private species: string;
   private petId: string;
-  private user: any;
+  public user: any;
   public language: string;
   private subscription: Subscription;
   public data: any;

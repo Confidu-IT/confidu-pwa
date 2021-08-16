@@ -1,11 +1,7 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="shop/products"></ion-back-button>
-    </ion-buttons>
-    <ion-title>{{ 'PAYMENT_PAGE.TITLE' | translate }}</ion-title>
-  </ion-toolbar>
+  <app-toolbar [backButton]="true" title="{{ 'PAYMENT_PAGE.TITLE' | translate }}"></app-toolbar>
 </ion-header>
+
 
 <ion-content>
   <ion-grid>
@@ -33,3 +29,7 @@
     </ion-row>
   </ion-grid>
 </ion-content>
+
+<ion-footer>
+  <app-toolbar-footer [user]="user"></app-toolbar-footer>
+</ion-footer>

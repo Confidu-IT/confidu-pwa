@@ -18,5 +18,8 @@
     <ion-menu-button menu="end" auto-hide="false" *ngIf="settings">
       <ion-icon size="small" name="settings-outline"></ion-icon>
     </ion-menu-button>
+    <ion-button routerLink="/pets/pet-create" *ngIf="createPet">
+      <ion-icon name="add" slot="icon-only"></ion-icon>
+    </ion-button>
   </ion-buttons>
 </ion-toolbar>

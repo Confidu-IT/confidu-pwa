@@ -17,6 +17,7 @@ export class ToolbarComponent implements OnInit, OnDestroy {
   @Input() title: string;
   @Input() settings: boolean;
   @Input() cart: boolean;
+  @Input() createPet: boolean;
 
   public confidu = environment.logo;
   public backButtonText = '';
@@ -36,20 +37,16 @@ export class ToolbarComponent implements OnInit, OnDestroy {
 
 
   ngOnInit() {
-    console.log('init');
     this.cartIcon = this.pristineCartIcon;
 
   }
 
   ionViewWillEnter() {
-    console.log('enter');
   }
 
   inViewWillLeave() {
-    console.log('leave');
   }
 
   ngOnDestroy(): void {
-    console.log('destroy');
   }
 }

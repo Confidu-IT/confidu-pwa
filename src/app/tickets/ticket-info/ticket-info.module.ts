@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { TicketInfoPage } from './ticket-info.page';
 import { TranslateModule } from '@ngx-translate/core';
+import {SharedComponentsModule} from '../../shared/components/shared-components.module';
 
 const routes: Routes = [
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     TranslateModule.forChild(),
+    SharedComponentsModule,
     RouterModule.forChild(routes)
   ],
   declarations: [TicketInfoPage]

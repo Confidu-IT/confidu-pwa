@@ -17,7 +17,7 @@ export class TicketInfoPage {
   private params: any;
   private subscription: Subscription;
   private petId: string;
-  private user: any;
+  public user: any;
   public language: string;
   public data: any;
   public species: any;

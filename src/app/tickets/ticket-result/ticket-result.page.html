@@ -1,16 +1,5 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>{{ 'TICKET_RESULT_PAGE.TITLE' | translate }}</ion-title>
-    <ion-buttons slot="end">
-    <ion-button>
-      <ion-icon size="small" name="chatbubble-ellipses-outline"></ion-icon>
-    </ion-button>
-    <ion-menu-button menu="end" auto-hide="false">
-      <ion-icon size="small" name="settings-outline"></ion-icon>
-    </ion-menu-button>
-    </ion-buttons>
-  </ion-toolbar>
-
+  <app-toolbar [cart]="true" title="{{ 'TICKET_RESULT_PAGE.TITLE' | translate }}"></app-toolbar>
 </ion-header>
 
 <ion-content>

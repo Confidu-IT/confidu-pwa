@@ -1,10 +1,7 @@
 <ion-header>
-  <ion-toolbar *ngIf="!imageZoom">
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
-    </ion-buttons>
-    <ion-title>{{ careCard?.headline }}</ion-title>
-  </ion-toolbar>
+  <ng-container  *ngIf="!imageZoom">
+    <app-toolbar [backButton]="true" title="{{ careCard?.headline }}"></app-toolbar>
+  </ng-container>
 
   <div *ngIf="imageZoom" class="image-toolbar">
     <div class="close-button" (click)="closeImage()">

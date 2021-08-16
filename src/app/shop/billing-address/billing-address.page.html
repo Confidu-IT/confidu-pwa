@@ -1,11 +1,8 @@
 
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="shop/products"></ion-back-button>
-    </ion-buttons>
-    <ion-title>{{ title }}</ion-title>
-  </ion-toolbar>
+
+  <app-toolbar [backButton]="true" title="{{ title }}"></app-toolbar>
+
 </ion-header>
 
 <ion-content>
@@ -65,3 +62,7 @@
     </ion-row>
   </ion-grid>
 </ion-content>
+
+<ion-footer>
+  <app-toolbar-footer [user]="user"></app-toolbar-footer>
+</ion-footer>

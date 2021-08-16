@@ -1,7 +1,5 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>{{ 'LAB_PAGE.TITLE' | translate }}</ion-title>
-  </ion-toolbar>
+  <app-toolbar [backButton]="true" [cart]="true" title="{{ 'LAB_PAGE.TITLE' | translate }}"></app-toolbar>
 </ion-header>
 
 <ion-content>
@@ -47,7 +45,8 @@
             </ul>
           </ion-card-content>
         </ion-card>
-        <ion-card>
+
+        <ion-card class="reg-card">
           <ion-card-content class="reg">
             <div class="reg-text">{{ 'REGISTER_CODE.REG_TEXT' | translate }}</div>
             <div class="reg-field">
