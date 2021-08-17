@@ -377,18 +377,18 @@ export class CreatePetPage implements OnInit {
     };
 
     console.log('pet', pet);
-    // this.createFireBasePet(this.user$.uid, pet)
-    //   .then((res) => {
-    //     console.log('res', res);
-    //     this.form.reset();
-    //     this.petAvatar = `${this.iconPath}/pets_blue_cam.svg`;
-    //     this.loadingController.dismiss();
-    //     this.router.navigateByUrl('home');
-    //   })
-    //   .catch((error) => {
-    //     console.log('error', error);
-    //     this.commonService.presentToast('Eintrag fehlgeschlagen', 'danger');
-    //   });
+    this.createFireBasePet(this.user$.uid, pet)
+      .then((res) => {
+        console.log('res', res);
+        this.form.reset();
+        this.petAvatar = `${this.iconPath}/pets_blue_cam.svg`;
+        this.loadingController.dismiss();
+        this.router.navigateByUrl('home');
+      })
+      .catch((error) => {
+        console.log('error', error);
+        this.commonService.presentToast('Eintrag fehlgeschlagen', 'danger');
+      });
   }
 
   private async createFireBasePet(userId, pet): Promise<any> {

@@ -164,18 +164,21 @@ export class TicketResultPage implements CanDeactivateGuard {
 
   canDeactivate(
   ): Promise<boolean> | boolean {
-    if (this.routingDestination.search('cart')) {
+    console.log('this.routingDestination', this.routingDestination)
+    if (
+      this.routingDestination.search('cart') > -1 ||
+      this.routingDestination.search('consultation') > -1 ||
+      this.routingDestination.search('follow-up-prescription') > -1
+    ) {
       this.ticketService.confirmSave(
         this.eventId, 'confirm',
         this.petId,
         this.user.uid, this.user.za,
         this.commonService.language
       ).subscribe( () => {
-
       });
       return true;
-    }
-    if (this.result && this.result.popup) {
+    } else if (this.result && this.result.popup) {
       const data = this.result.popup;
       return new Promise(async resolve => {
         const [alert] = await Promise.all([this.alertCtrl.create({
@@ -220,6 +223,7 @@ export class TicketResultPage implements CanDeactivateGuard {
   }
 
   ionViewWillLeave() {
+    this.routingDestination = undefined;
     this.ticketService.setAnswers({});
     this.listOpen = [];
     if (this.subscription) {

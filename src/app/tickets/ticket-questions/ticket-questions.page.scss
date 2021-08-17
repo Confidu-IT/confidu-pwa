@@ -586,6 +586,13 @@ mat-label {
   width: unset;
 }
 
+.link-to-guide {
+  color: var(--ion-color-secondary);
+  font-size: 13px;
+  margin-top: 36px;
+  text-align: center;
+}
+
 :host(.item-interactive.ion-valid) {
   --highlight-background: var(--ion-color-secondary) !important;
 }

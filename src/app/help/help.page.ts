@@ -5,6 +5,7 @@ import {Router} from '@angular/router';
 import {TranslateService} from '@ngx-translate/core';
 import {FirebaseService} from '../shared/services/firebase/firebase.service';
 import {CommonService} from '../shared/services/common/common.service';
+import {switchMap, tap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-help',
@@ -16,11 +17,10 @@ export class HelpPage {
   public user: any;
   public iconPath = '../../assets/icons/help';
   public helpIcon = `${this.iconPath}/help.svg`;
-  public formText: string;
-  public uploadPath: string;
+  public data: any;
+
 
   private subscription: Subscription;
-  private addedFiles: string[];
   private language: string;
 
   constructor(
@@ -35,25 +35,20 @@ export class HelpPage {
     this.isLoading = true;
     this.language = this.commonService.language;
     this.translateService.use(this.language);
-    this.uploadPath = `support-doc`;
-    // user-docs/uid/petId/support/datum
-    this.subscription = this.userAuth.user$
-      .subscribe(user => {
+    this.subscription = this.userAuth.user$.pipe(
+      tap(user => user),
+      switchMap(user => {
         this.user = user;
-        this.isLoading = false;
+        return this.firebaseService.getFaq(this.language);
       })
-  }
-
-  public receiveAddedFiles(event) {
-    this.addedFiles = event;
-  }
-
-  public onSendForm() {
-
+    ).subscribe(response => {
+      console.log('resp', response);
+      this.data = response.data;
+      this.isLoading = false;
+    });
   }
 
   ionViewWillLeave() {
-    this.addedFiles = null;
     if (this.subscription) {
       this.subscription.unsubscribe();
     }

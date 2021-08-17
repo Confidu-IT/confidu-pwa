@@ -18,45 +18,17 @@
           <p class="text">{{ 'HELP_PAGE.SUBHEADER' | translate }}</p>
         </div>
 
-        <mat-expansion-panel class="form-panel">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              {{ 'HELP_PAGE.SOLUTION_FORM' | translate }}
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <div class="content">
-            <ion-textarea rows="6" cols="25"
-                          auto-grow="true"
-                          [(ngModel)]="formText"
-                          placeholder="{{ 'HELP_PAGE.YOUR_MESSAGE' | translate }}">
-            </ion-textarea>
-            <div class="max-characters">{{ 'HELP_PAGE.CHARS' | translate }}</div>
-
-            <app-attach-document [user]="user" [path]="uploadPath"
-                                 (attachments)="receiveAddedFiles($event)"></app-attach-document>
-          </div>
-          <ion-button
-            (click)="onSendForm()"
-            [disabled]="!formText"
-            color="secondary"
-            expand="full"
-          >
-            {{ 'HELP_PAGE.BUTTON' | translate }}
-          </ion-button>
-        </mat-expansion-panel>
-
         <h2 class="faq">{{ 'HELP_PAGE.FAQ' | translate }}</h2>
 
         <ul>
-          <li>
+          <li *ngFor="let item of data">
             <mat-expansion-panel>
               <mat-expansion-panel-header>
                 <mat-panel-title>
-                  Ich möchte meinen Namen in meinem Account ändern
+                  {{ item.header }}
                 </mat-panel-title>
               </mat-expansion-panel-header>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-              ut labore et dolore magna aliquyam erat, sed diam voluptua
+              {{ item.body }}
             </mat-expansion-panel>
           </li>
         </ul>

@@ -109,9 +109,6 @@ export class TicketQuestionsPage {
   private addedFiles: string[];
   public lastVacMax = new Date().toISOString();
 
-  // delete this
-  public foo = '../../assets/icons/trash1.svg';
-
   constructor(
     public userAuth: AuthService,
     private commonService: CommonService,
@@ -124,6 +121,7 @@ export class TicketQuestionsPage {
   ) {
     this.routeSub = this.activatedRoute.params
       .subscribe((params: any) => {
+        console.log('params', params)
         this.params = params;
         this.currentMed.code = this.params.code;
       });
@@ -322,7 +320,12 @@ export class TicketQuestionsPage {
       });
   }
 
-  public onPickFindingType(event) {
+  public goToGuide(symptom: string): void {
+    // http://localhost:8100/tickets/ticket/default/guide/v%2Btempera
+    this.router.navigateByUrl(`tickets/ticket/default/guide/${symptom}`);
+  }
+
+  public onPickFindingType(event): void {
     this.selectedAnswer = event.value;
   }
 

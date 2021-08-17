@@ -30,6 +30,7 @@ export class FirebaseService {
   public activePetsCollection: any;
   public notificationsReadCollection: AngularFirestoreCollection;
   public notificationsListCollection: AngularFirestoreCollection;
+  public faqCollection: AngularFirestoreCollection;
 
   constructor(private afs: AngularFirestore) {
   }
@@ -45,11 +46,15 @@ export class FirebaseService {
     );
   }
 
+  public getFaq(language: string): Observable<any> {
+    return this.afs.doc(`faq/${language}`).valueChanges();
+  }
+
   public markNotificationsAsRead(userId: string) {
     return this.afs.doc(`notifications/${userId}`).set({read: true});
   }
 
-  public checkForNewNotifications(userId: string) {
+  public checkForNewNotifications(userId: string): Observable<any> {
     return this.afs.doc(`notifications/${userId}`).valueChanges();
   }
 

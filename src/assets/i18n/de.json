@@ -217,6 +217,7 @@
     "TITLE": "Verarzten"
   },
   "TICKET_QUESTION_PAGE": {
+    "GUIDE": "Anleitung",
     "QUESTION": "Frage",
     "BEATS": "Schläge",
     "PULSE": "Atemzüge",
@@ -949,6 +950,7 @@
     "NEXT_AV_APP": "Nächster freier Termin:",
     "AT": "in",
     "MIN": "min",
+    "WAIT": "Bitte warten",
     "BOOK_IMMEDIATELY": "Sofort buchen",
     "BOOK_APPOINTMENT": "Termin buchen",
     "TEXT": {

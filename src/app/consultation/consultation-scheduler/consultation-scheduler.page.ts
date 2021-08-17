@@ -7,7 +7,7 @@ import { CommonService } from '../../shared/services/common/common.service';
 import { switchMap, tap } from 'rxjs/operators';
 import { FirebaseService } from '../../shared/services/firebase/firebase.service';
 import { ShopwareService } from '../../shared/services/shopware/shopware.service';
-import { ModalController } from '@ionic/angular';
+import {LoadingController, ModalController} from '@ionic/angular';
 import { ConsultationModalPage } from '../consultation-modal/consultation-modal.page';
 
 @Component({
@@ -23,6 +23,7 @@ export class ConsultationSchedulerPage {
   private petId: string;
   private appointmentTypeID: string;
   private bookDate: string;
+  private wait: string;
 
   public user: any;
   public pet: any;
@@ -43,6 +44,7 @@ export class ConsultationSchedulerPage {
     private commonService: CommonService,
     private modalCtrl: ModalController,
     private activatedRoute: ActivatedRoute,
+    private loadingCtrl: LoadingController,
     private firebaseService: FirebaseService,
     private shopwareService: ShopwareService
   ) {
@@ -57,6 +59,10 @@ export class ConsultationSchedulerPage {
     this.language = this.commonService.language;
     this.translateService.setDefaultLang(this.language); // fallback
     this.translateService.use(this.translateService.getBrowserLang());
+    this.translateService.get('CONSULTATION_SCHEDULER_PAGE')
+      .subscribe( values => {
+        this.wait = values.WAIT;
+      });
     this.subscription = this.userAuth.user$.pipe(
       tap(user => user),
       switchMap(user => {
@@ -112,6 +118,7 @@ export class ConsultationSchedulerPage {
         } else if (!response.firstName || !response.firstName.trim().length) {
             this.presentModal();
         } else {
+
           this.progressBooking();
         }
       });
@@ -144,6 +151,7 @@ export class ConsultationSchedulerPage {
   }
 
   private progressBooking(): void {
+    this.presentLoading();
     this.commonService.bookAppointment(
       this.user.za,
       this.appointmentTypeID,
@@ -151,6 +159,7 @@ export class ConsultationSchedulerPage {
       this.petId
     ).subscribe(response => {
       console.log('response', response);
+      this.loadingCtrl.dismiss();
       this.resetSelectedItem(this.activeList);
       this.selectedDate = null;
       this.bookDate = null;
@@ -158,6 +167,13 @@ export class ConsultationSchedulerPage {
     });
 
 
+  }
+
+  private async presentLoading() {
+    const loading = await this.loadingCtrl.create({
+      message: this.wait
+    });
+    return await loading.present();
   }
 
   private async presentModal() {
