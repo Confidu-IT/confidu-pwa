@@ -145,11 +145,11 @@ export class HomePage {
   }
 
   // Delete this
-  public foobar(key: string): void {
-    const foo = null;
-    const url = `tickets/videocall/${key}/${foo}/result`;
-    this.router.navigateByUrl(url);
-  }
+  // public foobar(key: string): void {
+  //   const foo = null;
+  //   const url = `tickets/videocall/${key}/${foo}/result`;
+  //   this.router.navigateByUrl(url);
+  // }
 
   private getActivePet(userId: string, petId): void {
     this.firebaseService.getPetById(userId, petId)

@@ -17,7 +17,7 @@ export class FuDropdownsPage {
   public user: any;
   public isLoading: boolean;
   public iconPath = '../../../../assets/icons/fu-prescription';
-  public stehtImg = `${this.iconPath}/stethoscope.svg`;
+  public stehtImg = `${this.iconPath}/arzt.svg`;
   public diseases: any;
   public meds: any;
   public questionnaireKey: any;

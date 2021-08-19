@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 700 500" style="enable-background:new 0 0 700 500;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;}
+	.st1{fill:#FBBB0E;}
+	.st2{fill:none;stroke:#FFFFFF;stroke-width:26;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st3{fill:none;stroke:#7C7C7C;stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round;}
+</style>
+<g>
+	<rect id="Rechteck_2766_21_" class="st0" width="700" height="500"/>
+	<g>
+		<g>
+			<circle class="st1" cx="350" cy="390.9" r="63.2"/>
+			<g>
+				<line class="st2" x1="350" y1="367.8" x2="350" y2="413.9"/>
+				<line class="st2" x1="373.1" y1="390.9" x2="326.9" y2="390.9"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<path class="st3" d="M488.3,497H211.7c-20.6,0-37.3-16.7-37.3-37.3V312.6c0-20.6,16.7-37.3,37.3-37.3h276.6
+					c20.6,0,37.3,16.7,37.3,37.3v147.1C525.6,480.3,508.9,497,488.3,497z"/>
+				<g>
+					<g>
+						<path class="st3" d="M403.8,274.5h-18.8v-22.3c0-3.3-2.7-6-6-6h-58.2c-3.3,0-6,2.7-6,6v22.3h-18.8v-22.3
+							c0-13.6,11.1-24.8,24.8-24.8h58.2c13.6,0,24.8,11.1,24.8,24.8V274.5z"/>
+					</g>
+					<g>
+						<rect x="229.4" y="260.9" class="st3" width="32" height="14.4"/>
+						<rect x="438.6" y="260.9" class="st3" width="32" height="14.4"/>
+					</g>
+				</g>
+			</g>
+			<line class="st3" x1="245.4" y1="275.4" x2="245.4" y2="497"/>
+			<line class="st3" x1="454.6" y1="275.4" x2="454.6" y2="497"/>
+		</g>
+	</g>
+</g>
+</svg>

@@ -62,26 +62,20 @@ export class TelevetEmergencyPage {
       })
     ).subscribe(data => {
       console.log('data', data);
-      this.emergencies = data;
+      // this.emergencies = data;
 
-      if (this.pet.pet.gender.value === 'male' || this.pet.pet.castration.value === 'true') {
-        this.emergencies = data.filter(item => {
+      this.emergencies = data.filter(item => {
+        if (this.pet.pet.gender.value === 'male' || this.pet.pet.castration.value === 'true') {
           return item.key !== 'NOG';
-        });
-      }
-
-      if (this.pet.pet.gender.value === 'female') {
-        this.emergencies = data.filter(item => {
+        }
+        if (this.pet.pet.gender.value === 'female') {
           return item.key !== 'NOU';
-        });
-      }
-
-      if (this.pet.pet.species.value === 'cat') {
-        this.emergencies = data.filter(item => {
+        }
+        if (this.pet.pet.species.value === 'cat') {
           return item.key !== 'NOD';
-        });
-      }
-
+        }
+      });
+      console.log('this.emergencies', this.emergencies);
       this.isLoading = false;
     });
   }

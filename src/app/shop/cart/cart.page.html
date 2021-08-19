@@ -13,7 +13,7 @@
         <div class="article" *ngFor="let item of cartItems">
           <div class="article-content">
             <figure class="article-image">
-              <img [src]="item.lineItem.cover.url" alt="" width="60">
+              <img [src]="item.lineItem.cover.url">
             </figure>
             <div class="article-details">
               <h2>{{ item.lineItem.label }}</h2>

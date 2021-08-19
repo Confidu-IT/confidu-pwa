@@ -54,9 +54,9 @@
               <ul *ngIf="result?.initial?.type === 'list'" class="ticket-result-help">
                 <li *ngFor="let item of result?.initial?.body">{{ item }}</li>
               </ul>
-              <ng-container *ngIf="result?.initial?.type === 'par'">
-                <p>{{ result?.initial?.body }}</p>
-              </ng-container>
+              <ul *ngIf="result?.initial?.type === 'par'" class="ticket-result-initial-array">
+                <li *ngFor="let item of result?.initial?.body">{{ item }}</li>
+              </ul>
             </ion-card-content>
           </ion-card>
 

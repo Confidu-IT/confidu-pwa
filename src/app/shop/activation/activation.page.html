@@ -1,0 +1,51 @@
+<ion-header>
+  <app-toolbar [backButton]="true" title="{{ 'REGISTER_CODE.TITLE' | translate }}"></app-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="activation-header">
+    <div class="activation-header-image">
+      <img [src]="productIcon" alt="">
+    </div>
+    <div class="activation-header-label">
+      <h2>{{ 'REGISTER_CODE.ACTIVATION' | translate }}</h2>
+    </div>
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeSm="8" offsetSm="2">
+        <ion-card class="reg-card">
+          <ion-card-content class="reg">
+            <div class="reg-text">{{ 'REGISTER_CODE.REG_TEXT' | translate }}</div>
+            <div class="reg-field">
+              <ion-item class="reg-nr">
+                <ion-input placeholder="{{ 'REGISTER_CODE.EG' | translate }}" [(ngModel)]="regNr"></ion-input>
+              </ion-item>
+              <ion-button color="secondary" (click)="onRegisterCode()" [disabled]="!regNr">
+                <ion-icon slot="icon-only" name="refresh-outline"></ion-icon>
+              </ion-button>
+            </div>
+
+            <div class="success-message" *ngIf="validated">
+              <img [src]="checkIcon" alt="" height="20" width="20">
+              <p>{{ successText }}</p>
+            </div>
+            <div class="error-message" *ngIf="activationError">
+              <p>{{ errorText }}</p>
+            </div>
+
+            <div class="wrong-pet" *ngIf="!validated" (click)="presentModal(pets, petId)">
+              {{ 'REGISTER_CODE.WRONG_PET' | translate }}
+              <span >{{ 'REGISTER_CODE.CHANGE_PET' | translate }}</span>
+            </div>
+
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer *ngIf="!isLoading">
+  <app-toolbar-footer [user]="user"></app-toolbar-footer>
+</ion-footer>

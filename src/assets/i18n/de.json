@@ -463,7 +463,7 @@
     "RECIPE_HEADER": "Medikamente nachbestellen",
     "RECIPE_TEXT": "Lorem ipsum dolor sit amet",
     "PATCH_BUTTON": "Verarzten",
-    "DANGER_BUTTON": "Sehr krank",
+    "DANGER_BUTTON": "Notfall",
     "EMERGENCY": "Notfall",
     "PET_STATE": "Wie geht es",
     "HEALTH_STATE_TEXT": {
@@ -565,7 +565,7 @@
   },
   "CARE_CARD_PAGE": {
     "NO_DATA": "Keine Angabe",
-    "HEADER": "Carecard von",
+    "HEADER": "CareCard von",
     "BASE_DATA": {
       "TITLE": "Stammdaten",
       "LIST": {
@@ -1184,15 +1184,17 @@
     }
   },
   "REGISTER_CODE": {
+    "ACTIVATION": "Forscherbox aktivieren",
+    "TITLE": "Produktaktivierung",
     "REG_TEXT": "Gib hier den Registrierungscode ein, der deinem Probenmaterial beiliegt.",
     "EG": "z.B. 0123456789",
     "WRONG_PET": "Mit dem falschen Tier eingelogt?",
-    "INVALID_CODE": "Ungütiger Code",
-    "USED_CODE": "Code bereits verwendet",
+    "INVALID_CODE": "Dein Code konnte nicht zugeordnet werden. Möglicherweise hast du dich vertippt. Versuche es erneut.",
+    "USED_CODE": "Dein Code wurde bereits verwendet",
     "CHANGE_PET": "Tier wechseln",
     "REG_SUCCESS": "Registrierung erfolgreich",
     "ASSIGNMENT": [
-      "Dein Labortest", "wurde für", "erfolgreich registriert."
+      "Dein Labortest", "wurde", "erfolgreich zugeordnet."
     ]
   },
   "NAVIGATION": {
@@ -1237,6 +1239,7 @@
     "BOWL": "Mein Napf",
     "RESEARCH": "Forschen",
     "LAB": "Labor",
+    "ACTIVATION": "Forscherbox aktivieren",
     "URINE_TEST": "Harnsticktest",
     "PROTECT": "Schützen",
     "CONTRACT": "Vertrag",

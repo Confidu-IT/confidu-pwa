@@ -208,7 +208,16 @@ const routes: Routes = [
     path: 'order-error',
     loadChildren: () => import('./shop/order-error/order-error.module').then( m => m.OrderErrorPageModule)
   },
-  { path: '**', redirectTo: 'home', pathMatch: 'full' }
+
+  {
+    path: 'activation',
+    loadChildren: () => import('./shop/activation/activation.module').then( m => m.ActivationPageModule)
+  },
+  {
+    path: 'activation/:activationKey',
+    loadChildren: () => import('./shop/activation/activation.module').then( m => m.ActivationPageModule)
+  },
+  { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
 
 @NgModule({

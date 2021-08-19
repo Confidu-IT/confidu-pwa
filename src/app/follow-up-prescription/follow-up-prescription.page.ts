@@ -14,7 +14,7 @@ export class FollowUpPrescriptionPage {
   public user: any;
   public isLoading: boolean;
   public iconPath = '../../../../assets/icons/fu-prescription';
-  public caseImg = `${this.iconPath}/doc-case.svg`;
+  public caseImg = `${this.iconPath}/koffer.svg`;
   public listItems: any;
 
   private subscription: Subscription;
