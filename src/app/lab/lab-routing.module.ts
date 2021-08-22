@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'switch-pet-modal',
-    loadChildren: () => import('./switch-pet-modal/switch-pet-modal.module').then( m => m.SwitchPetModalPageModule)
+    loadChildren: () => import('../shop/activation/switch-pet-modal/switch-pet-modal.module').then(m => m.SwitchPetModalPageModule)
   }
 ];
 

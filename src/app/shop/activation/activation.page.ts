@@ -7,8 +7,7 @@ import {TranslateService} from '@ngx-translate/core';
 import {CommonService} from '../../shared/services/common/common.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {ModalController} from '@ionic/angular';
-import {SwitchPetModalPage} from '../../lab/switch-pet-modal/switch-pet-modal.page';
-import {HttpErrorResponse} from '@angular/common/http';
+import {SwitchPetModalPage} from './switch-pet-modal/switch-pet-modal.page';
 
 @Component({
   selector: 'app-activation',
@@ -31,7 +30,7 @@ export class ActivationPage {
   public productIcon = '../../assets/icons/product-registration/activated_product.svg';
 
   private subscription: Subscription;
-  private routeSub: Subscription;
+  private readonly routeSub: Subscription;
   public petId: string;
   private invalidCode: string;
   private usedCode: string;
@@ -106,7 +105,6 @@ export class ActivationPage {
           console.log('response', response);
           this.regNr = null;
           this.validated = true;
-          const message = this.regSuccess;
           this.successText = `
           ${this.assignment[0]} ${this.assignment[1]} ${this.pet.name} ${this.assignment[2]}
           `;

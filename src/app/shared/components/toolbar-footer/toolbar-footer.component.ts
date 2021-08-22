@@ -206,7 +206,8 @@ export class ToolbarFooterComponent implements OnInit, OnDestroy {
   private checkForNotifications() {
     this.notificationsSubscription = this.firebaseService.checkForNewNotifications(this.user.uid)
       .subscribe((response: any) => {
-        if (!response.read) {
+        console.log('response', response);
+        if (!response?.read) {
           this.snoutImg = '../../assets/icons/toolbar-footer/notifications_receive_animated.gif';
         }
       })

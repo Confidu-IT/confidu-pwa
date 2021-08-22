@@ -30,7 +30,9 @@
     "SUBHEADER": "Hier hast du alle Gesundheitsdaten und Labortests deines Tieres im Blick."
   },
   "PETS_LIST_PAGE": {
-    "TITLE": "Meine Tiere"
+    "TITLE": "Meine Tiere",
+    "ACTIVE": "gerade aktiv",
+    "EXPLANATION": "Wähle ein Tier aus, indem du es nach rechts wischst und auf den blauen Stern klickst. Wische nach links, um ein Tier zu löschen."
   },
   "TELEVET_EMERGENCY_PAGE": {
     "TITLE": "Notfall",

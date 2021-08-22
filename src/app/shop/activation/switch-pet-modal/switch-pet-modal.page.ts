@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
-import { CommonService } from '../../shared/services/common/common.service';
+import { CommonService } from '../../../shared/services/common/common.service';
 
 @Component({
   selector: 'app-switch-pet-modal',

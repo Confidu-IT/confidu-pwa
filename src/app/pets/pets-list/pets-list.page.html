@@ -7,13 +7,14 @@
 </ion-header>
 
 <ion-content>
-  <ion-grid>
+  <div text-center *ngIf="isLoading">
+    <ion-spinner color="primary"></ion-spinner>
+  </div>
+  <ion-grid *ngIf="!isLoading" class="pets-list">
     <ion-row>
       <ion-col sizeSm="8" offsetSm="2">
-        <div text-center *ngIf="isLoading">
-          <ion-spinner color="primary"></ion-spinner>
-        </div>
-        <ion-list *ngIf="!isLoading" class="pets-list">
+        <div class="explanation-text">{{ 'PETS_LIST_PAGE.EXPLANATION' | translate }}</div>
+        <ion-list>
           <ion-item-sliding *ngFor="let pet of pets" #slidingItem>
             <ion-item>
               <ion-thumbnail slot="start">
@@ -21,9 +22,9 @@
               </ion-thumbnail>
               <ion-label>
                 <h2>{{ pet.pet.name }}</h2>
-                <ion-text class="race">
-                  <span>{{ pet.pet.breed.data.name_de }}</span>
-                  <div *ngIf="pet.id === activePet" class="active"></div>
+                <ion-text class="race" *ngIf="pet.id === activePet">
+                  <span>{{ 'PETS_LIST_PAGE.ACTIVE' | translate }}</span>
+                  <div class="active"></div>
                 </ion-text>
 
               </ion-label>

@@ -290,12 +290,12 @@
                     <ng-container
                       *ngIf="invoiceMeds[i].selectedVariant && timeAmount[i] && treatmentLocation[i] === 'home'">
                       <mat-form-field class="full med-input">
-                        <mat-label>{{ question?.values?.answerOption[0].answerUnit?.type }}</mat-label>
+                        <mat-label>{{ 'TICKET_QUESTION_PAGE.AMOUNT' | translate }}</mat-label>
                         <input [(ngModel)]="invoiceMeds[i].selectedVariant.singledose"
                                (keyup)="pickMedDose($event, i)"
                                matInput
                                step="any" type="number">
-                        <span matSuffix>{{ question?.values?.answerOption[0].answerValue[0]?.unit }}</span>
+                        <span matSuffix>{{ question?.values?.answerOption[0].answerValue[i]?.unit }}</span>
                       </mat-form-field>
                     </ng-container>
 

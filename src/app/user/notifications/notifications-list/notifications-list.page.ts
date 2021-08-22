@@ -58,7 +58,11 @@ export class NotificationsListPage {
       return window.open(link.extern, '_blank');
     }
     if (link.intern) {
-      return this.router.navigateByUrl(`tickets/${link.intern}/${link.key}/null/result`);
+      console.log('link', link);
+      // if (link?.intern?.urintest_cc) {
+      //  http://localhost:8100/pets/pet-care-card/Uk9pVPACwxEjylyzWjH9/Kotproben/urintest_cc
+      // }
+      // return this.router.navigateByUrl(`tickets/${link.intern}/${link.key}/null/result`);
     }
   }
 

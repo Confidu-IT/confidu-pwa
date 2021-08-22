@@ -27,7 +27,7 @@ import { DiseasesModalPageModule } from './diseases/diseases-modal/diseases-moda
 import { UserModalPageModule } from './user/user-modal/user-modal.module';
 import { EmergencyModalPageModule } from './tickets/televet/televet-emergency/emergency-modal/emergency-modal.module';
 // import { SwitchPetModalPage } from './lab/switch-pet-modal/switch-pet-modal.page';
-import { SwitchPetModalPageModule } from './lab/switch-pet-modal/switch-pet-modal.module';
+import { SwitchPetModalPageModule } from './shop/activation/switch-pet-modal/switch-pet-modal.module';
 import { HomeModalPageModule } from './home/home-modal/home-modal.module';
 import { ConsultationModalPageModule } from './consultation/consultation-modal/consultation-modal.module';
 import { DocumentZoomModalPageModule } from './shared/document-zoom-modal/document-zoom-modal.module';
