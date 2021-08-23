@@ -8,6 +8,7 @@ import { OrderHistoryPageRoutingModule } from './order-history-routing.module';
 
 import { OrderHistoryPage } from './order-history.page';
 import { TranslateModule } from '@ngx-translate/core';
+import {SharedComponentsModule} from '../../shared/components/shared-components.module';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { TranslateModule } from '@ngx-translate/core';
     FormsModule,
     IonicModule,
     TranslateModule.forChild(),
+    SharedComponentsModule,
     OrderHistoryPageRoutingModule
   ],
   declarations: [OrderHistoryPage]

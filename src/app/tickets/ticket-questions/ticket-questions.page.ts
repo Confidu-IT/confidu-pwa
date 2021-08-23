@@ -643,14 +643,15 @@ export class TicketQuestionsPage {
       val.answerLongtext = [];
       val.answerLongtext.push(this.selectedAnswer);
     } else if (
-      this.question.values.questionType.toLowerCase() === 's'
-      || this.question.values.questionType.toLowerCase() === 'se'
+      this.question.values.questionType.toLowerCase() === 'se'
       || this.question.values.questionType.toLowerCase() === 'sei'
       || this.question.values.questionType.toLowerCase() === 'fu'
       || this.question.values.questionType.toLowerCase() === 'ful'
     ) {
+      console.log('this.selectedAnswer;', this.selectedAnswer)
       val = this.question.values.answerOption;
       val = val[0];
+      console.log('val;', val)
       val.answerValue = this.selectedAnswer;
     } else if (this.question.values.questionType.toLowerCase() === 'drs') {
       val = this.question.values.answerOption.filter(option => option.value === this.selectedAnswer);
@@ -668,6 +669,10 @@ export class TicketQuestionsPage {
       val = this.question.values.answerOption;
       val = val[0];
       val.answerValue = this.beats;
+    } else if (this.question.values.questionType.toLowerCase() === 's') {
+      val = this.question.values.answerOption.filter(option => option.answerLongtext === this.selectedAnswer);
+      val = val[0];
+      val.answerValue = this.selectedAnswer;
     } else if (this.question.values.questionType.toLowerCase() === 'd') {
       val = this.question.values.answerOption;
       val = val[0];
@@ -675,7 +680,7 @@ export class TicketQuestionsPage {
       val = this.question.values.answerOption;
       val = val[0];
       val.answerValue = this.selectedAnswer;
-      // console.log(val, this.selectedAnswer)
+
     } else if (this.question.values.questionType === 'MED_T_L') {
       if (this.timeAmount === this.currentMed.med_amount.length) {
         val = this.question.values.answerOption;

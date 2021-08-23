@@ -54,6 +54,9 @@ export class TelevetPetPage {
   ionViewWillEnter() {
     this.symptom = '';
     this.isPoison = false;
+    this.language = this.commonService.language;
+    this.translateService.use(this.language);
+
 
     this.subscription = this.userAuth.user$
       .subscribe(user => {
@@ -94,6 +97,7 @@ export class TelevetPetPage {
     this.symptom = null;
     this.isPoison = false;
     this.spot = spot;
+    console.log('thos.spot', this.spot)
     this.leftIcon = `${this.imagePath}/general_condition.svg`;
     this.rightIcon = `${this.imagePath}/skin_and_fur.svg`;
     this.poisonIcon = `${this.imagePath}/toxic.svg`;

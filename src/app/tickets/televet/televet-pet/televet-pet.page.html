@@ -122,6 +122,14 @@
           </div>
         </div>
 
+        <div class="zoom-button"
+             [ngClass]="{spacer: spot === 'head-region'}"
+             (click)="zoomOut()"
+             *ngIf="isZoomed">
+          <ion-icon name="chevron-back-outline"></ion-icon>
+          {{ 'TELEVET_PET_PAGE.ZOOM_BUTTON' | translate }}
+        </div>
+
         <div *ngIf="!isZoomed" class="icons">
           <img
             (click)="onClickSpot(televet?.CLICK_SPOT?.GENERAL.SPOT, televet?.CLICK_SPOT?.GENERAL.LABEL, $event)"

@@ -8,6 +8,7 @@ import { IonicModule } from '@ionic/angular';
 import { TelevetPetPage } from './televet-pet.page';
 import { SharedComponentsModule } from '../../../shared/components/shared-components.module';
 import {MatRadioModule} from '@angular/material/radio';
+import {TranslateModule} from '@ngx-translate/core';
 
 const routes: Routes = [
   {
@@ -23,6 +24,7 @@ const routes: Routes = [
     IonicModule,
     MatRadioModule,
     SharedComponentsModule,
+    TranslateModule.forChild(),
     RouterModule.forChild(routes)
   ],
   declarations: [TelevetPetPage]

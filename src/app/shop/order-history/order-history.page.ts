@@ -67,7 +67,8 @@ export class OrderHistoryPage {
           this.commonService.handleShopErrors(orders.errors[0].status);
           this.isLoading = false;
         } else {
-          this.orders = orders;
+          this.orders = orders.orders?.elements || [];
+          console.log('this.orders', this.orders);
           this.isLoading = false;
         }
       });

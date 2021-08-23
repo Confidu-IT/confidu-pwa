@@ -215,7 +215,7 @@
     "DESCRIPTION": "Im Bereich",
     "ACTION": "Tippe auf den betroffenen Bereich.",
     "PROGRESS_BUTTON": "Weiter",
-    "ZOOM_BUTTON": "Zurück",
+    "ZOOM_BUTTON": "Zurück zum Körper",
     "TITLE": "Verarzten"
   },
   "TICKET_QUESTION_PAGE": {
@@ -489,7 +489,7 @@
     "HEADER": "Bitte wähle die Art der Konsultation aus:",
     "QUESTIONNAIRE": "Diagnose Finder (kostenlos)",
     "CALL": "Videoanruf buchen (19,99 €)",
-    "CALL_DESCRIPTION": "Im persönlichen Gespräch mit unseren Tierärzten kannst du in Ruhe Probleme besprechen und sie direkt an deinem Vierbeiner zeigen. Um jeden Videoanruf termingerecht annehmen zu können, begrenzen wir die Gesprächszeit auf maximal 20 Minuten.",
+    "CALL_DESCRIPTION": "Im persönlichen Gespräch mit unseren Tierärzten kannst du in Ruhe Probleme besprechen und sie direkt an deinem Vierbeiner zeigen. Um jeden Videoanruf termingerecht annehmen zu können, begrenzen wir die Gesprächszeit auf maximal 15 Minuten.",
     "DIAG_DESCRIPTION": "Ohne Wartezeit und immer verfügbar! Gib das Symptom an, das deinen Vierbeiner plagt, und beantworte darauf abgestimmte Fragen. Du erhältst eine Auswertung mit Diagnose, Einschätzung der Dringlichkeit und Handlungsempfehlungen. Benötigte Präparate kannst du direkt bestellen.",
     "CANCEL": "Abbrechen",
     "PROGRESS": "Weiter"
@@ -776,7 +776,7 @@
     "UNIT": "Größe",
     "SAVED_CART": "Produkt in deinem Warenkorb gespeichert",
     "CHOICE_QUESTION": "Hast du deine Auswahl getroffen?",
-    "CHOICE_TEXT": "Wenn deine Auswahl vollständig ist, dann gehe weiter zum Warenkorb"
+    "CHOICE_TEXT": "Wenn deine Auswahl vollständig ist, dann gehe weiter zum Warenkorb."
   },
   "BILLING_ADDRESS_PAGE": {
     "BILLING": "zahlungsadresse",
@@ -1008,6 +1008,7 @@
     "CHANGE_PW": "Passwort ändern",
     "DEL_ACC": "Account löschen",
     "BEQUEST": "Nachlasskontakt",
+    "ORDERS": "Bestellungen",
     "CHOOSE_LANGUAGE": "Sprache wählen",
     "LANGUAGES": {
       "GERMAN": "Deutsch",
@@ -1100,7 +1101,7 @@
     "DELIVERED": "Zugestellt",
     "DELIVERED_AT": "Geliefert am:",
     "ORDERED_AT": "Bestellt am:",
-    "PRICE": "Summe:",
+    "PRICE": "Summe",
     "BUY_AGAIN": "Nochmals kaufen",
     "GET_PRESCRIPTION": "Folgerezept bestellen",
     "SAVED_CART": "Produkt in deinem Warenkorb gespeichert"
