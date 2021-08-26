@@ -3,7 +3,7 @@ import { AuthService } from '../../user/auth.service';
 import { CommonService } from '../../shared/services/common/common.service';
 import { TicketService } from '../ticket-service/ticket-service';
 import { TranslateService } from '@ngx-translate/core';
-import { Subscription } from 'rxjs';
+import {Observable, Subscription} from 'rxjs';
 import { switchMap, tap } from 'rxjs/operators';
 import {ActivatedRoute, ActivatedRouteSnapshot, Router, RouterStateSnapshot} from '@angular/router';
 import { AlertController, ModalController } from '@ionic/angular';
@@ -19,6 +19,7 @@ export class TicketResultPage implements CanDeactivateGuard {
   private iconPath = '../../../../assets/icons/tickets/result';
   private readonly routeSub: Subscription;
   private routerSub: Subscription;
+  private confirmSub: Subscription;
   private params: any;
   private eventId: string;
   private petId: string;
@@ -33,7 +34,7 @@ export class TicketResultPage implements CanDeactivateGuard {
   public okIcon: string;
   public pet: any;
   public eyeIcon = `${this.iconPath}/eye.svg`;
-  public cartCheckIcon = `${this.iconPath}/product-check.svg`;
+  // public cartCheckIcon = `${this.iconPath}/product-check.svg`;
   public infoButton = `${this.iconPath}/info-button.svg`;
 
   public listOpen: any[];
@@ -56,6 +57,7 @@ export class TicketResultPage implements CanDeactivateGuard {
 
     this.routerSub = this.router.events
       .subscribe((el: any) => {
+        // console.log('el', el);
         this.routingDestination = el.url;
       })
 
@@ -129,6 +131,7 @@ export class TicketResultPage implements CanDeactivateGuard {
   }
 
   public onClickActionButton(el: any): void {
+    console.log('el', el)
     if (!el) {
       return;
     }
@@ -162,22 +165,25 @@ export class TicketResultPage implements CanDeactivateGuard {
     }
   }
 
-  canDeactivate(
-  ): Promise<boolean> | boolean {
-    console.log('this.routingDestination', this.routingDestination)
+  canDeactivate(): Promise<boolean> | boolean {
+    console.log('this.routingDestination', this.routingDestination);
     if (
       this.routingDestination.search('cart') > -1 ||
       this.routingDestination.search('consultation') > -1 ||
       this.routingDestination.search('follow-up-prescription') > -1
     ) {
-      this.ticketService.confirmSave(
+      console.log('no popup');
+      console.log('this.routingDestination', this.routingDestination);
+       return this.ticketService.fooSave(
         this.eventId, 'confirm',
         this.petId,
         this.user.uid, this.user.za,
         this.commonService.language
-      ).subscribe( () => {
-      });
-      return true;
+      ).then(() => {
+        return true;
+       })
+
+
     } else if (this.result && this.result.popup) {
       const data = this.result.popup;
       return new Promise(async resolve => {
@@ -186,29 +192,30 @@ export class TicketResultPage implements CanDeactivateGuard {
           cssClass: 'popup-alert',
           buttons: [
             {
-              text: data.buttonCancel.label,
+              text: data?.buttonCancel?.label,
               role: 'cancel',
               cssClass: 'popup-cancel-button',
               handler: () => {
-                this.ticketService.confirmSave(
+                this.confirmSub = this.ticketService.confirmSave(
                   this.eventId, 'cancel',
                   this.petId,
                   this.user.uid, this.user.za,
                   this.commonService.language
-                ).subscribe( () => {
+                ).subscribe(() => {
                 });
                 resolve(true);
               }
-            }, {
-              text: data.buttonConfirm.label,
+            },
+            {
+              text: data?.buttonConfirm?.label,
               cssClass: 'popup-action-button',
               handler: () => {
-                this.ticketService.confirmSave(
+                this.confirmSub = this.ticketService.confirmSave(
                   this.eventId, 'confirm',
                   this.petId,
                   this.user.uid, this.user.za,
                   this.commonService.language
-                ).subscribe( () => {
+                ).subscribe(() => {
 
                 });
                 resolve(true);
@@ -224,10 +231,16 @@ export class TicketResultPage implements CanDeactivateGuard {
 
   ionViewWillLeave() {
     this.routingDestination = undefined;
+    this.router.navigate([], {
+      replaceUrl: true,
+    });
     this.ticketService.setAnswers({});
     this.listOpen = [];
     if (this.subscription) {
       this.subscription.unsubscribe();
+    }
+    if (this.confirmSub) {
+      this.confirmSub.unsubscribe();
     }
     if (this.routeSub) {
       this.routeSub.unsubscribe();

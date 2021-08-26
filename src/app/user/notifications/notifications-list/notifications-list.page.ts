@@ -53,16 +53,28 @@ export class NotificationsListPage {
     });
   }
 
-  public onClick(link: any): any {
-    if (link.extern) {
-      return window.open(link.extern, '_blank');
+  public onClick(notification: any): any {
+    if (notification.link?.extern) {
+      return window.open(notification?.link.extern, '_blank');
     }
-    if (link.intern) {
-      console.log('link', link);
-      // if (link?.intern?.urintest_cc) {
-      //  http://localhost:8100/pets/pet-care-card/Uk9pVPACwxEjylyzWjH9/Kotproben/urintest_cc
-      // }
-      // return this.router.navigateByUrl(`tickets/${link.intern}/${link.key}/null/result`);
+    if (notification.link?.intern) {
+      console.log('notification', notification);
+      const currentPet = localStorage.getItem('activePet');
+      const targetPet = notification.petId;
+      let url: string;
+
+      if (currentPet !== targetPet) {
+        localStorage.setItem('activePet', targetPet);
+      }
+
+      if (notification.link?.intern === 'videocall') {
+        url = `tickets/${notification.link?.intern}/${notification.link?.key}/${notification.link?.key}/result`;
+      } else if (notification.link?.intern === 'trophy') {
+        url = `benefits`;
+      } else {
+        url = `pets/pet-care-card/${targetPet}/null/${notification.link?.intern}`;
+      }
+      return this.router.navigateByUrl(url);
     }
   }
 

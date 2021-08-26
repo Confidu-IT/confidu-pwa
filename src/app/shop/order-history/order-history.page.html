@@ -21,23 +21,33 @@
     <ion-row>
       <ion-col sizeSm="8" offsetSm="2">
 
-      <ul class="order-list">
+        <p class="no-orders" *ngIf="orders?.length < 1">
+          {{ 'ORDER_HISTORY_PAGE.NO_ORDERS' | translate }}
+        </p>
+
+      <ul class="order-list" *ngIf="orders?.length > 0">
         <li *ngFor="let order of orders">
           <ion-card>
             <ion-card-content>
-              <ul>
-                <li *ngFor="let item of order.lineItems">
-                  <h2 class="order-title">{{ item.label }}</h2>
-                </li>
-                <li class="order-date">
-                  {{ 'ORDER_HISTORY_PAGE.ORDERED_AT' | translate }}
-                  {{ order.createdAt | date: 'dd.MM.yyy' }}
-                </li>
-                <li class="order-price">
-                  {{ 'ORDER_HISTORY_PAGE.PRICE' | translate }}:
-                  {{ order.price?.totalPrice }} €
-                </li>
-              </ul>
+              <div class="order-card-header" (click)="goToOrder(order.orderNumber)">
+                <div class="left">
+                  <h2 class="order-title">
+                    {{ 'ORDER_HISTORY_PAGE.ORDER_NR' | translate }}:
+                    {{ order.orderNumber }}
+                  </h2>
+                  <div class="order-date">
+                    {{ 'ORDER_HISTORY_PAGE.ORDERED_AT' | translate }}
+                    {{ order.createdAt | date: 'dd.MM.yyy' }}
+                  </div>
+                </div>
+<!--                <ion-icon name="chevron-forward-outline"></ion-icon>-->
+              </div>
+
+              <div class="order-price">
+                {{ 'ORDER_HISTORY_PAGE.PRICE' | translate }}:
+                {{ order.price?.totalPrice }} €
+              </div>
+
             </ion-card-content>
           </ion-card>
         </li>

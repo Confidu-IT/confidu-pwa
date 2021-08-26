@@ -126,9 +126,9 @@ export class TicketPage {
       this.species = pet.pet.species.value;
       if (this.params.ticketId && this.params.dateId) {
         this.getTicket(this.user.uid, this.petId, this.params.ticketId);
-      } else {
-        this.router.navigateByUrl('/');
-      }
+      } // else {
+      //   this.router.navigateByUrl('/');
+      // }
     });
   }
 
@@ -253,7 +253,8 @@ export class TicketPage {
           this.createLinkList(data.links);
           this.isLoading = false;
         } else {
-          this.router.navigateByUrl('/');
+          this.isLoading = false;
+          // this.router.navigateByUrl('/');
         }
       });
   }

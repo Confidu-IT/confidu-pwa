@@ -5,9 +5,6 @@ import { TranslateService } from '@ngx-translate/core';
 import { CommonService } from '../../shared/services/common/common.service';
 import { ShopwareService } from '../../shared/services/shopware/shopware.service';
 import { Subscription } from 'rxjs';
-import { TicketService } from '../../tickets/ticket-service/ticket-service';
-import { ModalController } from '@ionic/angular';
-import { ProductModalPage } from '../product-modal/product-modal.page';
 
 @Component({
   selector: 'app-order-history',
@@ -22,7 +19,6 @@ export class OrderHistoryPage {
 
   public parcelImg = `${this.iconPath}/parcel.svg`;
   public chevron = `${this.iconPath}/chevron-forward-outline.svg`;
-  public cartCheckIcon = `${this.iconPath}/product-check.svg`;
   public isLoading: boolean;
   public orders: any[];
   public selectedProducts: string[];
@@ -33,8 +29,6 @@ export class OrderHistoryPage {
     private translateService: TranslateService,
     private commonService: CommonService,
     private shopwareService: ShopwareService,
-    private modalCtrl: ModalController,
-    private ticketService: TicketService
   ) { }
 
   ionViewWillEnter() {
@@ -54,9 +48,10 @@ export class OrderHistoryPage {
       });
   }
 
-  public openModal(id: string) {
-    this.presentProductModal(this.ticketService.product);
+  public goToOrder(nr: string) {
+    console.log('nr', nr);
   }
+
 
   private getAllOrders(): void {
     this.shopwareService.headers['firebase-context-token'] = this.user.za;
@@ -65,6 +60,7 @@ export class OrderHistoryPage {
         console.log('orders', orders);
         if (orders.error) {
           this.commonService.handleShopErrors(orders.errors[0].status);
+          this.orders = [];
           this.isLoading = false;
         } else {
           this.orders = orders.orders?.elements || [];
@@ -74,31 +70,8 @@ export class OrderHistoryPage {
       });
   }
 
-  public toCartAdded(id: string): boolean {
-    return this.selectedProducts.includes(id);
-  }
-
-  private async presentProductModal(product: any) {
-    const modal = await this.modalCtrl.create({
-      component: ProductModalPage,
-      componentProps: {
-        item: product,
-      }
-    });
-    modal.onDidDismiss()
-      .then((response: any) => {
-        console.log('modal dismissed', response);
-        console.log('products', this.selectedProducts);
-
-        if (!this.selectedProducts.includes(response.data)) {
-          this.selectedProducts.push(response.data);
-        }
-      });
-    return await modal.present();
-  }
-
   ionViewWillLeave() {
-    this.selectedProducts = [];
+    this.orders = undefined;
     if (this.subscription) {
       this.subscription.unsubscribe();
     }

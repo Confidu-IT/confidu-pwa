@@ -40,8 +40,17 @@
 
   .order-date {
     font-size: 13px;
+  }
+
+  .order-card-header {
+    display: flex;
     padding-bottom: 8px;
     border-bottom: 1px solid #ddd;
+    justify-content: space-between;
+
+    ion-icon {
+      font-size: 18px;
+    }
   }
 
   .order-price {
@@ -49,6 +58,12 @@
     margin-top: 8px;
     text-align: right;
   }
+}
+
+.no-orders {
+  color: rgb(102,102,102);
+  font-size: 13px;
+  text-align: center;
 }
 
 ion-card {

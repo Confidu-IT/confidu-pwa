@@ -7,7 +7,7 @@
   <ion-grid *ngIf="!isLoading">
     <ion-row>
       <ion-col *ngIf="cartItems.length < 1" sizeSm="8" offsetSm="2">
-        <p>{{ 'CART_PAGE.EMPTY' | translate }}</p>
+        <p class="empty">{{ 'CART_PAGE.EMPTY' | translate }}</p>
       </ion-col>
       <ion-col *ngIf="cartItems.length > 0" sizeSm="8" offsetSm="2">
         <div class="article" *ngFor="let item of cartItems">

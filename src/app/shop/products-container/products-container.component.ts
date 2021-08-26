@@ -4,6 +4,7 @@ import { ModalController } from '@ionic/angular';
 import { ProductModalPage } from '../product-modal/product-modal.page';
 import { ProductShipmentModalPage } from '../product-shipment-modal/product-shipment-modal.page';
 import {CommonService} from '../../shared/services/common/common.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-products-container',
@@ -25,7 +26,8 @@ export class ProductsContainerComponent {
   constructor(
     private translateService: TranslateService,
     private modalCtrl: ModalController,
-    private commonService: CommonService
+    private commonService: CommonService,
+    private router: Router
   ) {
     if (!this.template) {
       this.template = 'card';
@@ -48,6 +50,10 @@ export class ProductsContainerComponent {
 
   public toCartAdded(id: string): boolean {
     return this.selectedProducts.includes(id);
+  }
+
+  public goToCart() {
+    this.router.navigateByUrl('shop/cart');
   }
 
   private async presentProductModal(product: any) {

@@ -7,6 +7,7 @@
   "description": "Die App, mit der du aktiv für die Gesundheit deines Tieres wirst.",
   "scope": "/",
   "start_url": "/",
+  "orientation":"portrait",
   "gcm_sender_id": "103953800507",
   "icons": [
     {

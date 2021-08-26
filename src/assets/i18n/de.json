@@ -1101,6 +1101,7 @@
     "DELIVERED": "Zugestellt",
     "DELIVERED_AT": "Geliefert am:",
     "ORDERED_AT": "Bestellt am:",
+    "ORDER_NR": "Bestellung Nr.",
     "PRICE": "Summe",
     "BUY_AGAIN": "Nochmals kaufen",
     "GET_PRESCRIPTION": "Folgerezept bestellen",
@@ -1247,12 +1248,14 @@
     "PROTECT": "Schützen",
     "CONTRACT": "Vertrag",
     "DAMAGE": "Schaden",
-    "SHOP": "Shop"
+    "SHOP": "Warenkorb",
+    "SOON": "demnächst"
   },
   "SIDE_NAV": {
     "SETTINGS": "Einstellungen",
-    "ACCOUNT": "Account",
-    "ORDER": "Bestellungen",
+    "ACCOUNT": "Meine Daten",
+    "ORDER": "Meine Bestellungen",
+    "CART": "Mein Warenkorb",
     "NOTIFICATIONS": "Benachrichtigungen",
     "HELP": "Hilfe",
     "LOGOUT": "Abmelden"
@@ -1279,7 +1282,7 @@
     "TITLE": "Hilfe",
     "HEADER": "Hilfe-Bereich",
     "SUPPORT": "Technischer Support",
-    "SUBHEADER": "Die App funktioniert nicht so, wie sie sollte? Kontaktiere uns und wir melden uns schnellstmöglich bei dir zurück.",
+    "SUBHEADER": "Die App funktioniert nicht so, wie sie sollte? Schicke uns eine E-Mail an",
     "SOLUTION_FORM": "Problemlösung per Kontaktformular",
     "YOUR_MESSAGE": "Deine Nachricht",
     "CHARS": "1500 Zeichen",

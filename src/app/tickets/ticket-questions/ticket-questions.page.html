@@ -339,7 +339,7 @@
                 <ng-container *ngIf="!showVetForm">
                   <mat-form-field class="vet-zip-code">
                     <mat-label>{{ 'TICKET_QUESTION_PAGE.VET.ZIP_CODE' | translate }}</mat-label>
-                    <input type="number" matInput [(ngModel)]="vetZipCode" (keyup)="onPickVetZip()">
+                    <input type="tel" matInput [(ngModel)]="vetZipCode" (keyup)="onPickVetZip()">
                   </mat-form-field>
 
                   <mat-form-field class="vets-list">

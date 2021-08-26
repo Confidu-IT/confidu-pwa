@@ -29,10 +29,35 @@
 
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+
+  </style>
 </head>
 
 <body>
-  <app-root></app-root>
+<div class="show-replacement-toolbar">
+  <img src="assets/icons/replacement-logo.svg"width="195" alt="">
+</div>
+<div class="show-replacement">
+  <div class="show-replacement-image">
+    <img src="assets/icons/replacement-image.svg" width="300" alt="">
+  </div>
+  <h2 class="show-replacement-headline">Bitte wechsle zum Smartphone</h2>
+  <div class="show-replacement-body">
+    <p>
+      Derzeit ist unsere App nur für dein Smartphone verfügbar. Wir arbeiten jedoch mit Hochdruck an der
+      Realisierung für weitere Endgeräte wie Desktop, Tablet, u.a.
+    </p>
+  </div>
+  <div class="show-replacement-footer">
+    <div class="to-phone-version">Zur Smartphone-Version:</div>
+    <div class="qr">
+      <img src="assets/icons/qr_app.png" height="65" width="65" alt="">
+    </div>
+
+  </div>
+</div>
+  <app-root class="too-large"></app-root>
 
   <!--  <script type="module"-->
 <!--          src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.esm.js"></script>-->

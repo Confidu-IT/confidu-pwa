@@ -21,8 +21,8 @@
               <div class="notification-footer">
                 <div class="date">{{ item.date | date: 'dd.MM.yyyy' }}</div>
                 <div class="footer-link"
-                     *ngIf="item.notification.link.extern || item.notification.link.intern"
-                     (click)="onClick(item.notification.link)">
+                     *ngIf="item.notification?.link?.extern || item.notification?.link?.intern"
+                     (click)="onClick(item.notification)">
                   <ion-icon color="secondary" name="link-outline"></ion-icon>
                 </div>
               </div>

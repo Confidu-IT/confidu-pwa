@@ -12,12 +12,22 @@ ion-menu {
   }
 
   ion-icon, img {
-    margin-right: 16px;
+    margin-right: 6px;
   }
+
+
+ion-item {
+  color: #fff;
+}
 
   ion-label{
     color: rgb(102,102,102);
     font-size: 15px;
+    display: flex;
+  }
+
+  ion-badge {
+    margin-left: 12px;
   }
 
   .divider {
@@ -66,6 +76,12 @@ h6.account-menu {
 .logout {
   margin-bottom: 32px;
   padding-top: 16px;
+}
+
+
+
+::ng-deep .icon-inner {
+  display: none !important;
 }
 
 .account-menu {

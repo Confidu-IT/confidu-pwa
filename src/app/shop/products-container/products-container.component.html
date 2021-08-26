@@ -56,7 +56,7 @@
         [disabled]="selectedProducts.length < 1"
         color="secondary"
         expand="full"
-        routerLink="/shop/cart">
+        (click)="goToCart()">
         {{ 'PRODUCTS_CONTAINER.CART_BUTTON' | translate }}
       </ion-button>
     </div>
