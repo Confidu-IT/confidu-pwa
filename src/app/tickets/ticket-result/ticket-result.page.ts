@@ -168,9 +168,9 @@ export class TicketResultPage implements CanDeactivateGuard {
   canDeactivate(): Promise<boolean> | boolean {
     console.log('this.routingDestination', this.routingDestination);
     if (
-      this.routingDestination.search('cart') > -1 ||
-      this.routingDestination.search('consultation') > -1 ||
-      this.routingDestination.search('follow-up-prescription') > -1
+      this.routingDestination?.search('cart') > -1 ||
+      this.routingDestination?.search('consultation') > -1 ||
+      this.routingDestination?.search('follow-up-prescription') > -1
     ) {
       console.log('no popup');
       console.log('this.routingDestination', this.routingDestination);

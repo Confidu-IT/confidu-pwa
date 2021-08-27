@@ -249,7 +249,8 @@ ion-item {
 
   ion-toolbar {
     --min-height: 60px;
-    --background: url(assets/icons/brush_seamless.svg);
+    //--background: var(--ion-color-primary) url(assets/icons/brush_seamless_1.png) repeat-x left bottom;
+    --background: url(assets/icons/brush_seamless_1.png) repeat-x left bottom;
     --border-width: 0;
     --border-color: transparent;
     --ion-color-base: transparent !important;
@@ -579,7 +580,7 @@ ion-button.button-disabled {
 .show-replacement {
   display: none;
 }
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 480px) {
   .too-large {
     display: none;
   }
@@ -591,8 +592,70 @@ ion-button.button-disabled {
       display: flex;
       justify-content: space-around;
       align-items: center;
+      height: 50px;
+      background-color: #f4f4f4;
+
+      .logo {
+        width: 120px;
+      }
+    }
+
+    &-image {
+      display: none;
+    }
+
+    &-headline {
+      font-size: 18px;
+      font-weight: 400;
+      text-align: center;
+      margin: 20px 0 0;
+    }
+
+    &-body {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 8px;
+
+      p {
+        font-size: 14px;
+        text-align: center;
+        margin: 0;
+        width: 80%;
+      }
+    }
+
+    &-footer {
+      display: none;
+      justify-content: center;
+      flex-direction: column;
+      margin-top: 24px;
+    }
+
+    .to-phone-version {
+      font-size: 13px;
+      margin-top: 24px;
+      text-align: center;
+    }
+
+    .qr {
+      display: flex;
+      justify-content: center;
+      margin-top: 28px;
+    }
+  }
+
+}
+
+@media screen and (min-width: 992px) {
+  .show-replacement {
+
+    &-toolbar {
       height: 112px;
       background-color: #f4f4f4;
+
+      .logo {
+        width: 195px;
+      }
     }
 
     &-image {
@@ -635,15 +698,12 @@ ion-button.button-disabled {
       text-align: center;
     }
 
-    .image {}
-
     .qr {
       display: flex;
       justify-content: center;
       margin-top: 28px;
     }
   }
-
 }
 
 //.sc-ion-alert-md {
