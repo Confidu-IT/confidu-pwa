@@ -311,7 +311,7 @@
   "TICKET_RESULT_PAGE": {
     "TITLE": "Auswertung",
     "DIAG_HEADER": "Diagnose",
-    "NO_RESULT": "Noch kein Ergebnis vorhanden.",
+    "NO_RESULT": "Das Ergebnis ist nicht verfügbar.",
     "URGENCY": "Dringlichkeit",
     "THERAPY": "Therapie",
     "DIAGNOSIS": "Befunde",
@@ -801,7 +801,7 @@
     "SLIDES": [
       {
         "TITLE": "Care Card",
-        "TEXT": "Trage die Patientenakte deines Tieres immer bei dir - alle Gesundheitsdaten gebündelt in einer App.",
+        "TEXT": "Danke, dass du dich angemeldet hast. Trage die Patientenakte deines Tieres immer bei dir - alle Gesundheitsdaten gebündelt in einer App.",
         "IMG": "carecard"
       },
       {
@@ -811,21 +811,21 @@
       },
       {
         "TITLE": "Medizintests",
-        "TEXT": "Teste anhand von Kot- oder Urinproben, die Gesundheit deines Tieres.",
+        "TEXT": "Teste anhand von Kot- oder Urinproben die Gesundheit deines Tieres.",
         "IMG": "medizintests"
       },
       {
         "TITLE": "Mein Napf",
-        "TEXT": "Erstelle Futterpläne nach dem individuellen Nährstoff und Energiebedarf deines Tieres wie ein Profi.",
+        "TEXT": "Erstelle Futterpläne nach dem individuellen Nährstoff- und Energiebedarf deines Tieres wie ein Profi.",
         "IMG": "mein_napf"
       },
       {
         "TITLE": "Planer",
-        "TEXT": "Mit unserem Planer behälst du alle wichtigen Aufgaben im Blick - von Medikamentenabgabe über Ohrenpflege bis hin zu eigenen Terminen.",
+        "TEXT": "Mit unserem Planer behältst du alle wichtigen Aufgaben im Blick - von Medikamentengabe über Ohrenpflege bis hin zu eigenen Terminen.",
         "IMG": "planer"
       },
       {
-        "TITLE": "TeleVet",
+        "TITLE": "Online Tierarzt",
         "TEXT": "Symptom angeben, Fragen beantworten, Behandlung starten - unser Online-Tierazt hilft dir sofort.",
         "IMG": "televet_anleitung"
       },
@@ -940,7 +940,7 @@
   },
   "CONSULTATION_PAGE": {
     "TITLE": "Videoanruf",
-    "TEXT": "Um dich mit einem unserer Spezialisten zu verbinden, wähle bitte den Grund für die Konsultation",
+    "TEXT": "Um dich mit einem unserer Spezialist:innen zu verbinden, wähle bitte den Grund für die Konsultation",
     "LABEL": "Konsultationsgrund wählen",
     "BUTTON": "Termin finden"
   },

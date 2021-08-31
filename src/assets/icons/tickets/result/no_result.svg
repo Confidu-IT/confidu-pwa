@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="97" height="97" viewBox="0 0 97 97">
+  <g id="Gruppe_24907" data-name="Gruppe 24907" transform="translate(-132 -157)">
+    <g id="Gruppe_24906" data-name="Gruppe 24906" transform="translate(238.734 -3487.259)">
+      <g id="Gruppe_24903" data-name="Gruppe 24903" transform="translate(-89.439 3657.321)">
+        <g id="Gruppe_24902" data-name="Gruppe 24902">
+          <path id="Pfad_27924" data-name="Pfad 27924" d="M-27.267,3671.836v57.822H-89.439v-78.551h49.023" transform="translate(89.439 -3651.106)" fill="none" stroke="#8e8e8e" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <g id="Gruppe_24901" data-name="Gruppe 24901" transform="translate(13.392 31.246)">
+            <line id="Linie_7331" data-name="Linie 7331" x2="35.388" fill="none" stroke="#8e8e8e" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+            <line id="Linie_7332" data-name="Linie 7332" x2="35.388" transform="translate(0 15.166)" fill="none" stroke="#8e8e8e" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+            <line id="Linie_7333" data-name="Linie 7333" x2="35.388" transform="translate(0 30.333)" fill="none" stroke="#8e8e8e" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          </g>
+        </g>
+      </g>
+      <g id="Gruppe_24905" data-name="Gruppe 24905" transform="translate(-41.8 3648.984)">
+        <circle id="Ellipse_5476" data-name="Ellipse 5476" cx="14.5" cy="14.5" r="14.5" transform="translate(0.065 0.275)" fill="none" stroke="#8e8e8e" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <g id="Gruppe_24904" data-name="Gruppe 24904" transform="translate(9.957 9.957)">
+          <line id="Linie_7334" data-name="Linie 7334" x1="9.151" y2="9.151" fill="none" stroke="#8e8e8e" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <line id="Linie_7335" data-name="Linie 7335" x1="9.151" y1="9.151" fill="none" stroke="#8e8e8e" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        </g>
+      </g>
+    </g>
+    <rect id="Rechteck_3868" data-name="Rechteck 3868" width="97" height="97" transform="translate(132 157)" fill="none"/>
+  </g>
+</svg>

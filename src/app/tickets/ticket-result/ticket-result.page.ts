@@ -34,6 +34,7 @@ export class TicketResultPage implements CanDeactivateGuard {
   public okIcon: string;
   public pet: any;
   public eyeIcon = `${this.iconPath}/eye.svg`;
+  public noResultImage = `${this.iconPath}/no_result.svg`;
   // public cartCheckIcon = `${this.iconPath}/product-check.svg`;
   public infoButton = `${this.iconPath}/info-button.svg`;
 

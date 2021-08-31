@@ -1,5 +1,23 @@
-.ticket-result {
+.no-result {
+  &-image {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-top: 60px;
 
+    img {
+      height: 90px;
+    }
+  }
+
+  &-text {
+    color: rgb(102,102,102);
+    font-size: 13px;
+    margin-top: 30px;
+  }
+}
+
+.ticket-result {
   &-header {
     display: flex;
     align-items: center;

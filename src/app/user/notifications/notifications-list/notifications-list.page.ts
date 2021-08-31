@@ -44,7 +44,7 @@ export class NotificationsListPage {
         return this.firebaseService.getNotifications(this.user.uid)
       })
     ).subscribe( (data: any) => {
-      console.log('data', data);
+      // console.log('data', data);
       for (const item of data) {
         item.notification.body = item?.notification?.body[this.language];
       }

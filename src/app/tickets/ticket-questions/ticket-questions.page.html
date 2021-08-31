@@ -395,6 +395,8 @@
               </ng-container>
 
               <ion-slides pager="true" *ngIf="question?.values.questionType.toLowerCase() === 'c'"
+                          #slider
+                          [options]="slideOpts"
                           (ionSlideDidChange)="onSlideChanged()">
 
                 <ion-slide *ngFor="let item of question?.values.answerOption">

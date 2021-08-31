@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import {Component, ElementRef, ViewChild} from '@angular/core';
 import { TicketService } from '../ticket-service/ticket-service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
@@ -77,11 +77,16 @@ export class TicketQuestionsPage {
   public currentDateSet = false;
   public isGif = false;
   public clearData: boolean;
+  public slideOpts = {
+    initialSlide: 0
+  };
+
 
   @ViewChild('filePicker') filePickerRef: ElementRef<HTMLInputElement>;
   @ViewChild(IonSlides) slides: IonSlides;
   @ViewChild('countdown') countdown: ElementRef;
   @ViewChild('img') img: ElementRef;
+  @ViewChild('slider') slider: IonSlides
 
   private readonly routeSub: Subscription;
   private subscription: Subscription;
@@ -319,6 +324,7 @@ export class TicketQuestionsPage {
         this.userAuth.logOut();
       });
   }
+
 
   public goToGuide(symptom: string): void {
     // http://localhost:8100/tickets/ticket/default/guide/v%2Btempera
@@ -700,7 +706,8 @@ export class TicketQuestionsPage {
       };
       val = this.question.values.answerOption;
       val = val[1];
-      val.answerValue = obj;
+      val.value = obj;
+      val.answerValue = null;
       this.showVetForm = false;
     } else if (this.question.values.questionType.toLowerCase() === 'up' || this.question.values.questionType.toLowerCase() === 'f') {
       val = this.question.values.answerOption;
@@ -760,9 +767,20 @@ export class TicketQuestionsPage {
 
     if (this.indexNr < this.questions.length - 1) {
       this.indexNr = this.indexNr + 1;
+      this.slideOpts.initialSlide = 0;
+
       this.question = this.questions[this.indexNr];
       this.createInfoModalContent(this.indexNr);
       // this.getMedNature();
+
+      console.log('this.question', this.question);
+
+      setTimeout(() => {
+        if (this.slider) {
+          this.slider.slideTo(0);
+        }
+      },50);
+
 
       // recognized invoice meds
       if (this.question.values.questionType.toLowerCase() === 'dose') {
@@ -976,11 +994,19 @@ export class TicketQuestionsPage {
   }
 
   private validWeight(num: number) {
-    if (this.pet.pet.species.value === 'dog') {
-      return (num > 0 && num < 121);
-    } else if (this.pet.pet.species.value === 'cat') {
-      return (num > 0 && num < 21);
+    if (
+      this.question?.values.answerOption[0].value == '*pet_weight*'
+      || this.question?.values.answerOption[0].value == '*pet_idealweight*'
+    ) {
+      if (this.pet.pet.species.value === 'dog') {
+        return (num > 0 && num < 121);
+      } else if (this.pet.pet.species.value === 'cat') {
+        return (num > 0 && num < 13);
+      }
     }
+
+    return num > 0;
+
 
   }
 

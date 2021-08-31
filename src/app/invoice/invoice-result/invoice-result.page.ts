@@ -262,28 +262,28 @@ export class InvoiceResultPage {
   private filterMedications(name: string) {
     const filterValue = name.toLowerCase();
     return this.medications.filter(option => {
-      return option.name.toLowerCase().indexOf(filterValue) === 0;
+      return option.name.toLowerCase().includes(filterValue);
     });
   }
 
   private filterDiagnosis(name: string) {
     const filterValue = name.toLowerCase();
     return this.diagnosis.filter(option => {
-      return option.name.toLowerCase().indexOf(filterValue) === 0;
+      return option.name.toLowerCase().includes(filterValue);
     });
   }
 
   private filterTherapy(name: string) {
     const filterValue = name.toLowerCase();
     return this.therapy.filter(option => {
-      return option.name.toLowerCase().indexOf(filterValue) === 0;
+      return option.name.toLowerCase().includes(filterValue);
     });
   }
 
   private filterFindings(name: string) {
     const filterValue = name.toLowerCase();
     return this.findings.filter(option => {
-      return option.name.toLowerCase().indexOf(filterValue) === 0;
+      return option.name.toLowerCase().includes(filterValue);
     });
   }
 
