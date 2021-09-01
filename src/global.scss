@@ -250,7 +250,7 @@ ion-item {
   ion-toolbar {
     --min-height: 60px;
     //--background: var(--ion-color-primary) url(assets/icons/brush_seamless_1.png) repeat-x left bottom;
-    --background: url(assets/icons/brush_seamless_1.png) repeat-x left bottom;
+    --background: url(assets/icons/brush_4.png) repeat-x;
     --border-width: 0;
     --border-color: transparent;
     --ion-color-base: transparent !important;
@@ -706,6 +706,8 @@ ion-button.button-disabled {
     }
   }
 }
+
+
 
 //.sc-ion-alert-md {
 //  border-color: var(--ion-color-secondary) !important;

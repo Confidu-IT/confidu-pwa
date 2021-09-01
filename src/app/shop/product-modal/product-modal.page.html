@@ -50,6 +50,8 @@
               <form [formGroup]="form" class="product-order">
 
                 <ion-select
+                  [cancelText]="cancelText"
+                  [okText]="okText"
                   *ngIf="!item?.data?.translated?.customFields?.product_prescription"
                   class="product-quantity"
                   formControlName="quantity">

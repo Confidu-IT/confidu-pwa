@@ -22,8 +22,10 @@
             <div class="label">{{ 'CONSULTATION_SCHEDULER_PAGE.NEXT_AV_APP' | translate }}</div>
             <div class="time">
               {{ 'CONSULTATION_SCHEDULER_PAGE.AT' | translate }}
-              {{ nextAvTime?.minutes }}
-              {{ 'CONSULTATION_SCHEDULER_PAGE.MIN' | translate }}
+              <span *ngIf="nextAvTime?.hours">{{ nextAvTime?.hours }}h</span>
+              <span *ngIf="nextAvTime?.minutes">
+                {{ nextAvTime?.minutes }}{{ nextAvTime?.minutes }}{{ 'CONSULTATION_SCHEDULER_PAGE.MIN' | translate }}
+              </span>
             </div>
           </div>
           <ion-button

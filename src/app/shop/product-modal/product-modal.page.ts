@@ -18,6 +18,8 @@ export class ProductModalPage implements OnInit {
   public productImage: string;
   public form: FormGroup;
   public medAmount: string;
+  public okText: string;
+  public cancelText: string;
   public instructionsLink: string;
   @Input() item: any;
 
@@ -41,6 +43,11 @@ export class ProductModalPage implements OnInit {
       });
     this.language = this.commonService.language;
     this.translateService.use(this.language);
+    this.translateService.get('PRODUCT_MODAL_PAGE')
+      .subscribe(values => {
+        this.cancelText = values.CANCEL;
+        this.okText = values.OK;
+      });
     console.log('item', this.item);
     this.title = this.item.med_name;
     this.productImage = this.item?.data?.cover?.media.url;

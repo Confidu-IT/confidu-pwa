@@ -1,7 +1,7 @@
 .instructions-content {
   display: flex;
   flex-direction: column;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   //margin-top: 120px;
 }
 
@@ -16,7 +16,8 @@ figure {
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: flex-end;
-  height: 220px;
+  margin: 0;
+  height: 140px;
 }
 
 p, figcaption {
@@ -25,7 +26,7 @@ p, figcaption {
 
 p {
   height: 115px;
-  margin: 20px 60px 20px;
+  margin: 20px 60px 0;
   color: rgb(102,102,102);
 }
 

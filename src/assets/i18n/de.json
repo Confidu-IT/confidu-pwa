@@ -552,9 +552,11 @@
     "CANCEL_BUTTON": "Abbrechen"
   },
   "PRODUCT_MODAL_PAGE": {
+    "CANCEL": "Abbrechen",
+    "OK": "Übernehmen",
     "DELIVERY_TIME": "Lieferzeit",
-    "PRESCRIPTION": "Rezeptpflichtig",
-    "PHARMACY": "Apothekenpflichtig",
+    "PRESCRIPTION": "rezeptpflichtig",
+    "PHARMACY": "apothekenpflichtig",
     "UNIT": "Größe",
     "TAX": "Alle Preise inkl. MwSt., zzgl. Versand | Verkauf durch",
     "CART_BUTTON": "In den Warenkorb",
@@ -1217,7 +1219,8 @@
       "PRODUCTS": {
         "400": "Produkt nicht gefunden",
         "451": "Produkt nicht gefunden",
-        "403": "Benutzer nicht eingelogt"
+        "403": "Benutzer nicht eingelogt",
+        "406": ""
       },
       "LOGIN": {
         "400": "E-Mail bereits in Verwendung",

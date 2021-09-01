@@ -15,8 +15,14 @@ h2 {
   text-transform: capitalize;
 }
 
+.picasso {
+  display: flex;
+  justify-content: space-around;
+}
+
 .main-image-container {
   max-height: 300px;
+  max-width: 325px;
   margin-top: -15px;
   position: relative;
   margin-left: 16px;

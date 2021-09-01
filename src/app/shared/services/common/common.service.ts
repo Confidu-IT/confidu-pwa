@@ -345,7 +345,7 @@ export class CommonService {
 
   public handleShopErrors(statusCode: string): void {
     const message = this.errorMessages.PRODUCTS[statusCode];
-    this.presentToast(message, 'danger');
+    // this.presentToast(message, 'danger');
     switch (statusCode) {
       case '400':
         this.router.navigateByUrl('/shop/products');

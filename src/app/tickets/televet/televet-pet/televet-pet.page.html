@@ -22,102 +22,104 @@
           <span *ngIf="symptom"> | {{ symptom }}</span>
         </p>
 
-        <div class="main-image-container  {{ species }}">
-          <img [src]="petImage" alt="" height="300">
-          <div class="main-image-spots">
-            <div
-              (click)="onClickSpot(televet?.CLICK_SPOT?.BUTT.SPOT, televet?.CLICK_SPOT?.BUTT.LABEL, $event)"
-              *ngIf="!isZoomed"
-              [ngClass]="televet?.CLICK_SPOT?.BUTT.SPOT"
-              class="spot">
-            </div>
-            <div
-              (click)="onClickSpot(televet?.CLICK_SPOT?.BACK.SPOT, televet?.CLICK_SPOT?.BACK.LABEL, $event)"
-              *ngIf="!isZoomed"
-              [ngClass]="televet?.CLICK_SPOT?.BACK.SPOT"
-              class="spot">
-            </div>
-            <div
-              (click)="onClickSpot(televet?.CLICK_SPOT?.BELLY.SPOT, televet?.CLICK_SPOT?.BELLY.LABEL, $event)"
-              [ngClass]="televet?.CLICK_SPOT?.BELLY.SPOT"
-              *ngIf="isZoomed && region === 'body-region'"
-              class="spot">
-            </div>
-            <div
-              (click)="onClickSpot(televet?.CLICK_SPOT?.ABDOMEN.SPOT, televet?.CLICK_SPOT?.ABDOMEN.LABEL, $event)"
-              [ngClass]="televet?.CLICK_SPOT?.ABDOMEN.SPOT"
-              *ngIf="isZoomed && region === 'body-region'"
-              class="spot">
-            </div>
-            <div
-              (click)="onClickSpot(televet?.CLICK_SPOT?.TAIL.SPOT, televet?.CLICK_SPOT?.TAIL.LABEL, $event)"
-              *ngIf="!isZoomed"
-              [ngClass]="televet?.CLICK_SPOT?.TAIL.SPOT"
-              class="spot">
-            </div>
-            <div
-              (click)="onClickSpot(televet?.CLICK_SPOT?.CHEST.SPOT, televet?.CLICK_SPOT?.CHEST.LABEL, $event)"
-              *ngIf="isZoomed && region === 'body-region'"
-              [ngClass]="televet?.CLICK_SPOT?.CHEST.SPOT"
-              class="spot">
-            </div>
-            <div
-              (click)="onClickSpot(televet?.CLICK_SPOT?.LEGS.SPOT, televet?.CLICK_SPOT?.LEGS.LABEL, $event)"
-              *ngIf="!isZoomed"
-              class="spot left-leg">
-            </div>
-            <div
-              (click)="onClickSpot(televet?.CLICK_SPOT?.LEGS.SPOT, televet?.CLICK_SPOT?.LEGS.LABEL, $event)"
-              *ngIf="!isZoomed"
-              class="spot right-leg">
-            </div>
-            <div
-              (click)="onClickSpot(televet?.CLICK_SPOT?.HEAD_REGION.SPOT, null, $event)"
-              *ngIf="!isZoomed"
-              [ngClass]="televet?.CLICK_SPOT?.HEAD_REGION.SPOT"
-              class="region">
-            </div>
-            <div
-              (click)="onClickSpot(televet?.CLICK_SPOT?.EAR.SPOT, televet?.CLICK_SPOT?.EAR.LABEL, $event)"
-              *ngIf="isZoomed && region === 'head-region'"
-              [ngClass]="televet?.CLICK_SPOT?.EAR.SPOT"
-              class="spot">
-            </div>
-            <div
-              (click)="onClickSpot(televet?.CLICK_SPOT?.EYE.SPOT, televet?.CLICK_SPOT?.EYE.LABEL, $event)"
-              *ngIf="isZoomed && region === 'head-region'"
-              [ngClass]="televet?.CLICK_SPOT?.EYE.SPOT"
-              class="spot">
-            </div>
-            <div
-              (click)="onClickSpot(televet?.CLICK_SPOT?.NOSE.SPOT, televet?.CLICK_SPOT?.NOSE.LABEL, $event)"
-              *ngIf="isZoomed && region === 'head-region'"
-              [ngClass]="televet?.CLICK_SPOT?.NOSE.SPOT"
-              class="spot">
-            </div>
-            <div
-              (click)="onClickSpot(televet?.CLICK_SPOT?.MOUTH.SPOT, televet?.CLICK_SPOT?.MOUTH.LABEL, $event)"
-              *ngIf="isZoomed && region === 'head-region'"
-              [ngClass]="televet?.CLICK_SPOT?.MOUTH.SPOT"
-              class="spot">
-            </div>
-            <div
-              (click)="onClickSpot(televet?.CLICK_SPOT?.HEAD.SPOT, televet?.CLICK_SPOT?.HEAD.LABEL, $event)"
-              *ngIf="isZoomed && region === 'head-region'"
-              [ngClass]="televet?.CLICK_SPOT?.HEAD.SPOT"
-              class="spot">
-            </div>
-            <div
-              (click)="onClickSpot(televet?.CLICK_SPOT?.THROAT.SPOT, televet?.CLICK_SPOT?.THROAT.LABEL, $event)"
-              *ngIf="isZoomed && region === 'head-region'"
-              [ngClass]="televet?.CLICK_SPOT?.THROAT.SPOT"
-              class="spot">
-            </div>
-            <div
-              (click)="onClickSpot(televet?.CLICK_SPOT?.BODY_REGION.SPOT, null, $event)"
-              *ngIf="!isZoomed"
-              [ngClass]="televet?.CLICK_SPOT?.BODY_REGION.SPOT"
-              class="region">
+        <div class="picasso">
+          <div class="main-image-container  {{ species }}">
+            <img [src]="petImage" alt="" height="300">
+            <div class="main-image-spots">
+              <div
+                (click)="onClickSpot(televet?.CLICK_SPOT?.BUTT.SPOT, televet?.CLICK_SPOT?.BUTT.LABEL, $event)"
+                *ngIf="!isZoomed"
+                [ngClass]="televet?.CLICK_SPOT?.BUTT.SPOT"
+                class="spot">
+              </div>
+              <div
+                (click)="onClickSpot(televet?.CLICK_SPOT?.BACK.SPOT, televet?.CLICK_SPOT?.BACK.LABEL, $event)"
+                *ngIf="!isZoomed"
+                [ngClass]="televet?.CLICK_SPOT?.BACK.SPOT"
+                class="spot">
+              </div>
+              <div
+                (click)="onClickSpot(televet?.CLICK_SPOT?.BELLY.SPOT, televet?.CLICK_SPOT?.BELLY.LABEL, $event)"
+                [ngClass]="televet?.CLICK_SPOT?.BELLY.SPOT"
+                *ngIf="isZoomed && region === 'body-region'"
+                class="spot">
+              </div>
+              <div
+                (click)="onClickSpot(televet?.CLICK_SPOT?.ABDOMEN.SPOT, televet?.CLICK_SPOT?.ABDOMEN.LABEL, $event)"
+                [ngClass]="televet?.CLICK_SPOT?.ABDOMEN.SPOT"
+                *ngIf="isZoomed && region === 'body-region'"
+                class="spot">
+              </div>
+              <div
+                (click)="onClickSpot(televet?.CLICK_SPOT?.TAIL.SPOT, televet?.CLICK_SPOT?.TAIL.LABEL, $event)"
+                *ngIf="!isZoomed"
+                [ngClass]="televet?.CLICK_SPOT?.TAIL.SPOT"
+                class="spot">
+              </div>
+              <div
+                (click)="onClickSpot(televet?.CLICK_SPOT?.CHEST.SPOT, televet?.CLICK_SPOT?.CHEST.LABEL, $event)"
+                *ngIf="isZoomed && region === 'body-region'"
+                [ngClass]="televet?.CLICK_SPOT?.CHEST.SPOT"
+                class="spot">
+              </div>
+              <div
+                (click)="onClickSpot(televet?.CLICK_SPOT?.LEGS.SPOT, televet?.CLICK_SPOT?.LEGS.LABEL, $event)"
+                *ngIf="!isZoomed"
+                class="spot left-leg">
+              </div>
+              <div
+                (click)="onClickSpot(televet?.CLICK_SPOT?.LEGS.SPOT, televet?.CLICK_SPOT?.LEGS.LABEL, $event)"
+                *ngIf="!isZoomed"
+                class="spot right-leg">
+              </div>
+              <div
+                (click)="onClickSpot(televet?.CLICK_SPOT?.HEAD_REGION.SPOT, null, $event)"
+                *ngIf="!isZoomed"
+                [ngClass]="televet?.CLICK_SPOT?.HEAD_REGION.SPOT"
+                class="region">
+              </div>
+              <div
+                (click)="onClickSpot(televet?.CLICK_SPOT?.EAR.SPOT, televet?.CLICK_SPOT?.EAR.LABEL, $event)"
+                *ngIf="isZoomed && region === 'head-region'"
+                [ngClass]="televet?.CLICK_SPOT?.EAR.SPOT"
+                class="spot">
+              </div>
+              <div
+                (click)="onClickSpot(televet?.CLICK_SPOT?.EYE.SPOT, televet?.CLICK_SPOT?.EYE.LABEL, $event)"
+                *ngIf="isZoomed && region === 'head-region'"
+                [ngClass]="televet?.CLICK_SPOT?.EYE.SPOT"
+                class="spot">
+              </div>
+              <div
+                (click)="onClickSpot(televet?.CLICK_SPOT?.NOSE.SPOT, televet?.CLICK_SPOT?.NOSE.LABEL, $event)"
+                *ngIf="isZoomed && region === 'head-region'"
+                [ngClass]="televet?.CLICK_SPOT?.NOSE.SPOT"
+                class="spot">
+              </div>
+              <div
+                (click)="onClickSpot(televet?.CLICK_SPOT?.MOUTH.SPOT, televet?.CLICK_SPOT?.MOUTH.LABEL, $event)"
+                *ngIf="isZoomed && region === 'head-region'"
+                [ngClass]="televet?.CLICK_SPOT?.MOUTH.SPOT"
+                class="spot">
+              </div>
+              <div
+                (click)="onClickSpot(televet?.CLICK_SPOT?.HEAD.SPOT, televet?.CLICK_SPOT?.HEAD.LABEL, $event)"
+                *ngIf="isZoomed && region === 'head-region'"
+                [ngClass]="televet?.CLICK_SPOT?.HEAD.SPOT"
+                class="spot">
+              </div>
+              <div
+                (click)="onClickSpot(televet?.CLICK_SPOT?.THROAT.SPOT, televet?.CLICK_SPOT?.THROAT.LABEL, $event)"
+                *ngIf="isZoomed && region === 'head-region'"
+                [ngClass]="televet?.CLICK_SPOT?.THROAT.SPOT"
+                class="spot">
+              </div>
+              <div
+                (click)="onClickSpot(televet?.CLICK_SPOT?.BODY_REGION.SPOT, null, $event)"
+                *ngIf="!isZoomed"
+                [ngClass]="televet?.CLICK_SPOT?.BODY_REGION.SPOT"
+                class="region">
+              </div>
             </div>
           </div>
         </div>
