@@ -1,11 +1,13 @@
 ion-toolbar {
   --background: #fafafa !important;
   border-top: 1px solid #d6d6d6;
-  max-height: 44px;
+  //height: 50px;
+  display: flex;
 }
 
 img {
   height: 32px;
+  border-image-width: 0 !important;
 }
 
 
@@ -14,7 +16,7 @@ ion-buttons {
   justify-content: space-between;
   margin-left: 16px;
   margin-right: 16px;
-  margin-top: -18px;
+  //margin-top: -18px;
   width: 100%;
 }
 

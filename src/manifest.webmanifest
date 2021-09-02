@@ -3,7 +3,7 @@
   "short_name": "confidu",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
-  "display": "fullscreen",
+  "display": "standalone",
   "description": "Die App, mit der du aktiv für die Gesundheit deines Tieres wirst.",
   "scope": "/",
   "start_url": "/",

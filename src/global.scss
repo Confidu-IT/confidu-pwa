@@ -247,14 +247,19 @@ ion-item {
 
 // header
 
-  ion-toolbar {
-    --min-height: 60px;
-    //--background: var(--ion-color-primary) url(assets/icons/brush_seamless_1.png) repeat-x left bottom;
-    --background: url(assets/icons/brush_4.png) repeat-x;
-    --border-width: 0;
-    --border-color: transparent;
-    --ion-color-base: transparent !important;
-  }
+.android-mobile-top-bar {
+  padding-top: 0 !important;
+}
+
+
+ion-toolbar {
+  --min-height: 60px;
+  //--background: var(--ion-color-primary) url(assets/icons/brush_seamless_1.png) repeat-x left bottom;
+  --background: url(/assets/icons/brush_4.png) repeat-x;
+  --border-width: 0;
+  --border-color: transparent;
+  --ion-color-base: transparent !important;
+}
 
   /* Remove bottom border on ios */
   .header-ios ion-toolbar:last-child {

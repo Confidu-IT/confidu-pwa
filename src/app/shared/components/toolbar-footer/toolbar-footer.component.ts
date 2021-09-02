@@ -91,6 +91,10 @@ export class ToolbarFooterComponent implements OnInit, OnDestroy {
 
   }
 
+  public goHome() {
+    this.router.navigateByUrl(`/`);
+  }
+
   public goToNotifications() {
     this.router.navigateByUrl(`user/notifications-list`);
   }

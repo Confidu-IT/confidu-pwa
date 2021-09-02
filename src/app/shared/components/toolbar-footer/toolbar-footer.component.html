@@ -1,6 +1,7 @@
+
 <ion-toolbar>
   <ion-buttons slot="start">
-    <ion-button routerLink="/home">
+    <ion-button (click)="goHome()">
       <img class="home-img" [src]="homeImg">
     </ion-button>
     <ion-button (click)="goToCareCard()">

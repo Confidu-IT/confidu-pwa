@@ -1,16 +1,17 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { AuthService } from '../../../user/auth.service';
 import { environment } from '../../../../environments/environment';
 import { ShopwareService } from '../../services/shopware/shopware.service';
 import { Subscription } from 'rxjs';
 import {Router} from '@angular/router';
+import { Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.scss'],
 })
-export class ToolbarComponent implements OnInit, OnDestroy {
+export class ToolbarComponent implements OnInit {
   @Input() backButton: boolean;
   @Input() menu: boolean;
   @Input() logo: boolean;
@@ -24,6 +25,10 @@ export class ToolbarComponent implements OnInit, OnDestroy {
   // public cart: boolean;
   // public cartSubscription: Subscription;
   public cartIcon: string;
+  public get isAndroidMobile(): boolean {
+    const platforms: string[] = this.platform.platforms();
+    return platforms.includes('android') && platforms.includes('mobile');
+  }
 
   private pristineCartIcon = '../../assets/icons/shop/cart_empty.svg';
   private dirtyCartIcon = '../../assets/icons/shop/cart_items.svg';
@@ -31,22 +36,12 @@ export class ToolbarComponent implements OnInit, OnDestroy {
   constructor(
     private userAuth: AuthService,
     private router: Router,
-    private shopwareService: ShopwareService
+    private shopwareService: ShopwareService,
+    private platform: Platform
   ) {
   }
 
-
   ngOnInit() {
     this.cartIcon = this.pristineCartIcon;
-
-  }
-
-  ionViewWillEnter() {
-  }
-
-  inViewWillLeave() {
-  }
-
-  ngOnDestroy(): void {
   }
 }
