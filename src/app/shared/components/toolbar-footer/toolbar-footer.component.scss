@@ -23,3 +23,7 @@ ion-buttons {
 input[type='file'] {
   display: none;
 }
+
+ion-toolbar {
+  --min-height: 54px;
+}

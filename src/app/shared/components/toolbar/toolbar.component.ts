@@ -25,6 +25,7 @@ export class ToolbarComponent implements OnInit {
   // public cart: boolean;
   // public cartSubscription: Subscription;
   public cartIcon: string;
+  public accountIcon = '../../assets/icons/navi/konto.svg';
   public get isAndroidMobile(): boolean {
     const platforms: string[] = this.platform.platforms();
     return platforms.includes('android') && platforms.includes('mobile');
