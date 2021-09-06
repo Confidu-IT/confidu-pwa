@@ -12,6 +12,7 @@ export class HomeModalPage {
   public selected: string;
   public showCallNotes = false;
   public showDiagNotes = false;
+  public zoomIcon = '../../../assets/icons/home/zoom_logo.svg';
 
   private language: string;
 
@@ -44,6 +45,10 @@ export class HomeModalPage {
     } else if (this.selected === 'tickets/televet-pet') {
       this.showDiagNotes = true;
     }
+  }
+
+  public onClickZoomLink(): void {
+    window.open('https://zoom.us/join', 'blank');
   }
 
   ionViewWillLeave() {

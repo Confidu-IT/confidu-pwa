@@ -35,6 +35,9 @@
                       </p>
                     </div>
                   </li>
+                  <li *ngIf="orderDetails?.key === 'order_videocall'" (click)="onClickZoomLink()">
+                    <div class="zoom">{{ 'ORDER_SUMMARY_PAGE.ZOOM' | translate }}</div>
+                  </li>
                 </ul>
               </div>
             </div>

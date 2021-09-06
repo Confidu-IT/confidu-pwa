@@ -136,20 +136,12 @@ export class HomePage {
           this.getArticles(this.petId, user.uid, user.za);
           this.isLoading = false;
         } else if (localStorage.getItem('showWalkthrough')) {
-          console.log('walkthrough');
           this.router.navigateByUrl('walkthrough');
         } else {
           this.router.navigateByUrl('pets/pet-create');
         }
       });
   }
-
-  // Delete this
-  // public foobar(key: string): void {
-  //   const foo = null;
-  //   const url = `tickets/videocall/${key}/${foo}/result`;
-  //   this.router.navigateByUrl(url);
-  // }
 
   private getActivePet(userId: string, petId): void {
     this.firebaseService.getPetById(userId, petId)
@@ -191,7 +183,6 @@ export class HomePage {
         if (data) {
           const tickets = [];
           this.tickets = data;
-
           data.map(ticket => {
             // console.log('ticket', ticket);
             ticket.schedule.map(schedule => {

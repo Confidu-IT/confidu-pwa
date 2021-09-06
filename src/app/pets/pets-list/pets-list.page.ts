@@ -62,7 +62,7 @@ export class PetsListPage {
     this.deleteFireBasePet(this.user$.uid, petId)
       .then(() => {
         this.commonService.presentToast('Profil erfolgreich gelöscht', 'primary');
-        // console.log('pets', this.pets.length);
+        console.log('pets', this.pets.length);
         if (this.pets.length > 0) {
           const id = this.pets[0].id;
           this.firebaseService.createActivePetId(this.user$.uid, id)

@@ -212,6 +212,7 @@ export class TicketPage {
   }
 
   public goToCall(link: string) {
+    console.log(link)
     window.open(link, 'blank');
   }
 

@@ -170,6 +170,8 @@ export class TelevetPetPage {
   private showActionSheet(spot): void {
     this.actionSheetCtrl
       .create({
+        header: this.televet.SCROLL,
+        cssClass: 'scroll',
         buttons: this.televetService.televetSpotButtons[this.species][this.gender][this.castrationState][spot]
       })
       .then(actionSheetEl => {

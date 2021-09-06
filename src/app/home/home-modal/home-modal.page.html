@@ -24,7 +24,16 @@
             {{ 'HOME_MODAL_PAGE.CALL' | translate }}
           </mat-radio-button>
         </mat-radio-group>
-        <div *ngIf="showCallNotes" class="call-description">{{ 'HOME_MODAL_PAGE.CALL_DESCRIPTION' | translate }}</div>
+        <div *ngIf="showCallNotes" class="call-description">
+          {{ 'HOME_MODAL_PAGE.CALL_DESCRIPTION' | translate }}
+          <div class="zoom">
+            {{ 'HOME_MODAL_PAGE.ZOOM' | translate }}
+          </div>
+          <div class="download" (click)="onClickZoomLink()">
+            {{ 'HOME_MODAL_PAGE.DOWNLOAD' | translate }}
+            <img [src]="zoomIcon" alt="">
+          </div>
+        </div>
         <div *ngIf="showDiagNotes" class="call-description">{{ 'HOME_MODAL_PAGE.DIAG_DESCRIPTION' | translate }}</div>
       </ion-col>
     </ion-row>

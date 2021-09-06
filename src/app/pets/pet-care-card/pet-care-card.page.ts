@@ -165,7 +165,7 @@ export class PetCareCardPage {
     const headers = {
       'Content-Type': 'application/json',
       'firebase-context-token': this.user.za,
-      'sw-context-token': localStorage.getItem('sw-token') || null
+      'sw-context-token': localStorage.getItem('sw-token')
     };
     const body = {
       petId: this.petId,

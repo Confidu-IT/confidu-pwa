@@ -88,7 +88,7 @@ export class BillingAddressPage {
     if (this.equalAddresses) {
       this.updateAddresses(address)
         .then(() => {
-          this.router.navigateByUrl('/shop/payment');
+          this.router.navigateByUrl('/shop/order');
         });
     } else {
       this.updateAddress(address)

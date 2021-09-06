@@ -69,6 +69,10 @@ export class OrderSummaryPage {
       });
   }
 
+  public onClickZoomLink(): void {
+    window.open('https://zoom.us/join', 'blank');
+  }
+
   ionViewWillLeave(): void {
     if (this.subscription) {
       this.subscription.unsubscribe();

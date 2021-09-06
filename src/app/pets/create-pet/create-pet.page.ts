@@ -74,6 +74,7 @@ export class CreatePetPage implements OnInit {
     private loadingCtrl: LoadingController,
     private actionSheetCtrl: ActionSheetController,
     private platform: Platform,
+    private authService: AuthService,
     private router: Router,
     private firebaseService: FirebaseService,
     public userAuth: AuthService,
@@ -88,6 +89,9 @@ export class CreatePetPage implements OnInit {
   }
 
   ionViewWillEnter() {
+    if (localStorage.length < 1) {
+      this.authService.logOut();
+    }
     this.subscription = this.userAuth.user$
       .subscribe((user) => {
         this.user$ = user;
@@ -101,7 +105,6 @@ export class CreatePetPage implements OnInit {
         this.okText = values.OK_BUTTON;
         this.cancelText = values.CANCEL_BUTTON;
         this.waiting = values.WAITING;
-        console.log(this.waiting)
       });
 
   }

@@ -2717,16 +2717,6 @@ export class TelevetService {
                     }
                   },
                   {
-                    text: text.BUMPINESS,
-                    cssClass: 'petspot-actionsheet-button',
-                    handler: () => {
-                      this.buttonData$.next({
-                        symptom: text.BUMPINESS,
-                        code: 'ROL'
-                      });
-                    }
-                  },
-                  {
                     text: text.HYPOCRISY,
                     cssClass: 'petspot-actionsheet-button',
                     handler: () => {
@@ -7455,16 +7445,6 @@ export class TelevetService {
                       this.buttonData$.next({
                         symptom: text.BUMPINESS,
                         code: 'ROL'
-                      });
-                    }
-                  },
-                  {
-                    text: text.HYPOCRISY,
-                    cssClass: 'petspot-actionsheet-button',
-                    handler: () => {
-                      this.buttonData$.next({
-                        symptom: text.HYPOCRISY,
-                        code: 'PSP'
                       });
                     }
                   },

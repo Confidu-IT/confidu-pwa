@@ -214,6 +214,7 @@
     "POISON_HEADER": "Was wurde gefressen?",
     "DESCRIPTION": "Im Bereich",
     "ACTION": "Tippe auf den betroffenen Bereich.",
+    "SCROLL": "Scrollen für Symptome",
     "PROGRESS_BUTTON": "Weiter",
     "ZOOM_BUTTON": "Zurück zum Körper",
     "TITLE": "Verarzten"
@@ -439,7 +440,8 @@
     "TITLE": "Shop"
   },
   "ORDER_SUMMARY_PAGE": {
-    "ORDER_STATE": "Dein Bestellstatus"
+    "ORDER_STATE": "Dein Bestellstatus",
+    "ZOOM": "Lade die Zoom-App hier kostenlos herunter."
   },
   "HOME_PAGE": {
     "CARE_CARD": "CareCard",
@@ -489,6 +491,8 @@
     "HEADER": "Bitte wähle die Art der Konsultation aus:",
     "QUESTIONNAIRE": "Diagnose Finder (kostenlos)",
     "CALL": "Videoanruf buchen (19,99 €)",
+    "ZOOM": "Für die Konsultation benötigst du die Zoom-App.",
+    "DOWNLOAD": "Zum kostenlosen Download:",
     "CALL_DESCRIPTION": "Im persönlichen Gespräch mit unseren Tierärzten kannst du in Ruhe Probleme besprechen und sie direkt an deinem Vierbeiner zeigen. Um jeden Videoanruf termingerecht annehmen zu können, begrenzen wir die Gesprächszeit auf maximal 15 Minuten.",
     "DIAG_DESCRIPTION": "Ohne Wartezeit und immer verfügbar! Gib das Symptom an, das deinen Vierbeiner plagt, und beantworte darauf abgestimmte Fragen. Du erhältst eine Auswertung mit Diagnose, Einschätzung der Dringlichkeit und Handlungsempfehlungen. Benötigte Präparate kannst du direkt bestellen.",
     "CANCEL": "Abbrechen",
@@ -1025,9 +1029,9 @@
   "PW_RECOVERY_PAGE": {
     "RECOVER": "Passwort zurücksetzen",
     "RECOVERED": "Passwort zurückgesetzt",
-    "ENTER_MAIL": "Gib bitte deine E-Mailadresse ein, mit der du dich bei der confidu App angemeldet hast. Wir senden die anschließend einen Link zum Zurücksetzen deines Passworts.",
+    "ENTER_MAIL": "Gib bitte deine E-Mail-Adresse ein, mit der du dich bei der confidu App angemeldet hast. Wir senden die anschließend einen Link zum Zurücksetzen deines Passworts.",
     "ENTER_PW": "Tippe nun dein neues Passwort ein.",
-    "EMAIL": "E-Mailadresse",
+    "EMAIL": "E-Mail-Adresse",
     "PASSWORD": "Neues Passwort",
     "PASSWORT_REPEAT": "Neues Passwort wiederholen",
     "SUCCESS": "Dein Passwort wurde erfolgreich geändert. Es ist ab sofort gültig.",

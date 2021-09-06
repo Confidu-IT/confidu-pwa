@@ -58,6 +58,12 @@ export class CommonService {
     this.appLanguage$.next(locale);
   }
 
+  public checkTokens() {
+    if (!localStorage.getItem('sw-token') || !localStorage.getItem('sw-token')) {
+      console.log('bleh');
+    }
+  }
+
   public getInvoiceResult(
     token: string,
     petID: string,
@@ -344,17 +350,18 @@ export class CommonService {
   }
 
   public handleShopErrors(statusCode: string): void {
+    console.log('handleShopErrors');
     const message = this.errorMessages.PRODUCTS[statusCode];
     // this.presentToast(message, 'danger');
     switch (statusCode) {
       case '400':
-        this.router.navigateByUrl('/shop/products');
+        this.authService.logOut();
         break;
       case '403':
         this.authService.logOut();
         break;
       case '451':
-        this.router.navigateByUrl('/shop/products');
+        location.reload();
         break;
     }
   }

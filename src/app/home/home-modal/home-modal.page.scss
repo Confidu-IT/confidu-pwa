@@ -33,7 +33,26 @@ mat-radio-button {
   //font-weight: 300;
   color: rgb(102,102,102);
   line-height: 15px;
-  margin: 24px 24px 0;
+  margin: 12px 24px 0;
+}
+
+.zoom, .download {
+  font-size: 11px;
+  color: rgb(102,102,102);
+}
+
+.zoom {
+  margin: 16px 0 6px;
+}
+
+.download {
+  display: flex;
+  align-items: baseline;
+
+  img {
+    height: 8px;
+    margin-left: 8px;
+  }
 }
 
 .buttons {
