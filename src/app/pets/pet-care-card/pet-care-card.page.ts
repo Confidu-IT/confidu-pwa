@@ -75,15 +75,15 @@ export class PetCareCardPage {
       tap(user => {
         this.user = user;
       }),
-      switchMap(() => {
+      switchMap(user => {
         if (this.user && this.petId) {
           try {
-            return this.getCareCardContent();
+            return this.getCareCardContent(user.za);
           } catch (e) {
-            this.router.navigateByUrl('pets/pets-list');
+            this.router.navigateByUrl('/');
           }
         } else {
-          this.router.navigateByUrl('pets/pets-list');
+          this.router.navigateByUrl('/');
         }
       }),
       switchMap(content => {
@@ -159,12 +159,12 @@ export class PetCareCardPage {
       .catch(error => this.commonService.presentToast('Eintrag fehlgeschlagen', 'danger'));
   }
 
-  private getCareCardContent(): Observable<any> {
+  private getCareCardContent(token): Observable<any> {
     const baseUrl = environment.baseUrl;
     const url = `${baseUrl}/${this.language}/carecard`;
     const headers = {
       'Content-Type': 'application/json',
-      'firebase-context-token': this.user.za,
+      'firebase-context-token': token,
       'sw-context-token': localStorage.getItem('sw-token')
     };
     const body = {
