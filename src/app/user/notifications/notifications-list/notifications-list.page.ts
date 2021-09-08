@@ -38,13 +38,13 @@ export class NotificationsListPage {
           this.router.navigateByUrl('/');
         }
         this.user = user;
-        return this.firebaseService.markNotificationsAsRead(this.user.uid)
+        return this.firebaseService.markNotificationsAsRead(user.uid)
       }),
       switchMap(() => {
         return this.firebaseService.getNotifications(this.user.uid)
       })
     ).subscribe( (data: any) => {
-      // console.log('data', data);
+      console.log('data', data);
       for (const item of data) {
         item.notification.body = item?.notification?.body[this.language];
       }

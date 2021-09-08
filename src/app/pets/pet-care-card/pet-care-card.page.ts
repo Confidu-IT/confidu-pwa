@@ -87,9 +87,8 @@ export class PetCareCardPage {
         }
       }),
       switchMap(content => {
+        console.log('content', content);
         this.panels = content.data;
-
-        console.log('this.panels', this.panels);
         try {
           return this.firebaseService.getPetById(this.user.uid, this.petId);
         } catch (e) {

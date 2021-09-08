@@ -58,12 +58,6 @@ export class CommonService {
     this.appLanguage$.next(locale);
   }
 
-  public checkTokens() {
-    if (!localStorage.getItem('sw-token') || !localStorage.getItem('sw-token')) {
-      console.log('bleh');
-    }
-  }
-
   public getInvoiceResult(
     token: string,
     petID: string,

@@ -55,7 +55,7 @@ export class FuDropdownsPage {
         this.user = user;
         const petId = localStorage.getItem('activePet');
         if (this.user && petId) {
-          return this.firebaseService.getPetById(this.user.uid, petId);
+          return this.firebaseService.getPetById(user.uid, petId);
         } else {
           this.isLoading = false;
           return this.router.navigateByUrl('/');

@@ -82,7 +82,7 @@ export class DiseasesPage {
         this.user = user;
         this.petId = localStorage.getItem('activePet');
         if (this.user && this.petId) {
-          return this.firebaseService.getPetById(this.user.uid, this.petId);
+          return this.firebaseService.getPetById(user.uid, this.petId);
         } else {
           this.isLoading = false;
           return this.router.navigateByUrl('/');

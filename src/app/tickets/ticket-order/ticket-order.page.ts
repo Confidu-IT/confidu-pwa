@@ -66,7 +66,7 @@ export class TicketOrderPage {
         if (!this.params.ticketKey) {
           this.getTicket(user.uid, petId, this.params.id);
         } else {
-          this.getDefaultTicket(user.uid, '1448', petId, this.params.ticketKey, this.language);
+          this.getDefaultTicket(user.uid, user.za, petId, this.params.ticketKey, this.language);
         }
       });
   }

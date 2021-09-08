@@ -122,12 +122,14 @@ export class HomePage {
     this.subscription = this.userAuth.user$
       .subscribe((user) => {
         if (!user) {
-          return this.router.navigateByUrl('/signup');
+          return this.router.navigateByUrl('/signin');
         }
-        console.log('user', user);
         this.user$ = user;
         this.patchButton = false;
         this.healthStateIcon = this.statusCheckInactiveImg;
+
+        // this.afAuth.onIdTokenChanged(this.user$)
+        // event emitter
 
         if (this.user$ && localStorage.getItem('activePet')) {
           this.petId = localStorage.getItem('activePet');

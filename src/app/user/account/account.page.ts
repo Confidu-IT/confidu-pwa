@@ -79,7 +79,7 @@ export class AccountPage {
         }
         this.user = user;
 
-        this.shopwareService.headers['firebase-context-token'] = this.user.za;
+        this.shopwareService.headers['firebase-context-token'] = user.za;
         this.shopwareService.getCustomer()
           .then(response => {
             if (response.errors) {

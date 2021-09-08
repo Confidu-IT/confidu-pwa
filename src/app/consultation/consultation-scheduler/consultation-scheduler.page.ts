@@ -69,7 +69,7 @@ export class ConsultationSchedulerPage {
         this.petId = localStorage.getItem('activePet');
         if (user && this.petId) {
         this.user = user;
-        return this.firebaseService.getPetById(this.user.uid, this.petId);
+        return this.firebaseService.getPetById(user.uid, this.petId);
         } else {
         this.router.navigateByUrl('consultation');
         }

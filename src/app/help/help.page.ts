@@ -42,7 +42,7 @@ export class HelpPage {
         return this.firebaseService.getFaq(this.language);
       })
     ).subscribe(response => {
-      console.log('resp', response);
+      // console.log('resp', response);
       this.data = response.data;
       this.isLoading = false;
     });

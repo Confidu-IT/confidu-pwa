@@ -50,16 +50,16 @@ export class ArticleDetailPage {
         }
         this.user = user;
         if (this.params.type === 'magazine') {
-          return this.commonService.getArticleById(this.user.za, this.params.id);
+          return this.commonService.getArticleById(user.za, this.params.id);
         } else if (this.params.type === 'recipe') {
-          return this.commonService.getRecipeById(this.user.za, this.params.id);
+          return this.commonService.getRecipeById(user.za, this.params.id);
         }
       })
     ).subscribe(article => {
       if (!article) {
         return this.router.navigateByUrl('/');
       }
-      console.log('article', article);
+      // console.log('article', article);
       this.result = article;
       this.isLoading = false;
     });
