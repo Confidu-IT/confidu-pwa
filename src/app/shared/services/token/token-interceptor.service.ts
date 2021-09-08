@@ -31,25 +31,7 @@ export class TokenInterceptor implements HttpInterceptor{
             }
           });
         }
-
         return next.handle(request);
       }));
   }
-
-
-
-  // intercept(req: HttpRequest<any>, next: HttpHandler): any {
-  //   console.log('req', req);
-  //   this.authService.afAuth.idTokenResult
-  //   return this.authService.user$.toPromise()
-  //     .then(user => {
-  //       const authReq = req.clone({
-  //         headers: req.headers.set('firebase-context-token', user.za)
-  //       });
-  //       return next.handle(authReq);
-  //     });
-  //
-  // }
-
-
 }

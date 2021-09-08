@@ -201,6 +201,10 @@ const routes: Routes = [
     loadChildren: () => import('./help/help.module').then( m => m.HelpPageModule)
   },
   {
+    path: 'help/pwa-instructions',
+    loadChildren: () => import('./help/pwa-instructions/pwa-instructions.module').then( m => m.PwaInstructionsPageModule)
+  },
+  {
     path: 'benefits-detail/:type',
     loadChildren: () => import('./benefits/benefits-detail/benefits-detail.module').then( m => m.BenefitsDetailPageModule)
   },

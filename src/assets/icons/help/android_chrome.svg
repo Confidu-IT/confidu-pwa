@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="312" height="292" viewBox="0 0 312 292">
+  <defs>
+    <filter id="Tool_bar_bg" x="0" y="0" width="312" height="292" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feFlood flood-opacity="0.122"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Gruppe_13921" data-name="Gruppe 13921" transform="translate(-24 -129)">
+    <g id="Gruppe_13907" data-name="Gruppe 13907" transform="matrix(0.946, 0.326, -0.326, 0.946, 26.922, -53.36)">
+      <path id="Pfad_1087" data-name="Pfad 1087" d="M-5195.509-6669.316c11.865-31.081,8.536-51.649,6.11-71.884" transform="matrix(0.998, 0.07, -0.07, 0.998, 5048.867, 7174.664)" fill="none" stroke="#7c7c7c" stroke-linecap="round" stroke-width="2"/>
+      <path id="Pfad_1088" data-name="Pfad 1088" d="M-5190.326-6716.231l5.952-8.7,6.779,7.711" transform="matrix(0.998, 0.07, -0.07, 0.998, 5045.102, 7156.838)" fill="none" stroke="#7c7c7c" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    </g>
+    <g id="Gruppe_13914" data-name="Gruppe 13914" transform="translate(30 62)">
+      <g transform="matrix(1, 0, 0, 1, -6, 67)" filter="url(#Tool_bar_bg)">
+        <path id="Tool_bar_bg-2" data-name="Tool bar bg" d="M300,0H0V280H300Z" transform="translate(6 6)" fill="none"/>
+      </g>
+    </g>
+    <g id="Gruppe_13917" data-name="Gruppe 13917" transform="translate(2130.5 1432)">
+      <text id="Lorem_ipsum_dol_light" data-name="Lorem ipsum dol light" transform="translate(-2098.5 -1136)" fill="#424242" font-size="14" font-family="Roboto-Regular, Roboto"><tspan x="0" y="15" xml:space="preserve">Tippe unten auf       , um das Menü aufzurufen. </tspan><tspan x="0" y="35">Scrolle herunter und wähle „Zum Home-</tspan><tspan x="0" y="55" xml:space="preserve">Bildschirm       “ , um das App-Icon zu </tspan><tspan x="0" y="75">platzieren und confidu bequem, wie all deine </tspan><tspan x="0" y="95">anderen Apps, vom Home-Bildschirm</tspan><tspan x="0" y="115">öffnen zu können.</tspan></text>
+      <text id="Permissions_dark" data-name="Permissions dark" transform="translate(-2098.5 -1174)" fill="#424242" font-size="17" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">confidu App zum Home-Bildschirm </tspan><tspan x="0" y="23">hinzufügen</tspan></text>
+      <g id="Gruppe_13915" data-name="Gruppe 13915" transform="translate(-1121.18 -4894.784)">
+        <path id="Pfad_12946" data-name="Pfad 12946" d="M-864.58,3768.838h1.435a1.031,1.031,0,0,1,1.032,1.031v6.084a1.032,1.032,0,0,1-1.032,1.031h-6.837a1.031,1.031,0,0,1-1.031-1.031v-6.084a1.031,1.031,0,0,1,1.031-1.031h1.436" transform="translate(0 -3.061)" fill="none" stroke="#424242" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+        <path id="Pfad_12947" data-name="Pfad 12947" d="M-866.453,3764.153l1.983-1.983,1.983,1.983" transform="translate(-2.093)" fill="none" stroke="#424242" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <line id="Linie_3059" data-name="Linie 3059" y1="6.807" transform="translate(-866.564 3762.744)" fill="none" stroke="#424242" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Gruppe_13916" data-name="Gruppe 13916" transform="translate(-1654.777 -1050.106)">
+        <rect id="Rechteck_2481" data-name="Rechteck 2481" width="9.884" height="9.884" rx="2.303" transform="translate(-368.517 -40.894)" fill="none" stroke="#424242" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+        <g id="Gruppe_13909" data-name="Gruppe 13909" transform="translate(-366.48 -38.857)">
+          <line id="Linie_3060" data-name="Linie 3060" y2="5.811" transform="translate(2.905 0)" fill="none" stroke="#424242" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <line id="Linie_3061" data-name="Linie 3061" x1="5.811" transform="translate(0 2.905)" fill="none" stroke="#424242" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
