@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import { FirebaseModule } from './shared/services/firebase/firebase.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -32,6 +32,7 @@ import { HomeModalPageModule } from './home/home-modal/home-modal.module';
 import { ConsultationModalPageModule } from './consultation/consultation-modal/consultation-modal.module';
 import { DocumentZoomModalPageModule } from './shared/document-zoom-modal/document-zoom-modal.module';
 import { AngularFireMessagingModule } from '@angular/fire/messaging';
+import {TokenInterceptor} from './shared/services/token/token-interceptor.service';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -77,7 +78,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     StatusBar,
     SplashScreen,
     TranslateService,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
   ],
   exports: [TranslateModule],
   bootstrap: [AppComponent]
