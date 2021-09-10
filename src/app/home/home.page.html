@@ -13,20 +13,20 @@
             <img class="cam-icon" [src]="camIcon" width="26" height="26" alt="">
           </div>
           <div class="right">
-            <div class="name" routerLink="/pets/pets-list">
+            <div class="name" (click)="goToPage('pets/pets-list')">
               <h2>{{ pet?.pet?.name }}</h2>
               <img [src]="switchPetIcon" width="14" height="14" alt="">
             </div>
             <div class="icons">
-              <div class="icon" routerLink="/dashboard">
+              <div class="icon" (click)="goToPage('dashboard')">
                 <img [src]="chartsIcon" width="33" height="33" alt="">
                 <div class="text">{{ 'HOME_PAGE.OVERVIEW' | translate }}</div>
               </div>
-              <div class="icon" routerLink="/benefits">
+              <div class="icon" (click)="goToPage('benefits')">
                 <img [src]="trophyIcon" width="33" height="33" alt="">
                 <div class="text">{{ 'HOME_PAGE.BENEFITS' | translate }}</div>
               </div>
-              <div class="icon" routerLink="/tickets/televet-emergency">
+              <div class="icon" (click)="goToPage('tickets/televet-emergency')">
                 <img [src]="emergencyIcon" width="33" height="33" alt="">
                 <div class="text">{{ 'HOME_PAGE.EMERGENCY' | translate }}</div>
               </div>
@@ -42,7 +42,7 @@
        <div class="task-planner">
          <div class="planner-header" [ngClass]="{'no-tickets': tickets?.length < 1}">
            <div class="planner-title">{{ 'HOME_PAGE.TODAY_TASKS' | translate }}</div>
-           <div class="planner-link" routerLink="/tickets">
+           <div class="planner-link" (click)="goToPage('tickets')">
              {{ 'HOME_PAGE.TO_TASKS' | translate }}
              <ion-icon name="chevron-forward-outline"></ion-icon>
            </div>
@@ -134,7 +134,7 @@
                           <ion-button
                             color="danger"
                             expand="full"
-                            routerLink="/tickets/televet-emergency"
+                            (click)="goToPage('tickets/televet-emergency')"
                             *ngIf="isEmergency">
                             {{ 'HOME_PAGE.DANGER_BUTTON' | translate }}
                           </ion-button>
@@ -209,24 +209,10 @@
         </div>
       </ion-col>
     </ion-row>
-
-<!--    <ion-row>-->
-<!--      <ion-col sizeSm="8" offsetSm="2">-->
-<!--        <ion-card class="video-call">-->
-<!--          <ion-card-content>-->
-<!--            <h6 class="ion-text-center">Videocall</h6>-->
-<!--            <ul>-->
-<!--              <li *ngFor="let item of articles?.events?.videocalls" (click)="foobar(item.resultKey)">-->
-<!--                Click Me!-->
-<!--              </li>-->
-<!--            </ul>-->
-<!--          </ion-card-content>-->
-<!--        </ion-card>-->
-<!--      </ion-col>-->
-<!--    </ion-row>-->
   </ion-grid>
   <input #filePicker (change)="onFileChosen($event)" accept="image/jpeg,image/png" type="file">
 </ion-content>
+
 <ion-footer *ngIf="!isLoading">
   <app-toolbar-footer [user]="user$"></app-toolbar-footer>
 </ion-footer>

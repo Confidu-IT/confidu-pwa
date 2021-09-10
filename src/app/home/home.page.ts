@@ -241,6 +241,10 @@ export class HomePage {
     // return true;
   }
 
+  public goToPage(link: string): void {
+    this.router.navigateByUrl(link);
+  }
+
   public onOpenHealthStateModal() {
     this.presentModal();
   }

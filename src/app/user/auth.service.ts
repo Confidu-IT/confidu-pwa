@@ -46,8 +46,6 @@ export class AuthService {
 
   public async createOrGetFirebaseUser(obj: any) {
     let token = await this.createToken(obj.id);
-    token = token.customToken;
-    localStorage.setItem('user_uid', token);
-    await this.afAuth.signInWithCustomToken(token);
+    await this.afAuth.signInWithCustomToken(token.customToken);
   }
 }

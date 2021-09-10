@@ -58,7 +58,10 @@ export class NotificationsListPage {
       return window.open(notification?.link.extern, '_blank');
     }
     if (notification.link?.intern) {
-      console.log('notification', notification);
+      if (notification.link?.intern === 'noti_welcome') {
+        return this.router.navigateByUrl(`help/pwa-instructions`);
+      }
+
       const currentPet = localStorage.getItem('activePet');
       const targetPet = notification.petId;
       let url: string;

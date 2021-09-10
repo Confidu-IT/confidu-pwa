@@ -59,6 +59,7 @@ export class PetsListPage {
   // }
 
   public onDelete(petId, slidingItem: IonItemSliding) {
+    console.log('pets', this.pets.length);
     this.deleteFireBasePet(this.user$.uid, petId)
       .then(() => {
         this.commonService.presentToast('Profil erfolgreich gelöscht', 'primary');
@@ -86,7 +87,7 @@ export class PetsListPage {
       .then(() => {
         slidingItem.closeOpened();
         this.activePet = petId;
-        this.router.navigateByUrl('/');
+        // this.router.navigateByUrl('/');
       });
   }
 

@@ -583,17 +583,29 @@ ion-button.button-disabled {
   //background-color: var(--ion-color-secondary) !important;
 }
 
-.show-replacement {
+.replacement-container {
   display: none;
 }
 @media screen and (min-width: 480px) {
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+
   .too-large {
     display: none;
   }
-  .show-replacement {
-    color: #8E8E8E;
-    display: block;
 
+  .replacement-container {
+    display: block;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .show-replacement {
+    flex: 1;
+    overflow: auto;
+    color: #8E8E8E;
     &-toolbar {
       display: flex;
       justify-content: space-around;
