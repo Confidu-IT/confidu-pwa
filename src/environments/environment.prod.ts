@@ -12,7 +12,7 @@ export const environment = {
     vapidKey: 'BMqCmorVeDKwwwQzRVEVSXU5UVnWkzZfB1kAcMr6acpoIhjJ3Q3S8c-VC_PDZtr7VUj_PW6Mev4ucRs6t50YCe4'
   },
   logo: '../assets/icons/logo_confid.svg',
-  baseUrl: 'https://staging-backend-dot-confidu-app.ey.r.appspot.com',
+  baseUrl: 'https://confidu-proxy-dot-confidu-app.appspot.com',
   homeButton: '../../assets/icons/home-button.svg',
   iconPath: '../assets/icons',
   shopware: {
@@ -21,5 +21,6 @@ export const environment = {
   storefrontUrl: 'https://confidu-app.firebaseapp.com'
 };
 
-// baseUrl: 'https://staging-backend-dot-confidu-app.ey.r.appspot.com',
-// baseUrl: 'https://confidu-app.appspot.com',
+// baseUrl: 'https://confidu-proxy-develop-dot-confidu-app.appspot.com',
+
+// baseUrl: 'https://confidu-proxy-dot-confidu-app.appspot.com',
