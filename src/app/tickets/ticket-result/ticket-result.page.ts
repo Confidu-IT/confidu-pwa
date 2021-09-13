@@ -166,27 +166,26 @@ export class TicketResultPage implements CanDeactivateGuard {
     }
   }
 
+  private createResultObj(type: string): void {
+    const obj = {
+      action: type,
+      event: this.eventId,
+      language: this.language,
+      user: this.user.uid
+    };
+    localStorage.setItem('ticketResult', JSON.stringify(obj));
+  }
+
   canDeactivate(): Promise<boolean> | boolean {
-    console.log('this.routingDestination', this.routingDestination);
     if (
       this.routingDestination?.search('cart') > -1 ||
       this.routingDestination?.search('consultation') > -1 ||
       this.routingDestination?.search('follow-up-prescription') > -1
     ) {
-      console.log('no popup');
-      console.log('this.routingDestination', this.routingDestination);
-       return this.ticketService.fooSave(
-        this.eventId, 'confirm',
-        this.petId,
-        this.user.uid, this.user.za,
-        this.commonService.language
-      ).then(() => {
-        return true;
-       })
-
-
+      this.createResultObj('confirm');
     } else if (this.result && this.result.popup) {
       const data = this.result.popup;
+
       return new Promise(async resolve => {
         const [alert] = await Promise.all([this.alertCtrl.create({
           message: data.popupOptionText,
@@ -197,13 +196,7 @@ export class TicketResultPage implements CanDeactivateGuard {
               role: 'cancel',
               cssClass: 'popup-cancel-button',
               handler: () => {
-                this.confirmSub = this.ticketService.confirmSave(
-                  this.eventId, 'cancel',
-                  this.petId,
-                  this.user.uid, this.user.za,
-                  this.commonService.language
-                ).subscribe(() => {
-                });
+                this.createResultObj('cancel');
                 resolve(true);
               }
             },
@@ -211,14 +204,7 @@ export class TicketResultPage implements CanDeactivateGuard {
               text: data?.buttonConfirm?.label,
               cssClass: 'popup-action-button',
               handler: () => {
-                this.confirmSub = this.ticketService.confirmSave(
-                  this.eventId, 'confirm',
-                  this.petId,
-                  this.user.uid, this.user.za,
-                  this.commonService.language
-                ).subscribe(() => {
-
-                });
+              this.createResultObj('confirm');
                 resolve(true);
               }
             }
