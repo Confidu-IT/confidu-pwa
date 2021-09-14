@@ -3,7 +3,7 @@ import { AuthService } from '../../user/auth.service';
 import { CommonService } from '../../shared/services/common/common.service';
 import { TicketService } from '../ticket-service/ticket-service';
 import { TranslateService } from '@ngx-translate/core';
-import {Observable, Subscription} from 'rxjs';
+import {Subscription} from 'rxjs';
 import { switchMap, tap } from 'rxjs/operators';
 import {ActivatedRoute, ActivatedRouteSnapshot, Router, RouterStateSnapshot} from '@angular/router';
 import { AlertController, ModalController } from '@ionic/angular';
