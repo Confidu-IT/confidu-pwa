@@ -969,8 +969,8 @@
     "FIRST_NAME": "Vorname *",
     "LAST_NAME": "Nachname *",
 
-    "PHONE": "Tel.",
-    "MODAL_HEADER": "Videoanruf buchen kannst, gib bitte deine Kontaktdaten an.",
+    "PHONE": "Tel. *",
+    "MODAL_HEADER": "Damit du Videoanruf buchen kannst, gib bitte deine Kontaktdaten an.",
     "CANCEL": "Abbrechen",
     "CONFIRM": "Übernehmen"
   },

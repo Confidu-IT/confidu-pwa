@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import {NavigationEnd, Router} from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Observable } from 'rxjs';
 import { ShopwareService } from '../shared/services/shopware/shopware.service';
@@ -12,6 +12,8 @@ import { environment } from '../../environments/environment';
 export class AuthService {
   user$: Observable<any | null>;
   private baseUrl = environment.baseUrl;
+  private previousUrl: string;
+  private currentUrl: string;
 
   constructor(
     private http: HttpClient,
@@ -20,6 +22,12 @@ export class AuthService {
     private shopwareService: ShopwareService
   ) {
     this.user$ = this.afAuth.authState;
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.previousUrl = this.currentUrl;
+        this.currentUrl = event.url;
+      }
+    });
   }
 
   public logOut(): void {
@@ -42,6 +50,10 @@ export class AuthService {
     return fetch(url, { method: 'POST', body })
       .then(resp => resp.json())
       .then(data => data);
+  }
+
+  public getPreviousUrl(): string {
+    return this.previousUrl;
   }
 
   public async createOrGetFirebaseUser(obj: any) {
