@@ -20,7 +20,6 @@ export class TokenInterceptor implements HttpInterceptor{
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const url = request?.url;
-    console.log('prev url', this.authService.getPreviousUrl());
 
     if (url.search('i18n') > -1) {
       return next.handle(request);
@@ -36,10 +35,9 @@ export class TokenInterceptor implements HttpInterceptor{
           // coming from ticket result page
           if (this.authService.getPreviousUrl() && localStorage.getItem('ticketResult') && localStorage.getItem('activePet')) {
             const prevUri = this.authService.getPreviousUrl().split('/');
-            console.log('prevUri', prevUri);
             if (prevUri[prevUri.length - 1] === 'result') {
               const ticketObj = JSON.parse(localStorage.getItem('ticketResult'));
-              this.ticketService.confirmSaveFetch(
+              this.ticketService.confirmSaveRequest(
                 ticketObj.event,
                 ticketObj.action,
                 localStorage.getItem('activePet'),

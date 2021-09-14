@@ -114,11 +114,14 @@ export class ConsultationSchedulerPage {
       .then(response => {
         console.log('response', response);
         if (response.errors?.length > 0) {
+          this.loadingCtrl.dismiss();
           this.commonService.handleShopErrors(response.errors[0].status);
-        } else if (!response.firstName || !response.firstName.trim().length) {
-            this.presentModal();
+        } else if (
+          !response.firstName || !response.lastName || !response?.customFields?.custom_customers_tel
+        ) {
+          this.loadingCtrl.dismiss();
+          this.presentModal();
         } else {
-
           this.progressBooking();
         }
       });

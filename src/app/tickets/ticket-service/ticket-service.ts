@@ -85,7 +85,7 @@ export class TicketService {
     return this.http.post(url, body, { headers });
   }
 
-  public confirmSaveFetch(
+  public confirmSaveRequest(
     eventID: string,
     action: string,
     petID: string,
