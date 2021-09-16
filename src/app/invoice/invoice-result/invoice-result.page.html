@@ -57,41 +57,7 @@
           </ion-card-content>
         </ion-card>
 
-        <ion-card *ngIf="result?.invoiceDate" class="scan-result-card date">
-          <ion-card-content>
-            <h3>{{ result.invoiceDate.header }}<sup>*</sup></h3>
-            <ng-container *ngIf="result.invoiceDate.body">
-              <p *ngFor="let el of result.invoiceDate.body" class="body">{{ el }}</p>
-            </ng-container>
-            <ng-container>
-              <ion-datetime displayFormat="DD. MM. YYYY"
-                            class="no-border"
-                            [placeholder]="'TT. MM. JJJJ'"
-                            [(ngModel)]="result.invoiceDate.data"
-                            [cancelText]="'PRESCRIPTION_RESULT_PAGE.DATE_TIME_BTNS_CANCEL' | translate"
-                            [doneText]="'PRESCRIPTION_RESULT_PAGE.DATE_TIME_BTNS_DONE' | translate"
-              ></ion-datetime>
-            </ng-container>
-          </ion-card-content>
-        </ion-card>
 
-        <ion-card *ngIf="result?.invoicePrice" class="scan-result-card price">
-          <ion-card-content>
-            <h3>{{ result.invoicePrice.header }}<sup>*</sup></h3>
-            <ng-container *ngIf="result.invoicePrice.body">
-              <p *ngFor="let el of result.invoicePrice.body" class="body">{{ el }}</p>
-            </ng-container>
-            <div class="input-data">
-              <mat-form-field>
-                <mat-label>{{  'PRESCRIPTION_RESULT_PAGE.PRICE' | translate}}</mat-label>
-                <input matInput
-                       type="number"
-                       [(ngModel)]="result.invoicePrice.data">
-                <span matSuffix>€</span>
-              </mat-form-field>
-            </div>
-          </ion-card-content>
-        </ion-card>
 
 
         <ion-card *ngIf="result?.diagnosis" class="scan-result-card">
@@ -287,6 +253,42 @@
             >
               {{ 'PRESCRIPTION_RESULT_PAGE.ADD' | translate }}
             </ion-button>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card *ngIf="result?.invoiceDate" class="scan-result-card date">
+          <ion-card-content>
+            <h3>{{ result.invoiceDate.header }}<sup>*</sup></h3>
+            <ng-container *ngIf="result.invoiceDate.body">
+              <p *ngFor="let el of result.invoiceDate.body" class="body">{{ el }}</p>
+            </ng-container>
+            <ng-container>
+              <ion-datetime displayFormat="DD. MM. YYYY"
+                            class="no-border"
+                            [placeholder]="'TT. MM. JJJJ'"
+                            [(ngModel)]="result.invoiceDate.data"
+                            [cancelText]="'PRESCRIPTION_RESULT_PAGE.DATE_TIME_BTNS_CANCEL' | translate"
+                            [doneText]="'PRESCRIPTION_RESULT_PAGE.DATE_TIME_BTNS_DONE' | translate"
+              ></ion-datetime>
+            </ng-container>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card *ngIf="result?.invoicePrice" class="scan-result-card price">
+          <ion-card-content>
+            <h3 Class="no-gap">{{ result.invoicePrice.header }}<sup>*</sup></h3>
+            <ng-container *ngIf="result.invoicePrice.body">
+              <p *ngFor="let el of result.invoicePrice.body" class="body">{{ el }}</p>
+            </ng-container>
+            <div class="input-data">
+              <mat-form-field>
+                <mat-label>{{  'PRESCRIPTION_RESULT_PAGE.PRICE' | translate}}</mat-label>
+                <input matInput
+                       type="number"
+                       [(ngModel)]="result.invoicePrice.data">
+                <span matSuffix>€</span>
+              </mat-form-field>
+            </div>
           </ion-card-content>
         </ion-card>
 
