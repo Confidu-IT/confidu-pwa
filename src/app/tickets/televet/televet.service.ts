@@ -524,7 +524,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.SWELLING,
-                        code: 'UVV'
+                        code: 'UVN'
                       });
                     }
                   },
@@ -656,7 +656,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.SWELLING,
-                        code: 'UVV'
+                        code: 'UVN'
                       });
                     }
                   },
@@ -1000,7 +1000,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.SWELLING,
-                        code: 'UVV'
+                        code: 'UVN'
                       });
                     }
                   },
@@ -1142,7 +1142,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.SWELLING,
-                        code: 'UVV'
+                        code: 'UVN'
                       });
                     }
                   },
@@ -1713,7 +1713,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.SWELLING,
-                        code: 'UVV'
+                        code: 'UVN'
                       });
                     }
                   },
@@ -1845,7 +1845,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.SWELLING,
-                        code: 'UVV'
+                        code: 'UVN'
                       });
                     }
                   },
@@ -2189,7 +2189,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.SWELLING,
-                        code: 'UVV'
+                        code: 'UVN'
                       });
                     }
                   },
@@ -2331,7 +2331,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.SWELLING,
-                        code: 'UVV'
+                        code: 'UVN'
                       });
                     }
                   },
@@ -2934,7 +2934,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.SWELLING,
-                        code: 'UVV'
+                        code: 'UVN'
                       });
                     }
                   },
@@ -3066,7 +3066,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.SWELLING,
-                        code: 'UVV'
+                        code: 'UVN'
                       });
                     }
                   },
@@ -3410,7 +3410,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.SWELLING,
-                        code: 'UVV'
+                        code: 'UVN'
                       });
                     }
                   },
@@ -3552,7 +3552,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.SWELLING,
-                        code: 'UVV'
+                        code: 'UVN'
                       });
                     }
                   },
@@ -4113,7 +4113,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.SWELLING,
-                        code: 'UVV'
+                        code: 'UVN'
                       });
                     }
                   },
@@ -4245,7 +4245,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.SWELLING,
-                        code: 'UVV'
+                        code: 'UVN'
                       });
                     }
                   },
@@ -4589,7 +4589,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.SWELLING,
-                        code: 'UVV'
+                        code: 'UVN'
                       });
                     }
                   },
@@ -4731,7 +4731,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.SWELLING,
-                        code: 'UVV'
+                        code: 'UVN'
                       });
                     }
                   },
@@ -5306,7 +5306,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.SWELLING,
-                        code: 'UVV'
+                        code: 'UVN'
                       });
                     }
                   },
@@ -5438,7 +5438,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.SWELLING,
-                        code: 'UVV'
+                        code: 'UVN'
                       });
                     }
                   },
@@ -5762,7 +5762,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.SWELLING,
-                        code: 'UVV'
+                        code: 'UVN'
                       });
                     }
                   },
@@ -5904,7 +5904,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.SWELLING,
-                        code: 'UVV'
+                        code: 'UVN'
                       });
                     }
                   },
@@ -6465,7 +6465,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.SWELLING,
-                        code: 'UVV'
+                        code: 'UVN'
                       });
                     }
                   },
@@ -6597,7 +6597,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.SWELLING,
-                        code: 'UVV'
+                        code: 'UVN'
                       });
                     }
                   },
@@ -6921,7 +6921,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.SWELLING,
-                        code: 'UVV'
+                        code: 'UVN'
                       });
                     }
                   },
@@ -7063,7 +7063,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.SWELLING,
-                        code: 'UVV'
+                        code: 'UVN'
                       });
                     }
                   },
@@ -7656,7 +7656,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.SWELLING,
-                        code: 'UVV'
+                        code: 'UVN'
                       });
                     }
                   },
@@ -7788,7 +7788,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.SWELLING,
-                        code: 'UVV'
+                        code: 'UVN'
                       });
                     }
                   },
@@ -8112,7 +8112,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.SWELLING,
-                        code: 'UVV'
+                        code: 'UVN'
                       });
                     }
                   },
@@ -8254,7 +8254,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.SWELLING,
-                        code: 'UVV'
+                        code: 'UVN'
                       });
                     }
                   },
@@ -8825,7 +8825,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.SWELLING,
-                        code: 'UVV'
+                        code: 'UVN'
                       });
                     }
                   },
@@ -8957,7 +8957,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.SWELLING,
-                        code: 'UVV'
+                        code: 'UVN'
                       });
                     }
                   },
@@ -9281,7 +9281,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.SWELLING,
-                        code: 'UVV'
+                        code: 'UVN'
                       });
                     }
                   },
@@ -9423,7 +9423,7 @@ export class TelevetService {
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.SWELLING,
-                        code: 'UVV'
+                        code: 'UVN'
                       });
                     }
                   },
