@@ -66,7 +66,7 @@
                 <ion-label color="medium" position="floating">
                   {{ 'USER_MODAL_PAGE.PHONE.PHONE' | translate }}
                 </ion-label>
-                <ion-input formControlName="phone" type="text"></ion-input>
+                <ion-input formControlName="phone" type="number"></ion-input>
               </ion-item>
             </form>
             <ion-button
@@ -77,7 +77,7 @@
               {{ 'USER_MODAL_PAGE.PHONE.BUTTON' | translate }}
             </ion-button>
           </ion-card-content>
-          <p class="explanation"> {{ 'USER_MODAL_PAGE.PHONE.EXPLANATION' | translate }}</p>
+<!--          <p class="explanation"> {{ 'USER_MODAL_PAGE.PHONE.EXPLANATION' | translate }}</p>-->
         </ion-card>
 
         <ion-card *ngIf="type === 'email'" class="email">

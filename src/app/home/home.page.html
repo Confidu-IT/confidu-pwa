@@ -66,6 +66,7 @@
                        <span *ngIf="ticket.data.type !== 'common'">{{ 'HOME_PAGE.TODAY' | translate }}</span>
                        <span *ngIf="ticket.data.type === 'common'" [ngClass]="{ overdue: isOverdue(ticket.endTime) }">
                                           {{ ticket.endTime.seconds * 1000 | date: 'HH:mm' }}
+                         {{ 'HOME_PAGE.TIME' | translate }}
                                         </span>
                      </div>
                    </ion-card-content>

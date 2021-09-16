@@ -47,24 +47,17 @@ export class OrderSummaryPage {
       .subscribe(user => {
         console.log('user', user);
         this.user = user;
-        const orderId = this.params.orderId;
-        const uid = user.uid;
         const petId = localStorage.getItem('activePet');
-        if (orderId && uid && petId) {
-          try {
-            this.shopwareService.headers['firebase-context-token'] = this.user.za;
-            this.shopwareService.sendOrderId(orderId, uid, petId)
-              .then(data => {
-                console.log('data', data);
-                this.orderDetails = data;
-                this.isLoading = false;
-              });
-          } catch (e) {
-            console.log('e', e);
+        try {
+          this.shopwareService.sendOrderId(this.params.orderId)
+            .then(data => {
+              console.log('data', data);
+              this.orderDetails = data;
+              this.isLoading = false;
+            });
+        } catch (e) {
+          console.log('e', e);
 
-          }
-        } else {
-          console.log('bleh')
         }
       });
   }

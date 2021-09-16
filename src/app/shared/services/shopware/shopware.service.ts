@@ -426,11 +426,9 @@ export class ShopwareService {
   //     .then(({ data }) => data);
   // }
 
-  sendOrderId(order: string, user: string, pet: string): Promise<any> {
+  sendOrderId(order: string): Promise<any> {
     const obj = {
-      orderId: order,
-      uid: user,
-      petId: pet
+      orderId: order
     };
 
     const headers = this.headers;

@@ -40,7 +40,7 @@
   }
 
   &-price {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     text-align: right;
   }
@@ -73,7 +73,7 @@
 }
 
 .remove-article {
-  color: var(--ion-color-medium);
+  color: rgb(102,102,102);
   font-size: 12px;
 }
 
@@ -93,9 +93,9 @@
 }
 
 .tax-rate {
-  color: var(--ion-color-medium);
-  font-size: 12px;
-  font-style: italic;
+  color: rgb(102,102,102);
+  font-size: 11px;
+  //font-style: italic;
 }
 
 .prices {
@@ -111,7 +111,6 @@
 
 .shipment {
   font-size: 14px;
-  font-weight: bold;
   margin-bottom: 4px;
 }
 
@@ -120,7 +119,7 @@ ion-select {
 }
 
 h2 {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   margin: 0;
 }
