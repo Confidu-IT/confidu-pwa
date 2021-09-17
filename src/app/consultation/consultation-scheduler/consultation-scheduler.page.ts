@@ -115,7 +115,7 @@ export class ConsultationSchedulerPage {
         console.log('response', response);
         if (response.errors?.length > 0) {
           this.loadingCtrl.dismiss();
-          this.commonService.handleShopErrors(response.errors[0].status);
+          this.commonService.handleResponseErrors(response.errors[0].status);
         } else if (
           !response.firstName || !response.lastName || !response?.customFields?.custom_customers_tel
         ) {

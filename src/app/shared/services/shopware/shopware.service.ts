@@ -411,6 +411,20 @@ export class ShopwareService {
       .catch(e => e);
   }
 
+  getOrderDetails(orderId: string): Promise<any> {
+    const headers = this.headers;
+    const url = `${this.uri}/customer/order/${orderId}`;
+    return fetch(url, { method: 'GET', headers })
+      .then((resp) => {
+        if (!resp.ok) {
+          throw resp.json();
+        }
+        return resp;
+      })
+      .then((resp) => resp.json())
+      .catch(e => e);
+  }
+
   // generateQrCode(order: string, id: string, pet: string, fbtoken: string): Promise<any> {
   //   const obj = {
   //     orderId: order,

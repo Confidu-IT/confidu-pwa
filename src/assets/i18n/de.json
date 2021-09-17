@@ -1296,5 +1296,18 @@
     "CHARS": "1500 Zeichen",
     "BUTTON": "Senden",
     "FAQ": "Häufig gestellte Fragen"
+  },
+  "ORDER_DETAILS_PAGE": {
+    "TITLE": "Bestelldetails",
+    "NR": "Bestellnummer:",
+    "ORDERED_AT": "Bestellt am:",
+    "SUMMARY": "Summe",
+    "AMOUNT": "Menge:",
+    "ADDRESS": "Versandadresse",
+    "PAYMENT": "Zahlungsart",
+    "PACKAGE": "Verpackung & Versand:",
+    "NET_PRICE": "Summe ohne MwSt.:",
+    "TAX": "Anzurechnende MwSt.:",
+    "TOTAL_PRICE": "Gesamtsumme:"
   }
 }

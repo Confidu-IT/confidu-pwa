@@ -1,0 +1,95 @@
+<ion-header>
+  <app-toolbar [backButton]="true" title="{{ 'ORDER_DETAILS_PAGE.TITLE' | translate }}"></app-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-text-center" *ngIf="isLoading">
+    <ion-spinner color="primary"></ion-spinner>
+  </div>
+  <ion-grid *ngIf="!isLoading">
+    <ion-row>
+      <ion-col sizeSm="8" offsetSm="2">
+
+        <ion-card class="top-card">
+          <ion-card-content>
+            <ul>
+              <li>
+                <div class="label">{{ 'ORDER_DETAILS_PAGE.NR' | translate }}</div>
+                <div class="value">{{ order?.orderNumber }}</div>
+              </li>
+              <li>
+                <div class="label">{{ 'ORDER_DETAILS_PAGE.ORDERED_AT' | translate }}</div>
+                <div class="value">{{ order?.orderDateTime | date:'dd.MM.yyyy' }}</div>
+              </li>
+              <li class="bold">
+                <div class="label">{{ 'ORDER_DETAILS_PAGE.SUMMARY' | translate }}:</div>
+                <div class="value">{{ order?.price?.totalPrice }} €</div>
+              </li>
+            </ul>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card class="items-card">
+          <ion-card-content>
+            <ul>
+              <li *ngFor="let item of order?.lineItems">
+                <div class="image-container"></div>
+                <div class="item-content">
+                  <h3 class="header">{{ item.label }}</h3>
+                  <div class="body">
+                    <div class="quantity">
+                      {{ 'ORDER_DETAILS_PAGE.AMOUNT' | translate }}
+                      {{ item.quantity }}
+                    </div>
+                    <div class="price bold">{{ item.totalPrice }} €</div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card class="price-card">
+          <ion-card-content>
+            <ul>
+              <li>
+                <h3>{{ 'ORDER_DETAILS_PAGE.ADDRESS' | translate }}</h3>
+                <address>
+                  {{ order?.billingAddress?.firstName }} {{ order?.billingAddress?.lastName }}<br>
+                  {{ order?.billingAddress?.street }}<br>
+                  {{ order?.billingAddress?.zipcode }} {{ order?.billingAddress?.city }}<br>
+                </address>
+              </li>
+              <li>
+                <h3>{{ 'ORDER_DETAILS_PAGE.SUMMARY' | translate }}</h3>
+                <ul class="summary">
+                  <li>
+                    <div class="label">{{ 'ORDER_DETAILS_PAGE.PACKAGE' | translate }}</div>
+                    <div class="value">???</div>
+                  </li>
+                  <li>
+                    <div class="label">{{ 'ORDER_DETAILS_PAGE.NET_PRICE' | translate }}</div>
+                    <div class="value">{{ order?.price?.netPrice }} €</div>
+                  </li>
+                  <li>
+                    <div class="label">{{ 'ORDER_DETAILS_PAGE.TAX' | translate }}</div>
+                    <div class="value">{{ order?.price?.calculatedTaxes[0]?.tax }} €</div>
+                  </li>
+                  <li>
+                    <div class="label">{{ 'ORDER_DETAILS_PAGE.TOTAL_PRICE' | translate }}</div>
+                    <div class="value">{{ order?.price?.totalPrice }} €</div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+<ion-footer>
+  <app-toolbar-footer [user]="user"></app-toolbar-footer>
+</ion-footer>

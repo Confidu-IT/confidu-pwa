@@ -48,8 +48,8 @@ export class OrderHistoryPage {
       });
   }
 
-  public goToOrder(nr: string) {
-    console.log('nr', nr);
+  public goToOrder(id: string) {
+    this.router.navigateByUrl(`order-details/${id}`);
   }
 
 
@@ -59,7 +59,7 @@ export class OrderHistoryPage {
       .then(orders => {
         console.log('orders', orders);
         if (orders.error) {
-          this.commonService.handleShopErrors(orders.errors[0].status);
+          this.commonService.handleResponseErrors(orders.errors[0].status);
           this.orders = [];
           this.isLoading = false;
         } else {

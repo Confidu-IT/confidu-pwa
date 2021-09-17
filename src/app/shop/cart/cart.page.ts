@@ -54,7 +54,7 @@ export class CartPage implements OnInit {
       .then(cart => {
         console.log('cart', cart);
         if (cart.errors.length > 0) {
-          this.commonService.handleShopErrors(cart.errors[0]?.status);
+          this.commonService.handleResponseErrors(cart.errors[0]?.status);
         } else {
           if (cart.deliveries.length > 0) {
             this.cart = cart;
@@ -79,7 +79,7 @@ export class CartPage implements OnInit {
     this.shopwareService.changeLineItemQuantity(id, quantity)
       .then(product => {
         if (product.errors. length > 0) {
-          this.commonService.handleShopErrors(product.errors[0].status);
+          this.commonService.handleResponseErrors(product.errors[0].status);
         } else {
           this.shopwareService.getCart()
             .then(cart => {
@@ -97,7 +97,7 @@ export class CartPage implements OnInit {
     this.shopwareService.deleteLineItem(id)
       .then(product => {
         if (product?.errors?.length > 0) {
-          this.commonService.handleShopErrors(product?.errors[0]?.status);
+          this.commonService.handleResponseErrors(product?.errors[0]?.status);
         } else {
           this.shopwareService.getCart()
             .then(cart => {
@@ -125,7 +125,7 @@ export class CartPage implements OnInit {
       .then(response => {
         console.log('response', response);
         if (response.errors?.length > 0) {
-          this.commonService.handleShopErrors(response.errors[0].status);
+          this.commonService.handleResponseErrors(response.errors[0].status);
         } else {
           let route;
           if (!response.defaultBillingAddress) {

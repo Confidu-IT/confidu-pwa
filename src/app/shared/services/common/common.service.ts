@@ -343,8 +343,8 @@ export class CommonService {
     return Math.floor(Math.random() * 10000).toString();
   }
 
-  public handleShopErrors(statusCode: string): void {
-    console.log('handleShopErrors');
+  public handleResponseErrors(statusCode: string): void {
+    console.log('handleResponseErrors');
     const message = this.errorMessages.PRODUCTS[statusCode];
     // this.presentToast(message, 'danger');
     switch (statusCode) {

@@ -119,7 +119,7 @@ export class BillingAddressPage {
     return this.shopwareService.createAddress(address)
       .then(addressId => {
         if (addressId.errors) {
-          this.commonService.handleShopErrors(addressId.errors[0].status);
+          this.commonService.handleResponseErrors(addressId.errors[0].status);
         } else {
           this.shopwareService.setAddress(addressId.id, 'billing');
         }
@@ -132,7 +132,7 @@ export class BillingAddressPage {
     return this.shopwareService.createAddress(address)
       .then(addressId => {
         if (addressId.errors) {
-          this.commonService.handleShopErrors(addressId.errors[0].status);
+          this.commonService.handleResponseErrors(addressId.errors[0].status);
         } else {
           if (this.title === 'rechnungsadresse') {
             this.shopwareService.setAddress(addressId.id, 'billing');
@@ -149,7 +149,7 @@ export class BillingAddressPage {
       .then(response => {
         console.log('response', response);
         if (response.errors) {
-          this.commonService.handleShopErrors(response.errors[0].status);
+          this.commonService.handleResponseErrors(response.errors[0].status);
         } else {
           this.profile = response;
         }

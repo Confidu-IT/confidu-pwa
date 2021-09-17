@@ -116,7 +116,7 @@ export class ConsultationBookingPage {
     this.shopwareService.getProfile()
       .then(response => {
         if (response.errors?.length > 0) {
-          this.commonService.handleShopErrors(response.errors[0].status);
+          this.commonService.handleResponseErrors(response.errors[0].status);
         } else {
           let route;
           if (!response.defaultBillingAddress) {

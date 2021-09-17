@@ -51,7 +51,7 @@ export class OrderPage {
         this.shopwareService.getProfile()
           .then(profile => {
             if (profile.errors) {
-              this.commonService.handleShopErrors(profile.errors[0].status);
+              this.commonService.handleResponseErrors(profile.errors[0].status);
             } else {
               this.customer = profile;
               this.billingAddress = this.customer.defaultBillingAddress;
@@ -77,7 +77,7 @@ export class OrderPage {
     return this.shopwareService.deleteLineItem(id)
       .then(product => {
         if (product.errors) {
-          this.commonService.handleShopErrors(product?.errors[0]?.status);
+          this.commonService.handleResponseErrors(product?.errors[0]?.status);
         } else {
           this.shopwareService.getCart()
             .then(cart => {
@@ -101,7 +101,7 @@ export class OrderPage {
           .then(cart => {
             console.log('cart', cart);
             if (cart.errors.length > 0) {
-              this.commonService.handleShopErrors(cart.errors[0].status);
+              this.commonService.handleResponseErrors(cart.errors[0].status);
             } else {
               this.cart = cart;
               if (this.cart.deliveries.length > 0) {
@@ -134,7 +134,7 @@ export class OrderPage {
       .then(order => {
         console.log('order', order);
         if (order.errors) {
-          this.commonService.handleShopErrors(order.errors[0].status);
+          this.commonService.handleResponseErrors(order.errors[0].status);
         } else {
           this.shopwareService.payOrder(order).then((data) => {
             console.log('data', data);

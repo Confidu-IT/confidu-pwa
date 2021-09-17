@@ -165,7 +165,7 @@ export class UserModalPage {
       .then(response => {
         // console.log('response', response);
         if (response.errors) {
-          this.commonService.handleShopErrors(response.errors[0].status);
+          this.commonService.handleResponseErrors(response.errors[0].status);
         } else {
           this.salutationId = response.salutationId;
           // this.countryId = response.defaultBillingAddress.countryId;

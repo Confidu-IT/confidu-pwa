@@ -83,7 +83,7 @@ export class AccountPage {
         this.shopwareService.getCustomer()
           .then(response => {
             if (response.errors) {
-              this.commonService.handleShopErrors(response.errors[0].status);
+              this.commonService.handleResponseErrors(response.errors[0].status);
             } else {
 
               this.account = response;

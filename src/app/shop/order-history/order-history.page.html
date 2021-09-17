@@ -29,7 +29,7 @@
         <li *ngFor="let order of orders">
           <ion-card>
             <ion-card-content>
-              <div class="order-card-header" (click)="goToOrder(order.orderNumber)">
+              <div class="order-card-header" (click)="goToOrder(order.id)">
                 <div class="left">
                   <h2 class="order-title">
                     {{ 'ORDER_HISTORY_PAGE.ORDER_NR' | translate }}:
@@ -40,7 +40,7 @@
                     {{ order.createdAt | date: 'dd.MM.yyy' }}
                   </div>
                 </div>
-<!--                <ion-icon name="chevron-forward-outline"></ion-icon>-->
+                <ion-icon name="chevron-forward-outline"></ion-icon>
               </div>
 
               <div class="order-price">

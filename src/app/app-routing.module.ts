@@ -221,7 +221,11 @@ const routes: Routes = [
     path: 'activation/:activationKey',
     loadChildren: () => import('./shop/activation/activation.module').then( m => m.ActivationPageModule)
   },
-  { path: '**', redirectTo: 'home', pathMatch: 'full' },
+  {
+    path: 'order-details/:orderId',
+    loadChildren: () => import('./shop/order-details/order-details.module').then( m => m.OrderDetailsPageModule)
+  },
+  { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ];
 
 @NgModule({

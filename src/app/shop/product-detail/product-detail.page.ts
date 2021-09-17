@@ -62,7 +62,7 @@ export class ProductDetailPage implements OnInit  {
       .then(product => {
         console.log('product', product);
         if (product.errors) {
-          this.commonService.handleShopErrors(product.errors[0].status);
+          this.commonService.handleResponseErrors(product.errors[0].status);
         } else {
           try {
             this.setTotalPrice(product.calculatedPrice.unitPrice, +this.form.value.quantity);
@@ -88,7 +88,7 @@ export class ProductDetailPage implements OnInit  {
     this.shopwareService.addProductToCart(this.product.id, +this.form.value.quantity)
       .then(product => {
         if (product.errors) {
-          this.commonService.handleShopErrors(product.errors[0].status);
+          this.commonService.handleResponseErrors(product.errors[0].status);
         } else {
           this.commonService.presentToast('Zum Warenkorb hinzugefügt', 'secondary');
         }

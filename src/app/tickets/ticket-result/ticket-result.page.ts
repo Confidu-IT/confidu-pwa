@@ -117,7 +117,7 @@ export class TicketResultPage implements CanDeactivateGuard {
     },
       (err: any) => {
         this.isLoading = false;
-        this.commonService.handleShopErrors(err.status);
+        this.commonService.handleResponseErrors(err.status);
         // this.userAuth.logOut();
       });
   }
