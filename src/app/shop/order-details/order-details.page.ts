@@ -16,6 +16,9 @@ export class OrderDetailsPage {
   private routeSub: Subscription;
   private params: any;
   private language: string;
+  private iconPath = '../../../../assets/icons/shop';
+
+  public replacementImg = `${this.iconPath}/no_image.png`;
   public user: any;
   public isLoading: boolean;
   public order: any;

@@ -234,6 +234,10 @@
     li {
       margin-bottom: 6px;
     }
+
+    li:last-of-type {
+      margin-bottom: 0;
+    }
   }
 
   &-help-headline {
@@ -424,7 +428,7 @@ ion-card-content {
 }
 
 ion-card-content {
-  padding: 20px 24px;
+  padding: 20px 24px 20px;
 }
 
 ion-checkbox {

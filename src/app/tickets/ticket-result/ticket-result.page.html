@@ -51,7 +51,7 @@
 
           <ion-card *ngIf="result?.initial && result?.initial.visibility" class="is-emergency">
             <ion-card-content>
-              <h4>
+              <h4 *ngIf="result?.initial?.header">
                 {{ result?.initial?.header }}
               </h4>
               <ul *ngIf="result?.initial?.type === 'list'" class="ticket-result-help">
@@ -83,7 +83,7 @@
 
           <ion-card *ngIf="result?.findings && result?.findings.visibility" class="is-emergency">
             <ion-card-content>
-              <h4>
+              <h4 *ngIf="result?.findings?.header">
                 {{ result?.findings?.header }}
               </h4>
 
@@ -258,7 +258,7 @@
 
           <ion-card *ngIf="result?.textA1 && result?.textA1.visibility" class="is-emergency">
             <ion-card-content>
-              <h4>
+              <h4 *ngIf="result?.textA1">
                 {{ result?.textA1.header }}
               </h4>
               <ul  *ngIf="result?.textA1.type === 'list'" class="ticket-result-help">
@@ -328,7 +328,7 @@
 
           <ion-card *ngIf="result?.textA2 && result?.textA2.visibility" class="is-emergency">
             <ion-card-content>
-              <h4>
+              <h4 *ngIf="result?.textA2.header">
                 {{ result?.textA2.header }}
               </h4>
               <ul  *ngIf="result?.textA2.type === 'list'" class="ticket-result-help">
@@ -398,7 +398,7 @@
 
           <ion-card *ngIf="result?.textA3 && result?.textA3.visibility" class="is-emergency">
             <ion-card-content>
-              <h4>
+              <h4 result?.textA3.header>
                 {{ result?.textA3.header }}
               </h4>
               <ul  *ngIf="result?.textA3.type === 'list'" class="ticket-result-help">
@@ -470,7 +470,7 @@
 
           <ion-card *ngIf="result?.textA4 && result?.textA4.visibility" class="is-emergency">
             <ion-card-content>
-              <h4>
+              <h4 *ngIf="result?.textA4.header">
                 {{ result?.textA4.header }}
               </h4>
               <ul  *ngIf="result?.textA4.type === 'list'" class="ticket-result-help">
@@ -540,7 +540,7 @@
 
           <ion-card *ngIf="result?.textA5 && result?.textA5.visibility" class="is-emergency">
             <ion-card-content>
-              <h4>
+              <h4 *ngIf="result?.textA5.header">
                 {{ result?.textA5.header }}
               </h4>
               <ul  *ngIf="result?.textA5.type === 'list'" class="ticket-result-help">

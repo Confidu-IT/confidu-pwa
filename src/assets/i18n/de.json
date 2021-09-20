@@ -685,7 +685,7 @@
   },
   "PRESCRIPTION_UPLOAD_PAGE": {
     "TITLE": "Rechnungsupload",
-    "TEXT": "Bitte lade alle Seiten der Rechnung hoch.",
+    "TEXT": "Bitte lade alle Seiten der Rechnung hoch. Achte darauf, dass die Blätter nicht geknickt sind und das Foto scharf ist.",
     "LABEL": "Tierarztbesuch"
   },
   "PRESCRIPTION_RESULT_PAGE": {

@@ -33,7 +33,9 @@
           <ion-card-content>
             <ul>
               <li *ngFor="let item of order?.lineItems">
-                <div class="image-container"></div>
+                <div class="image-container">
+                  <img [src]="replacementImg" alt="">
+                </div>
                 <div class="item-content">
                   <h3 class="header">{{ item.label }}</h3>
                   <div class="body">

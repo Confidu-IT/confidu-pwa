@@ -70,7 +70,7 @@
 
           <ion-card *ngIf="result?.textA1 && result?.textA1.visibility">
             <ion-card-content>
-              <h4>
+              <h4 *ngIf="result?.textA1.header">
                 {{ result?.textA1.header }}
               </h4>
               <ul *ngIf="result?.textA1.type === 'list'" class="result-list">
@@ -103,7 +103,7 @@
 
           <ion-card *ngIf="result?.textA1 && !result?.textA1.visibility">
             <ion-card-content>
-              <h4>
+              <h4 *ngIf="result?.textA1.header">
                 {{ result?.textA1.header }}
               </h4>
               <ul *ngIf="result?.textA1.type === 'list'" class="result-list">
@@ -136,7 +136,7 @@
 
           <ion-card *ngIf="result?.textA2 && result?.textA2.visibility">
             <ion-card-content>
-              <h4>
+              <h4 *ngIf="result?.textA2.header">
                 {{ result?.textA2.header }}
               </h4>
               <ul *ngIf="result?.textA2.type === 'list'" class="result-list">
@@ -169,7 +169,7 @@
 
           <ion-card *ngIf="result?.textA2 && !result?.textA2.visibility">
             <ion-card-content>
-              <h4>
+              <h4 *ngIf="result?.textA2.header">
                 {{ result?.textA2.header }}
               </h4>
               <ul *ngIf="result?.textA2.type === 'list'" class="result-list">
@@ -202,7 +202,7 @@
 
           <ion-card *ngIf="result?.textA3 && result?.textA3.visibility">
             <ion-card-content>
-              <h4>
+              <h4 *ngIf="result?.textA3.header">
                 {{ result?.textA3.header }}
               </h4>
               <ul *ngIf="result?.textA3.type === 'list'" class="result-list">
@@ -235,7 +235,7 @@
 
           <ion-card *ngIf="result?.textA3 && !result?.textA3.visibility">
             <ion-card-content>
-              <h4>
+              <h4 *ngIf="result?.textA3.header">
                 {{ result?.textA3.header }}
               </h4>
               <ul *ngIf="result?.textA3.type === 'list'" class="result-list">
@@ -268,7 +268,7 @@
 
           <ion-card *ngIf="result?.textA4 && result?.textA4.visibility">
             <ion-card-content>
-              <h4>
+              <h4 *ngIf="result?.textA4.header">
                 {{ result?.textA4.header }}
               </h4>
               <ul *ngIf="result?.textA4.type === 'list'" class="result-list">
@@ -301,7 +301,7 @@
 
           <ion-card *ngIf="result?.textA4 && !result?.textA4.visibility">
             <ion-card-content>
-              <h4>
+              <h4 *ngIf="result?.textA4.header">
                 {{ result?.textA4.header }}
               </h4>
               <ul *ngIf="result?.textA4.type === 'list'" class="result-list">
@@ -334,7 +334,7 @@
 
           <ion-card *ngIf="result?.textA5 && result?.textA5.visibility">
             <ion-card-content>
-              <h4>
+              <h4 *ngIf="result?.textA5.header">
                 {{ result?.textA5.header }}
               </h4>
               <ul *ngIf="result?.textA5.type === 'list'" class="result-list">
@@ -367,7 +367,7 @@
 
           <ion-card *ngIf="result?.textA5 && !result?.textA5.visibility">
             <ion-card-content>
-              <h4>
+              <h4 *ngIf="result?.textA5.header">
                 {{ result?.textA5.header }}
               </h4>
               <ul *ngIf="result?.textA5.type === 'list'" class="result-list">

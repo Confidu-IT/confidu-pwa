@@ -80,7 +80,7 @@ export class TicketQuestionsPage {
   public slideOpts = {
     initialSlide: 0
   };
-
+  public guideQuestions = ['v+breathe_freq', 'v+pulse_freq', 'v+tempera', 'w+weightac'];
 
   @ViewChild('filePicker') filePickerRef: ElementRef<HTMLInputElement>;
   @ViewChild(IonSlides) slides: IonSlides;
@@ -325,8 +325,13 @@ export class TicketQuestionsPage {
       });
   }
 
+  public hasGuide(): boolean {
+    return this.guideQuestions.includes(this.params.code);
+  }
+
 
   public goToGuide(symptom: string): void {
+    console.log('S', symptom);
     // http://localhost:8100/tickets/ticket/default/guide/v%2Btempera
     this.router.navigateByUrl(`tickets/ticket/default/guide/${symptom}`);
   }
