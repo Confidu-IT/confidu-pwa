@@ -366,7 +366,7 @@
     "NEW_TASK": "Neue Aufgabe erstellen",
     "CREATE_TASK": "Aufgabe anlegen",
     "CLOSE_TASK": {
-      "BODY": "Diese Aufgabe schließen?",
+      "BODY": "Diese Aufgabe schließen",
       "POPUP": {
         "TEXT": "Bitte bestätige deine Eingabe und die Aufgabe wird geschlossen.",
         "BUTTON": {
@@ -845,17 +845,17 @@
   },
   "LAB_PAGE": {
     "TITLE": "Labortests",
-    "PARASITES": "Parasiten Test",
-    "URINE": "Harnstick Test",
-    "DIARRHEA": "Durchfall Analyse",
-    "DIARRHEA_PLUS": "Durchfall Analyse Plus",
-    "GIARDIA": "Giardien Kontrolle",
+    "PARASITES": "Parasiten",
+    "URINE": "Harnstick Kit",
+    "DIARRHEA": "Durchfall",
+    "DIARRHEA_PLUS": "Durchfall Plus",
+    "GIARDIA": "Giardien",
     "FLORA": "Darmflora",
-    "PREVENTION": "Vorsorge Kombi",
+    "PREVENTION": "Urin Labor",
     "OK_BUTTON": "Übernehmen",
     "CANCEL_BUTTON": "Abbrechen",
     "SWITCH_PET": "Tier wechseln",
-    "CHOOSE_PET": "Wähle das Haustür aus, für welches du die Forscherbox aktivieren möchtest."
+    "CHOOSE_PET": "Wähle das Haustier aus, für welches du die Forscherbox aktivieren möchtest."
   },
   "QR_CODE_MODAL": {
     "ERROR": "Code nicht erkannt"
@@ -1211,7 +1211,7 @@
   "NAVIGATION": {
     "RATION": "Rations-Check",
     "BOWL": "Mein Napf",
-    "HARNSTICK": "Harnsticktest",
+    "HARNSTICK": "Harntest Kit",
     "LAB": "Labor",
     "CONTRACT": "Vertrag",
     "DAMAGE": "Schaden",
@@ -1222,10 +1222,10 @@
     "MSG": {},
     "HTTP_ERRORS": {
       "PRODUCTS": {
-        "400": "Produkt nicht gefunden",
+        "400": "Etwas ist schiefgegangen",
         "451": "Produkt nicht gefunden",
         "403": "Benutzer nicht eingelogt",
-        "406": ""
+        "406": "Etwas ist schiefgegangen"
       },
       "LOGIN": {
         "400": "E-Mail bereits in Verwendung",
@@ -1252,7 +1252,7 @@
     "RESEARCH": "Forschen",
     "LAB": "Labor",
     "ACTIVATION": "Forscherbox aktivieren",
-    "URINE_TEST": "Harnsticktest",
+    "URINE_TEST": "Harntest Kit",
     "PROTECT": "Schützen",
     "CONTRACT": "Vertrag",
     "DAMAGE": "Schaden",
@@ -1283,7 +1283,7 @@
     "BUTTONS_TEXT": "Einlösen",
     "CONFI_COINS": {
       "HEADER": "Gesammelte Confi-Coins",
-      "TEXT": "Kümmere dich um die Gesundheit deines Tieres, in dem du Aufgaben im Planer erledigst. Werde mict Confi-Coins belohnt und steige im Rang auf. Zusätzlich warten Überrraschungen aus unserem Shop auf dich."
+      "TEXT": "Kümmere dich um die Gesundheit deines Tieres, indem du Aufgaben im Planer erledigst. Werde mit Confi-Coins belohnt und steige im Rang auf. Zusätzlich warten Überraschungen aus unserem Shop auf dich."
     }
   },
   "HELP_PAGE": {

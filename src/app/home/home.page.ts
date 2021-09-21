@@ -111,7 +111,6 @@ export class HomePage {
     this.translateService.use(this.language);
     this.translateService.get('HOME_PAGE')
       .subscribe(values => {
-        console.log('values', values)
         this.healthExcellent = values.HEALTH_STATE_TEXT.EXCELLENT;
         this.healthGood = values.HEALTH_STATE_TEXT.GOOD;
         this.healthBad = values.HEALTH_STATE_TEXT.BAD;
@@ -150,6 +149,7 @@ export class HomePage {
       .subscribe(pet => {
         if (pet) {
           this.pet = pet;
+          // console.log('pet', pet);
           // this.isLoading = false;
           this.species = this.pet.pet.species.value;
           this.noTasksImage = `${this.iconPath}/home/happy_${this.species}.svg`;

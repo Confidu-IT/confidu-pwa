@@ -344,18 +344,22 @@ export class CommonService {
   }
 
   public handleResponseErrors(statusCode: string): void {
-    console.log('handleResponseErrors');
     const message = this.errorMessages.PRODUCTS[statusCode];
     // this.presentToast(message, 'danger');
     switch (statusCode) {
       case '400':
-        this.authService.logOut();
+        this.presentToast(message, 'danger');
+        this.router.navigateByUrl(`/`);
         break;
       case '403':
         this.authService.logOut();
         break;
+      case '406':
+        this.presentToast(message, 'danger');
+        this.router.navigateByUrl(`/`);
+        break;
       case '451':
-        location.reload();
+        this.authService.logOut();
         break;
     }
   }
