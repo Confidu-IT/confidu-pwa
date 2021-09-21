@@ -11,8 +11,7 @@
     "DETAILS": "Details",
     "STATUS": {
       "1": "How is",
-      "2": "today?",
-      "INSTRUCTIONS": "Tippe mehrmals auf das Hundesymbol und bestätige den passenden Zustand mit dem Häkchen."
+      "2": "today?"
     },
     "OVERVIEW": "Overview",
     "CHANGE_PET": "Change pet",
@@ -20,6 +19,7 @@
     "TODAY_TASKS": "Today's tasks",
     "TODAY": "Today",
     "TASK": "Task",
+    "TIME": "o’ clock",
     "RECIPE_HEADER": "Order medication",
     "RECIPE_TEXT": "Lorem ipsum dolor sit amet",
     "PATCH_BUTTON": "Treatment",
@@ -30,7 +30,7 @@
       "EXCELLENT": "Good",
       "GOOD": "Bad",
       "BAD": "Sick",
-      "WORSE": "Emergency"
+      "WORSE": "Very sick"
     },
     "NO_TASKS_TEXT": {
       "PART_1": "Today are",
@@ -39,10 +39,14 @@
     "NEW_ARTICLES": "Magazine",
     "WEEKLY_RECIPE": "Fresh to the bowl"
   },
+  "ARTICLE_DETAIL_PAGE": {
+    "REFERENCES": "Also interesting",
+    "FROM": "from"
+  },
   "NAVIGATION": {
     "RATION": "Rations-Check",
     "BOWL": "My bowl",
-    "HARNSTICK": "Urine stick test",
+    "HARNSTICK": "Urine test kit",
     "LAB": "Laboratory",
     "CONTRACT": "Contract",
     "DAMAGE": "Claim",
@@ -55,6 +59,7 @@
       "PRODUCTS": {
         "400": "Product not found",
         "451": "Produkt nicht gefunden",
+        "406": "",
         "403": "User not signed in"
       },
       "LOGIN": {
@@ -70,19 +75,31 @@
     "BOWL": "My Bowl",
     "RESEARCH": "Research",
     "LAB": "Laboratory",
-    "URINE_TEST": "Urine stick test",
+    "ACTIVATION": "Activate explorer box",
+    "URINE_TEST": "Urine test kit",
     "PROTECT": "Protect",
     "CONTRACT": "Contract",
     "DAMAGE": "Claims",
-    "SHOP": "Shop"
+    "SHOP": "Shopping cart",
+    "SOON": "Coming soon"
   },
   "SIDE_NAV": {
-    "SETTINGS": "Settings",
-    "ACCOUNT": "Account",
-    "ORDER": "Order",
+    "SETTINGS": "My account",
+    "ACCOUNT": "My data",
+    "ORDER": "My orders",
     "NOTIFICATIONS": "Notifications",
+    "CART": "My shipping cart",
     "HELP": "Help",
     "LOGOUT": "Logout"
+  },
+  "PRODUCT_DETAIL_PAGE": {
+    "TO_CART": "To shipping cart",
+    "TAX": "All prices include VAT, plus shipping",
+    "DESCRIPTION": "Item description"
+  },
+  "NOTIFICATIONS_LIST_PAGE": {
+    "TITLE": "Notifications",
+    "HEADER": "Your notifications"
   },
   "CREATE_PET_PAGE": {
     "CASTRATION_VALUES": {
@@ -105,8 +122,9 @@
     "GENDER_LABEL": "Sex",
     "CASTRATION_LABEL": "Castration status",
     "BIRTHDAY_LABEL": "Birthday",
-    "FORM_BUTTON": "Create pet",
-    "WAITING": "Please wait ..."
+    "FORM_BUTTON": "Save",
+    "WAITING": "Please wait ...",
+    "TITLE": "Create pet"
   },
   "ACCOUNT_PAGE": {
     "NAME": "Name",
@@ -118,6 +136,7 @@
     "CHANGE_PW": "Change password",
     "DEL_ACC": "Delete account",
     "BEQUEST": "Foobar",
+    "ORDERS": "Orders",
     "CHOOSE_LANGUAGE": "Choose language",
     "LANGUAGES": {
       "GERMAN": "German",
@@ -130,7 +149,9 @@
     }
   },
   "PETS_LIST_PAGE": {
-    "TITLE": "My pets"
+    "TITLE": "My pets",
+    "ACTIVE": "currently active",
+    "EXPLANATION": "Chose a pet by swiping right and hitting the blue star button. Swipe left to delete your pet."
   },
   "TELEVET_PET_PAGE": {
     "PET_SPOT_TEXT": {
@@ -145,7 +166,7 @@
       "ITCHING": "Itching",
       "CONSTIPATION": "Constipation",
       "BITE": "Bite injury",
-      "SUCKLES": "Swelling of the teat",
+      "SUCKLES": "Swelling of the mammary gland",
       "STOMACH_PAIN": "Abdominal pain",
       "TRAVEL_SICKNESS": "Travel sickness",
       "COUGH": "Cough",
@@ -160,17 +181,17 @@
       "EYES_IMPAIRED": "Impaired vision",
       "EYES_CHANGES": "Eye changes",
       "SWELLING_VULVA": "Swelling of the vulva",
-      "TESTICLES_CHANGES": "Altered testis",
-      "UNWANTED_PREGNANCY": "Unwanted coverage",
+      "TESTICLES_CHANGES": "Changed testicles",
+      "UNWANTED_PREGNANCY": "Unwanted copulation",
       "VAGINAL_DISCHARGE": "Vaginal discharge",
       "PENIS_DISCHARGE": "Penile discharge",
       "PENIS_ISSUE": "Penile prolapse",
       "URINATION_PAIN": "Pain during urination",
-      "URINATION_CHANGE": "Altered urine",
+      "URINATION_CHANGE": "Changed urine",
       "URINATION_LOW": "Low urine output",
       "URINATION_HIGH_DRINKING": "Increased urination and drinking",
       "URINATION_HIGH": "Frequent urination",
-      "HEAT": "Heat",
+      "HEAT": "In heat",
       "EAT_FECES": "Feces eating",
       "EAT_GRASS": "Grass eating",
       "EAT_NONE": "Does not eat",
@@ -296,26 +317,29 @@
     "HEADER": "Where do symptoms appear?",
     "POISON_HEADER": "What was eaten?",
     "DESCRIPTION": "In scope",
+    "SCROLL": "Scroll for more symptoms",
     "ACTION": "Tap on the affected area.",
     "PROGRESS_BUTTON": "Next",
-    "ZOOM_BUTTON": "Back",
+    "ZOOM_BUTTON": "Back to body",
     "TITLE": "Vet"
   },
   "PRESCRIPTION_UPLOAD_PAGE": {
     "TITLE": "Invoice upload",
-    "TEXT": "Please upload all pages of your invoice.",
+    "TEXT": "Please upload all pages of your invoice. Make sure that the papers are not bent and that the photo is in focus.",
     "LABEL": "Vet visit"
   },
   "PRESCRIPTION_RESULT_PAGE": {
     "TITLE": "Invoice data",
     "ADD": "Add",
-    "ADD_MED": "Add preparation",
+    "PRICE": "e.g. 37,99",
+    "ADD_MED": "Add prescription",
     "DATE_TIME_BTNS_CANCEL": "Cancel",
     "DATE_TIME_BTNS_DONE": "Apply",
     "ADD_THERAPY": "Enter therapy",
     "ADD_FINDING": "Enter finding",
     "ADD_DIAGNOSIS": "Enter diagnosis",
     "VET_VISIT": "Vet visit",
+    "OBLIGATORY": "Fields marked with an asterisk are required.",
     "PROGRESS": "Proceed",
     "REPEAT": "Repeat"
   },
@@ -333,7 +357,7 @@
       "Diagnosis",
       "Name of drug"
     ],
-    "CHOOSE": "Please select the disease and drug you want to order for your pet:",
+    "CHOOSE": "Choose between illness and parasite prophylaxis and add the desired preparation.",
     "MANUAL_CHOICE": "Please select the medicine you want to request. We will try to get it and notify you.",
     "ALERT": {
       "TITLE": "Thank you for your request!",
@@ -356,7 +380,7 @@
     "ADD_IMAGE": "Cover image for this task (optional)",
     "ACTIONS": {
       "CLOSE": {
-        "MSG": "Please confirm your input and the task will be closed.",
+        "MSG": "Please confirm your data and the task will be closed.",
         "BTN": "Apply"
       },
       "DELETE": {
@@ -389,6 +413,7 @@
 
   },
   "TICKET_QUESTION_PAGE": {
+    "GUIDE": "Guide",
     "QUESTION": "Question",
     "BEATS": "Beats",
     "PULSE": "Pulse",
@@ -411,10 +436,11 @@
     "NO_IDEA": "I don't know",
     "TREATMENT": {
       "HOME": "Given for treatment at home",
-      "VET": "Administered once at the doctor's office"
+      "VET": "Administered once at the vet's office"
     },
+    "PREG_DATE": "Date of birth",
     "MED": {
-      "NAME": "Active ingredient or preparation nam",
+      "NAME": "Active ingredient or prescription name",
       "DAILY": "Daily",
       "DAYS": "Day(s)",
       "PIECE": "Piece",
@@ -479,7 +505,7 @@
   "TICKET_RESULT_PAGE": {
     "TITLE": "Evaluation",
     "DIAG_HEADER": "Diagnosis",
-    "NO_RESULT": "No result available yet.",
+    "NO_RESULT": "Your result isn’t available.",
     "URGENCY": "Urgency",
     "THERAPY": "Therapy",
     "DIAGNOSIS": "Findings",
@@ -543,9 +569,10 @@
   },
   "CARE_CARD_LIST_PAGE": {
     "HISTORY": "History",
+    "PROGRESS": "Progress",
     "ADD_DOC": "Add attachment",
     "FINDING_PDF": "Attachment",
-    "UPLOAD": "Invoise upload",
+    "UPLOAD": "Invoice upload",
     "MANUAL": "Manual input"
   },
   "CARE_CARD_DETAIL_PAGE": {
@@ -554,7 +581,7 @@
     "PHARMACY": "Pharmacy required",
     "SAVED_CART": "Product saved in cart",
     "CHOICE_QUESTION": "Have you made your selection?",
-    "CHOICE_TEXT": "If your selection is complete, proceed to car",
+    "CHOICE_TEXT": "If your selection is complete, proceed to cart",
     "CART_BUTTON": "To cart",
     "MED": {
       "NAME": "Active ingredient or preparation name",
@@ -597,7 +624,6 @@
     "DETECTED": "Detected on:",
     "UPDATE_SUCCESS": "Entry successful",
     "UPDATE_ERROR": "Entry failed",
-
     "EXPLANATION": {
       "TITLE": "Documentation of diseases",
       "TEXT": "Lorem ipsum dolor sit amet, ligula eget dolor. Aenean  nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.",
@@ -616,7 +642,7 @@
     },
     "DOC": {
       "ADD": "Add finding",
-      "DOC_TEXT": "If you have findings related to the disease, you can attach them. (e.g., blood work, X-ray, CT scan, or other)"
+      "DOC_TEXT": "If you have results related to the disease, you can attach them. (e.g., blood work, X-ray, CT scan, or other)"
     }
   },
   "CONSULTATION_PAGE": {
@@ -633,6 +659,7 @@
     "NEXT_AV_APP": "Next available appointment:",
     "AT": "at",
     "MIN": "min",
+    "WAIT": "Please wait",
     "BOOK_IMMEDIATELY": "Book immediately",
     "BOOK_APPOINTMENT": "Book appointment",
     "TEXT": {
@@ -642,7 +669,7 @@
     "AHEAD_TEXT": "Appointments can be booked up to 2 days in advance. Select the day and time you would like to speak with a vet.",
     "FIRST_NAME": "First name *",
     "LAST_NAME": "Last name *",
-    "PHONE": "Phone",
+    "PHONE": "Phone *",
     "MODAL_HEADER": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
     "CANCEL": "Cancel",
     "CONFIRM": "Accept"
@@ -669,6 +696,11 @@
       }
     }
   },
+  "ZOOM_MODAL_PAGE": {
+    "DELETE_MSG": "Delete document permanently?",
+    "DELETE": "Delete",
+    "CANCEL": "Cancel"
+  },
   "DASHBOARD_PAGE": {
     "TITLE": "Overview",
     "HEADER": "Your overview",
@@ -678,7 +710,7 @@
     "CANCEL": "Cancel",
     "CONFIRM":  "Apply",
     "MED": {
-      "NAME": "Active ingredient or preparation name",
+      "NAME": "Active ingredient or prescription name",
       "DAILY": "Daily",
       "DAYS": "Day(s)",
       "PIECE": "Piece",
@@ -745,12 +777,12 @@
   "LAB_PAGE": {
     "TITLE": "Laboratory tests",
     "PARASITES": "Parasite test",
-    "URINE": "Urine stick test",
-    "DIARRHEA": "Diarrhea analysis",
-    "DIARRHEA_PLUS": "Diarrhea analysis plus",
-    "GIARDIA": "Giardia control",
+    "URINE": "Urine test kit",
+    "DIARRHEA": "Diarrhea",
+    "DIARRHEA_PLUS": "Diarrhea plus",
+    "GIARDIA": "Giardia",
     "FLORA": "Intestinal flora",
-    "PREVENTION": "Preventive care combo",
+    "PREVENTION": "Urine Lab",
     "OK_BUTTON": "Apply",
     "CANCEL_BUTTON": "Cancel",
     "SWITCH_PET": "Change animal",
@@ -807,7 +839,11 @@
     "AMOUNT": "Quantity",
     "REMOVE": "Remove article",
     "TOTAL": "Total price",
-    "TAX": "Price incl. tax"
+    "TAX": "(incl. tax)",
+    "SHIPMENT": "Shipping costs",
+    "CHECKOUT": "Checkout",
+    "OK_BUTTON": "Confirm",
+    "CANCEL_BUTTON": "Cancel"
   },
   "ORDER_PAGE": {
     "ORDER": "Order",
@@ -853,7 +889,7 @@
     "PRICE": "Unit price",
     "STOCK": "In stock",
     "USAGE": "area of application",
-    "INSTRUCTIONS": "For risks and side effects, read the package insert and ask your doctor or pharmacist",
+    "INSTRUCTIONS": "For risks and side effects, read the package insert and ask your vet or pharmacist",
     "INST_LINK": "Download package insert",
     "DOSAGE": "Dosage"
 
@@ -894,6 +930,11 @@
       "BREATHE": "Respiratory rate",
       "PULSE": "Heartbeat"
     },
+    "START": "Start timer",
+    "CONTINUE": "Continue",
+    "EVAL": "Evaluate",
+    "WEIGHT_QUESTION": "What is the weight of FOO? Please enter the weight as precisely as possible.",
+    "WEIGHT_LABEL": "0 KG",
     "INTRO": {
       "HEADER": "Get ready",
       "TEXT": {
@@ -915,6 +956,8 @@
   },
   "TELEVET_EMERGENCY_PAGE": {
     "TITLE": "Emergency",
+    "HEADER": "Emergency consultation necessary?",
+    "TEXT": "Not everything that at first seems like an emergency is also one. We'll help you assess the situation correctly. Here you will find the most common medical emergencies with descriptions and more information about how to help your pet.",
     "BUTTONS": {
       "CANCEL": "Cancel",
       "CONFIRM": "Continue"
@@ -977,7 +1020,8 @@
     "DATE": "Date",
     "TIME": "Time",
     "MAX_CHARS": "160 Zeichen",
-    "WHOLEDAY": "During the day"
+    "WHOLEDAY": "During the day",
+    "START_CALL": "Start consultation"
   },
   "TICKET_GUIDE_PAGE": {
     "TITLE": "Instruction"
@@ -988,9 +1032,13 @@
   "TICKET_ORDER_PAGE": {
     "TITLE": "Shop"
   },
+  "ORDER_SUMMARY_PAGE": {
+    "ORDER_STATE": "Your order status",
+    "ZOOM": "You can download the zoom app for free here."
+  },
   "PW_RECOVERY_PAGE": {
     "RECOVER": "Password reset",
-    "RECOVERED": "Password resetted",
+    "RECOVERED": "Password reset",
     "ENTER_MAIL": "Please enter the email address you used to sign in to the confidu app. We'll send the a link to reset your password afterwards.",
     "ENTER_PW": "Now type in your new password.",
     "EMAIL": "Email address",
@@ -1002,7 +1050,7 @@
     "STORE": "Save",
     "NOTIFICATIONS_PAGE": {
       "TITLE": "Notifications",
-      "LAB_RESULT": "Laboratory findings",
+      "LAB_RESULT": "Laboratory results",
       "RECIPE_RATINGS": "Ratings (cooking recipe)",
       "TASKS_REMINDER": "Reminders (tasks)",
       "RECIPE_COMMENTS": "Comments (cooking recipe)",
@@ -1060,50 +1108,46 @@
     }
   },
   "WALKTHROUGH_PAGE": {
-    "TITLE": "Walkthrough",
+    "TITLE": "Walk through",
     "CANCEL": "Skip",
     "START": "Let's go",
     "SLIDES": [
       {
         "TITLE": "CareCard",
-        "TEXT": "Carry your pet's patient record with you at all times - all health data bundled in one app.",
-        "IMG": "care card"
+        "TEXT": "Thanks for signing up. Always carry your pet's medical record with you - all health data bundled in one app.",
+        "IMG": "carecard"
       },
       {
         "TITLE": "Urine stick test",
         "TEXT": "Detect and monitor potential diseases from the comfort of your home.",
-        "IMG": "urine test stick"
+        "IMG": "harnsticktest"
       },
       {
         "TITLE": "Medical tests",
         "TEXT": "Based on fecal or urine samples, test your pet's health.",
-        "IMG": "medicine tests"
+        "IMG": "medizintests"
       },
       {
         "TITLE": "My Bowl",
         "TEXT": "Create feeding plans according to your pet's individual nutrient and energy needs like a pro.",
-        "IMG": "My bowl"
+        "IMG": "mein_napf"
       },
       {
         "TITLE": "Planner",
-        "TEXT": "Keep track of all your pet's important tasks with our planner - from medication dispensing to ear care to your own appointments.",
-        "IMG": "planner"
+        "TEXT": "Keep track of all your pet's important tasks with our planner - from drug administration to ear care to your own appointments.",
+        "IMG": "planer"
       },
       {
-        "TITLE": "TeleVet",
+        "TITLE": "Online Vet",
         "TEXT": "State symptom, answer questions, start treatment - our online vet will help you right away.",
-        "IMG": "televet_guide"
+        "IMG": "televet_anleitung"
       },
       {
         "TITLE": "Insurance",
         "TEXT": "Conveniently manage insurance records and benefits from your pets.",
-        "IMG": "insurance"
+        "IMG": "versicherung"
       }
     ]
-  },
-  "NOTIFICATIONS_LIST_PAGE": {
-    "TITLE": "Notifications",
-    "HEADER": "Your notifications"
   },
   "USER_MODAL_PAGE": {
     "LANGUAGES": {
@@ -1130,7 +1174,7 @@
       "TITLE": "Phone",
       "PHONE": "Phone",
       "BUTTON": "Save",
-      "EXPLANATION": "Lorem Ipsum"
+      "EXPLANATION": "Your phone number is used to protect your account. Bla bla bla"
     },
     "PW": {
       "TITLE": "Password",
@@ -1138,7 +1182,7 @@
       "CURRENT_PW": "Current password",
       "CONFIRM_PW": "Repeat new password",
       "NEW_PW": "New password",
-      "BUTTON": "Chane password"
+      "BUTTON": "Change password"
     },
     "EMAIL": {
       "TITLE": "Email",
@@ -1153,87 +1197,102 @@
   "HOME_MODAL_PAGE": {
     "HEADER": "Please choose the kind of consultation:",
     "QUESTIONNAIRE": "Diagnosis finder (free)",
-    "CALL": "Book video call (14,99 €)",
-    "CALL_DESCRIPTION": "After purchase the video call get stored inside the planner. Choose the according date to get to your video call link and talk with our vets about your issue.",
+    "CALL": "Book video call (19,99 €)",
+    "CALL_DESCRIPTION": "You can discuss problems unhurriedly with our vet and show us your pet directly. In order to be able to answer every video call on time, we limit the conversation time to a maximum of 15 minutes.",
+    "DIAG_DESCRIPTION": "Without waiting and always available! State the symptom that plagues your four-legged friend and answer specific questions. You will receive an evaluation with a diagnosis, an assessment of the urgency and recommendations for action. You can order the preparations you need directly.",
     "CANCEL": "Cancel",
-    "PROGRESS": "Proceed"
+    "PROGRESS": "Proceed",
+    "ZOOM": "You can download the zoom app for free here."
   },
   "REGISTER_CODE": {
-    "REG_TEXT": "Enter the registration code that accompanies your sample material here.",
+    "ACTIVATION": "Activate explorer box",
+    "TITLE": "Product activation",
+    "REG_TEXT": "Enter the registration code that is assigned to your sample material here.",
     "EG": "e.g. 0123456789",
     "WRONG_PET": "Logged in with the wrong animal?",
-    "INVALID_CODE": "Invalid code",
-    "USED_CODE": "Code already used",
+    "INVALID_CODE": "Your code could not be assigned. You may have made a typo. Try again.",
+    "USED_CODE": "Your code was already used.",
     "CHANGE_PET": "Switch pet",
     "REG_SUCCESS": "Registration successful",
     "ASSIGNMENT": [
-      "Product", "has been", "successfully assigned."
+      "Your lab test", "has been", "successfully assigned."
     ]
   },
   "BENEFITS_PAGE": {
-    "TITLE": "Erfolge",
-    "YOUR_BENEFITS": "Deine Erfolge",
-    "BUTTONS_TEXT": "Einlösen",
+    "TITLE": "Results",
+    "YOUR_BENEFITS": "Your results",
+    "BUTTONS_TEXT": "Redeem",
     "CONFI_COINS": {
-      "HEADER": "Gesammelte Confi-Coins",
-      "TEXT": "Kümmere dich um die Gesundheit deines Tieres, in dem du Aufgaben im Planer erledigst. Werde mict Confi-Coins belohnt und steige im Rang auf. Zusätzlich warten Überrraschungen aus unserem Shop auf dich."
+      "HEADER": "Collected Confi-Coins",
+      "TEXT": "Take care of your pet's health by completing tasks in the planner. Get rewarded with Confi-Coins and rise in rank. In addition, surprises from our shop await you."
     }
   },
   "CARE_CARD_INPUT_MODAL_PAGE": {
     "CASTRATION": {
-      "TITLE": "Kastrationsstatus",
-      "NEUTERED": "Kastriert",
-      "NOT_NEUTERED": "Unkastriert",
-      "HEADLINE": "Trage ein, ob dein Tier kastriert wurde. Die Eingabe ist nicht rückgängig zu machen.",
-      "DESCRIPTION": "Der Kastrationsstatus ist eine wichtige Information für die Rationsberechnung und den Ausschluss oder die Diagnose von Erkrankungen. Denn der veränderte Hormonhaushalt hat Einfluss auf den Aktivitätsgrad und somit den Energiebedarf des Tieres. Zudem gibt es Erkrankungen, die eher bei unkastrierten Tieren auftreten und umgekehrt."
+      "TITLE": "Neutering status",
+      "NEUTERED": "Neutered",
+      "NOT_NEUTERED": "Not neutered",
+      "HEADLINE": "Enter the neutering status of your pet. You can't change your data afterwards.",
+      "DESCRIPTION": "The neutering status is an important information for calculating the right food amount and diagnosing diseases. Changing hormone levels influence the level of activity and therefor the energy requirement. Furthermore, some diseases appear more often in neutered pets and vice versa. "
     },
     "ID": {
-      "TITLE": "Identifikations-Nr.",
-      "INPUT": "Chip-Nr.",
-      "HEADLINE": "Bitte trage die Identifikations-Nr. ein",
-      "DESCRIPTION": "Prinzipiell ist das Chippen von Hunden und Katzen in Deutschland bislang nicht in allen Bundesländern einheitlich geregelt. Während in einigen Ländern beispielsweise eine Kennzeichnungspflicht für alle Hunderassen herrscht, ist sie in anderen lediglich für sogenannte Listenhunde vorgeschrieben."
+      "TITLE": "Identification no.",
+      "INPUT": "Chip no.",
+      "HEADLINE": "Please enter the identification no.",
+      "DESCRIPTION": "There is no generel regulation for chipping in dogs and cats in Germany. Some states obligate pet owners to mark all dogs, whereas in others, pet owners only have to mark list dogs. "
     },
     "ACTIVITY": {
-      "TITLE": "Aktivitätsgrad",
+      "TITLE": "Level of activity",
       "STATUS": {
         "LOW": [
-          "Geringe Aktivität",
-          "insgesamt weniger als 1 Std. Bewegung pro Tag",
-          "Beispiele: Fortbewegung vorwiegend im Schritt, Spaziergänge an der Leine, spielt nicht oder kaum (wenig spielerische Aktivität)"
+          "Low activity",
+          "less then 1 hour activity per day",
+          "e.g.: activity with slowly steps, walks only with leash, doesn't play at all or rarely"
         ],
         "MODERATE": [
-          "Moderate Aktivität",
-          "insgesamt circa 1-3 Std. Bewegung pro Tag",
-          "Beispiele: Fortbewegung vorwiegend im Schritt und Trab.Spaziergänge sowohl an der Leine, als auch im Freilauf, kurze Spielepisoden über den Tag verteilt (mäßige spielerische Aktivität)."
+          "Moderate activity",
+          "1-3 hour activity per day",
+          "e.g.: activity only with slowly steps or trot. Walks with or without leash, short playing episodes spread over the days (moderate playing activity)"
         ],
         "HIGH": [
-          "Hohe Aktivität",
-          "insgesamt circa 1-3 Std. Bewegung pro Tag",
-          "Beispiele: Fortbewegung vorwiegend im Trab und Galopp, Spaziergänge weitestgehend im Freilauf, Begleithund beim Joggen oder Fahrradfahren, spielt sehr viel und gerne, Hundesport wie Agility, private jagdliche Ausbildung, Zughundesport etc."
+          "High activity",
+          "1-3 hour activity per day",
+          "e.g.: activity mostly trotting and galop, walks largely without leash, accompaning while jogging or bycycling, loves to play a lot, practicing dog sports like agility, private hunting training, pulling dog activity"
         ],
         "EXTREME": [
-          "Besonders hohe Aktivität",
-          "insgesamt circa 3-6 Std. Bewegung pro Tag",
-          "Arbeitshund mit besonders hohem Leistungsniveau (aktiv im Dienst/ Training), Beispiele: jagdlich geführter Hund, Blindenhund, Behindertenbegleithund, Polizei-/Zollhund, Rettungshund, Hütehund in der Herde"
+          "Very high activity",
+          "3-6 hours activity per day",
+          "Working dog with a high performance (active in service/training), e.g.: hunting dog, guide dog, companion dog for disabled, police/customs dog, rescue dog, herding dog"
         ]
       },
-      "NONE": "Es wurde noch kein Aktivitätsgrad hinterlegt.",
-      "BUTTON": "Aktivitätsgrad aktualisieren",
-      "HEADLINE": "Aktueller Aktivitätsgrad",
+      "NONE": "No level of activity has been deposited yet.",
+      "BUTTON": "Update level of activity",
+      "HEADLINE": "Current level of activity",
       "INFO": {
-        "HEADER": "Aktivitätsgrad definieren",
-        "TEXT": "Wofür wird der Aktivitätsgrad verwendet. Lorem ipsum dolor sit amet, consetutor",
-        "ANNOTATION": "(Nach Expertenempfehlungen des ESCCAP. European Scientific Counsel Companion Animal Parasites)"
+        "HEADER": "Define level of activity",
+        "TEXT": "What level of activity is used for. Lorem ipsum dolor sit amet, consetutor",
+        "ANNOTATION": "(Following guidelines of ESCCAP (European Scientific Counsel Companion Animal Parasites))"
       }
     },
     "CONFIRM": "Übernehmen",
     "ABORT": "Abbrechen"
   },
+  "BREED_PROPOSALS_MODAL": {
+    "BREED_RECOGNIZED": "We recognized the following breeds based on your photo. Please choose!",
+    "NO_BREED": "Not your race?",
+    "BREED_MANUAL": "You can also enter the correct breed of your animal manually.",
+    "ENTER_BREED": "Enter breed",
+    "CHECK_BREED": "Caution! Please check your entry carefully before saving. The breed cannot be changed afterwards.",
+    "BUTTON": {
+      "CANCEL": "Cancel",
+      "CONFIRM": "Confirm"
+    }
+  },
   "HELP_PAGE": {
     "TITLE": "Help",
     "HEADER": "Help Desk",
     "SUPPORT": "Technical Support",
-    "SUBHEADER": "Lorem Ipsum Bla bla bla",
+    "SUBHEADER": "The app isn't working the way it should? Send us an email at",
     "SOLUTION_FORM": "Troubleshooting by contact form",
     "YOUR_MESSAGE": "Your message",
     "CHARS": "1500 chars",
@@ -1241,3 +1300,5 @@
     "FAQ": "Frequently asked questions"
   }
 }
+
+
