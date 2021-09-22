@@ -34,6 +34,11 @@ ion-button {
   --box-shadow: none;
   text-transform: uppercase;
 }
+//
+//.mat-radio-container {
+//  width: 18px !important;
+//  height: 18px !important;
+//}
 
 .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
   border-color: var(--ion-color-secondary) !important;

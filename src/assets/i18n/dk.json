@@ -11,8 +11,7 @@
     "DETAILS": "Detaljer",
     "STATUS": {
       "1": "Hvordan er",
-      "2": "i dag?",
-      "INSTRUCTIONS": "Tippe mehrmals auf das Hundesymbol und bestatige den atssenden Zustand mit dem Häkchen."
+      "2": "i dag?"
     },
     "OVERVIEW": "Oversigt",
     "CHANGE_PET": "Ændre kæledyr",
@@ -20,6 +19,7 @@
     "TODAY_TASKS": "Dagens opgaver",
     "TODAY": "I dag",
     "TASK": "Opgave",
+    "TIME": "ur",
     "RECIPE_HEADER": "Bestil medicin",
     "RECIPE_TEXT": "Lorem ipsum dolor sit amet",
     "PATCH_BUTTON": "Behandling",
@@ -30,7 +30,7 @@
       "EXCELLENT": "God",
       "GOOD": "Dårligt",
       "BAD": "Syg",
-      "WORSE": "Nødsituation"
+      "WORSE": "Meget syg"
     },
     "NO_TASKS_TEXT": {
       "PART_1": "I dag er",
@@ -39,10 +39,14 @@
     "NEW_ARTICLES": "Magasin",
     "WEEKLY_RECIPE": "Frisk til skålen"
   },
+  "ARTICLE_DETAIL_PAGE": {
+    "REFERENCES": "Også interessant",
+    "FROM": "fra"
+  },
   "NAVIGATION": {
     "RATION": "Rationer-Tjek",
     "BOWL": "Min skål",
-    "HARNSTICK": "Urinstikprøve",
+    "HARNSTICK": "Urin test kit",
     "LAB": "Laboratorie",
     "CONTRACT": "Kontrakt",
     "DAMAGE": "Reklamation",
@@ -55,6 +59,7 @@
       "PRODUCTS": {
         "400": "Produkt ikke fundet",
         "451": "Produkt ikke fundet",
+        "406": "",
         "403": "Bruger ikke logget ind"
       },
       "LOGIN": {
@@ -70,19 +75,31 @@
     "BOWL": "Min skål",
     "RESEARCH": "Undersøgelse",
     "LAB": "Laboratorie",
-    "URINE_TEST": "Urinstikprøve",
+    "ACTIVATION": "Aktiver Explorer -boksen",
+    "URINE_TEST": "Urin test kit",
     "PROTECT": "Beskyt",
     "CONTRACT": "Kontrakt",
     "DAMAGE": "Reklamation",
-    "SHOP": "Butik"
+    "SHOP": "Indkøbskurv",
+    "SOON": "Kommer snart"
   },
   "SIDE_NAV": {
-    "SETTINGS": "Indstillinger",
-    "ACCOUNT": "Konto",
-    "ORDER": "Bestil",
+    "SETTINGS": "Min konto",
+    "ACCOUNT": "Mine data",
+    "ORDER": "Mine ordrer",
     "NOTIFICATIONS": "Meddelelser",
+    "CART": "Min forsendelsesvogn",
     "HELP": "Hjælp",
     "LOGOUT": "Logout"
+  },
+  "PRODUCT_DETAIL_PAGE": {
+    "TO_CART": "Til forsendelse vogn",
+    "TAX": "Alle priser er inklusive moms, plus forsendelse",
+    "DESCRIPTION": "Varebeskrivelse"
+  },
+  "NOTIFICATIONS_LIST_PAGE": {
+    "TITLE": "Meddelelser",
+    "HEADER": "Dine meddelelser"
   },
   "CREATE_PET_PAGE": {
     "CASTRATION_VALUES": {
@@ -105,8 +122,9 @@
     "GENDER_LABEL": "Køn",
     "CASTRATION_LABEL": "Kastreringsstatus",
     "BIRTHDAY_LABEL": "Fødselsdag",
-    "FORM_BUTTON": "Opret kæledyr",
-    "WAITING": "Vent venligst ..."
+    "FORM_BUTTON": "Gemme",
+    "WAITING": "Vent venligst ...",
+    "TITLE": "Opret kæledyr"
   },
   "ACCOUNT_PAGE": {
     "NAME": "Navn",
@@ -118,6 +136,7 @@
     "CHANGE_PW": "Ændre adgangskode",
     "DEL_ACC": "Slet konto",
     "BEQUEST": "Foobar",
+    "ORDERS": "Bestillinger",
     "CHOOSE_LANGUAGE": "Vælg sprog",
     "LANGUAGES": {
       "GERMAN": "Tysk",
@@ -130,13 +149,15 @@
     }
   },
   "PETS_LIST_PAGE": {
-    "TITLE": "Mine kæledyr"
+    "TITLE": "Mine kæledyr",
+    "ACTIVE": "aktuelt aktiv",
+    "EXPLANATION": "Vælg et kæledyr ved at stryge til højre og trykke på den blå stjerneknap. Stryg til venstre for at slette dit kæledyr."
   },
   "TELEVET_PET_PAGE": {
     "PET_SPOT_TEXT": {
       "CANCEL_BUTTON": "Annuller",
       "SWELLING": "Hævelse/bule/knude",
-      "STIFFNESS":"Stivhed",
+      "STIFFNESS": "Stivhed",
       "MUSCULAR_DYSTROPHY": "Muskelatrofi",
       "FLATULENCE": "Flatulens",
       "DIARRHAE": "Diarré",
@@ -145,7 +166,7 @@
       "ITCHING": "Kløe",
       "CONSTIPATION": "Forstoppelse",
       "BITE": "Bidskader",
-      "SUCKLES": "Hævelse af spenen",
+      "SUCKLES": "Hævelse af mælkekirtlen",
       "STOMACH_PAIN": "Mavesmerter",
       "TRAVEL_SICKNESS": "Rejsesyge",
       "COUGH": "Hoste",
@@ -161,7 +182,7 @@
       "EYES_CHANGES": "Ændringer i øjnene",
       "SWELLING_VULVA": "Hævelse af vulva",
       "TESTICLES_CHANGES": "Ændrede testikler",
-      "UNWANTED_PREGNANCY": "Uønsket dækning",
+      "UNWANTED_PREGNANCY": "Uønsket kopulation",
       "VAGINAL_DISCHARGE": "Vaginalt udflåd",
       "PENIS_DISCHARGE": "Udflåd fra penis",
       "PENIS_ISSUE": "Penisprolaps",
@@ -170,12 +191,12 @@
       "URINATION_LOW": "Lav urinproduktion",
       "URINATION_HIGH_DRINKING": "Øget vandladning og drikkeri",
       "URINATION_HIGH": "Hyppig vandladning",
-      "HEAT": "Varme",
+      "HEAT": "I løbetid",
       "EAT_FECES": "Afføring afføring",
       "EAT_GRASS": "Græsædende",
       "EAT_NONE": "Spiser ikke",
       "DRINKING_HIGH": "Øget drikkeri",
-      "VOICE_CHANGES":  "Ændring af stemmen",
+      "VOICE_CHANGES": "Ændring af stemmen",
       "FOOT_ODOR": "Lugt i munden",
       "NOSE_DRY": "Tør næse",
       "NOSE_BLEEDING": "Næseblod",
@@ -188,7 +209,7 @@
       "INJURY_BITE": "Bidskader",
       "BUMPINESS": "Væltning",
       "HYPOCRISY": "Falsk drægtighed",
-      "FEVER":  "Feber",
+      "FEVER": "Feber",
       "TEMPERATURE_LOW": "Lav temperatur",
       "BEHAVIOUR_CHANGE": "Adfærdsændring",
       "WEAKNESS": "Svaghed",
@@ -218,7 +239,7 @@
       "APNEA": "Åndedræts- og hjertestop",
       "GASTRIC_TORSION": "Mavetorsion",
       "UNCONSCIOUSNESS": "Bevidstløshed",
-      "SHOCK":  "Chok",
+      "SHOCK": "Chok",
       "POISONING": "Forgiftning"
     },
     "CLICK_SPOT": {
@@ -296,19 +317,21 @@
     "HEADER": "Hvor opstår symptomerne?",
     "POISON_HEADER": "Hvad blev spist?",
     "DESCRIPTION": "I omfang",
+    "SCROLL": "Rul for flere symptomer",
     "ACTION": "Tryk atdet berørte område.",
     "PROGRESS_BUTTON": "Næste",
-    "ZOOM_BUTTON": "Ryg",
+    "ZOOM_BUTTON": "Tilbage til kroppen",
     "TITLE": "Vet"
   },
   "PRESCRIPTION_UPLOAD_PAGE": {
     "TITLE": "Upload af faktura",
-    "TEXT": "Du bedes uploade alle sider af din faktura.",
+    "TEXT": "Upload alle sider i din faktura. Sørg for, at papirerne ikke er bøjede, og at fotoet er i fokus.",
     "LABEL": "Dyrlægebesøg"
   },
   "PRESCRIPTION_RESULT_PAGE": {
     "TITLE": "Fakturaoplysninger",
     "ADD": "Tilføj",
+    "PRICE": "f.eks. 37,99",
     "ADD_MED": "Tilføj forberedelse",
     "DATE_TIME_BTNS_CANCEL": "Annuller",
     "DATE_TIME_BTNS_DONE": "Anvend",
@@ -316,8 +339,70 @@
     "ADD_FINDING": "Indtast fund",
     "ADD_DIAGNOSIS": "Indtast diagnose",
     "VET_VISIT": "Besøg hos dyrlæge",
+    "OBLIGATORY": "Felter markeret med en stjerne skal udfyldes.",
     "PROGRESS": "Fortsæt",
     "REPEAT": "Gentag"
+  },
+  "CARE_CARD_INPUT_MODAL_PAGE": {
+    "CASTRATION": {
+      "TITLE": "Kastreringsstatus",
+      "NEUTERED": "kastreret",
+      "NOT_NEUTERED": "ikke kastreret",
+      "HEADLINE": "Indtast dit kæledyrs kastreringsstatus. Du kan ikke ændre dine data bagefter.",
+      "DESCRIPTION": "Kasseringsstatus er en vigtig information til beregning af den rigtige madmængde og diagnosticering af sygdomme. Ændrede hormonniveauer påvirker aktivitetsniveauet og dermed energibehovet. Desuden forekommer nogle sygdomme oftere hos kastrerede kæledyr og omvendt."
+    },
+    "ID": {
+      "TITLE": "Identifikationsnr.",
+      "INPUT": "Chipnummer",
+      "HEADLINE": "Indtast venligst identifikationsnummeret.",
+      "DESCRIPTION": "Der er ingen generel regulering for flisning i hunde og katte i Tyskland. Nogle stater forpligter kæledyrsejere til at markere alle hunde, hvorimod kæledyrsejere i andre kun skal markere listehunde."
+    },
+    "ACTIVITY": {
+      "TITLE": "Aktivitetsniveau",
+      "STATUS": {
+        "LOW": [
+          "Lav aktivitet",
+          "mindre end 1 times aktivitet om dagen",
+          "Beispiele: f.eks .: aktivitet med langsomt skridt, går kun med snor, spiller slet ikke eller sjældent"
+        ],
+        "MODERATE": [
+          "Moderat aktivitet",
+          "1-3 timers aktivitet om dagen",
+          "Beispiele: f.eks .: aktivitet kun med langsomt trin eller trav. Går med eller uden snor, korte afspilningsafsnit spredt ud over dagene (moderat afspilningsaktivitet)."
+        ],
+        "HIGH": [
+          "Høj aktivitet",
+          "1-3 timers aktivitet om dagen",
+          "f.eks .: aktivitet mest trav og galop, går stort set uden snor, akkompagnement under jogging eller cykling, elsker at lege meget, dyrke hundesport som smidighed, privat jagttræning, trække hundeaktivitet"
+        ],
+        "EXTREME": [
+          "Meget høj aktivitet",
+          "3-6 timers aktivitet om dagen",
+          "Arbejdshund med høj ydeevne (aktiv i service/træning), f.eks .: jagthund, førerhund, ledsagerhund for handicappede, politi-/toldhund, redningshund, hyrdehund"
+        ]
+      },
+      "NONE": "Intet aktivitetsniveau er blevet deponeret endnu.",
+      "BUTTON": "Opdater aktivitetsniveau",
+      "HEADLINE": "Nuværende aktivitetsniveau",
+      "INFO": {
+        "HEADER": "Definer aktivitetsniveau",
+        "TEXT": "Hvad aktivitetsniveauet bruges til. Lorem ipsum",
+        "ANNOTATION": "Efter retningslinjer fra ESSCAP (European Scientific Counsel Companion Animal Parasites)"
+      }
+    },
+    "CONFIRM": "Bekræfte",
+    "ABORT": "Afbestille"
+  },
+  "BREED_PROPOSALS_MODAL": {
+    "BREED_RECOGNIZED": "Vi genkendte følgende racer baseret på dit foto. Vælg venligst!",
+    "NO_BREED": "Er det ikke dit løb?",
+    "BREED_MANUAL": "Du kan også indtaste den korrekte race af dit dyr manuelt.",
+    "ENTER_BREED": "Indtast race",
+    "CHECK_BREED": "Advarsel!!!! Tjek venligst din indtastning omhyggeligt, før du gemmer. Racen kan ikke ændres bagefter.",
+    "BUTTON": {
+      "CANCEL": "Afbestille",
+      "CONFIRM": "Bekræfte"
+    }
   },
   "FU_PAGE": {
     "TITLE": "Medicinere",
@@ -333,7 +418,7 @@
       "Diagnose",
       "Navn atlægemiddel"
     ],
-    "CHOOSE": "Vælg venligst den sygdom og det lægemiddel, du ønsker atbestille til dit kæledyr:",
+    "CHOOSE": "Vælg mellem sygdom og parasitprofylakse, og tilføj det ønskede præparat.",
     "MANUAL_CHOICE": "Tak for din anmodning!",
     "ALERT": {
       "TITLE": "Tak for din anmodning!",
@@ -347,7 +432,6 @@
     "MEDS": "Lægemiddelnavn",
     "NO_MED": "Er dit lægemiddel ikke medtaget?",
     "REQ_MED": "Anmod om lægemiddel"
-
   },
   "TICKETS_PAGE": {
     "HEADER": "Planlægger af",
@@ -356,7 +440,7 @@
     "ADD_IMAGE": "Dækbillede til denne opgave (valgfrit)",
     "ACTIONS": {
       "CLOSE": {
-        "MSG": "Bekræft venligst dit input, og opgaven vil blive lukket.",
+        "MSG": "Bekræft venligst dine data, og opgaven lukkes.",
         "BTN": "Anvend"
       },
       "DELETE": {
@@ -372,7 +456,7 @@
     "TITLE": "Planner",
     "HOMEWORK": "Planner",
     "TODAY_TASKS": "Mine opgaver",
-    "DONE":  "Færdig",
+    "DONE": "Færdig",
     "DELETE": "Slet",
     "POSTPONE": "Udsætte aftale",
     "NEW_TASK": "Opret ny opgave",
@@ -386,9 +470,9 @@
     "TIME": "Tid",
     "MAX_CHARS": "160 tegn",
     "WHOLEDAY": "I løbet af dagen"
-
   },
   "TICKET_QUESTION_PAGE": {
+    "GUIDE": "Guide",
     "QUESTION": "Spørgsmål",
     "BEATS": "Slår",
     "PULSE": "Puls",
@@ -415,7 +499,7 @@
     },
     "PREG_DATE": "Afleveringsdato",
     "MED": {
-      "NAME": "Aktiv bestanddel eller præatratnam",
+      "NAME": "Aktiv ingrediens eller receptnavn",
       "DAILY": "Dagligt",
       "DAYS": "Dag(e)",
       "PIECE": "Stykke",
@@ -480,7 +564,7 @@
   "TICKET_RESULT_PAGE": {
     "TITLE": "Evaluering",
     "DIAG_HEADER": "Diagnose",
-    "NO_RESULT": "Der foreligger endnu ikke noget resultat.",
+    "NO_RESULT": "Dit resultat er ikke tilgængeligt.",
     "URGENCY": "Hastende",
     "THERAPY": "Terapi",
     "DIAGNOSIS": "Resultater",
@@ -544,9 +628,10 @@
   },
   "CARE_CARD_LIST_PAGE": {
     "HISTORY": "Historie",
+    "PROGRESS": "Fremskridt",
     "ADD_DOC": "Tilføj vedhæftede fil",
     "FINDING_PDF": "Vedhæftede fil",
-    "UPLOAD": "Upload af faktura",
+    "UPLOAD": "Faktura upload",
     "MANUAL": "Manuel indtastning"
   },
   "CARE_CARD_DETAIL_PAGE": {
@@ -573,7 +658,6 @@
       "NOTES": "Dine noter (150 tegn)",
       "CHARS": "150 tegn",
       "BUTTON": "Tilføj",
-
       "MEDS": {
         "TIME": "klokken",
         "DAYS": "Dag(e)",
@@ -588,17 +672,16 @@
     }
   },
   "DISEASE_PAGE": {
-    "TITLE": "ADD SYGDOM",
+    "TITLE": "Add sygdom",
     "HEADER": "Nuværende sundhedstilstand",
     "SUB_HEADER": "Der er endnu ikke blevet indgivet nogen sygdom",
     "DISEASES": "Sygdommens navn",
-    "MEDICATION":  "Medicinering",
-    "NOT_CURED":  "Ikke helbredt",
+    "MEDICATION": "Medicinering",
+    "NOT_CURED": "Ikke helbredt",
     "CURED": "Kureret den:",
     "DETECTED": "Opdaget den:",
     "UPDATE_SUCCESS": "Indtastning lykkedes",
     "UPDATE_ERROR": "Indtastning mislykkedes",
-
     "EXPLANATION": {
       "TITLE": "Dokumentation af sygdommens",
       "TEXT": "Lorem ipsum dolor sit amet, ligula eget dolor. Aenean  nec, pellentesque eu, pretium quis, sem. Nulla consequatmassa quis enim.",
@@ -634,6 +717,7 @@
     "NEXT_AV_APP": "Næste ledige aftale:",
     "AT": "på",
     "MIN": "min",
+    "WAIT": "Vent venligst",
     "BOOK_IMMEDIATELY": "Book straks",
     "BOOK_APPOINTMENT": "Bestil tid",
     "TEXT": {
@@ -670,6 +754,11 @@
       }
     }
   },
+  "ZOOM_MODAL_PAGE": {
+    "DELETE_MSG": "Vil du slette dokumentet permanent?",
+    "DELETE": "Slet",
+    "CANCEL": "Afbestille"
+  },
   "DASHBOARD_PAGE": {
     "TITLE": "Oversigt",
     "HEADER": "Din oversigt",
@@ -677,7 +766,7 @@
   },
   "DISEASE_MODAL_PAGE": {
     "CANCEL": "Annuller",
-    "CONFIRM":  "Anvend",
+    "CONFIRM": "Anvend",
     "MED": {
       "NAME": "Aktiv ingrediens eller præparatnavn",
       "DAILY": "Dagligt",
@@ -688,7 +777,7 @@
       "FREQUENCY": "Indtastningsfrekvens",
       "STARTDATE": "Startdato",
       "ENDDATE": "Slutdato",
-      "TIME":  "klokken",
+      "TIME": "klokken",
       "AMOUNT": "Antal",
       "TREATMENT_PERIOD": "Behandlingsperiode",
       "NOTES": "Dine noter (150 tegn)",
@@ -701,7 +790,6 @@
         "FROM": "fra",
         "AT": "på"
       }
-
     },
     "DOC": {
       "DATE": "Dato",
@@ -745,18 +833,17 @@
   },
   "LAB_PAGE": {
     "TITLE": "Laboratorieprøver",
-    "PARASITES": "Parasittest",
-    "URINE": "Urinstikprøve",
-    "DIARRHEA": "Diarréanalyse",
-    "DIARRHEA_PLUS": "Diarréanalyse plus",
-    "GIARDIA": "Giardiakontrol",
+    "PARASITES": "Parasitter",
+    "URINE": "Urin test kit",
+    "DIARRHEA": "Diarré",
+    "DIARRHEA_PLUS": "Diarré Plus",
+    "GIARDIA": "Giardia",
     "FLORA": "Tarmflora",
-    "PREVENTION": "Kombi af forebyggende pleje",
+    "PREVENTION": "Urin laboratorium",
     "OK_BUTTON": "Anvend",
     "CANCEL_BUTTON": "Annuller",
     "SWITCH_PET": "Skift dyr",
     "CHOOSE_PET": "Vælg det kæledyr, som du ønsker at aktivere udforskningsboksen for."
-
   },
   "QR_CODE_MODAL": {
     "ERROR": "Kode ikke genkendt"
@@ -800,7 +887,6 @@
     "COUNTRY": "Land",
     "EQUAL_ADDRESSES": "Fakturaadresse er lig med leveringsadresse",
     "SUBMIT": "Fortsæt"
-
   },
   "CART_PAGE": {
     "TITLE": "Indkøbskurv",
@@ -808,13 +894,17 @@
     "AMOUNT": "Antal",
     "REMOVE": "Fjern artikel",
     "TOTAL": "Samlet pris",
-    "TAX": "Pris inkl. moms"
+    "TAX": "(inkl. moms)",
+    "SHIPMENT": "Forsendelsesomkostninger",
+    "CHECKOUT": "Checkout",
+    "OK_BUTTON": "Bekræfte",
+    "CANCEL_BUTTON": "Afbestille"
   },
   "ORDER_PAGE": {
     "ORDER": "Bestil",
     "REMOVE": "Fjern artikel",
     "CHANGE": "Ændre",
-    "DELIVERY":  " Levering",
+    "DELIVERY": " Levering",
     "SHIPMENT": "Forsendelsesomkostninger",
     "SUMMARY": "Samlet beløb",
     "ORDER_NOW": "Bestilling med omkostninger",
@@ -824,7 +914,6 @@
     "TITLE": "Oversigt",
     "INVOICE": "Faktura",
     "BILLING": "Betalingsmetode"
-
   },
   "ORDER_HISTORY_PAGE": {
     "TITLE": "Bestillinger",
@@ -838,7 +927,6 @@
     "BUY_AGAIN": "Køb igen",
     "GET_PRESCRIPTION": "Bestil opfølgende recept",
     "SAVED_CART": "Produkt gemt i din kurv"
-
   },
   "PAYMENT_PAGE": {
     "SUBMIT": "Fortsæt",
@@ -854,10 +942,9 @@
     "PRICE": "Enhedspris",
     "STOCK": "På lager",
     "USAGE": "anvendelsesområde",
-    "INSTRUCTIONS": "For risici og bivirkninger læs indlægssedlen og spørg din læge eller apoteker",
+    "INSTRUCTIONS": "For risici og bivirkninger, læs indlægssedlen og spørg din dyrlæge eller apotek",
     "INST_LINK": "Download indlægsseddel",
     "DOSAGE": "Dosering"
-
   },
   "PRODUCT_SHIPMENT_INFO_MODAL": {
     "TITLE": "Oplysninger om forsendelse af produktet",
@@ -895,6 +982,11 @@
       "BREATHE": "Åndedrætsfrekvens",
       "PULSE": "Hjerteslag"
     },
+    "START": "Start timer",
+    "CONTINUE": "Blive ved",
+    "EVAL": "Vurdere",
+    "WEIGHT_QUESTION": "Hvad er vægten af ​​FOO? Angiv vægten så præcist som muligt.",
+    "WEIGHT_LABEL": "0 KG",
     "INTRO": {
       "HEADER": "Gør dig klar",
       "TEXT": {
@@ -916,6 +1008,8 @@
   },
   "TELEVET_EMERGENCY_PAGE": {
     "TITLE": "Nødsituation",
+    "HEADER": "Nødhjælp nødvendig?",
+    "TEXT": "Ikke alt, der i starten virker som en nødsituation, er også en. Vi hjælper dig med at vurdere situationen korrekt. Her finder du de mest almindelige medicinske nødsituationer med beskrivelser og mere information om, hvordan du hjælper dit kæledyr.",
     "BUTTONS": {
       "CANCEL": "Annuller",
       "CONFIRM": "Fortsæt"
@@ -970,7 +1064,6 @@
         }
       }
     },
-
     "CANCEL": "Annuller",
     "CONFIRM": "Bekræft",
     "POSTPONE_TASK": "Udsætte aftale",
@@ -978,7 +1071,8 @@
     "DATE": "Dato",
     "TIME": "Tid",
     "MAX_CHARS": "160 Zeichen",
-    "WHOLEDAY": "I løbet af dagen"
+    "WHOLEDAY": "I løbet af dagen",
+    "START_CALL": "Start konsultation"
   },
   "TICKET_GUIDE_PAGE": {
     "TITLE": "Instruktion"
@@ -989,9 +1083,13 @@
   "TICKET_ORDER_PAGE": {
     "TITLE": "Butik"
   },
+  "ORDER_SUMMARY_PAGE": {
+    "ORDER_STATE": "Din ordrestatus",
+    "ZOOM": "Du kan downloade zoom -appen gratis her."
+  },
   "PW_RECOVERY_PAGE": {
     "RECOVER": "Nulstilling af kodeord",
-    "RECOVERED": "Nulstillet af kodeord",
+    "RECOVERED": "Nulstil kodeord",
     "ENTER_MAIL": "Indtast den e-mailadresse, du brugte til at logge ind på confidu-appen. Vi sender dig et link til at nulstille din adgangskode efterfølgende.",
     "ENTER_PW": "Indtast nu dit nye adgangskode.",
     "EMAIL": "E-mail address",
@@ -1003,11 +1101,11 @@
     "STORE": "Gem",
     "NOTIFICATIONS_PAGE": {
       "TITLE": "Meddelelser",
-      "LAB_RESULT": "Laboratoriefund",
+      "LAB_RESULT": "Laboratorieresultater",
       "RECIPE_RATINGS": "Vurderinger (madlavningsopskrift)",
       "TASKS_REMINDER": "Påmindelser (opgaver)",
       "RECIPE_COMMENTS": "Kommentarer (madlavningsopskrift)",
-      "PUSH":  "Tryk på",
+      "PUSH": "Tryk på",
       "PUSH_NOTIFICATION": "Push-meddelelse",
       "MAIL": "E-mail",
       "TEXT": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
@@ -1020,7 +1118,7 @@
       "PART_1": "Har du ikke en konto endnu?",
       "PART_2": "Opret en konto nu."
     },
-    "PW_RECOVERY":  " Har du glemt din adgangskode?",
+    "PW_RECOVERY": " Har du glemt din adgangskode?",
     "TO_LOGIN": "Log ind med eksisterende konto",
     "SIGNIN": "Login",
     "EMAIL": "E-mail",
@@ -1034,7 +1132,6 @@
       "PRIVACY": "privatlivspolitik",
       "CONDITIONS": "vilkår for brug"
     }
-
   },
   "VERIFICATION_PAGE": {
     "HEADER": {
@@ -1061,50 +1158,46 @@
     }
   },
   "WALKTHROUGH_PAGE": {
-    "TITLE": "Gennemgang",
+    "TITLE": "Går igennem",
     "CANCEL": "Spring over",
     "START": "Lad os gå",
     "SLIDES": [
       {
         "TITLE": "CareCard",
-        "TEXT": "Tag dit kæledyrs patientjournal med dig hele tiden - alle sundhedsdata samlet i én app.",
-        "IMG": "care card"
+        "TEXT": "Tak for din tilmelding. Tag altid dit kæledyrs journal med dig - alle sundhedsdata samlet i en app.",
+        "IMG": "carecard"
       },
       {
         "TITLE": "Urinstikprøve",
         "TEXT": "Påvis og overvåg potentielle sygdomme hjemme fra dit eget hjem.",
-        "IMG": "urine test stick"
+        "IMG": "harnsticktest"
       },
       {
         "TITLE": "Medicinske tests",
         "TEXT": "Baseret på afføringsprøver eller urinprøver tester dit kæledyrs helbred.",
-        "IMG": "medicine tests"
+        "IMG": "medizintest"
       },
       {
         "TITLE": "Min skål",
         "TEXT": "Lav foderplaner i overensstemmelse med dit kæledyrs individuelle næringsstof- og energibehov som en professionel.",
-        "IMG": "My bowl"
+        "IMG": "mein_napf"
       },
       {
         "TITLE": "Planner",
-        "TEXT": "Hold styr på alle dit kæledyrs vigtige opgaver med vores planlægger - fra medicindispensering til ørepleje til dine egne aftaler.",
+        "TEXT": "Hold styr på alle dit kæledyrs vigtige opgaver med vores planlægger - fra lægemiddeladministration til ørepleje til dine egne aftaler.",
         "IMG": "planner"
       },
       {
-        "TITLE": "TeleVet",
+        "TITLE": "Online dyrlæge",
         "TEXT": "Statssymptomer besvare spørgsmål starte behandling - vores online dyrlæge hjælper dig med det samme.",
-        "IMG": "televet_guide"
+        "IMG": "televet_anleitung"
       },
       {
         "TITLE": "Forsikring",
         "TEXT": "Administrer bekvemt forsikringspapirer og ydelser fra dine kæledyr.",
-        "IMG": "insurance"
+        "IMG": "versicherung"
       }
     ]
-  },
-  "NOTIFICATIONS_LIST_PAGE": {
-    "TITLE": "Meddelelser",
-    "HEADER": "Dine notifikationer"
   },
   "USER_MODAL_PAGE": {
     "LANGUAGES": {
@@ -1131,7 +1224,7 @@
       "TITLE": "Telefon",
       "PHONE": "Telefon",
       "BUTTON": "Gem",
-      "EXPLANATION": "Lorem Ipsum"
+      "EXPLANATION": "Dit telefonnummer bruges til at beskytte din konto. Bla bla bla"
     },
     "PW": {
       "TITLE": "Adgangskode",
@@ -1139,7 +1232,7 @@
       "CURRENT_PW": "Nuværende adgangskode",
       "CONFIRM_PW": "Gentag nyt kodeord",
       "NEW_PW": "Ny adgangskode",
-      "BUTTON": "Ændre adgangskode"
+      "BUTTON": "Skift kodeord"
     },
     "EMAIL": {
       "TITLE": "E-mail",
@@ -1154,21 +1247,25 @@
   "HOME_MODAL_PAGE": {
     "HEADER": "Vælg venligst den type konsultation:",
     "QUESTIONNAIRE": "Diagnosesøger (gratis)",
-    "CALL": "Bestil videosamtale (14,99 €)",
-    "CALL_DESCRIPTION": "Efter køb bliver videosamtalen gemt i planlæggeren. Vælg den relevante dato for at få adgang til dit videosamtalelink og tale med vores dyrlæger om dit problem.",
+    "CALL": "Bestil videosamtale (19,99 €)",
+    "CALL_DESCRIPTION": "Du kan diskutere problemer uden hast med vores dyrlæge og vise os dit kæledyr direkte. For at kunne besvare hvert videoopkald til tiden, begrænser vi samtaletiden til maksimalt 15 minutter.",
+    "DIAG_DESCRIPTION": "Uden at vente og altid tilgængelig! Angiv det symptom, der plager din firbenede ven, og besvar specifikke spørgsmål. Du vil modtage en evaluering med en diagnose, en vurdering af hastetiden og anbefalinger til handling. Du kan bestille de forberedelser, du har brug for, direkte.",
     "CANCEL": "Annuller",
-    "PROGRESS": "Fortsæt"
+    "PROGRESS": "Fortsæt",
+    "ZOOM": "Du kan downloade zoom -appen gratis her."
   },
   "REGISTER_CODE": {
-    "REG_TEXT": "Indtast registreringskoden, der følger med dit prøvemateriale, her.",
+    "REG_TEXT": "Indtast den registreringskode, der er tildelt dit prøvemateriale her.",
     "EG": "f.eks. 0123456789",
     "WRONG_PET": "Er du logget ind med det forkerte dyr?",
-    "INVALID_CODE": "Ugyldig kode",
-    "USED_CODE": "Kode allerede brugt",
+    "INVALID_CODE": "Din kode kunne ikke tildeles. Du har muligvis lavet en stavefejl. Prøv igen.",
+    "USED_CODE": "Din kode blev allerede brugt.",
     "CHANGE_PET": "Skift dyr",
     "REG_SUCCESS": "Registrering vellykket",
     "ASSIGNMENT": [
-      "Produktet", "er blevet tildelt", "med succes."
+      "Din laboratorietest",
+      "er blevet tildelt",
+      "med succes."
     ]
   },
   "BENEFITS_PAGE": {
@@ -1177,11 +1274,19 @@
     "BUTTONS_TEXT": "Indløs",
     "CONFI_COINS": {
       "HEADER": "Indsamlet Confi-Coins",
-      "TEXT": "Indløs dine Confi-Coins og få rabat på mange af vores produkter og tjenester."
+      "TEXT": "Pas på dit kæledyrs helbred ved at udføre opgaver i planlæggeren. Bliv belønnet med Confi-Coins og stig dig i rang. Derudover venter overraskelser fra vores butik på dig."
     },
-    "CUPS": {
-      "HEADER": "Opnåede kopper",
-      "TEXT": "Lorem ipsum dolor bla bla bla"
+    "HELP_PAGE": {
+      "TITLE": "Hjælp",
+      "HEADER": "Hjælp",
+      "SUPPORT": "Teknisk support",
+      "SUBHEADER": "Appen fungerer ikke, som den skal? Send os en mail på",
+      "SOLUTION_FORM": "Fejlfinding ved kontaktformular",
+      "YOUR_MESSAGE": "Din besked",
+      "CHARS": "1500 tegn",
+      "BUTTON": "sende",
+      "FAQ": "Ofte stillede spørgsmål"
     }
   }
 }
+

@@ -1,0 +1,48 @@
+ion-card {
+  margin: 0 0 8px;
+}
+
+ion-button {
+  margin-top: 24px;
+}
+
+mat-radio-button {
+  color: rgb(102, 102,102);
+  font-size: 13px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+h2 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 6px;
+
+  &.radio-headline {
+    margin-bottom: 16px;
+  }
+}
+
+.text {
+  font-size: 13px;
+}
+
+.message {
+  color: rgb(102,102,102);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  line-height: 18px;
+  margin: 40px 48px 0;
+
+  img {
+    margin-bottom: 24px;
+    max-height: 88px;
+  }
+}
+
+.gap {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+}

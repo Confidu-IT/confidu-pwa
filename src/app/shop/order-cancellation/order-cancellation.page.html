@@ -1,0 +1,60 @@
+<ion-header>
+  <app-toolbar [backButton]="true" title="{{ 'ORDER_CANCEL_PAGE.TITLE' | translate }}"></app-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-text-center" *ngIf="isLoading">
+    <ion-spinner color="primary"></ion-spinner>
+  </div>
+
+  <ion-grid *ngIf="!isLoading">
+    <ion-row>
+      <ion-col sizeSm="8" offsetSm="2">
+        <ion-card class="cancellation-card" *ngIf="showForm">
+          <ion-card-content>
+            <h2>{{ 'ORDER_CANCEL_PAGE.CANCEL_ORDER' | translate }}</h2>
+            <p class="text gap">{{ 'ORDER_CANCEL_PAGE.ORDER_NR' | translate }}: {{ params?.orderNr }}</p>
+            <h2 class="radio-headline">{{ 'ORDER_CANCEL_PAGE.REASON' | translate }}</h2>
+            <mat-radio-group
+              [(ngModel)]="selectedAnswer">
+              <mat-radio-button [value]="'ORDER_CANCEL_PAGE.CHEAPER' | translate">
+                {{ 'ORDER_CANCEL_PAGE.CHEAPER' | translate }}
+              </mat-radio-button>
+              <mat-radio-button [value]="'ORDER_CANCEL_PAGE.UNNECESSARY' | translate">
+                {{ 'ORDER_CANCEL_PAGE.UNNECESSARY' | translate }}
+              </mat-radio-button>
+              <mat-radio-button [value]="'ORDER_CANCEL_PAGE.ACCIDENTAL' | translate">
+                {{ 'ORDER_CANCEL_PAGE.ACCIDENTAL' | translate }}
+              </mat-radio-button>
+              <mat-radio-button [value]="'ORDER_CANCEL_PAGE.OTHER' | translate">
+                {{ 'ORDER_CANCEL_PAGE.OTHER' | translate }}
+              </mat-radio-button>
+            </mat-radio-group>
+            <ion-button
+              expand="full"
+              color="secondary"
+              (click)="onSendCancellation()"
+              [disabled]="!selectedAnswer"
+            >
+              {{ 'ORDER_CANCEL_PAGE.BUTTON' | translate }}
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+
+        <div class="message" *ngIf="showSuccess">
+          <img [src]="successImg" alt="" height="88">
+          <p class="text">{{ 'ORDER_CANCEL_PAGE.SUCCESS' | translate }}</p>
+        </div>
+
+        <div class="message" *ngIf="showError">
+          <img [src]="errorImg" alt="" height="88">
+          <p class="text">{{ 'ORDER_CANCEL_PAGE.ERROR' | translate }}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <app-toolbar-footer [user]="user"></app-toolbar-footer>
+</ion-footer>

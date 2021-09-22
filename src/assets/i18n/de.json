@@ -1308,6 +1308,23 @@
     "PACKAGE": "Verpackung & Versand:",
     "NET_PRICE": "Summe ohne MwSt.:",
     "TAX": "Anzurechnende MwSt.:",
-    "TOTAL_PRICE": "Gesamtsumme:"
+    "TOTAL_PRICE": "Gesamtsumme:",
+    "CANCEL": {
+      "BUTTON": "Bestellung stornieren",
+      "TEXT": "Bitte beachte, dass eine Stornierung nur bis zu X Stunden nach der Bestellung erfolgen kann. Wenn du stornierst, betrifft das alle Produkte deiner Bestellung. Bla bla…"
+    }
+  },
+  "ORDER_CANCEL_PAGE": {
+    "TITLE": "Stornierung",
+    "CANCEL_ORDER": "Bestellung stornieren",
+    "ORDER_NR": "Bestellnummer:",
+    "REASON": "Grund der Stornierung",
+    "CHEAPER": "Produkte günstiger gesehen",
+    "UNNECESSARY": "Produkte nicht mehr benötigt",
+    "ACCIDENTAL": "Produkte versehentlich bestellt",
+    "OTHER": "anderer Grund",
+    "BUTTON": "Stornieren",
+    "SUCCESS": "Deine Stornierungsanfrage wurde erfolgreich versendet!",
+    "ERROR": "Leider ist ein Fehler aufgetreten. Bitte versuche es erneut."
   }
 }

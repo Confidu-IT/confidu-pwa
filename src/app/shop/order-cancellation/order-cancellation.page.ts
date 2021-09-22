@@ -7,21 +7,26 @@ import {CommonService} from '../../shared/services/common/common.service';
 import {ShopwareService} from '../../shared/services/shopware/shopware.service';
 
 @Component({
-  selector: 'app-order-details',
-  templateUrl: './order-details.page.html',
-  styleUrls: ['./order-details.page.scss'],
+  selector: 'app-order-cancellation',
+  templateUrl: './order-cancellation.page.html',
+  styleUrls: ['./order-cancellation.page.scss'],
 })
-export class OrderDetailsPage {
+export class OrderCancellationPage {
   private subscription: Subscription;
-  private routeSub: Subscription;
+  private readonly routeSub: Subscription;
   private params: any;
   private language: string;
   private iconPath = '../../../../assets/icons/shop';
 
-  public replacementImg = `${this.iconPath}/no_image.png`;
+  public successImg = `${this.iconPath}/cancel_success.svg`;
+  public errorImg = `${this.iconPath}/cancel_error.svg`;
   public user: any;
   public isLoading: boolean;
-  public order: any;
+  public profile: any;
+  public selectedAnswer: string;
+  public showForm: boolean;
+  public showSuccess: boolean;
+  public showError: boolean;
 
   constructor(
     private userAuth: AuthService,
@@ -41,38 +46,58 @@ export class OrderDetailsPage {
     this.isLoading = true;
     this.language = this.commonService.language;
     this.translateService.use(this.language);
-
     this.subscription = this.userAuth.user$
       .subscribe(user => {
         if (user) {
           this.user = user;
-          this.getOrderById(this.params.orderId);
+          this.getProfile();
         } else {
           this.router.navigateByUrl('/');
         }
       });
   }
 
-  public onCancelOrder(nr: string): void {
-    this.router.navigateByUrl(`order-cancellation/${nr}`);
+  public onSendCancellation() {
+    const answer = {
+      'salutationId': this.shopwareService.fakeSalutationId,
+      'firstName': this.profile.firstName,
+      'lastName': this.profile?.lastName,
+      'email': this.profile.email,
+      'phone': this.profile?.customFields?.custom_customers_tel || null,
+      'subject': this.params.orderNr,
+      'comment': this.selectedAnswer
+    };
+    this.shopwareService.sendCancellation(answer)
+      .then(response => {
+        this.showForm = false;
+        if (response.errors) {
+          this.showError = true;
+        } else {
+          this.showSuccess = true;
+        }
+      });
   }
 
-  private getOrderById(id: string): void {
+  private getProfile(): Promise<any> {
     this.shopwareService.headers['firebase-context-token'] = this.user.za;
-    this.shopwareService.getOrderDetails(id)
+    return this.shopwareService.getProfile()
       .then(response => {
-        console.log('response', response);
-        if (response.errors?.length > 0) {
-          this.commonService.handleResponseErrors(response.errors[0]?.status);
-          this.isLoading = false;
+        if (response.errors) {
+          this.commonService.handleResponseErrors(response.errors[0].status);
+          this.router.navigateByUrl(`order-history`);
         } else {
-          this.order = response;
+          this.profile = response;
+          this.showForm = true;
           this.isLoading = false;
         }
       });
   }
 
   ionViewWillLeave() {
+    this.selectedAnswer = undefined;
+    this.showError = false;
+    this.showSuccess = false;
+
     if (this.subscription) {
       this.subscription.unsubscribe();
     }
@@ -80,5 +105,4 @@ export class OrderDetailsPage {
       this.routeSub.unsubscribe();
     }
   }
-
 }

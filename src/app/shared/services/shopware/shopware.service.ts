@@ -45,6 +45,8 @@ export class ShopwareService {
     password: null
   };
 
+  public fakeSalutationId = '38b84044f5ac4384b78f3a09be1bee73';
+
   get cartState(): Observable<any> {
     return this.cartState$.asObservable();
   }
@@ -423,6 +425,21 @@ export class ShopwareService {
       })
       .then((resp) => resp.json())
       .catch(e => e);
+  }
+
+  sendCancellation(data: any) {
+    const url = `${this.uri}/contact-form`;
+    const body = {
+      comment: data.comment,
+      email: data.email,
+      firstName: data.firstName,
+      lastName: data.lastName,
+      phone: data.phone,
+      salutationId: data.salutationId,
+      subject: data.subject
+    };
+    const method = 'POST';
+    return this.sendRequest(url, method, JSON.stringify(body));
   }
 
   // generateQrCode(order: string, id: string, pet: string, fbtoken: string): Promise<any> {

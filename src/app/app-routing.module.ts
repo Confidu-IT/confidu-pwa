@@ -225,7 +225,12 @@ const routes: Routes = [
     path: 'order-details/:orderId',
     loadChildren: () => import('./shop/order-details/order-details.module').then( m => m.OrderDetailsPageModule)
   },
-  { path: '**', redirectTo: 'home', pathMatch: 'full' }
+
+  {
+    path: 'order-cancellation/:orderNr',
+    loadChildren: () => import('./shop/order-cancellation/order-cancellation.module').then( m => m.OrderCancellationPageModule)
+  },
+  { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
 
 @NgModule({

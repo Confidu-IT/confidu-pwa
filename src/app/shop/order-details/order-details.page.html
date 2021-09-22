@@ -51,6 +51,18 @@
           </ion-card-content>
         </ion-card>
 
+        <ion-card class="cancel-card">
+          <ion-card-content>
+            <ion-button
+              expand="full"
+              color="secondary"
+              (click)="onCancelOrder(order?.orderNumber)">
+              {{ 'ORDER_DETAILS_PAGE.CANCEL.BUTTON' | translate }}
+            </ion-button>
+            <p class="cancel-text">{{ 'ORDER_DETAILS_PAGE.CANCEL.TEXT' | translate }}</p>
+          </ion-card-content>
+        </ion-card>
+
         <ion-card class="price-card">
           <ion-card-content>
             <ul>
