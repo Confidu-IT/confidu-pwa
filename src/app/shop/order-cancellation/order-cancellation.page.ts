@@ -14,7 +14,7 @@ import {ShopwareService} from '../../shared/services/shopware/shopware.service';
 export class OrderCancellationPage {
   private subscription: Subscription;
   private readonly routeSub: Subscription;
-  private params: any;
+  public params: any;
   private language: string;
   private iconPath = '../../../../assets/icons/shop';
 

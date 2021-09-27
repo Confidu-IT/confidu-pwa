@@ -61,7 +61,6 @@ export class ActivationPage {
 
     this.translateService.get('REGISTER_CODE')
       .subscribe(values => {
-        console.log('values', values)
         this.invalidCode = values.INVALID_CODE;
         this.usedCode = values.USED_CODE;
         this.assignment = values.ASSIGNMENT;
@@ -104,6 +103,7 @@ export class ActivationPage {
       .subscribe(response => {
           console.log('response', response);
           this.regNr = null;
+          this.activationError = false;
           this.validated = true;
           this.successText = `
           ${this.assignment[0]} ${this.assignment[1]} ${this.pet.name} ${this.assignment[2]}
@@ -111,9 +111,13 @@ export class ActivationPage {
         },
         (e) => {
           console.log('e', e);
-          if (e.error?.code === 'activationKey' || e.error?.code === 'key') {
+          if (
+            e.error?.errors[0]?.code === 'activationKey'
+            || e.error?.errors[0]?.code === 'key'
+            || e.error?.errors[0]?.code === 'key_not_found'
+          ) {
             this.errorText = this.invalidCode;
-          } else if (e.error?.code === 'activated') {
+          } else if (e.error?.errors[0]?.code === 'activated') {
             this.errorText = this.usedCode;
           }
           this.regNr = null;

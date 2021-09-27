@@ -1301,6 +1301,7 @@
     "TITLE": "Bestelldetails",
     "NR": "Bestellnummer:",
     "ORDERED_AT": "Bestellt am:",
+    "STATUS": "Status:",
     "SUMMARY": "Summe",
     "AMOUNT": "Menge:",
     "ADDRESS": "Versandadresse",

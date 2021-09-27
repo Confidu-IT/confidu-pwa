@@ -22,14 +22,14 @@
               </p>
 
               <div class="status">
-                <h3>{{ 'ORDER_SUMMARY_PAGE.ORDER_STATE' | translate }}</h3>
+                <h3 class="status-header">{{ 'ORDER_SUMMARY_PAGE.ORDER_STATE' | translate }}</h3>
                 <ul class="order-list">
-                  <li *ngFor="let el of orderDetails?.list; let l = last">
+                  <li *ngFor="let el of orderDetails?.list; let l = last; let f = first">
                     <div class="image">
-                      <img [src]="el.image" alt="" height="24">
+                      <img [src]="el.image" alt="">
                     </div>
                     <div class="text" [ngClass]="{'no-border': l}">
-                      <h3>{{ el.header }}</h3>
+                      <h3 [ngClass]="{'gap': f}">{{ el.header }}</h3>
                       <p *ngFor="let item of el.body">
                         {{ item }}
                       </p>
