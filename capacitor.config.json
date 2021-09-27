@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "dog-healthcare",
+  "appId": "com.confidu.confidu",
+  "appName": "confidu",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www"
