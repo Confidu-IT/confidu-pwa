@@ -28,7 +28,7 @@ export class TicketService {
 
     const headers = {
       'Content-Type': 'application/json',
-      'firebase-context-token': token,
+      // 'firebase-context-token': token,
       'sw-context-token': localStorage.getItem('sw-token') || null
     };
 
@@ -70,7 +70,7 @@ export class TicketService {
     const url = `${this.baseUrl}/${language}/event/results`;
     const headers = {
       'Content-Type': 'application/json',
-      'firebase-context-token': token,
+      // 'firebase-context-token': token,
       'sw-context-token': localStorage.getItem('sw-token') || null
     };
 
@@ -95,7 +95,7 @@ export class TicketService {
   ) {
     const headers = {
       'Content-Type': 'application/json',
-      'firebase-context-token': token,
+      // 'firebase-context-token': token,
       'sw-context-token': localStorage.getItem('sw-token')
     };
     const url = `${this.baseUrl}/${language}/event/results/save-content`;
@@ -117,29 +117,6 @@ export class TicketService {
       });
   }
 
-  // public confirmSave(
-  //   eventID: string,
-  //   action: string,
-  //   petID: string,
-  //   userID: string,
-  //   token: string,
-  //   language: string
-  // ): Observable<any> {
-  //   const headers = {
-  //     'Content-Type': 'application/json',
-  //     'firebase-context-token': token,
-  //     'sw-context-token': localStorage.getItem('sw-token')
-  //   };
-  //   const url = `${this.baseUrl}/${language}/event/results/save-content`;
-  //   const body = {
-  //     eventId: eventID,
-  //     petId: petID,
-  //     uid: userID,
-  //     type: action
-  //   };
-  //   return this.http.post(url, body, { headers });
-  // }
-
   public getTicket(
     userID: string,
     token: string,
@@ -151,7 +128,7 @@ export class TicketService {
     const url = `${this.baseUrl}/${language}/tickets/ticket`;
     const headers = {
       'Content-Type': 'application/json',
-      'firebase-context-token': token,
+      // 'firebase-context-token': token,
       'sw-context-token': localStorage.getItem('sw-token') || null
     };
 

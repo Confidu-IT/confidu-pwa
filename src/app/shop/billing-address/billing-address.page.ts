@@ -93,7 +93,7 @@ export class BillingAddressPage {
     } else {
       this.updateAddress(address)
         .then(() => {
-          this.shopwareService.headers['firebase-context-token'] = this.user.za;
+          // this.shopwareService.headers['firebase-context-token'] = this.user.za;
           this.getProfile()
             .then((resp) => {
               if (this.profile.defaultShippingAddress && this.profile.defaultBillingAddress) {
@@ -115,7 +115,7 @@ export class BillingAddressPage {
   }
 
   private updateAddresses(address): Promise<any> {
-    this.shopwareService.headers['firebase-context-token'] = this.user.za;
+    // this.shopwareService.headers['firebase-context-token'] = this.user.za;
     return this.shopwareService.createAddress(address)
       .then(addressId => {
         if (addressId.errors) {
@@ -128,7 +128,7 @@ export class BillingAddressPage {
   }
 
   private updateAddress(address): Promise<any> {
-    this.shopwareService.headers['firebase-context-token'] = this.user.za;
+    // this.shopwareService.headers['firebase-context-token'] = this.user.za;
     return this.shopwareService.createAddress(address)
       .then(addressId => {
         if (addressId.errors) {
@@ -144,7 +144,7 @@ export class BillingAddressPage {
   }
 
   private getProfile(): Promise<any> {
-    this.shopwareService.headers['firebase-context-token'] = this.user.za;
+    // this.shopwareService.headers['firebase-context-token'] = this.user.za;
     return this.shopwareService.getProfile()
       .then(response => {
         console.log('response', response);

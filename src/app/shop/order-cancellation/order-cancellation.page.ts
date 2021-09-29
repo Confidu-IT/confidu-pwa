@@ -79,7 +79,7 @@ export class OrderCancellationPage {
   }
 
   private getProfile(): Promise<any> {
-    this.shopwareService.headers['firebase-context-token'] = this.user.za;
+    // this.shopwareService.headers['firebase-context-token'] = this.user.za;
     return this.shopwareService.getProfile()
       .then(response => {
         if (response.errors) {

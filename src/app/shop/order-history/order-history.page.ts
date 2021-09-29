@@ -54,7 +54,7 @@ export class OrderHistoryPage {
 
 
   private getAllOrders(): void {
-    this.shopwareService.headers['firebase-context-token'] = this.user.za;
+    // this.shopwareService.headers['firebase-context-token'] = this.user.za;
     this.shopwareService.getOrders()
       .then(orders => {
         console.log('orders', orders);

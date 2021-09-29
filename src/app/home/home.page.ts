@@ -298,7 +298,7 @@ export class HomePage {
     }
     const headers = {
       'Content-Type': 'application/json',
-      'firebase-context-token': this.user$.za,
+      // 'firebase-context-token': this.user$.za,
       'sw-context-token': localStorage.getItem('sw-token')
     };
 

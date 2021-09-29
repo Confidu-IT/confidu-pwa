@@ -58,7 +58,7 @@ export class OrderDetailsPage {
   }
 
   private getOrderById(id: string): void {
-    this.shopwareService.headers['firebase-context-token'] = this.user.za;
+    // this.shopwareService.headers['firebase-context-token'] = this.user.za;
     this.shopwareService.getOrderDetails(id)
       .then(response => {
         console.log('response', response);

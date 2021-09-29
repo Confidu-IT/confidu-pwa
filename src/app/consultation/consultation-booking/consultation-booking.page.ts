@@ -112,7 +112,7 @@ export class ConsultationBookingPage {
   }
 
   private progressBooking(): void {
-    this.shopwareService.headers['firebase-context-token'] = this.user.za;
+    // this.shopwareService.headers['firebase-context-token'] = this.user.za;
     this.shopwareService.getProfile()
       .then(response => {
         if (response.errors?.length > 0) {

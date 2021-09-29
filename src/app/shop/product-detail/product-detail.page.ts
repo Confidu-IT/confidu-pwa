@@ -50,7 +50,7 @@ export class ProductDetailPage implements OnInit  {
     this.subscription = this.userAuth.user$
       .subscribe(user => {
         this.user = user;
-        this.shopwareService.headers['firebase-context-token'] = this.user.za;
+        // this.shopwareService.headers['firebase-context-token'] = this.user.za;
       });
     this.form = new FormGroup( {
       quantity: new FormControl(null, {

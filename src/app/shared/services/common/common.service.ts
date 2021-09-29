@@ -67,7 +67,7 @@ export class CommonService {
     const url = `${this.baseUrl}/${this.language}/scan`;
     const headers = {
       'Content-Type': 'application/json',
-      'firebase-context-token': token,
+      // 'firebase-context-token': token,
       'sw-context-token': localStorage.getItem('sw-token') || null
     };
     const body = {
@@ -87,7 +87,7 @@ export class CommonService {
     const url = `${this.baseUrl}/${this.language}/scan/get-scan-key`;
     const headers = {
       'Content-Type': 'application/json',
-      'firebase-context-token': token,
+      // 'firebase-context-token': token,
       // 'sw-context-token': localStorage.getItem('sw-token')
     };
     const body = {
@@ -126,7 +126,7 @@ export class CommonService {
     const url = `${this.baseUrl}/${this.language}/user-docs/get-key-from-path`;
     const headers = {
       'Content-Type': 'application/json',
-      'firebase-context-token': token,
+      // 'firebase-context-token': token,
       'sw-context-token': localStorage.getItem('sw-token') || null
     };
     const body = {
@@ -147,7 +147,7 @@ export class CommonService {
     const url = `${this.baseUrl}/${this.language}/acuity/appointments/${appointmentId}`;
     const headers = {
       'Content-Type': 'application/json',
-      'firebase-context-token': token,
+      // 'firebase-context-token': token,
       'sw-context-token': localStorage.getItem('sw-token') || null
     };
     const body = {
@@ -165,7 +165,7 @@ export class CommonService {
     const url = `${this.baseUrl}/${this.language}/acuity/appointment-types`;
     const headers = {
       'Content-Type': 'application/json',
-      'firebase-context-token': token,
+      // 'firebase-context-token': token,
       'sw-context-token': localStorage.getItem('sw-token') || null
     };
     return this.http.get(url, {headers});
@@ -180,7 +180,7 @@ export class CommonService {
     const url = `${this.baseUrl}/${this.language}/acuity/appointments`;
     const headers = {
       'Content-Type': 'application/json',
-      'firebase-context-token': token,
+      // 'firebase-context-token': token,
       'sw-context-token': localStorage.getItem('sw-token') || null
     };
     const body = {
@@ -198,7 +198,7 @@ export class CommonService {
     const url = `${this.baseUrl}/${this.language}/acuity/available-time`;
     const headers = {
       'Content-Type': 'application/json',
-      'firebase-context-token': token,
+      // 'firebase-context-token': token,
       'sw-context-token': localStorage.getItem('sw-token') || null
     };
     const body = {
@@ -217,7 +217,7 @@ export class CommonService {
     console.log('url', url);
     const headers = {
       'Content-Type': 'application/json',
-      'firebase-context-token': token
+      // 'firebase-context-token': token
     };
     const body = {
       path,
@@ -233,7 +233,7 @@ export class CommonService {
     const url = `${this.baseUrl}/${this.language}/magazine/${articleId}`;
     const headers = {
       'Content-Type': 'application/json',
-      'firebase-context-token': token
+      // 'firebase-context-token': token
     };
     return this.http.get(url, { headers });
   }
@@ -245,7 +245,7 @@ export class CommonService {
     const url = `${this.baseUrl}/${this.language}/cooking/${articleId}`;
     const headers = {
       'Content-Type': 'application/json',
-      'firebase-context-token': token
+      // 'firebase-context-token': token
     };
     return this.http.get(url, { headers });
   }
@@ -258,7 +258,7 @@ export class CommonService {
     const url = `${this.baseUrl}/${this.language}/home-page`;
     const headers = {
       'Content-Type': 'application/json',
-      'firebase-context-token': token
+      // 'firebase-context-token': token
     };
     const body = {
       petId,
@@ -275,7 +275,7 @@ export class CommonService {
     const url = `${this.baseUrl}/${this.language}/dashboard`;
     const headers = {
       'Content-Type': 'application/json',
-      'firebase-context-token': token,
+      // 'firebase-context-token': token,
       'sw-context-token': localStorage.getItem('sw-token') || null
     };
     const body = {
@@ -294,7 +294,7 @@ export class CommonService {
     const url = `${this.baseUrl}/${this.language}/lab/qr-activation-key`;
     const headers = {
       'Content-Type': 'application/json',
-      'firebase-context-token': token,
+      // 'firebase-context-token': token,
       'sw-context-token': localStorage.getItem('sw-token') || null
     };
     const body = {

@@ -39,7 +39,7 @@ export class ProductModalPage implements OnInit {
     this.subscription = this.userAuth.user$
       .subscribe(user => {
         this.user = user;
-        this.shopwareService.headers['firebase-context-token'] = this.user.za;
+        // this.shopwareService.headers['firebase-context-token'] = this.user.za;
       });
     this.language = this.commonService.language;
     this.translateService.use(this.language);
@@ -70,7 +70,7 @@ export class ProductModalPage implements OnInit {
   }
 
   public onTakeProduct() {
-    this.shopwareService.headers['firebase-context-token'] = this.user.za;
+    // this.shopwareService.headers['firebase-context-token'] = this.user.za;
     this.shopwareService.setCartState(true);
     this.shopwareService.addProductToCart(this.item.data.id, +this.form.value.quantity)
       .then(product => {

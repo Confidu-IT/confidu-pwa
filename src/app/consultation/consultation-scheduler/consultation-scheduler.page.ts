@@ -109,7 +109,7 @@ export class ConsultationSchedulerPage {
 
   public onBook(): void {
     this.bookDate = !this.selectedDate ? this.nextAvTime.time : this.selectedDate;
-    this.shopwareService.headers['firebase-context-token'] = this.user.za;
+    // this.shopwareService.headers['firebase-context-token'] = this.user.za;
     this.shopwareService.getProfile()
       .then(response => {
         console.log('response', response);
@@ -141,7 +141,7 @@ export class ConsultationSchedulerPage {
   }
 
   private updateAccount(data: any): void {
-    this.shopwareService.headers['firebase-context-token'] = this.user.za;
+    // this.shopwareService.headers['firebase-context-token'] = this.user.za;
     this.shopwareService.updateSWUser(data)
       .then(response => {
         console.log('response', response);
