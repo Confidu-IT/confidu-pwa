@@ -52,8 +52,14 @@ export class OrderSummaryPage {
           this.shopwareService.sendOrderId(this.params.orderId)
             .then(data => {
               console.log('data', data);
-              this.orderDetails = data;
-              this.isLoading = false;
+              if (data?.errors) {
+                this.commonService.handleResponseErrors(data.errors[0].status);
+              } else {
+                this.orderDetails = data;
+                this.isLoading = false;
+              }
+
+
             });
         } catch (e) {
           console.log('e', e);

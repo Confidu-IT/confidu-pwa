@@ -364,7 +364,7 @@
           <mat-expansion-panel *ngIf="result?.textA3 && !result?.textA3.visibility">
             <mat-expansion-panel-header>
               <mat-panel-title>
-                {{ result?.textA3.header }}
+                {{ result.textA3.header }}
               </mat-panel-title>
             </mat-expansion-panel-header>
             <ul *ngIf="result?.textA3.type === 'list'" class="ticket-result-help">
@@ -398,7 +398,7 @@
 
           <ion-card *ngIf="result?.textA3 && result?.textA3.visibility" class="is-emergency">
             <ion-card-content>
-              <h4 result?.textA3.header>
+              <h4>
                 {{ result?.textA3.header }}
               </h4>
               <ul  *ngIf="result?.textA3.type === 'list'" class="ticket-result-help">

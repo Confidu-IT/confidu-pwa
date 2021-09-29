@@ -80,7 +80,7 @@ export class TicketQuestionsPage {
   public slideOpts = {
     initialSlide: 0
   };
-  public guideQuestions = ['v+breathe_freq', 'v+pulse_freq', 'v+tempera', 'w+weightac'];
+  public guideQuestions = ['v+breathe_freq', 'v+pulse_freq', 'v+tempera', 'w+weightac', 'circ1'];
 
   @ViewChild('filePicker') filePickerRef: ElementRef<HTMLInputElement>;
   @ViewChild(IonSlides) slides: IonSlides;
