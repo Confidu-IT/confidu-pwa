@@ -11,8 +11,7 @@
     "DETAILS": "Detalles",
     "STATUS": {
       "1": "¿Cómo es",
-      "2": "hoy?",
-      "INSTRUCTIONS": "Tippe mehrmals auf das Hundesymbol und bestätige den passenden Zustand mit dem Häkchen."
+      "2": "hoy?"
     },
     "OVERVIEW": "Resumen",
     "CHANGE_PET": "Cambiar mascota",
@@ -20,6 +19,7 @@
     "TODAY_TASKS": "Tareas de hoy",
     "TODAY": "Hoy",
     "TASK": "Tarea",
+    "TIME": "a la hora",
     "RECIPE_HEADER": "Pedir medicación",
     "RECIPE_TEXT": "Lorem ipsum dolor sit amet",
     "PATCH_BUTTON": "Tratamiento",
@@ -30,7 +30,7 @@
       "EXCELLENT": "Bueno",
       "GOOD": "Malo",
       "BAD": "Enfermo",
-      "WORSE": "Emergencia"
+      "WORSE": "Muy enferma"
     },
     "NO_TASKS_TEXT": {
       "PART_1": "Hoy son",
@@ -39,10 +39,14 @@
     "NEW_ARTICLES": "Revista",
     "WEEKLY_RECIPE": "Fresco al cuenco"
   },
+  "ARTICLE_DETAIL_PAGE": {
+    "REFERENCES": "También es interesante",
+    "FROM": "de"
+  },
   "NAVIGATION": {
     "RATION": "Raciones-Comprueba",
     "BOWL": "Mi cuenco",
-    "HARNSTICK": "Prueba de la varilla de orina",
+    "HARNSTICK": "Kit de prueba de orina",
     "LAB": "Laboratorio",
     "CONTRACT": "Contrata",
     "DAMAGE": "Reclamación",
@@ -55,6 +59,7 @@
       "PRODUCTS": {
         "400": "Producto no encontrado",
         "451": "Producto no encontrado",
+        "406": "",
         "403": "El usuario no ha iniciado sesión"
       },
       "LOGIN": {
@@ -70,19 +75,31 @@
     "BOWL": "Mi cuenco",
     "RESEARCH": "Investigación",
     "LAB": "Laboratorio",
-    "URINE_TEST": "Prueba de la varilla de orina",
+    "ACTIVATION": "Activar la caja del explorador",
+    "URINE_TEST": "Kit de prueba de orina",
     "PROTECT": "Proteger",
     "CONTRACT": "Contrata",
     "DAMAGE": "Reclamacións",
-    "SHOP": "Shop"
+    "SHOP": "Carrito de comprasp",
+    "SOON": "Próximamente, en breve, pronto"
   },
   "SIDE_NAV": {
-    "SETTINGS": "Configuración",
-    "ACCOUNT": "Cuenta",
-    "ORDER": "Pedido",
+    "SETTINGS": "Mi cuenta",
+    "ACCOUNT": "Mis datos",
+    "ORDER": "Mis ordenes",
     "NOTIFICATIONS": "Notificaciones",
+    "CART": "Mi carrito de envío",
     "HELP": "Ayuda",
     "LOGOUT": "Cerrar la sesión"
+  },
+  "PRODUCT_DETAIL_PAGE": {
+    "TO_CART": "A la cesta de envío",
+    "TAX": "Todos los precios incluyen el IVA, más los gastos de envío",
+    "DESCRIPTION": "Descripción del artículo"
+  },
+  "NOTIFICATIONS_LIST_PAGE": {
+    "TITLE": "Notificaciones",
+    "HEADER": "Sus notificaciones"
   },
   "CREATE_PET_PAGE": {
     "CASTRATION_VALUES": {
@@ -105,8 +122,9 @@
     "GENDER_LABEL": "Sexo",
     "CASTRATION_LABEL": "Estado de castración",
     "BIRTHDAY_LABEL": "Cumpleaños",
-    "FORM_BUTTON": "Crear mascota",
-    "WAITING": "Por favor, espera..."
+    "FORM_BUTTON": "Ahorrar",
+    "WAITING": "Por favor, espera...",
+    "TITLE": "Crear mascota"
   },
   "ACCOUNT_PAGE": {
     "NAME": "Nombre",
@@ -118,6 +136,7 @@
     "CHANGE_PW": "Cambiar la contraseña",
     "DEL_ACC": "Eliminar la cuenta",
     "BEQUEST": "Foobar",
+    "ORDERS": "Pedidos",
     "CHOOSE_LANGUAGE": "Elegir idioma",
     "LANGUAGES": {
       "GERMAN": "Alemán",
@@ -130,7 +149,9 @@
     }
   },
   "PETS_LIST_PAGE": {
-    "TITLE": "Mis mascotas"
+    "TITLE": "Mis mascotas",
+    "ACTIVE": "actualmente activa",
+    "EXPLANATION": "Elija una mascota deslizando el dedo hacia la derecha y presionando el botón de estrella azul. Desliza hacia la izquierda para eliminar a tu mascota."
   },
   "TELEVET_PET_PAGE": {
     "PET_SPOT_TEXT": {
@@ -145,7 +166,7 @@
       "ITCHING": "Picor",
       "CONSTIPATION": "Estreñimiento",
       "BITE": "Mordedura",
-      "SUCKLES": "Hinchazón de la teta",
+      "SUCKLES": "Inflamación de la glándula mamaria",
       "STOMACH_PAIN": "Dolor abdominal",
       "TRAVEL_SICKNESS": "Enfermedad de viaje",
       "COUGH": "Tos",
@@ -160,17 +181,17 @@
       "EYES_IMPAIRED": "Deterioro de la visión",
       "EYES_CHANGES": "Cambios en los ojos",
       "SWELLING_VULVA": "Hinchazón de la vulva",
-      "TESTICLES_CHANGES": "Alteración de los testículos",
-      "UNWANTED_PREGNANCY": "Cobertura no deseada",
+      "TESTICLES_CHANGES": "Testículos cambiados",
+      "UNWANTED_PREGNANCY": "Cópula no deseada",
       "VAGINAL_DISCHARGE": "Flujo vaginal",
       "PENIS_DISCHARGE": "Secreción del pene",
       "PENIS_ISSUE": "Prolapso del pene",
       "URINATION_PAIN": "Dolor al orinar",
-      "URINATION_CHANGE": "Orina alterada",
+      "URINATION_CHANGE": "Cambio de orina",
       "URINATION_LOW": "Baja producción de orina",
       "URINATION_HIGH_DRINKING": "Aumento de la micción y de la bebida",
       "URINATION_HIGH": "Orinar con frecuencia",
-      "HEAT": "Calor",
+      "HEAT": "Con el calor",
       "EAT_FECES": "Comer heces",
       "EAT_GRASS": "Come hierba",
       "EAT_NONE": "No come",
@@ -296,26 +317,29 @@
     "HEADER": "¿Dónde aparecen los síntomas?",
     "POISON_HEADER": "¿Qué se ha comido?",
     "DESCRIPTION": "En el ámbito",
+    "SCROLL": "Desplácese para ver más síntomas",
     "ACTION": "Toca en la zona afectada.",
     "PROGRESS_BUTTON": "Siguiente",
-    "ZOOM_BUTTON": "Espalda",
+    "ZOOM_BUTTON": "De vuelta al cuerpo",
     "TITLE": "Veterinario"
   },
   "PRESCRIPTION_UPLOAD_PAGE": {
     "TITLE": "Carga de la factura",
-    "TEXT": "Sube todas las páginas de tu factura.",
+    "TEXT": "Sube todas las páginas de tu factura. Asegúrese de que los papeles no estén doblados y que la foto esté enfocada.",
     "LABEL": "Visita del veterinario"
   },
   "PRESCRIPTION_RESULT_PAGE": {
     "TITLE": "Datos de la factura",
     "ADD": "Añade",
-    "ADD_MED": "Añadir preparación",
+    "PRICE": "por ejemplo, 37,99",
+    "ADD_MED": "Añadir receta",
     "DATE_TIME_BTNS_CANCEL": "Cancelar",
     "DATE_TIME_BTNS_DONE": "Aplicar",
     "ADD_THERAPY": "Introducir terapia",
     "ADD_FINDING": "Introducir hallazgo",
     "ADD_DIAGNOSIS": "Introducir diagnóstico",
     "VET_VISIT": "Visita del veterinario",
+    "OBLIGATORY": "Se requieren campos marcados con un asterisco.",
     "PROGRESS": "Proceder",
     "REPEAT": "Repetir"
   },
@@ -333,7 +357,7 @@
       "Diagnóstico",
       "Nombre del medicamento"
     ],
-    "CHOOSE": "Por favor, selecciona la enfermedad y el medicamento que quieres pedir para tu mascota:",
+    "CHOOSE": "Elija entre la profilaxis de enfermedades y parásitos y agregue la preparación deseada.",
     "MANUAL_CHOICE": "Por favor, selecciona el medicamento que quieres solicitar. Intentaremos conseguirlo y te avisaremos.",
     "ALERT": {
       "TITLE": "Gracias por tu solicitud.",
@@ -356,7 +380,7 @@
     "ADD_IMAGE": "Imagen de portada para esta tarea (opcional)",
     "ACTIONS": {
       "CLOSE": {
-        "MSG": "Por favor, confirma tu entrada y la tarea se cerrará.",
+        "MSG": "Por favor, confirme sus datos y la tarea se cerrará.",
         "BTN": "Aplicar"
       },
       "DELETE": {
@@ -385,10 +409,12 @@
     "DATE": "Fecha",
     "TIME": "Hora",
     "MAX_CHARS": "160 caracteres",
-    "WHOLEDAY": "Durante el día"
+    "WHOLEDAY": "Durante el día",
+    "START_CALL": "Iniciar consulta"
 
   },
   "TICKET_QUESTION_PAGE": {
+    "GUIDE": "Guía",
     "QUESTION": "Pregunta",
     "BEATS": "Latidos",
     "PULSE": "Pulso",
@@ -413,8 +439,9 @@
       "HOME": "Administrado para el tratamiento en casa",
       "VET": "Administrado una vez en la consulta del médico"
     },
+    "PREG_DATE": "Fecha de vencimiento",
     "MED": {
-      "NAME": "Ingrediente activo o preparado nam",
+      "NAME": "Nombre del ingrediente activo o de la prescripción",
       "DAILY": "Diariamente",
       "DAYS": "Día(s)",
       "PIECE": "Pieza",
@@ -479,7 +506,7 @@
   "TICKET_RESULT_PAGE": {
     "TITLE": "Evaluación",
     "DIAG_HEADER": "Diagnóstico",
-    "NO_RESULT": "No hay resultados disponibles todavía.",
+    "NO_RESULT": "Su resultado no está disponible.",
     "URGENCY": "Urgencia",
     "THERAPY": "Terapia",
     "DIAGNOSIS": "Hallazgos",
@@ -543,6 +570,7 @@
   },
   "CARE_CARD_LIST_PAGE": {
     "HISTORY": "Historial",
+    "PROGRESS": "Progreso",
     "ADD_DOC": "Agregar archivo adjunto",
     "FINDING_PDF": "Archivo adjunto",
     "UPLOAD": "Carga de la factura",
@@ -554,7 +582,7 @@
     "PHARMACY": "Farmacia requerida",
     "SAVED_CART": "Producto guardado en la cesta",
     "CHOICE_QUESTION": "¿Has hecho tu selección?",
-    "CHOICE_TEXT": "Si tu selección está completa, pasa a la cesta",
+    "CHOICE_TEXT": "Si su selección está completa, pase a la cesta.",
     "CART_BUTTON": "A la cesta",
     "MED": {
       "NAME": "Ingrediente activo o preparado name",
@@ -616,7 +644,7 @@
     },
     "DOC": {
       "ADD": "Añadir hallazgo",
-      "DOC_TEXT": "Si tienes hallazgos relacionados con la enfermedad, puedes adjuntarlos. (por ejemplo, análisis de sangre, radiografías, tomografía computarizada u otros))"
+      "DOC_TEXT": "Si tiene resultados relacionados con la enfermedad, puede adjuntarlos. (por ejemplo, análisis de sangre, radiografías, tomografía computarizada u otros"
     }
   },
   "CONSULTATION_PAGE": {
@@ -633,6 +661,7 @@
     "NEXT_AV_APP": "Próxima cita disponible:",
     "AT": "en",
     "MIN": "min",
+    "WAIT": "Espere por favor",
     "BOOK_IMMEDIATELY": "Reservar inmediatamente",
     "BOOK_APPOINTMENT": "Reservar cita",
     "TEXT": {
@@ -669,6 +698,11 @@
       }
     }
   },
+  "ZOOM_MODAL_PAGE": {
+    "DELETE_MSG": "¿Borrar el documento de forma permanente?",
+    "DELETE": "Borrar",
+    "CANCEL": "Cancelar"
+  },
   "DASHBOARD_PAGE": {
     "TITLE": "Resumen",
     "HEADER": "Tu visión general",
@@ -678,7 +712,7 @@
     "CANCEL": "Cancelar",
     "CONFIRM":  "Aplicar",
     "MED": {
-      "NAME": "Ingrediente activo o preparado name",
+      "NAME": "Nombre del ingrediente activo o de la prescripción",
       "DAILY": "Diariamente",
       "DAYS": "Día(s)",
       "PIECE": "Pieza",
@@ -744,13 +778,13 @@
   },
   "LAB_PAGE": {
     "TITLE": "Pruebas de laboratorio",
-    "PARASITES": "Prueba de parásitos",
-    "URINE": "Prueba de la varilla de orina",
-    "DIARRHEA": "Análisis de diarrea",
-    "DIARRHEA_PLUS": "Análisis de diarrea más",
-    "GIARDIA": "Control de giardia",
+    "PARASITES": "Parásitos",
+    "URINE": "Kit de prueba de orina",
+    "DIARRHEA": "Diarrea",
+    "DIARRHEA_PLUS": "Diarrea plus",
+    "GIARDIA": "Giardia",
     "FLORA": "Flora intestinal",
-    "PREVENTION": "Combinación de cuidados preventivos",
+    "PREVENTION": "Orina laboratorio",
     "OK_BUTTON": "Aplicar",
     "CANCEL_BUTTON": "Cancelar",
     "SWITCH_PET": "Cambiar de animal",
@@ -807,7 +841,11 @@
     "AMOUNT": "Cantidad",
     "REMOVE": "Eliminar artículo",
     "TOTAL": "Precio total",
-    "TAX": "Precio con impuestos incluidos"
+    "TAX": "(impuestos incluidos)",
+    "SHIPMENT": "Costos de envío",
+    "CHECKOUT": "Verificar",
+    "OK_BUTTON": "Confirmar",
+    "CANCEL_BUTTON": "Cancelar"
   },
   "ORDER_PAGE": {
     "ORDER": "Pedido",
@@ -853,7 +891,7 @@
     "PRICE": "Precio por unidad",
     "STOCK": "En stock",
     "USAGE": "área de aplicación",
-    "INSTRUCTIONS": "Para conocer los riesgos y efectos secundarios, lee el prospecto y pregunta a tu médico o farmacéutico",
+    "INSTRUCTIONS": "Para conocer los riesgos y efectos secundarios, lea el prospecto y pregunte a su veterinario o farmacéutico",
     "INST_LINK": "Descargar el prospecto",
     "DOSAGE": "Dosificación"
 
@@ -894,6 +932,11 @@
       "BREATHE": "Frecuencia respiratoria",
       "PULSE": "Latidos del corazón"
     },
+    "START": "Iniciar temporizador",
+    "CONTINUE": "Continuare",
+    "EVAL": "Evaluar",
+    "WEIGHT_QUESTION": "¿Cuál es el peso de FOO? Introduce el peso con la mayor precisión posible.",
+    "WEIGHT_LABEL": "0 KG",
     "INTRO": {
       "HEADER": "Prepárate",
       "TEXT": {
@@ -915,6 +958,8 @@
   },
   "TELEVET_EMERGENCY_PAGE": {
     "TITLE": "Emergencia",
+    "HEADER": "¿Es necesaria una consulta de emergencia?",
+    "TEXT": "No todo lo que a primera vista parece una emergencia lo es también. Te ayudaremos a evaluar la situación correctamente. Aquí encontrará las emergencias médicas más comunes con descripciones y más información sobre cómo ayudar a su mascota.",
     "BUTTONS": {
       "CANCEL": "Cancelar",
       "CONFIRM": "Continuar"
@@ -977,7 +1022,8 @@
     "DATE": "Fecha",
     "TIME": "Hora",
     "MAX_CHARS": "160 personaje",
-    "WHOLEDAY": "Durante el día"
+    "WHOLEDAY": "Durante el día",
+    "START_CALL": "Iniciar consulta"
   },
   "TICKET_GUIDE_PAGE": {
     "TITLE": "Instrucción"
@@ -987,6 +1033,10 @@
   },
   "TICKET_ORDER_PAGE": {
     "TITLE": "Shop"
+  },
+  "ORDER_SUMMARY_PAGE": {
+    "ORDER_STATE": "El estado de su pedido",
+    "ZOOM": "Puede descargar la aplicación de zoom de forma gratuita aquí."
   },
   "PW_RECOVERY_PAGE": {
     "RECOVER": "Restablecimiento de la contraseña",
@@ -1060,50 +1110,46 @@
     }
   },
   "WALKTHROUGH_PAGE": {
-    "TITLE": "Paseo por",
+    "TITLE": "Recorrido por",
     "CANCEL": "Salta a",
     "START": "Vamos",
     "SLIDES": [
       {
         "TITLE": "CareCard",
-        "TEXT": "Lleva siempre contigo el historial de tu mascota: todos los datos sanitarios agrupados en una sola aplicación.",
-        "IMG": "care card"
+        "TEXT": "Gracias por registrarte. Lleva siempre contigo el historial médico de tu mascota: todos los datos sanitarios agrupados en una sola aplicación.",
+        "IMG": "carecard"
       },
       {
         "TITLE": "Prueba de la varilla de orina",
         "TEXT": "Detecta y controla posibles enfermedades desde la comodidad de tu casa.",
-        "IMG": "urine test stick"
+        "IMG": "harnsticktest"
       },
       {
         "TITLE": "Pruebas médicas",
         "TEXT": "A partir de muestras de heces u orina, comprueba la salud de tu mascota.",
-        "IMG": "medicine tests"
+        "IMG": "medizintest"
       },
       {
         "TITLE": "Mi cuenco",
         "TEXT": "Crea planes de alimentación según las necesidades individuales de nutrientes y energía de tu mascota como un profesional.",
-        "IMG": "My Bowl"
+        "IMG": "mein_napf"
       },
       {
         "TITLE": "Planificador",
-        "TEXT": "Lleva la cuenta de todas las tareas importantes de tu mascota con nuestro planificador, desde la administración de medicamentos hasta el cuidado de los oídos y tus propias citas.",
-        "IMG": "planner"
+        "TEXT": "Lleve la cuenta de todas las tareas importantes de su mascota con nuestro planificador, desde la administración de medicamentos hasta el cuidado de los oídos y sus propias citas.",
+        "IMG": "planer"
       },
       {
-        "TITLE": "TeleVet",
+        "TITLE": "Veterinario en línea",
         "TEXT": "Responde a las preguntas sobre los síntomas e inicia el tratamiento: nuestro veterinario online te ayudará de inmediato.",
-        "IMG": "televet_guide"
+        "IMG": "televet_anleitung"
       },
       {
         "TITLE": "Seguro",
         "TEXT": "Gestiona cómodamente los registros del seguro y las prestaciones de tus mascotas.",
-        "IMG": "insurance"
+        "IMG": "versicherung"
       }
     ]
-  },
-  "NOTIFICATIONS_LIST_PAGE": {
-    "TITLE": "Notificaciones",
-    "HEADER": "Tus notificaciones"
   },
   "USER_MODAL_PAGE": {
     "LANGUAGES": {
@@ -1130,7 +1176,7 @@
       "TITLE": "Teléfono",
       "PHONE": "Teléfono",
       "BUTTON": "Guardar",
-      "EXPLANATION": "Lorem Ipsum"
+      "EXPLANATION": "Su número de teléfono se utiliza para proteger su cuenta. Bla bla bla"
     },
     "PW": {
       "TITLE": "Contraseña",
@@ -1138,7 +1184,7 @@
       "CURRENT_PW": "Contraseña actual",
       "CONFIRM_PW": "Repite la nueva contraseña",
       "NEW_PW": "Nueva contraseña",
-      "BUTTON": "Cambiar la contraseña"
+      "BUTTON": "Cambiar contraseña"
     },
     "EMAIL": {
       "TITLE": "Correo electrónico",
@@ -1154,20 +1200,24 @@
     "HEADER": "Por favor, elige el tipo de consulta:",
     "QUESTIONNAIRE": "Buscador de diagnósticos (gratuito)",
     "CALL": "Reservar videollamada (14,99 €)",
-    "CALL_DESCRIPTION": "Tras la compra, la videollamada se almacena en el planificador. Elige la fecha correspondiente para acceder a tu enlace de videollamada y hablar con nuestros veterinarios sobre tu problema.",
+    "CALL_DESCRIPTION": "Puede discutir los problemas sin prisas con nuestro veterinario y mostrarnos su mascota directamente. Para poder contestar todas las videollamadas a tiempo, limitamos el tiempo de conversación a un máximo de 15 minutos.",
+    "DIAG_DESCRIPTION": "¡Sin esperas y siempre disponible! Exprese el síntoma que afecta a su amigo de cuatro patas y responda preguntas específicas. Recibirá una evaluación con un diagnóstico, una valoración de la urgencia y recomendaciones de actuación. Puede solicitar los preparativos que necesite directamente.",
     "CANCEL": "Cancelar",
-    "PROGRESS": "Proceder"
+    "PROGRESS": "Proceder",
+    "ZOOM": "Puede descargar la aplicación de zoom de forma gratuita aquí."
   },
   "REGISTER_CODE": {
+    "ACTIVATION": "Activar la caja del explorador",
+    "TITLE": "Activación del producto",
     "REG_TEXT": "Introduce aquí el código de registro que acompaña a tu material de muestra.",
     "EG": "Por ejemplo, 0123456789",
     "WRONG_PET": "¿Te has registrado con el animal equivocado?",
-    "INVALID_CODE": "Código no válido",
-    "USED_CODE": "Código ya utilizado",
+    "INVALID_CODE": "No se pudo asignar su código. Es posible que haya cometido un error tipográfico. Intentar otra vez.",
+    "USED_CODE": "Tu código ya se usó.",
     "CHANGE_PET": "Cambia de mascota",
     "REG_SUCCESS": "Registro realizado con éxito",
     "ASSIGNMENT": [
-      "El producto", "ha sido", "asignado con éxito."
+      "Su prueba de laboratorio", "ha sido", "asignado con éxito."
     ]
   },
   "BENEFITS_PAGE": {
@@ -1229,15 +1279,27 @@
     "CONFIRM": "Confirmar",
     "ABORT": "Cancelar"
   },
+  "BREED_PROPOSALS_MODAL": {
+    "BREED_RECOGNIZED": "Hemos reconocido las siguientes razas basándonos en su foto. Por favor, elija.",
+    "NO_BREED": "¿No es tu raza?",
+    "BREED_MANUAL": "También puede introducir manualmente la raza correcta de su animal.",
+    "ENTER_BREED": "Introduzca la raza",
+    "CHECK_BREED": "¡Precaución! Por favor, compruebe su entrada cuidadosamente antes de guardarla. La raza no se puede cambiar después.",
+    "BUTTON": {
+      "CANCEL": "Cancelar",
+      "CONFIRM": "Confirmar"
+    }
+  },
   "HELP_PAGE": {
     "TITLE": "Ayuda",
     "HEADER": "Mesa de ayuda",
     "SUPPORT": "Apoyo técnico",
-    "SUBHEADER": "Lorem Ipsum Bla bla bla",
+    "SUBHEADER": "¿La aplicación no funciona como debería? Envíanos un correo electrónico a",
     "SOLUTION_FORM": "Solución de problemas mediante formulario de contacto",
     "YOUR_MESSAGE": "Tu mensaje",
     "CHARS": "1500 caracteres",
     "BUTTON": "Enviar",
-    "FAQ": "Preguntas frecuentes "
+    "FAQ": "Preguntas frecuentes"
   }
 }
+

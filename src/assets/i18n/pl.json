@@ -20,6 +20,7 @@
     "TODAY_TASKS": "Dzisiejsze zadania",
     "TODAY": "Dzisiaj",
     "TASK": "Zadanie",
+    "TIME": "o godzinie",
     "RECIPE_HEADER": "Zamówienie lekarstw",
     "RECIPE_TEXT": "Lorem ipsum dolor sit amet",
     "PATCH_BUTTON": "Leczenie",
@@ -30,7 +31,7 @@
       "EXCELLENT": "Dobrze",
       "GOOD": "Źle",
       "BAD": "Sick",
-      "WORSE": "Pogotowie"
+      "WORSE": "Bardzo chory"
     },
     "NO_TASKS_TEXT": {
       "PART_1": "Dzisiaj są",
@@ -39,10 +40,14 @@
     "NEW_ARTICLES": "Magazyn",
     "WEEKLY_RECIPE": "Świeże do miski"
   },
+  "ARTICLE_DETAIL_PAGE": {
+    "REFERENCES": "Również interesujące ",
+    "FROM": "z"
+  },
   "NAVIGATION": {
     "RATION": "Racje żywnościowe - sprawdź",
     "BOWL": "Moja miska",
-    "HARNSTICK": "Test z pałeczkami moczu",
+    "HARNSTICK": "Zestaw do badania moczu",
     "LAB": "Laboratorium",
     "CONTRACT": "Umowa",
     "DAMAGE": "Roszczenie",
@@ -55,6 +60,7 @@
       "PRODUCTS": {
         "400": "Nie znaleziono produktu",
         "451": "Nie znaleziono produktu",
+        "406": "",
         "403": "Użytkownik nie jest zalogowany"
       },
       "LOGIN": {
@@ -70,19 +76,31 @@
     "BOWL": "Moja miska",
     "RESEARCH": "Badania",
     "LAB": "Laboratorium",
-    "URINE_TEST": "Test z pałeczkami moczu",
+    "ACTIVATION": "Aktywuj okno eksploratora",
+    "URINE_TEST": "Zestaw do badania moczu",
     "PROTECT": "Chroń",
     "CONTRACT": "Umowa",
     "DAMAGE": "Roszczenies",
-    "SHOP": "Sklep"
+    "SHOP": "Wózek sklepowy",
+    "SOON": "Wkrótce"
   },
   "SIDE_NAV": {
-    "SETTINGS": "Ustawienia",
-    "ACCOUNT": "Konto",
-    "ORDER": "Zamówienie",
+    "SETTINGS": "Moje konto",
+    "ACCOUNT": "Moje dane",
+    "ORDER": "Moje zamówienia",
+    "CART": "Mój koszyk wysyłkowy",
     "NOTIFICATIONS": "Powiadomienia",
     "HELP": "Pomoc",
     "LOGOUT": "Wyloguj się"
+  },
+  "PRODUCT_DETAIL_PAGE": {
+    "TO_CART": "Do koszyka wysyłkowego",
+    "TAX": "Wszystkie ceny zawierają podatki, plus koszty wysyłki",
+    "DESCRIPTION": "Opis przedmiotu"
+  },
+  "NOTIFICATIONS_LIST_PAGE": {
+    "TITLE": "Powiadomienia",
+    "HEADER": "Twoje powiadomienia"
   },
   "CREATE_PET_PAGE": {
     "CASTRATION_VALUES": {
@@ -105,8 +123,9 @@
     "GENDER_LABEL": "Płeć",
     "CASTRATION_LABEL": "Status kastracji",
     "BIRTHDAY_LABEL": "Urodziny",
-    "FORM_BUTTON": "Stwórz zwierzaka",
-    "WAITING": "Proszę czekać ..."
+    "FORM_BUTTON": "Zapisać",
+    "WAITING": "Proszę czekać ...",
+    "TITLE": "Stwórz zwierzaka"
   },
   "ACCOUNT_PAGE": {
     "NAME": "Imię",
@@ -118,6 +137,7 @@
     "CHANGE_PW": "Zmiana hasła",
     "DEL_ACC": "Usuń konto",
     "BEQUEST": "Foobar",
+    "ORDERS": "Zamówienia",
     "CHOOSE_LANGUAGE": "Wybierz język",
     "LANGUAGES": {
       "GERMAN": "Niemiecki",
@@ -130,7 +150,9 @@
     }
   },
   "PETS_LIST_PAGE": {
-    "TITLE": "Moje zwierzaki"
+    "TITLE": "Moje zwierzaki",
+    "ACTIVE": "obecnie aktywny",
+    "EXPLANATION": "Wybierz zwierzaka, przesuwając palcem w prawo i naciskając przycisk z niebieską gwiazdką. Przesuń w lewo, aby usunąć swojego zwierzaka."
   },
   "TELEVET_PET_PAGE": {
     "PET_SPOT_TEXT": {
@@ -145,7 +167,7 @@
       "ITCHING": "Swędzenie",
       "CONSTIPATION": "Zaparcie",
       "BITE": "Uraz po ugryzieniu",
-      "SUCKLES": "Opuchlizna strzyków",
+      "SUCKLES": "Obrzęk gruczołu sutkowego",
       "STOMACH_PAIN": "Ból brzucha",
       "TRAVEL_SICKNESS": "Choroba lokomocyjna",
       "COUGH": "Kaszel",
@@ -161,7 +183,7 @@
       "EYES_CHANGES": "Zmiany w oczach",
       "SWELLING_VULVA": "Opuchlizna sromu",
       "TESTICLES_CHANGES": "Zmienione jądro",
-      "UNWANTED_PREGNANCY": "Niechciane pokrycie",
+      "UNWANTED_PREGNANCY": "Niechciana kopulacja",
       "VAGINAL_DISCHARGE": "Wydzielina z pochwy",
       "PENIS_DISCHARGE": "Wydzielina z prącia",
       "PENIS_ISSUE": "Wypadnięcie prącia",
@@ -170,7 +192,7 @@
       "URINATION_LOW": "Mała ilość oddawanego moczu",
       "URINATION_HIGH_DRINKING": "Zwiększone oddawanie moczu i picie",
       "URINATION_HIGH": "Częste oddawanie moczu",
-      "HEAT": "Ciepło",
+      "HEAT": "W upale",
       "EAT_FECES": "Zjadanie kału",
       "EAT_GRASS": "Jedzenie trawy",
       "EAT_NONE": "Nie je",
@@ -296,26 +318,29 @@
     "HEADER": "Gdzie pojawiają się objawy?",
     "POISON_HEADER": "Co zostało zjedzone?",
     "DESCRIPTION": "W zakresie",
+    "SCROLL": "Przewiń, aby zobaczyć więcej objawów",
     "ACTION": "Stuknij w dotknięty chorobą obszar.",
     "PROGRESS_BUTTON": "Dalej",
-    "ZOOM_BUTTON": "Powrót",
+    "ZOOM_BUTTON": "Powrót do ciałat",
     "TITLE": "Weterynarz"
   },
   "PRESCRIPTION_UPLOAD_PAGE": {
     "TITLE": "Wysyłanie faktur",
-    "TEXT": "Proszę załadować wszystkie strony faktury.",
+    "TEXT": "Prześlij wszystkie strony swojej faktury. Upewnij się, że papiery nie są pogięte, a zdjęcie jest ostre.",
     "LABEL": "Wizyta weterynarza"
   },
   "PRESCRIPTION_RESULT_PAGE": {
     "TITLE": "Dane na fakturze",
     "ADD": "Dodaj",
-    "ADD_MED": "Add preparation",
+    "PRICE": "np. 37,99",
+    "ADD_MED": "Dodaj receptę",
     "DATE_TIME_BTNS_CANCEL": "Anuluj",
     "DATE_TIME_BTNS_DONE": "Zastosuj",
     "ADD_THERAPY": "Wprowadź terapię",
     "ADD_FINDING": "Wprowadź wyniki badań",
     "ADD_DIAGNOSIS": "Wprowadź diagnozę",
     "VET_VISIT": "Wizyta weterynarza",
+    "OBLIGATORY": "Pola oznaczone gwiazdką są wymagane.",
     "PROGRESS": "Kontynuuj",
     "REPEAT": "Powtórz"
   },
@@ -333,7 +358,7 @@
       "Diagnoza",
       "Nazwa leku"
     ],
-    "CHOOSE": "Proszę wybierz chorobę i lek, który chcesz zamówić dla swojego zwierzaka:",
+    "CHOOSE": "Wybierz między profilaktyką chorób a profilaktyką pasożytniczą i dodaj żądany preparat.",
     "MANUAL_CHOICE": "Proszę wybierz lek, o który chcesz poprosić. Postaramy się go zdobyć i powiadomić Cię o tym.",
     "ALERT": {
       "TITLE": "Dziękujemy za Twoją prośbę!",
@@ -356,7 +381,7 @@
     "ADD_IMAGE": "Obrazek pokrywający to zadanie (opcjonalny)",
     "ACTIONS": {
       "CLOSE": {
-        "MSG": "Proszę potwierdź swoje dane, a zadanie zostanie zamknięte.",
+        "MSG": "Proszę potwierdzić swoje dane, a zadanie zostanie zamknięte.",
         "BTN": "Zastosuj"
       },
       "DELETE": {
@@ -385,10 +410,12 @@
     "DATE": "Data",
     "TIME": "Godzina",
     "MAX_CHARS": "160 znaków",
-    "WHOLEDAY": "W ciągu dnia"
+    "WHOLEDAY": "W ciągu dnia",
+    "START_CALL": "Rozpocznij konsultację"
 
   },
   "TICKET_QUESTION_PAGE": {
+    "GUIDE": "Przewodnik",
     "QUESTION": "Pytanie",
     "BEATS": "Bicie serca",
     "PULSE": "Puls",
@@ -411,10 +438,11 @@
     "NO_IDEA": "Nie wiem",
     "TREATMENT": {
       "HOME": "Podany do leczenia w domu",
-      "VET": "Podawany jednorazowo w gabinecie lekarskim"
+      "VET": "Podaje się jednorazowo w gabinecie weterynaryjnym"
     },
+    "PREG_DATE": "Termin płatności",
     "MED": {
-      "NAME": "Aktywny składnik lub preparat nam",
+      "NAME": "Składnik aktywny lub nazwa na receptę",
       "DAILY": "Codziennie",
       "DAYS": "Dzień(y)",
       "PIECE": "Kawałek",
@@ -479,7 +507,7 @@
   "TICKET_RESULT_PAGE": {
     "TITLE": "Ocena",
     "DIAG_HEADER": "Diagnoza",
-    "NO_RESULT": "Nie ma jeszcze dostępnych wyników.",
+    "NO_RESULT": "Twój wynik nie jest dostępny.",
     "URGENCY": "Pilna potrzeba",
     "THERAPY": "Terapia",
     "DIAGNOSIS": "Wyniki badań",
@@ -543,6 +571,7 @@
   },
   "CARE_CARD_LIST_PAGE": {
     "HISTORY": "Historia",
+    "PROGRESS": "Postęp",
     "ADD_DOC": "Dodaj załącznik",
     "FINDING_PDF": "Załącznik",
     "UPLOAD": "Wysyłanie faktur",
@@ -554,7 +583,7 @@
     "PHARMACY": "Wymagana apteka",
     "SAVED_CART": "Produkt zapisany w koszyku",
     "CHOICE_QUESTION": "Czy dokonałeś wyboru?",
-    "CHOICE_TEXT": "Jeśli Twój wybór jest kompletny przejdź do koszyka",
+    "CHOICE_TEXT": "Jeśli Twój wybór jest kompletny, przejdź do koszyka.",
     "CART_BUTTON": "Do koszyka",
     "MED": {
       "NAME": "Nazwa składnika aktywnego lub preparatu",
@@ -616,7 +645,7 @@
     },
     "DOC": {
       "ADD": "Dodaj znalezisko",
-      "DOC_TEXT": "Jeśli masz wyniki badań związanych z chorobą, możesz je dołączyć. (np. badania krwi, rentgen, tomografia komputerowa lub inne))"
+      "DOC_TEXT": "Jeśli masz wyniki związane z chorobą, możesz je dołączyć. (np. badania krwi, rentgenowskie, tomograficzne lub inne)."
     }
   },
   "CONSULTATION_PAGE": {
@@ -633,6 +662,7 @@
     "NEXT_AV_APP": "Następne dostępne spotkanie:",
     "AT": "na",
     "MIN": "min",
+    "WAIT": "Proszę czekać",
     "BOOK_IMMEDIATELY": "Zarezerwuj natychmiast",
     "BOOK_APPOINTMENT": "Zarezerwuj wizytę",
     "TEXT": {
@@ -669,6 +699,11 @@
       }
     }
   },
+  "ZOOM_MODAL_PAGE": {
+    "DELETE_MSG": "Usunąć dokument na stałe?",
+    "DELETE": "Usuń",
+    "CANCEL": "Anuluj"
+  },
   "DASHBOARD_PAGE": {
     "TITLE": "Przegląd",
     "HEADER": "Twój przegląd",
@@ -678,7 +713,7 @@
     "CANCEL": "Anuluj",
     "CONFIRM":  "Zastosuj",
     "MED": {
-      "NAME": "Nazwa składnika aktywnego lub preparatu",
+      "NAME": "Składnik aktywny lub nazwa na receptę",
       "DAILY": "Codziennie",
       "DAYS": "Dzień(y)",
       "PIECE": "Kawałek",
@@ -744,13 +779,13 @@
   },
   "LAB_PAGE": {
     "TITLE": "Testy laboratoryjne",
-    "PARASITES": "Test na pasożyty",
-    "URINE": "Test z pałeczkami moczu",
-    "DIARRHEA": "Analiza biegunki",
-    "DIARRHEA_PLUS": "Analiza biegunki plus",
-    "GIARDIA": "Kontrola Giardia",
+    "PARASITES": "Pasożyty",
+    "URINE": "Zestaw do badania moczu",
+    "DIARRHEA": "Biegunka",
+    "DIARRHEA_PLUS": "Biegunka plus",
+    "GIARDIA": "Giardia",
     "FLORA": "Flora jelitowa",
-    "PREVENTION": "Profilaktyka combo",
+    "PREVENTION": "Moczu laboratorium",
     "OK_BUTTON": "Zastosuj",
     "CANCEL_BUTTON": "Anuluj",
     "SWITCH_PET": "Zmień zwierzę",
@@ -807,7 +842,11 @@
     "AMOUNT": "Ilość",
     "REMOVE": "Usuń artykuł",
     "TOTAL": "Cena całkowita",
-    "TAX": "Cena z podatkiem"
+    "TAX": "(z podatkiem)",
+    "SHIPMENT": "Koszty wysyłki",
+    "CHECKOUT": "Wymeldować się",
+    "OK_BUTTON": "Potwierdzać",
+    "CANCEL_BUTTON": "Anulować"
   },
   "ORDER_PAGE": {
     "ORDER": "Zamówienie",
@@ -853,7 +892,7 @@
     "PRICE": "Cena jednostkowa",
     "STOCK": "W magazynie",
     "USAGE": "obszar stosowania",
-    "INSTRUCTIONS": "W celu zapoznania się z ryzykiem i skutkami ubocznymi przeczytaj ulotkę dołączoną do opakowania i zapytaj swojego lekarza lub farmaceutę",
+    "INSTRUCTIONS": "W celu uzyskania informacji na temat ryzyka i skutków ubocznych należy zapoznać się z ulotką dołączoną do opakowania oraz zwrócić się do lekarza weterynarii lub farmaceuty.",
     "INST_LINK": "Pobierz ulotkę dołączoną do opakowania",
     "DOSAGE": "Dawkowanie"
 
@@ -894,6 +933,11 @@
       "BREATHE": "Częstość oddechów",
       "PULSE": "Bicie serca"
     },
+    "START": "Start timera",
+    "CONTINUE": "Kontynuuj",
+    "EVAL": "Oceń",
+    "WEIGHT_QUESTION": "Jaka jest waga FOO? Proszę podać wagę tak dokładnie, jak to możliwe.",
+    "WEIGHT_LABEL": "0 KG",
     "INTRO": {
       "HEADER": "Przygotuj się",
       "TEXT": {
@@ -915,6 +959,8 @@
   },
   "TELEVET_EMERGENCY_PAGE": {
     "TITLE": "Pogotowie",
+    "HEADER": "Konieczna jest konsultacja w nagłych wypadkach?",
+    "TEXT": "Nie wszystko, co na pierwszy rzut oka wydaje się być nagłym wypadkiem, jest również jednym. Pomożemy Ci prawidłowo ocenić sytuację. Tutaj znajdziesz najczęstsze medyczne sytuacje awaryjne wraz z opisami i dodatkowymi informacjami o tym, jak pomóc Twojemu zwierzakowi.",
     "BUTTONS": {
       "CANCEL": "Anuluj",
       "CONFIRM": "Kontynuuj"
@@ -977,7 +1023,8 @@
     "DATE": "Data",
     "TIME": "Godzina",
     "MAX_CHARS": "160 postac",
-    "WHOLEDAY": "W ciągu dnia"
+    "WHOLEDAY": "W ciągu dnia",
+    "START_CALL": "Rozpocznij konsultację"
   },
   "TICKET_GUIDE_PAGE": {
     "TITLE": "Instrukcja"
@@ -988,9 +1035,13 @@
   "TICKET_ORDER_PAGE": {
     "TITLE": "Sklep"
   },
+  "ORDER_SUMMARY_PAGE": {
+    "ORDER_STATE": "Status twojego zamówienia",
+    "ZOOM": "Możesz pobrać aplikację zoom za darmo tutaj."
+  },
   "PW_RECOVERY_PAGE": {
     "RECOVER": "Reset hasła",
-    "RECOVERED": "Hasło zresetowane",
+    "RECOVERED": "Resetowanie hasła",
     "ENTER_MAIL": "Podaj adres e-mail, którego użyłeś do zalogowania się w aplikacji confidu. Wyślemy Ci później link do zresetowania Twojego hasła.",
     "ENTER_PW": "Teraz wpisz swoje nowe hasło.",
     "EMAIL": "Adres e-mail",
@@ -1060,50 +1111,46 @@
     }
   },
   "WALKTHROUGH_PAGE": {
-    "TITLE": "Walkthrough",
+    "TITLE": "Przejdź przez",
     "CANCEL": "Pomiń",
     "START": "Chodźmy",
     "SLIDES": [
       {
         "TITLE": "CareCard",
-        "TEXT": "Miej zawsze przy sobie kartę pacjenta swojego zwierzaka - wszystkie dane zdrowotne zebrane w jednej aplikacji.",
-        "IMG": "care card"
+        "TEXT": "Dziękujemy za zarejestrowanie się. Miej zawsze przy sobie dokumentację medyczną swojego zwierzęcia - wszystkie dane zdrowotne w jednej aplikacji.",
+        "IMG": "carecard"
       },
       {
         "TITLE": "Test z pałeczkami moczu",
         "TEXT": "Wykrywaj i monitoruj potencjalne choroby w zaciszu swojego domu.",
-        "IMG": "urine test stick"
+        "IMG": "harnsticktest"
       },
       {
         "TITLE": "Testy medyczne",
         "TEXT": "Na podstawie próbek kału lub moczu zbadaj stan zdrowia swojego pupila.",
-        "IMG": "medicine tests"
+        "IMG": "medizintest"
       },
       {
         "TITLE": "Moja miska",
         "TEXT": "Twórz plany żywieniowe zgodnie z indywidualnym zapotrzebowaniem Twojego zwierzęcia na składniki odżywcze i energię jak profesjonalista.",
-        "IMG": "Moja miska"
+        "IMG": "mein_napf"
       },
       {
         "TITLE": "Planer",
-        "TEXT": "Zapamiętaj wszystkie ważne zadania dla Twojego zwierzaka dzięki naszemu planerowi - od podawania leków, przez pielęgnację uszu, po Twoje własne wizyty.",
-        "IMG": "planner"
+        "TEXT": "Dzięki naszemu planerowi zapiszesz wszystkie ważne zadania dla Twojego zwierzaka - od podawania leków, przez pielęgnację uszu, po Twoje własne wizyty.",
+        "IMG": "planer"
       },
       {
-        "TITLE": "TeleWeterynarz",
+        "TITLE": "Weterynarz online",
         "TEXT": "Objawy stanu odpowiadaj na pytania rozpocznij leczenie - nasz weterynarz online pomoże Ci natychmiast.",
-        "IMG": "televet_guide"
+        "IMG": "televet_anleitung"
       },
       {
         "TITLE": "Ubezpieczenie",
         "TEXT": "Wygodnie zarządzaj dokumentacją ubezpieczeniową i świadczeniami dla swoich pupili.",
-        "IMG": "insurance"
+        "IMG": "versicherung"
       }
     ]
-  },
-  "NOTIFICATIONS_LIST_PAGE": {
-    "TITLE": "Powiadomienia",
-    "HEADER": "Twoje powiadomienia"
   },
   "USER_MODAL_PAGE": {
     "LANGUAGES": {
@@ -1130,7 +1177,7 @@
       "TITLE": "Telefon",
       "PHONE": "Telefon",
       "BUTTON": "Zapisz",
-      "EXPLANATION": "Lorem Ipsum"
+      "EXPLANATION": "Twój numer telefonu jest używany do ochrony Twojego konta. Bla bla bla"
     },
     "PW": {
       "TITLE": "Hasło",
@@ -1138,7 +1185,7 @@
       "CURRENT_PW": "Aktualne hasło",
       "CONFIRM_PW": "Powtórz nowe hasło",
       "NEW_PW": "Nowe hasło",
-      "BUTTON": "Zmiana hasła"
+      "BUTTON": "Zmień hasło"
     },
     "EMAIL": {
       "TITLE": "Email",
@@ -1154,20 +1201,24 @@
     "HEADER": "Proszę wybrać rodzaj konsultacji:",
     "QUESTIONNAIRE": "Wyszukiwarka diagnozy (wolny)",
     "CALL": "Zamów rozmowę wideo (14,99 €)",
-    "CALL_DESCRIPTION": "Po zakupie rozmowy wideo zostaną zapisane w planerze. Wybierz odpowiednią datę, aby dostać się do linku do wideorozmowy i porozmawiać z naszymi weterynarzami o swoim problemie.",
+    "CALL_DESCRIPTION": "Możesz bez pośpiechu przedyskutować problemy z naszym weterynarzem i bezpośrednio pokazać nam swojego zwierzaka. Aby móc na czas odpowiedzieć na każdą rozmowę wideo, ograniczamy czas rozmowy do maksymalnie 15 minut.",
+    "DIAG_DESCRIPTION": "Bez czekania i zawsze dostępny! Podaj objaw, który nęka twojego czworonożnego przyjaciela i odpowiedz na konkretne pytania. Otrzymasz ocenę z diagnozą, oceną pilności i zaleceniami dotyczącymi działania. Potrzebne preparaty możesz zamówić bezpośrednio.",
     "CANCEL": "Anuluj",
-    "PROGRESS": "Kontynuuj"
+    "PROGRESS": "Kontynuuj",
+    "ZOOM": "Możesz pobrać aplikację zoom za darmo tutaj."
   },
   "REGISTER_CODE": {
-    "REG_TEXT": "Wpisz tutaj kod rejestracyjny, który jest dołączony do Twojego materiału próbnego.",
+    "ACTIVATION": "Aktywuj okno eksploratora",
+    "TITLE": "Aktywacja produktu",
+    "REG_TEXT": "Wprowadź tutaj kod rejestracyjny, który jest przypisany do Twojego przykładowego materiału.",
     "EG": "np. 0123456789",
     "WRONG_PET": "Zalogowałeś się z niewłaściwym zwierzęciem?",
-    "INVALID_CODE": "Nieważny kod",
-    "USED_CODE": "Kod już użyty",
+    "INVALID_CODE": "Nie udało się przypisać Twojego kodu. Być może popełniłeś literówkę. Spróbuj ponownie.",
+    "USED_CODE": "Twój kod został już użyty.",
     "CHANGE_PET": "Zmień zwierzaka",
     "REG_SUCCESS": "Rejestracja zakończona sukcesem",
     "ASSIGNMENT": [
-      "Produkt", "został pomyślnie", "przypisany."
+      "Twoje badanie laboratoryjne", "został pomyślnie", "przypisany."
     ]
   },
   "BENEFITS_PAGE": {
@@ -1176,7 +1227,7 @@
     "BUTTONS_TEXT": "Wykupić",
     "CONFI_COINS": {
       "HEADER": "Zebrane Confi-Coins",
-      "TEXT": "Zadbaj o zdrowie swojego pupila wykonując zadania w terminarzu. Otrzymuj nagrody Confi-Coins i awansuj w rankingu. Dodatkowo czekają na Ciebie niespodzianki z naszego Sklepu."
+      "TEXT": "Zadbaj o zdrowie swojego zwierzaka, wykonując zadania w planerze. Otrzymuj nagrody w postaci Confi-Coins i podnieś swoją rangę. Dodatkowo, czekają na Ciebie niespodzianki z naszego sklepu."
     }
   },
   "CARE_CARD_INPUT_MODAL_PAGE": {
@@ -1233,7 +1284,7 @@
     "TITLE": "Pomoc",
     "HEADER": "Dział pomocy",
     "SUPPORT": "Pomoc techniczna",
-    "SUBHEADER": "Lorem Ipsum Bla bla bla",
+    "SUBHEADER": "Aplikacja nie działa tak, jak powinna? Wyślij nam e-mail na",
     "SOLUTION_FORM": "Rozwiązywanie problemów przez formularz kontaktowy",
     "YOUR_MESSAGE": "Twoja wiadomość",
     "CHARS": "1500 znaków",
@@ -1241,3 +1292,5 @@
     "FAQ": "Często Zadawane Pytania"
   }
 }
+
+
