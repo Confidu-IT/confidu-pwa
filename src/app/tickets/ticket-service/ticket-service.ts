@@ -95,7 +95,7 @@ export class TicketService {
   ) {
     const headers = {
       'Content-Type': 'application/json',
-      // 'firebase-context-token': token,
+      'firebase-context-token': token,
       'sw-context-token': localStorage.getItem('sw-token')
     };
     const url = `${this.baseUrl}/${language}/event/results/save-content`;
