@@ -6,6 +6,7 @@ import {MenuController, Platform} from '@ionic/angular';
 import {Router} from '@angular/router';
 import {TranslateService} from '@ngx-translate/core';
 import {Component} from '@angular/core';
+import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   public iconPath = '../assets/icons/navi';
+  private  existingScreenOrientation: string;
 
   constructor(
     private platform: Platform,
@@ -21,12 +23,14 @@ export class AppComponent {
     private router: Router,
     private afAuth: AngularFireAuth,
     private authService: AuthService,
+    private so: ScreenOrientation,
     public translateService: TranslateService,
     public menuCtrl: MenuController
   ) {
     this.initializeApp();
     translateService.addLangs(['en', 'de']);
-
+    this.so.lock(this.so.ORIENTATIONS.PORTRAIT);
+    this.existingScreenOrientation = this.so.type;
     this.commonService.appLanguage
       .subscribe(lang => {
         if (lang) {
