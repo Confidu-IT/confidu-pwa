@@ -38,6 +38,9 @@ export class LabPage {
     this.language = this.commonService.language;
     this.translateService.use(this.language);
 
+    // Barf Profil
+    // barfprof
+
     this.subscription = this.userAuth.user$
       .subscribe(user => {
         this.user = user;

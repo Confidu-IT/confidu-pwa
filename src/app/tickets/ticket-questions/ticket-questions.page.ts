@@ -412,6 +412,7 @@ export class TicketQuestionsPage {
   }
 
   public onPickParasite(event): void {
+    console.log(event.value);
     this.parasite.key = event.value;
     this.completeParasite();
   }
@@ -655,15 +656,17 @@ export class TicketQuestionsPage {
       val.answerLongtext.push(this.selectedAnswer);
     } else if (
       this.question.values.questionType.toLowerCase() === 'se'
-      || this.question.values.questionType.toLowerCase() === 'sei'
       || this.question.values.questionType.toLowerCase() === 'fu'
       || this.question.values.questionType.toLowerCase() === 'ful'
     ) {
       console.log('this.selectedAnswer;', this.selectedAnswer)
       val = this.question.values.answerOption;
       val = val[0];
-      console.log('val;', val)
       val.answerValue = this.selectedAnswer;
+    } else if (this.question.values.questionType.toLowerCase() === 'sei') {
+      val = this.question.values.answerOption.filter(option => option.value === this.parasite.key);
+      val = val[0];
+      val.answerValue = this.parasite;
     } else if (this.question.values.questionType.toLowerCase() === 'drs') {
       val = this.question.values.answerOption.filter(option => option.value === this.selectedAnswer);
       val = val[0];
