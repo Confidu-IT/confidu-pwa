@@ -7,6 +7,7 @@ import {Router} from '@angular/router';
 import {TranslateService} from '@ngx-translate/core';
 import {Component} from '@angular/core';
 import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
+import { SplashScreen } from '@capacitor/splash-screen';
 
 @Component({
   selector: 'app-root',
@@ -28,6 +29,7 @@ export class AppComponent {
     public menuCtrl: MenuController
   ) {
     this.initializeApp();
+    SplashScreen.hide();
     translateService.addLangs(['en', 'de']);
     this.so.lock(this.so.ORIENTATIONS.PORTRAIT);
     this.existingScreenOrientation = this.so.type;
