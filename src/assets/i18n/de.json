@@ -660,7 +660,7 @@
       "BACK": "Zurück",
       "FORWARD": "Weiter"
     },
-    "INTRO_TEXT": "Um das Rezept auszustellen und dir das Medikament zuschicken zu können, benötigen wir eine Rechnung deiner Tierarztpraxis mit den folgenden Informationen",
+    "INTRO_TEXT": "Um das Rezept auszustellen und dir das Medikament zuschicken zu können, benötigen wir für alle Präparate außer Parasitenmitteln eine Rechnung von deinem/r Tierärzt:in mit folgenden Informationen:",
     "INTRO_LIST": [
       "Name und Anschrift der Tierarztpraxis",
       "Name und Geburtsdatum des Tieres",
@@ -1313,7 +1313,7 @@
     "TOTAL_PRICE": "Gesamtsumme:",
     "CANCEL": {
       "BUTTON": "Bestellung stornieren",
-      "TEXT": "Bitte beachte, dass eine Stornierung nur bis zu X Stunden nach der Bestellung erfolgen kann. Wenn du stornierst, betrifft das alle Produkte deiner Bestellung. Bla bla…"
+      "TEXT": "Eine Stornierung ist nur innerhalb von 30 Minuten und ausschließlich für die gesamte Bestellung möglich, sofern sie sich noch nicht im Versandprozess befindet. Videoanrufe können bis zu 2 Stunden vor Terminbeginn storniert werden."
     }
   },
   "ORDER_CANCEL_PAGE": {
