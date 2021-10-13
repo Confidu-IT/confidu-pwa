@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.confidu.confidu",
+    "sha256_cert_fingerprints":
+    ["12:C1:4F:82:9A:37:88:A2:49:B3:4D:44:DD:C2:A8:3D:C7:4F:30:07:2B:0F:71:4F:92:74:BE:4C:3A:66:32:41"]
+  }
+}]
