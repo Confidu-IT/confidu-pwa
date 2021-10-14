@@ -6,34 +6,6 @@
   text-align: right;
 }
 
-.slider-content {
-  display: flex;
-  flex-direction: column;
-}
-
-figure {
-  display: flex;
-  justify-content: center;
-  margin: 0;
-}
-
-h3 {
-  color: var(--ion-color-primary);
-  font-weight: bold;
-  margin-top: 32px;
-  text-transform: capitalize;
-}
-
-p {
-  color: rgb(102,102,102);
-  font-size: 15px;
-}
-
-p {
-  height: 75px;
-  margin-top: 0;
-}
-
 .swiper-slide img {
-  max-height: 280px;
+  margin-bottom: 30px;
 }

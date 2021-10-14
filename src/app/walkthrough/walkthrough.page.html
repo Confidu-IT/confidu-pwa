@@ -11,13 +11,7 @@
         <div class="cancel" (click)="onClose()">{{ 'WALKTHROUGH_PAGE.CANCEL' | translate }}</div>
         <ion-slides #slider pager="true" (ionSlideDidChange)="onLastSlide()">
           <ion-slide *ngFor="let slide of slides">
-            <div class="slider-content">
-              <figure class="flex-item">
-                <img [src]=" imagePath + '/' + slide.IMG + '.png'" alt="" height="350">
-              </figure>
-              <h3>{{ slide.TITLE }}</h3>
-              <p>{{ slide.TEXT }}</p>
-            </div>
+            <img [src]="slide" alt="">
           </ion-slide>
         </ion-slides>
       </ion-col>

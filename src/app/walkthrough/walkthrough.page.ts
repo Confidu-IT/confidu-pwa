@@ -27,12 +27,17 @@ export class WalkthroughPage implements OnInit {
     this.isLoading = true;
     this.language = this.commonService.language;
     this.translateService.use(this.language);
-    this.translateService.get('WALKTHROUGH_PAGE')
-      .subscribe(data => {
-        this.slides = data.SLIDES;
-        this.isLoading = false;
-      });
+
+    this.slides = [
+      `${this.imagePath}/${this.language}_test.svg`,
+      `${this.imagePath}/${this.language}_planner.svg`,
+      `${this.imagePath}/${this.language}_scan.svg`,
+      `${this.imagePath}/${this.language}_carecard.svg`,
+      `${this.imagePath}/${this.language}_televet.svg`
+    ];
   }
+
+
 
   public onLastSlide() {
     this.slider.isEnd().then(resp => {
