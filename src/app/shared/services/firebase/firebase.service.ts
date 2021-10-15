@@ -50,6 +50,14 @@ export class FirebaseService {
     return this.afs.doc(`faq/${language}`).valueChanges();
   }
 
+  public checkForUpdate(): Observable<any> {
+    return this.afs.doc(`check-for-update/1337`).valueChanges();
+  }
+
+  public getCoins(userId: string): Observable<any> {
+    return this.afs.doc(`users/${userId}/data/confi-coins`).valueChanges();
+  }
+
   public markNotificationsAsRead(userId: string) {
     return this.afs.doc(`notifications/${userId}`).set({read: true});
   }

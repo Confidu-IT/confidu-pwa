@@ -322,19 +322,24 @@ export class TicketPage {
 
     if (status.includes('open')) { // open schedule in ticket
       try {
-        this.firebaseService.updateTicket(this.user.uid, this.petId, this.params.ticketId, this.ticket)
+        this.updateTicket(this.user.uid, this.petId, this.params.ticketId, this.ticket, this.user.za)
           .then(resp => {
-            this.commonService.presentToast('Aktion erfolgreich', 'primary');
-            this.router.navigateByUrl('tickets');
+            this.commonService.presentToast('confiCoins erhalten', 'primary')
+              .then(() => {
+                this.router.navigateByUrl('tickets');
+              });
           });
       } catch (e) {
         this.commonService.presentToast('Aktion fehlgeschlagen', 'danger');
       }
     } else { // no open schedule left
       try {
-        this.moveTicket(this.user.uid, this.petId, this.params.ticketId, this.ticket)
+        this.moveTicket(this.user.uid, this.petId, this.params.ticketId, this.ticket, this.user.za)
           .then(resp => {
-            this.router.navigateByUrl('tickets');
+            this.commonService.presentToast('confiCoins erhalten', 'primary')
+              .then(() => {
+                this.router.navigateByUrl('tickets');
+              });
           });
       } catch (e) {
         this.commonService.presentToast('Aktion fehlgeschlagen', 'danger');
@@ -342,9 +347,15 @@ export class TicketPage {
     }
   }
 
-  private async moveTicket(userId: string, petId: string, ticketId: string, ticket: string): Promise<any> {
+  private async moveTicket(userId: string, petId: string, ticketId: string, ticket: string, token: string): Promise<any> {
+    await this.commonService.sendCoinsUpdate(petId, userId, ticketId, token);
     await this.firebaseService.deleteTicket(userId, petId, ticketId);
     return await this.firebaseService.shelveTicket(userId, petId, ticket);
+  }
+
+  private async updateTicket(userId: string, petId: string, ticketId: string, ticket: string, token: string): Promise<any> {
+    await this.commonService.sendCoinsUpdate(petId, userId, ticketId, token)
+    return await this.firebaseService.updateTicket(this.user.uid, this.petId, this.params.ticketId, this.ticket);
   }
 
   private openRadioAlert2(item) {

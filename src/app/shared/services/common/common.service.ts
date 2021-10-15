@@ -305,6 +305,32 @@ export class CommonService {
     return this.http.post(url, body, { headers });
   }
 
+  // We need a promise
+  public sendCoinsUpdate(pet: string, user: string, ticket: string, token) {
+    const headers = {
+      'Content-Type': 'application/json',
+      'firebase-context-token': token,
+      'sw-context-token': localStorage.getItem('sw-token') || null
+    };
+    const data = {
+      petId: pet,
+      ticketId: ticket,
+      uid: user
+    };
+    const body = JSON.stringify(data);
+    const url = `${this.baseUrl}/${this.language}/tickets/coins`;
+
+    return fetch(url, { method: 'POST', headers, body })
+      .then((resp) => {
+        if (!resp.ok) {
+          throw resp.json();
+        }
+        return resp;
+      })
+      .then((resp) => resp.text())
+      .catch(e => e);
+  }
+
   public async presentToast(msg: string, col: string): Promise<void> {
 
     if (col === 'primary') {
