@@ -1,10 +1,14 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>{{ 'WALKTHROUGH_PAGE.TITLE' | translate }}</ion-title>
-  </ion-toolbar>
-</ion-header>
+<!--<ion-header>-->
+<!--  <ion-toolbar>-->
+<!--    <ion-title>{{ 'WALKTHROUGH_PAGE.TITLE' | translate }}</ion-title>-->
+<!--  </ion-toolbar>-->
+<!--</ion-header>-->
 
-<ion-content>
+<div class="ion-text-center" *ngIf="isLoading">
+  <ion-spinner color="primary"></ion-spinner>
+</div>
+
+<ion-content *ngIf="!isLoading">
   <ion-grid>
     <ion-row>
       <ion-col sizeSm="8" offsetSm="2">

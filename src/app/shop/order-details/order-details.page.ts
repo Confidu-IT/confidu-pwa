@@ -18,7 +18,7 @@ export class OrderDetailsPage {
   private language: string;
   private iconPath = '../../../../assets/icons/shop';
 
-  public replacementImg = `${this.iconPath}/no_image.png`;
+  public replacementImg = `${this.iconPath}/replacement.png`;
   public user: any;
   public isLoading: boolean;
   public order: any;

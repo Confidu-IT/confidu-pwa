@@ -34,10 +34,10 @@ export class PwaInstructionsPage {
         this.isLoading = false;
         if (this.platform.platforms().includes('mobile')) {
           if (this.platform.platforms().includes('ios')) {
-            this.infoImg = `${this.iconPath}/ios_safari.svg`;
+            this.infoImg = `${this.iconPath}/iphone.svg`;
             this.device = 'ios';
           } else if (this.platform.platforms().includes('android')) {
-            this.infoImg = `${this.iconPath}/android_chrome.svg`;
+            this.infoImg = `${this.iconPath}/android.svg`;
             this.device = 'android';
           }
         }

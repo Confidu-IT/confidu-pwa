@@ -29,12 +29,15 @@ export class WalkthroughPage implements OnInit {
     this.translateService.use(this.language);
 
     this.slides = [
-      `${this.imagePath}/${this.language}_test.svg`,
-      `${this.imagePath}/${this.language}_planner.svg`,
-      `${this.imagePath}/${this.language}_scan.svg`,
-      `${this.imagePath}/${this.language}_carecard.svg`,
-      `${this.imagePath}/${this.language}_televet.svg`
+      `${this.imagePath}/${this.language}/${this.language}_start.svg`,
+      `${this.imagePath}/${this.language}/${this.language}_televet.svg`,
+      `${this.imagePath}/${this.language}/${this.language}_carecard.svg`,
+      `${this.imagePath}/${this.language}/${this.language}_scan.svg`,
+      `${this.imagePath}/${this.language}/${this.language}_planner.svg`,
+      `${this.imagePath}/${this.language}/${this.language}_test.svg`,
     ];
+
+    this.isLoading = false;
   }
 
 
@@ -42,7 +45,7 @@ export class WalkthroughPage implements OnInit {
   public onLastSlide() {
     this.slider.isEnd().then(resp => {
       if (resp === true) {
-        this.onClose();
+        // this.onClose();
       }
     });
   }
