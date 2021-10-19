@@ -12,10 +12,13 @@ import { IonSlides } from '@ionic/angular';
 export class WalkthroughPage implements OnInit {
   public isLoading: boolean;
   public slides: any;
+  public buttonText: string;
   public imagePath = '../../../assets/icons/walkthrough';
   @ViewChild('slider') slider: IonSlides;
 
   private language: string;
+  private cancelText: string;
+  private progressText: string;
 
   constructor(
     private translateService: TranslateService,
@@ -27,6 +30,12 @@ export class WalkthroughPage implements OnInit {
     this.isLoading = true;
     this.language = this.commonService.language;
     this.translateService.use(this.language);
+    this.translateService.get('WALKTHROUGH_PAGE')
+      .subscribe(values => {
+        this.cancelText = values.CANCEL;
+        this.progressText = values.PROGRESS;
+        this.buttonText = this.cancelText;
+      });
 
     this.slides = [
       `${this.imagePath}/${this.language}/${this.language}_start.svg`,
@@ -45,7 +54,7 @@ export class WalkthroughPage implements OnInit {
   public onLastSlide() {
     this.slider.isEnd().then(resp => {
       if (resp === true) {
-        // this.onClose();
+        this.buttonText = this.progressText;
       }
     });
   }

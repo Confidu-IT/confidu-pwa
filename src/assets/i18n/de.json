@@ -805,43 +805,7 @@
     "TITLE": "Walkthrough",
     "CANCEL": "Überspringen",
     "START": "Los gehts",
-    "SLIDES": [
-      {
-        "TITLE": "Care Card",
-        "TEXT": "Danke, dass du dich angemeldet hast. Trage die Patientenakte deines Tieres immer bei dir - alle Gesundheitsdaten gebündelt in einer App.",
-        "IMG": "carecard"
-      },
-      {
-        "TITLE": "Harnsticktest",
-        "TEXT": "Erkenne und überwache mögliche Erkrankungen bequem von zu Hause aus.",
-        "IMG": "harnsticktest"
-      },
-      {
-        "TITLE": "Medizintests",
-        "TEXT": "Teste anhand von Kot- oder Urinproben die Gesundheit deines Tieres.",
-        "IMG": "medizintests"
-      },
-      {
-        "TITLE": "Mein Napf",
-        "TEXT": "Erstelle Futterpläne nach dem individuellen Nährstoff- und Energiebedarf deines Tieres wie ein Profi.",
-        "IMG": "mein_napf"
-      },
-      {
-        "TITLE": "Planer",
-        "TEXT": "Mit unserem Planer behältst du alle wichtigen Aufgaben im Blick - von Medikamentengabe über Ohrenpflege bis hin zu eigenen Terminen.",
-        "IMG": "planer"
-      },
-      {
-        "TITLE": "Online Tierarzt",
-        "TEXT": "Symptom angeben, Fragen beantworten, Behandlung starten - unser Online-Tierazt hilft dir sofort.",
-        "IMG": "televet_anleitung"
-      },
-      {
-        "TITLE": "Versicherung",
-        "TEXT": "Verwalte bequem Versicherungsunterlagen und Leistungen von deinen Lieblingen.",
-        "IMG": "versicherung"
-      }
-    ]
+    "PROGRESS": "Weiter"
   },
   "LAB_PAGE": {
     "TITLE": "Labortests",
@@ -1201,6 +1165,7 @@
     "REG_TEXT": "Gib hier den Registrierungscode ein, der deinem Probenmaterial beiliegt.",
     "EG": "z.B. 0123456789",
     "WRONG_PET": "Mit dem falschen Tier eingelogt?",
+    "INVALID_SPECIES": "Falsche Spezies",
     "INVALID_CODE": "Dein Code konnte nicht zugeordnet werden. Möglicherweise hast du dich vertippt. Versuche es erneut.",
     "USED_CODE": "Dein Code wurde bereits verwendet",
     "CHANGE_PET": "Tier wechseln",

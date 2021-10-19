@@ -12,7 +12,6 @@
   <ion-grid>
     <ion-row>
       <ion-col sizeSm="8" offsetSm="2">
-        <div class="cancel" (click)="onClose()">{{ 'WALKTHROUGH_PAGE.CANCEL' | translate }}</div>
         <ion-slides #slider pager="true" (ionSlideDidChange)="onLastSlide()">
           <ion-slide *ngFor="let slide of slides">
             <img [src]="slide" alt="">
@@ -22,3 +21,17 @@
     </ion-row>
   </ion-grid>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button
+        (click)="onClose()"
+        color="secondary"
+        fill="clear"
+        size="small">
+        {{ buttonText }}
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

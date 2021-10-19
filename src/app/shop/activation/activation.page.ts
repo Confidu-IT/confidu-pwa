@@ -33,6 +33,7 @@ export class ActivationPage {
   private readonly routeSub: Subscription;
   public petId: string;
   private invalidCode: string;
+  private invalidSpecies: string;
   private usedCode: string;
   private assignment: any;
   private regSuccess: string;
@@ -62,6 +63,7 @@ export class ActivationPage {
     this.translateService.get('REGISTER_CODE')
       .subscribe(values => {
         this.invalidCode = values.INVALID_CODE;
+        this.invalidSpecies = values.INVALID_SPECIES;
         this.usedCode = values.USED_CODE;
         this.assignment = values.ASSIGNMENT;
         this.regSuccess = values.REG_SUCCESS;
@@ -110,13 +112,15 @@ export class ActivationPage {
           `;
         },
         (e) => {
-          console.log('e', e);
+          // console.log('e', e);
           if (
             e.error?.errors[0]?.code === 'activationKey'
             || e.error?.errors[0]?.code === 'key'
             || e.error?.errors[0]?.code === 'key_not_found'
           ) {
             this.errorText = this.invalidCode;
+          } else if (e.error?.errors[0]?.code === 'species') {
+            this.errorText = this.invalidSpecies;
           } else if (e.error?.errors[0]?.code === 'activated') {
             this.errorText = this.usedCode;
           }
