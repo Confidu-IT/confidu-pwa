@@ -770,13 +770,13 @@ export class TicketQuestionsPage {
     this.dropdownOption = null;
     this.vetKey = null;
     this.vetForm.reset();
+    this.infoContent = undefined;
 
     // console.log('foodRations', this.foodRations);
 
     if (this.indexNr < this.questions.length - 1) {
       this.indexNr = this.indexNr + 1;
       this.slideOpts.initialSlide = 0;
-
       this.question = this.questions[this.indexNr];
       this.createInfoModalContent(this.indexNr);
       // this.getMedNature();
@@ -831,6 +831,7 @@ export class TicketQuestionsPage {
     this.vetKey = null;
     this.vetZipCode = null;
     this.question = this.questions[this.indexNr];
+    this.createInfoModalContent(this.indexNr);
   }
 
   // public onRemoveFile(index) {
@@ -1055,7 +1056,7 @@ export class TicketQuestionsPage {
       text: this.questions[index]?.values?.questionInfoText || null,
       type: this.questions[index]?.values?.questionType
     };
-    // console.log('this.infoContent', this.infoContent);
+    console.log('this.infoContent', this.infoContent);
   }
 
   private async presentInfoModal(infoContent: any, image?: string) {
@@ -1070,6 +1071,7 @@ export class TicketQuestionsPage {
   }
 
   ionViewWillLeave() {
+    this.infoContent = undefined;
     this.currentDateSet = false;
     this.selectedAnswer = null;
     this.selectedNumber = null;

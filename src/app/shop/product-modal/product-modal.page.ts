@@ -25,6 +25,7 @@ export class ProductModalPage implements OnInit {
 
   private subscription: Subscription;
   private language: string;
+  private cartAdded: string;
   public user: any;
 
   constructor(
@@ -36,6 +37,10 @@ export class ProductModalPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.translateService.get('PRODUCT_MODAL_PAGE')
+      .subscribe(values => {
+        this.cartAdded = values.CART_ADDED
+      });
     this.subscription = this.userAuth.user$
       .subscribe(user => {
         this.user = user;
@@ -77,7 +82,7 @@ export class ProductModalPage implements OnInit {
         if (product.errors) {
           this.commonService.handleResponseErrors(product.errors[0].status);
         } else {
-          this.commonService.presentToast('Zum Warenkorb hinzugefügt', 'secondary');
+          this.commonService.presentToast(this.cartAdded, 'secondary');
           this.modalCtrl.dismiss(this.item?.data?.id);
         }
       });

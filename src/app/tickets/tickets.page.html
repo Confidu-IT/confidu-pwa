@@ -88,7 +88,8 @@
               </div>
 
               <div *ngIf="action === 'create'">
-                <ion-textarea rows="6" cols="25" placeholder="Deine Notizen..."
+                <ion-textarea rows="6" cols="25"
+                              placeholder="{{ 'TICKETS_PAGE.ANNOTATIONS' | translate }}"
                               formControlName="text"></ion-textarea>
                 <div class="max-characters">{{ 'TICKETS_PAGE.MAX_CHARS' | translate }}</div>
               </div>
@@ -129,7 +130,9 @@
                   [ngClass]="{ overdue: isOverdue(item.endTime) }"
                   class="ticket-time">
                   <span *ngIf="item.data.labelTime">{{ item.data.labelTime }}</span>
-                  <span *ngIf="!item.data.labelTime">{{ item.startTime | date: 'HH.mm' }} Uhr</span>
+                  <span *ngIf="!item.data.labelTime">
+                    {{ item.startTime | date: 'HH.mm' }}
+                    {{ 'TICKETS_PAGE.DATE_TIME' | translate }}</span>
                 </div>
               </div>
               <div class="chevron">

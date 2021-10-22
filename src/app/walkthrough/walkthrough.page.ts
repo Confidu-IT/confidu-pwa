@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { CommonService } from '../shared/services/common/common.service';
 import { Router } from '@angular/router';
-import { IonSlides } from '@ionic/angular';
+import { IonSlides, Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-walkthrough',
@@ -19,10 +19,12 @@ export class WalkthroughPage implements OnInit {
   private language: string;
   private cancelText: string;
   private progressText: string;
+  private device: string;
 
   constructor(
     private translateService: TranslateService,
     private commonService: CommonService,
+    private platform: Platform,
     private router: Router
   ) { }
 
@@ -37,13 +39,22 @@ export class WalkthroughPage implements OnInit {
         this.buttonText = this.cancelText;
       });
 
+    if (this.platform.platforms().includes('mobile')) {
+      if (this.platform.platforms().includes('ios')) {
+        this.device = 'iphone';
+      } else if (this.platform.platforms().includes('android')) {
+        this.device = 'android';
+      }
+    }
+
     this.slides = [
       `${this.imagePath}/${this.language}/${this.language}_start.svg`,
       `${this.imagePath}/${this.language}/${this.language}_televet.svg`,
       `${this.imagePath}/${this.language}/${this.language}_carecard.svg`,
       `${this.imagePath}/${this.language}/${this.language}_scan.svg`,
-      `${this.imagePath}/${this.language}/${this.language}_planner.svg`,
+      `${this.imagePath}/${this.language}/${this.language}_planer.svg`,
       `${this.imagePath}/${this.language}/${this.language}_test.svg`,
+      `${this.imagePath}/${this.language}/${this.language}_${this.device}.svg`,
     ];
 
     this.isLoading = false;

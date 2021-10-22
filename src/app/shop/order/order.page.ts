@@ -15,6 +15,7 @@ import {TranslateService} from '@ngx-translate/core';
 export class OrderPage {
   private customer: any;
   private payments: any;
+  private processing: string;
   public cartItems: any[] = [];
   public cartData: any;
   public cartTransaction: any;
@@ -42,6 +43,10 @@ export class OrderPage {
     this.isLoading = true;
     this.language = this.commonService.language;
     this.translateService.use(this.language);
+    this.translateService.get('ORDER_PAGE')
+      .subscribe(values => {
+       this.processing = values.PROCESSING;
+      });
 
     this.subscription = this.userAuth.user$
       .subscribe(user => {
@@ -147,7 +152,7 @@ export class OrderPage {
 
   async presentLoading() {
     const loading = await this.loadingCtrl.create({
-      message: 'Bestellung läuft ...'
+      message: this.processing
     });
     return await loading.present();
   }

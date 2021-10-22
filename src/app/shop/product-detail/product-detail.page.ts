@@ -28,6 +28,7 @@ export class ProductDetailPage implements OnInit  {
   private routeSub: Subscription;
   private subscription: Subscription;
   private language: string;
+  private cartAdded: string;
   public user: any;
 
   constructor(
@@ -47,6 +48,10 @@ export class ProductDetailPage implements OnInit  {
   ngOnInit(): void {
     this.language = this.commonService.language;
     this.translateService.use(this.language);
+    this.translateService.get('PRODUCT_DETAIL_PAGE')
+      .subscribe(values => {
+       this.cartAdded = values.CART_ADDED
+      });
     this.subscription = this.userAuth.user$
       .subscribe(user => {
         this.user = user;
@@ -90,7 +95,7 @@ export class ProductDetailPage implements OnInit  {
         if (product.errors) {
           this.commonService.handleResponseErrors(product.errors[0].status);
         } else {
-          this.commonService.presentToast('Zum Warenkorb hinzugefügt', 'secondary');
+          this.commonService.presentToast(this.cartAdded, 'secondary');
         }
       });
     // this.router.navigateByUrl('shop/products');

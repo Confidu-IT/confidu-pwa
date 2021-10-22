@@ -48,6 +48,10 @@ export class HelpPage {
     });
   }
 
+  public goToWalkThrough() {
+    this.router.navigateByUrl('walkthrough');
+  }
+
   ionViewWillLeave() {
     if (this.subscription) {
       this.subscription.unsubscribe();

@@ -15,7 +15,7 @@
             <div (click)="onClickProduct(item)" class="product">
               <div class="product-content">
                 <div class="product-image">
-                  <img [src]="item?.data.cover?.media?.url" alt="">
+                  <img [src]="item?.data?.cover?.media?.url" alt="">
                 </div>
                 <div class="product-details">
                   <div class="prescription-type" *ngIf="item?.med_header">
@@ -35,7 +35,7 @@
                 </div>
               </div>
 
-              <div *ngIf="toCartAdded(item?.data.id)" class="cart-message">
+              <div *ngIf="toCartAdded(item?.data?.id)" class="cart-message">
                 <img [src]="cartCheckIcon" alt="" height="20" width="20">
                 <p>{{ 'PRODUCTS_CONTAINER.SAVED_CART' | translate }}</p>
               </div>

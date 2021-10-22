@@ -340,7 +340,7 @@ export class CommonService {
       message: msg,
       color: col,
       position: 'top',
-      duration: 700
+      duration: 2000
     });
     return toast.present();
   }

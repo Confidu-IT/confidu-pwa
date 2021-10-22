@@ -62,7 +62,8 @@
                    <ion-card-content>
                      <div class="time">
                        <ion-icon *ngIf="!isOverdue(ticket?.endTime)"  name="time-outline"></ion-icon>
-                       <img *ngIf="isOverdue(ticket?.endTime)" [src]="bellImage" alt="" height="18">
+                       <img *ngIf="isOverdue(ticket?.endTime)" [src]="bellImage" alt="" height="14"
+                            width="11">
                        <span *ngIf="ticket.data.type !== 'common'">{{ 'HOME_PAGE.TODAY' | translate }}</span>
                        <span *ngIf="ticket.data.type === 'common'" [ngClass]="{ overdue: isOverdue(ticket.endTime) }">
                                           {{ ticket.endTime.seconds * 1000 | date: 'HH:mm' }}

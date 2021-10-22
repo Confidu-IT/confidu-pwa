@@ -311,6 +311,7 @@
   },
   "TICKET_RESULT_PAGE": {
     "TITLE": "Auswertung",
+    "RECEIVED_COINS": "confiCoins erhalten",
     "DIAG_HEADER": "Diagnose",
     "NO_RESULT": "Das Ergebnis ist nicht verfügbar.",
     "URGENCY": "Dringlichkeit",
@@ -339,6 +340,9 @@
     "CHOICE_ANNOTATION": "Bitte beachte, dass du nachträglich keine Produkte zur Therapie erhalten kannst, ohne nochmals den Online Tierarzt zu konsultieren."
   },
   "TICKET_PAGE": {
+    "RECEIVED_COINS": "confiCoins erhalten",
+    "FAIL": "Update fehlgeschlagen",
+    "SUCCESS": "Update erfolgreich",
     "EXEC": "Durchführen",
     "UPLOAD": "Bild hinzufügen (jpg/png)",
     "ADD_IMAGE": "Titelbild für diese Aufgabe (optional)",
@@ -395,6 +399,8 @@
   "TICKETS_PAGE": {
     "HEADER": "Planer von",
     "EXEC": "Durchführen",
+    "ANNOTATIONS": "Deine Notizen ...",
+    "DATE_TIME": "Uhr",
     "UPLOAD": "Bild hinzufügen (jpg/png)",
     "ADD_IMAGE": "Titelbild für diese Aufgabe (optional)",
     "ACTIONS": {
@@ -570,7 +576,8 @@
     "USAGE": "Anwendungsgebiet",
     "INSTRUCTIONS": "Zu Risiken und Nebenwirkungen lese die Packungsbeilage und frage deinen Tierarzt oder Apotheker.",
     "INST_LINK": "Packungsbeilage zum Herunterladen",
-    "DOSAGE": "Dosierung"
+    "DOSAGE": "Dosierung",
+    "CART_ADDED": "Zum Warenkorb hinzugefügt"
   },
   "CARE_CARD_PAGE": {
     "NO_DATA": "Keine Angabe",
@@ -1018,7 +1025,8 @@
     "PRICE": "Preis",
     "TITLE": "Zusammenfassung",
     "INVOICE": "Rechnung",
-    "BILLING": "Zahlungsmethode"
+    "BILLING": "Zahlungsmethode",
+    "PROCESSING": "Bestellung läuft"
   },
   "USER_MODAL_PAGE": {
     "LANGUAGES": {
@@ -1240,7 +1248,8 @@
   "PRODUCT_DETAIL_PAGE": {
     "TO_CART": "In den Warenkorb",
     "TAX": "Alle Preise inkl. MWSt., zzgl. Versand",
-    "DESCRIPTION": "Artikelbeschreibung"
+    "DESCRIPTION": "Artikelbeschreibung",
+    "CART_ADDED": "Zum Warenkorb hinzugefügt"
   },
   "NOTIFICATIONS_LIST_PAGE": {
     "TITLE": "Benachrichtigungen",
@@ -1264,7 +1273,9 @@
     "YOUR_MESSAGE": "Deine Nachricht",
     "CHARS": "1500 Zeichen",
     "BUTTON": "Senden",
-    "FAQ": "Häufig gestellte Fragen"
+    "FAQ": "Häufig gestellte Fragen",
+    "WALKTHROUGH": "Die Funktionen kurz erklärt",
+    "WALKTHROUGH_LINK": "Einführung ansehen"
   },
   "ORDER_DETAILS_PAGE": {
     "TITLE": "Bestelldetails",

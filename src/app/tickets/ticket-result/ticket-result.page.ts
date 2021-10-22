@@ -24,6 +24,7 @@ export class TicketResultPage implements CanDeactivateGuard {
   private eventId: string;
   private petId: string;
   private language: string;
+  private coins: string;
   routingDestination: string;
 
   public user: any;
@@ -53,6 +54,7 @@ export class TicketResultPage implements CanDeactivateGuard {
   ) {
     this.routeSub = this.activatedRoute.params
       .subscribe((params: any) => {
+        console.log('params', params);
         this.params = params;
       });
 
@@ -69,6 +71,10 @@ export class TicketResultPage implements CanDeactivateGuard {
 
     this.language = this.commonService.language;
     this.translateService.use(this.language);
+    this.translateService.get('HOME_PAGE')
+      .subscribe(values => {
+        this.coins = values.RECEIVED_COINS;
+      });
     this.subscription = this.userAuth.user$.pipe(
       tap(user => user),
       switchMap(user => {
@@ -176,6 +182,13 @@ export class TicketResultPage implements CanDeactivateGuard {
     localStorage.setItem('ticketResult', JSON.stringify(obj));
   }
 
+  private coinsHandler() {
+    if (!this.params.id) {
+      return;
+    }
+    this.commonService.presentToast(this.coins, 'primary');
+  }
+
   canDeactivate(): Promise<boolean> | boolean {
     if (
       this.routingDestination?.search('cart') > -1 ||
@@ -205,6 +218,7 @@ export class TicketResultPage implements CanDeactivateGuard {
               cssClass: 'popup-action-button',
               handler: () => {
               this.createResultObj('confirm');
+                this.coinsHandler();
                 resolve(true);
               }
             }

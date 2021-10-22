@@ -333,10 +333,12 @@ ion-toolbar {
   }
 
   .time {
-    height: 28px;
-    max-height: 28px;
+    //height: 28px;
+    //max-height: 28px;
     //line-height: 28px;
     margin: 0 12px 4px;
+    display: flex;
+    justify-content: flex-end;
 
     ion-icon {
       font-size: 18px;
@@ -346,8 +348,11 @@ ion-toolbar {
     }
 
     img {
-      padding-right: 6px;
-      vertical-align: middle;
+      margin-right: 6px;
+      height: 14px;
+      width: 11px;
+      max-height: 14px;
+      max-width: 11px;
     }
   }
 }

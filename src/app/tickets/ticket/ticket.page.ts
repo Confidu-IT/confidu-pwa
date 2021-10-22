@@ -26,6 +26,9 @@ export class TicketPage {
   private subscription: Subscription;
   private pet: any;
   private closeTask: any;
+  private coins: string;
+  private success: string;
+  private fail: string;
 
   public user: any;
   public language: string;
@@ -66,6 +69,12 @@ export class TicketPage {
       .subscribe(params => {
         this.params = params;
         // console.log('this.params', this.params);
+      });
+    this.translateService.get('HOME_PAGE')
+      .subscribe(values => {
+        this.coins = values.RECEIVED_COINS;
+        this.success = values.SUCCESS;
+        this.fail = values.FAIL;
       });
 
     this.form = new FormGroup({
@@ -149,11 +158,11 @@ export class TicketPage {
     this.pet.pet.currentWeight = this.weightForm.value.weight;
     this.firebaseService.updatePet(this.user.uid, this.petId, this.pet)
       .then(() => {
-        this.commonService.presentToast('Eintrag erfolgreich', 'primary');
+        this.commonService.presentToast(this.success, 'primary');
         this.weightForm.reset();
         this.closeEvent('accomplished');
       })
-      .catch(error => this.commonService.presentToast('Eintrag fehlgeschlagen', 'danger'));
+      .catch(error => this.commonService.presentToast(this.fail, 'danger'));
   }
 
   public postPoneEvent(): void {
@@ -176,7 +185,7 @@ export class TicketPage {
       this.firebaseService.updateTicket(this.user.uid, this.petId, this.params.ticketId, this.ticket)
         .then(() => {
           this.form.reset();
-          this.router.navigateByUrl('tickets');
+          this.router.navigateByUrl('/');
         });
     } catch (e) {
       this.showTaskForm = false;
@@ -265,10 +274,10 @@ export class TicketPage {
     }
     this.linkList = [];
     for (const link of links) {
-      if (link.label === 'Durchführen') {
+      if (link.type === 'questionnaire') {
         this.hasExecute = true;
       }
-      if (link.label !== 'Durchführen') {
+      if (link.type !== 'questionnaire') {
         link.showContent = false;
         this.linkList.push(link);
       }
@@ -324,25 +333,25 @@ export class TicketPage {
       try {
         this.updateTicket(this.user.uid, this.petId, this.params.ticketId, this.ticket, this.user.za)
           .then(resp => {
-            this.commonService.presentToast('confiCoins erhalten', 'primary')
+            this.commonService.presentToast(this.coins, 'primary')
               .then(() => {
-                this.router.navigateByUrl('tickets');
+                this.router.navigateByUrl('/');
               });
           });
       } catch (e) {
-        this.commonService.presentToast('Aktion fehlgeschlagen', 'danger');
+        this.commonService.presentToast('this.fail', 'danger');
       }
     } else { // no open schedule left
       try {
         this.moveTicket(this.user.uid, this.petId, this.params.ticketId, this.ticket, this.user.za)
           .then(resp => {
-            this.commonService.presentToast('confiCoins erhalten', 'primary')
+            this.commonService.presentToast(this.coins, 'primary')
               .then(() => {
-                this.router.navigateByUrl('tickets');
+                this.router.navigateByUrl('/');
               });
           });
       } catch (e) {
-        this.commonService.presentToast('Aktion fehlgeschlagen', 'danger');
+        this.commonService.presentToast('this.fail', 'danger');
       }
     }
   }

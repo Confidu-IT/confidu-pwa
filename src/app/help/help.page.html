@@ -19,6 +19,13 @@
             {{ 'HELP_PAGE.SUBHEADER' | translate }}
             <a href="mailto:service@confidu.com">service@confidu.com</a>
           </p>
+          <div class="walkthrough" (click)="goToWalkThrough()">
+            <h2 class="headline">{{ 'HELP_PAGE.WALKTHROUGH' | translate }}</h2>
+            <p>
+              {{ 'HELP_PAGE.WALKTHROUGH_LINK' | translate }}
+            </p>
+          </div>
+
         </div>
 
         <h2 class="faq">{{ 'HELP_PAGE.FAQ' | translate }}</h2>

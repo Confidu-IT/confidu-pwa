@@ -3,7 +3,7 @@ ion-grid * {
 }
 
 h2 {
-  font-size: 14px;
+  font-size: 14px !important;
   font-weight: 700;
   margin: 0;
 }
@@ -42,12 +42,28 @@ h2 {
   }
 }
 
+.walkthrough {
+  margin-top: 16px;
+  //margin-bottom: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #dedede;
+  border-top: 1px solid #dedede;
+
+  p {
+    font-size: 13px;
+    color: var(--ion-color-secondary);
+    margin-bottom: 0;
+    margin-top: 6px;
+  }
+}
+
 .form-panel {
   margin-top: 24px;
 }
 
 .faq {
-  margin: 42px 24px 16px;
+  margin: 20px 24px 16px;
 }
 
 ul {

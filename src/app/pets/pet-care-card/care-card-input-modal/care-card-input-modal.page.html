@@ -60,7 +60,7 @@
 
             <ion-button color="secondary" class="confirm-button"
                         *ngIf="type === 'castration'"
-                        [disabled]="value !== 'Kastriert'"
+                        [disabled]="value === notNeutered"
                         (click)="onConfirm()">{{ 'CARE_CARD_INPUT_MODAL_PAGE.CONFIRM' | translate }}
             </ion-button>
 
