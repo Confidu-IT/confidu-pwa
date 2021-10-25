@@ -25,7 +25,17 @@ export class PwaInstructionsPage {
   ) { }
 
   ionViewWillEnter() {
-    console.log('platforms', this.platform.platforms());
+    console.log('platforms: ' + this.platform.platforms());
+
+    /*
+    platforms
+    desktop: desktop
+    android native: android, cordova, capacitor, mobile, hybrid
+    android chrome phone: android, mobile, mobileweb
+    android pwa: android, pwa, mobile, mobileweb,
+    ios safari: iphone, ios, mobile, mobileweb
+    ios pwa: iphone, ios, pwa, mobile, mobileweb
+     */
 
     this.isLoading = true;
     this.subscription = this.userAuth.user$
