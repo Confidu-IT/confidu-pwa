@@ -21,6 +21,9 @@ export class BillingAddressPage {
   private readonly routeSub: Subscription;
   private  subscription: Subscription;
   private language: any;
+  private type: string;
+  private billingTitle: string;
+  private shippingTitle: string;
   private profile: any;
   public  user: any;
 
@@ -34,13 +37,24 @@ export class BillingAddressPage {
   ) {
     this.routeSub = this.activatedRoute.params
       .subscribe(params => {
-        this.title = params.type;
+        this.type = params.type;
       });
   }
 
   ionViewWillEnter() {
     this.language = this.commonService.language;
     this.translateService.use(this.language);
+    this.translateService.get('BILLING_ADDRESS_PAGE')
+      .subscribe(values => {
+        this.billingTitle = values.BILLING;
+        this.shippingTitle = values.SHIPMENT;
+
+        if (this.type === 'billing') {
+          this.title = this.billingTitle;
+        } else if (this.type === 'shipping') {
+          this.title = this.shippingTitle;
+        }
+      });
     this.form = new FormGroup({
       firstName: new FormControl(null, {
         updateOn: 'change',
@@ -102,12 +116,12 @@ export class BillingAddressPage {
                 } else {
                   this.router.navigateByUrl('/shop/payment');
                 }
-              } else if (this.title === 'rechnungsadresse' && !this.profile.defaultShippingAddress) {
+              } else if (this.title === this.billingTitle && !this.profile.defaultShippingAddress) {
                 this.form.reset();
-                this.title = 'lieferadresse';
-              } else if (this.title === 'lieferadresse' && !this.profile.defaultBillingAddress) {
+                this.title = this.shippingTitle;
+              } else if (this.title === this.shippingTitle && !this.profile.defaultBillingAddress) {
                 this.form.reset();
-                this.title = 'rechnungsadresse';
+                this.title = this.billingTitle;
               }
             });
         });
@@ -134,9 +148,9 @@ export class BillingAddressPage {
         if (addressId.errors) {
           this.commonService.handleResponseErrors(addressId.errors[0].status);
         } else {
-          if (this.title === 'rechnungsadresse') {
+          if (this.title === this.billingTitle) {
             this.shopwareService.setAddress(addressId.id, 'billing');
-          } else if (this.title === 'lieferadresse') {
+          } else if (this.title === this.shippingTitle) {
             this.shopwareService.setAddress(addressId.id, 'shipping');
           }
         }

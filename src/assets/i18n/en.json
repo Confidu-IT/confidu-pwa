@@ -17,7 +17,7 @@
     "CHANGE_PET": "Change pet",
     "TO_TASKS": "Planner",
     "TODAY_TASKS": "Today's tasks",
-    "TODAY": "Today",
+    "TODAY": "today",
     "TASK": "Task",
     "TIME": "o’ clock",
     "RECIPE_HEADER": "Order medication",
@@ -57,9 +57,9 @@
     "MSG": {},
     "HTTP_ERRORS": {
       "PRODUCTS": {
-        "400": "Product not found",
+        "400": "Something went wrong",
         "451": "Produkt nicht gefunden",
-        "406": "",
+        "406": "Something went wrong",
         "403": "User not signed in"
       },
       "LOGIN": {
@@ -81,6 +81,9 @@
     "CONTRACT": "Contract",
     "DAMAGE": "Claims",
     "SHOP": "Shopping cart",
+    "TREAT": "Treat",
+    "CALL": "Video call",
+    "TELEVET": "Diagnose Finder",
     "SOON": "Coming soon"
   },
   "SIDE_NAV": {
@@ -95,7 +98,8 @@
   "PRODUCT_DETAIL_PAGE": {
     "TO_CART": "To shipping cart",
     "TAX": "All prices include VAT, plus shipping",
-    "DESCRIPTION": "Item description"
+    "DESCRIPTION": "Item description",
+    "CART_ADDED": "Added to shopping cart"
   },
   "NOTIFICATIONS_LIST_PAGE": {
     "TITLE": "Notifications",
@@ -349,7 +353,7 @@
       "BACK": "Back",
       "FORWARD": "Next"
     },
-    "INTRO_TEXT": "In order to write the prescription and send you the medicine, we need you to send us an invoice from your veterinarian with the following information",
+    "INTRO_TEXT": "In order to write the prescription and send you the medication, we need an invoice from your veterinarian with the following information for all preparations except parasiticides:",
     "INTRO_LIST": [
       "Name and address of veterinarian",
       "Name and date of birth of your pet",
@@ -376,6 +380,8 @@
   "TICKETS_PAGE": {
     "HEADER": "Planner of",
     "EXEC": "Perform",
+    "ANNOTATIONS": "Your notes...",
+    "DATE_TIME": "o’ clock",
     "UPLOAD": "Add image (jpg/png)",
     "ADD_IMAGE": "Cover image for this task (optional)",
     "ACTIONS": {
@@ -409,8 +415,8 @@
     "DATE": "Date",
     "TIME": "Time",
     "MAX_CHARS": "160 characters",
-    "WHOLEDAY": "During the day"
-
+    "WHOLEDAY": "During the day",
+    "START_CALL": "Start consultation"
   },
   "TICKET_QUESTION_PAGE": {
     "GUIDE": "Guide",
@@ -504,6 +510,7 @@
   },
   "TICKET_RESULT_PAGE": {
     "TITLE": "Evaluation",
+    "RECEIVED_COINS": "Confi-Coins received",
     "DIAG_HEADER": "Diagnosis",
     "NO_RESULT": "Your result isn’t available.",
     "URGENCY": "Urgency",
@@ -776,13 +783,14 @@
   },
   "LAB_PAGE": {
     "TITLE": "Laboratory tests",
-    "PARASITES": "Parasite test",
+    "PARASITES": "Parasites",
     "URINE": "Urine test kit",
     "DIARRHEA": "Diarrhea",
     "DIARRHEA_PLUS": "Diarrhea plus",
     "GIARDIA": "Giardia",
     "FLORA": "Intestinal flora",
     "PREVENTION": "Urine Lab",
+    "BARF": "Barf Profile",
     "OK_BUTTON": "Apply",
     "CANCEL_BUTTON": "Cancel",
     "SWITCH_PET": "Change animal",
@@ -856,6 +864,7 @@
     "TAX": "(incl. VAT)",
     "AMOUNT": "Quantity",
     "PRICE": "Price",
+    "PROCESSING": "Order in progress",
     "TITLE": "Summary",
     "INVOICE": "Invoice",
     "BILLING": "Payment method"
@@ -866,6 +875,7 @@
     "ORDERS": "Orders:",
     "YOUR_ORDERS": "Your orders",
     "NO_ORDERS": "There are no orders yet",
+    "ORDER_NR": "Order no.",
     "DELIVERED": "Delivered",
     "DELIVERED_AT": "Delivered on:",
     "ORDERED_AT": "Ordered on:",
@@ -880,6 +890,7 @@
     "TITLE": "Payment method"
   },
   "PRODUCT_MODAL_PAGE": {
+    "CANCEL": "Cancel",
     "DELIVERY_TIME": "Delivery time",
     "PRESCRIPTION": "Prescription required",
     "PHARMACY": "Pharmacy only",
@@ -891,8 +902,8 @@
     "USAGE": "area of application",
     "INSTRUCTIONS": "For risks and side effects, read the package insert and ask your vet or pharmacist",
     "INST_LINK": "Download package insert",
-    "DOSAGE": "Dosage"
-
+    "DOSAGE": "Dosage",
+    "CART_ADDED": "Added to shopping cart"
   },
   "PRODUCT_SHIPMENT_INFO_MODAL": {
     "TITLE": "Product shipment info",
@@ -957,7 +968,7 @@
   "TELEVET_EMERGENCY_PAGE": {
     "TITLE": "Emergency",
     "HEADER": "Emergency consultation necessary?",
-    "TEXT": "Not everything that at first seems like an emergency is also one. We'll help you assess the situation correctly. Here you will find the most common medical emergencies with descriptions and more information about how to help your pet.",
+    "TEXT": "Not everything that at first seems like an emergency is also one. We'll help you assess the situation correctly. \nHere you will find the most common medical emergencies with descriptions and more information about how to help your pet.",
     "BUTTONS": {
       "CANCEL": "Cancel",
       "CONFIRM": "Continue"
@@ -970,6 +981,9 @@
     }
   },
   "TICKET_PAGE": {
+    "RECEIVED_COINS": "Confi-Coins received",
+    "FAIL": "Update failed",
+    "SUCCESS": "Update successful",
     "EXEC": "Carry out",
     "UPLOAD": "Add image (jpg/png)",
     "ADD_IMAGE": "Cover image for this task (optional)",
@@ -997,7 +1011,7 @@
     "NEW_TASK": "Create new task",
     "CREATE_TASK": "Create task",
     "CLOSE_TASK": {
-      "BODY": "Do you want to close this task?",
+      "BODY": "Close this task",
       "POPUP": {
         "TEXT": "Please confirm your data and the task will be closed.",
         "BUTTON": {
@@ -1039,7 +1053,7 @@
   "PW_RECOVERY_PAGE": {
     "RECOVER": "Password reset",
     "RECOVERED": "Password reset",
-    "ENTER_MAIL": "Please enter the email address you used to sign in to the confidu app. We'll send the a link to reset your password afterwards.",
+    "ENTER_MAIL": "Please enter the email address you used to register with the confidu app. We will send you a link to reset your password.",
     "ENTER_PW": "Now type in your new password.",
     "EMAIL": "Email address",
     "PASSWORD": "New password",
@@ -1111,43 +1125,7 @@
     "TITLE": "Walk through",
     "CANCEL": "Skip",
     "START": "Let's go",
-    "SLIDES": [
-      {
-        "TITLE": "CareCard",
-        "TEXT": "Thanks for signing up. Always carry your pet's medical record with you - all health data bundled in one app.",
-        "IMG": "carecard"
-      },
-      {
-        "TITLE": "Urine stick test",
-        "TEXT": "Detect and monitor potential diseases from the comfort of your home.",
-        "IMG": "harnsticktest"
-      },
-      {
-        "TITLE": "Medical tests",
-        "TEXT": "Based on fecal or urine samples, test your pet's health.",
-        "IMG": "medizintests"
-      },
-      {
-        "TITLE": "My Bowl",
-        "TEXT": "Create feeding plans according to your pet's individual nutrient and energy needs like a pro.",
-        "IMG": "mein_napf"
-      },
-      {
-        "TITLE": "Planner",
-        "TEXT": "Keep track of all your pet's important tasks with our planner - from drug administration to ear care to your own appointments.",
-        "IMG": "planer"
-      },
-      {
-        "TITLE": "Online Vet",
-        "TEXT": "State symptom, answer questions, start treatment - our online vet will help you right away.",
-        "IMG": "televet_anleitung"
-      },
-      {
-        "TITLE": "Insurance",
-        "TEXT": "Conveniently manage insurance records and benefits from your pets.",
-        "IMG": "versicherung"
-      }
-    ]
+    "PROGRESS": "Continue"
   },
   "USER_MODAL_PAGE": {
     "LANGUAGES": {
@@ -1210,6 +1188,7 @@
     "REG_TEXT": "Enter the registration code that is assigned to your sample material here.",
     "EG": "e.g. 0123456789",
     "WRONG_PET": "Logged in with the wrong animal?",
+    "INVALID_SPECIES": "Wrong species",
     "INVALID_CODE": "Your code could not be assigned. You may have made a typo. Try again.",
     "USED_CODE": "Your code was already used.",
     "CHANGE_PET": "Switch pet",
@@ -1274,8 +1253,8 @@
         "ANNOTATION": "(Following guidelines of ESCCAP (European Scientific Counsel Companion Animal Parasites))"
       }
     },
-    "CONFIRM": "Übernehmen",
-    "ABORT": "Abbrechen"
+    "CONFIRM": "Confirm",
+    "ABORT": "Cancel"
   },
   "BREED_PROPOSALS_MODAL": {
     "BREED_RECOGNIZED": "We recognized the following breeds based on your photo. Please choose!",
@@ -1298,7 +1277,36 @@
     "CHARS": "1500 chars",
     "BUTTON": "send",
     "FAQ": "Frequently asked questions"
+  },
+  "ORDER_DETAILS_PAGE": {
+    "TITLE": "Order details",
+    "NR": "Order number:",
+    "ORDERED_AT": "Ordered on:",
+    "STATUS": "Status:",
+    "SUMMARY": "Amount",
+    "AMOUNT": "Menge:",
+    "ADDRESS": "Shipping address",
+    "PAYMENT": "Payment method",
+    "PACKAGE": "Packing & Shipping:",
+    "NET_PRICE": "Total without VAT:",
+    "TAX": "VAT to be added:",
+    "TOTAL_PRICE": "Total:",
+    "CANCEL": {
+      "BUTTON": "Cancel order",
+      "TEXT": "Cancellation is only possible within 30 minutes and only for the entire order if it is not yet in the shipping process. Video calls can be cancelled up to 2 hours before the start of the appointment."
+    }
+  },
+  "ORDER_CANCEL_PAGE": {
+    "TITLE": "Cancellation",
+    "CANCEL_ORDER": "Cancel order",
+    "ORDER_NR": "Order number:",
+    "REASON": "Reason for cancellation",
+    "CHEAPER": "Products seen cheaper",
+    "UNNECESSARY": "Products no longer needed",
+    "ACCIDENTAL": "Products ordered by mistake",
+    "OTHER": "other reason",
+    "BUTTON": "Cancel",
+    "SUCCESS": "Your cancellation request was successfully sent!",
+    "ERROR": "Unfortunately, an error occurred. Please try again."
   }
 }
-
-

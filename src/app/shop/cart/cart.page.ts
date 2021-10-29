@@ -129,7 +129,7 @@ export class CartPage implements OnInit {
         } else {
           let route;
           if (!response.defaultBillingAddress) {
-            route = '/shop/address/rechnungsadresse';
+            route = '/shop/address/billing';
           }
           if (!route) {
             route = '/shop/order';

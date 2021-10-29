@@ -37,10 +37,10 @@ export class ProductModalPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.translateService.get('PRODUCT_MODAL_PAGE')
-      .subscribe(values => {
-        this.cartAdded = values.CART_ADDED
-      });
+    // this.translateService.get('PRODUCT_MODAL_PAGE')
+    //   .subscribe(values => {
+    //     this.cartAdded = values.CART_ADDED
+    //   });
     this.subscription = this.userAuth.user$
       .subscribe(user => {
         this.user = user;
@@ -50,6 +50,7 @@ export class ProductModalPage implements OnInit {
     this.translateService.use(this.language);
     this.translateService.get('PRODUCT_MODAL_PAGE')
       .subscribe(values => {
+        this.cartAdded = values.CART_ADDED
         this.cancelText = values.CANCEL;
         this.okText = values.OK;
       });

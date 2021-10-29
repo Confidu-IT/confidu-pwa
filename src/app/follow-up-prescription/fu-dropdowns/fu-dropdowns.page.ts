@@ -100,6 +100,10 @@ export class FuDropdownsPage {
       });
   }
 
+  public onCancel(): void {
+    this.router.navigateByUrl('follow-up-prescription');
+  }
+
 
   public onProgress(): void {
     if (this.manualChoice) {

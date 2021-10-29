@@ -57,9 +57,9 @@
     "MSG": {},
     "HTTP_ERRORS": {
       "PRODUCTS": {
-        "400": "Produkt ikke fundet",
+        "400": "Noget gik galt",
         "451": "Produkt ikke fundet",
-        "406": "",
+        "406": "Noget gik galt",
         "403": "Bruger ikke logget ind"
       },
       "LOGIN": {
@@ -81,6 +81,9 @@
     "CONTRACT": "Kontrakt",
     "DAMAGE": "Reklamation",
     "SHOP": "Indkøbskurv",
+    "TREAT": "Behandle",
+    "CALL": "Videoopkald",
+    "TELEVET": "Diagnosesøgning",
     "SOON": "Kommer snart"
   },
   "SIDE_NAV": {
@@ -95,7 +98,8 @@
   "PRODUCT_DETAIL_PAGE": {
     "TO_CART": "Til forsendelse vogn",
     "TAX": "Alle priser er inklusive moms, plus forsendelse",
-    "DESCRIPTION": "Varebeskrivelse"
+    "DESCRIPTION": "Varebeskrivelse",
+    "CART_ADDED": "Tilføjet til indkøbskurven"
   },
   "NOTIFICATIONS_LIST_PAGE": {
     "TITLE": "Meddelelser",
@@ -410,7 +414,7 @@
       "BACK": "Ryg",
       "FORWARD": "Næste"
     },
-    "INTRO_TEXT": "For atvi kan udskrive recepten og sende dig medicinen, skal du sende os en faktura fra din dyrlæge med følgende oplysninger",
+    "INTRO_TEXT": "For at vi kan udskrive recepten og sende dig medicinen, skal vi have en faktura fra din dyrlæge med følgende oplysninger for alle præparater undtagen parasitmidler:",
     "INTRO_LIST": [
       "Dyrlægens navn og adresse",
       "Navn og fødselsdato atdit kæledyr",
@@ -436,6 +440,8 @@
   "TICKETS_PAGE": {
     "HEADER": "Planlægger af",
     "EXEC": "Udfør",
+    "ANNOTATIONS": "Dine noter...",
+    "DATE_TIME": "Ur",
     "UPLOAD": "Tilføj billede (jpg/png)",
     "ADD_IMAGE": "Dækbillede til denne opgave (valgfrit)",
     "ACTIONS": {
@@ -563,6 +569,7 @@
   },
   "TICKET_RESULT_PAGE": {
     "TITLE": "Evaluering",
+    "RECEIVED_COINS": "Modtag Confi-mønter",
     "DIAG_HEADER": "Diagnose",
     "NO_RESULT": "Dit resultat er ikke tilgængeligt.",
     "URGENCY": "Hastende",
@@ -840,6 +847,7 @@
     "GIARDIA": "Giardia",
     "FLORA": "Tarmflora",
     "PREVENTION": "Urin laboratorium",
+    "BARF": "Barf profil",
     "OK_BUTTON": "Anvend",
     "CANCEL_BUTTON": "Annuller",
     "SWITCH_PET": "Skift dyr",
@@ -911,6 +919,7 @@
     "TAX": "(inkl. moms)",
     "AMOUNT": "Antal",
     "PRICE": "Pris",
+    "PROCESSING": "Bestilling i gang",
     "TITLE": "Oversigt",
     "INVOICE": "Faktura",
     "BILLING": "Betalingsmetode"
@@ -920,6 +929,7 @@
     "ORDERS": "Bestillinger:",
     "YOUR_ORDERS": "Dine ordrer",
     "NO_ORDERS": "Der er ingen ordrer endnu",
+    "ORDER_NR": "Best.nr.",
     "DELIVERED": "Leveret",
     "DELIVERED_AT": "Leveret den:",
     "ORDERED_AT": "Bestilt den:",
@@ -933,6 +943,7 @@
     "TITLE": "Betalingsmetode"
   },
   "PRODUCT_MODAL_PAGE": {
+    "CANCEL": "Annuler",
     "DELIVERY_TIME": "Leveringstid",
     "PRESCRIPTION": "Recept påkrævet",
     "PHARMACY": "Kun apotek",
@@ -944,7 +955,8 @@
     "USAGE": "anvendelsesområde",
     "INSTRUCTIONS": "For risici og bivirkninger, læs indlægssedlen og spørg din dyrlæge eller apotek",
     "INST_LINK": "Download indlægsseddel",
-    "DOSAGE": "Dosering"
+    "DOSAGE": "Dosering",
+    "CART_ADDED": "Tilføjet til indkøbskurven"
   },
   "PRODUCT_SHIPMENT_INFO_MODAL": {
     "TITLE": "Oplysninger om forsendelse af produktet",
@@ -1009,7 +1021,7 @@
   "TELEVET_EMERGENCY_PAGE": {
     "TITLE": "Nødsituation",
     "HEADER": "Nødhjælp nødvendig?",
-    "TEXT": "Ikke alt, der i starten virker som en nødsituation, er også en. Vi hjælper dig med at vurdere situationen korrekt. Her finder du de mest almindelige medicinske nødsituationer med beskrivelser og mere information om, hvordan du hjælper dit kæledyr.",
+    "TEXT": "Ikke alt, der i starten virker som en nødsituation, er også en. Vi hjælper dig med at vurdere situationen korrekt. \nHer finder du de mest almindelige medicinske nødsituationer med beskrivelser og mere information om, hvordan du hjælper dit kæledyr.",
     "BUTTONS": {
       "CANCEL": "Annuller",
       "CONFIRM": "Fortsæt"
@@ -1023,6 +1035,9 @@
   },
   "TICKET_PAGE": {
     "EXEC": "Udføre",
+    "RECEIVED_COINS": "Modtagne Confi-mønter",
+    "FAIL": "Opdatering mislykkedes",
+    "SUCCESS": "Opdatering vellykket",
     "UPLOAD": "Tilføj billede (jpg/png)",
     "ADD_IMAGE": "Dækbillede til denne opgave (valgfrit)",
     "ACTIONS": {
@@ -1049,7 +1064,7 @@
     "NEW_TASK": "Opret ny opgave",
     "CREATE_TASK": "Opret opgave",
     "CLOSE_TASK": {
-      "BODY": "Ønsker du at lukke denne opgave?",
+      "BODY": "Luk denne opgave",
       "POPUP": {
         "TEXT": "Bekræft venligst dine oplysninger, og opgaven vil blive lukket.",
         "BUTTON": {
@@ -1090,7 +1105,7 @@
   "PW_RECOVERY_PAGE": {
     "RECOVER": "Nulstilling af kodeord",
     "RECOVERED": "Nulstil kodeord",
-    "ENTER_MAIL": "Indtast den e-mailadresse, du brugte til at logge ind på confidu-appen. Vi sender dig et link til at nulstille din adgangskode efterfølgende.",
+    "ENTER_MAIL": "Indtast den e-mailadresse, du brugte til at registrere dig i confidu-appen. Vi sender dig et link til at nulstille din adgangskode.",
     "ENTER_PW": "Indtast nu dit nye adgangskode.",
     "EMAIL": "E-mail address",
     "PASSWORD": "Ny adgangskode",
@@ -1161,43 +1176,7 @@
     "TITLE": "Går igennem",
     "CANCEL": "Spring over",
     "START": "Lad os gå",
-    "SLIDES": [
-      {
-        "TITLE": "CareCard",
-        "TEXT": "Tak for din tilmelding. Tag altid dit kæledyrs journal med dig - alle sundhedsdata samlet i en app.",
-        "IMG": "carecard"
-      },
-      {
-        "TITLE": "Urinstikprøve",
-        "TEXT": "Påvis og overvåg potentielle sygdomme hjemme fra dit eget hjem.",
-        "IMG": "harnsticktest"
-      },
-      {
-        "TITLE": "Medicinske tests",
-        "TEXT": "Baseret på afføringsprøver eller urinprøver tester dit kæledyrs helbred.",
-        "IMG": "medizintest"
-      },
-      {
-        "TITLE": "Min skål",
-        "TEXT": "Lav foderplaner i overensstemmelse med dit kæledyrs individuelle næringsstof- og energibehov som en professionel.",
-        "IMG": "mein_napf"
-      },
-      {
-        "TITLE": "Planner",
-        "TEXT": "Hold styr på alle dit kæledyrs vigtige opgaver med vores planlægger - fra lægemiddeladministration til ørepleje til dine egne aftaler.",
-        "IMG": "planner"
-      },
-      {
-        "TITLE": "Online dyrlæge",
-        "TEXT": "Statssymptomer besvare spørgsmål starte behandling - vores online dyrlæge hjælper dig med det samme.",
-        "IMG": "televet_anleitung"
-      },
-      {
-        "TITLE": "Forsikring",
-        "TEXT": "Administrer bekvemt forsikringspapirer og ydelser fra dine kæledyr.",
-        "IMG": "versicherung"
-      }
-    ]
+    "PROGRESS": "Fortsæt"
   },
   "USER_MODAL_PAGE": {
     "LANGUAGES": {
@@ -1258,6 +1237,7 @@
     "REG_TEXT": "Indtast den registreringskode, der er tildelt dit prøvemateriale her.",
     "EG": "f.eks. 0123456789",
     "WRONG_PET": "Er du logget ind med det forkerte dyr?",
+    "INVALID_SPECIES": "Falsk art",
     "INVALID_CODE": "Din kode kunne ikke tildeles. Du har muligvis lavet en stavefejl. Prøv igen.",
     "USED_CODE": "Din kode blev allerede brugt.",
     "CHANGE_PET": "Skift dyr",
@@ -1286,6 +1266,37 @@
       "CHARS": "1500 tegn",
       "BUTTON": "sende",
       "FAQ": "Ofte stillede spørgsmål"
+    },
+    "ORDER_DETAILS_PAGE": {
+      "TITLE": "Bestillingsoplysninger",
+      "NR": "Løbenummer:",
+      "ORDERED_AT": "Bestilt den:",
+      "STATUS": "Status:",
+      "SUMMARY": "I alt",
+      "AMOUNT": "Antal:",
+      "ADDRESS": "Leveringsadresse",
+      "PAYMENT": "Betalingsmetode",
+      "PACKAGE": "Pakning og forsendelse:",
+      "NET_PRICE": "I alt uden moms:",
+      "TAX": "Der skal tillægges moms:",
+      "TOTAL_PRICE": "I alt:",
+      "CANCEL": {
+        "BUTTON": "Annullering af en ordre",
+        "TEXT": "Annullering er kun mulig inden for 30 minutter og kun for hele ordren, forudsat at den endnu ikke er under forsendelsesprocessen. Videoopkald kan afbestilles op til 2 timer før aftalens start."
+      }
+    },
+    "ORDER_CANCEL_PAGE": {
+      "TITLE": "Afbestilling",
+      "CANCEL_ORDER": "Annullering af en ordre",
+      "ORDER_NR": "Løbenummer:",
+      "REASON": "Årsag til aflysning",
+      "CHEAPER": "Produkter set billigere",
+      "UNNECESSARY": "Produkter, der ikke længere er nødvendige",
+      "ACCIDENTAL": "Produkter bestilt ved en fejltagelse",
+      "OTHER": "anden grund",
+      "BUTTON": "Annuller",
+      "SUCCESS": "Din anmodning om annullering blev sendt med succes!",
+      "ERROR": "Desværre er der opstået en fejl. Prøv venligst igen."
     }
   }
 }

@@ -1,8 +1,8 @@
 import {Component, ElementRef, Input, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import { ToolbarModalPage } from '../toolbar-modal/toolbar-modal.page';
-import { ModalController } from '@ionic/angular';
-import { Observable, Subscription } from 'rxjs';
+import { ModalController} from '@ionic/angular';
+import {  Subscription } from 'rxjs';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { FirebaseService } from '../../services/firebase/firebase.service';
 import { CommonService } from '../../services/common/common.service';
@@ -11,6 +11,7 @@ import { QrScannerModalPage } from '../../qr-scanner-modal/qr-scanner-modal.page
 import { TranslateService } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../../environments/environment';
+import {switchMap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-toolbar-footer',
@@ -42,12 +43,14 @@ export class ToolbarFooterComponent implements OnInit, OnDestroy {
 
   private subscription: Subscription;
   private notificationsSubscription: Subscription;
+  private upDateSubscription: Subscription;
   private action: string;
   private invalidCode: string;
   private usedCode: string;
   private assignment: any;
   private regSuccess: string;
   private readonly language: string;
+  private userData: any;
 
   get isHomePage() {
     return this.router.url.indexOf('home') > -1;
@@ -87,6 +90,7 @@ export class ToolbarFooterComponent implements OnInit, OnDestroy {
 
     if (this.user) {
       this.checkForNotifications();
+      this.checkForUpDate();
     }
 
   }
@@ -216,6 +220,22 @@ export class ToolbarFooterComponent implements OnInit, OnDestroy {
       })
   }
 
+  private checkForUpDate() {
+    this.upDateSubscription = this.firebaseService.getUser(this.user.uid).pipe(
+      switchMap(user => {
+        this.userData = user;
+        return this.firebaseService.checkForUpdate();
+      })
+    ).subscribe(response => {
+      if (this.userData?.version !== response.nr) {
+        this.firebaseService.setVersion(this.user.uid, response.nr)
+          .then(resp => {
+            this.commonService.clearCache();
+          });
+      }
+    })
+  }
+
   private updatePetImage(imageUrl: string): void {
     this.subscription = this.firebaseService.getPetById(this.user.uid, localStorage.getItem('activePet'))
       .subscribe(pet => {
@@ -273,6 +293,10 @@ export class ToolbarFooterComponent implements OnInit, OnDestroy {
 
     if (this.notificationsSubscription) {
       this.notificationsSubscription.unsubscribe();
+    }
+
+    if (this.upDateSubscription) {
+      this.upDateSubscription.unsubscribe();
     }
   }
 }

@@ -54,7 +54,7 @@ export class WalkthroughPage implements OnInit {
       `${this.imagePath}/${this.language}/${this.language}_scan.svg`,
       `${this.imagePath}/${this.language}/${this.language}_planer.svg`,
       `${this.imagePath}/${this.language}/${this.language}_test.svg`,
-      `${this.imagePath}/${this.language}/${this.language}_${this.device}.svg`,
+      `${this.imagePath}/${this.language}/${this.device}_${this.language}.svg`,
     ];
 
     this.isLoading = false;

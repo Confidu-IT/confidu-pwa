@@ -70,11 +70,12 @@ export class TicketPage {
         this.params = params;
         // console.log('this.params', this.params);
       });
-    this.translateService.get('HOME_PAGE')
+    this.translateService.get('TICKET_PAGE')
       .subscribe(values => {
         this.coins = values.RECEIVED_COINS;
         this.success = values.SUCCESS;
         this.fail = values.FAIL;
+        console.log('coins', this.coins)
       });
 
     this.form = new FormGroup({

@@ -58,6 +58,34 @@ export class CommonService {
     this.appLanguage$.next(locale);
   }
 
+  public clearCache(reloadAfterClear = true) {
+    if ('caches' in window) {
+      caches.keys().then((names) => {
+        names.forEach(async (name) => {
+          await caches.delete(name);
+        });
+      });
+
+      if (reloadAfterClear) {
+        // localStorage.setItem('refreshCount', '0');
+        // console.log('storage', localStorage);
+        // const refreshCount = localStorage.getItem('refreshCount');
+        // let val: number;
+        // if  (Number(refreshCount) < 3) {
+        //   console.log(Number(refreshCount))
+        //   val = Number(refreshCount) + 1;
+        //   console.log('val', val)
+        //
+        //   localStorage.setItem('refreshCount', String(val));
+        //   window.location.reload();
+        //   console.log('localStorage', localStorage);
+        // }
+        window.location.reload();
+      }
+
+    }
+  }
+
   public getInvoiceResult(
     token: string,
     petID: string,

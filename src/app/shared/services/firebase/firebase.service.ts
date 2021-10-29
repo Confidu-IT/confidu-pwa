@@ -51,7 +51,7 @@ export class FirebaseService {
   }
 
   public checkForUpdate(): Observable<any> {
-    return this.afs.doc(`check-for-update/1337`).valueChanges();
+    return this.afs.doc(`check-for-update/appVersion`).valueChanges();
   }
 
   public getCoins(userId: string): Observable<any> {
@@ -73,6 +73,11 @@ export class FirebaseService {
 
   public setUserLanguage(userId: string, lang: any): Promise<any> {
     const data = { country: lang };
+    return this.userCollection.doc(userId).set(data, { merge: true });
+  }
+
+  public setVersion(userId: string, v: number): Promise<any> {
+    const data = { version: v };
     return this.userCollection.doc(userId).set(data, { merge: true });
   }
 

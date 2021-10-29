@@ -6,10 +6,9 @@
   <div class="ion-text-center" *ngIf="isLoading">
     <ion-spinner color="primary"></ion-spinner>
   </div>
-  <img [src]="infoImg" alt="" *ngIf="device === 'android' && !isLoading">
+  <img [src]="infoImg" alt="" *ngIf="!isLoading">
 </ion-content>
 
 <ion-footer *ngIf="!isLoading">
-  <img [src]="infoImg" alt="" *ngIf="device === 'ios'">
   <app-toolbar-footer [user]="user"></app-toolbar-footer>
 </ion-footer>
