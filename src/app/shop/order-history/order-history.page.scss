@@ -1,11 +1,9 @@
 .order-history {
   &-header {
-    background: url('../../../assets/icons/product-registration/header-bg.svg') repeat-x;
     display: flex;
     align-items: center;
-    padding: 36px;
-    margin: -5px;
-    height: 100px;
+    margin-left: 24px;
+    height: 90px;
 
     img {
       max-height: 100%;
@@ -63,7 +61,7 @@
 .no-orders {
   color: rgb(102,102,102);
   font-size: 13px;
-  text-align: center;
+  margin: 0 0 0 20px;
 }
 
 ion-card {

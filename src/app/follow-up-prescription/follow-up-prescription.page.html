@@ -27,7 +27,7 @@
     <ion-row *ngIf="!isLoading">
       <ion-col sizeSm="8" offsetSm="2">
         <div class="footer-buttons">
-          <ion-button  color="secondary" fill="clear" size="small" routerLink="dropdowns">
+          <ion-button  color="secondary" fill="clear" size="small" (click)="onProgress()">
             {{ 'FU_PAGE.BUTTONS.FORWARD' | translate }}
           </ion-button>
         </div>

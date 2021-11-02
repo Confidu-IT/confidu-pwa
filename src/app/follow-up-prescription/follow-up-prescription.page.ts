@@ -23,7 +23,8 @@ export class FollowUpPrescriptionPage {
   constructor(
     private translateService: TranslateService,
     private commonService: CommonService,
-    private userAuth: AuthService
+    private userAuth: AuthService,
+    private router: Router
   ) { }
 
   ionViewWillEnter() {
@@ -39,6 +40,10 @@ export class FollowUpPrescriptionPage {
         this.user = user;
         this.isLoading = false;
       });
+  }
+
+  public onProgress(): void {
+    this.router.navigateByUrl('follow-up-prescription/dropdowns');
   }
 
   ionViewWillLeave() {
