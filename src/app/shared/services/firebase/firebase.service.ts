@@ -183,8 +183,8 @@ export class FirebaseService {
     return this.afs.doc(`users/${userId}/pets/${petId}`).valueChanges();
   }
 
-  public getAllBreeds(breed: string): Observable<any[]> {
-    this.racesCollection = this.afs.collection(`race-list-${breed}`, (ref) => ref.orderBy('name_de', 'asc'));
+  public getAllBreeds(breed: string, language: string): Observable<any[]> {
+    this.racesCollection = this.afs.collection(`race-list/${breed}/data`, (ref) => ref.orderBy(`name_${language}`, 'asc'));
     return this.racesCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
         const race = {

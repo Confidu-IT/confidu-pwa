@@ -22,7 +22,8 @@
     "BIRTHDAY_LABEL": "Geburtsdatum",
     "FORM_BUTTON": "Speichern",
     "WAITING": "Bitte warten ...",
-    "TITLE": "Neues Tier"
+    "TITLE": "Neues Tier",
+    "CREATE_PROFILE": "Erstelle Tierprofil ..."
   },
   "DASHBOARD_PAGE": {
     "TITLE": "Überblick",
@@ -311,7 +312,7 @@
   },
   "TICKET_RESULT_PAGE": {
     "TITLE": "Auswertung",
-    "RECEIVED_COINS": "confiCoins erhalten",
+    "RECEIVED_COINS": "confi-Coins erhalten",
     "DIAG_HEADER": "Diagnose",
     "NO_RESULT": "Das Ergebnis ist nicht verfügbar.",
     "URGENCY": "Dringlichkeit",
@@ -823,7 +824,7 @@
     "GIARDIA": "Giardien",
     "FLORA": "Darmflora",
     "PREVENTION": "Urin Labor",
-    "BARF": "Barf Profil",
+    "BARF": "BARF Profil",
     "OK_BUTTON": "Übernehmen",
     "CANCEL_BUTTON": "Abbrechen",
     "SWITCH_PET": "Tier wechseln",
@@ -1225,7 +1226,7 @@
     "BOWL": "Mein Napf",
     "RESEARCH": "Forschen",
     "LAB": "Labor",
-    "ACTIVATION": "Forscherbox aktivieren",
+    "ACTIVATION": "Forscher Box aktivieren",
     "URINE_TEST": "Harntest Kit",
     "PROTECT": "Schützen",
     "CONTRACT": "Vertrag",

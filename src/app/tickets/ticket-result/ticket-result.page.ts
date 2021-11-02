@@ -71,8 +71,9 @@ export class TicketResultPage implements CanDeactivateGuard {
 
     this.language = this.commonService.language;
     this.translateService.use(this.language);
-    this.translateService.get('HOME_PAGE')
+    this.translateService.get('TICKET_RESULT_PAGE')
       .subscribe(values => {
+        console.log('values', values);
         this.coins = values.RECEIVED_COINS;
       });
     this.subscription = this.userAuth.user$.pipe(

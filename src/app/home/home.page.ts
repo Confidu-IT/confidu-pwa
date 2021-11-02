@@ -120,6 +120,7 @@ export class HomePage {
 
     this.subscription = this.userAuth.user$
       .subscribe((user) => {
+        // console.log(user)
         if (!user) {
           return this.router.navigateByUrl('/signin');
         }

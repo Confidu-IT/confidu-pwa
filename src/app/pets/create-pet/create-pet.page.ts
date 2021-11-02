@@ -6,7 +6,7 @@ import { environment } from '../../../environments/environment';
 import { AuthService } from '../../user/auth.service';
 import { FirebaseService } from '../../shared/services/firebase/firebase.service';
 import { Observable, Subscription } from 'rxjs';
-import { finalize, map, startWith } from 'rxjs/operators';
+import { map, startWith } from 'rxjs/operators';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { CommonService } from '../../shared/services/common/common.service';
 import { HttpClient } from '@angular/common/http';
@@ -45,7 +45,11 @@ export class CreatePetPage implements OnInit {
       label: {
         de: 'Katze',
         dk: 'Kat',
-        en: 'Cat'
+        en: 'Cat',
+        es: 'Gato',
+        fr: 'Chat',
+        it: 'Gatto',
+        pl: 'Kat'
       }
     },
     {
@@ -53,7 +57,11 @@ export class CreatePetPage implements OnInit {
       label: {
         de: 'Hund',
         dk: 'Hund',
-        en: 'Dog'
+        en: 'Dog',
+        es: 'Perro',
+        fr: 'Chien',
+        it: 'Cane',
+        pl: 'Pies'
       }
     }
   ];
@@ -67,6 +75,7 @@ export class CreatePetPage implements OnInit {
   private breedModal: any;
   private subscription: Subscription;
   private waiting: string;
+  private createProfile: string;
 
   @ViewChild('filePicker') filePickerRef: ElementRef<HTMLInputElement>;
 
@@ -98,6 +107,7 @@ export class CreatePetPage implements OnInit {
       });
 
     this.language = this.commonService.language;
+    // console.log('this.language', this.language);
     this.translateService.use(this.language);
     this.translateService.get('CREATE_PET_PAGE')
       .subscribe(values => {
@@ -105,17 +115,12 @@ export class CreatePetPage implements OnInit {
         this.okText = values.OK_BUTTON;
         this.cancelText = values.CANCEL_BUTTON;
         this.waiting = values.WAITING;
+        this.createProfile = values.CREATE_PROFILE;
       });
 
   }
 
   ngOnInit(): void {
-
-    // this.translateService.setDefaultLang(this.language); // fallback
-    // this.translateService.use(this.translateService.getBrowserLang());
-
-
-
     this.form = new FormGroup({
       name: new FormControl(null, {
         updateOn: 'change',
@@ -178,16 +183,20 @@ export class CreatePetPage implements OnInit {
   }
 
   public raceLabel(race?: any): any {
-    return race ? race.data.name_de : undefined;
+    const lang = localStorage.getItem('country') || 'de';
+    const field = `name_${lang}`;
+    return race ? race.data[field] : undefined;
   }
 
   private filterRace(racesList: any, value: string) {
     let filterValue;
+    const lang = localStorage.getItem('country') || 'de';
+    const field = `name_${lang}`;
     if (typeof value === 'string') {
       filterValue = value.toLowerCase();
     }
     return racesList.filter(option => {
-      return option.data.name_de.toLowerCase().includes(filterValue);
+      return option.data[field].toLowerCase().includes(filterValue);
     });
   }
 
@@ -310,9 +319,9 @@ export class CreatePetPage implements OnInit {
 
     this.species = this.speciesList.filter(item => item.value === event.detail.value);
     this.selectedSpecies = this.species[0].value;
-    return this.firebaseService.getAllBreeds(this.selectedSpecies)
+    return this.firebaseService.getAllBreeds(this.selectedSpecies, this.language)
       .subscribe((response: any) => {
-        // console.log('response', response);
+        console.log('response', response);
         return this.createBreedList(response);
       });
   }
@@ -328,7 +337,11 @@ export class CreatePetPage implements OnInit {
         label: {
           de: 'Kastriert',
           dk: 'Kastrerede',
-          en: 'Castrated'
+          en: 'Castrated',
+          es: 'Castrado',
+          fr: 'Castré',
+          it: 'Castrato',
+          pl: 'Wykastrowany'
         }
       },
       {
@@ -336,7 +349,11 @@ export class CreatePetPage implements OnInit {
         label: {
           de: 'Unkastriert',
           dk: 'Ikke Kastreret',
-          en: 'Not Neutered'
+          en: 'Intact',
+          es: 'Sin castrar',
+          fr: 'Non castré',
+          it: 'Non castrato',
+          pl: 'Niekastrowany'
         }
       }
     ];
@@ -347,7 +364,11 @@ export class CreatePetPage implements OnInit {
         label: {
           de: 'Männlich',
           dk: 'Mand',
-          en: 'Male'
+          en: 'Male',
+          es: 'Masculino',
+          fr: 'Masculin',
+          it: 'Maschile',
+          pl: 'Rodzaj męski'
         }
       },
       {
@@ -355,22 +376,26 @@ export class CreatePetPage implements OnInit {
         label: {
           de: 'Weiblich',
           dk: 'Kvinde',
-          en: 'Female'
+          en: 'Female',
+          es: 'Mujer',
+          fr: 'Femelle',
+          it: 'Femmina',
+          pl: 'Płeć żeńska'
         }
       }
     ];
 
     let kind;
     kind = this.speciesList.filter(item => item.value === data.value.species);
-    kind = kind[0];
     castration = castration.filter(item => item.value === data.value.castration);
     gender = gender.filter(item => item.value === data.value.gender);
+
     const pet = {
       breed: this.breed,
       gender: gender[0],
       image: data.value.image,
       name: data.value.name,
-      species: kind,
+      species: kind[0],
       castration: castration[0],
       birthday: new Date(data.value.birthday),
       currentWeight: null,
@@ -397,18 +422,19 @@ export class CreatePetPage implements OnInit {
   private async createFireBasePet(userId, pet): Promise<any> {
     this.presentLoading();
     const data = await this.firebaseService.createPet(this.user$.uid, pet);
+    console.log('data', data);
     localStorage.setItem('activePet', data.id);
     await this.commonService.notifyBackend(data.id, userId, this.user$.za);
     return this.firebaseService.createActivePetId(userId, data.id);
   }
 
   private createBreedList(races: any[]) {
-    // console.log('races', races);
     this.filteredOptions = this.form.get('race').valueChanges
       .pipe(
         startWith(''),
         map(value => {
           this.breed = value;
+          console.log('breed', this.breed)
           return this.filterRace(races, value);
         })
       );
@@ -438,9 +464,11 @@ export class CreatePetPage implements OnInit {
       .then((response: any) => {
         if (response?.data) {
           this.breed = response.data;
+          const lang = localStorage.getItem('country') || 'de';
+          const field = `name_${lang}`;
           this.form.patchValue({ race: this.breed });
           this.showBreedList = false;
-          this.fixedBreed = this.breed.data.name_de;
+          this.fixedBreed = this.breed.data[field];
         }
       });
     return await this.breedModal.present();

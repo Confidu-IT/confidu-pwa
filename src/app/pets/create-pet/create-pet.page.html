@@ -52,7 +52,8 @@
                             [maxlength]="'20'"
                             type="text">
                   </textarea>
-                  <mat-placeholder class="breed-placeholder">Rasse</mat-placeholder>
+                  <mat-placeholder
+                    class="breed-placeholder">{{ 'CREATE_PET_PAGE.BREED_LABEL' | translate }}</mat-placeholder>
                   <mat-autocomplete #auto="matAutocomplete" [panelWidth]="300"
                                     [displayWith]="raceLabel"
                                     autoActiveFirstOption>
@@ -60,7 +61,17 @@
                     <mat-option *ngFor="let option of (filteredOptions | async)"
                                 (onSelectionChange)="onValueChange($event)"
                                 [value]="option">
-                      {{ option.data.name_de }}
+                      <ng-container [ngSwitch]="language">
+                        <ng-container *ngSwitchCase="'de'">{{ option.data.name_de }}</ng-container>
+                        <ng-container *ngSwitchCase="'dk'">{{ option.data.name_dk }}</ng-container>
+                        <ng-container *ngSwitchCase="'en'">{{ option.data.name_en }}</ng-container>
+                        <ng-container *ngSwitchCase="'es'">{{ option.data.name_es }}</ng-container>
+                        <ng-container *ngSwitchCase="'fr'">{{ option.data.name_fr }}</ng-container>
+                        <ng-container *ngSwitchCase="'it'">{{ option.data.name_it }}</ng-container>
+                        <ng-container *ngSwitchCase="'pl'">{{ option.data.name_pl }}</ng-container>
+                        <ng-container *ngSwitchDefault>{{ option.data.name_de }}</ng-container>
+                      </ng-container>
+
                     </mat-option>
                   </mat-autocomplete>
                 </mat-form-field>
