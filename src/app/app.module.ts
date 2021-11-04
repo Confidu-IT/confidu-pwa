@@ -33,6 +33,7 @@ import { DocumentZoomModalPageModule } from './shared/document-zoom-modal/docume
 import { AngularFireMessagingModule } from '@angular/fire/messaging';
 import {TokenInterceptor} from './shared/services/token/token-interceptor.service';
 import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
+import {HttpErrorInterceptor} from './shared/services/http-error-interceptor/http-error-interceptor.service';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -81,6 +82,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ScreenOrientation,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
   ],
   exports: [TranslateModule],
   bootstrap: [AppComponent]

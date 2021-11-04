@@ -230,7 +230,12 @@ const routes: Routes = [
     path: 'order-cancellation/:orderNr',
     loadChildren: () => import('./shop/order-cancellation/order-cancellation.module').then( m => m.OrderCancellationPageModule)
   },
+  {
+    path: 'error',
+    loadChildren: () => import('./error/error.module').then( m => m.ErrorPageModule)
+  },
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
+
 ];
 
 @NgModule({

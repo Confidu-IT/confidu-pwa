@@ -1306,5 +1306,10 @@
     "BUTTON": "Stornieren",
     "SUCCESS": "Deine Stornierungsanfrage wurde erfolgreich versendet!",
     "ERROR": "Leider ist ein Fehler aufgetreten. Bitte versuche es erneut."
+  },
+  "ERROR_PAGE": {
+    "BUTTON": "Zur Startseite",
+    "HEADER": "Ein Fehler ist aufgetreten!",
+    "BODY": "Dahinter stecken bestimmt Lila und Hermann, diese hinterhältigen Fellknäuel. Schau dich ruhig weiter um - wir werden uns darum kümmern."
   }
 }

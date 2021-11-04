@@ -397,25 +397,30 @@ export class CommonService {
     return Math.floor(Math.random() * 10000).toString();
   }
 
+  // ToDo: Cleanup this
+
   public handleResponseErrors(statusCode: string): void {
     const message = this.errorMessages.PRODUCTS[statusCode];
     // this.presentToast(message, 'danger');
-    switch (statusCode) {
-      case '400':
-        this.presentToast(message, 'danger');
-        this.router.navigateByUrl(`/`);
-        break;
-      case '403':
-        this.authService.logOut();
-        break;
-      case '406':
-        this.presentToast(message, 'danger');
-        this.router.navigateByUrl(`/`);
-        break;
-      case '451':
-        this.authService.logOut();
-        break;
-    }
+    // switch (statusCode) {
+    //   case '400':
+    //     this.presentToast(message, 'danger');
+    //     this.router.navigateByUrl(`/`);
+    //     break;
+    //   case '403':
+    //     this.authService.logOut();
+    //     break;
+    //   case '406':
+    //     this.presentToast(message, 'danger');
+    //     this.router.navigateByUrl(`/`);
+    //     break;
+    //   case '451':
+    //     this.authService.logOut();
+    //     break;
+    //   case '500':
+    //     this.router.navigateByUrl(`/`);
+    //     break;
+    // }
   }
 
   public handleLoginErrors(statusCode: string): void {

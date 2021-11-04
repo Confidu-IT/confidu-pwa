@@ -1,0 +1,28 @@
+<ion-header>
+  <app-toolbar [settings]="true"></app-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeMd="8" offsetMd="2">
+        <div class="content">
+          <img [src]="fourOfourIcon" alt="" class="error-image">
+          <h2>{{ 'ERROR_PAGE.HEADER' | translate }}</h2>
+          <p>{{ 'ERROR_PAGE.BODY' | translate }}</p>
+
+          <ion-button
+            color="secondary"
+            expand="full"
+            (click)="goHome()">
+            {{ 'ERROR_PAGE.BUTTON' | translate }}
+          </ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <app-toolbar-footer [user]="user"></app-toolbar-footer>
+</ion-footer>
