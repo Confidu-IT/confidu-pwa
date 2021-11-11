@@ -142,8 +142,8 @@ export class OrderPage {
           this.commonService.handleResponseErrors(order.errors[0].status);
         } else {
           this.shopwareService.payOrder(order).then((data) => {
-            // console.log('data', data);
-            location.href = data.redirectUrl;
+            console.log('data', data);
+            // location.href = data.redirectUrl;
           });
 
         }

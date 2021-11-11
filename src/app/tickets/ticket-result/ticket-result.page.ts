@@ -192,7 +192,7 @@ export class TicketResultPage implements CanDeactivateGuard {
 
   canDeactivate(): Promise<boolean> | boolean {
     if (
-      this.routingDestination?.search('cart') > -1 ||
+      // this.routingDestination?.search('cart') > -1 ||
       this.routingDestination?.search('consultation') > -1 ||
       this.routingDestination?.search('follow-up-prescription') > -1
     ) {

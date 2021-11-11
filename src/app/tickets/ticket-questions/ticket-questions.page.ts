@@ -114,6 +114,7 @@ export class TicketQuestionsPage {
   private addedFiles: string[];
   public lastVacMax = new Date().toISOString();
 
+
   constructor(
     public userAuth: AuthService,
     private commonService: CommonService,

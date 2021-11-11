@@ -264,7 +264,7 @@ export class FirebaseService {
     }
     if (collection === 'therapy') {
       this.therapyCollection = this.afs.collection(
-        `scan-db/${collection}/${language}`, ref => ref.orderBy('name', 'asc')
+        `scan-db/${collection}/${language}/data/${species}`, ref => ref.orderBy('name', 'asc')
       );
       return this.therapyCollection.snapshotChanges().pipe(
         map(actions => actions.map(a => {
@@ -274,7 +274,7 @@ export class FirebaseService {
     }
     if (collection === 'findings') {
       this.findingsCollection = this.afs.collection(
-        `scan-db/${collection}/${language}`, ref => ref.orderBy('name', 'asc')
+        `scan-db/${collection}/${language}/data/${species}`, ref => ref.orderBy('name', 'asc')
       );
       return this.findingsCollection.snapshotChanges().pipe(
         map(actions => actions.map(a => {

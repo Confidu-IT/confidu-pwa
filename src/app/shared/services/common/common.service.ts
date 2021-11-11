@@ -12,6 +12,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CommonService {
   private errorMessages: any;
+  private globalErrors: any;
   private baseUrl = environment.baseUrl;
   private appLanguage$ = new BehaviorSubject<any>('');
 
@@ -47,6 +48,7 @@ export class CommonService {
     this.translateService.get('COMMON')
       .subscribe(common => {
         this.errorMessages = common.HTTP_ERRORS;
+        this.globalErrors = common.GLOBAL_ERRORS;
       });
   }
 
@@ -372,6 +374,8 @@ export class CommonService {
     });
     return toast.present();
   }
+
+
 
   public dataURItoBlob(dataURI): Blob {
     const byteString = atob(dataURI.split(',')[1]);

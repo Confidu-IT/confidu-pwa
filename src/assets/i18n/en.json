@@ -67,6 +67,9 @@
         "401": "Invalid email or password",
         "403": "FOOBAR"
       }
+    },
+    "GLOBAL_ERRORS": {
+      "DEFAULT": "Blabla"
     }
   },
   "MAIN_NAV": {

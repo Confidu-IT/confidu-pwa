@@ -544,6 +544,10 @@
                       *ngIf="question?.values.answerOption[0].value == 'Morph_Q1'">
                       {{ 'TICKET_QUESTION_PAGE.CM' | translate }}
                     </span>
+                    <span
+                      *ngIf="question?.values.answerOption[0].value == 'head_diameter_no_answer'">
+                      {{ 'TICKET_QUESTION_PAGE.CM' | translate }}
+                    </span>
                   </mat-label>
                   <input type="number" matInput [(ngModel)]="selectedNumber">
                 </mat-form-field>
@@ -684,20 +688,19 @@
       <ion-col sizeSm="8" offsetSm="2">
         <ion-progress-bar color="secondary" [value]="questionProgressValue"></ion-progress-bar>
         <div class="question-link-buttons">
-          <ion-button [disabled]="validateBackButton" (click)="goBack()" color="medium" fill="clear" size="small">
+          <button
+            [disabled]="validateBackButton"
+            (click)="goBack()"
+            class="custom-button back">
             {{ 'TICKET_QUESTION_PAGE.BACK_BUTTON' | translate }}
-          </ion-button>
+          </button>
 
-          <ion-button
+          <button
             (click)="onProgressQuestion()"
-          [disabled]="
-          validateAnswer
-          "
-                      color="secondary"
-                      fill="clear"
-                      size="small">
+            [disabled]="validateAnswer"
+            class="custom-button progress">
             {{ 'TICKET_QUESTION_PAGE.PROGRESS_BUTTON' | translate }}
-          </ion-button>
+          </button>
 
         </div>
       </ion-col>

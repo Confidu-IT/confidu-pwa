@@ -319,7 +319,7 @@ export class InvoiceResultPage {
   }
 
   private fetchTherapy(): void {
-    this.firebaseService.getScanDB(this.language, 'therapy')
+    this.firebaseService.getScanDB(this.language, 'therapy', this.pet.pet.species.value)
       .subscribe(data => {
         this.therapy = data;
         if (this.therapy?.length > 0) {
@@ -333,7 +333,7 @@ export class InvoiceResultPage {
       });
   }
   private fetchFindings(): void {
-    this.firebaseService.getScanDB(this.language, 'findings')
+    this.firebaseService.getScanDB(this.language, 'findings', this.pet.pet.species.value)
       .subscribe(data => {
         this.findings = data;
         if (this.findings?.length > 0) {

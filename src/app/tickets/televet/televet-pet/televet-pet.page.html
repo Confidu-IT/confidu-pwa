@@ -155,12 +155,13 @@
   <ion-row>
     <ion-col offsetSm="2" sizeSm="8">
       <div class="progress-button">
-        <ion-button (click)="onProgress()" [disabled]="!symptom"
-                    color="secondary"
-                    fill="clear"
-                    size="small">
+        <button
+          (click)="onProgress()"
+          [disabled]="!symptom"
+          class="custom-button progress">
           {{ televet?.PROGRESS_BUTTON }}
-        </ion-button>
+        </button>
+
       </div>
 
     </ion-col>

@@ -1207,6 +1207,13 @@
         "401": "Ungültige E-Mail oder Passwort",
         "403": "FOOBAR"
       }
+    },
+    "GLOBAL_ERRORS": {
+      "DEFAULT": "Etwas ist schiefgegangen",
+      "QUESTIONS_EMPTY": "Nonsens Text",
+      "KEY_NOT_FOUND": "Ungültiger Key",
+      "ACTIVATED": "Key bereits aktiviert",
+      "SPECIES": "Falsche Spezies"
     }
   },
   "TOOLBAR": {
