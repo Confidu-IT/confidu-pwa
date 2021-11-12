@@ -12,6 +12,7 @@ import { ModalController } from '@ionic/angular';
 import { HomeModalPage } from './home-modal/home-modal.page';
 // import { AngularFireMessaging } from '@angular/fire/messaging';
 import { HttpClient } from '@angular/common/http';
+import {AngularFireAnalytics} from '@angular/fire/analytics';
 
 @Component({
   selector: 'app-home',
@@ -84,7 +85,8 @@ export class HomePage {
     private commonService: CommonService,
     private modalCtrl: ModalController,
     // private afMessaging: AngularFireMessaging,
-    private http: HttpClient
+    private http: HttpClient,
+    private analytics: AngularFireAnalytics
   ) {
 
 
@@ -125,8 +127,12 @@ export class HomePage {
           return this.router.navigateByUrl('/signin');
         }
         this.user$ = user;
+        this.analytics.logEvent('confidu-event', {foo: '1337'});
+
+        localStorage.setItem('user-id',user.uid);
         this.patchButton = false;
         this.healthStateIcon = this.statusCheckInactiveImg;
+        console.log('local', localStorage)
 
         // this.afAuth.onIdTokenChanged(this.user$)
         // event emitter
