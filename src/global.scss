@@ -234,10 +234,18 @@ ion-button.button-disabled {
 
 .question-form {
   .mat-form-field-appearance-legacy .mat-form-field-underline {
-    background-color: rgba(0, 0, 0, 0.42);
+    //background-color: rgba(0, 0, 0, 0.42);
     background-color: #cacaca;
   }
 }
+
+.language {
+  .mat-form-field-appearance-legacy .mat-form-field-underline {
+    background-color: #cacaca;
+  }
+}
+
+
 
 mat-form-field.weigh-input {
   width: 100%;

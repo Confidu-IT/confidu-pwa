@@ -541,11 +541,15 @@
                       {{ 'TICKET_QUESTION_PAGE.TEMPERA' | translate }}
                     </span>
                     <span
-                      *ngIf="question?.values.answerOption[0].value == 'Morph_Q1'">
-                      {{ 'TICKET_QUESTION_PAGE.CM' | translate }}
-                    </span>
-                    <span
-                      *ngIf="question?.values.answerOption[0].value == 'head_diameter_no_answer'">
+                      *ngIf="
+                        question?.name == 'Morph_Q1' ||
+                        question?.name == 'Morph_Q2' ||
+                        question?.name == 'Morph_Q3' ||
+                        question?.name == 'Morph_Q4' ||
+                        question?.name == 'Morph_Q5' ||
+                        question?.name == 'Morph_Q7' ||
+                        question?.name == 'Morph_Q11'
+                      ">
                       {{ 'TICKET_QUESTION_PAGE.CM' | translate }}
                     </span>
                   </mat-label>

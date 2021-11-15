@@ -50,9 +50,11 @@ export class ProductModalPage implements OnInit {
     this.translateService.use(this.language);
     this.translateService.get('PRODUCT_MODAL_PAGE')
       .subscribe(values => {
+        console.log('values', values);
         this.cartAdded = values.CART_ADDED
         this.cancelText = values.CANCEL;
         this.okText = values.OK;
+        console.log('this.okText', this.okText);
       });
     console.log('item', this.item);
     this.title = this.item.med_name;

@@ -451,7 +451,7 @@ export class TicketQuestionsPage {
   public onPickVetZip(): void {
     console.log('this.vetZipCode', this.vetZipCode);
     this.vetError = false;
-    if (String(this.vetZipCode).length === 5) {
+    if (String(this.vetZipCode).length > 4 || String(this.vetZipCode).length < 6) {
       console.log('load vets');
       this.firebaseService.getVetsByZipCode(this.language, String(this.vetZipCode))
         .subscribe(vets => {
@@ -943,6 +943,8 @@ export class TicketQuestionsPage {
     const undefinedVariants = selectedVariants.includes(undefined);
     const allVetOffice = !locations.includes('home');
     const allHome = !locations.includes('vet');
+
+    console.log()
 
     if (allVetOffice && !undefinedVariants) { // all medication variants set and given at vet office
       return false;

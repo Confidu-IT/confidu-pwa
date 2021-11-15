@@ -86,7 +86,7 @@ export class TicketResultPage implements CanDeactivateGuard {
         this.petId = localStorage.getItem('activePet');
 
         // delete this
-        // this.result = this.ticketService.blah;
+        // this.result = this.ticketService.foo;
         // console.log('this.result', this.result);
         // this.createChevrons();
 
@@ -111,8 +111,9 @@ export class TicketResultPage implements CanDeactivateGuard {
     ).subscribe(data => {
       this.isFoodCheck = this.params.symptom === 'foodcheck';
       this.result = data;
+      console.log('this.result', this.result);
       this.createChevrons();
-      console.log('data', data);
+      // console.log('data', data);
 
       this.eventId = this.result.eventId;
 
@@ -184,7 +185,7 @@ export class TicketResultPage implements CanDeactivateGuard {
   }
 
   private coinsHandler() {
-    if (!this.params.id) {
+    if (!this.result.ticketCoins) {
       return;
     }
     this.commonService.presentToast(this.coins, 'primary');

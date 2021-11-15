@@ -60,7 +60,10 @@
                     {{ i + 1 }}
                   </ion-select-option>
                 </ion-select>
+
                 <ion-select *ngIf="item?.data?.translated?.customFields?.product_prescription"
+                            [cancelText]="cancelText"
+                            [okText]="okText"
                             class="product-quantity"
                             formControlName="quantity">
                   <ion-select-option [value]="medAmount">

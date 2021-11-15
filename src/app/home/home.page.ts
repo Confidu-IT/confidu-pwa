@@ -253,6 +253,12 @@ export class HomePage {
   }
 
   public onOpenHealthStateModal() {
+    this.analytics.logEvent(
+      'confidu-click-event', {
+        page: 'home',
+        button: 'treatment'
+      }
+    );
     this.presentModal();
   }
 

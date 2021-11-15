@@ -143,7 +143,7 @@ export class OrderPage {
         } else {
           this.shopwareService.payOrder(order).then((data) => {
             console.log('data', data);
-            // location.href = data.redirectUrl;
+            location.href = data.redirectUrl;
           });
 
         }
