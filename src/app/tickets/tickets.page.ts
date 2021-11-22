@@ -61,11 +61,40 @@ export class TicketsPage implements OnInit {
   }
 
   ngOnInit(): void {
+    this.form = new FormGroup({
+      title: new FormControl(null, {
+        updateOn: 'change',
+        validators: [Validators.required]
+      }),
+      date: new FormControl(null, {
+        updateOn: 'change',
+        validators: [Validators.required]
+      }),
+      time: new FormControl(null, {
+        updateOn: 'change',
+        validators: [Validators.required]
+      }),
+      text: new FormControl(null, {
+        updateOn: 'change'
+      }),
+    });
+
+    this.weightForm = new FormGroup({
+      weight: new FormControl(null, {
+        updateOn: 'change',
+        validators: [Validators.required]
+      })
+    });
+  }
+
+  ionViewWillEnter() {
+    this.currentDay = new Date().toISOString();
     this.language = this.commonService.language;
     this.translateService.use(this.language);
 
     let local;
 
+    // ToDo Change this
     if (this.language === 'de') {
       local = 'de-DE';
     } else if (this.language === 'en') {
@@ -98,35 +127,6 @@ export class TicketsPage implements OnInit {
           }
         };
       });
-
-    this.form = new FormGroup({
-      title: new FormControl(null, {
-        updateOn: 'change',
-        validators: [Validators.required]
-      }),
-      date: new FormControl(null, {
-        updateOn: 'change',
-        validators: [Validators.required]
-      }),
-      time: new FormControl(null, {
-        updateOn: 'change',
-        validators: [Validators.required]
-      }),
-      text: new FormControl(null, {
-        updateOn: 'change'
-      }),
-    });
-
-    this.weightForm = new FormGroup({
-      weight: new FormControl(null, {
-        updateOn: 'change',
-        validators: [Validators.required]
-      })
-    });
-  }
-
-  ionViewWillEnter() {
-    this.currentDay = new Date().toISOString();
 
     if (this.alert) {
       this.alert.dismiss();

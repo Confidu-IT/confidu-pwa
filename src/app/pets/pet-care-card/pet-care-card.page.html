@@ -7,7 +7,7 @@
     <ion-spinner color="primary"></ion-spinner>
   </div>
 
-  <div *ngIf="!isLoading" class="care-card-header">
+  <div *ngIf="!isLoading" class="care-card-header" [ngClass]="species">
     <div class="care-card-header-image">
       <img [src]="pet?.pet.image" alt="">
     </div>

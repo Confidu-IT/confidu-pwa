@@ -1,11 +1,19 @@
 .care-card {
   &-header {
-    background: url('../../../assets/icons/care-card/header-bg.svg') repeat-x;
+    //background: url('../../../assets/icons/care-card/hund.svg') repeat-x;
     display: flex;
     align-items: center;
     padding: 24px 32px 24px;
     //margin: -16px -16px 0;
     margin: -5px;
+
+    &.dog {
+      background: url('../../../assets/icons/care-card/hund.svg') repeat-x;
+    }
+
+    &.cat {
+      background: url('../../../assets/icons/care-card/katze.svg') repeat-x;
+    }
 
     &-image {
       //margin-bottom: 16px;

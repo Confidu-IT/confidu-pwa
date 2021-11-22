@@ -270,14 +270,20 @@ export class CommonService {
 
   public getRecipeById(
     token: string,
-    articleId: string
+    cookingKey: string,
+    uid: string,
+    petId: string
   ): Observable<any> {
-    const url = `${this.baseUrl}/${this.language}/cooking/${articleId}`;
+    const url = `${this.baseUrl}/${this.language}/cooking/${cookingKey}`;
     const headers = {
       'Content-Type': 'application/json',
       // 'firebase-context-token': token
     };
-    return this.http.get(url, { headers });
+    const body = {
+      uid,
+      petId
+    };
+    return this.http.post(url, body, { headers });
   }
 
   public getArticles(

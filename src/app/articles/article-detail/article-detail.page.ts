@@ -45,14 +45,15 @@ export class ArticleDetailPage {
     this.subscription = this.userAuth.user$.pipe(
       tap(user => user),
       switchMap(user => {
-        if (!user) {
+        const pet = localStorage.getItem('activePet');
+        if (!user && !pet) {
           return this.router.navigateByUrl('/');
         }
         this.user = user;
         if (this.params.type === 'magazine') {
           return this.commonService.getArticleById(user.za, this.params.id);
         } else if (this.params.type === 'recipe') {
-          return this.commonService.getRecipeById(user.za, this.params.id);
+          return this.commonService.getRecipeById(user.za, this.params.id, user.uid, pet);
         }
       })
     ).subscribe(article => {

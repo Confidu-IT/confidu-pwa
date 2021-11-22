@@ -34,6 +34,7 @@ export class PetCareCardPage {
   public panels: any;
   public iconPath = '../../../../assets/icons/care-card';
   public user: any;
+  public species: string;
 
   // public dummyImg = `${this.iconPath}/warning-triangle.svg`;
   public chevron = `${this.iconPath}/chevron-forward-outline.svg`;
@@ -102,7 +103,9 @@ export class PetCareCardPage {
       } else {
         this.baseDataImg = 'https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/carecard%2Ficons%2Fsvg%2Fbasedata_cat.svg?alt=media&token=d4e521e7-daba-484d-9c05-3f380f989e79';
       }
+
       this.pet = pet;
+      this.species = pet.pet.species.value;
       // tslint:disable-next-line:no-eval
       this.isCastrated = eval(pet.pet.castration.value);
       this.hasId = pet.pet.petIdent;
