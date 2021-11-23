@@ -1,7 +1,7 @@
 {
-  "version": 2,
+  "version": 5.1,
   "artifactType": {
-    "type": "APK",
+    "type": "AAB",
     "kind": "Directory"
   },
   "applicationId": "com.confidu.confidu",
@@ -10,9 +10,9 @@
     {
       "type": "SINGLE",
       "filters": [],
-      "versionCode": 1,
-      "versionName": "1.0",
-      "outputFile": "app-release.apk"
+      "versionCode": 5.1,
+      "versionName": "5.1",
+      "outputFile": "app-release.aab"
     }
   ]
 }

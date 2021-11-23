@@ -20,3 +20,6 @@ export const environment = {
   },
   storefrontUrl: 'https://confidu-app.firebaseapp.com'
 };
+
+// baseUrl: 'https://confidu-proxy-dot-confidu-app.appspot.com',
+// 'https://confidu-proxy-develop-dot-confidu-app.appspot.com',
