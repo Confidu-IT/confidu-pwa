@@ -33,6 +33,7 @@ export class CareCardDetailPage {
   public listOpenMedicalTests = [];
   public explSliderOpen = false;
   public listOpen: any[];
+  public isChecked: boolean;
 
   public slideOptions = {
     initialSlide: 0,
@@ -55,6 +56,9 @@ export class CareCardDetailPage {
     med: string;
     doc: string;
   };
+  private confirmText: string;
+  private cancelText: string;
+  private alertText: string;
 
   constructor(
     private router: Router,
@@ -65,7 +69,7 @@ export class CareCardDetailPage {
     private commonService: CommonService,
     private modalCtrl: ModalController,
     private alertCtrl: AlertController,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
   ) {
     this.routeSub = this.activatedRoute.params
       .subscribe(params => {
@@ -86,7 +90,13 @@ export class CareCardDetailPage {
           doc: values.DOC.ADD
         };
       });
-
+    this.translateService.get('CARE_CARD_DETAIL_PAGE')
+      .subscribe(values => {
+        console.log('values',values)
+        this.confirmText = values.CLOSE.YES;
+        this.cancelText = values.CLOSE.NO;
+        this.alertText = values.CLOSE.TEXT;
+      });
     this.subscription = this.userAuth.user$.pipe(
       tap(user => {
         this.user = user;
@@ -132,12 +142,9 @@ export class CareCardDetailPage {
   }
 
   public hasRecovered(): void {
-    this.petRecovered()
-      .subscribe( data => {
-        const petId = localStorage.getItem('activePet');
-        const url = `pets/pet-care-card/${petId}/${this.params.label}/${this.params.key}`;
-        this.router.navigateByUrl(url);
-    });
+    if (this.isChecked) {
+      this.presentAlert(this.alertText);
+    }
   }
 
   public onOpenModal(type: string): void {
@@ -333,18 +340,27 @@ export class CareCardDetailPage {
     return await modal.present();
   }
 
-  async presentAlert(id: string, msg: string, btn: string) {
+  async presentAlert(msg: string) {
     const alert = await this.alertCtrl.create({
       message: msg,
       buttons: [
         {
-          text: 'Abbrechen',
+          text: this.cancelText,
           role: 'cancel',
           cssClass: 'recover-cancel-button',
+          handler: () => {
+            this.isChecked = false;
+          }
         }, {
-          text: btn,
+          text: this.confirmText,
           cssClass: 'recover-action-button',
           handler: () => {
+            this.petRecovered()
+              .subscribe( data => {
+                const petId = localStorage.getItem('activePet');
+                const url = `pets/pet-care-card/${petId}/${this.params.label}/${this.params.key}`;
+                this.router.navigateByUrl(url);
+            });
           }
         }
       ]
@@ -353,6 +369,7 @@ export class CareCardDetailPage {
   }
 
   ionViewWillLeave() {
+    this.isChecked = false;
     this.listOpenVaccines = [];
     this.listOpenMedication = [];
     this.listOpenMedicalTests = [];

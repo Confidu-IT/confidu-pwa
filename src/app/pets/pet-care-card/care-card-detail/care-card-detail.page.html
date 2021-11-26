@@ -46,7 +46,7 @@
                 </div>
 
                 <div class="recovered-check">
-                  <ion-checkbox (ionChange)="hasRecovered()" color="secondary"></ion-checkbox>
+                  <ion-checkbox [(ngModel)]="isChecked" (ionChange)="hasRecovered()" color="secondary"></ion-checkbox>
                 </div>
 
               </div>

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ShopwareService } from '../../shared/services/shopware/shopware.service';
 import { Router } from '@angular/router';
-import { LoadingController } from '@ionic/angular';
+import {LoadingController, Platform} from '@ionic/angular';
 import { CommonService } from '../../shared/services/common/common.service';
 import { AuthService } from '../../user/auth.service';
 import { Subscription } from 'rxjs';
@@ -35,6 +35,7 @@ export class OrderPage {
     private router: Router,
     private commonService: CommonService,
     private userAuth: AuthService,
+    private platform: Platform,
     private loadingCtrl: LoadingController,
     private translateService: TranslateService,
   ) { }
@@ -132,7 +133,13 @@ export class OrderPage {
     if (this.cart.lineItems.leading < 1) {
       return false;
     }
-    this.presentLoading();
+
+    if ( // not native android
+      !this.platform.platforms().includes('android')
+      && !this.platform.platforms().includes('cordova')
+    ) {
+      this.presentLoading();
+    }
     this.shopwareService.headers['firebase-context-token'] = this.user.za;
     const petId = localStorage.getItem('activePet');
     this.shopwareService.orderProducts({ petId })
@@ -141,9 +148,14 @@ export class OrderPage {
         if (order.errors) {
           this.commonService.handleResponseErrors(order.errors[0].status);
         } else {
-          this.shopwareService.payOrder(order).then((data) => {
+          this.shopwareService.payOrder(order, this.platform.platforms()).then((data) => {
             console.log('data', data);
-            location.href = data.redirectUrl;
+            if ( // not native android
+              !this.platform.platforms().includes('android')
+              && !this.platform.platforms().includes('cordova')
+            ) {
+              location.href = data.redirectUrl;
+            }
           });
 
         }

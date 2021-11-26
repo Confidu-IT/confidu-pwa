@@ -625,6 +625,11 @@
     "MANUAL": "Manuelle Eingabe"
   },
   "CARE_CARD_DETAIL_PAGE": {
+    "CLOSE": {
+      "TEXT": "Bist du dir sicher?",
+      "YES": "Ja",
+      "NO": "Nein"
+    },
     "DOWNLOAD": "PDF Herunterladen",
     "PRESCRIPTION": "Rezeptpflichtig",
     "PHARMACY": "Apothekenpflichtig",

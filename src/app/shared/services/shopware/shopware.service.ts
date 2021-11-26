@@ -382,10 +382,14 @@ export class ShopwareService {
       .catch(e => e);
   }
 
-  payOrder(order): Promise<any> {
+  payOrder(order: any, platforms: string[]): Promise<any> {
     const headers = this.headers;
     const url = `${this.uri}/checkout/order/${order.id}/pay`;
-    const body = JSON.stringify(order);
+    const data = {
+      order: order,
+      platforms: platforms
+    };
+    const body = JSON.stringify(data);
     return fetch(url, { method: 'POST', headers, body })
       .then((resp) => {
         if (!resp.ok) {

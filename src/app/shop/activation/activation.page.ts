@@ -104,29 +104,36 @@ export class ActivationPage {
     this.commonService.registerProductKey(this.regNr, this.user.uid, this.petId, this.user.za)
       .subscribe(response => {
           console.log('response', response);
-          this.regNr = null;
-          this.activationError = false;
-          this.validated = true;
-          this.successText = `
+
+          if (response?.errors) {
+            if (
+              response?.errors[0]?.code === 'activationKey'
+              || response?.errors[0]?.code === 'key'
+              || response?.errors[0]?.code === 'key_not_found'
+              || response?.errors[0]?.code === 'len_of_activationKey'
+            ) {
+              this.errorText = this.invalidCode;
+            } else if (response?.errors[0]?.code === 'species') {
+              this.errorText = this.invalidSpecies;
+            } else if (response?.errors[0]?.code === 'activated') {
+              this.errorText = this.usedCode;
+            }
+            this.regNr = null;
+            this.activationError = true;
+            this.validated = false;
+          } else {
+            this.regNr = null;
+            this.activationError = false;
+            this.validated = true;
+            this.successText = `
           ${this.assignment[0]} ${this.assignment[1]} ${this.pet.name} ${this.assignment[2]}
           `;
+          }
+
         },
         (e) => {
-          // console.log('e', e);
-          if (
-            e.error?.errors[0]?.code === 'activationKey'
-            || e.error?.errors[0]?.code === 'key'
-            || e.error?.errors[0]?.code === 'key_not_found'
-          ) {
-            this.errorText = this.invalidCode;
-          } else if (e.error?.errors[0]?.code === 'species') {
-            this.errorText = this.invalidSpecies;
-          } else if (e.error?.errors[0]?.code === 'activated') {
-            this.errorText = this.usedCode;
-          }
-          this.regNr = null;
-          this.activationError = true;
-          this.validated = false;
+          console.log('e', e);
+
         });
   }
 
