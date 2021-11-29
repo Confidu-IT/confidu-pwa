@@ -585,6 +585,14 @@
             </ion-card-content>
           </ion-card>
 
+
+        </div>
+
+        <ng-container *ngIf="result?.products && result?.products.length > 0">
+          <app-products-container [products]="result?.products"></app-products-container>
+        </ng-container>
+
+        <div>
           <ul class="actions-list" *ngIf="result?.actions">
             <li *ngFor="let element of result?.actions">
               <ion-card *ngIf="element.visibility">
@@ -617,10 +625,6 @@
             </li>
           </ul>
         </div>
-
-        <ng-container *ngIf="result?.products && result?.products.length > 0">
-          <app-products-container [products]="result?.products"></app-products-container>
-        </ng-container>
 
       </ion-col>
     </ion-row>
