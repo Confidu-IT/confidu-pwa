@@ -150,12 +150,15 @@ export class OrderPage {
         } else {
           this.shopwareService.payOrder(order, this.platform.platforms()).then((data) => {
             console.log('data', data);
-            if ( // not native android
-              !this.platform.platforms().includes('android')
-              && !this.platform.platforms().includes('cordova')
-            ) {
-              location.href = data.redirectUrl;
-            }
+            // delete this
+            location.href = data.redirectUrl;
+
+            // if ( // not native android
+            //   !this.platform.platforms().includes('android')
+            //   && !this.platform.platforms().includes('cordova')
+            // ) {
+            //   location.href = data.redirectUrl;
+            // }
           });
 
         }
