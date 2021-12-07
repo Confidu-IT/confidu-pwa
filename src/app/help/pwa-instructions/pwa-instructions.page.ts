@@ -39,7 +39,8 @@ export class PwaInstructionsPage {
     android chrome phone: android, mobile, mobileweb
     android pwa: android, pwa, mobile, mobileweb,
     ios safari: iphone, ios, mobile, mobileweb
-    ios pwa: iphone, ios, pwa, mobile, mobileweb
+    ios pwa: iphone, ios, pwa, mobile, mobileweb,
+    ios native: iphone, ios, cordova, capacitor, mobile, hybrid
      */
 
     this.isLoading = true;

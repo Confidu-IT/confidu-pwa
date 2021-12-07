@@ -16,7 +16,8 @@ import { SplashScreen } from '@capacitor/splash-screen';
 })
 export class AppComponent {
   public iconPath = '../assets/icons/navi';
-  private  existingScreenOrientation: string;
+  public iosNative: boolean;
+  private existingScreenOrientation: string;
 
   constructor(
     private platform: Platform,
@@ -33,6 +34,14 @@ export class AppComponent {
     translateService.addLangs(['en', 'de']);
     this.so.lock(this.so.ORIENTATIONS.PORTRAIT);
     this.existingScreenOrientation = this.so.type;
+
+    // alert('platforms: ' + this.platform.platforms());
+
+    // add class for native ios
+    if (this.platform.platforms().includes('ios') && this.platform.platforms().includes('capacitor')) {
+      this.iosNative = true;
+    }
+
     this.commonService.appLanguage
       .subscribe(lang => {
         if (lang) {

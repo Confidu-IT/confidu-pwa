@@ -1,4 +1,4 @@
-<ion-app>
+<ion-app [ngClass]="{native_ios: iosNative, no_native_ios: !iosNative}">
   <ion-menu side="start" contentId="sidenav">
     <ion-header>
       <ion-toolbar color="primary">
