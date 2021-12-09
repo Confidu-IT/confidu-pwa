@@ -423,16 +423,6 @@ export class TelevetService {
                 ],
                 abdomen: [
                   {
-                    text: text.TESTICLES_CHANGES,
-                    cssClass: 'petspot-actionsheet-button',
-                    handler: () => {
-                      this.buttonData$.next({
-                        symptom: text.TESTICLES_CHANGES,
-                        code: 'HOD'
-                      });
-                    }
-                  },
-                  {
                     text: text.NO_URINE,
                     cssClass: 'petspot-actionsheet-button',
                     handler: () => {
@@ -1611,16 +1601,6 @@ export class TelevetService {
                   }
                 ],
                 abdomen: [
-                  {
-                    text: text.TESTICLES_CHANGES,
-                    cssClass: 'petspot-actionsheet-button',
-                    handler: () => {
-                      this.buttonData$.next({
-                        symptom: text.TESTICLES_CHANGES,
-                        code: 'HOD'
-                      });
-                    }
-                  },
                   {
                     text: text.NO_URINE,
                     cssClass: 'petspot-actionsheet-button',
@@ -5225,26 +5205,6 @@ export class TelevetService {
                     }
                   },
                   {
-                    text: text.PENIS_DISCHARGE,
-                    cssClass: 'petspot-actionsheet-button',
-                    handler: () => {
-                      this.buttonData$.next({
-                        symptom: text.PENIS_DISCHARGE,
-                        code: 'PA'
-                      });
-                    }
-                  },
-                  {
-                    text: text.PENIS_ISSUE,
-                    cssClass: 'petspot-actionsheet-button',
-                    handler: () => {
-                      this.buttonData$.next({
-                        symptom: text.PENIS_ISSUE,
-                        code: 'PV'
-                      });
-                    }
-                  },
-                  {
                     text: text.URINATION_PAIN,
                     cssClass: 'petspot-actionsheet-button',
                     handler: () => {
@@ -6364,42 +6324,12 @@ export class TelevetService {
                 ],
                 abdomen: [
                   {
-                    text: text.TESTICLES_CHANGES,
-                    cssClass: 'petspot-actionsheet-button',
-                    handler: () => {
-                      this.buttonData$.next({
-                        symptom: text.TESTICLES_CHANGES,
-                        code: 'HOD'
-                      });
-                    }
-                  },
-                  {
                     text: text.NO_URINE,
                     cssClass: 'petspot-actionsheet-button',
                     handler: () => {
                       this.buttonData$.next({
                         symptom: text.NO_URINE,
                         code: 'NOU'
-                      });
-                    }
-                  },
-                  {
-                    text: text.PENIS_DISCHARGE,
-                    cssClass: 'petspot-actionsheet-button',
-                    handler: () => {
-                      this.buttonData$.next({
-                        symptom: text.PENIS_DISCHARGE,
-                        code: 'PA'
-                      });
-                    }
-                  },
-                  {
-                    text: text.PENIS_ISSUE,
-                    cssClass: 'petspot-actionsheet-button',
-                    handler: () => {
-                      this.buttonData$.next({
-                        symptom: text.PENIS_ISSUE,
-                        code: 'PV'
                       });
                     }
                   },

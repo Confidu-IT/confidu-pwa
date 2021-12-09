@@ -1286,7 +1286,9 @@
     "YOUR_MESSAGE": "Deine Nachricht",
     "CHARS": "1500 Zeichen",
     "BUTTON": "Senden",
-    "FAQ": "Häufig gestellte Fragen"
+    "FAQ": "Häufig gestellte Fragen",
+    "WALKTHROUGH": "WALKTHROUGH",
+    "WALKTHROUGH_LINK": "Zum Walkthrough"
   },
   "ORDER_DETAILS_PAGE": {
     "TITLE": "Bestelldetails",

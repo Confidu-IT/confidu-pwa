@@ -49,6 +49,18 @@
 
         <div class="ticket-result-panels">
 
+          <ion-card *ngIf="result?.eventDate" class="is-emergency">
+            <ion-card-content>
+              <p>{{ result?.eventDate }}</p>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card *ngIf="result?.nextDate" class="is-emergency">
+            <ion-card-content>
+              <p>{{ result?.nextDate }}</p>
+            </ion-card-content>
+          </ion-card>
+
           <ion-card *ngIf="result?.initial && result?.initial.visibility" class="is-emergency">
             <ion-card-content>
               <h4 *ngIf="result?.initial?.header">
@@ -573,17 +585,17 @@
             </ion-card-content>
           </ion-card>
 
-          <ion-card *ngIf="result?.eventDate" class="is-emergency">
-            <ion-card-content>
-              <p>{{ result?.eventDate }}</p>
-            </ion-card-content>
-          </ion-card>
+<!--          <ion-card *ngIf="result?.eventDate" class="is-emergency">-->
+<!--            <ion-card-content>-->
+<!--              <p>{{ result?.eventDate }}</p>-->
+<!--            </ion-card-content>-->
+<!--          </ion-card>-->
 
-          <ion-card *ngIf="result?.nextDate" class="is-emergency">
-            <ion-card-content>
-              <p>{{ result?.nextDate }}</p>
-            </ion-card-content>
-          </ion-card>
+<!--          <ion-card *ngIf="result?.nextDate" class="is-emergency">-->
+<!--            <ion-card-content>-->
+<!--              <p>{{ result?.nextDate }}</p>-->
+<!--            </ion-card-content>-->
+<!--          </ion-card>-->
 
 
         </div>
