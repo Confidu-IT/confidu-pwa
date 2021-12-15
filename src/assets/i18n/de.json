@@ -312,7 +312,7 @@
   },
   "TICKET_RESULT_PAGE": {
     "TITLE": "Auswertung",
-    "RECEIVED_COINS": "confi-Coins erhalten",
+    "RECEIVED_COINS": "Confi-Coins erhalten",
     "DIAG_HEADER": "Diagnose",
     "NO_RESULT": "Das Ergebnis ist nicht verfügbar.",
     "URGENCY": "Dringlichkeit",
@@ -341,7 +341,7 @@
     "CHOICE_ANNOTATION": "Bitte beachte, dass du nachträglich keine Produkte zur Therapie erhalten kannst, ohne nochmals den Online Tierarzt zu konsultieren."
   },
   "TICKET_PAGE": {
-    "RECEIVED_COINS": "confi-Coins erhalten",
+    "RECEIVED_COINS": "Confi-Coins erhalten",
     "FAIL": "Update fehlgeschlagen",
     "SUCCESS": "Update erfolgreich",
     "EXEC": "Durchführen",
@@ -829,6 +829,7 @@
     "GIARDIA": "Giardien",
     "FLORA": "Darmflora",
     "PREVENTION": "Urin Labor",
+    "PREVENTION_PLUS": "Urin Labor Vorsorge",
     "BARF": "BARF Profil",
     "OK_BUTTON": "Übernehmen",
     "CANCEL_BUTTON": "Abbrechen",

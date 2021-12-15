@@ -334,25 +334,33 @@ export class TicketPage {
       try {
         this.updateTicket(this.user.uid, this.petId, this.params.ticketId, this.ticket, this.user.za)
           .then(resp => {
-            this.commonService.presentToast(this.coins, 'primary')
-              .then(() => {
-                this.router.navigateByUrl('/');
-              });
+            if (this.ticket.ticketCoins) {
+              this.commonService.presentToast(this.coins, 'primary')
+                .then(() => {
+                  this.router.navigateByUrl('/');
+                });
+            } else {
+              this.router.navigateByUrl('/');
+            }
           });
       } catch (e) {
-        this.commonService.presentToast('this.fail', 'danger');
+        this.commonService.presentToast(this.fail, 'danger');
       }
     } else { // no open schedule left
       try {
         this.moveTicket(this.user.uid, this.petId, this.params.ticketId, this.ticket, this.user.za)
           .then(resp => {
-            this.commonService.presentToast(this.coins, 'primary')
-              .then(() => {
-                this.router.navigateByUrl('/');
-              });
+            if (this.ticket.ticketCoins) {
+              this.commonService.presentToast(this.coins, 'primary')
+                .then(() => {
+                  this.router.navigateByUrl('/');
+                });
+            } else {
+              this.router.navigateByUrl('/');
+            }
           });
       } catch (e) {
-        this.commonService.presentToast('this.fail', 'danger');
+        this.commonService.presentToast(this.fail, 'danger');
       }
     }
   }

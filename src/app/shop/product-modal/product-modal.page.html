@@ -83,36 +83,44 @@
                   <h5 class="indication-header">{{ item?.indication?.header }}</h5>
 
                   <ng-container *ngIf="item?.indication?.body?.indicationFirst">
-                    <p *ngIf="item?.indication?.body?.indicationFirst?.header" class="usage-text">
-                      {{ item?.indication?.body?.indicationFirst?.header }}
-                    </p>
+                    <ng-container *ngIf="item?.indication?.body?.indicationFirst?.header">
+                      <p *ngFor="let el of item?.indication?.body?.indicationFirst?.header" class="usage-text">
+                        {{ el }}
+                      </p>
+                    </ng-container>
                     <ul *ngIf="item?.indication?.body?.indicationFirst?.body" class="indication-list">
                       <li *ngFor="let el of item?.indication?.body?.indicationFirst?.body">{{ el }}</li>
                     </ul>
                   </ng-container>
 
                   <ng-container *ngIf="item?.indication?.body?.indicationSecond">
-                    <p *ngIf="item?.indication?.body?.indicationSecond?.header" class="usage-text">
-                      {{ item?.indication?.body?.indicationSecond?.header }}
-                    </p>
+                    <ng-container *ngIf="item?.indication?.body?.indicationSecond?.header">
+                      <p *ngFor="let el of item?.indication?.body?.indicationSecond?.header" class="usage-text second">
+                        {{ el }}
+                      </p>
+                    </ng-container>
                     <ul *ngIf="item?.indication?.body?.indicationSecond?.body" class="indication-list">
                       <li *ngFor="let el of item?.indication?.body?.indicationSecond?.body">{{ el }}</li>
                     </ul>
                   </ng-container>
 
                   <ng-container *ngIf="item?.indication?.body?.indicationThird">
-                    <p *ngIf="item?.indication?.body?.indicationThird?.header" class="usage-text">
-                      {{ item?.indication?.body?.indicationThird?.header }}
-                    </p>
+                    <ng-container *ngIf="item?.indication?.body?.indicationThird?.header">
+                      <p *ngFor="let el of item?.indication?.body?.indicationThird?.header" class="usage-text">
+                        {{ el }}
+                      </p>
+                    </ng-container>
                     <ul *ngIf="item?.indication?.body?.indicationThird?.body" class="indication-list">
                       <li *ngFor="let el of item?.indication?.body?.indicationThird?.body">{{ el }}</li>
                     </ul>
                   </ng-container>
 
                   <ng-container *ngIf="item?.indication?.body?.indicationOther">
-                    <p *ngIf="item?.indication?.body?.indicationOther?.header" class="usage-text">
-                      {{ item?.indication?.body?.indicationOther?.header }}
-                    </p>
+                    <ng-container *ngIf="item?.indication?.body?.indicationOther?.header">
+                      <p *ngFor="let el of item?.indication?.body?.indicationOther?.header" class="usage-text">
+                        {{ el }}
+                      </p>
+                    </ng-container>
                     <ul *ngIf="item?.indication?.body?.indicationOther?.body" class="indication-list">
                       <li *ngFor="let el of item?.indication?.body?.indicationOther?.body">{{ el }}</li>
                     </ul>

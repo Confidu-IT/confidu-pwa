@@ -14,7 +14,7 @@
       <ion-col sizeSm="8" offsetSm="2">
         <ion-slides #slider pager="true" (ionSlideDidChange)="onLastSlide()">
           <ion-slide *ngFor="let slide of slides">
-            <img [src]="slide" alt="">
+            <img class="slider-image" [src]="slide" alt="">
           </ion-slide>
         </ion-slides>
       </ion-col>

@@ -295,7 +295,7 @@
                                (keyup)="pickMedDose($event, i)"
                                matInput
                                step="any" type="number">
-                        <span matSuffix>{{ question?.values?.answerOption[0].answerValue[i]?.unit }}</span>
+                        <span matSuffix>{{ invoiceMeds[i]?.selectedVariant?.unit }}</span>
                       </mat-form-field>
                     </ng-container>
 

@@ -63,11 +63,14 @@ export class LabDetailPage {
           case 'flora':
             this.title = values.FLORA;
             break;
-          case 'combi':
+          case 'barfprof':
+            this.title = values.BARF;
+            break;
+          case 'labtest':
             this.title = values.PREVENTION;
             break;
-          case 'stickpro':
-            this.title = values.URINE;
+          case 'labstick':
+            this.title = values.PREVENTION_PLUS;
             break;
         }
       });

@@ -346,15 +346,12 @@ export class TicketQuestionsPage {
     this.firebaseService.getFoodByType(this.language, this.pet.pet.species.value, event.value)
       .subscribe(food => {
         this.food = food;
-        console.log('this.food', this.food);
         if (this.food?.length > 0) {
           this.filteredOptions = this.foodForm.get('mainFood').valueChanges
             .pipe(
               startWith(''),
               map(value => {
-                if (!value) {
-                  return;
-                }
+                if (!value) return;
                 return typeof value === 'string' ? value : value.name;
               }),
               map(name => name ? this.filterFood(name) : this.food.slice())
@@ -373,6 +370,14 @@ export class TicketQuestionsPage {
     return food ? food.name : undefined;
   }
 
+  private filterFood(name: string) {
+    const filterValue = name.toLowerCase();
+    return this.food.filter(option => {
+      console.log('o', option)
+      return option.name.toLowerCase().includes(filterValue);
+    });
+  }
+
   // private _filter(name: string) {
   //   const filterValue = name.toLowerCase();
   //
@@ -381,13 +386,13 @@ export class TicketQuestionsPage {
   //   });
   // }
 
-  private filterFood(name: string) {
-    const filterValue = name.toLowerCase();
-
-    return this.food.filter(option => {
-      return option.name.toLowerCase().indexOf(filterValue) === 0;
-    });
-  }
+  // private filterFood(name: string) {
+  //   const filterValue = name.toLowerCase();
+  //
+  //   return this.food.filter(option => {
+  //     return option.name.toLowerCase().indexOf(filterValue) === 0;
+  //   });
+  // }
 
   public onAddRation(): void {
     this.selectedFood.amount = this.foodForm.value.mainFoodAmount;
