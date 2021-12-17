@@ -318,11 +318,6 @@ export class TicketQuestionsPage {
 
           this.isLoading = false;
         }
-      },
-      (err: any) => {
-        this.isLoading = false;
-        this.commonService.handleResponseErrors(err.status);
-        this.userAuth.logOut();
       });
   }
 
@@ -413,6 +408,7 @@ export class TicketQuestionsPage {
   }
 
   public onPickVaccine(event): void {
+    console.log('event', event);
     this.vaccination.key = event.value;
     this.completeVacc();
   }
@@ -426,6 +422,7 @@ export class TicketQuestionsPage {
   public onPickCurrentVaccTime(event) {
     this.vaccination.currentDate = event.detail.value;
     this.currentDateSet = true;
+    console.log('this.vaccination', this.vaccination);
     this.completeVacc();
   }
 
@@ -661,14 +658,17 @@ export class TicketQuestionsPage {
       val.answerLongtext = [];
       val.answerLongtext.push(this.selectedAnswer);
     } else if (
-      this.question.values.questionType.toLowerCase() === 'se'
-      || this.question.values.questionType.toLowerCase() === 'fu'
+      this.question.values.questionType.toLowerCase() === 'fu'
       || this.question.values.questionType.toLowerCase() === 'ful'
     ) {
-      console.log('this.selectedAnswer;', this.selectedAnswer)
       val = this.question.values.answerOption;
       val = val[0];
       val.answerValue = this.selectedAnswer;
+    } else if (this.question.values.questionType.toLowerCase() === 'se') {
+      // val = this.question.values.answerOption;
+      val = this.question.values.answerOption.filter(option => option.value === this.vaccination.key);
+      val = val[0];
+      val.answerValue = this.vaccination;
     } else if (this.question.values.questionType.toLowerCase() === 'sei') {
       val = this.question.values.answerOption.filter(option => option.value === this.parasite.key);
       val = val[0];

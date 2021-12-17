@@ -33,7 +33,6 @@ export class HttpErrorInterceptor implements HttpInterceptor {
           let errorMsg = '';
           if (error.error instanceof ErrorEvent) {
             errorMsg = `Error: ${error.error.message}`;
-
           }
           else {
             console.log('err', error);
@@ -52,6 +51,9 @@ export class HttpErrorInterceptor implements HttpInterceptor {
                 this.authService.logOut();
                 break;
               case 500:
+                this.router.navigateByUrl(`error`);
+                break;
+              default:
                 this.router.navigateByUrl(`error`);
                 break;
             }

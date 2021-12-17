@@ -35,8 +35,14 @@ export class AuthService {
       .then(() => {
         this.afAuth.signOut()
           .then(() => {
-            this.shopwareService.signout();
-            localStorage.clear();
+            try {
+              this.shopwareService.signout().then(() => {
+                localStorage.clear();
+              });
+            } catch (e) {
+              console.log('signout errpr', e);
+              localStorage.clear();
+            }
           });
       });
   }

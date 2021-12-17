@@ -99,7 +99,7 @@ export class CreatePetPage implements OnInit {
 
   ionViewWillEnter() {
     if (localStorage.length < 1) {
-      this.authService.logOut();
+      // this.authService.logOut();
     }
     this.subscription = this.userAuth.user$
       .subscribe((user) => {

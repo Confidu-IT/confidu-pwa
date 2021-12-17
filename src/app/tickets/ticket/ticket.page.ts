@@ -321,6 +321,7 @@ export class TicketPage {
   }
 
   private closeEvent(action: string): void {
+    console.log('action', action)
     const status = [];
     this.ticket.schedule.map(item => {
 
@@ -334,7 +335,7 @@ export class TicketPage {
       try {
         this.updateTicket(this.user.uid, this.petId, this.params.ticketId, this.ticket, this.user.za)
           .then(resp => {
-            if (this.ticket.ticketCoins) {
+            if (this.ticket.ticketCoins && action !== 'deleted') {
               this.commonService.presentToast(this.coins, 'primary')
                 .then(() => {
                   this.router.navigateByUrl('/');
@@ -350,7 +351,7 @@ export class TicketPage {
       try {
         this.moveTicket(this.user.uid, this.petId, this.params.ticketId, this.ticket, this.user.za)
           .then(resp => {
-            if (this.ticket.ticketCoins) {
+            if (this.ticket.ticketCoins && action !== 'deleted') {
               this.commonService.presentToast(this.coins, 'primary')
                 .then(() => {
                   this.router.navigateByUrl('/');
