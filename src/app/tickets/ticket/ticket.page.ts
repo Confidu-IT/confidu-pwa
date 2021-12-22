@@ -29,6 +29,7 @@ export class TicketPage {
   private coins: string;
   private success: string;
   private fail: string;
+  private cancelButton;
 
   public user: any;
   public language: string;
@@ -75,7 +76,7 @@ export class TicketPage {
         this.coins = values.RECEIVED_COINS;
         this.success = values.SUCCESS;
         this.fail = values.FAIL;
-        console.log('coins', this.coins)
+        this.cancelButton = values.DELETE.CANCEL;
       });
 
     this.form = new FormGroup({
@@ -387,7 +388,7 @@ export class TicketPage {
       message: msg,
       buttons: [
         {
-          text: 'Abbrechen',
+          text: this.cancelButton,
           role: 'cancel',
           cssClass: 'ticket-cancel-button',
         }, {

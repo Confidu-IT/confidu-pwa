@@ -469,7 +469,16 @@ mat-label {
 
 
   ion-item {
-    margin: 0 16px 0 0;
+    margin: 0 0 0 16px;
+  }
+
+  ion-item.ios {
+    margin-left: 0;
+    margin-right: 16px;
+  }
+
+  .ion-item {
+    --padding-start: 0 !important;
   }
 
   ion-datetime {

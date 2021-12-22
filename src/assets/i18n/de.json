@@ -354,7 +354,8 @@
       },
       "DELETE": {
         "MSG": "Bist du sicher, dass du diese Aufgabe löschen möchtest?",
-        "BTN": "Löschen"
+        "BTN": "Löschen",
+        "CANCEL": "Abbrechen"
       },
       "DATE_TIME_BTNS": {
         "CANCEL": "Abbrechen",
@@ -622,7 +623,8 @@
     "ADD_DOC": "Befund hinzufügen",
     "FINDING_PDF": "Anhang",
     "UPLOAD": "Rechnungsupload",
-    "MANUAL": "Manuelle Eingabe"
+    "MANUAL": "Manuelle Eingabe",
+    "CANCEL": "Abbrechen"
   },
   "CARE_CARD_DETAIL_PAGE": {
     "CLOSE": {

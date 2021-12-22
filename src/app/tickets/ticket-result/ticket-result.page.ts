@@ -140,7 +140,6 @@ export class TicketResultPage implements CanDeactivateGuard {
   }
 
   public onClickActionButton(el: any): void {
-    console.log('el', el)
     if (!el) {
       return;
     }

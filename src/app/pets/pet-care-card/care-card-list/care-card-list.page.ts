@@ -45,6 +45,7 @@ export class CareCardListPage {
   private tickets: any[];
   private ticketSub: Subscription;
   private label: string;
+  private cancelButton: string;
   private modalTitle: {
     doc: string;
   };
@@ -83,6 +84,7 @@ export class CareCardListPage {
         };
         this.doUpload = values.UPLOAD;
         this.doManual = values.MANUAL;
+        this.cancelButton = values.CANCEL;
       });
     this.subscription = this.userAuth.user$.pipe(
       tap(user => {
@@ -250,7 +252,7 @@ export class CareCardListPage {
             }
           },
           {
-            text: 'Abbrechen',
+            text: this.cancelButton,
             role: 'cancel'
           }
         ]
