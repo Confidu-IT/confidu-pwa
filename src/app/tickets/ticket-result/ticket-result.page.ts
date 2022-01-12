@@ -86,7 +86,7 @@ export class TicketResultPage implements CanDeactivateGuard {
         this.petId = localStorage.getItem('activePet');
 
         // delete this
-        // this.result = this.ticketService.foo;
+        // this.result = this.ticketService.blah;
         // console.log('this.result', this.result);
         // this.createChevrons();
 
@@ -109,12 +109,10 @@ export class TicketResultPage implements CanDeactivateGuard {
         }
       })
     ).subscribe(data => {
-      this.isFoodCheck = this.params.symptom === 'foodcheck';
+      this.isFoodCheck = this.params.symptom === 'foodcheck' || this.params.symptom === 'foodplan';
       this.result = data;
       console.log('this.result', this.result);
       this.createChevrons();
-      // console.log('data', data);
-
       this.eventId = this.result.eventId;
 
       // Delete THIS
@@ -148,7 +146,8 @@ export class TicketResultPage implements CanDeactivateGuard {
     } else if (el.link === 'fup') {
       this.router.navigateByUrl('follow-up-prescription');
     } else {
-      this.router.navigateByUrl(`tickets/${el.event}/${el.key}/null/null/questions`);
+      console.log(`tickets/${el.event}/${el.key}/${el.label}/null/questions`)
+      this.router.navigateByUrl(`tickets/${el.event}/${el.key}/${el.label}/null/questions`);
     }
   }
 

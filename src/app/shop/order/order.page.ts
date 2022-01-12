@@ -86,7 +86,7 @@ export class OrderPage {
           this.commonService.handleResponseErrors(product?.errors[0]?.status);
         } else {
           this.shopwareService.getCart()
-            .then(cart => {
+            .subscribe(cart => {
               if (cart.deliveries[0]) {
                 this.cartItems = cart.deliveries[0].positions;
               } else {
@@ -104,7 +104,7 @@ export class OrderPage {
       .then(payments => {
         this.payments = payments;
         this.shopwareService.getCart()
-          .then(cart => {
+          .subscribe(cart => {
             console.log('cart', cart);
             if (cart.errors.length > 0) {
               this.commonService.handleResponseErrors(cart.errors[0].status);

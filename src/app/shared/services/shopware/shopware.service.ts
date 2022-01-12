@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from '../../../../environments/environment';
 import {TranslateService} from '@ngx-translate/core';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +29,8 @@ export class ShopwareService {
   }
 
   constructor(
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private http: HttpClient
   ) {
     this.uri = `${this.baseUrl}/${this.browserLang}/sw`;
   }
@@ -336,18 +338,13 @@ export class ShopwareService {
       .catch(e => e);
   }
 
-  getCart() {
-    const headers = this.headers;
-    const init = { method: 'GET', headers };
-    return fetch(this.uri + '/checkout/cart', init)
-      .then((resp) => {
-        if (!resp.ok) {
-          throw resp.json();
-        }
-        return resp;
-      })
-      .then((resp) => resp.json())
-      .catch(e => e);
+  public getCart(): Observable<any> {
+    const url = `${this.uri}/checkout/cart`;
+    const headers = {
+      'Content-Type': 'application/json',
+      'sw-context-token': localStorage.getItem('sw-token')
+    };
+    return this.http.get(url, { headers });
   }
 
   getPayments() {

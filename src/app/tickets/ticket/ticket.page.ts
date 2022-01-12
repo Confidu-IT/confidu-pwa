@@ -212,8 +212,9 @@ export class TicketPage {
     if (this.ticket?.type === 'questionnaire' || this.ticket?.type === 'timer') {
       if (this.ticket?.ticketKey === 'foodplan') {
         this.router.navigateByUrl('ration-check');
+      } else if (this.ticket?.ticketKey === 'invoice') {
+        this.router.navigateByUrl(`invoice-upload/${this.petId}/${title}/consultation_cc`);
       } else {
-        console.log('url', `tickets/ticket/${key}/${title}/${id}/questions`)
         this.router.navigateByUrl(`tickets/ticket/${key}/${title}/${id}/questions`);
       }
     } else if (this.ticket?.type === 'redirect') {

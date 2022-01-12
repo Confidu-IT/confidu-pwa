@@ -16,6 +16,7 @@ export class CommonService {
   private baseUrl = environment.baseUrl;
   private appLanguage$ = new BehaviorSubject<any>('');
 
+  // change this
   public get language(): string {
     if (localStorage.getItem('country')) {
       return localStorage.getItem('country');
@@ -26,10 +27,11 @@ export class CommonService {
         browserLanguage === 'fr' || browserLanguage === 'it' || browserLanguage === 'es' ||
         browserLanguage === 'pl'
       ) {
-        return browserLanguage;
+        // return browserLanguage;
+        return 'de';
       }
     }
-    return 'en';
+    return 'de';
   }
   public languages: any[];
 
@@ -62,6 +64,7 @@ export class CommonService {
 
   public clearCache(reloadAfterClear = true) {
     if ('caches' in window) {
+      console.log('reload!');
       caches.keys().then((names) => {
         names.forEach(async (name) => {
           await caches.delete(name);

@@ -1,17 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ShopwareService } from '../../shared/services/shopware/shopware.service';
 import { Router } from '@angular/router';
 import { CommonService } from '../../shared/services/common/common.service';
 import { AuthService } from '../../user/auth.service';
 import { Subscription } from 'rxjs';
 import {TranslateService} from '@ngx-translate/core';
+import {switchMap, tap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.page.html',
   styleUrls: ['./cart.page.scss'],
 })
-export class CartPage implements OnInit {
+export class CartPage {
   public cartItems: any[] = [];
   public cart: any;
   public isLoading: boolean;
@@ -33,7 +34,7 @@ export class CartPage implements OnInit {
   ) {
   }
 
-  ngOnInit() {
+  ionViewWillEnter() {
     this.isLoading = true;
     this.language = this.commonService.language;
     this.translateService.use(this.language);
@@ -44,28 +45,21 @@ export class CartPage implements OnInit {
         this.cancelText = values.CANCEL_BUTTON;
 
       });
-    this.subscription = this.userAuth.user$
-      .subscribe(user => {
-        this.user = user;
-        // this.shopwareService.headers['firebase-context-token'] = this.user.za;
-      });
 
-    this.shopwareService.getCart()
-      .then(cart => {
-        console.log('cart', cart);
-        if (cart.errors.length > 0) {
-          this.commonService.handleResponseErrors(cart.errors[0]?.status);
-        } else {
-          if (cart.deliveries.length > 0) {
-            this.cart = cart;
-            this.cartItems = this.cart?.deliveries[0]?.positions;
-            this.totalPrice = cart?.price?.totalPrice;
-            this.shipment = cart.deliveries[0].shippingCosts?.totalPrice;
-          }
-        }
-        this.isLoading = false;
-      });
-
+    this.subscription = this.userAuth.user$.pipe(
+      tap(user => this.user = user),
+      switchMap(() => {
+        return this.shopwareService.getCart();
+      })
+    ).subscribe(cart => {
+      if (cart.deliveries.length > 0) {
+        this.cart = cart;
+        this.cartItems = this.cart?.deliveries[0]?.positions;
+        this.totalPrice = cart?.price?.totalPrice;
+        this.shipment = cart.deliveries[0].shippingCosts?.totalPrice;
+      }
+      this.isLoading = false;
+    });
   }
 
   public onChangeQuantity(event, id): void {
@@ -82,8 +76,7 @@ export class CartPage implements OnInit {
           this.commonService.handleResponseErrors(product.errors[0].status);
         } else {
           this.shopwareService.getCart()
-            .then(cart => {
-              console.log('cart', cart)
+            .subscribe(cart => {
               this.cartItems = cart.deliveries[0].positions;
               this.totalPrice = cart?.price?.totalPrice;
               this.shipment = cart.deliveries[0].shippingCosts?.totalPrice;
@@ -100,7 +93,7 @@ export class CartPage implements OnInit {
           this.commonService.handleResponseErrors(product?.errors[0]?.status);
         } else {
           this.shopwareService.getCart()
-            .then(cart => {
+            .subscribe(cart => {
                 if (cart.deliveries[0]) {
                   this.cartItems = cart.deliveries[0].positions;
                   this.totalPrice = cart?.price?.totalPrice;
