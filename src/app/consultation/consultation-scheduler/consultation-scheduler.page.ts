@@ -186,14 +186,13 @@ export class ConsultationSchedulerPage {
     modal.onDidDismiss()
       .then((response: any) => {
         if (response.data) {
-          console.log('r', response.data);
           const obj: any = {
             firstName: response.data.value.firstName,
             lastName: response.data.value.lastName,
           };
 
           if (response.data.value.phone) {
-            obj.tel = response.data.value.phone;
+            obj.tel = String(response.data.value.phone);
           }
           this.updateAccount(obj);
         }

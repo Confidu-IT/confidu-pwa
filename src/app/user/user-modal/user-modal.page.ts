@@ -201,7 +201,7 @@ export class UserModalPage {
 
   public onUpdatePhone() {
     const data = {
-      phone: this.phoneForm.value.phone
+      phone: String(this.phoneForm.value.phone)
     };
     this.isPhone = true;
     this.updateAccount(data, 'change-profile');

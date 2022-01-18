@@ -63,7 +63,7 @@ export class OrderCancellationPage {
       'firstName': this.profile.firstName,
       'lastName': this.profile?.lastName,
       'email': this.profile.email,
-      'phone': this.profile?.customFields?.custom_customers_tel || null,
+      'phone': this.profile?.customFields?.custom_customers_tel || ' ',
       'subject': this.params.orderNr,
       'comment': this.selectedAnswer
     };

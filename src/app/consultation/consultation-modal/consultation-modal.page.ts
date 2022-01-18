@@ -28,7 +28,8 @@ export class ConsultationModalPage {
         validators: [Validators.required]
       }),
       phone: new FormControl(null, {
-        updateOn: 'change'
+        updateOn: 'change',
+        validators: [Validators.required]
       })
     });
   }

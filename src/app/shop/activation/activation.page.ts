@@ -28,10 +28,11 @@ export class ActivationPage {
   public activationError: boolean;
   public checkIcon = '../../assets/icons/product-registration/checkbox.svg';
   public productIcon = '../../assets/icons/product-registration/activated_product.svg';
+  public petId: string;
 
   private subscription: Subscription;
   private readonly routeSub: Subscription;
-  public petId: string;
+
   private invalidCode: string;
   private invalidSpecies: string;
   private usedCode: string;
@@ -151,6 +152,7 @@ export class ActivationPage {
           this.firebaseService.createActivePetId(this.user.uid, response.data)
             .then(() => {
               localStorage.setItem('activePet', response.data);
+              this.petId = localStorage.getItem('activePet');
             })
         }
       });
