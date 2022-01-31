@@ -259,6 +259,7 @@
       "ENDDATE": "Enddatum der Einnahme",
       "TIME": "Uhrzeit",
       "AMOUNT": "Menge",
+      "PORTION": "Gabe",
       "TREATMENT_PERIOD": "Behandlungszeitraum",
       "NOTES": "Deine Notizen (150 Zeichen)",
       "CHARS": "150 Zeichen",
@@ -529,6 +530,7 @@
     }
   },
   "VERIFICATION_PAGE": {
+    "LOGIN": "Zum Login",
     "HEADER": {
       "VERIFICATION": "Verifiziere deinen Account",
       "RECOVER_SUCCESS": "Link gesendet",

@@ -155,6 +155,27 @@ export class TicketResultPage implements CanDeactivateGuard {
     this.listOpen[index].val = this.listOpen[index].val === false;
   }
 
+  // private createChevrons() {
+  //   if (this.result?.findings?.body?.param) {
+  //     this.listOpen = [];
+  //     const arr = this.result?.findings?.body?.param;
+  //     arr.map((value, index) => {
+  //       if (value.visibility && (value.body || value.list)) {
+  //         let obj: any = {};
+  //
+  //         if (value.expandable) {
+  //           obj.val = true;
+  //         } else {
+  //           obj.val = false;
+  //         }
+  //
+  //         this.listOpen.push(obj);
+  //       }
+  //     });
+  //   }
+  //   console.log('this.listOpen', this.listOpen)
+  // }
+
   private createChevrons() {
     if (this.result?.findings?.body?.param) {
       this.listOpen = [];

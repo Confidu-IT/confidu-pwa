@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonService } from '../../../shared/services/common/common.service';
 import { TranslateService } from '@ngx-translate/core';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { Subscription } from 'rxjs';
 import { FormGroup } from '@angular/forms';
 
@@ -24,7 +24,8 @@ export class VerificationPage implements OnInit, OnDestroy {
   constructor(
     private commonService: CommonService,
     private translateService: TranslateService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {
     this.subscription = this.activatedRoute.params
       .subscribe(params => {
@@ -47,6 +48,10 @@ export class VerificationPage implements OnInit, OnDestroy {
   ngOnInit() {
     this.translateService.setDefaultLang(this.commonService.language); // fallback
     this.translateService.use(this.translateService.getBrowserLang());
+  }
+
+  public toSignIn() {
+    this.router.navigateByUrl('signin');
   }
 
   ngOnDestroy(): void {

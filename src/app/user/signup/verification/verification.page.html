@@ -37,6 +37,12 @@
             {{ 'VERIFICATION_PAGE.BODY.RECOVER_FAIL.PART_1' | translate }}
           </p>
         </ng-container>
+        <ion-button
+          color="secondary"
+          expand="full"
+          (click)="toSignIn()">
+          {{ 'VERIFICATION_PAGE.LOGIN' | translate }}
+        </ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>

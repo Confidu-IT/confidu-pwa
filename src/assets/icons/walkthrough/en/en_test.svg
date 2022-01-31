@@ -119,7 +119,7 @@ rationpharm" transform="translate(4256 -11496)" fill="#666" font-size="9" font-f
       <rect id="Rechteck_2955" data-name="Rechteck 2955" width="70" height="19" transform="translate(4730 -11541)" fill="#fafafa"/>
       <text id="Lab" transform="translate(4751 -11526)" fill="#666" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="-19.898" y="0">Lab</tspan></text>
       <rect id="Rechteck_2956" data-name="Rechteck 2956" width="129" height="19" transform="translate(4724 -11505)" fill="#fafafa"/>
-      <text id="Activate_Forscherbox" data-name="Activate Forscherbox" transform="translate(4846 -11492)" fill="#666" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="-114.609" y="0">Activate Forscherbox</tspan></text>
+      <text id="Activate_Forscher_Box" data-name="Activate Forscher Box" transform="translate(4731 -11492)" fill="#666" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Activate Forscher Box</tspan></text>
       <rect id="Rechteck_2957" data-name="Rechteck 2957" width="80" height="19" transform="translate(4693 -11609)" fill="#fafafa"/>
       <text id="Research" transform="translate(4766 -11596)" fill="#989aa1" font-size="15" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="-63.333" y="0">Research</tspan></text>
       <rect id="Rechteck_2958" data-name="Rechteck 2958" width="80" height="19" transform="translate(4693 -11439)" fill="#fafafa"/>

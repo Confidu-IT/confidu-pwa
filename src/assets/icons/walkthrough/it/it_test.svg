@@ -76,7 +76,7 @@
                 <rect id="Rechteck_2955" data-name="Rechteck 2955" width="70" height="19" transform="translate(4730 -11541)" fill="#fafafa"/>
                 <text id="Laboratorio" transform="translate(4793 -11526)" fill="#666" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="-62.355" y="0">Laboratorio</tspan></text>
                 <rect id="Rechteck_2956" data-name="Rechteck 2956" width="129" height="19" transform="translate(4724 -11505)" fill="#fafafa"/>
-                <text id="Attivare_la_Forscherbox" data-name="Attivare la Forscherbox" transform="translate(4856 -11492)" fill="#666" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="-124.746" y="0">Attivare la Forscherbox</tspan></text>
+                <text id="Attivare_la_Forscher_Box" data-name="Attivare la Forscher Box" transform="translate(4731 -11492)" fill="#666" font-size="12" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">Attivare la Forscher Box</tspan></text>
                 <rect id="Rechteck_2957" data-name="Rechteck 2957" width="80" height="19" transform="translate(4693 -11609)" fill="#fafafa"/>
                 <text id="Ricerca" transform="translate(4756 -11596)" fill="#989aa1" font-size="15" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="-50.859" y="0">Ricerca</tspan></text>
                 <rect id="Rechteck_2958" data-name="Rechteck 2958" width="80" height="19" transform="translate(4693 -11439)" fill="#fafafa"/>
@@ -113,7 +113,7 @@
       </g>
     </g>
     <g transform="matrix(1, 0, 0, 1, 3, 11.5)" filter="url(#Differenzmenge_11)">
-      <path id="Differenzmenge_11-2" data-name="Differenzmenge 11" d="M-2594,13682h-241v-513h241v513Zm-223.248-206.251a2,2,0,0,0-2,2v28.5a2,2,0,0,0,2,2h160.5a2,2,0,0,0,2-2v-28.5a2,2,0,0,0-2-2Z" transform="translate(2864 -13156.5)" opacity="0.4"/>
+      <path id="Differenzmenge_11-2" data-name="Differenzmenge 11" d="M-2594,13682h-241v-513h241v513Zm-223.248-206.251a2,2,0,0,0-2,2v28.5a2,2,0,0,0,2,2h168.5a2,2,0,0,0,2-2v-28.5a2,2,0,0,0-2-2Z" transform="translate(2864 -13156.5)" opacity="0.4"/>
     </g>
     <g id="Gruppe_21377" data-name="Gruppe 21377">
       <g transform="matrix(1, 0, 0, 1, 3, 11.5)" filter="url(#Rechteck_2906)">
@@ -124,8 +124,8 @@
       <text id="Attivare_il_test_di_laboratorio" data-name="Attivare il test di laboratorio" transform="translate(111 226.297)" fill="#fff" font-size="14" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="0">Attivare il test di laboratorio</tspan></text>
     </g>
     <g id="Rechteck_2932" data-name="Rechteck 2932" transform="translate(49 332)" fill="none" stroke="#00b7ff" stroke-width="2.5">
-      <rect width="162" height="30" rx="2" stroke="none"/>
-      <rect x="-1.25" y="-1.25" width="164.5" height="32.5" rx="3.25" fill="none"/>
+      <rect width="170" height="30" rx="2" stroke="none"/>
+      <rect x="-1.25" y="-1.25" width="172.5" height="32.5" rx="3.25" fill="none"/>
     </g>
     <g id="Rechteck_2933" data-name="Rechteck 2933" transform="translate(282 499)" fill="none" stroke="#00b7ff" stroke-width="2.5">
       <rect width="30" height="30" rx="2" stroke="none"/>

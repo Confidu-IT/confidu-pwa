@@ -33,7 +33,7 @@
         <ul class="results" *ngIf="careCard?.currentList?.length > 0">
           <li *ngFor="let result of careCard?.currentList"
               (click)="onClickLink('currentList', result.level1_cc_key, result.venomKey,result.level3Id)">
-            <img class="signal" [src]="careCard?.cc_signal" alt="" width="24">
+            <img class="signal" [src]="result.image" alt="" width="24">
             <div class="result">
               <div class="result-text">
                 <span *ngIf="result.label">{{ result.label }} </span>

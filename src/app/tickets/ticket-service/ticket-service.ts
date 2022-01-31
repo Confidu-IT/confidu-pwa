@@ -148,99 +148,47 @@ export class TicketService {
 
   public foo = {};
 
-  public blah ={
-    "actions": [
-      {
-        "header": "Du möchtest persönlich mit einem/einer Tierärzt:in sprechen?",
-        "key": null,
-        "event": null,
-        "visibility": true,
-        "label": "VIDEOANRUF VEREINBAREN",
-        "body": "Wähle bequem einen Termin aus.",
-        "link": "consultation"
-      }
-    ],
-    "eventDate": null,
-    "backgroundImageLink": "https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/evaluations%2Fpattern%2Ftelevet_seamless.svg?alt=media&token=d18e9d04-076c-46b9-b68a-8a647b05a5ed",
-    "headerHeadlineH2": "Flohbefall",
-    "textA3": {
+
+  public baz = {}
+
+  public blah = {
+    "image": null,
+    "nextDate": null,
+    "recipeKeys": [],
+    "initial": {
+      "type": "par",
       "visibility": true,
-      "type": "keys",
-      "header": "Wie du helfen kannst",
       "body": [
-        {
-          "textblockList": [],
-          "textblockHeadline": "Medikation",
-          "textblockText": null
-        },
-        {
-          "textblockList": [],
-          "textblockText": "Wautz benötigt ein verschreibungspflichtiges Medikament gegen Flohbefall. Da Flöhe häufig Bandwürmer übertragen, entwurme Wautz zusätzlich.",
-          "textblockHeadline": null
-        },
-        {
-          "textblockList": [],
-          "textblockText": "Behandle auch alle Partnertiere von Wautz mit einem Antiparasitikum, da eine (Wieder-) Ansteckung sehr wahrscheinlich ist. Nutze hierzu gesondert den Diagnose Finder von confidu für jedes Tier. Sind keine Symptome vorhanden, kannst du das benötigte Präparat über Medikamente nachbestellen --> Parasitenprophylaxe erhalten. Und bitte bedenke: Medikamente müssen immer ausdrücklich für die jeweilige Tierart zugelassen sein. Nicht alles, was für Hunde verträglich ist, vertragen auch Katzen.",
-          "textblockHeadline": null
-        },
-        {
-          "textblockList": [],
-          "textblockText": null,
-          "textblockHeadline": "Diagnostik und Monitoring"
-        },
-        {
-          "textblockList": [],
-          "textblockText": "Wenn sich die Symptome trotz Maßnahmen verschlimmern oder nach einer Woche keine Besserung eintritt, suche mit Wautz eine Tierarztpraxis oder -klinik auf.",
-          "textblockHeadline": null
-        },
-        {
-          "textblockList": [],
-          "textblockHeadline": "Management",
-          "textblockText": null
-        },
-        {
-          "textblockList": [],
-          "textblockText": "Kämme Wautz regelmäßig (anfänglich am besten täglich) mit einem Flohkamm durch, um tote und neu geschlüpfte Flöhe sofort zu entfernen.",
-          "textblockHeadline": null
-        },
-        {
-          "textblockText": "Die meisten Flöhe leben nicht auf dem Tier, sondern in dessen Umfeld. Deshalb ist bei einem Befall auch die Umgebungsbehandlung besonders wichtig.",
-          "textblockHeadline": null,
-          "textblockList": []
-        },
-        {
-          "textblockHeadline": null,
-          "textblockList": [],
-          "textblockText": "Sauge die Wohnung gründlich und entsorge den Staubsaugerbeutel. Wasche alle Decken von Liegeplätzen und Spielzeuge bei mindestens 60°C. Wende ein Umgebungsspray an, um alle verbleibenden Flohstadien abzutöten. Sauge danach erneut gründlich und entsorge den Beutel."
-        },
-        {
-          "textblockText": "Um einen Flohbefall zu verhindern, hilft eine regelmäßige Flohprophylaxe. Wie und wie häufig du diese durchführen solltest, findest du in der CareCard unter Ektoparasitenrisiko.",
-          "textblockList": [],
-          "textblockHeadline": null
-        }
-      ]
+        "Bei einem Flohbefall saugen die springenden Parasiten das Blut unserer Haustiere. Flöhe können starken Juckreiz und Blutarmut verursachen und Bandwürmer übertragen. Sie können auch auf den Menschen übergehen."
+      ],
+      "header": "Was ist das?"
     },
-    "slider": null,
+    "headerHeadlineH1": "Diagnose:",
+    "backgroundImageLink": "https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/evaluations%2Fpattern%2Ftelevet_seamless.svg?alt=media&token=d18e9d04-076c-46b9-b68a-8a647b05a5ed",
+    "iconImageLink": "https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/evaluations%2Fevaluation_plus_neg%2Fevaluation_diseases_negative.svg?alt=media&token=8e62362d-af80-4296-9ed6-89f1e88198f1",
+    "therapy": "Self-Care möglich",
+    "isPdf": true,
     "findings": {
-      "visibility": null,
       "body": {
+        "text": null,
+        "legend": null,
         "answers": [
           {
             "name": "FLO_Q1",
             "values": {
               "answer": {
+                "answerValue": null,
+                "subject": null,
+                "answerUnit": null,
+                "venomKey": null,
+                "minSpecifics": 0,
+                "imageLinkDetailAnswer": null,
                 "answerLongtext": [
                   "ja"
                 ],
-                "venomKey": null,
                 "ccEntry": null,
-                "imageLinkAnswer": null,
-                "answerValue": null,
-                "subject": null,
-                "imageLinkDetailAnswer": null,
-                "minSpecifics": 0,
                 "value": "FLO_Q1_Y",
-                "answerUnit": null
+                "imageLinkAnswer": null
               }
             },
             "questionText": "Sind Flöhe oder Flohkot im Fell von Wautz zu sehen? ",
@@ -250,18 +198,18 @@ export class TicketService {
             "name": "FLO_Q2",
             "values": {
               "answer": {
-                "answerValue": null,
-                "venomKey": null,
-                "value": "FLO_Q2_Y",
-                "subject": null,
-                "imageLinkDetailAnswer": null,
-                "ccEntry": null,
                 "answerUnit": null,
+                "venomKey": null,
+                "ccEntry": null,
+                "subject": null,
+                "imageLinkAnswer": null,
+                "answerValue": null,
                 "answerLongtext": [
                   "ja"
                 ],
-                "imageLinkAnswer": null,
-                "minSpecifics": 0
+                "value": "FLO_Q2_Y",
+                "minSpecifics": 0,
+                "imageLinkDetailAnswer": null
               }
             },
             "questionText": "Zeigt Wautz starken Juckreiz und punktförmige Einstichstellen sowie eventuell Hautrötungen?",
@@ -271,18 +219,18 @@ export class TicketService {
             "name": "FLO_Q4",
             "values": {
               "answer": {
+                "imageLinkAnswer": null,
+                "minSpecifics": 0,
                 "answerUnit": null,
                 "answerValue": null,
-                "value": "FLO_Q4_N",
                 "venomKey": null,
-                "imageLinkDetailAnswer": null,
-                "imageLinkAnswer": null,
-                "ccEntry": null,
                 "answerLongtext": [
                   "nein"
                 ],
+                "value": "FLO_Q4_N",
                 "subject": null,
-                "minSpecifics": 0
+                "ccEntry": null,
+                "imageLinkDetailAnswer": null
               }
             },
             "questionText": "Leidet Wautz unter Epilepsie?",
@@ -292,18 +240,18 @@ export class TicketService {
             "name": "AJ_Q7",
             "values": {
               "answer": {
-                "imageLinkDetailAnswer": null,
                 "subject": null,
+                "answerValue": null,
+                "imageLinkDetailAnswer": null,
+                "value": "AJ_Q7_N",
+                "ccEntry": null,
+                "imageLinkAnswer": null,
                 "venomKey": null,
+                "minSpecifics": 0,
                 "answerLongtext": [
                   "nein"
                 ],
-                "value": "AJ_Q7_N",
-                "answerUnit": null,
-                "minSpecifics": 0,
-                "ccEntry": null,
-                "imageLinkAnswer": null,
-                "answerValue": null
+                "answerUnit": null
               }
             },
             "questionText": "Wurde Wautz vor kurzem medikamentös gegen Endoparasiten behandelt?",
@@ -313,18 +261,18 @@ export class TicketService {
             "name": "AJ_Q8",
             "values": {
               "answer": {
-                "imageLinkDetailAnswer": null,
+                "value": "AJ_Q8_N",
+                "answerUnit": null,
                 "answerLongtext": [
                   "nein"
                 ],
-                "venomKey": null,
                 "minSpecifics": 0,
-                "subject": null,
-                "answerValue": null,
-                "answerUnit": null,
                 "imageLinkAnswer": null,
-                "value": "AJ_Q8_N",
-                "ccEntry": null
+                "imageLinkDetailAnswer": null,
+                "venomKey": null,
+                "answerValue": null,
+                "ccEntry": null,
+                "subject": null
               }
             },
             "questionText": "Liegt bei Wautz eine Unverträglichkeit oder Allergie gegen bestimmte Medikamente gegen Endoparasiten vor?",
@@ -334,16 +282,16 @@ export class TicketService {
             "name": "AJ_Q9",
             "values": {
               "answer": {
+                "subject": null,
                 "venomKey": null,
+                "imageLinkAnswer": null,
                 "answerValue": null,
                 "ccEntry": null,
-                "imageLinkAnswer": null,
-                "subject": null,
+                "minSpecifics": 0,
                 "answerUnit": null,
                 "answerLongtext": [
                   "nein"
                 ],
-                "minSpecifics": 0,
                 "value": "AJ_Q9_N",
                 "imageLinkDetailAnswer": null
               }
@@ -355,18 +303,18 @@ export class TicketService {
             "name": "AJ_Q10",
             "values": {
               "answer": {
+                "ccEntry": null,
                 "minSpecifics": 0,
                 "venomKey": null,
+                "subject": null,
                 "answerUnit": null,
                 "imageLinkAnswer": null,
-                "ccEntry": null,
                 "value": "AJ_Q10_N",
+                "imageLinkDetailAnswer": null,
+                "answerValue": null,
                 "answerLongtext": [
                   "nein"
-                ],
-                "answerValue": null,
-                "subject": null,
-                "imageLinkDetailAnswer": null
+                ]
               }
             },
             "questionText": "Verträgt Wautz manche Ektoparasitenmittel nicht?",
@@ -376,15 +324,15 @@ export class TicketService {
             "name": "SHA_Q19",
             "values": {
               "answer": {
-                "answerValue": 23,
+                "minSpecifics": 0,
+                "answerLongtext": null,
                 "imageLinkDetailAnswer": null,
                 "subject": null,
-                "answerLongtext": null,
-                "ccEntry": "W",
-                "value": "*pet_weight*",
-                "answerUnit": "kg",
                 "imageLinkAnswer": null,
-                "minSpecifics": 0,
+                "ccEntry": "W",
+                "answerValue": 33,
+                "answerUnit": "kg",
+                "value": "*pet_weight*",
                 "venomKey": null
               }
             },
@@ -395,130 +343,112 @@ export class TicketService {
             "name": "DIS_Q1",
             "values": {
               "answer": {
-                "imageLinkDetailAnswer": null,
+                "answerValue": null,
                 "venomKey": null,
-                "subject": null,
                 "value": "DIS_Q1_N",
+                "imageLinkAnswer": null,
                 "answerLongtext": [
                   "nein"
                 ],
-                "minSpecifics": 0,
-                "imageLinkAnswer": null,
-                "answerValue": null,
                 "answerUnit": null,
-                "ccEntry": null
+                "subject": null,
+                "ccEntry": null,
+                "imageLinkDetailAnswer": null,
+                "minSpecifics": 0
               }
             },
             "questionText": "Hat Wautz weitere gesundheitliche Probleme oder Symptome, die nicht abgefragt wurden?",
             "questionType": "R"
           }
         ],
-        "text": null,
-        "param": null,
-        "legend": null
+        "param": null
       },
-      "header": "Deine Angaben"
+      "header": "Deine Angaben",
+      "visibility": null
     },
     "magazinKeys": [
       "MPRE0002_DC"
     ],
-    "ticketKeys": [],
-    "popup": {
-      "popupOptionText": "Möchtest du die Diagnose in der CareCard ablegen? Dort kannst du sie jederzeit wieder einsehen. Klicke hierzu auf speichern. Wenn nicht, wird die Auswertung automatisch verworfen.",
-      "buttonCancel": {
-        "type": "cancel",
-        "label": "VERWERFEN"
-      },
-      "buttonConfirm": {
-        "label": "SPEICHERN",
-        "type": "confirm"
-      }
-    },
-    "fupKeys": [],
-    "initial": {
-      "type": "par",
-      "header": "Was ist das?",
-      "body": [
-        "Bei einem Flohbefall saugen die springenden Parasiten das Blut unserer Haustiere. Flöhe können starken Juckreiz und Blutarmut verursachen und Bandwürmer übertragen. Sie können auch auf den Menschen übergehen."
-      ],
-      "visibility": true
-    },
+    "eventDate": null,
+    "textA4": null,
     "products": [
       {
         "info": null,
-        "headline": "Was du brauchst",
+        "body": [
+          "Wir haben dir die Präparate zusammengestellt, die Wautz benötigt. Für verschreibungspflichtige Medikamente stellen wir dir gegen eine Gebühr ein Rezept aus. Lege deine Auswahl in den Warenkorb."
+        ],
         "list": [
           {
-            "med_amountdose": null,
-            "key": "PRESCR",
-            "id": "MEDDC000000020",
-            "med_header": null,
+            "ticket_type": [],
+            "feeding": false,
             "indication": {
               "body": {
                 "indicationTeaser": null,
-                "indicationProduct": null,
-                "indicactionCaution": null,
-                "indicationThird": null,
-                "indicationSecond": null,
-                "indicationDeclaration": null,
-                "indicationOther": null,
                 "indicationFirst": {
+                  "body": null,
                   "header": [
-                    "Um verschreibungspflichtige Medikamente für die Therapie von *NAME* erhalten zu können, benötigst du ein Rezept. Deine Angaben und die benötigte Dosierung werden von unseren Tierärzt:innen vor der Rezepterstellung genau geprüft, sodass eine Gebühr hierfür entsteht.",
+                    "Um verschreibungspflichtige Medikamente für die Therapie deines Haustieres erhalten zu können, benötigst du ein Rezept. Deine Angaben und die benötigte Dosierung werden von unseren Tierärzt:innen vor der Rezepterstellung genau geprüft, sodass eine Gebühr hierfür entsteht.",
                     "Das Rezept bekommst du anschließend auf dem Postweg in zwei Ausfertigungen. Lege diese einer niedergelassenen Apotheke vor. Sie ist verpflichtet, dir die benötigten Präparate zur Verfügung zu stellen. Um längere Lieferzeiten zu vermeiden, empfehlen wir dir eine Apotheke zu wählen, die Tierarzneimittel wie Floh- und Zeckenpräparate anbietet. Nach dem Kauf bekommst du ein Rezept abgestempelt zurück, das andere behält die Apotheke.",
                     "Wenn du die Medikamente erhalten hast, kannst du sie manuell in der CareCard bei den Tierarztbesuchen erfassen. Wenn du möchtest, wird auch eine Erinnerung im Planer eintragen."
-                  ],
-                  "body": null
-                }
+                  ]
+                },
+                "indicationSecond": null,
+                "indicationProduct": null,
+                "indicactionCaution": null,
+                "indicationOther": null,
+                "indicationDeclaration": null,
+                "indicationThird": null
               },
               "header": "Hinweis"
             },
-            "pharmacy": false,
+            "prescription": true,
+            "med_unit": null,
             "med_image_link": null,
             "med_doses": null,
-            "med_package_ges": "1 Stück",
-            "med_type": null,
-            "prescription": true,
-            "med_name": "Rezept inkl. Rezeptgebühr",
-            "minWeight": 0,
             "med_frequency": null,
-            "product_pdf_dokument": "",
-            "maxWeight": 100,
+            "pharmacy": false,
+            "med_amountdose": null,
             "durationEffect": 0,
-            "Wiederholung_Freq": null,
+            "med_name": "Rezept inkl. Rezeptgebühr",
+            "product_pdf_dokument": "",
             "med_amount": 1,
-            "med_duration_length": null,
+            "med_type": null,
+            "med_duration_pd": null,
+            "med_category": "Verordnung",
+            "diagnosis": null,
+            "med_delivery": "confidu Vets ApS",
+            "medication": "Rezept inkl. Rezeptgebühr",
+            "Wiederholung_Freq": null,
+            "med_header": null,
+            "id": "MEDDC000000020",
+            "maxWeight": 100,
+            "carecard": [
+              {
+                "level1_cc_key": "medication_cc",
+                "Level2_cc_status": "filled",
+                "l0_cc_key": "diseases_cc",
+                "key": "MEDDC000000020"
+              }
+            ],
+            "minWeight": 0,
             "categoryKeys": [
               "equip"
             ],
-            "diagnosis": null,
-            "carecard": [
-              {
-                "l0_cc_key": "diseases_cc",
-                "level1_cc_key": "medication_cc",
-                "key": "MEDDC000000020",
-                "Level2_cc_status": "filled"
-              }
-            ],
-            "feeding": false,
-            "medication": "Rezept inkl. Rezeptgebühr",
-            "med_unit": null,
-            "ticket_type": [],
-            "med_delivery": "confidu Vets ApS",
-            "med_duration_pd": null,
+            "key": "PRESCR",
+            "med_package_ges": "1 Stück",
+            "med_duration_length": null,
             "swKey": "MEDDC000000020",
-            "med_category": "Verordnung",
             "data": {
               "calculatedListingPrice": {
                 "from": {
-                  "unitPrice": 10.71,
+                  "unitPrice": 8.99,
                   "quantity": 1,
-                  "totalPrice": 10.71,
+                  "totalPrice": 8.99,
                   "calculatedTaxes": [
                     {
-                      "tax": 1.71,
+                      "tax": 1.44,
                       "taxRate": 19,
-                      "price": 10.71,
+                      "price": 8.99,
                       "apiAlias": "cart_tax_calculated"
                     }
                   ],
@@ -534,14 +464,14 @@ export class TicketService {
                   "apiAlias": "calculated_price"
                 },
                 "to": {
-                  "unitPrice": 10.71,
+                  "unitPrice": 8.99,
                   "quantity": 1,
-                  "totalPrice": 10.71,
+                  "totalPrice": 8.99,
                   "calculatedTaxes": [
                     {
-                      "tax": 1.71,
+                      "tax": 1.44,
                       "taxRate": 19,
-                      "price": 10.71,
+                      "price": 8.99,
                       "apiAlias": "cart_tax_calculated"
                     }
                   ],
@@ -560,14 +490,14 @@ export class TicketService {
               },
               "calculatedPrices": [],
               "calculatedPrice": {
-                "unitPrice": 10.71,
+                "unitPrice": 8.99,
                 "quantity": 1,
-                "totalPrice": 10.71,
+                "totalPrice": 8.99,
                 "calculatedTaxes": [
                   {
-                    "tax": 1.71,
+                    "tax": 1.44,
                     "taxRate": 19,
-                    "price": 10.71,
+                    "price": 8.99,
                     "apiAlias": "cart_tax_calculated"
                   }
                 ],
@@ -590,16 +520,16 @@ export class TicketService {
               "parentId": null,
               "childCount": 0,
               "taxId": "4693fa9192e24fc895079b6f68a41cea",
-              "manufacturerId": "a4dfaf69e42645e7801f92374468b54a",
+              "manufacturerId": "ee4868a7cc2449358aec639e11a2152c",
               "unitId": null,
               "active": true,
               "displayGroup": "33608b86955da56830f2607728a3347b",
               "manufacturerNumber": null,
               "ean": null,
-              "sales": 1,
+              "sales": 14,
               "productNumber": "MEDDC000000020",
-              "stock": 999998,
-              "availableStock": 999997,
+              "stock": 999984,
+              "availableStock": 999975,
               "available": true,
               "deliveryTimeId": "16cd2c37bb154f06a71167175ffbf191",
               "deliveryTime": {
@@ -646,7 +576,7 @@ export class TicketService {
               ],
               "optionIds": null,
               "propertyIds": null,
-              "name": "Rezept incl. Rezeptgebühr",
+              "name": "Rezept inkl. Bearbeitungsgebühr",
               "keywords": null,
               "description": null,
               "metaDescription": null,
@@ -680,36 +610,94 @@ export class TicketService {
               "unit": null,
               "cover": {
                 "productId": "b1cbc8d31bfd453294f5aed9a765a6a5",
-                "mediaId": "643b4d476b804957a29d4b1f15274882",
+                "mediaId": "e40f3e7ff79a4959b0e0beb29aa28389",
                 "position": 1,
                 "media": {
                   "mimeType": "image/jpeg",
                   "fileExtension": "jpeg",
-                  "fileSize": 91355,
+                  "fileSize": 50238,
                   "title": null,
                   "metaData": {
-                    "width": 1400,
-                    "height": 1400,
+                    "width": 600,
+                    "height": 600,
                     "type": 2
                   },
-                  "uploadedAt": "2022-01-05T10:05:24.796+00:00",
+                  "uploadedAt": "2022-01-06T12:50:02.053+00:00",
                   "alt": null,
-                  "url": "https://shop.confidu.com/media/f6/4e/cf/1641377124/random_box_de.jpeg",
-                  "fileName": "random_box_de",
+                  "url": "https://shop.confidu.com/media/50/b5/ea/1641473402/rezeptgebuehr.jpeg",
+                  "fileName": "rezeptgebuehr",
                   "translations": null,
-                  "thumbnails": [],
+                  "thumbnails": [
+                    {
+                      "width": 400,
+                      "height": 400,
+                      "url": "https://shop.confidu.com/thumbnail/50/b5/ea/1641473402/rezeptgebuehr_400x400.jpeg",
+                      "mediaId": "e40f3e7ff79a4959b0e0beb29aa28389",
+                      "customFields": null,
+                      "_uniqueIdentifier": "56f4f2a156b94a4c8d409600c7ce7b79",
+                      "versionId": null,
+                      "translated": [],
+                      "createdAt": "2022-01-06T12:50:10.607+00:00",
+                      "updatedAt": null,
+                      "extensions": {
+                        "foreignKeys": {
+                          "apiAlias": "array_struct"
+                        }
+                      },
+                      "id": "56f4f2a156b94a4c8d409600c7ce7b79",
+                      "apiAlias": "media_thumbnail"
+                    },
+                    {
+                      "width": 800,
+                      "height": 800,
+                      "url": "https://shop.confidu.com/thumbnail/50/b5/ea/1641473402/rezeptgebuehr_800x800.jpeg",
+                      "mediaId": "e40f3e7ff79a4959b0e0beb29aa28389",
+                      "customFields": null,
+                      "_uniqueIdentifier": "810b7ee9e33e4c93950616a0320abdbc",
+                      "versionId": null,
+                      "translated": [],
+                      "createdAt": "2022-01-06T12:50:10.608+00:00",
+                      "updatedAt": null,
+                      "extensions": {
+                        "foreignKeys": {
+                          "apiAlias": "array_struct"
+                        }
+                      },
+                      "id": "810b7ee9e33e4c93950616a0320abdbc",
+                      "apiAlias": "media_thumbnail"
+                    },
+                    {
+                      "width": 1920,
+                      "height": 1920,
+                      "url": "https://shop.confidu.com/thumbnail/50/b5/ea/1641473402/rezeptgebuehr_1920x1920.jpeg",
+                      "mediaId": "e40f3e7ff79a4959b0e0beb29aa28389",
+                      "customFields": null,
+                      "_uniqueIdentifier": "bcc18ef066604fd9aeea67188fb22bb6",
+                      "versionId": null,
+                      "translated": [],
+                      "createdAt": "2022-01-06T12:50:10.607+00:00",
+                      "updatedAt": null,
+                      "extensions": {
+                        "foreignKeys": {
+                          "apiAlias": "array_struct"
+                        }
+                      },
+                      "id": "bcc18ef066604fd9aeea67188fb22bb6",
+                      "apiAlias": "media_thumbnail"
+                    }
+                  ],
                   "hasFile": true,
                   "private": false,
                   "customFields": null,
-                  "_uniqueIdentifier": "643b4d476b804957a29d4b1f15274882",
+                  "_uniqueIdentifier": "e40f3e7ff79a4959b0e0beb29aa28389",
                   "versionId": null,
                   "translated": {
                     "alt": null,
                     "title": null,
                     "customFields": []
                   },
-                  "createdAt": "2022-01-05T10:05:24.655+00:00",
-                  "updatedAt": "2022-01-05T10:17:01.863+00:00",
+                  "createdAt": "2022-01-06T12:50:01.921+00:00",
+                  "updatedAt": "2022-01-06T12:50:10.608+00:00",
                   "extensions": {
                     "internal_mapping_storage": {
                       "apiAlias": "array_struct"
@@ -718,21 +706,21 @@ export class TicketService {
                       "apiAlias": "array_struct"
                     }
                   },
-                  "id": "643b4d476b804957a29d4b1f15274882",
+                  "id": "e40f3e7ff79a4959b0e0beb29aa28389",
                   "apiAlias": "media"
                 },
                 "customFields": null,
-                "_uniqueIdentifier": "a92610241a1345b39c0ae19dec9ae467",
+                "_uniqueIdentifier": "1c2176a9afc0428ca172e705f1024017",
                 "versionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
                 "translated": [],
-                "createdAt": "2022-01-05T10:12:30.196+00:00",
+                "createdAt": "2022-01-25T12:25:47.982+00:00",
                 "updatedAt": null,
                 "extensions": {
                   "foreignKeys": {
                     "apiAlias": "array_struct"
                   }
                 },
-                "id": "a92610241a1345b39c0ae19dec9ae467",
+                "id": "1c2176a9afc0428ca172e705f1024017",
                 "productVersionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
                 "apiAlias": "product_media"
               },
@@ -747,7 +735,7 @@ export class TicketService {
               "options": null,
               "configuratorSettings": null,
               "categoriesRo": null,
-              "coverId": "a92610241a1345b39c0ae19dec9ae467",
+              "coverId": "1c2176a9afc0428ca172e705f1024017",
               "customFields": {
                 "product_prescription": true,
                 "product_pharmacy": false,
@@ -766,7 +754,7 @@ export class TicketService {
               "versionId": "0fa91ce3e96a4bc2be4bd9ce752c3425",
               "translated": {
                 "metaDescription": null,
-                "name": "Rezept incl. Rezeptgebühr",
+                "name": "Rezept inkl. Bearbeitungsgebühr",
                 "keywords": null,
                 "description": null,
                 "metaTitle": null,
@@ -782,7 +770,7 @@ export class TicketService {
                 "customSearchKeywords": null
               },
               "createdAt": "2022-01-05T10:12:30.198+00:00",
-              "updatedAt": "2022-01-10T12:29:37.511+00:00",
+              "updatedAt": "2022-01-25T12:31:27.740+00:00",
               "extensions": {
                 "foreignKeys": {
                   "apiAlias": "array_struct"
@@ -796,36 +784,37 @@ export class TicketService {
             }
           }
         ],
-        "body": [
-          "Wir haben dir die Präparate zusammengestellt, die Wautz benötigt. Für verschreibungspflichtige Medikamente stellen wir dir gegen eine Gebühr ein Rezept aus. Lege deine Auswahl in den Warenkorb."
-        ]
+        "headline": "Was du brauchst"
       },
       {
+        "info": null,
         "body": [
           "Hier findest du weitere Produkte, die helfen, die Flöhe loszuwerden."
         ],
-        "headline": "Was zusätzlich hilft",
         "list": [
           {
+            "durationEffect": 0,
+            "med_delivery": "confidu GmbH",
+            "med_header": null,
+            "medication": "Flohkamm",
             "carecard": [
               {
                 "level1_cc_key": "medication_cc",
-                "key": "TXKDC0010000140",
+                "Level2_cc_status": "filled",
                 "l0_cc_key": "diseases_cc",
-                "Level2_cc_status": "filled"
+                "key": "TXKDC0010000140"
               }
             ],
-            "ticket_type": [
-              "furcare"
-            ],
-            "maxWeight": 100,
-            "med_unit": null,
+            "feeding": false,
+            "swKey": "TXKDC0010000140",
             "indication": {
               "body": {
                 "indicationSecond": null,
+                "indicationThird": null,
                 "indicationOther": null,
                 "indicactionCaution": null,
                 "indicationProduct": "Engzahniger Kamm zum Entfernen von Parasiten",
+                "indicationTeaser": "Flohkamm",
                 "indicationFirst": {
                   "body": [
                     "zur Entfernung von Staub und Parasiten",
@@ -836,43 +825,40 @@ export class TicketService {
                     "Der Kamm wird angewendet bei Hunden und Katzen"
                   ]
                 },
-                "indicationDeclaration": "Der Kamm dient zur Diagnose von Flöhen und Läusen.",
-                "indicationTeaser": "Flohkamm",
-                "indicationThird": null
+                "indicationDeclaration": "Der Kamm dient zur Diagnose von Flöhen und Läusen."
               },
               "header": "Anwendungsgebiet"
             },
-            "Wiederholung_Freq": null,
-            "minWeight": 0,
-            "swKey": "TXKDC0010000140",
+            "med_amountdose": null,
+            "maxWeight": 100,
             "id": "TXKDC0010000140",
-            "med_image_link": null,
-            "med_package_ges": "1 Flohkamm",
-            "med_amount": 1,
-            "durationEffect": 0,
+            "med_name": "Trixie Kleintier Floh- und Staubkamm",
+            "med_doses": null,
+            "key": "FLO",
+            "med_duration_length": null,
             "diagnosis": [
               "Fellpflege",
               "Flohbefall"
             ],
-            "med_duration_length": null,
-            "medication": "Flohkamm",
-            "prescription": false,
-            "med_doses": null,
-            "med_header": null,
-            "feeding": false,
-            "med_name": "Trixie Kleintier Floh- und Staubkamm",
-            "med_duration_pd": null,
-            "product_pdf_dokument": "https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/shop%2Fpackage_insert%2Ff_g%2Fflohkamm_dog_cat_product_information_de.pdf?alt=media&token=4752d4c4-a2e6-49cc-9530-96a9ba298292",
-            "med_frequency": null,
-            "med_delivery": "confidu GmbH",
-            "med_type": null,
-            "med_amountdose": null,
-            "med_category": "Haut- und Fellpflegeprodukt",
             "pharmacy": false,
-            "key": "FLO",
+            "minWeight": 0,
+            "med_duration_pd": null,
+            "Wiederholung_Freq": null,
+            "med_category": "Haut- und Fellpflegeprodukt",
+            "med_frequency": null,
+            "med_image_link": null,
+            "product_pdf_dokument": "https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/shop%2Fpackage_insert%2Ff_g%2Fflohkamm_dog_cat_product_information_de.pdf?alt=media&token=4752d4c4-a2e6-49cc-9530-96a9ba298292",
+            "med_unit": null,
+            "prescription": false,
             "categoryKeys": [
               "furprod"
             ],
+            "med_type": null,
+            "med_amount": 1,
+            "ticket_type": [
+              "furcare"
+            ],
+            "med_package_ges": "1 Flohkamm",
             "data": {
               "calculatedListingPrice": {
                 "from": {
@@ -1163,67 +1149,67 @@ export class TicketService {
             }
           },
           {
+            "carecard": [
+              {
+                "key": "PRFDC2010000084",
+                "Level2_cc_status": "filled",
+                "l0_cc_key": "diseases_cc",
+                "level1_cc_key": "medication_cc"
+              }
+            ],
+            "feeding": false,
+            "med_amountdose": null,
+            "Wiederholung_Freq": null,
+            "swKey": "PRFDC2010000084",
+            "med_image_link": null,
+            "key": "FOG",
+            "med_amount": 1,
             "diagnosis": [
               "Flohbefall - Umgebungsbehandlung"
             ],
-            "med_package_ges": "75 ml Vernebler",
-            "feeding": false,
-            "prescription": false,
-            "id": "PRFDC2010000084",
-            "maxWeight": 100,
-            "med_image_link": null,
-            "ticket_type": [
-              "med_take"
-            ],
-            "categoryKeys": [
-              "antipar"
-            ],
-            "medication": "Fogger Flohbekämpfung",
-            "med_category": "Antiparasitikum",
-            "med_doses": "Vernebler",
-            "product_pdf_dokument": "https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/shop%2Fpackage_insert%2Ff_g%2Ffogger_dog_cat_product_information_de%20(1).pdf?alt=media&token=f91a5929-c941-4028-8b38-04efd0049fb9",
-            "med_type": "Gas",
             "pharmacy": false,
+            "med_name": "INDOREX Mini-Fogger Aerosol-Vernebler",
+            "product_pdf_dokument": "https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/shop%2Fpackage_insert%2Ff_g%2Ffogger_dog_cat_product_information_de%20(1).pdf?alt=media&token=f91a5929-c941-4028-8b38-04efd0049fb9",
+            "medication": "Fogger Flohbekämpfung",
+            "durationEffect": 0,
+            "med_header": null,
+            "maxWeight": 100,
+            "med_doses": "Vernebler",
+            "id": "PRFDC2010000084",
+            "med_type": "Gas",
+            "med_duration_pd": null,
+            "med_unit": "ml",
+            "med_delivery": "confidu GmbH",
+            "med_frequency": null,
+            "med_category": "Antiparasitikum",
+            "prescription": false,
             "indication": {
+              "header": "Anwendungsgebiet",
               "body": {
+                "indicationTeaser": "INDOREX Defence Mini-Fogger Aerosol-Vernebler",
+                "indicationSecond": null,
+                "indicationOther": "Mit 6 Monaten Langzeitwirkung.",
+                "indicationThird": null,
+                "indicactionCaution": null,
                 "indicationFirst": {
                   "body": null,
                   "header": [
                     "Der Vernebler wird angewendet zur Parasitenbekämpfung in Wohnung und Haus."
                   ]
                 },
-                "indicactionCaution": null,
-                "indicationOther": "Mit 6 Monaten Langzeitwirkung.",
                 "indicationProduct": "Vernebler zur Parasitenbekämpfung",
-                "indicationThird": null,
-                "indicationDeclaration": "Der INDOREX® DEFENCE FOGGER enthält die Wirkstoffe Permethrin und Pyrethrum sowie den Insektenwachstumshemmer Pyriproxifen. Permethrin und Pyrethrum töten schnell und zuverlässig alle Flöhe ab, während Pyriproxifen die Entwicklung von Floheiern und -larven biologisch unterbricht. Somit werden alle Stadien der Flohentwicklung erfasst und bis zu 6 Monate wirksam bekämpft. Die Wirkstoffe sind außerdem wirksam gegen Zecken, Milben, Schaben und anderes Ungeziefer.",
-                "indicationTeaser": "INDOREX Defence Mini-Fogger Aerosol-Vernebler",
-                "indicationSecond": null
-              },
-              "header": "Anwendungsgebiet"
-            },
-            "durationEffect": 0,
-            "med_duration_pd": null,
-            "Wiederholung_Freq": null,
-            "key": "FOG",
-            "med_header": null,
-            "minWeight": 0,
-            "med_name": "INDOREX Mini-Fogger Aerosol-Vernebler",
-            "med_frequency": null,
-            "med_unit": "ml",
-            "swKey": "PRFDC2010000084",
-            "med_delivery": "confidu GmbH",
-            "med_amountdose": null,
-            "med_duration_length": null,
-            "carecard": [
-              {
-                "level1_cc_key": "medication_cc",
-                "Level2_cc_status": "filled",
-                "l0_cc_key": "diseases_cc",
-                "key": "PRFDC2010000084"
+                "indicationDeclaration": "Der INDOREX® DEFENCE FOGGER enthält die Wirkstoffe Permethrin und Pyrethrum sowie den Insektenwachstumshemmer Pyriproxifen. Permethrin und Pyrethrum töten schnell und zuverlässig alle Flöhe ab, während Pyriproxifen die Entwicklung von Floheiern und -larven biologisch unterbricht. Somit werden alle Stadien der Flohentwicklung erfasst und bis zu 6 Monate wirksam bekämpft. Die Wirkstoffe sind außerdem wirksam gegen Zecken, Milben, Schaben und anderes Ungeziefer."
               }
+            },
+            "med_duration_length": null,
+            "ticket_type": [
+              "med_take"
             ],
-            "med_amount": 1,
+            "minWeight": 0,
+            "categoryKeys": [
+              "antipar"
+            ],
+            "med_package_ges": "75 ml Vernebler",
             "data": {
               "calculatedListingPrice": {
                 "from": {
@@ -1312,10 +1298,10 @@ export class TicketService {
               "displayGroup": "7225208f46f6577f482e0cafa6963746",
               "manufacturerNumber": null,
               "ean": null,
-              "sales": 0,
+              "sales": 2,
               "productNumber": "PRFDC2010000084",
-              "stock": 100,
-              "availableStock": 100,
+              "stock": 98,
+              "availableStock": 98,
               "available": true,
               "deliveryTimeId": "16cd2c37bb154f06a71167175ffbf191",
               "deliveryTime": {
@@ -1514,15 +1500,56 @@ export class TicketService {
             }
           },
           {
-            "prescription": false,
+            "durationEffect": 0,
+            "med_header": null,
+            "id": "PRFDC2020000084",
+            "med_image_link": null,
+            "swKey": "PRFDC2020000084",
+            "med_doses": "Vernebler",
+            "carecard": [
+              {
+                "key": "PRFDC2020000084",
+                "level1_cc_key": "medication_cc",
+                "l0_cc_key": "diseases_cc",
+                "Level2_cc_status": "filled"
+              }
+            ],
+            "med_unit": "ml",
+            "minWeight": 0,
+            "key": "FOG2",
+            "ticket_type": [
+              "med_take"
+            ],
+            "med_frequency": null,
             "maxWeight": 100,
+            "Wiederholung_Freq": null,
+            "med_duration_pd": null,
+            "med_category": "Antiparasitikum",
+            "med_amount": 1,
+            "med_amountdose": null,
+            "med_duration_length": null,
+            "feeding": false,
+            "prescription": false,
+            "med_package_ges": "150 ml Vernebler",
+            "med_type": "Gas",
+            "diagnosis": [
+              "Flohbefall - Umgebungsbehandlung"
+            ],
+            "pharmacy": false,
+            "med_name": "INDOREX Fogger Aerosol-Vernebler",
+            "med_delivery": "confidu GmbH",
+            "product_pdf_dokument": "https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/shop%2Fpackage_insert%2Ff_g%2Ffogger_dog_cat_product_information_de%20(1).pdf?alt=media&token=f91a5929-c941-4028-8b38-04efd0049fb9",
+            "medication": "Fogger Flohbekämpfung",
+            "categoryKeys": [
+              "antipar"
+            ],
             "indication": {
+              "header": "Anwendungsgebiet",
               "body": {
-                "indicationSecond": null,
-                "indicationTeaser": "INDOREX Defence Mini-Fogger Aerosol-Vernebler",
-                "indicationProduct": "Vernebler zur Parasitenbekämpfung",
                 "indicactionCaution": null,
-                "indicationOther": "Mit 6 Monaten Langzeitwirkung.",
+                "indicationTeaser": "INDOREX Defence Mini-Fogger Aerosol-Vernebler",
+                "indicationThird": null,
+                "indicationSecond": null,
                 "indicationDeclaration": "Der INDOREX® DEFENCE FOGGER enthält die Wirkstoffe Permethrin und Pyrethrum sowie den Insektenwachstumshemmer Pyriproxifen. Permethrin und Pyrethrum töten schnell und zuverlässig alle Flöhe ab, während Pyriproxifen die Entwicklung von Floheiern und -larven biologisch unterbricht. Somit werden alle Stadien der Flohentwicklung erfasst und bis zu 6 Monate wirksam bekämpft. Die Wirkstoffe sind außerdem wirksam gegen Zecken, Milben, Schaben und anderes Ungeziefer.",
                 "indicationFirst": {
                   "header": [
@@ -1530,51 +1557,10 @@ export class TicketService {
                   ],
                   "body": null
                 },
-                "indicationThird": null
-              },
-              "header": "Anwendungsgebiet"
-            },
-            "id": "PRFDC2020000084",
-            "pharmacy": false,
-            "med_amountdose": null,
-            "product_pdf_dokument": "https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/shop%2Fpackage_insert%2Ff_g%2Ffogger_dog_cat_product_information_de%20(1).pdf?alt=media&token=f91a5929-c941-4028-8b38-04efd0049fb9",
-            "med_type": "Gas",
-            "med_package_ges": "150 ml Vernebler",
-            "ticket_type": [
-              "med_take"
-            ],
-            "med_amount": 1,
-            "med_name": "INDOREX Fogger Aerosol-Vernebler",
-            "med_delivery": "confidu GmbH",
-            "minWeight": 0,
-            "carecard": [
-              {
-                "l0_cc_key": "diseases_cc",
-                "Level2_cc_status": "filled",
-                "level1_cc_key": "medication_cc",
-                "key": "PRFDC2020000084"
+                "indicationOther": "Mit 6 Monaten Langzeitwirkung.",
+                "indicationProduct": "Vernebler zur Parasitenbekämpfung"
               }
-            ],
-            "durationEffect": 0,
-            "med_image_link": null,
-            "swKey": "PRFDC2020000084",
-            "feeding": false,
-            "med_doses": "Vernebler",
-            "med_category": "Antiparasitikum",
-            "med_duration_pd": null,
-            "categoryKeys": [
-              "antipar"
-            ],
-            "Wiederholung_Freq": null,
-            "key": "FOG2",
-            "diagnosis": [
-              "Flohbefall - Umgebungsbehandlung"
-            ],
-            "med_unit": "ml",
-            "med_frequency": null,
-            "medication": "Fogger Flohbekämpfung",
-            "med_header": null,
-            "med_duration_length": null,
+            },
             "data": {
               "calculatedListingPrice": {
                 "from": {
@@ -1865,41 +1851,118 @@ export class TicketService {
             }
           }
         ],
-        "info": null
+        "headline": "Was zusätzlich hilft"
       }
     ],
+    "fupKeys": [],
+    "textA5": null,
+    "popup": {
+      "buttonCancel": {
+        "label": "VERWERFEN",
+        "type": "cancel"
+      },
+      "buttonConfirm": {
+        "type": "confirm",
+        "label": "SPEICHERN"
+      },
+      "popupOptionText": "Möchtest du die Diagnose in der CareCard ablegen? Dort kannst du sie jederzeit wieder einsehen. Klicke hierzu auf speichern. Wenn nicht, wird die Auswertung automatisch verworfen."
+    },
+    "textA2": null,
+    "headerHeadlineH2": "Flohbefall",
+    "actions": [
+      {
+        "header": "Du möchtest persönlich mit einem/einer Tierärzt:in sprechen?",
+        "label": "VIDEOANRUF VEREINBAREN",
+        "visibility": true,
+        "event": null,
+        "body": "Wähle bequem einen Termin aus.",
+        "key": null,
+        "link": "consultation"
+      }
+    ],
+    "textA3": {
+      "type": "keys",
+      "header": "Wie du helfen kannst",
+      "visibility": true,
+      "body": [
+        {
+          "textblockList": [],
+          "textblockHeadline": "Medikation",
+          "textblockText": null
+        },
+        {
+          "textblockText": "Wautz benötigt ein verschreibungspflichtiges Medikament gegen Flohbefall. Da Flöhe häufig Bandwürmer übertragen, entwurme Wautz zusätzlich.",
+          "textblockList": [],
+          "textblockHeadline": null
+        },
+        {
+          "textblockHeadline": null,
+          "textblockText": "Behandle auch alle Partnertiere von Wautz mit einem Antiparasitikum, da eine (Wieder-) Ansteckung sehr wahrscheinlich ist. Nutze hierzu gesondert den Diagnose Finder von confidu für jedes Tier. Sind keine Symptome vorhanden, kannst du das benötigte Präparat über Medikamente nachbestellen --> Parasitenprophylaxe erhalten. Und bitte bedenke: Medikamente müssen immer ausdrücklich für die jeweilige Tierart zugelassen sein. Nicht alles, was für Hunde verträglich ist, vertragen auch Katzen.",
+          "textblockList": []
+        },
+        {
+          "textblockHeadline": "Diagnostik und Monitoring",
+          "textblockText": null,
+          "textblockList": []
+        },
+        {
+          "textblockHeadline": null,
+          "textblockList": [],
+          "textblockText": "Wenn sich die Symptome trotz Maßnahmen verschlimmern oder nach einer Woche keine Besserung eintritt, suche mit Wautz eine Tierarztpraxis oder -klinik auf."
+        },
+        {
+          "textblockText": null,
+          "textblockHeadline": "Management",
+          "textblockList": []
+        },
+        {
+          "textblockText": "Kämme Wautz regelmäßig (anfänglich am besten täglich) mit einem Flohkamm durch, um tote und neu geschlüpfte Flöhe sofort zu entfernen.",
+          "textblockList": [],
+          "textblockHeadline": null
+        },
+        {
+          "textblockList": [],
+          "textblockHeadline": null,
+          "textblockText": "Die meisten Flöhe leben nicht auf dem Tier, sondern in dessen Umfeld. Deshalb ist bei einem Befall auch die Umgebungsbehandlung besonders wichtig."
+        },
+        {
+          "textblockList": [],
+          "textblockHeadline": null,
+          "textblockText": "Sauge die Wohnung gründlich und entsorge den Staubsaugerbeutel. Wasche alle Decken von Liegeplätzen und Spielzeuge bei mindestens 60°C. Wende ein Umgebungsspray an, um alle verbleibenden Flohstadien abzutöten. Sauge danach erneut gründlich und entsorge den Beutel."
+        },
+        {
+          "textblockHeadline": null,
+          "textblockText": "Um einen Flohbefall zu verhindern, hilft eine regelmäßige Flohprophylaxe. Wie und wie häufig du diese durchführen solltest, findest du in der CareCard unter Ektoparasitenrisiko.",
+          "textblockList": []
+        }
+      ]
+    },
+    "urgency": "hoch",
     "textA1": {
-      "type": "list",
+      "visibility": null,
       "body": [
         "Kontakt mit befallenen Tieren",
         "Einbringen von Floheiern oder -larven mit den Schuhen oder der Kleidung"
       ],
       "header": "Häufige Ursachen",
-      "visibility": null
+      "type": "list"
     },
-    "urgency": "hoch",
-    "therapy": "Self-Care möglich",
     "venomList": [
       "1620_D",
       "1620_CC_D_NDF",
       "w+weightac_variable_ob"
     ],
-    "nextDate": null,
-    "textA5": null,
-    "headerHeadlineH1": "Diagnose:",
-    "recipeKeys": [],
-    "textA2": null,
-    "textA4": null,
-    "isPdf": true,
-    "image": null,
-    "iconImageLink": "https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/evaluations%2Fevaluation_plus_neg%2Fevaluation_diseases_negative.svg?alt=media&token=8e62362d-af80-4296-9ed6-89f1e88198f1",
+    "ticketKeys": [
+      "televetcheck"
+    ],
+    "slider": null,
     "carecard": [
       {
-        "level3Id": "7d44ca02-58cb-4b70-ad0d-9fa68b3f70ef",
+        "level3Id": "6502fe7f-3b6d-4c9e-b018-765914e8cdea",
         "resultKey": "TEL_HAI_FLEAI_HIG_SEL_1",
-        "level1_valA": "23",
+        "level1_valA": "33",
         "level1_valB": null,
-        "valA": "23",
+        "valA": "33",
         "valB": null,
         "venomKey": "w+weightac_variable_ob",
         "level0_cc_key": "prevention_cc",
@@ -1908,16 +1971,16 @@ export class TicketService {
         "priority": 9,
         "param": null,
         "downloadPath": null,
-        "eventDate": "2022-01-10T15:54:03.751166+01:00",
+        "eventDate": "2022-01-28T14:23:48.531213+01:00",
         "nextDate": null,
         "isTerminated": false,
-        "currentDate": "2022-01-10T15:54:04.016954+01:00",
-        "eventId": "64407737-7873-4386-9f79-7f062165197a",
+        "currentDate": "2022-01-28T14:23:48.801229+01:00",
+        "eventId": "a43bfd5d-23eb-44e3-8a8e-4ef772f0018a",
         "findings": [
           {
-            "currentDate": "2022-01-10T15:54:04.016954+01:00",
+            "currentDate": "2022-01-28T14:23:48.801229+01:00",
             "docs": [
-              "findings/64407737-7873-4386-9f79-7f062165197a.pdf"
+              "findings/a43bfd5d-23eb-44e3-8a8e-4ef772f0018a.pdf"
             ],
             "id": null,
             "name": "name",
@@ -1929,11 +1992,11 @@ export class TicketService {
             "type": "pdf"
           }
         ],
-        "currentWeight": 23,
+        "currentWeight": 33,
         "event": "televet"
       },
       {
-        "level3Id": "c8e87f5c-8520-467f-8017-421599b6443a",
+        "level3Id": "716db6a1-2e11-440c-8c22-034a88fd119e",
         "resultKey": "TEL_HAI_FLEAI_HIG_SEL_1",
         "level1_valA": null,
         "level1_valB": null,
@@ -1946,16 +2009,16 @@ export class TicketService {
         "priority": 3,
         "param": null,
         "downloadPath": null,
-        "eventDate": "2022-01-10T15:54:03.751166+01:00",
-        "nextDate": "2022-01-10T15:54:03.751239+01:00",
+        "eventDate": "2022-01-28T14:23:48.531213+01:00",
+        "nextDate": "2022-01-28T14:23:48.531289+01:00",
         "isTerminated": false,
-        "currentDate": "2022-01-10T15:54:04.016954+01:00",
-        "eventId": "64407737-7873-4386-9f79-7f062165197a",
+        "currentDate": "2022-01-28T14:23:48.801229+01:00",
+        "eventId": "a43bfd5d-23eb-44e3-8a8e-4ef772f0018a",
         "findings": [
           {
-            "currentDate": "2022-01-10T15:54:04.016954+01:00",
+            "currentDate": "2022-01-28T14:23:48.801229+01:00",
             "docs": [
-              "findings/64407737-7873-4386-9f79-7f062165197a.pdf"
+              "findings/a43bfd5d-23eb-44e3-8a8e-4ef772f0018a.pdf"
             ],
             "id": null,
             "name": "name",
@@ -1967,11 +2030,11 @@ export class TicketService {
             "type": "image"
           }
         ],
-        "currentWeight": 23,
+        "currentWeight": 33,
         "event": "televet"
       },
       {
-        "level3Id": "80817f6c-c33e-403f-ac88-daf0ee963205",
+        "level3Id": "aadc074d-e1de-41ba-adbc-d647cf53d977",
         "resultKey": "TEL_HAI_FLEAI_HIG_SEL_1",
         "level1_valA": null,
         "level1_valB": null,
@@ -1984,16 +2047,16 @@ export class TicketService {
         "priority": 2,
         "param": null,
         "downloadPath": null,
-        "eventDate": "2022-01-10T15:54:03.751166+01:00",
-        "nextDate": "2022-01-10T15:54:03.751239+01:00",
+        "eventDate": "2022-01-28T14:23:48.531213+01:00",
+        "nextDate": "2022-01-28T14:23:48.531289+01:00",
         "isTerminated": false,
-        "currentDate": "2022-01-10T15:54:04.016954+01:00",
-        "eventId": "64407737-7873-4386-9f79-7f062165197a",
+        "currentDate": "2022-01-28T14:23:48.801229+01:00",
+        "eventId": "a43bfd5d-23eb-44e3-8a8e-4ef772f0018a",
         "findings": [
           {
-            "currentDate": "2022-01-10T15:54:04.016954+01:00",
+            "currentDate": "2022-01-28T14:23:48.801229+01:00",
             "docs": [
-              "findings/64407737-7873-4386-9f79-7f062165197a.pdf"
+              "findings/a43bfd5d-23eb-44e3-8a8e-4ef772f0018a.pdf"
             ],
             "id": null,
             "name": "name",
@@ -2005,16 +2068,16 @@ export class TicketService {
             "type": "pdf"
           }
         ],
-        "currentWeight": 23,
+        "currentWeight": 33,
         "event": "televet"
       }
     ],
     "internal": {
       "diseaseKey": "TEL_HAI_FLEAI_HIG_SEL_1",
-      "eventDate": "2022-01-10T15:54:03.751166+01:00"
+      "eventDate": "2022-01-28T14:23:48.531213+01:00"
     },
-    "currentDate": "2022-01-10T15:54:04.016954+01:00",
-    "eventId": "64407737-7873-4386-9f79-7f062165197a",
+    "currentDate": "2022-01-28T14:23:48.801229+01:00",
+    "eventId": "a43bfd5d-23eb-44e3-8a8e-4ef772f0018a",
     "ticketId": null,
     "ticketCoins": null
   }
