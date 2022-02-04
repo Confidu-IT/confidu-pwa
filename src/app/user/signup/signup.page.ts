@@ -165,7 +165,7 @@ export class SignupPage implements OnInit {
             this.userId = res.id;
             this.userAuth.createOrGetFirebaseUser(res)
               .then(() => {
-                this.signinForm.reset();
+                // this.signinForm.reset();
                 this.isChecked = false;
                 this.getUserData(this.userId);
               });

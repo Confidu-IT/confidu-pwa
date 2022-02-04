@@ -11,6 +11,7 @@ import { CommonService } from '../../shared/services/common/common.service';
 export class HomeModalPage {
   public selected: string;
   public showCallNotes = false;
+  public showTelevetNotes = false;
   public showDiagNotes = false;
   public zoomIcon = '../../../assets/icons/home/zoom_logo.svg';
 
@@ -39,10 +40,13 @@ export class HomeModalPage {
 
   public onSelectLink(): void {
     this.showCallNotes = false;
+    this.showTelevetNotes = false;
     this.showDiagNotes = false;
     if (this.selected === 'consultation' ) {
       this.showCallNotes = true;
     } else if (this.selected === 'tickets/televet-pet') {
+      this.showTelevetNotes = true;
+    } else if (this.selected === 'diagnosis') {
       this.showDiagNotes = true;
     }
   }
@@ -54,6 +58,7 @@ export class HomeModalPage {
   ionViewWillLeave() {
     this.selected = null;
     this.showCallNotes = false;
+    this.showTelevetNotes = false;
     this.showDiagNotes = false;
   }
 

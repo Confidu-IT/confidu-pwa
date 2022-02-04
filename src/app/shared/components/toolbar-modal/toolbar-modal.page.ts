@@ -12,6 +12,8 @@ import { Router } from '@angular/router';
 export class ToolbarModalPage {
   public selected: string;
   public isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+  public showLabNotes = false;
+  public showInvoiceNotes = false;
 
   private language: string;
 
@@ -23,6 +25,17 @@ export class ToolbarModalPage {
   ) {
     this.language = commonService.language;
     translateService.use(this.language);
+  }
+
+  public onSelectLink(): void {
+    console.log('selected', this.selected)
+    this.showLabNotes = false;
+    this.showInvoiceNotes = false;
+    if (this.selected === 'lab' ) {
+      this.showLabNotes = true;
+    } else if (this.selected === 'invoice') {
+      this.showInvoiceNotes = true;
+    }
   }
 
   public closeModal() {

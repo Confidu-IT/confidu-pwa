@@ -315,13 +315,12 @@ h2 {
 }
 
 .progress-button {
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 16px;
+ margin: 0 16px 32px;
 }
 
 ion-footer {
-  margin-top: 20px;
+  background: #fafafa;
+  padding-top: 20px;
 }
 
 ::ng-deep {

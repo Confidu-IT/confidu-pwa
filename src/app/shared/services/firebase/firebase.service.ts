@@ -13,6 +13,7 @@ export class FirebaseService {
   public ticketsCollection: AngularFirestoreCollection;
   public racesCollection: AngularFirestoreCollection;
   public diseasesCollection: AngularFirestoreCollection;
+  public diagCollection: AngularFirestoreCollection;
   public medToDiseaseCollection: AngularFirestoreCollection;
   public medsCollection: AngularFirestoreCollection;
   public diagnosisCollection: AngularFirestoreCollection;
@@ -206,6 +207,10 @@ export class FirebaseService {
         return a.payload.doc.data();
       }))
     );
+  }
+
+  public getDiagnosis(language: string): Observable<any> {
+    return this.afs.doc(`fotodiag/${language}`).valueChanges();
   }
 
   public getMedToDisease(language: string, species: string, venomKey: string): Observable<any[]> {

@@ -154,16 +154,16 @@
 <ion-footer *ngIf="!isLoading">
   <ion-row>
     <ion-col offsetSm="2" sizeSm="8">
-      <div class="progress-button">
-        <button
-          (click)="onProgress()"
-          [disabled]="!symptom"
-          class="custom-button progress">
-          {{ televet?.PROGRESS_BUTTON }}
-        </button>
 
-      </div>
-
+      <ion-button
+        class="progress-button"
+        expand="full"
+        color="secondary"
+        routerDirection="forward"
+        (click)="onProgress()"
+        [disabled]="!symptom">
+        {{ televet?.PROGRESS_BUTTON }}
+      </ion-button>
     </ion-col>
   </ion-row>
   <app-toolbar-footer [user]="user"></app-toolbar-footer>

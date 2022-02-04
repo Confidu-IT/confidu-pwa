@@ -18,7 +18,7 @@
             <form [formGroup]="signupForm" *ngIf="isSignup">
               <mat-form-field>
                 <mat-label>{{ 'SIGNUP_PAGE.EMAIL' | translate }}</mat-label>
-                <input matInput formControlName="email">
+                <input matInput formControlName="email" type="email" autocomplete="off">
               </mat-form-field>
               <mat-form-field>
                 <mat-label>{{ 'BILLING_ADDRESS_PAGE.COUNTRY' | translate }}</mat-label>
@@ -42,7 +42,7 @@
             <form [formGroup]="signinForm" *ngIf="!isSignup">
               <mat-form-field>
                 <mat-label>{{ 'SIGNUP_PAGE.EMAIL' | translate }}</mat-label>
-                <input matInput formControlName="email">
+                <input matInput formControlName="email" type="email" type="email" autocomplete="off">
               </mat-form-field>
               <mat-form-field>
                 <mat-label>{{'SIGNUP_PAGE.PASSWORD' | translate }}</mat-label>

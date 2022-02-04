@@ -501,8 +501,11 @@
     "HEADER": "Bitte wähle die Art der Konsultation aus:",
     "QUESTIONNAIRE": "Diagnose Finder (kostenlos)",
     "CALL": "Videoanruf buchen (19,99 €)",
+    "DIAG": "Fotodiagnose (14,99 €)",
     "ZOOM": "Für die Konsultation benötigst du die Zoom-App.",
     "DOWNLOAD": "Zum kostenlosen Download:",
+    "DIAG_DESCRIPTION_1": "Sende confidu Bilder von einem Symptom und beantworte Fragen. Unsere Tierärzt:innen beurteilen die Fotos und geben eine Ersteinschätzung mit Handlungsempfehlungen.\n",
+    "DIAG_DESCRIPTION_2": "Die Foto Diagnose mit Auswertung wird innerhalb von 24 Std. erstellt.",
     "CALL_DESCRIPTION": "Im persönlichen Gespräch mit unseren Tierärzt:innen kannst du in Ruhe Probleme besprechen und sie direkt an deinem Vierbeiner zeigen. Um jeden Videoanruf termingerecht annehmen zu können, begrenzen wir die Gesprächszeit auf maximal 15 Minuten.",
     "DIAG_DESCRIPTION": "Ohne Wartezeit und immer verfügbar! Gib das Symptom an, das deinen Vierbeiner plagt, und beantworte darauf abgestimmte Fragen. Du erhältst eine Auswertung mit Diagnose, Einschätzung der Dringlichkeit und Handlungsempfehlungen. Benötigte Präparate kannst du direkt bestellen.",
     "CANCEL": "Abbrechen",
@@ -1235,7 +1238,9 @@
       "INVOICE": "Tierarztrechnung hochladen",
       "OK_BUTTON": "Weiter",
       "CANCEL_BUTTON": "Abbrechen"
-    }
+    },
+    "LAB_DESCRIPTION": "Um die Foscher Box deinem Tier zuzuordnen, scanne den QR-Code auf dem Röhrchen. ",
+    "INVOICE_DESCRIPTION": "Mit dem Upload einer Tierarztrechnung füllst du die Akte deines Vierbeiners ganz automatisch. Die CareCard übernimmt die Informationen zur Gesundheit automatisch und sortiert sie, sodass du ganz leicht darauf zugreifen kannst. Anschließend wird der Tiergesundheitsassistent aktiv."
   },
   "MAIN_NAV": {
     "FEEDING": "Füttern",
@@ -1330,5 +1335,10 @@
     "BUTTON": "Zur Startseite",
     "HEADER": "Ein Fehler ist aufgetreten!",
     "BODY": "Dahinter stecken bestimmt Lila und Hermann, diese hinterhältigen Fellknäuel. Schau dich ruhig weiter um - wir werden uns darum kümmern."
+  },
+  "DIAG_PAGE": {
+    "TITLE": "Foto Diagnose",
+    "QUESTION": "Bitte wähle das Problem aus",
+    "LABEL": "Grund deiner Anfrage"
   }
 }

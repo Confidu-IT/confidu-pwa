@@ -23,7 +23,11 @@
           <mat-radio-button value="consultation">
             {{ 'HOME_MODAL_PAGE.CALL' | translate }}
           </mat-radio-button>
+          <mat-radio-button value="diagnosis">
+            {{ 'HOME_MODAL_PAGE.DIAG' | translate }}
+          </mat-radio-button>
         </mat-radio-group>
+
         <div *ngIf="showCallNotes" class="call-description">
           {{ 'HOME_MODAL_PAGE.CALL_DESCRIPTION' | translate }}
           <div class="zoom">
@@ -34,7 +38,19 @@
             <img [src]="zoomIcon" alt="">
           </div>
         </div>
-        <div *ngIf="showDiagNotes" class="call-description">{{ 'HOME_MODAL_PAGE.DIAG_DESCRIPTION' | translate }}</div>
+
+        <div *ngIf="showTelevetNotes" class="call-description">
+          {{ 'HOME_MODAL_PAGE.DIAG_DESCRIPTION' | translate }}
+        </div>
+
+        <div *ngIf="showDiagNotes" class="call-description">
+          {{ 'HOME_MODAL_PAGE.DIAG_DESCRIPTION_1' | translate }}
+          <div class="zoom">
+            {{ 'HOME_MODAL_PAGE.DIAG_DESCRIPTION_2' | translate }}
+          </div>
+        </div>
+
+
       </ion-col>
     </ion-row>
   </ion-grid>

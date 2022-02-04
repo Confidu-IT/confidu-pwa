@@ -112,6 +112,16 @@
           </ion-card-content>
         </ion-card>
 
+        <ion-button
+          *ngIf="result?.actions"
+          (click)="onCalculateRation(result?.actions[0].link, result?.actions[0].label)"
+          class="calc-ration-button"
+          color="secondary"
+          expand="full"
+        >
+          {{ result?.actions[0].label }}
+        </ion-button>
+
         <ion-card *ngIf="result?.textA1 && result?.textA1.visibility">
           <ion-card-content>
             <h4>
@@ -142,6 +152,30 @@
                 </ul>
               </div>
             </ng-container>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card *ngIf="result?.sliderExpl" class="result">
+          <ion-card-content>
+            <ul class="result-params-array result-slider">
+              <li *ngIf="result?.sliderExpl">
+                <div class="result-param-header">
+                  <h4 class="title">
+                    {{ result?.sliderExpl?.header }}
+                  </h4>
+                </div>
+                <ion-slides pager="true" [options]="slideOptions">
+                  <ion-slide *ngFor="let page of result?.sliderExpl?.collection">
+                    <div class="explanation-slider-content">
+                      <figure class="flex-item">
+                        <img [src]="page.image" alt="">
+                      </figure>
+                      <p>{{ page.text }}</p>
+                    </div>
+                  </ion-slide>
+                </ion-slides>
+              </li>
+            </ul>
           </ion-card-content>
         </ion-card>
 
@@ -277,39 +311,9 @@
           </ion-card-content>
         </ion-card>
 
-        <ion-card *ngIf="result?.sliderExpl" class="result">
-          <ion-card-content>
-            <ul class="result-params-array result-slider">
-              <li *ngIf="result?.sliderExpl">
-                <div class="result-param-header">
-                  <h4 class="title">
-                    {{ result?.sliderExpl?.header }}
-                  </h4>
-                </div>
-                <ion-slides pager="true" [options]="slideOptions">
-                  <ion-slide *ngFor="let page of result?.sliderExpl?.collection">
-                    <div class="explanation-slider-content">
-                      <figure class="flex-item">
-                        <img [src]="page.image" alt="">
-                      </figure>
-                      <p>{{ page.text }}</p>
-                    </div>
-                  </ion-slide>
-                </ion-slides>
-              </li>
-            </ul>
-          </ion-card-content>
-        </ion-card>
 
-        <ion-button
-          *ngIf="result?.actions"
-          (click)="onCalculateRation(result?.actions[0].link, result?.actions[0].label)"
-          class="calc-ration-button"
-          color="secondary"
-          expand="full"
-        >
-          {{ result?.actions[0].label }}
-        </ion-button>
+
+
 
         <ng-container *ngIf="result?.products && result?.products.length > 0">
           <app-products-container [products]="result?.products"></app-products-container>

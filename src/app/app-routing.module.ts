@@ -234,8 +234,11 @@ const routes: Routes = [
     path: 'error',
     loadChildren: () => import('./error/error.module').then( m => m.ErrorPageModule)
   },
+  {
+    path: 'diagnosis',
+    loadChildren: () => import('./diagnosis/diagnosis.module').then( m => m.DiagnosisPageModule)
+  },
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
-
 ];
 
 @NgModule({

@@ -1,0 +1,46 @@
+<ion-header>
+  <app-toolbar [backButton]="true" title="{{ 'DIAG_PAGE.TITLE' | translate }}"></app-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-spinner *ngIf="isLoading" color="primary"></ion-spinner>
+
+  <ion-grid *ngIf="!isLoading">
+    <ion-row>
+      <ion-col sizeSm="8" offsetSm="2">
+        <div class="image-container">
+          <img [src]="crossImg" alt="" height="150">
+        </div>
+        <p class="body-text">{{ 'DIAG_PAGE.QUESTION' | translate }}</p>
+
+        <mat-form-field>
+          <mat-label>{{ 'FU_PAGE.DISEASES' | translate }}</mat-label>
+          <mat-select (selectionChange)="onPickDiagnosis($event)">
+            <mat-option *ngFor="let diag of diags" [value]="diag">
+              {{ diag.label }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+<ion-footer>
+  <ion-grid *ngIf="!isLoading">
+    <ion-row>
+      <ion-col sizeSm="8" offsetSm="2">
+        <div class="footer-buttons">
+          <ion-button  color="secondary" fill="clear" size="small"
+                       [disabled]="!questionnaireKey"
+                       (click)="onProgress()">
+            {{ 'FU_PAGE.BUTTONS.FORWARD' | translate }}
+          </ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <app-toolbar-footer [user]="user"></app-toolbar-footer>
+</ion-footer>
