@@ -51,7 +51,11 @@
     }
   },
   "TELEVET_PET_PAGE": {
+    "COMMON": "Allgemein",
+    "SKIN_FUR": "Haut und Fell",
+    "POISON": "Vergiftung",
     "PET_SPOT_TEXT": {
+
       "CANCEL_BUTTON": "Abbrechen",
       "SWELLING": "Schwellung/Beule/Knoten",
       "STIFFNESS":"Steifheit",

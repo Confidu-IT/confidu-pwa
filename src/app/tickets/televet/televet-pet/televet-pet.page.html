@@ -133,18 +133,43 @@
         </div>
 
         <div *ngIf="!isZoomed" class="icons">
-          <img
-            (click)="onClickSpot(televet?.CLICK_SPOT?.GENERAL.SPOT, televet?.CLICK_SPOT?.GENERAL.LABEL, $event)"
-            [src]="leftIcon"
-            alt="" class="left-icon">
-          <img
-            (click)="onClickSpot(televet?.CLICK_SPOT?.FUR.SPOT, televet?.CLICK_SPOT?.FUR.LABEL, $event)"
-            [src]="rightIcon"
-            alt="" class="right-icon">
-          <img
-            (click)="onClickSpot(televet?.CLICK_SPOT?.POISON.SPOT, televet?.CLICK_SPOT?.POISON.LABEL, $event)"
-            [src]="poisonIcon"
-            alt="" class="poison-icon">
+          <div class="icon-container">
+            <div>
+              <img
+                (click)="onClickSpot(televet?.CLICK_SPOT?.GENERAL.SPOT, televet?.CLICK_SPOT?.GENERAL.LABEL, $event)"
+                [src]="leftIcon"
+                alt="" class="left-icon">
+              <div class="icon-text">
+                {{ 'TELEVET_PET_PAGE.COMMON' | translate }}
+              </div>
+            </div>
+
+          </div>
+         <div class="icon-container">
+           <div>
+             <img
+               (click)="onClickSpot(televet?.CLICK_SPOT?.FUR.SPOT, televet?.CLICK_SPOT?.FUR.LABEL, $event)"
+               [src]="rightIcon"
+               alt="" class="right-icon">
+             <div class="icon-text">
+               {{ 'TELEVET_PET_PAGE.SKIN_FUR' | translate }}
+             </div>
+           </div>
+
+         </div>
+         <div class="icon-container">
+           <div>
+             <img
+               (click)="onClickSpot(televet?.CLICK_SPOT?.POISON.SPOT, televet?.CLICK_SPOT?.POISON.LABEL, $event)"
+               [src]="poisonIcon"
+               alt="" class="poison-icon">
+             <div class="icon-text">
+               {{ 'TELEVET_PET_PAGE.POISON' | translate }}
+             </div>
+           </div>
+
+         </div>
+
         </div>
 
       </ion-col>

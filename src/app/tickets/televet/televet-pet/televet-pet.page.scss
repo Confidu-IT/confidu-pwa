@@ -39,9 +39,26 @@ h2 {
 
 .icons {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   //margin-top: 40px;
-  margin-top: 10px;
+  margin: 10px 45px 0;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: space-between;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.icon-text {
+  font-size: 11px;
+  color: #666;
+  margin: 10px auto 0;
 }
 
 .left-icon, .poison-icon, .right-icon {
@@ -50,7 +67,7 @@ h2 {
 }
 
 .left-icon, .right-icon {
-  margin-right: 40px;
+  //margin-right: 40px;
 }
 
 .symptom, .no-symptom {
