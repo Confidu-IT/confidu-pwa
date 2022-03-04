@@ -271,6 +271,7 @@ export class CreatePetPage implements OnInit {
 
         this.http.post(url, body, { headers })
           .subscribe((res: any) => {
+            console.log('res', res);
             this.form.patchValue({ image: res.image });
             this.hasImage = true;
             this.petImage = res.image;
@@ -281,10 +282,8 @@ export class CreatePetPage implements OnInit {
                 this.species = this.speciesList.filter(item => item.value === res.species.value);
                 this.selectedSpecies = this.species[0].value;
                 this.breedProposals = res.race;
-                this.reducedBreedList = res.race_list;
 
-                // alert('prop' + JSON.stringify(this.breedProposals));
-                this.presentBreedProposalsModal(this.breedProposals, this.reducedBreedList);
+                this.presentBreedProposalsModal(this.breedProposals, this.selectedSpecies);
               } catch (e) {
                 console.log('e', e);
               }
@@ -452,23 +451,25 @@ export class CreatePetPage implements OnInit {
     console.log('Loading dismissed!');
   }
 
-  private async presentBreedProposalsModal(proposedBreeds, breedList): Promise<void> {
+  private async presentBreedProposalsModal(proposedBreeds, species): Promise<void> {
     this.breedModal = await this.modalCtrl.create({
       component: BreedProposalsModalPage,
       componentProps: {
         proposals: proposedBreeds,
-        breeds: breedList
+        species: species
       }
     });
     this.breedModal.onDidDismiss()
       .then((response: any) => {
+
         if (response?.data) {
           this.breed = response.data;
-          const lang = localStorage.getItem('country') || 'de';
-          const field = `name_${lang}`;
+          // console.log(' this.breed',  this.breed);
+          const field = `name_${this.language}`;
           this.form.patchValue({ race: this.breed });
           this.showBreedList = false;
           this.fixedBreed = this.breed.data[field];
+          // console.log(' this.fixedBreed',  this.fixedBreed);
         }
       });
     return await this.breedModal.present();

@@ -12,7 +12,16 @@
           <div class="proposal-list">
             <mat-radio-group [(ngModel)]="selectedBreed" class="radio-buttons">
               <mat-radio-button *ngFor="let proposal of proposals" [value]="proposal">
-                {{ proposal.data.name_de }}
+                <ng-container [ngSwitch]="language">
+                  <ng-container *ngSwitchCase="'de'">{{ proposal.data.name_de }}</ng-container>
+                  <ng-container *ngSwitchCase="'dk'">{{ proposal.data.name_dk }}</ng-container>
+                  <ng-container *ngSwitchCase="'en'">{{ proposal.data.name_en }}</ng-container>
+                  <ng-container *ngSwitchCase="'es'">{{ proposal.data.name_es }}</ng-container>
+                  <ng-container *ngSwitchCase="'fr'">{{ proposal.data.name_fr }}</ng-container>
+                  <ng-container *ngSwitchCase="'it'">{{ proposal.data.name_it }}</ng-container>
+                  <ng-container *ngSwitchCase="'pl'">{{ proposal.data.name_pl }}</ng-container>
+                  <ng-container *ngSwitchDefault>{{ proposal.data.name_de }}</ng-container>
+                </ng-container>
               </mat-radio-button>
             </mat-radio-group>
           </div>
@@ -33,8 +42,17 @@
                 autoActiveFirstOption
                 [displayWith]="raceLabel">
                 <mat-option *ngFor="let option of (filteredOptions | async)" [value]="option">
-                  {{ option.data.name_de }}
-                </mat-option><br>
+                  <ng-container [ngSwitch]="language">
+                    <ng-container *ngSwitchCase="'de'">{{ option.data.name_de }}</ng-container>
+                    <ng-container *ngSwitchCase="'dk'">{{ option.data.name_dk }}</ng-container>
+                    <ng-container *ngSwitchCase="'en'">{{ option.data.name_en }}</ng-container>
+                    <ng-container *ngSwitchCase="'es'">{{ option.data.name_es }}</ng-container>
+                    <ng-container *ngSwitchCase="'fr'">{{ option.data.name_fr }}</ng-container>
+                    <ng-container *ngSwitchCase="'it'">{{ option.data.name_it }}</ng-container>
+                    <ng-container *ngSwitchCase="'pl'">{{ option.data.name_pl }}</ng-container>
+                    <ng-container *ngSwitchDefault>{{ option.data.name_de }}</ng-container>
+                  </ng-container>
+                </mat-option>
               </mat-autocomplete>
             </mat-form-field>
           </form>

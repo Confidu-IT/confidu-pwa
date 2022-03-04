@@ -4,6 +4,7 @@ import { map, startWith } from 'rxjs/operators';
 import { FormControl, FormGroup } from '@angular/forms';
 import { CommonService } from '../../../shared/services/common/common.service';
 import { TranslateService } from '@ngx-translate/core';
+import {FirebaseService} from '../../../shared/services/firebase/firebase.service';
 
 @Component({
   selector: 'app-breed-proposals-modal',
@@ -14,7 +15,8 @@ export class BreedProposalsModalPage implements OnInit {
   public isLoading: boolean;
   public form: FormGroup;
   public selectedBreed; any;
-  @Input() breeds: any;
+  public language: string;
+  @Input() species: any;
   @Input() proposals: any;
 
   public filteredOptions: any;
@@ -23,14 +25,17 @@ export class BreedProposalsModalPage implements OnInit {
   constructor(
     private modalCtrl: ModalController,
     private commonService: CommonService,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private firebaseService: FirebaseService
   ) { }
 
+
+
   ngOnInit() {
-    // console.log('this.breeds', this.breeds);
+    console.log('this.species', this.species);
     // console.log('this.proposals', this.proposals);
-    this.translateService.setDefaultLang(this.commonService.language); // fallback
-    this.translateService.use(this.translateService.getBrowserLang());
+    this.language = this.commonService.language;
+    this.translateService.use(this.language);
     this.form = new FormGroup({
       breedList: new FormControl(null, {
         updateOn: 'change'
@@ -39,7 +44,11 @@ export class BreedProposalsModalPage implements OnInit {
         updateOn: 'change'
       })
     });
-    this.createBreedList(this.breeds);
+
+    this.firebaseService.getAllBreeds(this.species, this.language)
+      .subscribe((response: any) => {
+        this.createBreedList(response);
+      });
   }
 
   public closeModal(): void {
