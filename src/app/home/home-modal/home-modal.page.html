@@ -10,44 +10,129 @@
 
 <ion-content>
   <ion-grid>
-    <ion-row>
+    <ion-row class="home-modal-page">
       <ion-col>
         <h2>{{ 'HOME_MODAL_PAGE.HEADER' | translate }}</h2>
         <mat-radio-group
           class="toolbar-radio-group"
           (change)="onSelectLink()"
           [(ngModel)]="selected">
-          <mat-radio-button value="tickets/televet-pet">
-            {{ 'HOME_MODAL_PAGE.QUESTIONNAIRE' | translate }}
+          <mat-radio-button labelPosition="before" value="tickets/televet-pet">
+            <div class="button-content">
+              <div class="button-image"><img [src]="diagIcon" height="70" width="70" alt=""></div>
+              <div class="button-text">
+                <span>{{ 'HOME_MODAL_PAGE.QUESTIONNAIRE' | translate }}</span><br>
+                {{ 'HOME_MODAL_PAGE.QUESTIONNAIRE_PRICE' | translate }}
+              </div>
+            </div>
           </mat-radio-button>
-          <mat-radio-button value="consultation">
-            {{ 'HOME_MODAL_PAGE.CALL' | translate }}
+          <mat-radio-button labelPosition="before" value="diagnosis">
+            <div class="button-content">
+              <div class="button-image"><img [src]="imageIcon" height="70" width="70" alt=""></div>
+              <div class="button-text">
+                <span>{{ 'HOME_MODAL_PAGE.DIAG' | translate }}</span><br>
+                {{ 'HOME_MODAL_PAGE.DIAG_PRICE' | translate }}
+              </div>
+            </div>
           </mat-radio-button>
-          <mat-radio-button value="diagnosis">
-            {{ 'HOME_MODAL_PAGE.DIAG' | translate }}
+          <mat-radio-button labelPosition="before" value="consultation">
+            <div class="button-content">
+              <div class="button-image"><img [src]="videoIcon" height="70" width="70" alt=""></div>
+              <div class="button-text">
+                <span>{{ 'HOME_MODAL_PAGE.CALL' | translate }}</span><br>
+                {{ 'HOME_MODAL_PAGE.CALL_PRICE' | translate }}
+              </div>
+            </div>
           </mat-radio-button>
+
         </mat-radio-group>
 
-        <div *ngIf="showCallNotes" class="call-description">
-          {{ 'HOME_MODAL_PAGE.CALL_DESCRIPTION' | translate }}
-          <div class="zoom">
-            {{ 'HOME_MODAL_PAGE.ZOOM' | translate }}
-          </div>
-          <div class="download" (click)="onClickZoomLink()">
-            {{ 'HOME_MODAL_PAGE.DOWNLOAD' | translate }}
-            <img [src]="zoomIcon" alt="">
-          </div>
+        <div *ngIf="showCallNotes" class="description-list">
+          <h3>{{ 'HOME_MODAL_PAGE.CALL' | translate }}</h3>
+          <ul>
+            <li class="call-description">
+              <img [src]="plusIcon" alt="" height="10" width="10">
+              <span>{{ 'HOME_MODAL_PAGE.CALL_DESC_FIRST' | translate }}</span>
+            </li>
+            <li class="call-description">
+              <img [src]="plusIcon" alt="" height="10" width="10">
+              <span>{{ 'HOME_MODAL_PAGE.CALL_DESC_SECOND' | translate }}</span>
+            </li>
+            <li class="call-description">
+              <img [src]="plusIcon" alt="" height="10" width="10">
+              <span>{{ 'HOME_MODAL_PAGE.CALL_DESC_THIRD' | translate }}</span>
+            </li>
+            <li class="call-description">
+              <img [src]="plusIcon" alt="" height="10" width="10">
+              <span>{{ 'HOME_MODAL_PAGE.CALL_DESC_FOURTH' | translate }}</span>
+            </li>
+            <li class="call-description">
+              <img [src]="plusIcon" alt="" height="10" width="10">
+              <span>{{ 'HOME_MODAL_PAGE.CALL_DESC_FIFTH' | translate }}</span>
+            </li>
+            <li class="call-description">
+              <img [src]="plusIcon" alt="" height="10" width="10">
+              <span>{{ 'HOME_MODAL_PAGE.CALL_DESC_SIXTH' | translate }}</span>
+            </li>
+            <li class="call-description download" (click)="onClickZoomLink()">
+              <img [src]="plusIcon" alt="" height="10" width="10">
+              <span>{{ 'HOME_MODAL_PAGE.CALL_DESC_SEVENTH' | translate }}</span>
+              <img class="zoom" [src]="zoomIcon" alt="">
+            </li>
+          </ul>
         </div>
 
-        <div *ngIf="showTelevetNotes" class="call-description">
-          {{ 'HOME_MODAL_PAGE.DIAG_DESCRIPTION' | translate }}
+        <div *ngIf="showTelevetNotes" class="description-list">
+          <h3>{{ 'HOME_MODAL_PAGE.QUESTIONNAIRE' | translate }}</h3>
+          <ul>
+            <li class="call-description">
+              <img [src]="plusIcon" alt="" height="10" width="10">
+              <span>{{ 'HOME_MODAL_PAGE.QUESTIONNAIRE_DESC_FIRST' | translate }}</span>
+            </li>
+            <li class="call-description">
+              <img [src]="plusIcon" alt="" height="10" width="10">
+              <span>{{ 'HOME_MODAL_PAGE.QUESTIONNAIRE_DESC_SECOND' | translate }}</span>
+            </li>
+            <li class="call-description">
+              <img [src]="plusIcon" alt="" height="10" width="10">
+              <span>{{ 'HOME_MODAL_PAGE.QUESTIONNAIRE_DESC_THIRD' | translate }}</span>
+            </li>
+            <li class="call-description">
+              <img [src]="plusIcon" alt="" height="10" width="10">
+              <span>{{ 'HOME_MODAL_PAGE.QUESTIONNAIRE_DESC_FOURTH' | translate }}</span>
+            </li>
+            <li class="call-description">
+              <img [src]="plusIcon" alt="" height="10" width="10">
+              <span>{{ 'HOME_MODAL_PAGE.QUESTIONNAIRE_DESC_FIFTH' | translate }}</span>
+            </li>
+          </ul>
+
         </div>
 
-        <div *ngIf="showDiagNotes" class="call-description">
-          {{ 'HOME_MODAL_PAGE.DIAG_DESCRIPTION_1' | translate }}
-          <div class="zoom">
-            {{ 'HOME_MODAL_PAGE.DIAG_DESCRIPTION_2' | translate }}
-          </div>
+        <div *ngIf="showDiagNotes" class="description-list">
+          <h3>{{ 'HOME_MODAL_PAGE.DIAG' | translate }}</h3>
+          <ul>
+            <li class="call-description">
+              <img [src]="plusIcon" alt="" height="10" width="10">
+              <span>{{ 'HOME_MODAL_PAGE.DIAG_DESC_FIRST' | translate }}</span>
+            </li>
+            <li class="call-description">
+              <img [src]="plusIcon" alt="" height="10" width="10">
+              <span>{{ 'HOME_MODAL_PAGE.DIAG_DESC_SECOND' | translate }}</span>
+            </li>
+            <li class="call-description">
+              <img [src]="plusIcon" alt="" height="10" width="10">
+              <span>{{ 'HOME_MODAL_PAGE.DIAG_DESC_THIRD' | translate }}</span>
+            </li>
+            <li class="call-description">
+              <img [src]="plusIcon" alt="" height="10" width="10">
+              <span>{{ 'HOME_MODAL_PAGE.DIAG_DESC_FOURTH' | translate }}</span>
+            </li>
+            <li class="call-description">
+              <img [src]="plusIcon" alt="" height="10" width="10">
+              <span>{{ 'HOME_MODAL_PAGE.DIAG_DESC_FIFTH' | translate }}</span>
+            </li>
+          </ul>
         </div>
 
 

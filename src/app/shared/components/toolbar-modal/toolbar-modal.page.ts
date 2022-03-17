@@ -14,6 +14,11 @@ export class ToolbarModalPage {
   public isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
   public showLabNotes = false;
   public showInvoiceNotes = false;
+  public showDiagNotes = false;
+
+  public labIcon = '../../../assets/icons/toolbar-footer/forscher_box_activation.svg';
+  public diagIcon = '../../../assets/icons/toolbar-footer/bild_diagnose.svg';
+  public invoiceIcon = '../../../assets/icons/toolbar-footer/invoice_upload.svg';
 
   private language: string;
 
@@ -31,10 +36,13 @@ export class ToolbarModalPage {
     console.log('selected', this.selected)
     this.showLabNotes = false;
     this.showInvoiceNotes = false;
+    this.showDiagNotes = false;
     if (this.selected === 'lab' ) {
       this.showLabNotes = true;
-    } else if (this.selected === 'invoice') {
+    } if (this.selected === 'invoice') {
       this.showInvoiceNotes = true;
+    } else if (this.selected === 'diagnosis') {
+      this.showDiagNotes = true;
     }
   }
 
@@ -43,6 +51,7 @@ export class ToolbarModalPage {
   }
 
   public onConfirm() {
+    console.log('this.selected', this.selected)
     if (this.selected === 'invoice') {
       const petId = localStorage.getItem('activePet');
       if (!petId) {
@@ -51,6 +60,11 @@ export class ToolbarModalPage {
       this.modalCtrl.dismiss(null).then(() => {
         this.router.navigateByUrl(`invoice-upload/${petId}/Tierarztbesuche/consultation_cc`);
       });
+    } else if (this.selected === 'diagnosis') {
+      this.modalCtrl.dismiss(null).then(() => {
+        this.router.navigateByUrl(`diagnosis`);
+      });
+
     } else {
       this.modalCtrl.dismiss({
         action: this.selected

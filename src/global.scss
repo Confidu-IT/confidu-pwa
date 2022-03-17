@@ -799,6 +799,12 @@ ion-toolbar {
   }
 }
 
+.home-modal-page, .toolbar-modal-page {
+  .mat-radio-label-content.mat-radio-label-before {
+    width: calc(100% - 64px);
+  }
+}
+
 
 
 //.sc-ion-alert-md {

@@ -35,7 +35,12 @@ export class TicketsPage implements OnInit {
   public currentDay: string;
   public imagePath = '../../../assets/icons/tickets';
   public calendar: any;
+  public confiTicketImg = '../../assets/icons/tickets/conficoins_small_ticket.svg';
+  public heartImg = '../../assets/icons/tickets/heart.svg';
+  public coins: any;
+
   @ViewChild('filePicker') filePickerRef: ElementRef<HTMLInputElement>;
+
   private isToday: boolean;
   private petId: string;
   private events = [];
@@ -55,8 +60,7 @@ export class TicketsPage implements OnInit {
     private commonService: CommonService,
     private alertCtr: AlertController,
     public userAuth: AuthService,
-    private translateService: TranslateService,
-    private ticketService: TicketService
+    private translateService: TranslateService
   ) {
   }
 
@@ -145,6 +149,7 @@ export class TicketsPage implements OnInit {
           try {
             this.getPet(user.uid, this.petId);
             this.getTickets(user.uid, this.petId);
+            this.getCoins(user.uid);
             // this.createTicket(this.user.uid, '1448', this.petId, 'earcare', this.language)
           } catch (e) {
           }
@@ -157,11 +162,16 @@ export class TicketsPage implements OnInit {
   }
 
   public onCurrentDateChanged(event: any) {
+    console.log('event', event)
     this.selectedDate = event;
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     event.setHours(0, 0, 0, 0);
     this.isToday = today.getTime() === event.getTime();
+    console.log('today.getTime()', today.getTime())
+    console.log('event.getTime()', event.getTime())
+
+    this.getTodayEventsAmount();
 
   }
 
@@ -257,6 +267,16 @@ export class TicketsPage implements OnInit {
       date.getFullYear() === this.selectedDate.getFullYear();
   }
 
+  public getTodayEventsAmount(): number {
+    const todayEvents = [];
+    for (const item of this.eventSource) {
+      if (String(item.startTime) === String (this.selectedDate)) {
+        todayEvents.push(item);
+      }
+    }
+    return todayEvents.length;
+  }
+
   public onCancelUpdate(): void {
     this.action = 'create';
     this.showTaskForm = false;
@@ -291,6 +311,15 @@ export class TicketsPage implements OnInit {
           this.species = pet.pet.species.value;
         }
       });
+  }
+
+  private getCoins(userId: string) {
+    this.firebaseService.getCoins(userId)
+      .subscribe(data => {
+        if (data?.confiCoins) {
+          this.coins = data.confiCoins;
+        }
+      })
   }
 
   private getTickets(userId: string, petId: string): void {

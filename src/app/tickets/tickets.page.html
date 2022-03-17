@@ -9,14 +9,16 @@
 
   <ion-grid *ngIf="!isLoading">
     <ion-row>
-<!--      <ion-col>-->
-<!--        <div class="tickets-header">-->
-<!--          <img class="pet-image" [src]="petImage" alt="">-->
-<!--          <h2 class="pet-name">-->
-<!--            {{ 'TICKETS_PAGE.HEADER' | translate }}<br> {{ petName }}-->
-<!--          </h2>-->
-<!--        </div>-->
-<!--      </ion-col>-->
+      <ion-col sizeMd="6">
+        <ion-card class="banner-card">
+          <ion-card-content>
+            <div class="banner-content">
+              <img [src]="heartImg" alt="" width="40">
+              <div class="banner-text"> {{ 'TICKETS_PAGE.BANNER_TEXT' | translate }}</div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
     </ion-row>
     <ion-row>
       <ion-col sizeMd="6">
@@ -108,7 +110,27 @@
         </ion-card>
 
         <div class="today-tasks">
-          <h2 *ngIf="!showTaskForm">{{ 'TICKETS_PAGE.TODAY_TASKS' | translate }}</h2>
+          <div>
+            <ng-container *ngIf="!showTaskForm && getTodayEventsAmount() > 0">
+              <h2>
+                {{ 'TICKETS_PAGE.TODAY_TASKS' | translate }}
+                {{ getTodayEventsAmount() }}  {{ 'TICKETS_PAGE.TASKS' | translate }}<span
+                *ngIf="getTodayEventsAmount() > 1">{{ 'TICKETS_PAGE.TASKS_PLURAL' | translate }}</span>
+              </h2>
+            </ng-container>
+            <ng-container *ngIf="!showTaskForm && getTodayEventsAmount() === 0">
+              <h2>
+                {{ 'TICKETS_PAGE.NO_TASKS' | translate }}
+              </h2>
+            </ng-container>
+            <div class="coins" *ngIf="!showTaskForm && coins">
+              <img [src]="confiTicketImg" alt="">
+              <span> {{ coins }}</span>
+              <span class="confi-text"> {{ 'TICKETS_PAGE.COINS' | translate }}</span>
+            </div>
+          </div>
+
+
           <ion-fab-button color="secondary" (click)="toggleTaskForm()">
             <ion-icon name="add" *ngIf="!showTaskForm"></ion-icon>
             <ion-icon name="close-outline" *ngIf="showTaskForm"></ion-icon>
@@ -133,6 +155,10 @@
                   <span *ngIf="!item.data.labelTime">
                     {{ item.startTime | date: 'HH.mm' }}
                     </span>
+                  <span class="spacer">
+                    | <img [src]="confiTicketImg" alt=""> {{ item.data.ticketCoins }}
+                  </span>
+
                 </div>
               </div>
               <div class="chevron">

@@ -23,6 +23,13 @@ export class HomePage {
   private subscription: Subscription;
   private species: string;
   private petId: string;
+  private dummyTicket = {
+    data: {
+      type: 'dummy'
+    }
+  };
+
+
   public healthState: number;
 
   public logo = environment.logo;
@@ -58,6 +65,10 @@ export class HomePage {
   public prescriptionIcon = `${this.iconPath}/home/prescription.svg`;
   public magazineIcon = `${this.iconPath}/home/magazin.svg`;
   public recipeIcon = `${this.iconPath}/home/recipes.svg`;
+  public heartIcon = `${this.iconPath}/home/heart.svg`;
+  public swipeIcon = `${this.iconPath}/home/swipe.svg`;
+  public myPetsIcon = `${this.iconPath}/home/my_pets.svg`;
+  public chartIcon = `${this.iconPath}/home/overview.svg`;
   public feedingIcon: string;
   public statusCheckInactiveImg = `${this.iconPath}/home/status-check-inactive.svg`;
   public statusCheckActiveImg = `${this.iconPath}/home/status-check-active.svg`;
@@ -72,6 +83,7 @@ export class HomePage {
   public rangeValue: number;
   public isEmergency: boolean;
   public isLoading: boolean;
+  public coins: any;
 
   @ViewChild('filePicker') filePickerRef: ElementRef<HTMLInputElement>;
 
@@ -142,6 +154,7 @@ export class HomePage {
           this.getActivePet(user.uid, this.petId);
           this.getTickets(user.uid, this.petId);
           this.getArticles(this.petId, user.uid, user.za);
+          this.getCoins(user.uid);
           this.isLoading = false;
         } else if (localStorage.getItem('showWalkthrough')) {
           this.router.navigateByUrl('walkthrough');
@@ -149,6 +162,15 @@ export class HomePage {
           this.router.navigateByUrl('pets/pet-create');
         }
       });
+  }
+
+  private getCoins(userId: string) {
+    this.firebaseService.getCoins(userId)
+      .subscribe(data => {
+        if (data?.confiCoins) {
+          this.coins = data.confiCoins;
+        }
+      })
   }
 
   private getActivePet(userId: string, petId): void {
@@ -186,9 +208,11 @@ export class HomePage {
       });
   }
 
+
+
   private getTickets(userId: string, petId: string): void {
     this.firebaseService.getTicketsByPet(userId, petId)
-      .subscribe(data => {
+      .subscribe((data: any) => {
         if (data) {
           const tickets = [];
           this.tickets = data;
@@ -209,6 +233,10 @@ export class HomePage {
               }
             });
           });
+          if (tickets.length > 0) {
+            tickets.unshift(this.dummyTicket);
+          }
+          console.log('tickets', tickets)
           this.tickets = tickets;
         }
         // this.isLoading = false;
@@ -264,19 +292,19 @@ export class HomePage {
 
   public setHealthState(event) {
     const val = event.detail.value;
-    if (val < 33) {
+    if (val <= 50) {
       this.patchButton = false;
       this.healthStateImg = `${this.healthStateImgPath}/${this.species}_excellent.gif`;
-      this.healthStateText = this.healthExcellent;
+      // this.healthStateText = this.healthExcellent;
       this.isEmergency = false;
-    } else if (val < 66 && val >= 33) {
+    } else if (val >= 51 && val <= 89) {
       this.patchButton = true;
       this.healthStateImg = `${this.healthStateImgPath}/${this.species}_worse.gif`;
-      this.healthStateText = this.healthBad;
+      // this.healthStateText = this.healthBad;
       this.isEmergency = false;
-    }  else if (val >= 67) {
+    }  else if (val >= 90) {
       this.healthStateImg = `${this.healthStateImgPath}/notfall.gif`;
-      this.healthStateText = this.healthWorse;
+      // this.healthStateText = this.healthWorse;
       this.patchButton = false;
       this.isEmergency = true;
     }

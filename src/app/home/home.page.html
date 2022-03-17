@@ -13,22 +13,18 @@
             <img class="cam-icon" [src]="camIcon" width="26" height="26" alt="">
           </div>
           <div class="right">
-            <div class="name" (click)="goToPage('pets/pets-list')">
-              <h2>{{ pet?.pet?.name }}</h2>
-              <img [src]="switchPetIcon" width="14" height="14" alt="">
-            </div>
             <div class="icons">
+              <div class="icon" (click)="goToPage('benefits')">
+                <img [src]="confiImg" width="33" height="33" alt="">
+                <div class="text">{{ coins }}</div>
+              </div>
               <div class="icon" (click)="goToPage('dashboard')">
-                <img [src]="chartsIcon" width="33" height="33" alt="">
+                <img [src]="chartIcon" width="33" height="33" alt="">
                 <div class="text">{{ 'HOME_PAGE.OVERVIEW' | translate }}</div>
               </div>
-              <div class="icon" (click)="goToPage('benefits')">
-                <img [src]="trophyIcon" width="33" height="33" alt="">
-                <div class="text">{{ 'HOME_PAGE.BENEFITS' | translate }}</div>
-              </div>
-              <div class="icon" (click)="goToPage('tickets/televet-emergency')">
-                <img [src]="emergencyIcon" width="33" height="33" alt="">
-                <div class="text">{{ 'HOME_PAGE.EMERGENCY' | translate }}</div>
+              <div class="icon" (click)="goToPage('/pets/pets-list')">
+                <img [src]="myPetsIcon" width="33" height="33" alt="">
+                <div class="text">{{ 'HOME_PAGE.MY_PETS' | translate }}</div>
               </div>
             </div>
           </div>
@@ -40,6 +36,7 @@
       <ion-col sizeSm="8" offsetSm="2">
 
        <div class="task-planner">
+
          <div class="planner-header" [ngClass]="{'no-tickets': tickets?.length < 1}">
            <div class="planner-title">{{ 'HOME_PAGE.TODAY_TASKS' | translate }}</div>
            <div class="planner-link" (click)="goToPage('tickets')">
@@ -48,29 +45,62 @@
            </div>
          </div>
 
+         <div class="objectives" *ngIf="tickets.length >= 2">
+           {{ 'HOME_PAGE.OBJECTIVE' | translate }}
+           {{ tickets.length - 1 }}
+           {{ 'HOME_PAGE.TASK' | translate }}<ng-container *ngIf="tickets.length > 2">{{ 'HOME_PAGE.TASK_PLURAL' |
+           translate }}</ng-container>
+         </div>
+
          <ng-container>
            <ion-slides [options]="slideOptions">
              <ion-slide *ngFor="let ticket of tickets">
 
-               <ion-card class="task-card" (click)="navigateToTicket(ticket?.data?.id, ticket.dateId)">
+               <ion-card *ngIf="ticket?.data?.type === 'dummy'" class="task-card dummy">
+                 <ion-card-header>
+                   {{ 'HOME_PAGE.DUMMY_TICKET.CONTENT' | translate }}
+                   <img [src]="heartIcon" alt="">
+                 </ion-card-header>
                  <ion-card-content>
+                   <img [src]="swipeIcon" alt="">
+                   <div class="footer-text">
+                     {{ 'HOME_PAGE.DUMMY_TICKET.FOOTER_TEXT' | translate }}
+                   </div>
+                 </ion-card-content>
+               </ion-card>
+
+               <ion-card *ngIf="ticket?.data?.type !== 'dummy'" class="task-card"
+                         (click)="navigateToTicket(ticket?.data?.id,
+               ticket.dateId)">
                    <img [src]="ticket?.data?.backgroundImageLink1" alt="" height="101">
                    <ion-card-header>
                      <ion-card-title>{{ ticket?.data.title }}</ion-card-title>
                    </ion-card-header>
 
                    <ion-card-content>
-                     <div class="time">
+                     <ng-container *ngIf="ticket?.data?.type !== 'common'">
+                       <div class="left-right">
+                         <div class="coins">
+                           <img [src]="confiImg" alt="" height="14"> {{ ticket?.data?.ticketCoins }}
+                         </div>
+                         <div class="time">
+                           <ion-icon *ngIf="!isOverdue(ticket?.endTime)"  name="time-outline"></ion-icon>
+                           <img *ngIf="isOverdue(ticket?.endTime)" [src]="bellImage" alt="" height="14"
+                                width="11">
+                           <span>{{ 'HOME_PAGE.TODAY' | translate }}</span>
+                         </div>
+                       </div>
+                     </ng-container>
+                     <div class="time" *ngIf="ticket?.data?.type === 'common'">
                        <ion-icon *ngIf="!isOverdue(ticket?.endTime)"  name="time-outline"></ion-icon>
                        <img *ngIf="isOverdue(ticket?.endTime)" [src]="bellImage" alt="" height="14"
                             width="11">
-                       <span *ngIf="ticket.data.type !== 'common'">{{ 'HOME_PAGE.TODAY' | translate }}</span>
-                       <span *ngIf="ticket.data.type === 'common'" [ngClass]="{ overdue: isOverdue(ticket.endTime) }">
+
+                       <span [ngClass]="{ overdue: isOverdue(ticket.endTime) }">
                                           {{ ticket.endTime.seconds * 1000 | date: 'HH:mm' }}
 <!--                         {{ 'HOME_PAGE.TIME' | translate }}-->
                                         </span>
                      </div>
-                   </ion-card-content>
                  </ion-card-content>
                </ion-card>
              </ion-slide>
@@ -117,7 +147,11 @@
                              (ionChange)="setHealthState($event)"
                              [ngClass]="{ emergency: isEmergency }"
                   ></ion-range>
-                  <div class="answer">{{ healthStateText }}</div>
+                  <div class="answer">
+                    <span>{{ 'HOME_PAGE.HEALTH_STATE_TEXT.HEALTHY' | translate }}</span>
+                    <span>{{ 'HOME_PAGE.HEALTH_STATE_TEXT.SICK' | translate }}</span>
+                    <span>{{ 'HOME_PAGE.HEALTH_STATE_TEXT.EMERGENCY' | translate }}</span>
+                  </div>
                 </div>
 
               </div>

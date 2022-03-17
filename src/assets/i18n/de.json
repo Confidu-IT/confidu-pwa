@@ -346,6 +346,7 @@
     "CHOICE_ANNOTATION": "Bitte beachte, dass du nachträglich keine Produkte zur Therapie erhalten kannst, ohne nochmals den Online Tierarzt zu konsultieren."
   },
   "TICKET_PAGE": {
+
     "RECEIVED_COINS": "Confi-Coins erhalten",
     "FAIL": "Update fehlgeschlagen",
     "SUCCESS": "Update erfolgreich",
@@ -404,6 +405,7 @@
     "START_CALL": "Konsultation starten"
   },
   "TICKETS_PAGE": {
+    "BANNER_TEXT": "Mit jeder erledigten Aufgabe tust du etwas Gutes für die Gesundheit deines Tieres.",
     "HEADER": "Planer von",
     "EXEC": "Durchführen",
     "ANNOTATIONS": "Deine Notizen ...",
@@ -427,7 +429,10 @@
     "WEIGHT_LABEL": "Gewicht in kg",
     "TITLE": "Planer",
     "HOMEWORK": "Planer",
-    "TODAY_TASKS": "Meine Aufgaben",
+    "TODAY_TASKS": "Dein Tagesziel:",
+    "TASKS": "Aufgabe",
+    "TASKS_PLURAL": "n",
+    "COINS": "ConfiCoins gesammmelt.",
     "DONE": "erledigt",
     "DELETE": "Löschen",
     "POSTPONE": "Termin verschieben",
@@ -466,6 +471,10 @@
     "CURRENT_FEEDING": "Aktuelle Fütterung",
     "SWITCH_RATION": "Tippe auf den Namen der Ration, wenn du sie wechseln willst.",
     "DETAILS": "Nährstoffe und Details",
+    "DUMMY_TICKET": {
+      "CONTENT": "Mit jeder erledigten Aufgabe tust du etwas Gutes für die Gesundheit deines Tieres",
+      "FOOTER_TEXT": "Wischen und loslegen!"
+    },
     "STATUS": {
       "1": "Wie geht es",
       "2": "heute?",
@@ -473,22 +482,24 @@
     },
     "OVERVIEW": "Überblick",
     "CHANGE_PET": "Tier wechseln",
-    "TO_TASKS": "Zum Planer",
-    "TODAY_TASKS": "Heute erledigen",
+    "TO_TASKS": "Planer",
+    "TODAY_TASKS": "Kleiner Aufwand - große Wirkung",
     "TODAY": "heute",
     "TIME": "Uhr",
     "TASK": "Aufgabe",
+    "TASK_PLURAL": "n",
+    "OBJECTIVE": "Tagesziel:",
     "RECIPE_HEADER": "Medikamente nachbestellen",
     "RECIPE_TEXT": "Lorem ipsum dolor sit amet",
     "PATCH_BUTTON": "Verarzten",
     "DANGER_BUTTON": "Notfall",
     "EMERGENCY": "Notfall",
+    "MY_PETS": "Meine Tiere",
     "PET_STATE": "Wie geht es",
     "HEALTH_STATE_TEXT": {
-      "EXCELLENT": "Gut",
-      "GOOD": "Schlapp",
-      "BAD": "Krank",
-      "WORSE": "Sehr krank"
+      "HEALTHY": "gesund",
+      "SICK": "krank",
+      "EMERGENCY": "Notfall"
     },
     "NO_TASKS_TEXT": {
       "PART_1": "Heute sind keine",
@@ -502,12 +513,32 @@
     "FROM": "vom"
   },
   "HOME_MODAL_PAGE": {
-    "HEADER": "Bitte wähle die Art der Konsultation aus:",
-    "QUESTIONNAIRE": "Diagnose Finder (kostenlos)",
-    "CALL": "Videoanruf buchen (19,99 €)",
-    "DIAG": "Fotodiagnose (14,99 €)",
+    "HEADER": "Wähle die Art der Konsultation:",
+    "QUESTIONNAIRE": "Diagnose Finder",
+    "QUESTIONNAIRE_PRICE": "kostenlos",
+    "CALL": "Videoanruf",
+    "CALL_PRICE": "19,99 €",
+    "DIAG": "Bild Diagnose",
+    "DIAG_PRICE": "14,99 €",
     "ZOOM": "Für die Konsultation benötigst du die Zoom-App.",
     "DOWNLOAD": "Zum kostenlosen Download:",
+    "QUESTIONNAIRE_DESC_FIRST": "ohne Wartezeit und immer verfügbar",
+    "QUESTIONNAIRE_DESC_SECOND": "einfache Symptomauswahl",
+    "QUESTIONNAIRE_DESC_THIRD": "Auswertung mit Diagnose",
+    "QUESTIONNAIRE_DESC_FOURTH": "Handlungsempfehlungen",
+    "QUESTIONNAIRE_DESC_FIFTH": "Präparate bestellen",
+    "CALL_DESC_FIRST": "persönlich mit Tierärzt:in",
+    "CALL_DESC_SECOND": "täglich zw. 10-16 Uhr",
+    "CALL_DESC_THIRD": "Gesprächszeit max. 15 min",
+    "CALL_DESC_FOURTH": "Tierarztbericht als Auswertung",
+    "CALL_DESC_FIFTH": "Handlungsempfehlungen",
+    "CALL_DESC_SIXTH": "über kostenlose Zoom-App ",
+    "CALL_DESC_SEVENTH": "zum Download:",
+    "DIAG_DESC_FIRST": "Bilder vom Symptom senden",
+    "DIAG_DESC_SECOND": "Begutachtung durch Tierärzt:innen",
+    "DIAG_DESC_THIRD": "Auswertung mit Diagnose innerhalb von 24h",
+    "DIAG_DESC_FOURTH": "Handlungsempfehlungen",
+    "DIAG_DESC_FIFTH": "Präparate bestellen",
     "DIAG_DESCRIPTION_1": "Sende confidu Bilder von einem Symptom und beantworte Fragen. Unsere Tierärzt:innen beurteilen die Fotos und geben eine Ersteinschätzung mit Handlungsempfehlungen.\n",
     "DIAG_DESCRIPTION_2": "Die Foto Diagnose mit Auswertung wird innerhalb von 24 Std. erstellt.",
     "CALL_DESCRIPTION": "Im persönlichen Gespräch mit unseren Tierärzt:innen kannst du in Ruhe Probleme besprechen und sie direkt an deinem Vierbeiner zeigen. Um jeden Videoanruf termingerecht annehmen zu können, begrenzen wir die Gesprächszeit auf maximal 15 Minuten.",
@@ -1235,16 +1266,21 @@
   },
   "TOOLBAR": {
     "IMG_SELECT": {
-      "HEADER": "Foto-Schnell-Upload",
+      "HEADER": "Foto-Schnell-Upload:",
       "SUBHEADER": "Wähle aus, für welche Funktion du den Upload nutzen möchtest:",
-      "LAB": "Labortest aktivieren",
+      "LAB": "Forscherbox",
       "PROFILE": "Profilbild wechseln",
-      "INVOICE": "Tierarztrechnung hochladen",
+      "INVOICE": "Tierarztrechnungen",
+      "DIAG": "Bild Diagnose",
+      "ACTIVATE": "aktivieren",
+      "START": "starten",
+      "UPLOAD": "hochladen",
       "OK_BUTTON": "Weiter",
       "CANCEL_BUTTON": "Abbrechen"
     },
-    "LAB_DESCRIPTION": "Um die Foscher Box deinem Tier zuzuordnen, scanne den QR-Code auf dem Röhrchen. ",
-    "INVOICE_DESCRIPTION": "Mit dem Upload einer Tierarztrechnung füllst du die Akte deines Vierbeiners ganz automatisch. Die CareCard übernimmt die Informationen zur Gesundheit automatisch und sortiert sie, sodass du ganz leicht darauf zugreifen kannst. Anschließend wird der Tiergesundheitsassistent aktiv."
+    "LAB_DESCRIPTION": "Um die Foscher Box deinem Tier zuzuordnen, scanne den QR-Code auf dem Röhrchen.",
+    "DIAG_DESCRIPTION": "Fotografiere das Symptom, beantworte Fragen und erhalte eine tierärztliche Diagnose. Du bekommst eine konkrete Anleitung, was zu tun ist, inklusive Produktempfehlungen.",
+    "INVOICE_DESCRIPTION": "Fülle die CareCard und aktiviere den Tiergesundheitsassistenten."
   },
   "MAIN_NAV": {
     "FEEDING": "Füttern",

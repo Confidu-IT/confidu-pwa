@@ -14,6 +14,10 @@ export class HomeModalPage {
   public showTelevetNotes = false;
   public showDiagNotes = false;
   public zoomIcon = '../../../assets/icons/home/zoom_logo.svg';
+  public diagIcon = '../../../assets/icons/home/diagnose_finder.svg';
+  public imageIcon = '../../../assets/icons/home/bild_diagnose.svg';
+  public videoIcon = '../../../assets/icons/home/videocall.svg';
+  public plusIcon = '../../../assets/icons/home/plus.svg';
 
   private language: string;
 

@@ -10,27 +10,57 @@
 
 <ion-content>
   <ion-grid>
-    <ion-row>
+    <ion-row class="toolbar-modal-page">
       <ion-col sizeSm="8" offsetSm="2">
         <h2>{{ 'TOOLBAR.IMG_SELECT.HEADER' | translate }}</h2>
-<!--        <p class="subheader">{{ 'TOOLBAR.IMG_SELECT.SUBHEADER' | translate }}</p>-->
         <mat-radio-group
           class="toolbar-radio-group"
-          [(ngModel)]="selected"
-          (change)="onSelectLink()">
-          <mat-radio-button value="lab">
-            {{ 'TOOLBAR.IMG_SELECT.LAB' | translate }}
+          (change)="onSelectLink()"
+          [(ngModel)]="selected">
+          <mat-radio-button labelPosition="before" value="lab">
+            <div class="button-content">
+              <div class="button-image"><img [src]="labIcon" height="70" width="70" alt=""></div>
+              <div class="button-text">
+                <span> {{ 'TOOLBAR.IMG_SELECT.LAB' | translate }}</span><br>
+                {{ 'TOOLBAR.IMG_SELECT.ACTIVATE' | translate }}
+              </div>
+            </div>
           </mat-radio-button>
-          <!--              <mat-radio-button value="profile" *ngIf="!isSafari">-->
-          <!--                {{ 'TOOLBAR.IMG_SELECT.PROFILE' | translate }}-->
-          <!--              </mat-radio-button>-->
-          <mat-radio-button value="invoice">
-            {{ 'TOOLBAR.IMG_SELECT.INVOICE' | translate }}
+          <mat-radio-button labelPosition="before" value="invoice">
+            <div class="button-content">
+              <div class="button-image"><img [src]="diagIcon" height="70" width="70" alt=""></div>
+              <div class="button-text">
+                <span>{{ 'TOOLBAR.IMG_SELECT.DIAG' | translate }}</span><br>
+                {{ 'TOOLBAR.IMG_SELECT.UPLOAD' | translate }}
+              </div>
+            </div>
           </mat-radio-button>
+          <mat-radio-button labelPosition="before" value="diagnosis">
+            <div class="button-content">
+              <div class="button-image"><img [src]="invoiceIcon" height="70" width="70" alt=""></div>
+              <div class="button-text">
+                <span>{{ 'TOOLBAR.IMG_SELECT.INVOICE' | translate }}</span><br>
+                {{ 'TOOLBAR.IMG_SELECT.START' | translate }}
+              </div>
+            </div>
+          </mat-radio-button>
+
         </mat-radio-group>
 
-        <div *ngIf="showLabNotes" class="description">{{ 'TOOLBAR.LAB_DESCRIPTION' | translate }}</div>
-        <div *ngIf="showInvoiceNotes" class="description">{{ 'TOOLBAR.INVOICE_DESCRIPTION' | translate }}</div>
+        <div *ngIf="showLabNotes" class="description">
+          <h3>{{ 'TOOLBAR.IMG_SELECT.LAB' | translate }}</h3>
+          {{ 'TOOLBAR.LAB_DESCRIPTION' | translate }}
+        </div>
+
+        <div *ngIf="showInvoiceNotes" class="description">
+          <h3>{{ 'TOOLBAR.IMG_SELECT.INVOICE' | translate }}</h3>
+          {{ 'TOOLBAR.INVOICE_DESCRIPTION' | translate }}
+        </div>
+
+        <div *ngIf="showDiagNotes" class="description">
+          <h3>{{ 'TOOLBAR.IMG_SELECT.DIAG' | translate }}</h3>
+          {{ 'TOOLBAR.DIAG_DESCRIPTION' | translate }}
+        </div>
 
       </ion-col>
     </ion-row>

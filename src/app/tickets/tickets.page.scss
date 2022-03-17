@@ -245,13 +245,29 @@ ion-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 24px 20px 16px 0;
+  margin: 24px 20px 28px;
 
   //margin: 24px 6px 16px 24px;
 
   h2 {
-    font-size: 20px;
-    margin: 0 0 0 6px;
+    font-size: 16px;
+    margin: 0 0 6px 6px;
+  }
+
+  .coins {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    margin-left: 6px;
+
+    .confi-text {
+      margin-left: 4px;
+    }
+
+    img {
+      height: 16px;
+      margin-right: 8px;
+    }
   }
 
   ion-fab-button {
@@ -308,7 +324,18 @@ ion-item {
   }
 
   &-time {
-    font-size: 14px;
+    font-size: 13px;
+
+    .spacer {
+      padding-left: 5px;
+    }
+
+    img {
+      height: 15px;
+      vertical-align: bottom;
+      padding-left: 4px;
+      padding-right: 2px;
+    }
   }
 
   &-content {
@@ -575,6 +602,28 @@ ion-progress-bar {
       height: 44px;
       width: 44px;
     }
+  }
+}
+
+.banner-card {
+  background: #ededed;
+
+  ion-card-content {
+    padding: 16px 12px 14px;
+  }
+}
+
+.banner-content {
+  display: flex;
+
+
+  img {
+    margin-right: 12px;
+  }
+
+  .banner-text {
+    font-size: 13px;
+    font-weight: 700;
   }
 }
 
