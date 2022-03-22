@@ -11,7 +11,12 @@
   <ion-title *ngIf="!logo && title">
     {{ title }}
   </ion-title>
-  <ion-buttons slot="end" *ngIf="settings || cart || createPet">
+  <ion-buttons slot="end" *ngIf="settings || cart || createPet || feedback">
+    <ion-menu-button menu="false" auto-hide="false" *ngIf="feedback">
+      <a
+        href="mailto:service@confidu.com?subject=confidu-user-feedback"><img [src]="feedbackIcon" alt="" height="20"
+                                                                   width="20"></a>
+    </ion-menu-button>
     <ion-button routerLink="/shop/cart" *ngIf="cart">
       <img [src]="cartIcon" alt="" height="20" width="20">
     </ion-button>

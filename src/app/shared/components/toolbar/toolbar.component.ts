@@ -18,6 +18,7 @@ export class ToolbarComponent implements OnInit {
   @Input() title: string;
   @Input() settings: boolean;
   @Input() cart: boolean;
+  @Input() feedback: boolean;
   @Input() createPet: boolean;
 
   public confidu = environment.logo;
@@ -26,6 +27,7 @@ export class ToolbarComponent implements OnInit {
   // public cartSubscription: Subscription;
   public cartIcon: string;
   public accountIcon = '../../assets/icons/navi/konto.svg';
+  public feedbackIcon = '../../assets/icons/navi/feedback.svg';
   public get isAndroidMobile(): boolean {
     const platforms: string[] = this.platform.platforms();
     return platforms.includes('android') && platforms.includes('mobile');

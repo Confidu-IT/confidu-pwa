@@ -93,10 +93,11 @@ ion-toolbar {
 //}
 
 .health-state-card, .recipe-card {
-  margin: 0;
+  margin: 0 12px;
 
   ion-card-content {
     //padding: 12px 20px;
+    padding-bottom: 12px;
   }
 
   .header {
@@ -104,7 +105,7 @@ ion-toolbar {
     align-items: center;
     font-size: 11px;
     height: 25px;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 
     .icon {
       margin-right: 12px;
@@ -257,9 +258,9 @@ ion-toolbar {
 
   .planner-title {
     color: #666;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
-    margin-left: 12px;
+    margin-left: 8px;
   }
 
   .planner-link {
@@ -378,6 +379,34 @@ ion-toolbar {
   }
 }
 
+.page-card {
+  cursor: pointer;
+  margin: 0 0 2px;
+  max-width: 140px;
+  width: 140px;
+  height: 140px;
+  max-height: 140px;
+
+  h3 {
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  ion-card-header {
+    height: 92px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0;
+
+    img {
+      height: 64px;
+      width: 64px;
+    }
+  }
+}
+
 .dummy {
   ion-card-header {
     background: #DEF6FF;
@@ -422,7 +451,7 @@ ion-toolbar {
   //padding-bottom: 20px;
 
   ion-card {
-    margin: 0;
+    margin: 0 12px;
   }
 
   ion-card-content {
@@ -618,7 +647,7 @@ mat-expansion-panel {
     }
 
     ion-card-content {
-      //padding: 0;
+      padding: 0;
     }
 
     img {
@@ -654,6 +683,11 @@ mat-expansion-panel {
       margin: 8px 0 8px;
     }
 
+    .header, .body {
+      margin-left: 16px;
+      margin-right: 16px;
+    }
+
     .date,.category {
       font-size: 11px;
     }
@@ -671,6 +705,7 @@ mat-expansion-panel {
       font-size: 13px;
       height: 36px;
       //margin: 0 12px 16px;
+      margin-bottom: 12px;
       text-align: left;
     }
   }
@@ -691,6 +726,15 @@ mat-expansion-panel {
   }
 }
 
+.subheader {
+  font-size: 13px;
+  font-weight: 500;
+  color: #666;
+  margin-left: 16px;
+  margin-bottom: 12px;
+  margin-top: 16px;
+}
+
 
 //::ng-deep .swiper-pagination-bullets {
 //  position: relative !important;
@@ -703,7 +747,8 @@ mat-expansion-panel {
 
 
 .magazines {
-  margin-bottom: 8px;
+  margin: 0 12px 12px;
+
   ion-slides {
     padding-bottom: 20px;
   }

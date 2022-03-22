@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <g id="Gruppe_25427" data-name="Gruppe 25427" transform="translate(74 -715)">
+    <rect id="Rechteck_3999" data-name="Rechteck 3999" width="64" height="64" transform="translate(-74 715)" fill="none"/>
+    <g id="Gruppe_25425" data-name="Gruppe 25425" transform="translate(0 -0.305)">
+      <path id="Ellipse_2857" data-name="Ellipse 2857" d="M0,31A31,31,0,1,1,31,62,31,31,0,0,1,0,31Z" transform="translate(-72.934 716.244)" fill="#f3f1f1"/>
+      <g id="Gruppe_25515" data-name="Gruppe 25515" transform="translate(-121 434.305)">
+        <g id="Gruppe_25513" data-name="Gruppe 25513" transform="translate(63.28 299.379)">
+          <path id="Pfad_28479" data-name="Pfad 28479" d="M70.923,315.429H94.381L106.466,307l-10.832-7.588v11.1H70.69Z" transform="translate(-63.425 -299.416)" fill="#fff"/>
+          <g id="Gruppe_25511" data-name="Gruppe 25511" transform="translate(0 7.41)">
+            <rect id="Rechteck_4018" data-name="Rechteck 4018" width="31.611" height="12.75" transform="translate(0.078 8.267)" fill="#fff" stroke="#626262" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+            <path id="Pfad_28460" data-name="Pfad 28460" d="M175.1,263.893l11.561-8.267v-12.75L175.1,251.143Z" transform="translate(-143.408 -242.876)" fill="#fff" stroke="#626262" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+            <path id="Pfad_28461" data-name="Pfad 28461" d="M181.978,242.876H152.291l-13.562,8.267" transform="translate(-138.728 -242.876)" fill="#fff" stroke="#626262" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+          </g>
+          <g id="Gruppe_25512" data-name="Gruppe 25512" transform="translate(3.185 0.007)">
+            <rect id="Rechteck_4019" data-name="Rechteck 4019" width="29.336" height="10.876" transform="translate(0)" fill="#fff" stroke="#626262" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+            <path id="Pfad_28462" data-name="Pfad 28462" d="M176.052,234.38l10.729,7.4h-8.72" transform="translate(-146.715 -234.38)" fill="none" stroke="#626262" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+          </g>
+        </g>
+        <g id="Gruppe_25514" data-name="Gruppe 25514" transform="translate(54.596 295.244)">
+          <g id="Gruppe_25494" data-name="Gruppe 25494" transform="translate(0 0)">
+            <path id="Rechteck_3969" data-name="Rechteck 3969" d="M3.965,28.754A3.963,3.963,0,0,1,0,24.791V3.967A3.963,3.963,0,0,1,3.965,0H11.91a3.963,3.963,0,0,1,3.963,3.963V24.791a3.963,3.963,0,0,1-3.963,3.963Z" transform="translate(0.049 7.185)" fill="#fff"/>
+            <path id="Pfad_28687" data-name="Pfad 28687" d="M.062,5.795c.148-4.537,2.2,1.527,11.367-3.731s3.184-.581,4.554,7.1c1.146,12.088-6.052,8.451-8.824,8.219C-.583,20.4-.086,10.332.062,5.795Z" transform="translate(0.002 18.453)" fill="#ffbc00"/>
+            <path id="Pfad_28688" data-name="Pfad 28688" d="M1.345,7.193A1.348,1.348,0,0,1,0,5.845V1.351A1.348,1.348,0,0,1,1.345,0h9.887A1.348,1.348,0,0,1,12.58,1.351V5.845a1.348,1.348,0,0,1-1.348,1.348" transform="translate(1.638 -0.003)" fill="#fff" stroke="#626262" stroke-miterlimit="10" stroke-width="1.5"/>
+          </g>
+          <path id="Rechteck_3969-2" data-name="Rechteck 3969" d="M3.965,28.754A3.963,3.963,0,0,1,0,24.791V3.967A3.963,3.963,0,0,1,3.965,0H11.91a3.963,3.963,0,0,1,3.963,3.963V24.791a3.963,3.963,0,0,1-3.963,3.963Z" transform="translate(0.049 7.185)" fill="none" stroke="#626262" stroke-miterlimit="10" stroke-width="1.5"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,5 +1,5 @@
 <ion-header *ngIf="!isLoading">
-  <app-toolbar [settings]="true" [cart]="true" [logo]="true"></app-toolbar>
+  <app-toolbar [settings]="true" [cart]="true" [logo]="true" [feedback]="true"></app-toolbar>
 </ion-header>
 
 <ion-content class="ion-no-padding">
@@ -45,7 +45,7 @@
            </div>
          </div>
 
-         <div class="objectives" *ngIf="tickets.length >= 2">
+         <div class="objectives" *ngIf=" tickets && tickets.length >= 2">
            {{ 'HOME_PAGE.OBJECTIVE' | translate }}
            {{ tickets.length - 1 }}
            {{ 'HOME_PAGE.TASK' | translate }}<ng-container *ngIf="tickets.length > 2">{{ 'HOME_PAGE.TASK_PLURAL' |
@@ -124,17 +124,12 @@
     </ion-row>
 
     <ion-row>
-
-    </ion-row>
-    <ion-row>
       <ion-col sizeSm="8" offsetSm="2">
-
+        <h3 class="subheader">
+          {{ 'HOME_PAGE.MEDICAL_AID' | translate }}
+        </h3>
         <ion-card class="health-state-card">
           <ion-card-content>
-            <div class="header">
-              <img [src]="treatIcon" alt="" class="icon" width="25">
-              <span>{{ 'HOME_PAGE.TREAT' | translate }}</span>
-            </div>
             <div class="body">
               <div class="left">
                 <div class="question">
@@ -176,39 +171,68 @@
                           </ion-button>
           </ion-card-content>
         </ion-card>
+      </ion-col>
+    </ion-row>
 
-        <ion-card class="recipe-card">
-          <ion-card-content (click)="orderPrescription()">
-            <div class="header">
-              <img [src]="prescriptionIcon" alt="" class="icon" width="25">
-              <span>{{ 'HOME_PAGE.PHARMACY' | translate }}</span>
-            </div>
-            <div class="recipe">
-              <div>
-                <div class="text">
-                  <h3>{{ 'HOME_PAGE.RECIPE_HEADER' | translate }}</h3>
-                </div>
-              </div>
-              <div class="link-arrow">
-                <img [src]="chevronRight" alt="" height="16">
-              </div>
-            </div>
-          </ion-card-content>
-        </ion-card>
+    <ion-row>
+      <ion-col sizeSm="8" offsetSm="2">
+        <h3 class="subheader">
+          {{ 'HOME_PAGE.HANDS_ON' | translate }}
+        </h3>
+        <ion-slides [options]="slideOptions">
+          <ion-slide>
+            <ion-card class="page-card" (click)="onClickPageCardLink('carecard')">
+              <ion-card-header>
+                <img [src]="orderMedImg" alt="">
+              </ion-card-header>
+              <ion-card-content>
+                <h3>
+                  {{ 'HOME_PAGE.PAGE_SLIDER.CARE_CARD' | translate }}<br>
+                  {{ 'HOME_PAGE.PAGE_SLIDER.CARE_ACTION' | translate }}<br>
+                </h3>
+              </ion-card-content>
+            </ion-card>
+          </ion-slide>
+          <ion-slide>
+            <ion-card class="page-card" (click)="onClickPageCardLink('fup')">
+              <ion-card-header>
+                <img [src]="orderMedImg" alt="">
+              </ion-card-header>
+              <ion-card-content>
+                <h3>
+                  {{ 'HOME_PAGE.PAGE_SLIDER.MED_CARD' | translate }}<br>
+                  {{ 'HOME_PAGE.PAGE_SLIDER.MED_ACTION' | translate }}<br>
+                </h3>
+              </ion-card-content>
+            </ion-card>
+          </ion-slide>
+          <ion-slide>
+            <ion-card class="page-card" (click)="onClickPageCardLink('lab')">
+              <ion-card-header>
+                <img [src]="labImg" alt="">
+              </ion-card-header>
+              <ion-card-content>
+                <h3>
+                  {{ 'HOME_PAGE.PAGE_SLIDER.BOX_CARD' | translate }}<br>
+                  {{ 'HOME_PAGE.PAGE_SLIDER.BOX_ACTION' | translate }}<br>
+                </h3>
+              </ion-card-content>
+            </ion-card>
+          </ion-slide>
+        </ion-slides>
       </ion-col>
     </ion-row>
 
     <ion-row *ngIf="articles?.magazines || articles?.cooking">
       <ion-col offsetSm="2" sizeSm="8">
+        <h3 class="subheader">
+          {{ 'HOME_PAGE.GET_INFORMED' | translate }}
+        </h3>
         <div *ngIf="articles?.magazines" class="magazines">
           <ion-slides pager="hasPagination(articles?.magazines.length)">
             <ion-slide *ngFor="let item of articles?.magazines">
               <ion-card (click)="onClickArticle(item.key)" class="article-container slider">
                 <ion-card-content>
-                  <div class="title">
-                    <span><img [src]="magazineIcon" alt="" class="icon" width="25"></span>
-                    {{ 'HOME_PAGE.NEW_ARTICLES' | translate }}
-                  </div>
                   <img *ngIf="item?.image" [src]="item?.image" alt="">
                   <div class="header">
                     <div class="date">
@@ -224,15 +248,15 @@
           </ion-slides>
         </div>
 
+        <h3 class="subheader">
+          {{ 'HOME_PAGE.RECIPE_IDEAS' | translate }}
+        </h3>
+
         <div *ngIf="articles?.cooking" class="magazines">
           <ion-slides pager="hasPagination(articles?.magazines.cooking)">
             <ion-slide *ngFor="let item of articles?.cooking">
               <ion-card (click)="onClickRecipe(item.key)" class="article-container slider">
                 <ion-card-content>
-                  <div class="title">
-                    <span><img [src]="recipeIcon" alt="" class="icon" width="25"></span>
-                    {{ 'HOME_PAGE.WEEKLY_RECIPE' | translate }}
-                  </div>
                   <img *ngIf="item?.image" [src]="item?.image" alt="">
                   <div class="header">
                     <div class="category">{{ item?.category }}</div>

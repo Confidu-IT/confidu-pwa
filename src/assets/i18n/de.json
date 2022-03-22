@@ -505,6 +505,18 @@
       "PART_1": "Heute sind keine",
       "PART_2": "Aufgaben zu erledigen"
     },
+    "MEDICAL_AID": "Medizinische Hilfe jetzt und überall",
+    "HANDS_ON": "Nimm es selbst in die Hand",
+    "GET_INFORMED": "Bleibe informiert",
+    "RECIPE_IDEAS": "Köstliche Rezeptideen",
+    "PAGE_SLIDER": {
+      "CARE_CARD": "Carecard",
+      "CARE_ACTION": "füllen",
+      "MED_CARD": "Medikamente",
+      "MED_ACTION": "bestellen",
+      "BOX_CARD": "Forscher Box",
+      "BOX_ACTION": "bestellen"
+    },
     "NEW_ARTICLES": "Magazin",
     "WEEKLY_RECIPE": "Frisch in den Napf"
   },

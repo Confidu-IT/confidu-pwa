@@ -73,6 +73,8 @@ export class HomePage {
   public statusCheckInactiveImg = `${this.iconPath}/home/status-check-inactive.svg`;
   public statusCheckActiveImg = `${this.iconPath}/home/status-check-active.svg`;
   public barImg = `${this.iconPath}/home/bar.png`;
+  public orderMedImg = `${this.iconPath}/home/order_meds.svg`;
+  public labImg = `${this.iconPath}/home/forscher_box.svg`;
   public slideOptions = {
     initialSlide: 0,
     slidesPerView: 2.25,
@@ -325,6 +327,20 @@ export class HomePage {
 
   public onPickImage(): void {
     this.filePickerRef.nativeElement.click();
+  }
+
+  onClickPageCardLink(route: string): void {
+    switch (route) {
+      case 'carecard':
+        this.router.navigateByUrl(`pets/pet-care-card/${this.petId}`);
+        break;
+      case 'fup':
+        this.router.navigateByUrl(`follow-up-prescription`);
+        break;
+      case 'lab':
+        this.router.navigateByUrl(`lab`);
+        break;
+    }
   }
 
   public onFileChosen(data): any {
