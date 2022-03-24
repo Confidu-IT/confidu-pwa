@@ -60,7 +60,7 @@ export class ArticleDetailPage {
       if (!article) {
         return this.router.navigateByUrl('/');
       }
-      // console.log('article', article);
+      console.log('article', article);
       this.result = article;
       this.isLoading = false;
     });

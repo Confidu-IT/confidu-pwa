@@ -294,17 +294,17 @@ export class HomePage {
 
   public setHealthState(event) {
     const val = event.detail.value;
-    if (val <= 50) {
+    if (val <= 40) {
       this.patchButton = false;
       this.healthStateImg = `${this.healthStateImgPath}/${this.species}_excellent.gif`;
       // this.healthStateText = this.healthExcellent;
       this.isEmergency = false;
-    } else if (val >= 51 && val <= 89) {
+    } else if (val >= 41 && val <= 85) {
       this.patchButton = true;
       this.healthStateImg = `${this.healthStateImgPath}/${this.species}_worse.gif`;
       // this.healthStateText = this.healthBad;
       this.isEmergency = false;
-    }  else if (val >= 90) {
+    }  else if (val >= 86) {
       this.healthStateImg = `${this.healthStateImgPath}/notfall.gif`;
       // this.healthStateText = this.healthWorse;
       this.patchButton = false;

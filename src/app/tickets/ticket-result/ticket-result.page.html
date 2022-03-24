@@ -36,12 +36,13 @@
           <ion-card-content *ngIf="result?.urgency">
             <div class="ticket-result-therapy">
               <div class="description">
-                Dringlichkeit:<br>
-                Therapie:
+                <span>Dringlichkeit:</span>
+                <img [src]="result?.urgencyImage" alt="">
+                <div>{{ result?.urgency }}</div>
               </div>
               <div class="recommendations">
-                <span>{{ result?.urgency }}</span><br>
-                <span>{{ result?.therapy }}</span>
+                <span>Therapie:</span>
+                <div>{{ result?.therapy }}</div>
               </div>
             </div>
           </ion-card-content>
@@ -61,9 +62,18 @@
             </ion-card-content>
           </ion-card>
 
-          <ion-card *ngIf="result?.initial && result?.initial.visibility" class="is-emergency">
+          <ion-card
+            *ngIf="result?.initial && result?.initial.visibility"
+            [ngStyle]="{'background-color': result?.initial?.color}"
+            class="is-emergency">
             <ion-card-content>
-              <h4 *ngIf="result?.initial?.header">
+              <div class="card-image-header" *ngIf="result?.initial?.header && result?.initial?.image">
+                <h4>
+                  {{ result?.initial?.header }}
+                </h4>
+                <img [src]="result?.initial?.image" alt="">
+              </div>
+              <h4 *ngIf="result?.initial?.header && !result?.initial?.image">
                 {{ result?.initial?.header }}
               </h4>
               <ul *ngIf="result?.initial?.type === 'list'" class="ticket-result-help">
@@ -198,7 +208,7 @@
 
           <mat-expansion-panel *ngIf="result?.findings && !result?.findings.visibility">
             <mat-expansion-panel-header *ngIf="result?.findings.header">
-              {{ result?.findings.header }}
+              <mat-panel-title>{{ result?.findings.header }}</mat-panel-title>
             </mat-expansion-panel-header>
             <div class="findings-text" *ngIf="result?.findings.body.text">
               <p *ngFor="let el of result?.findings.body.text">{{ el }}</p>
@@ -333,10 +343,19 @@
             </ng-container>
           </mat-expansion-panel>
 
-          <ion-card *ngIf="result?.textA1 && result?.textA1.visibility" class="is-emergency">
+          <ion-card
+            *ngIf="result?.textA1 && result?.textA1.visibility"
+            [ngStyle]="{'background-color': result?.textA1?.color}"
+            class="is-emergency">
             <ion-card-content>
-              <h4 *ngIf="result?.textA1">
-                {{ result?.textA1.header }}
+              <div class="card-image-header" *ngIf="result?.textA1?.header && result?.textA1?.image">
+                <h4>
+                  {{ result?.textA1?.header }}
+                </h4>
+                <img [src]="result?.textA1?.image" alt="">
+              </div>
+              <h4 *ngIf="result?.textA1?.header && !result?.textA1?.image">
+                {{ result?.textA1?.header }}
               </h4>
               <ul  *ngIf="result?.textA1.type === 'list'" class="ticket-result-help">
                 <li *ngFor="let item of result?.textA1?.body">{{ item }}</li>
@@ -403,10 +422,19 @@
             </ng-container>
           </mat-expansion-panel>
 
-          <ion-card *ngIf="result?.textA2 && result?.textA2.visibility" class="is-emergency">
+          <ion-card
+            *ngIf="result?.textA2 && result?.textA2.visibility"
+            [ngStyle]="{'background-color': result?.textA2?.color}"
+            class="is-emergency">
             <ion-card-content>
-              <h4 *ngIf="result?.textA2.header">
-                {{ result?.textA2.header }}
+              <div class="card-image-header" *ngIf="result?.textA2?.header && result?.textA2?.image">
+                <h4>
+                  {{ result?.textA2?.header }}
+                </h4>
+                <img [src]="result?.textA2?.image" alt="">
+              </div>
+              <h4 *ngIf="result?.textA2?.header && !result?.textA2?.image">
+                {{ result?.textA2?.header }}
               </h4>
               <ul  *ngIf="result?.textA2.type === 'list'" class="ticket-result-help">
                 <li *ngFor="let item of result?.textA2?.body">{{ item }}</li>
@@ -473,10 +501,19 @@
             </ng-container>
           </mat-expansion-panel>
 
-          <ion-card *ngIf="result?.textA3 && result?.textA3.visibility" class="is-emergency">
+          <ion-card
+            *ngIf="result?.textA3 && result?.textA3.visibility"
+            [ngStyle]="{'background-color': result?.textA3?.color}"
+            class="is-emergency">
             <ion-card-content>
-              <h4>
-                {{ result?.textA3.header }}
+              <div class="card-image-header" *ngIf="result?.textA3?.header && result?.textA3?.image">
+                <h4>
+                  {{ result?.textA3?.header }}
+                </h4>
+                <img [src]="result?.textA3?.image" alt="">
+              </div>
+              <h4 *ngIf="result?.textA3?.header && !result?.textA3?.image">
+                {{ result?.textA3?.header }}
               </h4>
               <ul  *ngIf="result?.textA3.type === 'list'" class="ticket-result-help">
                 <li *ngFor="let item of result?.textA3?.body">{{ item }}</li>
@@ -545,10 +582,19 @@
             </ng-container>
           </mat-expansion-panel>
 
-          <ion-card *ngIf="result?.textA4 && result?.textA4.visibility" class="is-emergency">
+          <ion-card
+            *ngIf="result?.textA4 && result?.textA4.visibility"
+            [ngStyle]="{'background-color': result?.textA4?.color}"
+            class="is-emergency">
             <ion-card-content>
-              <h4 *ngIf="result?.textA4.header">
-                {{ result?.textA4.header }}
+              <div class="card-image-header" *ngIf="result?.textA4?.header && result?.textA4?.image">
+                <h4>
+                  {{ result?.textA4?.header }}
+                </h4>
+                <img [src]="result?.textA4?.image" alt="">
+              </div>
+              <h4 *ngIf="result?.textA4?.header && !result?.textA4?.image">
+                {{ result?.textA4?.header }}
               </h4>
               <ul  *ngIf="result?.textA4.type === 'list'" class="ticket-result-help">
                 <li *ngFor="let item of result?.textA4?.body">{{ item }}</li>
@@ -615,10 +661,19 @@
             </ng-container>
           </mat-expansion-panel>
 
-          <ion-card *ngIf="result?.textA5 && result?.textA5.visibility" class="is-emergency">
+          <ion-card
+            *ngIf="result?.textA5 && result?.textA5.visibility"
+            [ngStyle]="{'background-color': result?.textA5?.color}"
+            class="is-emergency">
             <ion-card-content>
-              <h4 *ngIf="result?.textA5.header">
-                {{ result?.textA5.header }}
+              <div class="card-image-header" *ngIf="result?.textA5?.header && result?.textA5?.image">
+                <h4>
+                  {{ result?.textA5?.header }}
+                </h4>
+                <img [src]="result?.textA5?.image" alt="">
+              </div>
+              <h4 *ngIf="result?.textA5?.header && !result?.textA5?.image">
+                {{ result?.textA5?.header }}
               </h4>
               <ul  *ngIf="result?.textA5.type === 'list'" class="ticket-result-help">
                 <li *ngFor="let item of result?.textA5?.body">{{ item }}</li>

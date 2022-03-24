@@ -28,7 +28,9 @@
               </ng-container>
             </div>
             <h2>{{ result?.header?.headline }}</h2>
-            <h3>{{ result?.header?.subtitle }}</h3>
+            <h3 [ngStyle]="{'background-color': result?.header?.subtitleColor}">
+              {{ result?.header?.subtitle }}
+            </h3>
           </div>
           <div class="article-body">
             <ul>
@@ -57,10 +59,6 @@
                     {{ p }}
                   </li>
                 </ul>
-
-
-
-
               </li>
             </ul>
             <div class="article-source" *ngIf="result?.header?.source">
@@ -71,7 +69,10 @@
               </ul>
             </div>
           </div>
-          <div *ngIf="result?.references" class="article-references">
+          <div
+            *ngIf="result?.references" class="article-references"
+            [ngStyle]="{'background-color': result?.header?.subtitleColor}"
+          >
             <h6>{{ 'ARTICLE_DETAIL_PAGE.REFERENCES' | translate }}</h6>
             <ion-slides pager="true" [options]="slideOptions">
               <ion-slide *ngFor="let ref of result.references">
@@ -319,7 +320,8 @@
           <app-products-container [products]="result?.products"></app-products-container>
         </ng-container>
 
-        <div *ngIf="result?.references" class="article-references">
+        <div
+          *ngIf="result?.references" class="article-references">
           <h6>{{ 'ARTICLE_DETAIL_PAGE.REFERENCES' | translate }}</h6>
           <ion-slides pager="true" [options]="slideOptions">
             <ion-slide *ngFor="let ref of result.references">

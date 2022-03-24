@@ -54,7 +54,6 @@ export class TicketResultPage implements CanDeactivateGuard {
   ) {
     this.routeSub = this.activatedRoute.params
       .subscribe((params: any) => {
-        console.log('params', params);
         this.params = params;
       });
 

@@ -49,9 +49,23 @@
     font-size: 13px;
     flex-direction: row;
 
+    .description, .recommendations {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+
+      span {
+        font-weight: 700;
+      }
+    }
+
     .description {
-      font-weight: 700;
-      margin-right: 15px;
+      //font-weight: 700;
+      //margin-right: 15px;
+      img {
+        width: 72px;
+        margin: 5px 0;
+      }
     }
   }
 
@@ -433,6 +447,22 @@ ion-card-content {
 
 ion-checkbox {
   --size: 17px;
+}
+
+.card-image-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+
+  h4 {
+    margin-bottom: 0;
+  }
+
+  img {
+    height: 28px;
+    margin-left: 16px;
+  }
 }
 
 mat-expansion-panel {
