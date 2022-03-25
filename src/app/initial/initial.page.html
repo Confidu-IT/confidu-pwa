@@ -1,0 +1,45 @@
+<ion-header>
+  <app-toolbar [backButton]="true" [title]="'CareCard'"></app-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="isLoading" class="ion-text-center">
+    <ion-spinner color="primary"></ion-spinner>
+  </div>
+
+  <div *ngIf="!isLoading" class="initial-header">
+    <div class="initial-header-label">
+      <h2>
+        {{ 'INTRO_PAGE.HEADER.FIRST' | translate }}<br>
+        {{ 'INTRO_PAGE.HEADER.SECOND' | translate }}
+      </h2>
+    </div>
+  </div>
+  <div class="spacer"></div>
+
+  <ion-grid *ngIf="!isLoading">
+    <ion-row>
+      <ion-col size="12">
+        <ul class="panels">
+          <li *ngFor="let item of panels">
+            <ion-card>
+              <ion-card-content (click)="onClickLink(item?.key)">
+                <div class="panel-content">
+                  <div class="image">
+                    <img [src]="item?.image" alt="">
+                  </div>
+                  <h3>{{ item?.header }}</h3>
+                </div>
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+              </ion-card-content>
+            </ion-card>
+          </li>
+        </ul>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <app-toolbar-footer [user]="user"></app-toolbar-footer>
+</ion-footer>

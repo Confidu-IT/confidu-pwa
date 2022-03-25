@@ -238,6 +238,10 @@ const routes: Routes = [
     path: 'diagnosis',
     loadChildren: () => import('./diagnosis/diagnosis.module').then( m => m.DiagnosisPageModule)
   },
+  {
+    path: 'initial',
+    loadChildren: () => import('./initial/initial.module').then( m => m.InitialPageModule)
+  },
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
 

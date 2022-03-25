@@ -107,6 +107,17 @@
               {{ question?.values.questionsLongText }}
             </p>
 
+            <ng-container
+              *ngIf="question?.values.questionType.toLowerCase() === 'i' && question?.values?.answerOption.length > 0"
+            >
+              <ul class="info-list">
+                <li *ngFor="let item of question?.values?.answerOption">
+                  <div class="plus"><img [src]="plusIcon" alt=""></div>
+                 <div class="info-list-text"> {{ item.answerLongtext[0] }}</div>
+                </li>
+              </ul>
+            </ng-container>
+
             <p class="question-text"
                *ngIf="showVetForm">
               {{ 'TICKET_QUESTION_PAGE.VET.FORM.HEADER' | translate }}

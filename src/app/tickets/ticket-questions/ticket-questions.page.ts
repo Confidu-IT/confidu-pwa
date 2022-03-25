@@ -81,6 +81,7 @@ export class TicketQuestionsPage {
     initialSlide: 0
   };
   public guideQuestions = ['v+breathe_freq', 'v+pulse_freq', 'v+tempera', 'w+weightac', 'circ1'];
+  public plusIcon = '../../../assets/icons/tickets/plus.svg';
 
   @ViewChild('filePicker') filePickerRef: ElementRef<HTMLInputElement>;
   @ViewChild(IonSlides) slides: IonSlides;

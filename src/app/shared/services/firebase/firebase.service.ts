@@ -7,33 +7,45 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class FirebaseService {
-  public petsCollection: AngularFirestoreCollection;
-  public careCardCollection: AngularFirestoreCollection;
-  public defaultTicketsCollection: AngularFirestoreCollection;
-  public ticketsCollection: AngularFirestoreCollection;
-  public racesCollection: AngularFirestoreCollection;
-  public diseasesCollection: AngularFirestoreCollection;
-  public diagCollection: AngularFirestoreCollection;
-  public medToDiseaseCollection: AngularFirestoreCollection;
-  public medsCollection: AngularFirestoreCollection;
-  public diagnosisCollection: AngularFirestoreCollection;
-  public findingsCollection: AngularFirestoreCollection;
-  public therapyCollection: AngularFirestoreCollection;
-  public scanDBCollection: AngularFirestoreCollection;
-  public medicationCollection: AngularFirestoreCollection;
-  public vetsCollection: AngularFirestoreCollection;
-  public petPics: AngularFirestoreCollection;
-  public emergencySymptoms: AngularFirestoreCollection;
-  public vacccinesCollection: AngularFirestoreCollection;
-  public foodCollection: AngularFirestoreCollection;
-  public urineTestCollection: AngularFirestoreCollection = this.afs.collection('urine-stick');
-  public userCollection: AngularFirestoreCollection = this.afs.collection('users');
-  public activePetsCollection: any;
-  public notificationsReadCollection: AngularFirestoreCollection;
-  public notificationsListCollection: AngularFirestoreCollection;
-  public faqCollection: AngularFirestoreCollection;
+  private petsCollection: AngularFirestoreCollection;
+  private careCardCollection: AngularFirestoreCollection;
+  private defaultTicketsCollection: AngularFirestoreCollection;
+  private ticketsCollection: AngularFirestoreCollection;
+  private racesCollection: AngularFirestoreCollection;
+  private diseasesCollection: AngularFirestoreCollection;
+  private diagCollection: AngularFirestoreCollection;
+  private medToDiseaseCollection: AngularFirestoreCollection;
+  private medsCollection: AngularFirestoreCollection;
+  private diagnosisCollection: AngularFirestoreCollection;
+  private findingsCollection: AngularFirestoreCollection;
+  private therapyCollection: AngularFirestoreCollection;
+  private scanDBCollection: AngularFirestoreCollection;
+  private medicationCollection: AngularFirestoreCollection;
+  private vetsCollection: AngularFirestoreCollection;
+  private petPics: AngularFirestoreCollection;
+  private emergencySymptoms: AngularFirestoreCollection;
+  private vacccinesCollection: AngularFirestoreCollection;
+  private foodCollection: AngularFirestoreCollection;
+  private urineTestCollection: AngularFirestoreCollection = this.afs.collection('urine-stick');
+  private userCollection: AngularFirestoreCollection = this.afs.collection('users');
+  private activePetsCollection: any;
+  private notificationsReadCollection: AngularFirestoreCollection;
+  private notificationsListCollection: AngularFirestoreCollection;
+  private faqCollection: AngularFirestoreCollection;
+  private introCollection: AngularFirestoreCollection;
 
   constructor(private afs: AngularFirestore) {
+  }
+
+  public getIntro(language: string): Observable<any[]> {
+    this.introCollection = this.afs.collection(`intro-app/${language}/data`);
+    return this.introCollection.snapshotChanges().pipe(
+      map(actions => actions.map(a => {
+        const data = a.payload.doc.data();
+        data.id = a.payload.doc.id;
+        return { ...data };
+      }))
+    );
   }
 
   public getNotifications(userId: string): Observable<any[]> {

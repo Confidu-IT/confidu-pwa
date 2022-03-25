@@ -1392,5 +1392,11 @@
     "TITLE": "Foto Diagnose",
     "QUESTION": "Bitte wähle das Problem aus",
     "LABEL": "Grund deiner Anfrage"
+  },
+  "INTRO_PAGE": {
+    "HEADER": {
+      "FIRST": "Wie können wir dir und deinem",
+      "SECOND": "Vierbeiner helfen?"
+    }
   }
 }
