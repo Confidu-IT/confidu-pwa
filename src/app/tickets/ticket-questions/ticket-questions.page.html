@@ -112,8 +112,10 @@
             >
               <ul class="info-list">
                 <li *ngFor="let item of question?.values?.answerOption">
-                  <div class="plus"><img [src]="plusIcon" alt=""></div>
-                 <div class="info-list-text"> {{ item.answerLongtext[0] }}</div>
+                  <ng-container *ngIf="item.answerLongtext">
+                    <div class="plus"><img [src]="plusIcon" alt=""></div>
+                    <div class="info-list-text"> {{ item.answerLongtext[0] }}</div>
+                  </ng-container>
                 </li>
               </ul>
             </ng-container>

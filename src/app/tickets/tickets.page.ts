@@ -8,7 +8,6 @@ import {CommonService} from '../shared/services/common/common.service';
 import {AlertController} from '@ionic/angular';
 import {TranslateService} from '@ngx-translate/core';
 import {AngularFireStorage} from '@angular/fire/storage';
-import {TicketService} from './ticket-service/ticket-service';
 
 @Component({
   selector: 'app-tickets',
@@ -33,7 +32,7 @@ export class TicketsPage implements OnInit {
   public isLoading = true;
   public showTaskForm = false;
   public currentDay: string;
-  public imagePath = '../../../assets/icons/tickets';
+  public imagePath = '../../assets/icons/tickets';
   public calendar: any;
   public confiTicketImg = '../../assets/icons/tickets/conficoins_small_ticket.svg';
   public heartImg = '../../assets/icons/tickets/heart.svg';
@@ -218,9 +217,9 @@ export class TicketsPage implements OnInit {
 
     events.push(event);
     ticket = {
-      backgroundImageLink1: 'https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/Tickets_fotos%2Fall%2Fall_n%2Fstandard_1%404x.png?alt=media&token=8192b12c-baed-4a07-b0a4-a3dfb97ffe28',
-      backgroundImageLink2: 'https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/Tickets_fotos%2Fall%2Fall_n%2Fstandard_2%404x.png?alt=media&token=c78ab691-0e69-4f20-b051-3202861b5bfb',
-      backgroundImageLink3: 'https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/Tickets_fotos%2Fall%2Fall_n%2Fstandard_3%402x.png?alt=media&token=6e72422c-f65c-4611-b3ce-78d2df4144db',
+      backgroundImageLink1: `${this.imagePath}/standard_1.png`,
+      backgroundImageLink2: `${this.imagePath}/standard_2.png`,
+      backgroundImageLink3: `${this.imagePath}/standard_3.png`,
       title: this.form.value.title,
       text: this.form.value.text,
       type: 'common',
