@@ -141,10 +141,6 @@ const routes: Routes = [
     loadChildren: () => import('./lab/lab.module').then( m => m.LabPageModule)
   },
   {
-    path: 'lab-detail/:type',
-    loadChildren: () => import('./lab-detail/lab-detail.module').then( m => m.LabDetailPageModule)
-  },
-  {
     path: 'diseases',
     loadChildren: () => import('./diseases/diseases.module').then(m => m.DiseasePageModule)
   },
