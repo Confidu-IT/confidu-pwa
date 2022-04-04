@@ -6,6 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { CommonService } from '../shared/services/common/common.service';
 import { Subscription } from 'rxjs';
 import {Router} from '@angular/router';
+import {switchMap, tap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-lab',
@@ -15,9 +16,8 @@ import {Router} from '@angular/router';
 export class LabPage {
   private subscription: Subscription;
 
-  public petId: string;
   public user: any;
-
+  public products: any[];
   public language: string;
   public isLoading: boolean;
   public regNr: string;
@@ -40,15 +40,32 @@ export class LabPage {
 
     // Barf Profil
     // barfprof
+    //
+    // this.subscription = this.userAuth.user$
+    //   .subscribe(user => {
+    //     this.user = user;
+    //   });
 
-    this.subscription = this.userAuth.user$
-      .subscribe(user => {
-        this.user = user;
-      });
+    this.subscription = this.userAuth.user$.pipe(
+      tap(user => user),
+      switchMap(user => {
+        if (user && localStorage.getItem('activePet')) {
+          return this.firebaseService.getPetById(user.uid, localStorage.getItem('activePet'));
+        } else {
+          return this.router.navigateByUrl('/');
+        }
+      }),
+      switchMap(pet => {
+        return this.firebaseService.getLabProducts(this.language, pet.pet.species.value)
+      })
+    ).subscribe(data => {
+      console.log('data', data)
+      this.products = data;
+    });
   }
 
-  public onClickLink(type: string): void {
-    this.router.navigateByUrl(`lab-detail/${type}`);
+  public onClickLink(url: string, key: string): void {
+    this.router.navigateByUrl(`tickets/ticket/default/${url}/${key}`);
   }
 
   ionViewWillLeave() {

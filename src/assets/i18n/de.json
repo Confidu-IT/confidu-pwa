@@ -875,7 +875,9 @@
     "PROGRESS": "Weiter"
   },
   "LAB_PAGE": {
-    "TITLE": "Labortests",
+    "TITLE": "Labor",
+    "HEADER": "Labortests",
+    "SUBHEADER": "Blinde Passagiere an Bord. Schmerzen beim Harnabsatz oder Durchfall? Geh dem Ganzen auf den Grund mit unserer Forscher Box.",
     "PARASITES": "Parasiten",
     "URINE": "Harnstick Kit",
     "DIARRHEA": "Durchfall",

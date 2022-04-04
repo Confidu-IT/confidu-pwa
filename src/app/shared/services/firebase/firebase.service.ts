@@ -33,8 +33,20 @@ export class FirebaseService {
   private notificationsListCollection: AngularFirestoreCollection;
   private faqCollection: AngularFirestoreCollection;
   private introCollection: AngularFirestoreCollection;
+  private productsCollection: AngularFirestoreCollection;
 
   constructor(private afs: AngularFirestore) {
+  }
+
+  public getLabProducts(language: string, species: string): Observable<any[]> {
+    this.productsCollection = this.afs.collection(`lab-test-tickets/${language}/${species}`);
+    return this.productsCollection.snapshotChanges().pipe(
+      map(actions => actions.map(a => {
+        const data = a.payload.doc.data();
+        data.id = a.payload.doc.id;
+        return { ...data };
+      }))
+    );
   }
 
   public getIntro(language: string): Observable<any[]> {

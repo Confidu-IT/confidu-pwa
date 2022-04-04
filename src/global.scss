@@ -637,6 +637,13 @@ ion-toolbar {
   }
 }
 
+.lab-products {
+  .mat-expansion-panel-bottom
+  {
+    padding-bottom: 16px !important;
+  };
+}
+
 .item-has-focus{
   --highlight-background: var(--in-color-secondary) !important;
 }

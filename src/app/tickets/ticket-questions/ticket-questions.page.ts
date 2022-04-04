@@ -128,7 +128,6 @@ export class TicketQuestionsPage {
   ) {
     this.routeSub = this.activatedRoute.params
       .subscribe((params: any) => {
-        console.log('params', params)
         this.params = params;
         this.currentMed.code = this.params.code;
       });

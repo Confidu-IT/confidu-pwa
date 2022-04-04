@@ -7,52 +7,41 @@
   <ion-grid *ngIf="!isLoading">
     <ion-row>
       <ion-col sizeSm="8" offsetSm="2">
-        <ion-card class="menu">
-          <ion-card-content>
-            <div class="menu-header">
-              <div class="menu-image">
-                <img [src]="labIcon" alt="" height="32">
+        <div class="header">
+          <div class="headline">
+            <img [src]="labIcon" alt="" height="24">
+            <h3>{{ 'LAB_PAGE.HEADER' | translate }}</h3>
+          </div>
+
+          <p>{{ 'LAB_PAGE.SUBHEADER' | translate }}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col sizeSm="8" offsetSm="2">
+        <ng-container *ngFor="let panel of products">
+          <mat-expansion-panel class="lab-products">
+            <mat-expansion-panel-header>
+              <div class="panel-top">
+                <img [src]="panel?.icon" alt="">
+                <div class="top-title">
+                  <h2>{{ panel?.collection_titel_1 }}</h2>
+                  <div>{{ panel?.collection_titel_2 }}</div>
+                </div>
               </div>
-              <div class="menu-headline">
-                <h3>{{ 'LAB_PAGE.TITLE' | translate }}</h3>
-              </div>
-            </div>
+            </mat-expansion-panel-header>
+            <div class="text1">{{ panel?.collection_text_1 }}</div>
+            <div class="text2">{{ panel?.collection_text_2 }}</div>
             <ul>
-              <li (click)="onClickLink('partest')">
-                <h3>{{ 'LAB_PAGE.PARASITES' | translate }}</h3>
-                <img [src]="chevron" alt="" height="16" width="16">
-              </li>
-              <li (click)="onClickLink('diatest')">
-                <h3>{{ 'LAB_PAGE.DIARRHEA' | translate }}</h3>
-                <img [src]="chevron" alt="" height="16" width="16">
-              </li>
-              <li (click)="onClickLink('diatestplus')">
-                <h3>{{ 'LAB_PAGE.DIARRHEA_PLUS' | translate }}</h3>
-                <img [src]="chevron" alt="" height="16" width="16">
-              </li>
-              <li (click)="onClickLink('giacon')">
-                <h3>{{ 'LAB_PAGE.GIARDIA' | translate }}</h3>
-                <img [src]="chevron" alt="" height="16" width="16">
-              </li>
-              <li (click)="onClickLink('flora')">
-                <h3>{{ 'LAB_PAGE.FLORA' | translate }}</h3>
-                <img [src]="chevron" alt="" height="16" width="16">
-              </li>
-              <li (click)="onClickLink('barfprof')">
-                <h3>{{ 'LAB_PAGE.BARF' | translate }}</h3>
-                <img [src]="chevron" alt="" height="16" width="16">
-              </li>
-              <li (click)="onClickLink('labtest')">
-                <h3>{{ 'LAB_PAGE.PREVENTION' | translate }}</h3>
-                <img [src]="chevron" alt="" height="16" width="16">
-              </li>
-              <li (click)="onClickLink('labstick')">
-                <h3>{{ 'LAB_PAGE.PREVENTION_PLUS' | translate }}</h3>
+              <li *ngFor="let link of panel?.links" (click)="onClickLink(link.url, panel.ticketKey)">
+                <div>{{ link.label }}</div>
                 <img [src]="chevron" alt="" height="16" width="16">
               </li>
             </ul>
-          </ion-card-content>
-        </ion-card>
+          </mat-expansion-panel>
+        </ng-container>
+
       </ion-col>
     </ion-row>
   </ion-grid>
