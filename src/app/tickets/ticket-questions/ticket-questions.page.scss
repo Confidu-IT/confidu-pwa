@@ -621,6 +621,25 @@ mat-label {
   width: unset;
 }
 
+.diag-text, .max-characters {
+  font-size: 9px;
+}
+
+.max-characters {
+  color: #666;
+  margin-top: 12px;
+  text-align: right;
+  margin-right: 20px;
+}
+
+ion-textarea {
+  border: 1px solid #dedede;
+  font-size: 13px;
+  margin: 16px 20px 0;
+  padding-left: 12px;
+  width: calc(100% - 40px);
+}
+
 .link-to-guide {
   color: var(--ion-color-secondary);
   font-size: 13px;

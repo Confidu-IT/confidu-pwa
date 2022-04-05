@@ -77,6 +77,7 @@ export class TicketQuestionsPage {
   public currentDateSet = false;
   public isGif = false;
   public clearData: boolean;
+  public diagText = null;
   public slideOpts = {
     initialSlide: 0
   };
@@ -273,8 +274,12 @@ export class TicketQuestionsPage {
             return [...this.reducedQuestions];
           });
 
+          // this.questions = this.ticketService.questions
+
           console.log('this.questions', this.questions);
           // console.log('this.reducedQuestions', this.reducedQuestions);
+
+
 
           this.question = this.questions[this.indexNr];
           this.checkForGIF(this.question.values.imageLink);
@@ -701,6 +706,10 @@ export class TicketQuestionsPage {
       val = val[0];
       val.answerValue = this.selectedAnswer;
 
+    } else if (this.question.values.questionType.toLowerCase() === 'ft') {
+      val = this.question.values.answerOption;
+      val = val[0];
+      val.answerValue = this.diagText;
     } else if (this.question.values.questionType === 'MED_T_L') {
       if (this.timeAmount === this.currentMed.med_amount.length) {
         val = this.question.values.answerOption;
@@ -1034,6 +1043,7 @@ export class TicketQuestionsPage {
       return this.validateVaccDates();
     } else if (
       this.question?.values?.questionType.toLowerCase() === 'i' ||
+      this.question?.values?.questionType.toLowerCase() === 'ft' ||
       this.question?.values?.questionType.toLowerCase() === 'find' ||
       this.question?.values?.questionType === 'Z_OPT'
     ) {
@@ -1102,6 +1112,7 @@ export class TicketQuestionsPage {
     this.vaccination = undefined;
     this.addedFiles = null;
     this.isGif = false;
+    this.diagText = null;
 
     if (this.routeSub) {
       this.routeSub.unsubscribe();

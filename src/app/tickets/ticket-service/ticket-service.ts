@@ -151,6 +151,73 @@ export class TicketService {
 
   public baz = {}
 
+  public questions = [
+    {
+      "values": {
+        "questionsLongText": "Möchtest du uns noch etwas mitteilen? Je genauer die Informationen sind, desto besser kann der Fall beurteilt werden (optional).",
+        "questionType": "FT",
+        "questionInfoHeadline": null,
+        "answerOption": [
+          {
+            "answerLongtext": null,
+            "minSpecifics": 0,
+            "answerUnit": null,
+            "answerValue": null,
+            "imageLinkAnswer": null,
+            "ccEntry": null,
+            "venomKey": null,
+            "subject": null,
+            "value": "FOTO_Q2_no_answer",
+            "imageLinkDetailAnswer": null
+          }
+        ],
+        "actionButton": {
+          "link": null,
+          "label": null
+        },
+        "imageSwitch": null,
+        "questionInfoText": null,
+        "noOptions": "1",
+        "fb": false,
+        "imageLink": "https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/diagnose%20finder%2Ficon_t-v%2Fvorerkrankungen.svg?alt=media&token=87519283-f55f-4001-b96e-9dbac9bbc7c5"
+      },
+      "name": "FOTO_Q2"
+    },
+    {
+      "name": "DIS_Q2",
+      "values": {
+        "fb": false,
+        "questionInfoText": null,
+        "actionButton": {
+          "label": null,
+          "link": null
+        },
+        "questionInfoHeadline": null,
+        "questionType": "CH2",
+        "imageLink": "https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/diagnose%20finder%2Ficon_d-f%2Fdisclaimer.svg?alt=media&token=b8fe00be-0aa3-4818-8d2a-2eea5d1eb1c7",
+        "answerOption": [
+          {
+            "ccEntry": null,
+            "imageLinkAnswer": null,
+            "imageLinkDetailAnswer": null,
+            "answerLongtext": [
+              "Ich bestätige, dass ich alle Fragen nach bestem Wissen, wahrheitsgemäß und vollständig beantwortet habe und dass ich das/die Medikament(e) nur zur Behandlung der oben genannten Erkrankung meines Tieres Foo verwende."
+            ],
+            "answerUnit": null,
+            "value": "DIS_Q2_true",
+            "venomKey": null,
+            "minSpecifics": 0,
+            "subject": null,
+            "answerValue": null
+          }
+        ],
+        "questionsLongText": "Wichtige Informationen!",
+        "imageSwitch": null,
+        "noOptions": "1"
+      }
+    }
+  ]
+
   public blah = {
     "textA4": null,
     "initial": {

@@ -127,6 +127,15 @@
 
             <div class="question-form">
 
+              <ng-container *ngIf="question?.values.questionType.toLowerCase() === 'ft'">
+                <ion-textarea rows="14" cols="25"
+                              [(ngModel)]="diagText"
+                              class="diag-text"
+                              placeholder="{{ 'TICKET_QUESTION_PAGE.ANNOTATIONS' | translate }}">
+                </ion-textarea>
+                <div class="max-characters">1500 {{ 'CONSULTATION_BOOKING_PAGE.CHARS' | translate }}</div>
+              </ng-container>
+
               <ng-container *ngIf="question?.values.questionType.toLowerCase() === 'sei'">
                 <mat-form-field class="vaccinations">
                   <mat-label>{{ 'TICKET_QUESTION_PAGE.PARASITES.LABEL' | translate }}</mat-label>

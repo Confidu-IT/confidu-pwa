@@ -39,7 +39,7 @@ export class FirebaseService {
   }
 
   public getLabProducts(language: string, species: string): Observable<any[]> {
-    this.productsCollection = this.afs.collection(`lab-test-tickets/${language}/${species}`);
+    this.productsCollection = this.afs.collection(`lab-test-tickets/${language}/${species}`, (ref) => ref.orderBy(`collection_titel_1`, 'asc'));
     return this.productsCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
         const data = a.payload.doc.data();

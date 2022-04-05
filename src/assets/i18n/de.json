@@ -241,6 +241,8 @@
     "CHOOSE": "Bitte auswählen",
     "AMOUNT": "Menge",
     "UNIT": "Einheit",
+    "ANNOTATIONS": "Bemerkungen",
+    "MAX_CHARACTERS": "1500 Zeichen",
     "KG": "kg",
     "CM": "cm",
     "CHIP": "Chip Nr.",
