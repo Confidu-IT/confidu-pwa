@@ -6,7 +6,7 @@
   <ion-grid *ngIf="pet && !isLoading">
 
     <ion-row>
-      <ion-col sizeSm="8" offsetSm="2">
+      <ion-col>
         <div class="pet-container">
           <div class="left" (click)="onPickImage()">
             <img class="pet-avatar" [src]="pet?.pet?.image" width="84" height="84" alt="">
@@ -33,7 +33,7 @@
     </ion-row>
 
     <ion-row>
-      <ion-col sizeSm="8" offsetSm="2">
+      <ion-col>
 
        <div class="task-planner">
 
@@ -124,7 +124,7 @@
     </ion-row>
 
     <ion-row>
-      <ion-col sizeSm="8" offsetSm="2">
+      <ion-col>
         <h3 class="subheader">
           {{ 'HOME_PAGE.MEDICAL_AID' | translate }}
         </h3>
@@ -174,57 +174,32 @@
       </ion-col>
     </ion-row>
 
-    <ion-row>
-      <ion-col sizeSm="8" offsetSm="2">
-        <h3 class="subheader">
-          {{ 'HOME_PAGE.HANDS_ON' | translate }}
-        </h3>
-        <ion-slides [options]="slideOptions">
-          <ion-slide>
-            <ion-card class="page-card" (click)="onClickPageCardLink('carecard')">
-              <ion-card-header>
-                <img [src]="orderMedImg" alt="">
-              </ion-card-header>
-              <ion-card-content>
-                <h3>
-                  {{ 'HOME_PAGE.PAGE_SLIDER.CARE_CARD' | translate }}<br>
-                  {{ 'HOME_PAGE.PAGE_SLIDER.CARE_ACTION' | translate }}<br>
-                </h3>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-          <ion-slide>
-            <ion-card class="page-card" (click)="onClickPageCardLink('fup')">
-              <ion-card-header>
-                <img [src]="orderMedImg" alt="">
-              </ion-card-header>
-              <ion-card-content>
-                <h3>
-                  {{ 'HOME_PAGE.PAGE_SLIDER.MED_CARD' | translate }}<br>
-                  {{ 'HOME_PAGE.PAGE_SLIDER.MED_ACTION' | translate }}<br>
-                </h3>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-          <ion-slide>
-            <ion-card class="page-card" (click)="onClickPageCardLink('lab')">
-              <ion-card-header>
-                <img [src]="labImg" alt="">
-              </ion-card-header>
-              <ion-card-content>
-                <h3>
-                  {{ 'HOME_PAGE.PAGE_SLIDER.BOX_CARD' | translate }}<br>
-                  {{ 'HOME_PAGE.PAGE_SLIDER.BOX_ACTION' | translate }}<br>
-                </h3>
-              </ion-card-content>
-            </ion-card>
-          </ion-slide>
-        </ion-slides>
-      </ion-col>
-    </ion-row>
+    <ng-container *ngIf="perccCard">
+      <ion-row>
+        <ion-col>
+          <h3 class="subheader">
+            {{ perccCard.header }}
+          </h3>
+          <ion-slides [options]="slideOptions">
+            <ion-slide *ngFor="let item of perccCard?.card">
+              <ion-card class="page-card" (click)="onClickPageCardLink(item.link)">
+                <ion-card-header>
+                  <img [src]="item.image" alt="">
+                </ion-card-header>
+                <ion-card-content>
+                  <h3>
+                    {{ item.text }}
+                  </h3>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
+          </ion-slides>
+        </ion-col>
+      </ion-row>
+    </ng-container>
 
     <ion-row *ngIf="articles?.magazines || articles?.cooking">
-      <ion-col offsetSm="2" sizeSm="8">
+      <ion-col>
         <h3 class="subheader">
           {{ 'HOME_PAGE.GET_INFORMED' | translate }}
         </h3>

@@ -86,6 +86,7 @@ export class HomePage {
   public isEmergency: boolean;
   public isLoading: boolean;
   public coins: any;
+  public perccCard: any;
 
   @ViewChild('filePicker') filePickerRef: ElementRef<HTMLInputElement>;
 
@@ -155,7 +156,7 @@ export class HomePage {
           this.petId = localStorage.getItem('activePet');
           this.getActivePet(user.uid, this.petId);
           this.getTickets(user.uid, this.petId);
-          this.getArticles(this.petId, user.uid, user.za);
+          this.getContent(this.petId, user.uid, user.za);
           this.getCoins(user.uid);
           this.isLoading = false;
         } else if (localStorage.getItem('showWalkthrough')) {
@@ -192,11 +193,12 @@ export class HomePage {
       });
   }
 
-  private getArticles(petId: string, uid: string, token: any): void {
-    this.commonService.getArticles(petId, uid, token)
-      .subscribe(articles => {
-        console.log('articles', articles);
-        this.articles = articles;
+  private getContent(petId: string, uid: string, token: any): void {
+    this.commonService.getContent(petId, uid, token)
+      .subscribe(content => {
+        console.log('content', content);
+        this.articles = content;
+        this.perccCard = content.perccCard;
       });
   }
 
@@ -334,7 +336,7 @@ export class HomePage {
       case 'carecard':
         this.router.navigateByUrl(`pets/pet-care-card/${this.petId}`);
         break;
-      case 'fup':
+      case 'fub':
         this.router.navigateByUrl(`follow-up-prescription`);
         break;
       case 'lab':

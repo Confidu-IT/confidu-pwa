@@ -146,7 +146,7 @@
                   </mat-select>
                 </mat-form-field>
                 <div class="date-time current-vacc">
-                  <ion-item>
+                  <ion-item class="item-vacc">
                     <ion-label position="floating">
                       {{ 'TICKET_QUESTION_PAGE.PARASITES.DATE' | translate }}
                     </ion-label>
@@ -187,7 +187,7 @@
                   </ion-item>
                 </div>
 
-                <div class="date-time" *ngIf="currentDateSet">
+                <div class="date-time current-vacc" *ngIf="currentDateSet">
                   <ion-item>
                     <ion-label position="floating">
                       {{ 'TICKET_QUESTION_PAGE.VACC.NEXT' | translate }}
@@ -222,7 +222,8 @@
                       {{ 'TICKET_QUESTION_PAGE.MED.AMOUNT' | translate }}
                       ( {{ i + 1 }}. {{ 'TICKET_QUESTION_PAGE.MED.PORTION' | translate }})
                     </mat-label>
-                    <input (keyup)="onPickMedAmount($event, 'medPiece', i)" matInput type="number" step="any">
+                    <input (keyup)="onPickMedAmount($event, 'medPiece', i)" matInput type="number"
+                           step="any">
                     <span matSuffix>{{ question?.values?.answerOption[0].answerUnit?.unit }}</span>
                   </mat-form-field>
                 </div>
@@ -319,7 +320,7 @@
                         <input [(ngModel)]="invoiceMeds[i].selectedVariant.singledose"
                                (keyup)="pickMedDose($event, i)"
                                matInput
-                               step="any" type="number">
+                               >
                         <span matSuffix>{{ invoiceMeds[i]?.selectedVariant?.unit }}</span>
                       </mat-form-field>
                     </ng-container>

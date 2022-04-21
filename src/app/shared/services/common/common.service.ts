@@ -289,7 +289,7 @@ export class CommonService {
     return this.http.post(url, body, { headers });
   }
 
-  public getArticles(
+  public getContent(
     petId: string,
     uid: string,
     token: string

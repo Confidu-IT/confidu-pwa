@@ -486,13 +486,15 @@ export class TicketQuestionsPage {
     this.invoiceMeds[index].selectedVariant.amountdose = null;
     this.timeAmount[index] = parseInt(event.value.charAt(0), 10);
     this.invoiceMeds[index].selectedVariant.durationPd = event.value.charAt(0);
-    console.log('this.invoiceMeds', this.invoiceMeds);
+    // console.log('this.invoiceMeds', this.invoiceMeds);
   }
 
   public pickMedDose(event, index): void {
-    this.invoiceMeds[index].selectedVariant.singledose = String(event.target.value);
-    this.invoiceMeds[index].selectedVariant.amountdose = String(this.timeAmount[index] * event.target.value);
-    console.log('this.invoiceMeds', this.invoiceMeds);
+    const replacedComma = event.target.value.replace(',', '.');
+    const dose = replacedComma.replace(/[^\d.-]/g, '');
+    this.invoiceMeds[index].selectedVariant.singledose = dose;
+    this.invoiceMeds[index].selectedVariant.amountdose = String(this.timeAmount[index] * Number(dose));
+    // console.log('this.invoiceMeds', this.invoiceMeds);
 
   }
 
@@ -504,7 +506,7 @@ export class TicketQuestionsPage {
     } else {
       this.invoiceMeds[index].selectedVariant.permanent = false;
     }
-    console.log('this.invoiceMeds', this.invoiceMeds);
+    // console.log('this.invoiceMeds', this.invoiceMeds);
   }
 
   public clueless(event) {

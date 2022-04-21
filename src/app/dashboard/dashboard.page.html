@@ -6,30 +6,17 @@
   <ion-grid>
     <ion-row>
       <ion-spinner color="primary" *ngIf="isLoading"></ion-spinner>
-      <ion-col size="12" *ngIf="!isLoading">
-        <div class="header">
-          <img [src]="chartsImage" alt="" height="30">
-          <h2>{{ 'DASHBOARD_PAGE.HEADER' | translate }}</h2>
-        </div>
-        <div class="subheader">{{ 'DASHBOARD_PAGE.SUBHEADER' | translate }}</div>
-      </ion-col>
       <ng-container *ngFor="let card of cards">
         <ion-col *ngIf="card?.type === 'small' && !isLoading && card?.title" size="6">
           <ion-card class="card" (click)="onClickLink(card.key, card.label)">
             <ion-card-content>
-              <div class="card-header">
-                <img [src]="card.icon" alt="" width="25">
-                <span>{{ card.header }}</span>
-              </div>
               <div class="card-body">
                 <h4 class="card-title">{{ card.title }}</h4>
                 <div class="card-subtitle">{{ card.subtitle }}</div>
               </div>
-              <div class="card-image">
-                <img [src]="card.image" alt="" height="30">
-              </div>
-              <div class="card-link">
-                {{ card.text }}
+              <div class="card-footer">
+                <img [src]="card.image" alt="" height="76">
+                <ion-icon name="chevron-forward-outline"></ion-icon>
               </div>
             </ion-card-content>
           </ion-card>

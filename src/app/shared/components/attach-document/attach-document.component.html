@@ -10,8 +10,9 @@
 <div class="file-picker" *ngIf="uploadedFiles.length < 5" (click)="onPickDocument()">
 
   <div class="file-label">
-    <ion-icon name="cloud-upload-outline"></ion-icon>
-    {{ 'ATTACH_DOCUMENT.ADD_DOCUMENT' | translate }}
+    <div>
+      <img [src]="cloudIcon" alt=""> {{ 'ATTACH_DOCUMENT.ADD_DOCUMENT' | translate }}
+    </div>
   </div>
   <ion-progress-bar *ngIf="uploadProgress" color="secondary"
                     [buffer]="(uploadProgress | async)"

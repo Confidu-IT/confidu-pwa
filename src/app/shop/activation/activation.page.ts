@@ -99,9 +99,9 @@ export class ActivationPage {
       });
   }
 
-  public onSwitchPet(): void {
-    console.log('foo');
-  }
+  // public onSwitchPet(): void {
+  //   console.log('foo');
+  // }
 
   public onRegisterCode() {
     this.commonService.registerProductKey(this.regNr, this.user.uid, this.petId, this.user.za)
@@ -151,6 +151,8 @@ export class ActivationPage {
           console.log('r', response.data);
           this.firebaseService.createActivePetId(this.user.uid, response.data)
             .then(() => {
+              const pet = this.pets.filter(pet => response.data === pet.id);
+              this.pet = pet[0]?.pet;
               localStorage.setItem('activePet', response.data);
               this.petId = localStorage.getItem('activePet');
             })

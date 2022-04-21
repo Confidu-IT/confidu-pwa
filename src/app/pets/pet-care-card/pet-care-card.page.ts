@@ -38,6 +38,7 @@ export class PetCareCardPage {
 
   // public dummyImg = `${this.iconPath}/warning-triangle.svg`;
   public chevron = `${this.iconPath}/chevron-forward-outline.svg`;
+  public addIcon = `${this.iconPath}/add_blue.svg`;
 
   private subscription: Subscription;
   private readonly routeSub: Subscription;

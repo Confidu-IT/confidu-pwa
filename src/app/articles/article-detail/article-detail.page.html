@@ -71,7 +71,6 @@
           </div>
           <div
             *ngIf="result?.references" class="article-references"
-            [ngStyle]="{'background-color': result?.header?.subtitleColor}"
           >
             <h6>{{ 'ARTICLE_DETAIL_PAGE.REFERENCES' | translate }}</h6>
             <ion-slides pager="true" [options]="slideOptions">

@@ -1,45 +1,53 @@
+.header-card {
+  margin: 0 0 12px;
+  color: #000;
+
+  ion-card-content {
+    padding: 0;
+  }
+}
+
 .care-card {
   &-header {
     //background: url('../../../assets/icons/care-card/hund.svg') repeat-x;
+    background-color: #DEF6FF;
     display: flex;
     align-items: center;
-    padding: 24px 32px 24px;
-    //margin: -16px -16px 0;
-    margin: -5px;
-
-    &.dog {
-      background: url('../../../assets/icons/care-card/hund.svg') repeat-x;
-    }
-
-    &.cat {
-      background: url('../../../assets/icons/care-card/katze.svg') repeat-x;
-    }
-
-    &-image {
-      //margin-bottom: 16px;
-    }
+    padding: 16px 20px 12px;
+    margin: 0;
 
     img {
+      background-color: #fff;
       border-radius: 99px;
-      height: 85px;
+      box-shadow: 0 0 2px #666;
+      padding: 3px;
+      height: 66px;
       max-height: 100%;
-      width: 85px;
+      width: 66px;
     }
     &-label {
+      font-size: 11px;
+      margin-left: 24px;
+
       h2 {
         //color: rgb(102, 102, 102);
-        font-size: 20px;
-        line-height: 28px;
-        margin: 0;
-        padding-left: 24px;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 20px;
+        margin: 0 0 4px;
       }
+
+      div {
+        line-height: 16px;
+      }
+
     }
   }
 }
 
-.base-panel {
-  margin-top: -16px;
-}
+//.base-panel {
+//  margin-top: -16px;
+//}
 
 //.spacer {
 //  margin-top: 16px;
@@ -122,6 +130,7 @@
     font-size: 14px;
     margin-bottom: 16px;
     padding-bottom: 14px;
+    justify-content: space-between;
 
     &:last-of-type {
       border-bottom: none;
@@ -133,13 +142,18 @@
   .label {
     //color: var(--ion-color-medium);
     font-weight: 500;
-    width: 60%;
+    width: 55%;
   }
 
   .value {
     display: flex;
-    justify-content: space-between;
-    width: 40%
+    //justify-content: space-between;
+    align-items: center;
+    width: 45%;
+
+    img {
+      margin-right: 6px
+    }
   }
 
   ion-icon {
@@ -201,14 +215,25 @@
   }
 }
 
-.signal {
+.signal1 {
+  background-color: var(--ion-color-secondary);
+}
+
+.signal2 {
   background-color: var(--ion-color-danger);
+}
+
+.signal1, .signal2 {
   border-radius: 99px;
   display: inline-block;
   margin-left: 6px;
   height: 6px;
   width: 6px;
   vertical-align: middle;
+
+  &.signal-header {
+    margin: 0 8px 0 0;
+  }
 }
 
 mat-panel-title {
@@ -239,6 +264,8 @@ mat-panel-title {
     --padding-top: 28px;
   }
 }
+
+/*
 
 @media only screen and (min-width: 576px) and (max-width: 768px) {
   .export-button {
@@ -350,3 +377,5 @@ mat-panel-title {
     max-width: 50%;
   }
 }
+
+ */

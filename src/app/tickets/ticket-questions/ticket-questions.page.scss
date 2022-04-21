@@ -488,6 +488,11 @@ mat-label {
   margin-bottom: 24px;
   &.current-vacc {
     //margin-top: -20px;
+
+    ion-item {
+      --padding-start: 0;
+      width: unset;
+    }
   }
 
 

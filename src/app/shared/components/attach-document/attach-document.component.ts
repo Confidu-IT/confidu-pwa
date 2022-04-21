@@ -20,6 +20,7 @@ export class AttachDocumentComponent {
 
   public uploadedFiles: any[] = [];
   public uploadImg = `../../assets/icons/doc_upload.svg`;
+  public cloudIcon = `../../assets/icons/upload.svg`;
   public uploadProgress: Observable<number>;
 
   @Input() user: any;

@@ -35,23 +35,23 @@ export class TokenInterceptor implements HttpInterceptor{
           console.log('token', token);
 
           // coming from ticket result page
-          if (this.authService.getPreviousUrl() && localStorage.getItem('ticketResult') && localStorage.getItem('activePet')) {
-            const prevUri = this.authService.getPreviousUrl().split('/');
-            if (prevUri[prevUri.length - 1] === 'result') {
-              const ticketObj = JSON.parse(localStorage.getItem('ticketResult'));
-              this.ticketService.confirmSaveRequest(
-                ticketObj.event,
-                ticketObj.action,
-                localStorage.getItem('activePet'),
-                ticketObj.user,
-                token,
-                ticketObj.language
-              ).then (data => {
-                localStorage.removeItem('ticketResult');
-              });
-
-            }
-          }
+          // if (this.authService.getPreviousUrl() && localStorage.getItem('ticketResult') && localStorage.getItem('activePet')) {
+          //   const prevUri = this.authService.getPreviousUrl().split('/');
+          //   if (prevUri[prevUri.length - 1] === 'result') {
+          //     const ticketObj = JSON.parse(localStorage.getItem('ticketResult'));
+          //     this.ticketService.confirmSaveRequest(
+          //       ticketObj.event,
+          //       ticketObj.action,
+          //       localStorage.getItem('activePet'),
+          //       ticketObj.user,
+          //       token,
+          //       ticketObj.language
+          //     ).then (data => {
+          //       localStorage.removeItem('ticketResult');
+          //     });
+          //
+          //   }
+          // }
 
         }
         return next.handle(request);

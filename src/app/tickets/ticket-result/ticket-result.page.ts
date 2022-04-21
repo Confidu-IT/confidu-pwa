@@ -38,6 +38,8 @@ export class TicketResultPage implements CanDeactivateGuard {
   public noResultImage = `${this.iconPath}/no_result.svg`;
   // public cartCheckIcon = `${this.iconPath}/product-check.svg`;
   public infoButton = `${this.iconPath}/info-button.svg`;
+  public backIcon = `${this.iconPath}/back_to.svg`;
+
 
   public listOpen: any[];
   public isFoodCheck: boolean;
@@ -192,63 +194,68 @@ export class TicketResultPage implements CanDeactivateGuard {
     }
   }
 
-  private createResultObj(type: string): void {
-    const obj = {
-      action: type,
-      event: this.eventId,
-      language: this.language,
-      user: this.user.uid
-    };
-    localStorage.setItem('ticketResult', JSON.stringify(obj));
-  }
+  // private createResultObj(type: string): void {
+  //   const obj = {
+  //     action: type,
+  //     event: this.eventId,
+  //     language: this.language,
+  //     user: this.user.uid
+  //   };
+  //   localStorage.setItem('ticketResult', JSON.stringify(obj));
+  // }
 
   private coinsHandler() {
-    if (!this.result.ticketCoins) {
+    if (!this.result?.ticketCoins) {
       return;
     }
     this.commonService.presentToast(this.coins, 'primary');
   }
 
-  canDeactivate(): Promise<boolean> | boolean {
-    if (
-      // this.routingDestination?.search('cart') > -1 ||
-      this.routingDestination?.search('consultation') > -1 ||
-      this.routingDestination?.search('follow-up-prescription') > -1
-    ) {
-      this.createResultObj('confirm');
-    } else if (this.result && this.result.popup) {
-      const data = this.result.popup;
-
-      return new Promise(async resolve => {
-        const [alert] = await Promise.all([this.alertCtrl.create({
-          message: data.popupOptionText,
-          cssClass: 'popup-alert',
-          buttons: [
-            {
-              text: data?.buttonCancel?.label,
-              role: 'cancel',
-              cssClass: 'popup-cancel-button',
-              handler: () => {
-                this.createResultObj('cancel');
-                resolve(true);
-              }
-            },
-            {
-              text: data?.buttonConfirm?.label,
-              cssClass: 'popup-action-button',
-              handler: () => {
-              this.createResultObj('confirm');
-                this.coinsHandler();
-                resolve(true);
-              }
-            }
-          ]
-        })]);
-        return await alert.present();
-      });
-    }
+  canDeactivate(): any {
+    this.coinsHandler();
     return true;
   }
+
+  // canDeactivate(): Promise<boolean> | boolean {
+  //   if (
+  //     // this.routingDestination?.search('cart') > -1 ||
+  //     this.routingDestination?.search('consultation') > -1 ||
+  //     this.routingDestination?.search('follow-up-prescription') > -1
+  //   ) {
+  //     this.createResultObj('confirm');
+  //   } else if (this.result && this.result.popup) {
+  //     const data = this.result.popup;
+  //
+  //     return new Promise(async resolve => {
+  //       const [alert] = await Promise.all([this.alertCtrl.create({
+  //         message: data.popupOptionText,
+  //         cssClass: 'popup-alert',
+  //         buttons: [
+  //           {
+  //             text: data?.buttonCancel?.label,
+  //             role: 'cancel',
+  //             cssClass: 'popup-cancel-button',
+  //             handler: () => {
+  //               this.createResultObj('cancel');
+  //               resolve(true);
+  //             }
+  //           },
+  //           {
+  //             text: data?.buttonConfirm?.label,
+  //             cssClass: 'popup-action-button',
+  //             handler: () => {
+  //             this.createResultObj('confirm');
+  //               this.coinsHandler();
+  //               resolve(true);
+  //             }
+  //           }
+  //         ]
+  //       })]);
+  //       return await alert.present();
+  //     });
+  //   }
+  //   return true;
+  // }
 
   ionViewWillLeave() {
     this.routingDestination = undefined;

@@ -313,14 +313,15 @@
       "UNIT": "Einheit"
     },
     "PARASITES": {
-      "LABEL": "Präparat",
-      "DATE": "Datum der Verabreichung"
+      "LABEL": "Präparat oder Untersuchung",
+      "DATE": "Datum"
     }
   },
   "TICKET_RESULT_PAGE": {
     "TITLE": "Auswertung",
     "RECEIVED_COINS": "Confi-Coins erhalten",
     "DIAG_HEADER": "Diagnose",
+    "BACK_TO": "ZURÜCK ZUR STARTSEITE",
     "NO_RESULT": "Das Ergebnis ist nicht verfügbar.",
     "URGENCY": "Dringlichkeit",
     "THERAPY": "Therapie",
@@ -550,7 +551,7 @@
     "CALL_DESC_SEVENTH": "zum Download:",
     "DIAG_DESC_FIRST": "Bilder vom Symptom senden",
     "DIAG_DESC_SECOND": "Begutachtung durch Tierärzt:innen",
-    "DIAG_DESC_THIRD": "Auswertung mit Diagnose innerhalb von 24h",
+    "DIAG_DESC_THIRD": "Auswertung mit Diagnose innerhalb eines Werktags",
     "DIAG_DESC_FOURTH": "Handlungsempfehlungen",
     "DIAG_DESC_FIFTH": "Präparate bestellen",
     "DIAG_DESCRIPTION_1": "Sende confidu Bilder von einem Symptom und beantworte Fragen. Unsere Tierärzt:innen beurteilen die Fotos und geben eine Ersteinschätzung mit Handlungsempfehlungen.\n",
@@ -636,8 +637,10 @@
     "CART_ADDED": "Zum Warenkorb hinzugefügt"
   },
   "CARE_CARD_PAGE": {
-    "NO_DATA": "Keine Angabe",
+    "NO_DATA": "hinzufügen",
     "HEADER": "CareCard von",
+    "UPDATED": "Aktualisierung erfolgt",
+    "ACTION_REQUIRED": "Handlung erforderlich",
     "BASE_DATA": {
       "TITLE": "Stammdaten",
       "LIST": {
@@ -735,7 +738,8 @@
       "Name und Geburtsdatum des Tieres",
       "Dein Name und deine Adresse",
       "Diagnose",
-      "Name des Medikaments"
+      "Name des Medikaments",
+      "Rechnungsdatum nicht älter als ein Jahr"
     ],
     "CHOOSE": "Wähle zwischen Erkrankung und Parasitenphropylaxe aus und ergänze das gewünschte Präparat.",
     "MANUAL_CHOICE": "Bitte wähle das Medikament aus, welches du anfragen möchtest. Wir versuchen es zu besorgen und benachrichtigen dich",
@@ -1040,7 +1044,7 @@
     "CANCEL": "Abbrechen"
   },
   "ATTACH_DOCUMENT": {
-    "ADD_DOCUMENT": "Dokument hinzufügen (jpg, png, pdf)"
+    "ADD_DOCUMENT": "Dokument hinzufügen"
   },
   "ACCOUNT_PAGE": {
     "NAME": "Name",

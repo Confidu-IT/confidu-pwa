@@ -535,78 +535,78 @@ ion-progress-bar {
   }
 }
 
-@media (min-width: 768px) {
-  .calendar-card {
-    margin-right: 16px;
-  }
-
-  .task-form, .today-tasks {
-    margin-left: 16px;
-  }
-
-  .today-tasks {
-    margin-top: 0;
-    margin-bottom: 24px;
-  }
-}
-
-@media (min-width: 992px) {
-  ::ng-deep tr th small {
-    font-size: 16px !important;
-  }
-  .calendar-header {
-    font-size: 20px;
-    margin-bottom: 16px;
-    margin-top: 6px;
-  }
-
-  .day {
-    font-size: 16px;
-    height: 32px;
-    width: 32px;
-    padding-top: 4px;
-  }
-
-  .ticket-container {
-    height: 64px;
-    margin-bottom: 16px;
-  }
-
-  .ticket-header {
-    h3 {
-      font-size: 20px;
-    }
-    .ticket-time {
-      font-size: 17px;
-    }
-  }
-
-  .ticket-header-image {
-    width: 100px;
-
-    img {
-      height: 68px;
-      width: 68px;
-    }
-  }
-
-  .today-tasks {
-    margin-top: 0;
-    margin-bottom: 24px;
-
-    h2 {
-      font-size: 24px;
-    }
-
-    ion-fab-button {
-      height: 44px;
-      width: 44px;
-    }
-  }
-}
+//@media (min-width: 768px) {
+//  .calendar-card {
+//    margin-right: 16px;
+//  }
+//
+//  .task-form, .today-tasks {
+//    margin-left: 16px;
+//  }
+//
+//  .today-tasks {
+//    margin-top: 0;
+//    margin-bottom: 24px;
+//  }
+//}
+//
+//@media (min-width: 992px) {
+//  ::ng-deep tr th small {
+//    font-size: 16px !important;
+//  }
+//  .calendar-header {
+//    font-size: 20px;
+//    margin-bottom: 16px;
+//    margin-top: 6px;
+//  }
+//
+//  .day {
+//    font-size: 16px;
+//    height: 32px;
+//    width: 32px;
+//    padding-top: 4px;
+//  }
+//
+//  .ticket-container {
+//    height: 64px;
+//    margin-bottom: 16px;
+//  }
+//
+//  .ticket-header {
+//    h3 {
+//      font-size: 20px;
+//    }
+//    .ticket-time {
+//      font-size: 17px;
+//    }
+//  }
+//
+//  .ticket-header-image {
+//    width: 100px;
+//
+//    img {
+//      height: 68px;
+//      width: 68px;
+//    }
+//  }
+//
+//  .today-tasks {
+//    margin-top: 0;
+//    margin-bottom: 24px;
+//
+//    h2 {
+//      font-size: 24px;
+//    }
+//
+//    ion-fab-button {
+//      height: 44px;
+//      width: 44px;
+//    }
+//  }
+//}
 
 .banner-card {
-  background: #ededed;
+  background-color: #DEF6FF;
 
   ion-card-content {
     padding: 16px 12px 14px;

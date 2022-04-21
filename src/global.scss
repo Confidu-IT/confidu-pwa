@@ -277,9 +277,7 @@ button.disease-doc-delete-cancel {
   color: rgb(102,102,102) !important;
 }
 
-body {
-  background: #fafafa;
-}
+
 
 ion-card {
   background: #fff;
@@ -732,9 +730,26 @@ ion-toolbar {
 
 }
 
+body {
+  background: #fafafa;
+}
+
+@media screen and (min-width: 450px) {
+  body {
+    //background-color: #404040;
+    background-image: url("assets/icons/pattern_seamless.svg");
+  }
+
+  ion-footer {
+    background-color: #fafafa;
+  }
+}
+
+
+
 @media screen and (min-width: 768px) {
   body {
-    max-width: 600px;
+    max-width: 500px;
     position: relative;
     margin: auto !important;
     max-height: 1000px;

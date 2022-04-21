@@ -99,3 +99,21 @@ ion-card {
     margin-bottom: 16px;
   }
 }
+
+.back-to-button {
+  display: flex;
+  justify-content: space-around;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ion-color-secondary);
+  margin: 32px 0 16px;
+
+  div {
+    display: flex;
+    align-items: center;
+  }
+
+  img {
+    margin-left: 12px;
+  }
+}

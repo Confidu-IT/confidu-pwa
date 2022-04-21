@@ -24,6 +24,7 @@ export class OrderSummaryPage {
   public radioOnLightIcon = `${this.iconPath}/radio_on_light.svg`;
   public confirmCheckIcon = `${this.iconPath}/confirm_check.svg`;
   public orderDetails: any;
+  public backIcon = `../../../../assets/icons/tickets/result/back_to.svg`;
 
   constructor(
     private shopwareService: ShopwareService,

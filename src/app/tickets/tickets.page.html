@@ -9,7 +9,7 @@
 
   <ion-grid *ngIf="!isLoading">
     <ion-row>
-      <ion-col sizeMd="6">
+      <ion-col>
         <ion-card class="banner-card">
           <ion-card-content>
             <div class="banner-content">
@@ -21,7 +21,7 @@
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col sizeMd="6">
+      <ion-col>
         <ion-card class="calendar-card">
           <ion-card-content>
             <div class="has-header">
@@ -59,7 +59,7 @@
           </ion-card-content>
         </ion-card>
       </ion-col>
-      <ion-col sizeMd="6">
+      <ion-col>
         <ion-card *ngIf="showTaskForm" class="task-form">
           <ion-card-content>
             <h3 class="task-title" *ngIf="action === 'create'">{{ 'TICKETS_PAGE.NEW_TASK' | translate }}</h3>
