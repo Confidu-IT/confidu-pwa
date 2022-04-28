@@ -46,6 +46,7 @@ export class TicketPage {
   public showTaskForm = false;
   public currentDay: string;
   public eventTime: Date;
+  public endTime: Date;
   public isGif = false;
   public confiImg = '../../assets/icons/tickets/confi.svg';
   public noCard: string;
@@ -168,6 +169,7 @@ export class TicketPage {
   }
 
   public postPoneEvent(): void {
+
     this.eventTime = new Date(Date.UTC(
       new Date(this.form.value.date).getFullYear(),
       new Date(this.form.value.date).getMonth(),
@@ -176,18 +178,39 @@ export class TicketPage {
       new Date(this.form.value.time).getMinutes() + this.offset
     ));
 
+    this.endTime = new Date(Date.UTC(
+      new Date(this.form.value.date).getFullYear(),
+      new Date(this.form.value.date).getMonth(),
+      new Date(this.form.value.date).getDate(),
+      21,
+      59,
+      59,
+      999
+    ));
+
     this.ticket.schedule.map(item => {
       if (this.params.dateId === item.id) {
-        item.endTime = this.eventTime;
         item.startTime = this.eventTime;
+        if (this.ticket.type === 'common') {
+          item.endTime = this.eventTime;
+        } else {
+          item.endTime = this.endTime;
+        }
       }
     });
+
 
     try {
       this.firebaseService.updateTicket(this.user.uid, this.petId, this.params.ticketId, this.ticket)
         .then(() => {
           this.form.reset();
-          this.router.navigateByUrl('/');
+          if (this.params.ref === 'home') {
+            this.router.navigateByUrl('/');
+          } else if (this.params.ref === 'scheduler') {
+            this.router.navigateByUrl('tickets');
+          } else {
+            this.router.navigateByUrl('/');
+          }
         });
     } catch (e) {
       this.showTaskForm = false;
@@ -238,7 +261,7 @@ export class TicketPage {
 
     for (const item of this.ticket?.schedule) {
       if (item.id === this.params.dateId) {
-        return parseInt(item.endTime?.seconds) * 1000;
+        return parseInt(item.startTime?.seconds) * 1000;
       }
     }
   }
@@ -340,10 +363,22 @@ export class TicketPage {
             if (this.ticket.ticketCoins && action !== 'deleted') {
               this.commonService.presentToast(this.coins, 'primary')
                 .then(() => {
-                  this.router.navigateByUrl('/');
+                  if (this.params.ref === 'home') {
+                    this.router.navigateByUrl('/');
+                  } else if (this.params.ref === 'scheduler') {
+                    this.router.navigateByUrl('tickets');
+                  } else {
+                    this.router.navigateByUrl('/');
+                  }
                 });
             } else {
-              this.router.navigateByUrl('/');
+              if (this.params.ref === 'home') {
+                this.router.navigateByUrl('/');
+              } else if (this.params.ref === 'scheduler') {
+                this.router.navigateByUrl('tickets');
+              } else {
+                this.router.navigateByUrl('/');
+              }
             }
           });
       } catch (e) {
@@ -356,10 +391,22 @@ export class TicketPage {
             if (this.ticket.ticketCoins && action !== 'deleted') {
               this.commonService.presentToast(this.coins, 'primary')
                 .then(() => {
-                  this.router.navigateByUrl('/');
+                  if (this.params.ref === 'home') {
+                    this.router.navigateByUrl('/');
+                  } else if (this.params.ref === 'scheduler') {
+                    this.router.navigateByUrl('tickets');
+                  } else {
+                    this.router.navigateByUrl('/');
+                  }
                 });
             } else {
-              this.router.navigateByUrl('/');
+              if (this.params.ref === 'home') {
+                this.router.navigateByUrl('/');
+              } else if (this.params.ref === 'scheduler') {
+                this.router.navigateByUrl('tickets');
+              } else {
+                this.router.navigateByUrl('/');
+              }
             }
           });
       } catch (e) {

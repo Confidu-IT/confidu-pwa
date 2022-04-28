@@ -217,6 +217,7 @@ export class HomePage {
   private getTickets(userId: string, petId: string): void {
     this.firebaseService.getTicketsByPet(userId, petId)
       .subscribe((data: any) => {
+        console.log('data', data);
         if (data) {
           const tickets = [];
           this.tickets = data;
@@ -265,7 +266,7 @@ export class HomePage {
   }
 
   public navigateToTicket(ticketId: string, dateId: string): void {
-    this.router.navigateByUrl(`ticket/${ticketId}/${dateId}`);
+    this.router.navigateByUrl(`ticket/${ticketId}/${dateId}/home`);
   }
 
   public orderPrescription(): void {

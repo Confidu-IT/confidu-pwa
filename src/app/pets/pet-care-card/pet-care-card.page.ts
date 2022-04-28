@@ -100,9 +100,9 @@ export class PetCareCardPage {
     ).subscribe(pet => {
       console.log('pet', pet);
       if (pet.pet.species.value === 'dog') {
-        this.baseDataImg = 'https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/carecard%2Ficons%2Fsvg%2Fbasedata_dog.svg?alt=media&token=71a2427e-17b9-4b0c-a0a6-9757d69ebe09';
+        this.baseDataImg = 'https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/carecard%2Ficons%2Fdog.svg?alt=media&token=21569fa8-d311-4e69-a20e-852523c56704';
       } else {
-        this.baseDataImg = 'https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/carecard%2Ficons%2Fsvg%2Fbasedata_cat.svg?alt=media&token=d4e521e7-daba-484d-9c05-3f380f989e79';
+        this.baseDataImg = 'https://firebasestorage.googleapis.com/v0/b/confidu-app.appspot.com/o/carecard%2Ficons%2Fcat.svg?alt=media&token=fdc6f635-a5fb-4a19-80bd-d7a072e39b3f';
       }
 
       this.pet = pet;

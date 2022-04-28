@@ -96,6 +96,10 @@ const routes: Routes = [
     path: 'ticket/:ticketId/:dateId',
     loadChildren: () => import('./tickets/ticket/ticket.module').then( m => m.TicketPageModule)
   },
+  {
+    path: 'ticket/:ticketId/:dateId/:ref',
+    loadChildren: () => import('./tickets/ticket/ticket.module').then( m => m.TicketPageModule)
+  },
   { path: 'tickets/ticket/:id/guide',
     loadChildren: () => import('./tickets/ticket-guide/ticket-guide.module').then( m => m.TicketGuidePageModule)
   },

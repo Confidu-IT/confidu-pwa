@@ -116,14 +116,7 @@
                   </ng-container>
 
                   <ng-container *ngIf="item?.indication?.body?.indicationOther">
-                    <ng-container *ngIf="item?.indication?.body?.indicationOther?.header">
-                      <p *ngFor="let el of item?.indication?.body?.indicationOther?.header" class="usage-text">
-                        {{ el }}
-                      </p>
-                    </ng-container>
-                    <ul *ngIf="item?.indication?.body?.indicationOther?.body" class="indication-list">
-                      <li *ngFor="let el of item?.indication?.body?.indicationOther?.body">{{ el }}</li>
-                    </ul>
+                    <p class="usage-text">{{ item?.indication?.body?.indicationOther }}</p>
                   </ng-container>
                   <p class="usage-instructions" *ngIf="item?.prescription">
                     {{ 'PRODUCT_MODAL_PAGE.INSTRUCTIONS' | translate }}

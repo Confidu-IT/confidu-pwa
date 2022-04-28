@@ -32,7 +32,7 @@ export class TokenInterceptor implements HttpInterceptor{
             setHeaders: { 'firebase-context-token': token }
           });
 
-          console.log('token', token);
+          // console.log('token', token);
 
           // coming from ticket result page
           // if (this.authService.getPreviousUrl() && localStorage.getItem('ticketResult') && localStorage.getItem('activePet')) {

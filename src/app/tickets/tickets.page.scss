@@ -140,7 +140,9 @@ ion-label {
 }
 
 ion-textarea {
-  margin-top: 10px;
+  border: 1px solid #efefef;
+  margin-top: 16px;
+  margin-bottom: 8px;
   color: #000;
   font-size: 18px;
 }
@@ -150,7 +152,9 @@ ion-card {
 }
 
 ion-item {
-  margin-left: -20px;
+  --padding-start: 0;
+  width: unset;
+  //margin-left: -20px;
   --background: #fff;
 }
 

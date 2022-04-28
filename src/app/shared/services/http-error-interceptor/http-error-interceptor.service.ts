@@ -51,6 +51,9 @@ export class HttpErrorInterceptor implements HttpInterceptor {
               case 451:
                 this.authService.logOut();
                 break;
+              case 504:
+                this.router.navigateByUrl(`/`);
+                break;
               case 500:
                 this.router.navigateByUrl(`error`);
                 break;

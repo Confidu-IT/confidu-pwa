@@ -263,7 +263,8 @@ ion-label {
 }
 
 ion-item {
-  margin-left: -20px;
+  --padding-start: 0;
+  width: unset;
   --background: #fff;
 }
 

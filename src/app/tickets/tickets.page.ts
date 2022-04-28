@@ -287,7 +287,7 @@ export class TicketsPage implements OnInit {
   }
 
   public onClickTicket(id: string, date: string): Promise<any> {
-    return this.router.navigateByUrl(`ticket/${id}/${date}`);
+    return this.router.navigateByUrl(`ticket/${id}/${date}/scheduler`);
   }
 
   ionViewWillLeave() {
