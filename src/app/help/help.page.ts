@@ -16,7 +16,8 @@ export class HelpPage {
   public isLoading: boolean;
   public user: any;
   public iconPath = '../../assets/icons/help';
-  public helpIcon = `${this.iconPath}/help.svg`;
+  public helpIcon = `${this.iconPath}/help.svg`
+  public walkThroughIcon = `${this.iconPath}/guide.svg`;
   public data: any;
 
 

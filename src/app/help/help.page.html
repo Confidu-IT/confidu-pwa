@@ -14,18 +14,33 @@
             <img [src]="helpIcon" alt="" width="28">
             <h2 class="headline">{{ 'HELP_PAGE.HEADER' | translate }}</h2>
           </div>
-          <h2 class="support">{{ 'HELP_PAGE.SUPPORT' | translate }}</h2>
-          <p class="text">
-            {{ 'HELP_PAGE.SUBHEADER' | translate }}
-            <a href="mailto:service@confidu.com">service@confidu.com</a>
-          </p>
-          <div class="walkthrough" (click)="goToWalkThrough()">
-            <h2 class="headline">{{ 'HELP_PAGE.WALKTHROUGH' | translate }}</h2>
-            <p>
-              {{ 'HELP_PAGE.WALKTHROUGH_LINK' | translate }}
-            </p>
-          </div>
 
+          <ion-card class="walkthrouh-card">
+            <ion-card-content>
+              <div class="walkthrough" (click)="goToWalkThrough()">
+                <div class="left">
+                  <img [src]="walkThroughIcon" alt="">
+                  <div>
+                    <h2 class="headline">{{ 'HELP_PAGE.EXPLANATION.HEADER' | translate }}</h2>
+                    <p>
+                      {{ 'HELP_PAGE.EXPLANATION.SUBHEADER' | translate }}
+                    </p>
+                  </div>
+                </div>
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+              </div>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card>
+            <ion-card-content>
+              <h2 class="support">{{ 'HELP_PAGE.SUPPORT' | translate }}</h2>
+              <p class="text">
+                {{ 'HELP_PAGE.SUBHEADER' | translate }}
+                <a href="mailto:service@confidu.com">service@confidu.com</a>
+              </p>
+            </ion-card-content>
+          </ion-card>
         </div>
 
         <h2 class="faq">{{ 'HELP_PAGE.FAQ' | translate }}</h2>

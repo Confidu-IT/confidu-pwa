@@ -1358,7 +1358,11 @@
     "BUTTON": "Senden",
     "FAQ": "Häufig gestellte Fragen",
     "WALKTHROUGH": "WALKTHROUGH",
-    "WALKTHROUGH_LINK": "Zum Walkthrough"
+    "WALKTHROUGH_LINK": "Zum Walkthrough",
+    "EXPLANATION": {
+      "HEADER": "Die Funktionen kurz erklärt",
+      "SUBHEADER": "Walkthrough anschauen"
+    }
   },
   "ORDER_DETAILS_PAGE": {
     "TITLE": "Bestelldetails",
