@@ -603,7 +603,13 @@
                 </mat-form-field>
               </div>
 
-
+              <ion-item *ngIf="question?.values.questionType.toLowerCase() === 'zip'" class="zip">
+                <ion-label position="floating">{{ 'TICKET_QUESTION_PAGE.ZIP_LABEL' | translate }}</ion-label>
+                <ion-input
+                  (keyup)="validateZip($event)"
+                  [(ngModel)]="selectedAnswer">
+                </ion-input>
+              </ion-item>
 
               <ion-item *ngIf="question?.values.questionType.toLowerCase() === 't'" class="toy">
                 <ion-label position="floating">{{ 'TICKET_QUESTION_PAGE.TOY_LABEL' | translate }}</ion-label>

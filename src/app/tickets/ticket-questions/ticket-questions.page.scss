@@ -620,10 +620,11 @@ mat-label {
   margin-right: 16px;
 }
 
-.toy {
+.toy, .zip {
   margin-right: 16px;
-  padding-left: 12px;
+  margin-left: 16px;
   width: unset;
+  --padding-start: 0;
 }
 
 .diag-text, .max-characters {

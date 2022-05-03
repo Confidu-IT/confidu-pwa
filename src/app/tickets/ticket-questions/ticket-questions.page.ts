@@ -257,7 +257,7 @@ export class TicketQuestionsPage {
           this.uploadedFiles = [];
           this.reducedQuestions = []; // for progressbar
           this.answers = {};
-          this.indexNr = 0;
+          this.indexNr = 13;
           this.beats = 0;
           this.questionProgressValue = 0;
           this.vaccDates = [];
@@ -324,6 +324,12 @@ export class TicketQuestionsPage {
           this.isLoading = false;
         }
       });
+  }
+
+  public validateZip(event): any {
+    if (isNaN(Number(event.key))) {
+      this.selectedAnswer = this.selectedAnswer.slice(0, -1);
+    }
   }
 
   public hasGuide(): boolean {
@@ -756,6 +762,10 @@ export class TicketQuestionsPage {
     } else if (this.question.values.questionType.toLowerCase() === 'ch2') {
       val = this.question.values.answerOption;
       val = val[0];
+    } else if (this.question.values.questionType.toLowerCase() === 'zip') {
+      val = this.question.values.answerOption;
+      val = val[0];
+      val.answerValue = this.selectedAnswer;
     }
 
     // no file upload
@@ -1050,6 +1060,8 @@ export class TicketQuestionsPage {
       this.question?.values?.questionType === 'Z_OPT'
     ) {
       return false;
+    } else if (this.question?.values?.questionType.toLowerCase() === 'zip') {
+      return this.selectedAnswer?.length !== 5;
     } else if (this.question?.values?.questionType.toLowerCase() === 'z') {
       return !this.validWeight(this.selectedNumber);
     } else if (this.question?.values?.questionType.toLowerCase() === 'ff' && this.showVetForm) {
