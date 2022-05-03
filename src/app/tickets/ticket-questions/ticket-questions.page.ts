@@ -257,7 +257,7 @@ export class TicketQuestionsPage {
           this.uploadedFiles = [];
           this.reducedQuestions = []; // for progressbar
           this.answers = {};
-          this.indexNr = 13;
+          this.indexNr = 0;
           this.beats = 0;
           this.questionProgressValue = 0;
           this.vaccDates = [];
