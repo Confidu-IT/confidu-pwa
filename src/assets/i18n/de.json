@@ -1411,5 +1411,20 @@
       "FIRST": "Wie können wir dir und deinem",
       "SECOND": "Vierbeiner helfen?"
     }
+  },
+  "DELIVERY_PAGE": {
+    "RECIPE_HEADER": "Lieferoptionen für rezeptpflichtige Produkte",
+    "FREE_HEADER": "Lieferoptionen für frei verkäufliche Produkte",
+    "CHOOSE_PHARMACY": "Bitte wähle aus, in welcher Apotheke du deine Auswahl kaufen möchtest. Wir senden dein Rezept direkt dorthin.",
+    "PHARMACY_LABEL": "Apotheke wählen",
+    "ZIP": "Postleitzahl",
+    "STANDARD": "Standardversand",
+    "COURIER": "Kurierdienst",
+    "PHARMACY": "Abholung in der Apotheke vor Ort",
+    "INVOICE": "Rechnung",
+    "DELIVERY": "Lieferung",
+    "CHANGE": "ändern",
+    "TITLE":"Lieferoptionen",
+    "PROCEED": "Weiter"
   }
 }

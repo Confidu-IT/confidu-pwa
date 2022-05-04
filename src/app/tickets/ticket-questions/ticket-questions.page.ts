@@ -326,11 +326,11 @@ export class TicketQuestionsPage {
       });
   }
 
-  public validateZip(event): any {
-    if (isNaN(Number(event.key))) {
-      this.selectedAnswer = this.selectedAnswer.slice(0, -1);
-    }
-  }
+  // public validateZip(event): any {
+  //   if (isNaN(Number(event.key))) {
+  //     this.selectedAnswer = this.selectedAnswer.slice(0, -1);
+  //   }
+  // }
 
   public hasGuide(): boolean {
     return this.guideQuestions.includes(this.params.code);

@@ -1,0 +1,77 @@
+<ion-header>
+  <app-toolbar [backButton]="true" title="{{ 'DELIVERY_PAGE.TITLE' | translate }}"></app-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-text-center">
+    <ion-spinner *ngIf="isLoading" color="primary"></ion-spinner>
+  </div>
+
+  <ion-grid *ngIf="!isLoading">
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-content>
+            <h2>{{ 'DELIVERY_PAGE.RECIPE_HEADER' | translate }}</h2>
+
+            <ng-container *ngIf="true">
+              <p class="pharmacy-text">
+                {{ 'DELIVERY_PAGE.CHOOSE_PHARMACY' | translate }}
+              </p>
+            </ng-container>
+
+            <h2>{{ 'DELIVERY_PAGE.FREE_HEADER' | translate }}</h2>
+
+            <div class="addresses">
+              <div class="shipment" routerLink="/shop/address/billing">
+                <h2 class="headline">{{ 'DELIVERY_PAGE.INVOICE' | translate }}</h2>
+                <address class="address">
+            <span class="name">
+              {{ billingAddress?.firstName }} {{ billingAddress?.lastName }}
+            </span><br>
+                  <span class="street">{{ billingAddress?.street }}</span><br>
+                  <span class="city">
+              {{ billingAddress?.zipcode }}
+                    {{ billingAddress?.city }}
+            </span><br>
+                  <span class="country">{{ billingAddress?.country?.name }}</span><br>
+                  <span class="link">{{ 'DELIVERY_PAGE.CHANGE' | translate }}</span>
+                </address>
+              </div>
+
+              <div class="shipment" routerLink="/shop/address/shipping">
+                <h2 class="headline">{{ 'DELIVERY_PAGE.DELIVERY' | translate }}</h2>
+                <address class="address">
+            <span class="name">
+              {{ shippingAddress?.firstName }} {{ shippingAddress?.lastName }}
+            </span><br>
+                  <span class="street">{{ shippingAddress?.street }}</span><br>
+                  <span class="city">
+              {{ shippingAddress?.zipcode }}
+                    {{ shippingAddress?.city }}
+            </span><br>
+                  <span class="country">{{ shippingAddress?.country?.name }}</span><br>
+                  <span class="link">{{ 'DELIVERY_PAGE.CHANGE' | translate }}</span>
+                </address>
+              </div>
+            </div>
+
+            <ion-button
+              class="order-button"
+              expand="full"
+              color="secondary"
+              routerDirection="forward"
+              >
+              {{ 'DELIVERY_PAGE.PROCEED' | translate }}
+            </ion-button>
+
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer *ngIf="!isLoading">
+  <app-toolbar-footer [user]="user"></app-toolbar-footer>
+</ion-footer>

@@ -242,7 +242,12 @@ const routes: Routes = [
     path: 'initial',
     loadChildren: () => import('./initial/initial.module').then( m => m.InitialPageModule)
   },
+  {
+    path: 'shop/delivery',
+    loadChildren: () => import('./shop/delivery/delivery.module').then( m => m.DeliveryPageModule)
+  },
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
+
 ];
 
 @NgModule({
