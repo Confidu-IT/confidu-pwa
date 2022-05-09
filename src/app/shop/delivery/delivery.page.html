@@ -12,15 +12,63 @@
       <ion-col>
         <ion-card>
           <ion-card-content>
-            <h2>{{ 'DELIVERY_PAGE.RECIPE_HEADER' | translate }}</h2>
+            <ng-container *ngIf="prescriptionDeliveries">
+              <h2>{{ 'DELIVERY_PAGE.RECIPE_HEADER' | translate }}</h2>
 
-            <ng-container *ngIf="true">
-              <p class="pharmacy-text">
-                {{ 'DELIVERY_PAGE.CHOOSE_PHARMACY' | translate }}
-              </p>
+              <mat-radio-group class="delivery-button-group" [ngModel]="selectedPrescriptionDelivery"
+                               (change)="onSwitchDelivery($event)"
+              >
+                <mat-radio-button
+                  *ngFor="let item of prescriptionDeliveries" [value]="item.key">
+                  <div class="content">
+                    <div class="label"> {{ item.label }}</div>
+                    <div class="price">{{ item.totalPrice.toFixed(2) }} €</div>
+                  </div>
+                </mat-radio-button>
+              </mat-radio-group>
+
+              <ng-container *ngIf="selectedPrescriptionDelivery === 'prescription'">
+                <p class="pharmacy-text">
+                  {{ 'DELIVERY_PAGE.CHOOSE_PHARMACY' | translate }}
+                </p>
+                <div class="pharmacy-form">
+                  <mat-form-field class="pharmacy-zip-code">
+                    <mat-label>{{ 'DELIVERY_PAGE.ZIP' | translate }}</mat-label>
+                    <input type="tel" matInput [(ngModel)]="zipCode" (keyup)="onChooseZip()">
+                  </mat-form-field>
+
+                  <mat-form-field>
+                    <mat-label>{{ 'DELIVERY_PAGE.PHARMACY_LABEL' | translate }}</mat-label>
+                    <mat-select (selectionChange)="onPickPharmacy($event)" panelClass="pharmacies-panel">
+                      <mat-option *ngFor="let item of pharmacyList" [value]="item" >
+                        <h4>{{ item.pharmacyName }}</h4>
+                        <p>{{ item.street }} </p>
+                        <p>{{ item.zipcode }} {{ item.city }} </p>
+                        <p>{{ 'DELIVERY_PAGE.PHONE' | translate }} {{ item.phoneNumber }}</p>
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <p *ngIf="pharmacyError" class="pharmacy-error">{{ 'DELIVERY_PAGE.PHARMACY_ERROR' | translate }}</p>
+                </div>
+              </ng-container>
             </ng-container>
 
-            <h2>{{ 'DELIVERY_PAGE.FREE_HEADER' | translate }}</h2>
+            <ng-container *ngIf="standardDeliveries">
+              <div class="standard-form"></div>
+              <h2>{{ 'DELIVERY_PAGE.FREE_HEADER' | translate }}</h2>
+
+              <mat-radio-group class="delivery-button-group" [ngModel]="selectedStandardDelivery">
+                <mat-radio-button
+                  *ngFor="let item of standardDeliveries" [value]="item.key" [disabled]="selectedPrescriptionDelivery
+                   === 'courierService'">
+                  <div class="content">
+                    <div class="label"> {{ item.label }}</div>
+                    <div class="price">{{ item.totalPrice.toFixed(2) }} €</div>
+                  </div>
+                </mat-radio-button>
+              </mat-radio-group>
+            </ng-container>
+
 
             <div class="addresses">
               <div class="shipment" routerLink="/shop/address/billing">
@@ -34,7 +82,9 @@
               {{ billingAddress?.zipcode }}
                     {{ billingAddress?.city }}
             </span><br>
+
                   <span class="country">{{ billingAddress?.country?.name }}</span><br>
+
                   <span class="link">{{ 'DELIVERY_PAGE.CHANGE' | translate }}</span>
                 </address>
               </div>
@@ -51,6 +101,9 @@
                     {{ shippingAddress?.city }}
             </span><br>
                   <span class="country">{{ shippingAddress?.country?.name }}</span><br>
+                  <span class="city">
+                    {{ 'DELIVERY_PAGE.PHONE' | translate }} {{ customer?.customFields?.custom_customers_tel }}
+                  </span>
                   <span class="link">{{ 'DELIVERY_PAGE.CHANGE' | translate }}</span>
                 </address>
               </div>
@@ -61,6 +114,8 @@
               expand="full"
               color="secondary"
               routerDirection="forward"
+              [disabled]="!validForm"
+              (click)="onProceed()"
               >
               {{ 'DELIVERY_PAGE.PROCEED' | translate }}
             </ion-button>

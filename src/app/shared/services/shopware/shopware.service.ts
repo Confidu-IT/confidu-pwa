@@ -279,6 +279,20 @@ export class ShopwareService {
       .then(({ data }) => data);
   }
 
+  getDeliveryMethods(): Promise<any> {
+    const headers = this.headers;
+    const url = `${this.uri}/order/deliveries`;
+    return fetch(url, { method: 'GET', headers })
+      .then((resp) => {
+        if (!resp.ok) {
+          throw resp.json();
+        }
+        return resp;
+      })
+      .then((resp) => resp.json())
+      .catch(e => e);
+  }
+
   getProductById(productId: string): Promise<any> {
     const headers = this.headers;
     return fetch(`${this.uri}/product/${productId}`, { headers })

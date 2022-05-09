@@ -1417,7 +1417,8 @@
     "FREE_HEADER": "Lieferoptionen für frei verkäufliche Produkte",
     "CHOOSE_PHARMACY": "Bitte wähle aus, in welcher Apotheke du deine Auswahl kaufen möchtest. Wir senden dein Rezept direkt dorthin.",
     "PHARMACY_LABEL": "Apotheke wählen",
-    "ZIP": "Postleitzahl",
+    "PHARMACY_ERROR": "Zu dieser Postleitzahl haben wir leider keine Apotheke gefunden.",
+    "ZIP": "Postleitzahl eingeben",
     "STANDARD": "Standardversand",
     "COURIER": "Kurierdienst",
     "PHARMACY": "Abholung in der Apotheke vor Ort",
@@ -1425,6 +1426,7 @@
     "DELIVERY": "Lieferung",
     "CHANGE": "ändern",
     "TITLE":"Lieferoptionen",
+    "PHONE": "Tel.",
     "PROCEED": "Weiter"
   }
 }

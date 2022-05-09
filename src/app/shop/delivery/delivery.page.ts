@@ -6,6 +6,7 @@ import {CommonService} from '../../shared/services/common/common.service';
 import {AuthService} from '../../user/auth.service';
 import {LoadingController} from '@ionic/angular';
 import {TranslateService} from '@ngx-translate/core';
+import {FirebaseService} from '../../shared/services/firebase/firebase.service';
 
 @Component({
   selector: 'app-delivery',
@@ -17,17 +18,33 @@ export class DeliveryPage {
   public user: any;
   public shippingAddress: any;
   public billingAddress: any;
-  public vetZipCode: string;
-  public vetError: boolean;
+  public zipCode: string;
+  public pharmacyError: boolean;
+  public pharmacyList: any;
+  public customer: any;
+  public prescriptionDeliveries: any;
+  public standardDeliveries: any;
+  public selectedStandardDelivery: any;
+  public selectedPrescriptionDelivery: any;
+
+  public get validForm(): boolean {
+    if (this.selectedPrescriptionDelivery === 'prescription') {
+      return this.selectedPharmacy;
+    }
+    return true;
+  }
 
   private subscription: Subscription;
   private language: string;
-  private customer: any;
+  private selectedPharmacy: any;
+
+  private hasPayment: any;
 
   constructor(
     private shopwareService: ShopwareService,
     private router: Router,
     private commonService: CommonService,
+    private firebaseService: FirebaseService,
     private userAuth: AuthService,
     private loadingCtrl: LoadingController,
     private translateService: TranslateService,
@@ -42,39 +59,94 @@ export class DeliveryPage {
      .subscribe(user => {
        this.user = user;
        this.shopwareService.headers['firebase-context-token'] = this.user.za;
-
-       this.shopwareService.getProfile()
-         .then(profile => {
-           if (profile.errors) {
-             this.commonService.handleResponseErrors(profile.errors[0].status);
-           } else {
-             this.customer = profile;
-             this.billingAddress = this.customer.defaultBillingAddress;
-             this.shippingAddress = this.customer.defaultShippingAddress;
-             this.isLoading = false;
-           }
-         });
+       this.getDeliveries();
      });
  }
 
-  public onPickZip(): void {
-    console.log('this.vetZipCode', this.vetZipCode);
-    this.vetError = false;
-    if (String(this.vetZipCode).length > 4 || String(this.vetZipCode).length < 6) {
-      console.log('load vets');
-      // this.firebaseService.getVetsByZipCode(this.language, String(this.vetZipCode))
-      //   .subscribe(vets => {
-      //     console.log('vets', vets);
-      //     this.vetsList = vets;
-      //     if (this.vetsList.length < 1) {
-      //       this.vetError = true;
-      //     }
-      //   });
+ public onSwitchDelivery(event): void {
+   this.selectedPrescriptionDelivery = event.value;
+   this.zipCode = null;
+   this.selectedPharmacy = null;
+
+   if (this.selectedPrescriptionDelivery === 'prescription') {
+     this.selectedStandardDelivery = 'standardDelivery';
+   } else {
+     this.selectedStandardDelivery = null;
+   }
+
+ }
+
+ public getDeliveries() {
+    this.shopwareService.getDeliveryMethods().then(resp => {
+      console.log('resp', resp);
+
+      if (resp.prescriptionDeliveries) {
+        this.prescriptionDeliveries = resp.prescriptionDeliveries;
+        let selectedPrescriptionDelivery = this.prescriptionDeliveries.filter(item => item.checked === true);
+        if (selectedPrescriptionDelivery.length > 0) {
+          this.selectedPrescriptionDelivery = selectedPrescriptionDelivery[0].key
+        }
+      }
+
+      if (resp.standardDeliveries) {
+        this.standardDeliveries = resp.standardDeliveries;
+        let selectedStandardDelivery = this.standardDeliveries.filter(item => item.checked === true);
+        if (selectedStandardDelivery.length > 0) {
+          this.selectedStandardDelivery = selectedStandardDelivery[0].key
+        }
+      }
+
+      this.customer = resp.customer;
+      this.hasPayment = resp.customer.defaultPaymentMethodId;
+      this.billingAddress = this.customer.defaultBillingAddress;
+      this.shippingAddress = this.customer.defaultShippingAddress;
+      this.isLoading = false;
+    })
+ }
+
+  public onPickPharmacy(event): void {
+    console.log('event', event);
+    this.selectedPharmacy = event.value;
+  }
+
+  public onChooseZip(): void {
+    this.pharmacyError = false;
+
+    if (this.zipCode.length > 4 || this.zipCode.length < 6) {
+      this.firebaseService.getPharmaciesByZipCode(this.language, String(this.zipCode))
+        .subscribe(pharmacies => {
+          console.log('pharmacies', pharmacies);
+          this.pharmacyList = pharmacies;
+          if (this.pharmacyList.length < 1) {
+            this.pharmacyError = true;
+          }
+        });
     }
+  }
+
+  public validate() {
+
+  }
+
+  public onProceed(): void {
+    const url = this.hasPayment ? 'shop/order' : 'shop/payment';
+
+    const result = {
+      prescriptionDeliverys: this.selectedPrescriptionDelivery || null,
+      standardDeliverys: this.selectedStandardDelivery || null,
+      pharmacy: this.selectedPharmacy || null
+    };
+
+
+    console.log('result:', result);
+    // this.router.navigateByUrl(url);
   }
 
  ionViewWillLeave() {
    if (this.subscription) {
+     this.zipCode = null;
+     this.selectedPharmacy = null;
+     this.selectedPrescriptionDelivery = null;
      this.subscription.unsubscribe();
    }
  }

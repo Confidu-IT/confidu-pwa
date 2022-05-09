@@ -3,7 +3,7 @@ ion-card {
 }
 
 ion-card-content {
-  padding: 20px 16px;
+  padding: 28px 16px 24px;
 }
 
 h2 {
@@ -16,7 +16,7 @@ h2 {
 .pharmacy-text {
   color: #666;
   font-size: 11px;
-  margin: 16px 0 0;
+  margin: 16px 0 6px;
 }
 
 .order, .shipment, .payment, .transaction {
@@ -30,6 +30,7 @@ h2 {
 .addresses {
   display: flex;
   justify-content: space-between;
+  margin-top: 32px;
 
   h2 {
     margin: 0 0 8px;
@@ -51,4 +52,53 @@ h2 {
 
 .order-button {
   margin-top: 24px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-label {
+  color: #aaa;
+  font-size: 13px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+
+.pharmacy-error {
+  color: var(--ion-color-danger);
+  font-size: 11px;
+  margin: -8px 0 16px;
+}
+
+.pharmacy-list {
+  &.mat-select-panel {
+    background-color: red;
+  }
+}
+
+mat-radio-group {
+  margin-top: 10px;
+}
+
+mat-radio-button {
+ display: block;
+  margin-bottom: 12px;
+  font-size: 14px;
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .price {
+    margin-left: 32px;
+  }
+}
+
+.standard-form {
+  margin-top: 32px;
 }

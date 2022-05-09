@@ -34,6 +34,7 @@ export class FirebaseService {
   private faqCollection: AngularFirestoreCollection;
   private introCollection: AngularFirestoreCollection;
   private productsCollection: AngularFirestoreCollection;
+  private pharmaciesCollection: AngularFirestoreCollection;
 
   constructor(private afs: AngularFirestore) {
   }
@@ -123,6 +124,17 @@ export class FirebaseService {
   public getVetsByZipCode(language: string, zip: string): Observable<any[]> {
     this.vetsCollection = this.afs.collection(`vet-list/${language}/${zip}`);
     return this.vetsCollection.snapshotChanges().pipe(
+      map(actions => actions.map(a => {
+        const data = a.payload.doc.data();
+        data.id = a.payload.doc.id;
+        return { ...data };
+      }))
+    );
+  }
+
+  public getPharmaciesByZipCode(language: string, zip: string): Observable<any[]> {
+    this.pharmaciesCollection = this.afs.collection(`pharmacies/de/deu/data/${zip}`);
+    return this.pharmaciesCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
         const data = a.payload.doc.data();
         data.id = a.payload.doc.id;
