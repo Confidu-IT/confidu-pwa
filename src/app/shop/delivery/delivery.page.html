@@ -10,9 +10,21 @@
   <ion-grid *ngIf="!isLoading">
     <ion-row>
       <ion-col>
+
+        <ion-card class="warning-card" *ngIf="warningMessage">
+          <ion-card-content>
+            <div class="image">
+              <img [src]="warningImage" alt="">
+            </div>
+            <p>
+              {{ warningMessage }}
+            </p>
+          </ion-card-content>
+        </ion-card>
+
         <ion-card>
           <ion-card-content>
-            <ng-container *ngIf="prescriptionDeliveries">
+            <div class="prescription-form" *ngIf="prescriptionDeliveries">
               <h2>{{ 'DELIVERY_PAGE.RECIPE_HEADER' | translate }}</h2>
 
               <mat-radio-group class="delivery-button-group" [ngModel]="selectedPrescriptionDelivery"
@@ -51,10 +63,9 @@
                   <p *ngIf="pharmacyError" class="pharmacy-error">{{ 'DELIVERY_PAGE.PHARMACY_ERROR' | translate }}</p>
                 </div>
               </ng-container>
-            </ng-container>
+            </div>
 
-            <ng-container *ngIf="standardDeliveries">
-              <div class="standard-form"></div>
+            <div class="standard-form" *ngIf="standardDeliveries">
               <h2>{{ 'DELIVERY_PAGE.FREE_HEADER' | translate }}</h2>
 
               <mat-radio-group class="delivery-button-group" [ngModel]="selectedStandardDelivery">
@@ -67,7 +78,7 @@
                   </div>
                 </mat-radio-button>
               </mat-radio-group>
-            </ng-container>
+            </div>
 
 
             <div class="addresses">

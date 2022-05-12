@@ -282,7 +282,7 @@ export class ShopwareService {
   getDeliveryMethods(): Promise<any> {
     const headers = this.headers;
     const url = `${this.uri}/order/deliveries`;
-    return fetch(url, { method: 'GET', headers })
+    return fetch(url, { method: 'POST', headers })
       .then((resp) => {
         if (!resp.ok) {
           throw resp.json();
@@ -290,6 +290,21 @@ export class ShopwareService {
         return resp;
       })
       .then((resp) => resp.json())
+      .catch(e => e);
+  }
+
+  setDeliveryMethod(data: any): Promise<any> {
+    const headers = this.headers;
+    const body = JSON.stringify({ data });
+    const url = `${this.uri}/order/deliveries/post`;
+    return fetch(url, { method: 'POST', headers, body })
+      .then((resp) => {
+        if (!resp.ok) {
+          throw resp.json();
+        }
+        return resp;
+      })
+      .then((resp) => resp.text())
       .catch(e => e);
   }
 

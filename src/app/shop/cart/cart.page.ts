@@ -125,7 +125,7 @@ export class CartPage {
             route = '/shop/address/billing';
           }
           if (!route) {
-            route = '/shop/order';
+            route = '/shop/delivery';
           }
           this.router.navigateByUrl(route);
         }

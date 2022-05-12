@@ -12,35 +12,60 @@
         <ion-card *ngIf="form">
           <ion-card-content>
             <h2>{{ title }}</h2>
-            <form [formGroup]="form">
 
+            <ng-container *ngIf="!isPhoneForm()">
+              <form [formGroup]="form">
+                <mat-form-field>
+                  <mat-label>{{ 'BILLING_ADDRESS_PAGE.FIRST_NAME' | translate }} *</mat-label>
+                  <input matInput formControlName="firstName">
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label>{{ 'BILLING_ADDRESS_PAGE.LAST_NAME' | translate }} *</mat-label>
+                  <input matInput formControlName="lastName">
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label>{{ 'BILLING_ADDRESS_PAGE.ADDRESS' | translate }} *</mat-label>
+                  <input matInput formControlName="street">
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label>{{ 'BILLING_ADDRESS_PAGE.ZIPCODE' | translate }} *</mat-label>
+                  <input matInput formControlName="zipcode">
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label>{{ 'BILLING_ADDRESS_PAGE.CITY' | translate }} *</mat-label>
+                  <input matInput formControlName="city">
+                </mat-form-field>
+              </form>
+            </ng-container>
 
-              <mat-form-field>
-                <mat-label>{{ 'BILLING_ADDRESS_PAGE.FIRST_NAME' | translate }}</mat-label>
-                <input matInput formControlName="firstName">
-              </mat-form-field>
-
-              <mat-form-field>
-                <mat-label>{{ 'BILLING_ADDRESS_PAGE.LAST_NAME' | translate }}</mat-label>
-                <input matInput formControlName="lastName">
-              </mat-form-field>
-
-              <mat-form-field>
-                <mat-label>{{ 'BILLING_ADDRESS_PAGE.ADDRESS' | translate }}</mat-label>
-                <input matInput formControlName="street">
-              </mat-form-field>
-
-              <mat-form-field>
-                <mat-label>{{ 'BILLING_ADDRESS_PAGE.ZIPCODE' | translate }}</mat-label>
-                <input matInput formControlName="zipcode">
-              </mat-form-field>
-
-              <mat-form-field>
-                <mat-label>{{ 'BILLING_ADDRESS_PAGE.CITY' | translate }}</mat-label>
-                <input matInput formControlName="city">
-              </mat-form-field>
-
-            </form>
+            <ng-container *ngIf="isPhoneForm()">
+              <form [formGroup]="phoneForm">
+                <mat-form-field>
+                  <mat-label>{{ 'BILLING_ADDRESS_PAGE.FIRST_NAME' | translate }} *</mat-label>
+                  <input matInput formControlName="firstName">
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label>{{ 'BILLING_ADDRESS_PAGE.LAST_NAME' | translate }} *</mat-label>
+                  <input matInput formControlName="lastName">
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label>{{ 'BILLING_ADDRESS_PAGE.ADDRESS' | translate }} *</mat-label>
+                  <input matInput formControlName="street">
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label>{{ 'BILLING_ADDRESS_PAGE.ZIPCODE' | translate }} *</mat-label>
+                  <input matInput formControlName="zipcode">
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label>{{ 'BILLING_ADDRESS_PAGE.CITY' | translate }} *</mat-label>
+                  <input matInput formControlName="city">
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label>{{ 'BILLING_ADDRESS_PAGE.PHONE' | translate }} *</mat-label>
+                  <input type="tel" matInput formControlName="phone">
+                </mat-form-field>
+              </form>
+            </ng-container>
 
             <div class="checkbox checkbox-global standard-checkbox">
               <mat-checkbox [(ngModel)]="equalAddresses" [checked]="equalAddresses">
@@ -48,14 +73,28 @@
               </mat-checkbox>
             </div>
 
-            <ion-button
-              expand="full"
-              color="secondary"
-              routerDirection="forward"
-              (click)="onProgressForm()"
-              [disabled]="form.invalid">
-              {{ 'BILLING_ADDRESS_PAGE.SUBMIT' | translate }}
-            </ion-button>
+            <ng-container *ngIf="isPhoneForm()">
+              <ion-button
+                expand="full"
+                color="secondary"
+                routerDirection="forward"
+                (click)="onProgressForm()"
+                [disabled]="phoneForm.invalid">
+                {{ 'BILLING_ADDRESS_PAGE.SUBMIT' | translate }}
+              </ion-button>
+            </ng-container>
+
+            <ng-container *ngIf="!isPhoneForm()">
+              <ion-button
+                expand="full"
+                color="secondary"
+                routerDirection="forward"
+                (click)="onProgressForm()"
+                [disabled]="form.invalid">
+                {{ 'BILLING_ADDRESS_PAGE.SUBMIT' | translate }}
+              </ion-button>
+            </ng-container>
+
           </ion-card-content>
         </ion-card>
       </ion-col>

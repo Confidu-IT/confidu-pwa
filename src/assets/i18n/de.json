@@ -616,7 +616,7 @@
     "TOTAL": "Gesamtbetrag",
     "TAX": "(inkl. MwSt.)",
     "SHIPMENT": "Versandkosten",
-    "CHECKOUT": "Zur Kasse",
+    "CHECKOUT": "Weiter",
     "OK_BUTTON": "Übernehmen",
     "CANCEL_BUTTON": "Abbrechen"
   },
@@ -868,8 +868,9 @@
     "ZIPCODE": "Postleitzahl",
     "CITY": "Stadt",
     "COUNTRY": "Land",
+    "PHONE": "Tel.",
     "EQUAL_ADDRESSES": "Rechnungsadresse gleich Lieferadresse",
-    "SUBMIT": "Fortsetzen"
+    "SUBMIT": "Weiter"
   },
   "PAYMENT_PAGE": {
     "SUBMIT": "Fortsetzen",

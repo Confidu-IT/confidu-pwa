@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { ShopwareService } from '../../shared/services/shopware/shopware.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -12,11 +12,13 @@ import { AuthService } from '../../user/auth.service';
   templateUrl: './billing-address.page.html',
   styleUrls: ['./billing-address.page.scss'],
 })
-export class BillingAddressPage {
+export class BillingAddressPage implements OnInit {
   public form: FormGroup;
+  public phoneForm: FormGroup;
   public title: string;
   public countries: any[];
   public equalAddresses = true;
+
 
   private readonly routeSub: Subscription;
   private  subscription: Subscription;
@@ -55,6 +57,17 @@ export class BillingAddressPage {
           this.title = this.shippingTitle;
         }
       });
+
+
+    this.subscription = this.userAuth.user$
+      .subscribe(user => {
+        this.user = user;
+        this.getProfile();
+      });
+
+  }
+
+  ngOnInit(): void {
     this.form = new FormGroup({
       firstName: new FormControl(null, {
         updateOn: 'change',
@@ -81,28 +94,85 @@ export class BillingAddressPage {
       })
     });
 
-    this.subscription = this.userAuth.user$
-      .subscribe(user => {
-        this.user = user;
-        this.getProfile();
-      });
+    this.phoneForm = new FormGroup({
+      firstName: new FormControl(null, {
+        updateOn: 'change',
+        validators: [Validators.required]
+      }),
+      lastName: new FormControl(null, {
+        updateOn: 'change',
+        validators: [Validators.required]
+      }),
+      zipcode: new FormControl(null, {
+        updateOn: 'change',
+        validators: [Validators.required]
+      }),
+      city: new FormControl(null, {
+        updateOn: 'change',
+        validators: [Validators.required]
+      }),
+      street: new FormControl(null, {
+        updateOn: 'change',
+        validators: [Validators.required]
+      }),
+      phone: new FormControl(null, {
+        updateOn: 'change',
+        validators: [Validators.required]
+      }),
+      country: new FormControl(null, {
+        updateOn: 'change'
+      })
+    });
+  }
 
+
+
+
+
+  public isPhoneForm() {
+    if (this.equalAddresses) {
+      return true;
+    } else {
+      if (this.type === 'shipping') {
+        return true;
+      } else {
+        return false;
+      }
+    }
   }
 
   public onProgressForm(): void {
-    const address = {
-      countryId: this.profile.country?.id,
-      firstName: this.form.value.firstName,
-      lastName: this.form.value.lastName,
-      zipcode: this.form.value.zipcode,
-      city: this.form.value.city,
-      street: this.form.value.street
-    };
+    let address: any;
+
+    if (this.isPhoneForm()) {
+      address = {
+        countryId: this.profile.country?.id,
+        firstName: this.phoneForm.value.firstName,
+        lastName: this.phoneForm.value.lastName,
+        zipcode: this.phoneForm.value.zipcode,
+        city: this.phoneForm.value.city,
+        street: this.phoneForm.value.street,
+        customFields: {
+          custom_customers_tel: this.phoneForm.value.phone
+        }
+      };
+    }
+
+    if (!this.isPhoneForm()) {
+      address = {
+        countryId: this.profile.country?.id,
+        firstName: this.form.value.firstName,
+        lastName: this.form.value.lastName,
+        zipcode: this.form.value.zipcode,
+        city: this.form.value.city,
+        street: this.form.value.street,
+      };
+    }
 
     if (this.equalAddresses) {
       this.updateAddresses(address)
         .then(() => {
-          this.router.navigateByUrl('/shop/order');
+          this.router.navigateByUrl('/shop/delivery');
         });
     } else {
       this.updateAddress(address)
@@ -112,7 +182,7 @@ export class BillingAddressPage {
             .then((resp) => {
               if (this.profile.defaultShippingAddress && this.profile.defaultBillingAddress) {
                 if (this.profile.defaultPaymentMethod) {
-                  this.router.navigateByUrl('/shop/order');
+                  this.router.navigateByUrl('/shop/delivery');
                 } else {
                   this.router.navigateByUrl('/shop/payment');
                 }
@@ -171,6 +241,9 @@ export class BillingAddressPage {
   }
 
   ionViewWillLeave() {
+    this.form = null;
+    this.phoneForm = null;
+
     if (this.routeSub) {
       this.routeSub.unsubscribe();
     }

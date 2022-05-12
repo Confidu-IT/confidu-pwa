@@ -26,6 +26,8 @@ export class DeliveryPage {
   public standardDeliveries: any;
   public selectedStandardDelivery: any;
   public selectedPrescriptionDelivery: any;
+  public warningMessage: string;
+  public warningImage = '../../../../assets/icons/shop/warning.svg';
 
   public get validForm(): boolean {
     if (this.selectedPrescriptionDelivery === 'prescription') {
@@ -97,6 +99,7 @@ export class DeliveryPage {
       }
 
       this.customer = resp.customer;
+      this.warningMessage = resp.tooltips;
       this.hasPayment = resp.customer.defaultPaymentMethodId;
       this.billingAddress = this.customer.defaultBillingAddress;
       this.shippingAddress = this.customer.defaultShippingAddress;
@@ -137,9 +140,9 @@ export class DeliveryPage {
       pharmacy: this.selectedPharmacy || null
     };
 
-
-    console.log('result:', result);
-    // this.router.navigateByUrl(url);
+    this.shopwareService.setDeliveryMethod(result).then(resp => {
+      this.router.navigateByUrl(url);
+    });
   }
 
  ionViewWillLeave() {
