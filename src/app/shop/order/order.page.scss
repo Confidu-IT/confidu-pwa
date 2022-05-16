@@ -93,10 +93,14 @@ h2 {
   line-height: 20px;
 }
 
-.payment {
+.payment, .pharmacy {
   border-bottom: 1px solid #ccc;
   font-size: 13px;
   padding-bottom: 16px;
+}
+
+.pharmacy {
+  line-height: 18px;
 }
 
 .transaction {

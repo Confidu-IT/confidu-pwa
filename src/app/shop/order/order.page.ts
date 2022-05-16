@@ -23,8 +23,10 @@ export class OrderPage {
   public isLoading: boolean;
   public shippingAddress: any;
   public billingAddress: any;
+  public phone: string;
   public payment: any;
   public language: string;
+  public pharmacy: any;
 
   public user: any;
   private subscription: Subscription;
@@ -62,6 +64,7 @@ export class OrderPage {
               this.customer = profile;
               this.billingAddress = this.customer.defaultBillingAddress;
               this.shippingAddress = this.customer.defaultShippingAddress;
+              this.phone = this.customer.customFields?.custom_customers_tel;
             }
           });
         this.getCart();
@@ -114,6 +117,7 @@ export class OrderPage {
                 this.cartItems = this.cart.deliveries[0].positions;
                 this.cartData = this.cart.deliveries[0];
                 this.cartTransaction = this.cart.transactions[0];
+                this.pharmacy = this.cart.pharmacy;
                 const paymentId = this.cartTransaction.paymentMethodId;
                 this.payments.map(payment => {
                   if (payment.id === paymentId) {

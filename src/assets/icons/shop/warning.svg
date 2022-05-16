@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54.97" height="53.317" viewBox="0 0 54.97 53.317">
+  <g id="Gruppe_26011" data-name="Gruppe 26011" transform="translate(-44.5 -887.683)">
+    <path id="Rechteck_3943" data-name="Rechteck 3943" d="M0,53.318V0H54.97V53.318Z" transform="translate(44.5 887.682)" fill="none"/>
+    <path id="Rechteck_3943-2" data-name="Rechteck 3943" d="M0,53.318V0H54.97V53.318Z" transform="translate(44.5 887.682)" fill="none"/>
+    <path id="Rechteck_3944" data-name="Rechteck 3944" d="M0,53.318V0H54.97V53.318Z" transform="translate(44.5 887.682)" fill="none"/>
+    <path id="Rechteck_3944-2" data-name="Rechteck 3944" d="M0,53.318V0H54.97V53.318Z" transform="translate(44.5 887.682)" fill="none"/>
+    <path id="Rechteck_3945" data-name="Rechteck 3945" d="M0,53.318V0H54.97V53.318Z" transform="translate(44.5 887.682)" fill="none"/>
+    <path id="Rechteck_3945-2" data-name="Rechteck 3945" d="M0,53.318V0H54.97V53.318Z" transform="translate(44.5 887.682)" fill="none"/>
+    <g id="Gruppe_25417" data-name="Gruppe 25417" transform="translate(-1 1)">
+      <path id="Linie_7326" data-name="Linie 7326" d="M0,0V3.6" transform="translate(75.949 889.648) rotate(16)" fill="none" stroke="#626262" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5"/>
+      <path id="Linie_7327" data-name="Linie 7327" d="M0,0,3.164,3.167" transform="translate(65.777 892.428) rotate(16)" fill="none" stroke="#626262" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5"/>
+      <path id="Linie_7330" data-name="Linie 7330" d="M0,1.246,3.161,0" transform="translate(95.001 925.256) rotate(17)" fill="none" stroke="#626262" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5"/>
+      <path id="Linie_7331" data-name="Linie 7331" d="M0,1.128,2.851,0" transform="matrix(0.819, -0.574, 0.574, 0.819, 52.398, 935.38)" fill="none" stroke="#626262" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5"/>
+      <path id="Linie_7332" data-name="Linie 7332" d="M3.771,1.49,0,0" transform="matrix(0.819, -0.574, 0.574, 0.819, 48.419, 927.41)" fill="none" stroke="#626262" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5"/>
+      <path id="Linie_7333" data-name="Linie 7333" d="M4.712,1.854,0,0" transform="translate(92.644 932.651) rotate(17)" fill="none" stroke="#626262" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5"/>
+    </g>
+    <g id="Gruppe_26012" data-name="Gruppe 26012" transform="translate(244.281 947.566)">
+      <path id="Pfad_28640" data-name="Pfad 28640" d="M-189.255-18.111l17.042-29.79,17.042,29.79Z" transform="translate(0 0)" fill="#fff" stroke="#626262" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line id="Linie_7421" data-name="Linie 7421" y2="7.854" transform="translate(-172.214 -36.34)" fill="none" stroke="#ffbc00" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3"/>
+      <circle id="Ellipse_5532" data-name="Ellipse 5532" cx="1.544" cy="1.544" r="1.544" transform="translate(-173.758 -25.204)" fill="#ffbc00"/>
+    </g>
+  </g>
+</svg>

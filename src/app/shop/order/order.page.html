@@ -47,8 +47,7 @@
               {{ billingAddress?.zipcode }}
                 {{ billingAddress?.city }}
             </span><br>
-              <span class="country">{{ billingAddress?.country?.name }}</span><br>
-              <span class="link">{{ 'ORDER_PAGE.CHANGE' | translate }}</span>
+              <span class="country">{{ billingAddress?.country?.name }}</span>
             </address>
           </div>
 
@@ -64,14 +63,23 @@
                 {{ shippingAddress?.city }}
             </span><br>
               <span class="country">{{ shippingAddress?.country?.name }}</span><br>
-              <span class="link">{{ 'ORDER_PAGE.CHANGE' | translate }}</span>
+              <span class="country">{{ phone }}</span>
             </address>
           </div>
         </div>
 
         <div class="payment" routerLink="/shop/payment">
           <h2>{{ 'ORDER_PAGE.BILLING' | translate }}</h2>
-          <span class="payment-method">{{ payment?.translated.name }}</span>
+          <span>{{ payment?.translated.name }}</span>
+          <span class="link">{{ 'ORDER_PAGE.CHANGE' | translate }}</span>
+        </div>
+
+        <div class="payment pharmacy" routerLink="/shop/delivery">
+          <h2>{{ 'ORDER_PAGE.PRESCRIPTION_TO' | translate }}</h2>
+          {{ pharmacy?.pharmacyName }}<br>
+          {{ pharmacy?.street }}<br>
+          {{ pharmacy?.zipcode }} {{ pharmacy?.city }}<br>
+          {{ pharmacy?.phoneNumber }}
           <span class="link">{{ 'ORDER_PAGE.CHANGE' | translate }}</span>
         </div>
 
