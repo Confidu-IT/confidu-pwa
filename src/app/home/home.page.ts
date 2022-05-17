@@ -217,12 +217,15 @@ export class HomePage {
   private getTickets(userId: string, petId: string): void {
     this.firebaseService.getTicketsByPet(userId, petId)
       .subscribe((data: any) => {
-        console.log('data', data);
+        // console.log('data', data);
         if (data) {
           const tickets = [];
           this.tickets = data;
           data.map(ticket => {
             // console.log('ticket', ticket);
+            if (ticket.petId !== localStorage.getItem('activePet')) {
+              return;
+            }
             ticket.schedule.map(schedule => {
               if (schedule.status === 'open') {
                 const obj: any = {};

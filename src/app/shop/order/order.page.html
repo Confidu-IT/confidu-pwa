@@ -74,7 +74,7 @@
           <span class="link">{{ 'ORDER_PAGE.CHANGE' | translate }}</span>
         </div>
 
-        <div class="payment pharmacy" routerLink="/shop/delivery">
+        <div *ngIf="pharmacy" class="payment pharmacy" routerLink="/shop/delivery">
           <h2>{{ 'ORDER_PAGE.PRESCRIPTION_TO' | translate }}</h2>
           {{ pharmacy?.pharmacyName }}<br>
           {{ pharmacy?.street }}<br>
