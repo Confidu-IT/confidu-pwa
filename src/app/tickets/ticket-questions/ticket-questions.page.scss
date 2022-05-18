@@ -627,8 +627,12 @@ mat-label {
   --padding-start: 0;
 }
 
-.diag-text, .max-characters {
+ .max-characters {
   font-size: 9px;
+}
+
+.diag-text {
+  font-size: 13px;
 }
 
 .max-characters {

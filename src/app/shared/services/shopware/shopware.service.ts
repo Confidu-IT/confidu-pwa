@@ -144,7 +144,7 @@ export class ShopwareService {
       .then((resp) => resp.text())
       .then(() => {
         headers['sw-context-token'] = null;
-        localStorage.removeItem('sw-token');
+        // localStorage.removeItem('sw-token');
       });
   }
 

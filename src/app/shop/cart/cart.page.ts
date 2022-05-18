@@ -100,8 +100,8 @@ export class CartPage {
                   this.shipment = cart.deliveries[0].shippingCosts?.totalPrice;
                 } else {
                   this.cartItems = [];
-                  localStorage.removeItem('sw-token');
-                  this.shopwareService.setCartState(false);
+                  // localStorage.removeItem('sw-token');
+                  // this.shopwareService.setCartState(false);
                 }
             });
         }

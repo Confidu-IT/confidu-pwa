@@ -113,13 +113,11 @@ export class ConsultationSchedulerPage {
     this.shopwareService.getProfile()
       .then(response => {
         console.log('response', response);
-        if (response.errors?.length > 0) {
-          this.loadingCtrl.dismiss();
-          this.commonService.handleResponseErrors(response.errors[0].status);
-        } else if (
-          !response.firstName || !response.lastName || !response?.customFields?.custom_customers_tel
+        if (
+          (response?.firstName.length < 2) ||
+          (response?.lastName.length < 2) ||
+          (!response?.customFields?.custom_customers_tel)
         ) {
-          this.loadingCtrl.dismiss();
           this.presentModal();
         } else {
           this.progressBooking();

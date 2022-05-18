@@ -94,8 +94,8 @@ export class OrderPage {
                 this.cartItems = cart.deliveries[0].positions;
               } else {
                 this.cartItems = [];
-                localStorage.removeItem('sw-token');
-                this.shopwareService.setCartState(false);
+                // localStorage.removeItem('sw-token');
+                // this.shopwareService.setCartState(false);
               }
             });
         }
