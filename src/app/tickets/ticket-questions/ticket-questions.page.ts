@@ -462,9 +462,8 @@ export class TicketQuestionsPage {
   }
 
   public onPickVetZip(): void {
-    console.log('this.vetZipCode', this.vetZipCode);
     this.vetError = false;
-    if (String(this.vetZipCode).length > 4 || String(this.vetZipCode).length < 6) {
+    if (String(this.vetZipCode).length === 5) {
       console.log('load vets');
       this.firebaseService.getVetsByZipCode(this.language, String(this.vetZipCode))
         .subscribe(vets => {
