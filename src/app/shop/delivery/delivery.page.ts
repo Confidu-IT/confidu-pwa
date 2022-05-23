@@ -115,10 +115,6 @@ export class DeliveryPage {
   public onChooseZip(): void {
     this.pharmacyError = false;
 
-    console.log('this.zipCode.length', this.zipCode.length)
-
-    console.log('this.zipCode.length type', typeof this.zipCode.length)
-
     if (this.zipCode.length === 5) {
       this.firebaseService.getPharmaciesByZipCode(this.language, String(this.zipCode))
         .subscribe(pharmacies => {

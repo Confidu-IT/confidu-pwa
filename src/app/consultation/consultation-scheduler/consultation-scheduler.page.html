@@ -30,6 +30,7 @@
           </div>
           <ion-button
             (click)="onBook()"
+            [disabled]="invalid"
             color="secondary"
             expand="full"
           >
@@ -61,7 +62,7 @@
             </ul>
             <ion-button
               (click)="onBook()"
-              [disabled]="activeList !== list.name || !selectedDate"
+              [disabled]="activeList !== list.name || !selectedDate || invalid"
               color="secondary"
               expand="full">
               {{ 'CONSULTATION_SCHEDULER_PAGE.BOOK_APPOINTMENT' | translate }}

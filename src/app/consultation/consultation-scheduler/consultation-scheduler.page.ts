@@ -36,6 +36,7 @@ export class ConsultationSchedulerPage {
   public activeList: string;
   public nextAvTime: any;
   public selectedAvTime: any;
+  public invalid = false;
 
   constructor(
     private userAuth: AuthService,
@@ -108,6 +109,7 @@ export class ConsultationSchedulerPage {
   }
 
   public onBook(): void {
+    this.invalid = true;
     this.bookDate = !this.selectedDate ? this.nextAvTime.time : this.selectedDate;
     // this.shopwareService.headers['firebase-context-token'] = this.user.za;
     this.shopwareService.getProfile()
@@ -119,6 +121,7 @@ export class ConsultationSchedulerPage {
           (!response?.customFields?.custom_customers_tel)
         ) {
           this.presentModal();
+          this.invalid = false;
         } else {
           this.progressBooking();
         }
@@ -152,7 +155,8 @@ export class ConsultationSchedulerPage {
   }
 
   private progressBooking(): void {
-    this.presentLoading();
+    // this.presentLoading();
+
     this.commonService.bookAppointment(
       this.user.za,
       this.appointmentTypeID,
@@ -200,6 +204,7 @@ export class ConsultationSchedulerPage {
 
 
   ionViewWillLeave() {
+    this.invalid = false;
     if (this.subscription) {
       this.subscription.unsubscribe();
     }
