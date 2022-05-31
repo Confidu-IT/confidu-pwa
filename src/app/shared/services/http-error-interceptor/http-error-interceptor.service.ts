@@ -36,7 +36,7 @@ export class HttpErrorInterceptor implements HttpInterceptor {
           }
           else {
             console.log('err', error);
-            errorMsg = `Error Code: ${error.status},  Message: ${error.message}`;
+            errorMsg = `Error Code: ${error?.status},  Message: ${error?.message}`;
             switch (error.status) {
               case 400:
                 this.router.navigateByUrl(`/`);
@@ -45,7 +45,7 @@ export class HttpErrorInterceptor implements HttpInterceptor {
                 this.authService.logOut();
                 break;
               case 406:
-                // this.presentErrorToast(error.error);
+                // this.presentErrorToast(error?.error);
                 this.router.navigateByUrl(`error`);
                 break;
               case 451:

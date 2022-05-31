@@ -147,7 +147,6 @@ export class HomePage {
         localStorage.setItem('user-id',user.uid);
         this.patchButton = false;
         this.healthStateIcon = this.statusCheckInactiveImg;
-        console.log('local', localStorage)
 
         // this.afAuth.onIdTokenChanged(this.user$)
         // event emitter

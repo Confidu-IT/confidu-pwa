@@ -76,7 +76,7 @@ export class TicketOrderPage {
     this.firebaseService.getTicketById(user, pet, ticket)
       .subscribe(resp => {
         console.log('resp', resp);
-        if (resp) {
+        if (resp?.products) {
           this.products = resp.products;
           // Delete THIS
           // this.presentProductModal(this.shop.main_products[0]);

@@ -552,6 +552,10 @@ export class TicketQuestionsPage {
   public onPickMedAmount(event, type, index): void {
     let val;
 
+    if (event.target.value === '') {
+      return;
+    }
+
     this.medPieceAmount[index] = event.target.value;
 
     // if (type === 'medPiece') {
@@ -718,7 +722,9 @@ export class TicketQuestionsPage {
       val = val[0];
       val.answerValue = this.diagText;
     } else if (this.question.values.questionType === 'MED_T_L') {
-      if (this.timeAmount === this.currentMed.med_amount.length) {
+      if (
+        this.timeAmount === this.currentMed.med_amount.length
+      ) {
         val = this.question.values.answerOption;
         val = val[0];
         val.answerValue = this.currentMed;
@@ -968,8 +974,6 @@ export class TicketQuestionsPage {
     const undefinedVariants = selectedVariants.includes(undefined);
     const allVetOffice = !locations.includes('home');
     const allHome = !locations.includes('vet');
-
-    console.log()
 
     if (allVetOffice && !undefinedVariants) { // all medication variants set and given at vet office
       return false;

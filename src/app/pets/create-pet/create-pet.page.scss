@@ -71,6 +71,17 @@ textarea {
   }
 }
 
+.mandatory {
+  color: var(--ion-color-medium);
+  font-size: 12px;
+  margin: -12px 0 32px;
+}
+
+ion-item {
+  --padding-start: 0;
+}
+
+
 //::ng-deep .mat-form-field-underline {
 //  display: none !important;
 //}

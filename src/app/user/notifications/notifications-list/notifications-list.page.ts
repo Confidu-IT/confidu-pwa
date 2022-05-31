@@ -54,6 +54,7 @@ export class NotificationsListPage {
   }
 
   public onClick(notification: any): any {
+    console.log('notification', notification)
     if (notification.link?.extern) {
       return window.open(notification?.link.extern, '_blank');
     }
@@ -70,13 +71,15 @@ export class NotificationsListPage {
         localStorage.setItem('activePet', targetPet);
       }
 
-      if (notification.link?.intern === 'videocall') {
+      if (notification.link?.intern === 'videocall' || notification.link?.intern === 'vetconsult') {
         url = `tickets/${notification.link?.intern}/${notification.link?.key}/${notification.link?.key}/result`;
       } else if (notification.link?.intern === 'trophy') {
         url = `benefits`;
       } else {
         url = `pets/pet-care-card/${targetPet}/null/${notification.link?.intern}`;
       }
+
+      console.log('url', url);
       return this.router.navigateByUrl(url);
     }
   }

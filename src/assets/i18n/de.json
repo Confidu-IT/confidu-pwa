@@ -20,6 +20,7 @@
     "GENDER_LABEL": "Geschlecht*",
     "CASTRATION_LABEL": "Kastrationsstatus*",
     "BIRTHDAY_LABEL": "Geburtsdatum*",
+    "MANDATORY": "Pflichtangaben*",
     "FORM_BUTTON": "Speichern",
     "WAITING": "Bitte warten ...",
     "TITLE": "Neues Tier",
@@ -1148,7 +1149,7 @@
   "ORDER_HISTORY_PAGE": {
     "TITLE": "Bestellungen",
     "ORDERS": "Bestellungen:",
-    "YOUR_ORDERS": "Deine Bestellungen",
+    "YOUR_ORDERS": "Meine Bestellungen",
     "NO_ORDERS": "Es sind noch keine Bestellungen vorhanden.",
     "DELIVERED": "Zugestellt",
     "DELIVERED_AT": "Geliefert am:",

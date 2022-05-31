@@ -125,6 +125,8 @@
                 </ion-select>
               </ion-item>
 
+              <div class="mandatory"> {{ 'CREATE_PET_PAGE.MANDATORY' | translate }}</div>
+
               <ion-button
                 (click)="onCreatePet()"
                 [disabled]="!form.valid || !validBreed()"
