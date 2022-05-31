@@ -21,12 +21,12 @@
       border-radius: 99px;
       box-shadow: 0 0 2px #666;
       padding: 3px;
-      height: 66px;
+      height: 70px;
       max-height: 100%;
-      width: 66px;
+      width: 70px;
     }
     &-label {
-      font-size: 11px;
+      font-size: 13px;
       margin-left: 24px;
 
       h2 {
@@ -38,7 +38,7 @@
       }
 
       div {
-        line-height: 16px;
+        line-height: 19px;
       }
 
     }
@@ -60,20 +60,21 @@
 
 .mat-expansion-panel-header {
   margin-top: 16px;
+  padding-left: 20px;
 }
 
 .panel-title-content {
   display: flex;
   align-items: center;
   .img {
-    width: 60px;
+    width: 92px;
   }
 
   img {
-    height: 38px;
+    height: 64px;
   }
   .base-image {
-    height: 34px;
+    height: 64px;
   }
 }
 
@@ -149,10 +150,12 @@
     display: flex;
     //justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     width: 45%;
 
     img {
-      margin-right: 6px
+      margin-right: 6px;
+      vertical-align: middle;
     }
   }
 
@@ -264,118 +267,3 @@ mat-panel-title {
     --padding-top: 28px;
   }
 }
-
-/*
-
-@media only screen and (min-width: 576px) and (max-width: 768px) {
-  .export-button {
-    max-width: 50%;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  mat-expansion-panel {
-    margin-bottom: 16px;
-  }
-  mat-panel-title {
-    font-size: 19px;
-  }
-  .panel-title-content {
-    img {
-      height: 28px;
-    }
-  }
-  .care-card-header {
-    img {
-      height: 95px;
-      width: 95px;
-    }
-  }
-  .care-card-header-label h2 {
-    font-size: 30px;
-    line-height: 38px;
-    padding-left: 36px;
-  }
-  .submenu {
-    font-size: 16px;
-  }
-  .base-data {
-    li {
-      font-size: 16px;
-    }
-
-    .label {
-      width: 170px;
-    }
-
-    .value {
-      width: calc(100% - 170px);
-    }
-  }
-
-  .export {
-    h3, p {
-      font-size: 16px;
-    }
-  }
-  .export-button {
-    font-size: 16px;
-  }
-}
-
-@media only screen and (min-width: 992px) {
-  mat-panel-title {
-    font-size: 21px;
-  }
-
-  .panel-title-content {
-    img {
-      height: 30px;
-    }
-  }
-
-  .care-card-header {
-    img {
-      height: 110px;
-      width: 110px;
-    }
-  }
-  .care-card-header-label h2 {
-    font-size: 32px;
-    line-height: 45px;
-    padding-left: 36px;
-  }
-  .submenu {
-    font-size: 19px;
-  }
-  .base-data {
-    li {
-      font-size: 19px;
-    }
-
-    .label {
-      width: 200px;
-    }
-
-    .value {
-      width: calc(100% - 200px);
-    }
-  }
-  .export {
-    h3, p {
-      font-size: 19px;
-    }
-  }
-  .export-button {
-    font-size: 19px;
-    max-width: 75%;
-  }
-}
-
-@media only screen and (min-width: 1200px) {
-  .export-button {
-    max-width: 50%;
-  }
-}
-
- */

@@ -14,7 +14,7 @@
   <ion-grid>
     <ion-spinner color="primary" *ngIf="isLoading"></ion-spinner>
     <ion-row>
-      <ion-col sizeSm="8" offsetSm="2" class="ion-padding" *ngIf="!isLoading && !imageZoom">
+      <ion-col class="ion-padding" *ngIf="!isLoading && !imageZoom">
         <div class="explanation">
           <img [src]="careCard?.image" alt="" width="32">
           <div>

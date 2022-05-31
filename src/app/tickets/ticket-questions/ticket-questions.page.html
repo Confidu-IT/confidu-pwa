@@ -6,7 +6,7 @@
   <div class="ion-text-center" *ngIf="isLoading">
     <ion-spinner color="primary"></ion-spinner>
   </div>
-  <ion-grid *ngIf="!isLoading" sizeSm="8" offsetSm="2">
+  <ion-grid *ngIf="!isLoading">
     <ion-row>
       <ion-col>
         <div class="question" [ngClass]="{'beats-text': question?.values.questionType.toLowerCase() === 'vi'}">
@@ -720,7 +720,7 @@
 <ion-footer *ngIf="question?.values.questionType.toLowerCase() !== 'b'">
   <ion-grid>
     <ion-row>
-      <ion-col sizeSm="8" offsetSm="2">
+      <ion-col>
         <ion-progress-bar color="secondary" [value]="questionProgressValue"></ion-progress-bar>
         <div class="question-link-buttons">
           <button

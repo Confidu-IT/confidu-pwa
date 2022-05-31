@@ -6,7 +6,7 @@
   <ion-grid>
     <ion-spinner *ngIf="isLoading" color="primary"></ion-spinner>
     <ion-row *ngIf="!isLoading" class="pet-spot-buttons" (click)="zoomOut()">
-      <ion-col offsetSm="2" sizeSm="8">
+      <ion-col>
         <h2 *ngIf="!bodyPart">
           <span *ngIf="!isPoison">{{ televet?.HEADER }}</span>
           <span *ngIf="isPoison">{{ televet?.POISON_HEADER }}</span>
@@ -178,7 +178,7 @@
 </ion-content>
 <ion-footer *ngIf="!isLoading">
   <ion-row>
-    <ion-col offsetSm="2" sizeSm="8">
+    <ion-col>
 
       <ion-button
         class="progress-button"

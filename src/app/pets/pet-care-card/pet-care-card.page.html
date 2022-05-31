@@ -99,8 +99,8 @@
                 <div class="label">{{ 'CARE_CARD_PAGE.BASE_DATA.LIST.CASTRATION' | translate }}</div>
                 <div class="value">
                   {{ pet?.pet.castration.label[this.language] }}
+                  <ion-icon name="chevron-forward-outline"></ion-icon>
                 </div>
-                <ion-icon name="chevron-forward-outline"></ion-icon>
               </li>
               <li *ngIf="isCastrated">
                 <div class="label">{{ 'CARE_CARD_PAGE.BASE_DATA.LIST.CASTRATION' | translate }}</div>
@@ -121,9 +121,11 @@
                   'CARE_CARD_PAGE.BASE_DATA.LIST.ID'
                     | translate }}</div>
                 <div class="value base-value">
-                  <img [src]="addIcon" alt="" height="16" width="16"> {{ pet?.pet.petIdent || noData }}
+                  <div>
+                    <img [src]="addIcon" alt="" height="16" width="16"> {{ pet?.pet.petIdent || noData }}
+                  </div>
+                  <ion-icon name="chevron-forward-outline"></ion-icon>
                 </div>
-                <ion-icon name="chevron-forward-outline"></ion-icon>
               </li>
               <li *ngIf="hasId">
                 <div class="label">{{ 'CARE_CARD_PAGE.BASE_DATA.LIST.ID' | translate }}</div>

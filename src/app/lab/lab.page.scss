@@ -30,7 +30,7 @@
 
 
   img {
-    height: 44px;
+    height: 64px;
     margin-right: 16px;
   }
 
@@ -47,8 +47,12 @@
 
 mat-expansion-panel {
   margin-bottom: 12px;
-  padding-top: 12px;
-  padding-bottom: 10px;
+}
+
+mat-expansion-panel-header {
+  padding-top: 36px;
+  padding-bottom: 36px;
+  padding-left: 16px;
 }
 
 .text1 {

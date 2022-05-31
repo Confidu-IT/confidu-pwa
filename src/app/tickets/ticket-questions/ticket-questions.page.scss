@@ -491,7 +491,8 @@ mat-label {
 
     ion-item {
       --padding-start: 0;
-      width: unset;
+      width: calc(100% - 16px);
+      max-width: calc(100% - 16px);
     }
   }
 
