@@ -81,6 +81,7 @@ export class TicketQuestionsPage {
   public slideOpts = {
     initialSlide: 0
   };
+
   public guideQuestions = ['v+breathe_freq', 'v+pulse_freq', 'v+tempera', 'w+weightac', 'circ1'];
   public plusIcon = '../../../assets/icons/tickets/plus.svg';
 
@@ -168,6 +169,7 @@ export class TicketQuestionsPage {
   }
 
   ionViewWillEnter() {
+    console.log(this.lastVacMax);
     this.isLoading = true;
     this.title = this.params.symptom;
     this.activityVal = 0;
@@ -596,9 +598,12 @@ export class TicketQuestionsPage {
       this.question = this.questions[this.indexNr];
       this.createInfoModalContent(this.indexNr);
       const timer = setInterval(() => {
-        if (--countdown >= 0) {
+        if (--countdown >= 0 && this.countdown?.nativeElement?.textContent) {
           this.countdown.nativeElement.textContent = countdown.toString();
-          // console.log('!!');
+        } else if (!this.countdown?.nativeElement?.textContent) {
+          this.countdownDone = false;
+          this.selectedAnswer = null;
+          countdown = 60;
         } else {
           this.selectedAnswer = this.countdown;
           clearInterval(timer);

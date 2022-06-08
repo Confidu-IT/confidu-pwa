@@ -504,11 +504,6 @@ mat-label {
     margin: 0 0 0 16px;
   }
 
-  ion-item.ios {
-    margin-left: 0;
-    margin-right: 16px;
-  }
-
   .ion-item {
     --padding-start: 0 !important;
   }
@@ -660,4 +655,9 @@ ion-textarea {
 
 :host(.item-interactive.ion-valid) {
   --highlight-background: var(--ion-color-secondary) !important;
+}
+
+ion-footer {
+  width: calc(100% - 20px);
+  margin-left: 10px;
 }

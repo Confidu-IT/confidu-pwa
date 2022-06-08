@@ -155,7 +155,7 @@
                       [doneText]="okText"
                       (ionChange)="onPickParasiteTime($event)"
                       displayFormat="DD.MM.YYYY"
-                      max="2030-12-31">
+                      [max]="lastVacMax">
                     </ion-datetime>
                   </ion-item>
                 </div>

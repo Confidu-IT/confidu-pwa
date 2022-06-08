@@ -9,7 +9,7 @@
 
   <ion-grid *ngIf="!isLoading">
     <ion-row>
-      <ion-col sizeSm="8" offsetSm="2">
+      <ion-col>
 
         <p class="start-text">
           {{ 'CONSULTATION_SCHEDULER_PAGE.TEXT.PART_1' | translate }}
@@ -24,7 +24,7 @@
               {{ 'CONSULTATION_SCHEDULER_PAGE.AT' | translate }}
               <span *ngIf="nextAvTime?.hours">{{ nextAvTime?.hours }}h</span>
               <span *ngIf="nextAvTime?.minutes">
-                {{ nextAvTime?.minutes }}{{ 'CONSULTATION_SCHEDULER_PAGE.MIN' | translate }}
+                {{ nextAvTime?.minutes }} {{ 'CONSULTATION_SCHEDULER_PAGE.MIN' | translate }}
               </span>
             </div>
           </div>

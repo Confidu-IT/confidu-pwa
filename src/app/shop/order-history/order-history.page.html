@@ -45,7 +45,7 @@
 
               <div class="order-price">
                 {{ 'ORDER_HISTORY_PAGE.PRICE' | translate }}:
-                {{ order.price?.totalPrice }} €
+                {{ order.price?.totalPrice?.toFixed(2) }} €
               </div>
 
             </ion-card-content>

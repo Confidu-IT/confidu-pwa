@@ -399,7 +399,10 @@ export class HomePage {
 
   public async presentModal() {
     const modal = await this.modalCtrl.create({
-      component: HomeModalPage
+      component: HomeModalPage,
+      componentProps: {
+        pet: this.pet
+      }
     });
     modal.onDidDismiss()
       .then((response: any) => {

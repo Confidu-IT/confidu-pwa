@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 import { CommonService } from '../../shared/services/common/common.service';
@@ -9,15 +9,16 @@ import { CommonService } from '../../shared/services/common/common.service';
   styleUrls: ['./home-modal.page.scss'],
 })
 export class HomeModalPage {
+  @Input() pet: any;
   public selected: string;
   public showCallNotes = false;
   public showTelevetNotes = false;
   public showDiagNotes = false;
-  public zoomIcon = '../../../assets/icons/home/zoom_logo.svg';
-  public diagIcon = '../../../assets/icons/home/diagnose_finder.svg';
-  public imageIcon = '../../../assets/icons/home/bild_diagnose.svg';
-  public videoIcon = '../../../assets/icons/home/videocall.svg';
-  public plusIcon = '../../../assets/icons/home/plus.svg';
+  public zoomIcon: string;
+  public diagIcon: string;
+  public imageIcon: string;
+  public videoIcon: string;
+  public plusIcon: string;
 
   private language: string;
 
@@ -30,6 +31,16 @@ export class HomeModalPage {
   ionViewWillEnter() {
     this.language = this.commonService.language;
     this.translateService.use(this.language);
+    if (this.pet?.pet?.species?.value === 'cat') {
+      this.diagIcon = '../../../assets/icons/home/diagnose_cat.svg';
+    } else {
+      this.diagIcon = '../../../assets/icons/home/diagnose_finder.svg';
+
+    }
+ this.zoomIcon = '../../../assets/icons/home/zoom_logo.svg';
+ this.imageIcon = '../../../assets/icons/home/bild_diagnose.svg';
+ this.videoIcon = '../../../assets/icons/home/videocall.svg';
+ this.plusIcon = '../../../assets/icons/home/plus.svg';
   }
 
   public closeModal() {
