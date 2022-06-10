@@ -82,14 +82,23 @@ export class TicketQuestionsPage {
     initialSlide: 0
   };
 
-  public guideQuestions = ['v+breathe_freq', 'v+pulse_freq', 'v+tempera', 'w+weightac', 'circ1'];
+  public guideQuestions = ['v+breathe_freq', 'v+pulse_freq', 'v+tempera', 'circ1'];
   public plusIcon = '../../../assets/icons/tickets/plus.svg';
 
   @ViewChild('filePicker') filePickerRef: ElementRef<HTMLInputElement>;
   @ViewChild(IonSlides) slides: IonSlides;
   @ViewChild('countdown') countdown: ElementRef;
   @ViewChild('img') img: ElementRef;
-  @ViewChild('slider') slider: IonSlides
+  @ViewChild('slider') slider: IonSlides;
+
+  public get lastVacMax(): string {
+    const today = new Date().toISOString();
+    const event = new Date(today);
+    const year = event.getFullYear();
+    const month = String(event.getMonth() + 1).padStart(2, '0');
+    const day = String(event.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  }
 
   private readonly routeSub: Subscription;
   private subscription: Subscription;
@@ -115,7 +124,7 @@ export class TicketQuestionsPage {
   public parasite: any;
   public uploadPath: string;
   private addedFiles: string[];
-  public lastVacMax = new Date().toISOString();
+
 
 
   constructor(
@@ -169,8 +178,9 @@ export class TicketQuestionsPage {
   }
 
   ionViewWillEnter() {
-    console.log(this.lastVacMax);
     this.isLoading = true;
+    console.log('this.lastVacMax', this.lastVacMax);
+
     this.title = this.params.symptom;
     this.activityVal = 0;
     this.questions = [];

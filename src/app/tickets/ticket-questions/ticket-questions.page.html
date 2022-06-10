@@ -136,7 +136,7 @@
                 <div class="max-characters">1500 {{ 'CONSULTATION_BOOKING_PAGE.CHARS' | translate }}</div>
               </ng-container>
 
-              <ng-container *ngIf="question?.values.questionType.toLowerCase() === 'sei'">
+              <ng-container *ngIf="question?.values.questionType.toLowerCase() === 'sei' && lastVacMax">
                 <mat-form-field class="vaccinations">
                   <mat-label>{{ 'TICKET_QUESTION_PAGE.PARASITES.LABEL' | translate }}</mat-label>
                   <mat-select (selectionChange)="onPickParasite($event)">
@@ -161,7 +161,7 @@
                 </div>
               </ng-container>
 
-              <ng-container *ngIf="question?.values.questionType.toLowerCase() === 'se'">
+              <ng-container *ngIf="question?.values.questionType.toLowerCase() === 'se' && lastVacMax">
                 <mat-form-field class="vaccinations">
                   <mat-label>{{ 'TICKET_QUESTION_PAGE.VACC.SERUM' | translate }}</mat-label>
                   <mat-select (selectionChange)="onPickVaccine($event)">
@@ -181,7 +181,7 @@
                       [doneText]="okText"
                       (ionChange)="onPickCurrentVaccTime($event)"
                       displayFormat="DD.MM.YYYY"
-                      min="2008-12-31">
+                      min="2008-12-31"
                       [max]="lastVacMax">
                     </ion-datetime>
                   </ion-item>

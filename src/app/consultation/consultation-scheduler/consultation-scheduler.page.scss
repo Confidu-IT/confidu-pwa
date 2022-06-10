@@ -11,6 +11,10 @@
 
 .book-text {
   margin-bottom: 16px;
+
+  &.spacer {
+    margin-bottom: 8px;
+  }
 }
 
 .next-date {

@@ -17,6 +17,7 @@
           {{ 'CONSULTATION_SCHEDULER_PAGE.TEXT.PART_2' | translate }}
         </p>
 
+
         <div class="next-date" *ngIf="nextAvTime">
           <div class="next-date-header">
             <div class="label">{{ 'CONSULTATION_SCHEDULER_PAGE.NEXT_AV_APP' | translate }}</div>
@@ -38,7 +39,8 @@
           </ion-button>
         </div>
 
-        <p class="book-text">{{ 'CONSULTATION_SCHEDULER_PAGE.AHEAD_TEXT' | translate }}</p>
+        <p class="book-text spacer">{{ 'CONSULTATION_SCHEDULER_PAGE.AHEAD_TEXT' | translate }}</p>
+        <p class="book-text">{{ 'CONSULTATION_SCHEDULER_PAGE.TEXT.PART_3' | translate }}</p>
 
         <div class="appointment-lists" *ngFor="let list of dateLists; let i = index;">
           <mat-expansion-panel *ngIf="list?.val.length > 0">

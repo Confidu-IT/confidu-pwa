@@ -1008,7 +1008,8 @@
     "BOOK_APPOINTMENT": "Termin buchen",
     "TEXT": {
       "PART_1": "Wir haben für dich und",
-      "PART_2": "folgende Termine gefunden."
+      "PART_2": "folgende Termine gefunden.",
+      "PART_3": "Achtung: Sobald du auf \"Buchen\" klickst, wird der Termin blockiert. Anschließend hast du 10 min. Zeit, um den Kaufvorgang abzuschließen. Danach wird der Termin wieder freigegeben. "
     },
     "AHEAD_TEXT": "Termine können bis zu 2 Tage im Voraus gebucht werden. Wähle den Tag und die Uhrzeit aus, an dem du mit einem Tierarzt oder einer Tierärztin sprechen möchtest.",
     "FIRST_NAME": "Vorname *",
