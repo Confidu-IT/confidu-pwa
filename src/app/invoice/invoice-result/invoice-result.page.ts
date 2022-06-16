@@ -50,6 +50,15 @@ export class InvoiceResultPage {
   public findings: any;
   public selectedFinding: any;
 
+  public get maxDate(): string {
+    const today = new Date().toISOString();
+    const event = new Date(today);
+    const year = event.getFullYear();
+    const month = String(event.getMonth() + 1).padStart(2, '0');
+    const day = String(event.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  }
+
   constructor(
     private userAuth: AuthService,
     private router: Router,

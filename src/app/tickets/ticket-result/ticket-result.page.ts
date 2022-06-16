@@ -6,7 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import {Subscription} from 'rxjs';
 import { switchMap, tap } from 'rxjs/operators';
 import {ActivatedRoute, ActivatedRouteSnapshot, Router, RouterStateSnapshot} from '@angular/router';
-import { AlertController, ModalController } from '@ionic/angular';
+import {AlertController, LoadingController, ModalController} from '@ionic/angular';
 import { CanDeactivateGuard } from '../can-deactivate-guard.service';
 
 @Component({
@@ -21,6 +21,7 @@ export class TicketResultPage implements CanDeactivateGuard {
   private routerSub: Subscription;
   private confirmSub: Subscription;
   private params: any;
+  private waiting: string;
   private eventId: string;
   private petId: string;
   private language: string;
@@ -52,6 +53,7 @@ export class TicketResultPage implements CanDeactivateGuard {
     private activatedRoute: ActivatedRoute,
     private modalCtrl: ModalController,
     private alertCtrl: AlertController,
+    private loadingController: LoadingController,
     private router: Router
   ) {
     this.routeSub = this.activatedRoute.params
@@ -70,12 +72,15 @@ export class TicketResultPage implements CanDeactivateGuard {
   ionViewWillEnter() {
     this.isLoading = true;
 
+
     this.language = this.commonService.language;
     this.translateService.use(this.language);
     this.translateService.get('TICKET_RESULT_PAGE')
       .subscribe(values => {
         console.log('values', values);
         this.coins = values.RECEIVED_COINS;
+        this.waiting = values.WAITING;
+        this.presentLoading();
       });
     this.subscription = this.userAuth.user$.pipe(
       tap(user => user),
@@ -106,6 +111,7 @@ export class TicketResultPage implements CanDeactivateGuard {
           );
         } else {
           this.isLoading = false;
+          this.loadingController.dismiss();
           this.router.navigateByUrl('/ticket/televet-pet');
         }
       })
@@ -120,10 +126,11 @@ export class TicketResultPage implements CanDeactivateGuard {
       // this.presentProductModal(this.result.products[0]);
       // this.presentInfoModal();
       this.isLoading = false;
-
+      this.loadingController.dismiss();
     },
       (err: any) => {
         this.isLoading = false;
+        this.loadingController.dismiss();
         this.commonService.handleResponseErrors(err.status);
         // this.userAuth.logOut();
       });
@@ -154,6 +161,17 @@ export class TicketResultPage implements CanDeactivateGuard {
 
   public openIngredientsList(index) {
     this.listOpen[index].val = this.listOpen[index].val === false;
+  }
+
+  async presentLoading() {
+    const loading = await this.loadingController.create({
+      cssClass: 'my-custom-class',
+      message:  this.waiting
+    });
+    await loading.present();
+
+    const { role, data } = await loading.onDidDismiss();
+    console.log('Loading dismissed!');
   }
 
   // private createChevrons() {

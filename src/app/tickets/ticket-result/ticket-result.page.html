@@ -3,11 +3,6 @@
 </ion-header>
 
 <ion-content>
-
-  <div *ngIf="isLoading" class="ion-text-center">
-    <ion-spinner color="primary"></ion-spinner>
-  </div>
-
   <ion-grid *ngIf="!isLoading">
     <ion-row>
 
@@ -18,7 +13,7 @@
         <p class="ion-text-center no-result-text">{{ 'TICKET_RESULT_PAGE.NO_RESULT' | translate }}</p>
       </ion-col>
 
-      <ion-col *ngIf="result" sizeSm="8" offsetSm="2">
+      <ion-col *ngIf="result">
 
         <div class="ticket-result-header" [style.background]="'url('+ result?.backgroundImageLink +')'">
           <div class="ticket-result-header-image">

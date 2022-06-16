@@ -243,6 +243,7 @@
     "CHOOSE": "Bitte auswählen",
     "AMOUNT": "Menge",
     "UNIT": "Einheit",
+
     "ANNOTATIONS": "Bemerkungen",
     "MAX_CHARACTERS": "1500 Zeichen",
     "KG": "kg",
@@ -345,6 +346,7 @@
     "PRESCRIPTION": "Rezeptpflichtig",
     "PHARMACY": "Apothekenpflichtig",
     "UNIT": "Größe",
+    "WAITING": "Bitte warten ...",
     "SAVED_CART": "Produkt in deinem Warenkorb gespeichert",
     "CHOICE_QUESTION": "Hast du deine Auswahl getroffen?",
     "CHOICE_TEXT": "Wenn deine Auswahl vollständig ist, dann gehe weiter zum Warenkorb.",
@@ -641,8 +643,8 @@
   "CARE_CARD_PAGE": {
     "NO_DATA": "hinzufügen",
     "HEADER": "CareCard von",
-    "UPDATED": "Aktualisierung erfolgt",
-    "ACTION_REQUIRED": "Handlung erforderlich",
+    "UPDATED": "Dein Tiergesundheitsassistent war aktiv und hat neue Empfehlungen für dich.",
+    "ACTION_REQUIRED": "Es werden noch Informationen zur Gesundheit deines Vierbeiners benötigt.",
     "BASE_DATA": {
       "TITLE": "Stammdaten",
       "LIST": {
@@ -1321,6 +1323,7 @@
     "SHOP": "Warenkorb",
     "TREAT": "Verarzten",
     "CALL": "Videoanruf",
+    "DIAG": "Bild Diagnose",
     "TELEVET": "Diagnose Finder",
     "SOON": "demnächst"
   },

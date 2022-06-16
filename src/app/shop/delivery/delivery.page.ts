@@ -100,9 +100,9 @@ export class DeliveryPage {
 
       this.customer = resp.customer;
       this.warningMessage = resp.tooltips;
-      this.hasPayment = resp.customer.defaultPaymentMethodId;
-      this.billingAddress = this.customer.defaultBillingAddress;
-      this.shippingAddress = this.customer.defaultShippingAddress;
+      this.hasPayment = resp.customer?.defaultPaymentMethodId;
+      this.billingAddress = this.customer?.defaultBillingAddress || null;
+      this.shippingAddress = this.customer?.defaultShippingAddress || null;
       this.isLoading = false;
     })
  }

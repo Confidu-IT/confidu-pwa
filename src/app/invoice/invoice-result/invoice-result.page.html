@@ -267,6 +267,7 @@
                             class="no-border"
                             [placeholder]="'TT. MM. JJJJ'"
                             [(ngModel)]="result.invoiceDate.data"
+                            [max]="maxDate"
                             [cancelText]="'PRESCRIPTION_RESULT_PAGE.DATE_TIME_BTNS_CANCEL' | translate"
                             [doneText]="'PRESCRIPTION_RESULT_PAGE.DATE_TIME_BTNS_DONE' | translate"
               ></ion-datetime>

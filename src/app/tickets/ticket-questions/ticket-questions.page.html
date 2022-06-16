@@ -628,7 +628,7 @@
 
               <div class="link-to-guide"
                    (click)="goToGuide(params.code)"
-                   *ngIf="hasGuide()">
+                   *ngIf="hasGuide() && question?.values.questionType.toLowerCase() !== 'z'">
                 {{ 'TICKET_QUESTION_PAGE.GUIDE' | translate }}
               </div>
 
@@ -718,27 +718,21 @@
 </ion-content>
 
 <ion-footer *ngIf="question?.values.questionType.toLowerCase() !== 'b'">
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <ion-progress-bar color="secondary" [value]="questionProgressValue"></ion-progress-bar>
-        <div class="question-link-buttons">
-          <button
-            [disabled]="validateBackButton"
-            (click)="goBack()"
-            class="custom-button back">
-            {{ 'TICKET_QUESTION_PAGE.BACK_BUTTON' | translate }}
-          </button>
+  <ion-progress-bar color="secondary" [value]="questionProgressValue"></ion-progress-bar>
+  <div class="question-link-buttons">
+    <button
+      [disabled]="validateBackButton"
+      (click)="goBack()"
+      class="custom-button back">
+      {{ 'TICKET_QUESTION_PAGE.BACK_BUTTON' | translate }}
+    </button>
 
-          <button
-            (click)="onProgressQuestion()"
-            [disabled]="validateAnswer"
-            class="custom-button progress">
-            {{ 'TICKET_QUESTION_PAGE.PROGRESS_BUTTON' | translate }}
-          </button>
+    <button
+      (click)="onProgressQuestion()"
+      [disabled]="validateAnswer"
+      class="custom-button progress">
+      {{ 'TICKET_QUESTION_PAGE.PROGRESS_BUTTON' | translate }}
+    </button>
 
-        </div>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  </div>
 </ion-footer>

@@ -53,7 +53,7 @@
                     <mat-label>{{ 'DELIVERY_PAGE.PHARMACY_LABEL' | translate }}</mat-label>
                     <mat-select (selectionChange)="onPickPharmacy($event)" panelClass="pharmacies-panel">
                       <mat-option *ngFor="let item of pharmacyList" [value]="item" >
-                        <h4>{{ item.pharmacyName }}</h4>
+                        <h4>{{ item.pharmacyName }} </h4>
                         <p>{{ item.street }} </p>
                         <p>{{ item.zipcode }} {{ item.city }} </p>
                         <p>{{ 'DELIVERY_PAGE.PHONE' | translate }} {{ item.phoneNumber }}</p>

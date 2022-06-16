@@ -893,6 +893,16 @@ body {
 }
 
 
+ion-loading.my-custom-class {
+  .loading-spinner * {
+    color: var(--ion-color-primary);
+  }
+  .loading-content {
+    color: #666;
+  }
+}
+
+
 
 //.sc-ion-alert-md {
 //  border-color: var(--ion-color-secondary) !important;

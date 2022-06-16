@@ -30,8 +30,15 @@
               <div class="care-card-header-label">
                 <h2>{{ 'CARE_CARD_PAGE.HEADER' | translate }} {{ pet?.pet.name }}</h2>
                 <div>
-                  <span class="signal2 signal-header"></span> {{ 'CARE_CARD_PAGE.UPDATED' | translate }}<br>
-                  <span class="signal1 signal-header"></span> {{ 'CARE_CARD_PAGE.ACTION_REQUIRED' | translate }}
+                  <div class="label-text">
+                    <span class="signal2 signal-header"></span>
+                    <p>{{ 'CARE_CARD_PAGE.UPDATED' | translate }}</p>
+                  </div>
+                  <div class="label-text">
+                    <div class="signal1 signal-header"></div>
+                    <p>{{ 'CARE_CARD_PAGE.ACTION_REQUIRED' | translate }}</p>
+                  </div>
+
                 </div>
               </div>
             </div>

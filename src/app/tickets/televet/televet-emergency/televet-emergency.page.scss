@@ -51,22 +51,3 @@ ion-card-content {
     font-size: 13px;
   }
 }
-
-@media only screen and (min-width: 576px) {
-  .image-label {
-    height: unset;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  figure {
-    height: 115px;
-    img {
-      width: 90px;
-    }
-  }
-
-  .image-label {
-    font-size: 21px;
-  }
-}

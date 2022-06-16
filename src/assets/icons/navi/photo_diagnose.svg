@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <g id="Gruppe_14400" data-name="Gruppe 14400" transform="translate(1655 2339)">
+    <rect id="Rechteck_2856" data-name="Rechteck 2856" width="40" height="40" transform="translate(-1655 -2339)" fill="none"/>
+    <g id="Gruppe_25290" data-name="Gruppe 25290" transform="translate(-1643.053 -2325.028)">
+      <g id="Gruppe_14356" data-name="Gruppe 14356" transform="translate(0 -0.161)">
+        <path id="Pfad_13153" data-name="Pfad 13153" d="M11.259,1.712,10.514,0H5.893l-.744,1.71H0V13.206H16.408V1.712Z" transform="translate(0 -0.002)" fill="#fff" stroke="#424242" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5"/>
+      </g>
+      <path id="Ellipse_2125" data-name="Ellipse 2125" d="M0,.913a.916.916,0,1,1,.916.916A.916.916,0,0,1,0,.913Z" transform="translate(12.224 3.594)" fill="#424242"/>
+      <path id="Linie_7324" data-name="Linie 7324" d="M0,0H3.525" transform="translate(0.658 -0.61)" fill="none" stroke="#424242" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.5"/>
+      <g id="Gruppe_25291" data-name="Gruppe 25291" transform="translate(6.005 4.79)">
+        <path id="Pfad_28222" data-name="Pfad 28222" d="M0,0V4.492" transform="translate(2.245 -0.001)" fill="none" stroke="#424242" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.5"/>
+        <path id="Pfad_28221" data-name="Pfad 28221" d="M0,0H4.494" transform="translate(-0.002 2.246)" fill="none" stroke="#424242" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.5"/>
+      </g>
+    </g>
+  </g>
+</svg>
