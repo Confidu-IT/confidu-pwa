@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {NavigationEnd, Router} from '@angular/router';
+import { NavigationEnd, Router} from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Observable } from 'rxjs';
 import { ShopwareService } from '../shared/services/shopware/shopware.service';
@@ -30,21 +30,17 @@ export class AuthService {
     });
   }
 
-  public logOut(): void {
-    this.router.navigateByUrl('/signin')
-      .then(() => {
-        this.afAuth.signOut()
-          .then(() => {
-            try {
-              this.shopwareService.signout().then(() => {
-                localStorage.clear();
-              });
-            } catch (e) {
-              console.log('signout errpr', e);
-              localStorage.clear();
-            }
-          });
-      });
+
+
+  public logOut(): any {
+    return this.router.navigateByUrl('/signin').then(() => {
+      localStorage.clear();
+
+      try {
+        this.shopwareService.signout();
+      } catch (e) {
+      }
+    });
   }
 
   private createToken(id: string) {
@@ -66,4 +62,5 @@ export class AuthService {
     let token = await this.createToken(obj.id);
     await this.afAuth.signInWithCustomToken(token.customToken);
   }
+
 }

@@ -48,6 +48,9 @@ export class HttpErrorInterceptor implements HttpInterceptor {
                 // this.presentErrorToast(error?.error);
                 this.router.navigateByUrl(`error`);
                 break;
+              case 407:
+                this.authService.logOut();
+                break;
               case 451:
                 this.authService.logOut();
                 break;

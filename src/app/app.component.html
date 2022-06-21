@@ -55,18 +55,13 @@
               <ion-label>{{ 'MAIN_NAV.LAB' | translate }}</ion-label>
             </ion-item>
 
-            <ion-item lines="none" routerLink="/activation">
+            <ion-item lines="none" class="last" routerLink="/activation">
               <img [src]="iconPath + '/activation.svg'" alt="">
               <ion-label>{{ 'MAIN_NAV.ACTIVATION' | translate }}</ion-label>
             </ion-item>
-
-            <ion-item lines="none" class="last" routerLink="/diagnosis">
-              <img [src]="iconPath + '/photo_diagnose.svg'" alt="">
-              <ion-label>{{ 'MAIN_NAV.DIAG' | translate }}</ion-label>
-            </ion-item>
-
           </div>
         </ion-menu-toggle>
+
         <ion-menu-toggle>
           <div class="divider">
             <h6>{{ 'MAIN_NAV.TREAT' | translate }}</h6>
@@ -76,14 +71,19 @@
                 {{ 'MAIN_NAV.CALL' | translate }}
               </ion-label>
             </ion-item>
-            <ion-item lines="none" class="last" routerLink="/tickets/televet-pet">
+            <ion-item lines="none" routerLink="/tickets/televet-pet">
               <img [src]="iconPath + '/diagnosis_detection.svg'" alt="">
               <ion-label>
                 {{ 'MAIN_NAV.TELEVET' | translate }}
               </ion-label>
             </ion-item>
+            <ion-item lines="none" class="last" routerLink="/diagnosis">
+              <img [src]="iconPath + '/photo_diagnose.svg'" alt="">
+              <ion-label>{{ 'MAIN_NAV.DIAG' | translate }}</ion-label>
+            </ion-item>
           </div>
         </ion-menu-toggle>
+
         <ion-menu-toggle>
           <div>
             <h6>{{ 'MAIN_NAV.PROTECT' | translate }}</h6>

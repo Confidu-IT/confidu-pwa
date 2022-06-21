@@ -22,7 +22,7 @@
   </ion-grid>
 </ion-content>
 
-<ion-footer>
+<ion-footer *ngIf="!isLoading">
   <ion-toolbar>
     <ion-buttons slot="end">
       <ion-button

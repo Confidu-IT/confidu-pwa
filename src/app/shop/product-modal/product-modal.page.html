@@ -83,48 +83,85 @@
                   <h5 class="indication-header">{{ item?.indication?.header }}</h5>
 
                   <ng-container *ngIf="item?.indication?.body?.indicationFirst">
-                    <ng-container *ngIf="item?.indication?.body?.indicationFirst?.header">
-                      <p *ngFor="let el of item?.indication?.body?.indicationFirst?.header" class="usage-text">
+                    <ng-container *ngIf="item?.indication?.body?.indicationFirst?.par">
+                      <p *ngFor="let el of item?.indication?.body?.indicationFirst?.par" class="usage-text">
                         {{ el }}
                       </p>
                     </ng-container>
-                    <ul *ngIf="item?.indication?.body?.indicationFirst?.body" class="indication-list">
-                      <li *ngFor="let el of item?.indication?.body?.indicationFirst?.body">{{ el }}</li>
+                    <ul *ngIf="item?.indication?.body?.indicationFirst?.list" class="indication-list">
+                      <li *ngFor="let el of item?.indication?.body?.indicationFirst?.list">{{ el }}</li>
                     </ul>
                   </ng-container>
 
                   <ng-container *ngIf="item?.indication?.body?.indicationSecond">
-                    <ng-container *ngIf="item?.indication?.body?.indicationSecond?.header">
-                      <p *ngFor="let el of item?.indication?.body?.indicationSecond?.header" class="usage-text second">
+                    <ng-container *ngIf="item?.indication?.body?.indicationSecond?.par">
+                      <p *ngFor="let el of item?.indication?.body?.indicationSecond?.par" class="usage-text">
                         {{ el }}
                       </p>
                     </ng-container>
-                    <ul *ngIf="item?.indication?.body?.indicationSecond?.body" class="indication-list">
-                      <li *ngFor="let el of item?.indication?.body?.indicationSecond?.body">{{ el }}</li>
+                    <ul *ngIf="item?.indication?.body?.indicationSecond?.list" class="indication-list">
+                      <li *ngFor="let el of item?.indication?.body?.indicationSecond?.list">{{ el }}</li>
                     </ul>
                   </ng-container>
 
                   <ng-container *ngIf="item?.indication?.body?.indicationThird">
-                    <ng-container *ngIf="item?.indication?.body?.indicationThird?.header">
-                      <p *ngFor="let el of item?.indication?.body?.indicationThird?.header" class="usage-text">
+                    <ng-container *ngIf="item?.indication?.body?.indicationThird?.par">
+                      <p *ngFor="let el of item?.indication?.body?.indicationThird?.par" class="usage-text">
                         {{ el }}
                       </p>
                     </ng-container>
-                    <ul *ngIf="item?.indication?.body?.indicationThird?.body" class="indication-list">
-                      <li *ngFor="let el of item?.indication?.body?.indicationThird?.body">{{ el }}</li>
+                    <ul *ngIf="item?.indication?.body?.indicationThird?.list" class="indication-list">
+                      <li *ngFor="let el of item?.indication?.body?.indicationThird?.list">{{ el }}</li>
                     </ul>
                   </ng-container>
 
                   <ng-container *ngIf="item?.indication?.body?.indicationOther">
-                    <p class="usage-text">{{ item?.indication?.body?.indicationOther }}</p>
+                    <p *ngFor="let el of item?.indication?.body?.indicationOther" class="usage-text">
+                      {{ el }}
+                    </p>
                   </ng-container>
+
+                  <ng-container *ngIf="item?.indication?.body?.indicationDeclaration1">
+                    <h5 *ngIf="item?.indication?.body?.indicationDeclaration1?.header" class="indication-header">
+                      {{ item?.indication?.body?.indicationDeclaration1?.header }}
+                    </h5>
+                    <ng-container *ngIf="item?.indication?.body?.indicationDeclaration1?.body">
+                      <p *ngFor="let el of item?.indication?.body?.indicationDeclaration1?.body" class="usage-text">
+                        {{ el }}
+                      </p>
+                    </ng-container>
+                  </ng-container>
+
+                  <ng-container *ngIf="item?.indication?.body?.indicationDeclaration2">
+                    <h5 *ngIf="item?.indication?.body?.indicationDeclaration2?.header" class="indication-header">
+                      {{ item?.indication?.body?.indicationDeclaration2?.header }}
+                    </h5>
+                    <ng-container *ngIf="item?.indication?.body?.indicationDeclaration2?.body">
+                      <p *ngFor="let el of item?.indication?.body?.indicationDeclaration2?.body" class="usage-text">
+                        {{ el }}
+                      </p>
+                    </ng-container>
+                  </ng-container>
+
+                  <ng-container *ngIf="item?.indication?.body?.indicactionCaution">
+                    <h5 *ngIf="item?.indication?.body?.indicactionCaution?.header" class="indication-header">
+                      {{ item?.indication?.body?.indicactionCaution?.header }}
+                    </h5>
+                    <ng-container *ngIf="item?.indication?.body?.indicactionCaution?.body">
+                      <p *ngFor="let el of item?.indication?.body?.indicactionCaution?.body" class="usage-text">
+                        {{ el }}
+                      </p>
+                    </ng-container>
+                  </ng-container>
+
+
+
                   <p class="usage-instructions" *ngIf="item?.prescription">
                     {{ 'PRODUCT_MODAL_PAGE.INSTRUCTIONS' | translate }}
                   </p>
                   <div class="instructions-link" *ngIf="item?.product_pdf_dokument">
                     <a [href]="instructionsLink" target="_blank">{{ 'PRODUCT_MODAL_PAGE.INST_LINK' | translate }}</a>
                   </div>
-
                 </div>
               </div>
             </ion-card-content>

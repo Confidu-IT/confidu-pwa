@@ -170,7 +170,7 @@ export class SignupPage implements OnInit {
                 this.getUserData(this.userId);
               });
           }
-          this.loadingCtrl.dismiss(null);
+          // this.loadingCtrl.dismiss(null);
         });
     }
   }
@@ -213,12 +213,15 @@ export class SignupPage implements OnInit {
         if (data?.country) {
           localStorage.setItem('country', data.country);
         }
-        this.loadingCtrl.dismiss(null);
-        this.router.navigateByUrl('/');
+
+        this.router.navigateByUrl('');
       });
   }
 
   ionViewWillLeave() {
+    if (this.loadingCtrl) {
+      this,this.loadingCtrl.dismiss(null);
+    }
     this.signupForm.reset();
     this.signinForm.reset();
     if (this.subscription) {
