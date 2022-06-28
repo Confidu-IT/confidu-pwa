@@ -223,25 +223,26 @@
           </ion-slides>
         </div>
 
-        <h3 class="subheader">
-          {{ 'HOME_PAGE.RECIPE_IDEAS' | translate }}
-        </h3>
+<!--        <h3 class="subheader">-->
+<!--          {{ 'HOME_PAGE.RECIPE_IDEAS' | translate }}-->
+<!--        </h3>-->
 
-        <div *ngIf="articles?.cooking" class="magazines">
-          <ion-slides pager="hasPagination(articles?.magazines.cooking)">
-            <ion-slide *ngFor="let item of articles?.cooking">
-              <ion-card (click)="onClickRecipe(item.key)" class="article-container slider">
-                <ion-card-content>
-                  <img *ngIf="item?.image" [src]="item?.image" alt="">
-                  <div class="header">
-                    <div class="category">{{ item?.category }}</div>
-                  </div>
-                  <p class="body">{{ item?.text }}</p>
-                </ion-card-content>
-              </ion-card>
-            </ion-slide>
-          </ion-slides>
-        </div>
+<!--        <div *ngIf="articles?.cooking" class="magazines">-->
+<!--          <ion-slides pager="hasPagination(articles?.magazines.cooking)">-->
+<!--            <ion-slide *ngFor="let item of articles?.cooking">-->
+<!--              <ion-card (click)="onClickRecipe(item.key)" class="article-container slider">-->
+<!--                <ion-card-content>-->
+<!--                  <img *ngIf="item?.image" [src]="item?.image" alt="">-->
+<!--                  <div class="header">-->
+<!--                    <div class="category">{{ item?.category }}</div>-->
+<!--                  </div>-->
+<!--                  <p class="body">{{ item?.text }}</p>-->
+<!--                </ion-card-content>-->
+<!--              </ion-card>-->
+<!--            </ion-slide>-->
+<!--          </ion-slides>-->
+<!--        </div>-->
+
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -249,6 +250,6 @@
 
 </ion-content>
 
-<ion-footer *ngIf="!isLoading">
+<ion-footer *ngIf="!isLoading && pet">
   <app-toolbar-footer [user]="user$"></app-toolbar-footer>
 </ion-footer>

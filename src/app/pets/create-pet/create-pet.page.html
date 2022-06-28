@@ -1,15 +1,11 @@
-<ion-header *ngIf="!isLoading">
+<ion-header>
   <app-toolbar [settings]="true" title="{{ 'CREATE_PET_PAGE.TITLE' | translate }}"></app-toolbar>
 </ion-header>
 
 <ion-content>
-  <div *ngIf="isLoading" class="spinner">
-    <ion-spinner color="primary"></ion-spinner>
-  </div>
-
-  <ion-grid *ngIf="!isLoading">
+  <ion-grid>
     <ion-row>
-      <ion-col offsetSm="2" sizeSm="8">
+      <ion-col>
         <ion-card>
           <form [formGroup]="form" class="create-pet-form">
             <div (click)="onPickImage()" class="image-container">
@@ -146,6 +142,6 @@
 
   </ion-grid>
 </ion-content>
-<ion-footer *ngIf="!isLoading">
+<ion-footer>
   <app-toolbar-footer [user]="user$"></app-toolbar-footer>
 </ion-footer>

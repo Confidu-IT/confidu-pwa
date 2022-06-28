@@ -139,7 +139,7 @@ export class HomePage {
       .subscribe((user) => {
         console.log(user);
         if (!user) {
-          return this.router.navigateByUrl('/signin');
+         this.afAuth.signOut();
         }
         this.user$ = user;
         this.analytics.logEvent('confidu-event', {foo: '1337'});
@@ -158,15 +158,14 @@ export class HomePage {
           this.getContent(this.petId, user.uid, user.za);
           this.getCoins(user.uid);
           this.isLoading = false;
-        } else if (localStorage.getItem('showWalkthrough')) {
-          this.router.navigateByUrl('walkthrough');
-        } else {
-          this.router.navigateByUrl('pets/pet-create');
         }
       });
   }
 
   private getCoins(userId: string) {
+    if (!userId) {
+      return;
+    }
     this.firebaseService.getCoins(userId)
       .subscribe(data => {
         if (data?.confiCoins) {
@@ -176,6 +175,9 @@ export class HomePage {
   }
 
   private getActivePet(userId: string, petId): void {
+    if (!userId || !petId) {
+      return;
+    }
     this.firebaseService.getPetById(userId, petId)
       .subscribe(pet => {
         if (pet) {
@@ -192,7 +194,10 @@ export class HomePage {
       });
   }
 
-  private getContent(petId: string, uid: string, token: any): void {
+  private getContent(petId: string = null, uid: string, token: any): void {
+    if (!uid || !petId) {
+      return;
+    }
     this.commonService.getContent(petId, uid, token)
       .subscribe(content => {
         console.log('content', content);
@@ -214,6 +219,10 @@ export class HomePage {
 
 
   private getTickets(userId: string, petId: string): void {
+    if (!userId || !petId) {
+      return;
+    }
+
     this.firebaseService.getTicketsByPet(userId, petId)
       .subscribe((data: any) => {
         // console.log('data', data);

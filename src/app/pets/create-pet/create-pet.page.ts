@@ -409,8 +409,10 @@ export class CreatePetPage implements OnInit {
         console.log('res', res);
         this.form.reset();
         this.petAvatar = `${this.iconPath}/pets_blue_cam.svg`;
-        this.loadingController.dismiss();
-        this.router.navigateByUrl('initial');
+        this.loadingController.dismiss().then(() => {
+          this.router.navigateByUrl('initial');
+        });
+
       })
       .catch((error) => {
         console.log('error', error);

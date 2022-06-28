@@ -24,8 +24,8 @@ export class SignupPage implements OnInit {
   public conditionsLink = '';
   public countries: any[];
   private userId: string;
-  private readonly subscription: Subscription;
-  private readonly routeSub: Subscription;
+  private  subscription: Subscription;
+  private  routeSub: Subscription;
   private mail: string;
   private params: any;
   private language: string;
@@ -204,17 +204,26 @@ export class SignupPage implements OnInit {
   }
 
   private getUserData(userId: string) {
-    this.firebaseService.getUser(userId)
+    this.subscription = this.firebaseService.getUser(userId)
       .subscribe((data: any) => {
-        if (data?.activePet) {
-          localStorage.setItem('activePet', data.activePet);
-        }
-
+        console.log('data', data);
+        console.log('localStorage', localStorage);
         if (data?.country) {
           localStorage.setItem('country', data.country);
         }
 
-        this.router.navigateByUrl('');
+        if (!data?.activePet) {
+          console.log('to pets/pet-create');
+          return this.router.navigateByUrl('pets/pet-create');
+        } else {
+          console.log('to /');
+          localStorage.setItem('activePet', data.activePet);
+          return this.router.navigateByUrl('home');
+        }
+
+
+
+
       });
   }
 

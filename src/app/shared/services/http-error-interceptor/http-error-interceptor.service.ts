@@ -49,7 +49,7 @@ export class HttpErrorInterceptor implements HttpInterceptor {
                 this.router.navigateByUrl(`error`);
                 break;
               case 407:
-                this.authService.logOut();
+                this.router.navigateByUrl(`/`);
                 break;
               case 451:
                 this.authService.logOut();

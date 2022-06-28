@@ -93,9 +93,9 @@ export class ToolbarFooterComponent implements OnInit, OnDestroy {
       this.checkForUpDate();
     }
 
-    if (!localStorage.getItem('sw-token')) {
-      this.userAuth.logOut();
-    }
+    // if (!localStorage.getItem('sw-token')) {
+    //   this.userAuth.logOut();
+    // }
   }
 
   public goHome() {
