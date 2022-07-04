@@ -66,7 +66,7 @@ export class CareCardListPage {
   ) {
     this.routeSub = this.activatedRoute.params
       .subscribe(params => {
-        // console.log('params', params);
+        console.log('params', params);
         this.petId = params.petId;
         this.key = params.key;
         this.label = params.label;
@@ -95,7 +95,7 @@ export class CareCardListPage {
       }),
       switchMap(tickets => {
         this.tickets = tickets;
-        return this.getContent();
+        return this.commonService.getCarecardListContent(this.user.uid, this.petId, this.key, this.user.za);
       })
     ).subscribe(data => {
         console.log('data', data);
@@ -195,21 +195,6 @@ export class CareCardListPage {
       //     return this.router.navigateByUrl(`tickets/ticket/${this.link}/${this.label}/${ticket.id}/questions`);
       //   });
     }
-  }
-
-  private getContent(): Observable<any> {
-    const baseUrl = environment.baseUrl;
-    const url = `${baseUrl}/${this.language}/carecard/${this.key}`;
-    const headers = {
-      'Content-Type': 'application/json',
-      'firebase-context-token': this.user.za,
-      'sw-context-token': localStorage.getItem('sw-token') || null
-    };
-    const body = {
-      petId: this.petId,
-      uid: this.user.uid
-    };
-    return this.http.post(url, body, { headers });
   }
 
   private async presentModal(user: any, type: string, title: string): Promise<any> {

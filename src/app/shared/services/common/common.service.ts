@@ -289,6 +289,25 @@ export class CommonService {
     return this.http.post(url, body, { headers });
   }
 
+  public getCarecardListContent(
+    user: string,
+    pet: string,
+    key: string,
+    token: string
+  ): Observable<any> {
+    const url = `${this.baseUrl}/${this.language}/carecard/${key}`;
+    const headers = {
+      'Content-Type': 'application/json',
+      'firebase-context-token': token,
+      'sw-context-token': localStorage.getItem('sw-token') || null
+    };
+    const body = {
+      petId: pet,
+      uid: user
+    };
+    return this.http.post(url, body, { headers });
+  }
+
   public getContent(
     petId: string,
     uid: string,

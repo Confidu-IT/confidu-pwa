@@ -11,14 +11,30 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-        <figure>
-          <img [src]="uploadImage" alt="">
-        </figure>
-        <p class="text">{{ 'PRESCRIPTION_UPLOAD_PAGE.TEXT' | translate }}</p>
-        <div class="upload-container" *ngIf="showAttachmentComponent">
-          <app-attach-document [user]="user" [path]="uploadPath"
-                               (attachments)="receiveAddedFiles($event)"></app-attach-document>
-        </div>
+        <ng-container *ngIf="!showUploader">
+          <h2>{{ 'PRESCRIPTION_UPLOAD_PAGE.REPLACEMENT_HEADER' | translate }}</h2>
+          <figure class="replacement">
+            <img [src]="replacementImage" alt="">
+          </figure>
+          <p class="text">{{ 'PRESCRIPTION_UPLOAD_PAGE.REPLACEMENT_BODY' | translate }}</p>
+          <ion-button expand="full" color="secondary"
+                      class="action-button"
+                      (click)="onClickActionButton()">
+            {{ 'PRESCRIPTION_UPLOAD_PAGE.REPLACEMENT_BUTTON' | translate }}
+          </ion-button>
+        </ng-container>
+
+        <ng-container *ngIf="showUploader">
+          <figure>
+            <img [src]="uploadImage" alt="">
+          </figure>
+          <p class="text">{{ 'PRESCRIPTION_UPLOAD_PAGE.TEXT' | translate }}</p>
+          <div class="upload-container" *ngIf="showAttachmentComponent">
+            <app-attach-document [user]="user" [path]="uploadPath"
+                                 (attachments)="receiveAddedFiles($event)"></app-attach-document>
+          </div>
+        </ng-container>
+
       </ion-col>
     </ion-row>
   </ion-grid>

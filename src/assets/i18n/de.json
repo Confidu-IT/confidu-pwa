@@ -763,7 +763,11 @@
   "PRESCRIPTION_UPLOAD_PAGE": {
     "TITLE": "Rechnungsupload",
     "TEXT": "Bitte lade alle Seiten der Rechnung hoch. Achte darauf, dass die Blätter nicht geknickt sind und das Foto scharf ist.",
-    "LABEL": "Tierarztbesuch"
+    "LABEL": "Tierarztbesuch",
+    "ROUTE_LABEL": "Ektoparasitenschutz",
+    "REPLACEMENT_HEADER": "Parasitenrisikoprofil nicht vorhanden",
+    "REPLACEMENT_BUTTON": "Los gehts",
+    "REPLACEMENT_BODY": "Damit dich der Tiergesundheitsassistent an die nächste Untersuchung oder Behandlung erinnern kann, musst du vor der Erfassung einer Rechnung das Parasitenrisiko ermitteln. Bitte beantworte dazu kurz einige Fragen zur Lebensweise deines Vierbeiners."
   },
   "PRESCRIPTION_RESULT_PAGE": {
     "TITLE": "Rechnungsdaten",
@@ -1101,7 +1105,7 @@
     "TITLE": "Zusammenfassung",
     "INVOICE": "Rechnung",
     "BILLING": "Zahlungsmethode",
-    "PRESCRIPTION_TO": "Rezept an",
+    "PRESCRIPTION_TO": "Abholung und Bezahlung rezeptpflichtiger Medikamente",
     "PROCESSING": "Bestellung läuft"
   },
   "USER_MODAL_PAGE": {
@@ -1285,7 +1289,7 @@
     },
     "GLOBAL_ERRORS": {
       "DEFAULT": "Etwas ist schiefgegangen",
-      "QUESTIONS_EMPTY": "Nonsens Text",
+      "QUESTIONS_EMPTY": "Aktion fehlgschlagen",
       "KEY_NOT_FOUND": "Ungültiger Key",
       "ACTIVATED": "Key bereits aktiviert",
       "SPECIES": "Falsche Spezies"
@@ -1301,6 +1305,7 @@
       "DIAG": "Bild Diagnose",
       "ACTIVATE": "aktivieren",
       "START": "starten",
+      "PURCHASE": "kaufen",
       "UPLOAD": "hochladen",
       "OK_BUTTON": "Weiter",
       "CANCEL_BUTTON": "Abbrechen"

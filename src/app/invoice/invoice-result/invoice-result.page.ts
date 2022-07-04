@@ -14,11 +14,15 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class InvoiceResultPage {
   private subscription: Subscription;
-  private readonly routeSub: Subscription;
+  private routeSub: Subscription;
   private params: any;
   private language: string;
   private petId: string;
   private vetVisit: string;
+  private routeLabel: string;
+
+  public replacementImage = '../../../../assets/icons/care-card/upload_img.svg';
+  public showReplacer: boolean;
 
   public user: any;
   public isLoading: boolean;
@@ -69,6 +73,7 @@ export class InvoiceResultPage {
   ) {
     this.routeSub = this.activatedRoute.params
       .subscribe(params => {
+        console.log('params', params);
         this.params = params;
       });
 
@@ -101,6 +106,7 @@ export class InvoiceResultPage {
     this.translateService.get('PRESCRIPTION_RESULT_PAGE')
       .subscribe(values => {
         this.vetVisit = values.VET_VISIT;
+        this.routeLabel = values.ROUTE_LABEL
       });
     this.subscription = this.userAuth.user$.pipe(
       tap(user => user),
@@ -114,12 +120,14 @@ export class InvoiceResultPage {
       }),
       switchMap(pet => {
         this.pet = pet;
-        let key;
-        if (this.params.key === 'null') {
-          key = null;
-        } else {
-          key = this.params.key;
+        return this.commonService.getCarecardListContent(this.user.uid, this.petId, 'ectopar_cc', this.user.za);
+      }),
+      switchMap(content => {
+        if (content?.currentList.length < 1) {
+          this.showReplacer = true;
         }
+
+        let key = this.params.key === 'null' ? null : this.params.key;
         return this.commonService.getInvoiceResult(this.user.za, this.petId, this.user.uid, key);
       })
     ).subscribe(result => {
@@ -168,6 +176,10 @@ export class InvoiceResultPage {
       this.result = result;
       this.isLoading = false;
     });
+  }
+
+  public onClickActionButton(): void {
+    this.router.navigateByUrl(`tickets/ticket/e+ecto/${this.routeLabel}/null/questions`);
   }
 
   public onRepeat(): void {
@@ -361,6 +373,7 @@ export class InvoiceResultPage {
     this.diags = undefined;
     this.theraps = undefined;
     this.finds = undefined;
+    this.showReplacer = false;
 
     if (this.subscription) {
       this.subscription.unsubscribe();

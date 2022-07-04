@@ -159,3 +159,35 @@ ion-datetime {
     margin: 0;
   }
 }
+
+figure {
+  margin: 40px 0;
+  display: flex;
+  justify-content: center;
+
+  &.replacement {
+    margin: 32px 0;
+  }
+
+  img {
+    height: 100px;
+  }
+}
+
+h2 {
+  color: #666;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 18px;
+}
+.text {
+  color: #666;
+  font-size: 13px;
+  line-height: 19px;
+  text-align: center;
+}
+
+.action-button {
+  margin-top: 40px;
+}

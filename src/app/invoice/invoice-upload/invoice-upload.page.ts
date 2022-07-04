@@ -4,6 +4,7 @@ import { AuthService } from '../../user/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonService } from '../../shared/services/common/common.service';
 import { TranslateService } from '@ngx-translate/core';
+import {switchMap, tap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-invoice-upload',
@@ -12,6 +13,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class InvoiceUploadPage {
   public uploadImage = '../../../../assets/icons/care-card/upload_img.svg';
+  public replacementImage = '../../../../assets/icons/care-card/upload_img.svg';
   public pages: string[];
   public user: any;
   public uploadPath: string;
@@ -19,6 +21,7 @@ export class InvoiceUploadPage {
   public get hasFiles(): boolean {
     return this.pages?.length > 0;
   }
+  public showUploader: boolean;
 
   private subscription: Subscription;
   private readonly routeSub: Subscription;
@@ -26,6 +29,7 @@ export class InvoiceUploadPage {
   private random: any;
   private language: string;
   private label: string;
+  private routeLabel: string;
 
 
   constructor(
@@ -37,6 +41,7 @@ export class InvoiceUploadPage {
     ) {
     this.routeSub = this.activatedRoute.params
       .subscribe(params => {
+        console.log(params);
       this.params = params;
       });
   }
@@ -48,17 +53,28 @@ export class InvoiceUploadPage {
       .subscribe(values => {
         console.log('values', values)
        this.label = values.LABEL;
+        this.routeLabel = values.ROUTE_LABEL;
       });
-    this.subscription = this.userAuth.user$
-      .subscribe(user => {
-        this.showAttachmentComponent = true;
-        this.user = user;
-        this.random = Date.now();
-        this.uploadPath = `invoice/${this.random}`;
-      });
+    this.subscription = this.userAuth.user$.pipe(
+      tap(user => this.user = user),
+      switchMap(() => {
+        return this.commonService.getCarecardListContent(this.user.uid, this.params.petId, 'ectopar_cc', this.user.za);
+      })
+    ).subscribe(resp => {
+      if (resp?.currentList.lenght > 0) {
+        this.showUploader = true;
+      }
+      this.showAttachmentComponent = true;
+      this.random = Date.now();
+      this.uploadPath = `invoice/${this.random}`;
+    });
   }
 
-  public receiveAddedFiles(event) {
+  public onClickActionButton(): void {
+    this.router.navigateByUrl(`tickets/ticket/e+ecto/${this.routeLabel}/null/questions`);
+  }
+
+  public receiveAddedFiles(event): void {
     this.pages = [];
     for (const page of event) {
       this.pages.push(`${this.uploadPath}/${page}`);
@@ -89,6 +105,7 @@ export class InvoiceUploadPage {
 
   ionViewWillLeave() {
     this.pages = undefined;
+    this.showUploader = false;
     this.showAttachmentComponent = false;
     if (this.subscription) {
       this.subscription.unsubscribe();

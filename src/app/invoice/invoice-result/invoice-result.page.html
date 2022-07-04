@@ -13,303 +13,319 @@
   </div>
   <ion-grid *ngIf="!isLoading">
     <ion-row>
-      <ion-col>
-        <div class="scan-result-header" [style.background]="'url('+ result?.backgroundImageLink +')'">
-          <div class="scan-result-header-image">
-            <ion-img [src]="result?.iconImageLink" alt=""></ion-img>
-          </div>
-          <div class="scan-result-header-description">
-            <h3>
-              <span>{{ result?.headerHeadlineH1 }}</span><br>
-              <span>{{ result?.headerHeadlineH2 }}</span>
-            </h3>
-          </div>
-        </div>
-        <ion-card *ngIf="result?.error" class="scan-result-card error">
-          <ion-card-content>
-            <h3>{{ result.error.header }}</h3>
-            <ng-container *ngFor="let el of result.error.body">
-              <p class="body">{{ el }}</p>
-            </ng-container>
-          </ion-card-content>
-        </ion-card>
-
-        <ion-card *ngIf="result?.body" class="scan-result-card">
-          <ion-card-content>
-            <ng-container *ngFor="let el of result.body">
-              <p class="body">{{ el }}</p>
-            </ng-container>
-          </ion-card-content>
-        </ion-card>
-
-        <ion-card *ngIf="result?.vet" class="scan-result-card">
-          <ion-card-content>
-            <h3>{{ result.vet.header }}</h3>
-            <ng-container *ngIf="result.vet.body">
-              <p *ngFor="let el of result.vet.body" class="body">{{ el }}</p>
-            </ng-container>
-            <div (click)="removeVet()" *ngIf="result?.vet?.data?.name" class="data">
-              <div class="name">{{ result.vet.data.name }}</div>
-              <div class="trash-bin">
-                <ion-icon name="trash-outline"></ion-icon>
-              </div>
-            </div>
-          </ion-card-content>
-        </ion-card>
-
-
-
-
-        <ion-card *ngIf="result?.diagnosis" class="scan-result-card">
-          <ion-card-content>
-            <h3>{{ result.diagnosis.header }}</h3>
-            <ng-container *ngIf="result.diagnosis.body">
-              <p class="body" *ngFor="let el of result.diagnosis.body">{{ el }}</p>
-            </ng-container>
-            <ul *ngIf="diags">
-              <li *ngFor="let el of diags" (click)="removeEl(el, 'diag')">
-                <div class="name">{{ el.name }}</div>
-                <div class="trash-bin">
-                  <ion-icon name="trash-outline"></ion-icon>
-                </div>
-              </li>
-            </ul>
-
-            <form [formGroup]="diagnosisForm">
-              <mat-form-field>
-                <mat-label>{{ 'PRESCRIPTION_RESULT_PAGE.ADD_DIAGNOSIS' | translate }}</mat-label>
-                <input [matAutocomplete]="auto"
-                       [maxlength]="'20'"
-                       autocomplete="off"
-                       formControlName="diagnosis"
-                       matInput
-                       type="text">
-
-                <mat-autocomplete #auto="matAutocomplete"
-                                  [displayWith]="displayLabel"
-                                  [panelWidth]="300"
-                                  autoActiveFirstOption
-                >
-                  <mat-option
-                    *ngFor="let option of (filteredDiagnosis | async)"
-                    (onSelectionChange)="onValueChange($event, 'diagnosis')"
-                    [value]="option">
-                    {{ option.name }}
-                  </mat-option>
-                </mat-autocomplete>
-              </mat-form-field>
-            </form>
-
-            <ion-button expand="full" color="secondary"
-                        [disabled]="!selectedDiagnosis"
-                        (click)="onAddElement('diag')"
-            >
-              {{ 'PRESCRIPTION_RESULT_PAGE.ADD' | translate }}
-            </ion-button>
-          </ion-card-content>
-        </ion-card>
-
-        <ion-card *ngIf="result?.medication" class="scan-result-card">
-          <ion-card-content>
-            <h3>{{ result.medication.header }}</h3>
-            <ng-container *ngIf="result.medication.body">
-              <p class="body" *ngFor="let el of result.medication.body">{{ el }}</p>
-            </ng-container>
-            <ul *ngIf="meds">
-              <li *ngFor="let el of meds" (click)="removeEl(el, 'med')">
-                <div class="name">{{ el.name }}</div>
-                <div class="trash-bin">
-                  <ion-icon name="trash-outline"></ion-icon>
-                </div>
-              </li>
-            </ul>
-
-            <form [formGroup]="medForm">
-              <mat-form-field>
-                <mat-label>{{ 'PRESCRIPTION_RESULT_PAGE.ADD_MED' | translate }}</mat-label>
-                <input [matAutocomplete]="auto"
-                       [maxlength]="'20'"
-                       autocomplete="off"
-                       formControlName="med"
-                       matInput
-                       type="text">
-
-                <mat-autocomplete #auto="matAutocomplete"
-                                  [displayWith]="displayLabel"
-                                  [panelWidth]="300"
-                                  autoActiveFirstOption
-                >
-                  <mat-option
-                    *ngFor="let option of (filteredMeds | async)"
-                    (onSelectionChange)="onValueChange($event, 'medication')"
-                    [value]="option">
-                    {{ option.name }}
-                  </mat-option>
-                </mat-autocomplete>
-              </mat-form-field>
-            </form>
-
-            <ion-button expand="full" color="secondary"
-                        [disabled]="!selectedMedication"
-                        (click)="onAddElement('med')"
-            >
-              {{ 'PRESCRIPTION_RESULT_PAGE.ADD' | translate }}
-            </ion-button>
-          </ion-card-content>
-        </ion-card>
-
-        <ion-card *ngIf="result?.findings" class="scan-result-card">
-          <ion-card-content>
-            <h3>{{ result.findings.header }}</h3>
-            <ng-container *ngIf="result.findings.body">
-              <p class="body" *ngFor="let el of result.findings.body">{{ el }}</p>
-            </ng-container>
-            <ul *ngIf="finds">
-              <li *ngFor="let el of finds" (click)="removeEl(el, 'findings')">
-                <div class="name">{{ el.name }}</div>
-                <div class="trash-bin">
-                  <ion-icon name="trash-outline"></ion-icon>
-                </div>
-              </li>
-            </ul>
-
-            <form [formGroup]="findingsForm">
-              <mat-form-field>
-                <mat-label>{{ 'PRESCRIPTION_RESULT_PAGE.ADD_FINDING' | translate }}</mat-label>
-                <input [matAutocomplete]="auto"
-                       [maxlength]="'20'"
-                       autocomplete="off"
-                       formControlName="finding"
-                       matInput
-                       type="text">
-
-                <mat-autocomplete #auto="matAutocomplete"
-                                  [displayWith]="displayLabel"
-                                  [panelWidth]="300"
-                                  autoActiveFirstOption
-                >
-                  <mat-option
-                    *ngFor="let option of (filteredFinding | async)"
-                    (onSelectionChange)="onValueChange($event, 'findings')"
-                    [value]="option">
-                    {{ option.name }}
-                  </mat-option>
-                </mat-autocomplete>
-              </mat-form-field>
-            </form>
-
-            <ion-button expand="full" color="secondary"
-                        [disabled]="!selectedFinding"
-                        (click)="onAddElement('findings')"
-            >
-              {{ 'PRESCRIPTION_RESULT_PAGE.ADD' | translate }}
-            </ion-button>
-          </ion-card-content>
-        </ion-card>
-
-        <ion-card *ngIf="result?.therapy" class="scan-result-card">
-          <ion-card-content>
-            <h3>{{ result.therapy.header }}</h3>
-            <ng-container *ngIf="result.therapy.body">
-              <p class="body" *ngFor="let el of result.therapy.body">{{ el }}</p>
-            </ng-container>
-            <ul *ngIf="theraps">
-              <li *ngFor="let el of theraps" (click)="removeEl(el, 'therapy')">
-                <div class="name">{{ el.name }}</div>
-                <div class="trash-bin">
-                  <ion-icon name="trash-outline"></ion-icon>
-                </div>
-              </li>
-            </ul>
-
-            <form [formGroup]="therapyForm">
-              <mat-form-field>
-                <mat-label>{{ 'PRESCRIPTION_RESULT_PAGE.ADD_THERAPY' | translate }}</mat-label>
-                <input [matAutocomplete]="auto"
-                       [maxlength]="'20'"
-                       autocomplete="off"
-                       formControlName="therapy"
-                       matInput
-                       type="text">
-
-                <mat-autocomplete #auto="matAutocomplete"
-                                  [displayWith]="displayLabel"
-                                  [panelWidth]="300"
-                                  autoActiveFirstOption
-                >
-                  <mat-option
-                    *ngFor="let option of (filteredTherapy | async)"
-                    (onSelectionChange)="onValueChange($event, 'therapy')"
-                    [value]="option">
-                    {{ option.name }}
-                  </mat-option>
-                </mat-autocomplete>
-              </mat-form-field>
-            </form>
-
-            <ion-button expand="full" color="secondary"
-                        [disabled]="!selectedTherapy"
-                        (click)="onAddElement('therapy')"
-            >
-              {{ 'PRESCRIPTION_RESULT_PAGE.ADD' | translate }}
-            </ion-button>
-          </ion-card-content>
-        </ion-card>
-
-        <ion-card *ngIf="result?.invoiceDate" class="scan-result-card date">
-          <ion-card-content>
-            <h3>{{ result.invoiceDate.header }}<sup>*</sup></h3>
-            <ng-container *ngIf="result.invoiceDate.body">
-              <p *ngFor="let el of result.invoiceDate.body" class="body">{{ el }}</p>
-            </ng-container>
-            <ng-container>
-              <ion-datetime displayFormat="DD. MM. YYYY"
-                            class="no-border"
-                            [placeholder]="'TT. MM. JJJJ'"
-                            [(ngModel)]="result.invoiceDate.data"
-                            [max]="maxDate"
-                            [cancelText]="'PRESCRIPTION_RESULT_PAGE.DATE_TIME_BTNS_CANCEL' | translate"
-                            [doneText]="'PRESCRIPTION_RESULT_PAGE.DATE_TIME_BTNS_DONE' | translate"
-              ></ion-datetime>
-            </ng-container>
-          </ion-card-content>
-        </ion-card>
-
-        <ion-card *ngIf="result?.invoicePrice" class="scan-result-card price">
-          <ion-card-content>
-            <h3 Class="no-gap">{{ result.invoicePrice.header }}<sup>*</sup></h3>
-            <ng-container *ngIf="result.invoicePrice.body">
-              <p *ngFor="let el of result.invoicePrice.body" class="body">{{ el }}</p>
-            </ng-container>
-            <div class="input-data">
-              <mat-form-field>
-                <mat-label>{{  'PRESCRIPTION_RESULT_PAGE.PRICE' | translate}}</mat-label>
-                <input matInput
-                       type="number"
-                       [(ngModel)]="result.invoicePrice.data">
-                <span matSuffix>€</span>
-              </mat-form-field>
-            </div>
-          </ion-card-content>
-        </ion-card>
-
-<!--        <ion-button expand="full" color="secondary"-->
-<!--                    class="progress-button"-->
-<!--                    (click)="onProgress()"-->
-<!--                    [disabled]="!result?.invoiceDate?.data || !result?.invoicePrice?.data"-->
-<!--                    *ngIf="!result?.error"-->
-<!--        >-->
-<!--          {{ 'PRESCRIPTION_RESULT_PAGE.PROGRESS' | translate }}-->
-<!--        </ion-button>-->
-
+      <ion-col *ngIf="showReplacer">
+        <h2>{{ 'PRESCRIPTION_UPLOAD_PAGE.REPLACEMENT_HEADER' | translate }}</h2>
+        <figure class="replacement">
+          <img [src]="replacementImage" alt="">
+        </figure>
+        <p class="text">{{ 'PRESCRIPTION_UPLOAD_PAGE.REPLACEMENT_BODY' | translate }}</p>
         <ion-button expand="full" color="secondary"
-                    class="progress-button repeat"
-                    (click)="onRepeat()"
-                    *ngIf="result?.error"
-        >
-          {{ 'PRESCRIPTION_RESULT_PAGE.REPEAT' | translate }}
+                    class="action-button"
+                    (click)="onClickActionButton()">
+          {{ 'PRESCRIPTION_UPLOAD_PAGE.REPLACEMENT_BUTTON' | translate }}
         </ion-button>
       </ion-col>
+
+      <ng-container *ngIf="!showReplacer">
+        <ion-col>
+          <div class="scan-result-header" [style.background]="'url('+ result?.backgroundImageLink +')'">
+            <div class="scan-result-header-image">
+              <ion-img [src]="result?.iconImageLink" alt=""></ion-img>
+            </div>
+            <div class="scan-result-header-description">
+              <h3>
+                <span>{{ result?.headerHeadlineH1 }}</span><br>
+                <span>{{ result?.headerHeadlineH2 }}</span>
+              </h3>
+            </div>
+          </div>
+          <ion-card *ngIf="result?.error" class="scan-result-card error">
+            <ion-card-content>
+              <h3>{{ result.error.header }}</h3>
+              <ng-container *ngFor="let el of result.error.body">
+                <p class="body">{{ el }}</p>
+              </ng-container>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card *ngIf="result?.body" class="scan-result-card">
+            <ion-card-content>
+              <ng-container *ngFor="let el of result.body">
+                <p class="body">{{ el }}</p>
+              </ng-container>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card *ngIf="result?.vet" class="scan-result-card">
+            <ion-card-content>
+              <h3>{{ result.vet.header }}</h3>
+              <ng-container *ngIf="result.vet.body">
+                <p *ngFor="let el of result.vet.body" class="body">{{ el }}</p>
+              </ng-container>
+              <div (click)="removeVet()" *ngIf="result?.vet?.data?.name" class="data">
+                <div class="name">{{ result.vet.data.name }}</div>
+                <div class="trash-bin">
+                  <ion-icon name="trash-outline"></ion-icon>
+                </div>
+              </div>
+            </ion-card-content>
+          </ion-card>
+
+
+
+
+          <ion-card *ngIf="result?.diagnosis" class="scan-result-card">
+            <ion-card-content>
+              <h3>{{ result.diagnosis.header }}</h3>
+              <ng-container *ngIf="result.diagnosis.body">
+                <p class="body" *ngFor="let el of result.diagnosis.body">{{ el }}</p>
+              </ng-container>
+              <ul *ngIf="diags">
+                <li *ngFor="let el of diags" (click)="removeEl(el, 'diag')">
+                  <div class="name">{{ el.name }}</div>
+                  <div class="trash-bin">
+                    <ion-icon name="trash-outline"></ion-icon>
+                  </div>
+                </li>
+              </ul>
+
+              <form [formGroup]="diagnosisForm">
+                <mat-form-field>
+                  <mat-label>{{ 'PRESCRIPTION_RESULT_PAGE.ADD_DIAGNOSIS' | translate }}</mat-label>
+                  <input [matAutocomplete]="auto"
+                         [maxlength]="'20'"
+                         autocomplete="off"
+                         formControlName="diagnosis"
+                         matInput
+                         type="text">
+
+                  <mat-autocomplete #auto="matAutocomplete"
+                                    [displayWith]="displayLabel"
+                                    [panelWidth]="300"
+                                    autoActiveFirstOption
+                  >
+                    <mat-option
+                      *ngFor="let option of (filteredDiagnosis | async)"
+                      (onSelectionChange)="onValueChange($event, 'diagnosis')"
+                      [value]="option">
+                      {{ option.name }}
+                    </mat-option>
+                  </mat-autocomplete>
+                </mat-form-field>
+              </form>
+
+              <ion-button expand="full" color="secondary"
+                          [disabled]="!selectedDiagnosis"
+                          (click)="onAddElement('diag')"
+              >
+                {{ 'PRESCRIPTION_RESULT_PAGE.ADD' | translate }}
+              </ion-button>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card *ngIf="result?.medication" class="scan-result-card">
+            <ion-card-content>
+              <h3>{{ result.medication.header }}</h3>
+              <ng-container *ngIf="result.medication.body">
+                <p class="body" *ngFor="let el of result.medication.body">{{ el }}</p>
+              </ng-container>
+              <ul *ngIf="meds">
+                <li *ngFor="let el of meds" (click)="removeEl(el, 'med')">
+                  <div class="name">{{ el.name }}</div>
+                  <div class="trash-bin">
+                    <ion-icon name="trash-outline"></ion-icon>
+                  </div>
+                </li>
+              </ul>
+
+              <form [formGroup]="medForm">
+                <mat-form-field>
+                  <mat-label>{{ 'PRESCRIPTION_RESULT_PAGE.ADD_MED' | translate }}</mat-label>
+                  <input [matAutocomplete]="auto"
+                         [maxlength]="'20'"
+                         autocomplete="off"
+                         formControlName="med"
+                         matInput
+                         type="text">
+
+                  <mat-autocomplete #auto="matAutocomplete"
+                                    [displayWith]="displayLabel"
+                                    [panelWidth]="300"
+                                    autoActiveFirstOption
+                  >
+                    <mat-option
+                      *ngFor="let option of (filteredMeds | async)"
+                      (onSelectionChange)="onValueChange($event, 'medication')"
+                      [value]="option">
+                      {{ option.name }}
+                    </mat-option>
+                  </mat-autocomplete>
+                </mat-form-field>
+              </form>
+
+              <ion-button expand="full" color="secondary"
+                          [disabled]="!selectedMedication"
+                          (click)="onAddElement('med')"
+              >
+                {{ 'PRESCRIPTION_RESULT_PAGE.ADD' | translate }}
+              </ion-button>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card *ngIf="result?.findings" class="scan-result-card">
+            <ion-card-content>
+              <h3>{{ result.findings.header }}</h3>
+              <ng-container *ngIf="result.findings.body">
+                <p class="body" *ngFor="let el of result.findings.body">{{ el }}</p>
+              </ng-container>
+              <ul *ngIf="finds">
+                <li *ngFor="let el of finds" (click)="removeEl(el, 'findings')">
+                  <div class="name">{{ el.name }}</div>
+                  <div class="trash-bin">
+                    <ion-icon name="trash-outline"></ion-icon>
+                  </div>
+                </li>
+              </ul>
+
+              <form [formGroup]="findingsForm">
+                <mat-form-field>
+                  <mat-label>{{ 'PRESCRIPTION_RESULT_PAGE.ADD_FINDING' | translate }}</mat-label>
+                  <input [matAutocomplete]="auto"
+                         [maxlength]="'20'"
+                         autocomplete="off"
+                         formControlName="finding"
+                         matInput
+                         type="text">
+
+                  <mat-autocomplete #auto="matAutocomplete"
+                                    [displayWith]="displayLabel"
+                                    [panelWidth]="300"
+                                    autoActiveFirstOption
+                  >
+                    <mat-option
+                      *ngFor="let option of (filteredFinding | async)"
+                      (onSelectionChange)="onValueChange($event, 'findings')"
+                      [value]="option">
+                      {{ option.name }}
+                    </mat-option>
+                  </mat-autocomplete>
+                </mat-form-field>
+              </form>
+
+              <ion-button expand="full" color="secondary"
+                          [disabled]="!selectedFinding"
+                          (click)="onAddElement('findings')"
+              >
+                {{ 'PRESCRIPTION_RESULT_PAGE.ADD' | translate }}
+              </ion-button>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card *ngIf="result?.therapy" class="scan-result-card">
+            <ion-card-content>
+              <h3>{{ result.therapy.header }}</h3>
+              <ng-container *ngIf="result.therapy.body">
+                <p class="body" *ngFor="let el of result.therapy.body">{{ el }}</p>
+              </ng-container>
+              <ul *ngIf="theraps">
+                <li *ngFor="let el of theraps" (click)="removeEl(el, 'therapy')">
+                  <div class="name">{{ el.name }}</div>
+                  <div class="trash-bin">
+                    <ion-icon name="trash-outline"></ion-icon>
+                  </div>
+                </li>
+              </ul>
+
+              <form [formGroup]="therapyForm">
+                <mat-form-field>
+                  <mat-label>{{ 'PRESCRIPTION_RESULT_PAGE.ADD_THERAPY' | translate }}</mat-label>
+                  <input [matAutocomplete]="auto"
+                         [maxlength]="'20'"
+                         autocomplete="off"
+                         formControlName="therapy"
+                         matInput
+                         type="text">
+
+                  <mat-autocomplete #auto="matAutocomplete"
+                                    [displayWith]="displayLabel"
+                                    [panelWidth]="300"
+                                    autoActiveFirstOption
+                  >
+                    <mat-option
+                      *ngFor="let option of (filteredTherapy | async)"
+                      (onSelectionChange)="onValueChange($event, 'therapy')"
+                      [value]="option">
+                      {{ option.name }}
+                    </mat-option>
+                  </mat-autocomplete>
+                </mat-form-field>
+              </form>
+
+              <ion-button expand="full" color="secondary"
+                          [disabled]="!selectedTherapy"
+                          (click)="onAddElement('therapy')"
+              >
+                {{ 'PRESCRIPTION_RESULT_PAGE.ADD' | translate }}
+              </ion-button>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card *ngIf="result?.invoiceDate" class="scan-result-card date">
+            <ion-card-content>
+              <h3>{{ result.invoiceDate.header }}<sup>*</sup></h3>
+              <ng-container *ngIf="result.invoiceDate.body">
+                <p *ngFor="let el of result.invoiceDate.body" class="body">{{ el }}</p>
+              </ng-container>
+              <ng-container>
+                <ion-datetime displayFormat="DD. MM. YYYY"
+                              class="no-border"
+                              [placeholder]="'TT. MM. JJJJ'"
+                              [(ngModel)]="result.invoiceDate.data"
+                              [max]="maxDate"
+                              [cancelText]="'PRESCRIPTION_RESULT_PAGE.DATE_TIME_BTNS_CANCEL' | translate"
+                              [doneText]="'PRESCRIPTION_RESULT_PAGE.DATE_TIME_BTNS_DONE' | translate"
+                ></ion-datetime>
+              </ng-container>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card *ngIf="result?.invoicePrice" class="scan-result-card price">
+            <ion-card-content>
+              <h3 Class="no-gap">{{ result.invoicePrice.header }}<sup>*</sup></h3>
+              <ng-container *ngIf="result.invoicePrice.body">
+                <p *ngFor="let el of result.invoicePrice.body" class="body">{{ el }}</p>
+              </ng-container>
+              <div class="input-data">
+                <mat-form-field>
+                  <mat-label>{{  'PRESCRIPTION_RESULT_PAGE.PRICE' | translate}}</mat-label>
+                  <input matInput
+                         type="number"
+                         [(ngModel)]="result.invoicePrice.data">
+                  <span matSuffix>€</span>
+                </mat-form-field>
+              </div>
+            </ion-card-content>
+          </ion-card>
+
+          <!--        <ion-button expand="full" color="secondary"-->
+          <!--                    class="progress-button"-->
+          <!--                    (click)="onProgress()"-->
+          <!--                    [disabled]="!result?.invoiceDate?.data || !result?.invoicePrice?.data"-->
+          <!--                    *ngIf="!result?.error"-->
+          <!--        >-->
+          <!--          {{ 'PRESCRIPTION_RESULT_PAGE.PROGRESS' | translate }}-->
+          <!--        </ion-button>-->
+
+          <ion-button expand="full" color="secondary"
+                      class="progress-button repeat"
+                      (click)="onRepeat()"
+                      *ngIf="result?.error"
+          >
+            {{ 'PRESCRIPTION_RESULT_PAGE.REPEAT' | translate }}
+          </ion-button>
+        </ion-col>
+      </ng-container>
+
     </ion-row>
   </ion-grid>
 
@@ -318,7 +334,7 @@
 <ion-footer>
   <ion-grid>
     <ion-row>
-      <ion-col sizeSm="8" offsetSm="2">
+      <ion-col>
         <div class="footer-buttons">
           <ion-button routerLink="/invoice-upload" color="medium" fill="clear" size="small">
             {{ 'TICKET_QUESTION_PAGE.BACK_BUTTON' | translate }}
