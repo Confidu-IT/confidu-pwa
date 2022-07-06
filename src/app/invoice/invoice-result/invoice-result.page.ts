@@ -21,7 +21,7 @@ export class InvoiceResultPage {
   private vetVisit: string;
   private routeLabel: string;
 
-  public replacementImage = '../../../../assets/icons/care-card/upload_img.svg';
+  public replacementImage = '../../../../assets/icons/care-card/parasitenrisiko.svg';
   public showReplacer: boolean;
 
   public user: any;
@@ -105,6 +105,7 @@ export class InvoiceResultPage {
     this.translateService.use(this.language);
     this.translateService.get('PRESCRIPTION_RESULT_PAGE')
       .subscribe(values => {
+        console.log(values)
         this.vetVisit = values.VET_VISIT;
         this.routeLabel = values.ROUTE_LABEL
       });
@@ -120,7 +121,7 @@ export class InvoiceResultPage {
       }),
       switchMap(pet => {
         this.pet = pet;
-        return this.commonService.getCarecardListContent(this.user.uid, this.petId, 'ectopar_cc', this.user.za);
+        return this.commonService.getCarecardListContent(this.user.uid, this.petId, 'parasite', this.user.za);
       }),
       switchMap(content => {
         if (content?.currentList.length < 1) {
@@ -179,7 +180,7 @@ export class InvoiceResultPage {
   }
 
   public onClickActionButton(): void {
-    this.router.navigateByUrl(`tickets/ticket/e+ecto/${this.routeLabel}/null/questions`);
+    this.router.navigateByUrl(`tickets/ticket/es+esccap/${this.routeLabel}/null/questions`);
   }
 
   public onRepeat(): void {

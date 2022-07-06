@@ -13,7 +13,7 @@ import {switchMap, tap} from 'rxjs/operators';
 })
 export class InvoiceUploadPage {
   public uploadImage = '../../../../assets/icons/care-card/upload_img.svg';
-  public replacementImage = '../../../../assets/icons/care-card/upload_img.svg';
+  public replacementImage = '../../../../assets/icons/care-card/parasitenrisiko.svg';
   public pages: string[];
   public user: any;
   public uploadPath: string;
@@ -22,6 +22,7 @@ export class InvoiceUploadPage {
     return this.pages?.length > 0;
   }
   public showUploader: boolean;
+  public isLoading: boolean;
 
   private subscription: Subscription;
   private readonly routeSub: Subscription;
@@ -47,6 +48,7 @@ export class InvoiceUploadPage {
   }
 
   ionViewWillEnter() {
+    this.isLoading = true;
     this.language = this.commonService.language;
     this.translateService.use(this.language);
     this.translateService.get('PRESCRIPTION_UPLOAD_PAGE')
@@ -58,12 +60,15 @@ export class InvoiceUploadPage {
     this.subscription = this.userAuth.user$.pipe(
       tap(user => this.user = user),
       switchMap(() => {
-        return this.commonService.getCarecardListContent(this.user.uid, this.params.petId, 'ectopar_cc', this.user.za);
+        return this.commonService.getCarecardListContent(this.user.uid, this.params.petId, 'parasite', this.user.za);
       })
     ).subscribe(resp => {
-      if (resp?.currentList.lenght > 0) {
+      if (resp?.currentList.length > 0) {
         this.showUploader = true;
       }
+
+      this.isLoading = false;
+
       this.showAttachmentComponent = true;
       this.random = Date.now();
       this.uploadPath = `invoice/${this.random}`;
@@ -71,7 +76,7 @@ export class InvoiceUploadPage {
   }
 
   public onClickActionButton(): void {
-    this.router.navigateByUrl(`tickets/ticket/e+ecto/${this.routeLabel}/null/questions`);
+    this.router.navigateByUrl(`tickets/ticket/es+esccap/${this.routeLabel}/null/questions`);
   }
 
   public receiveAddedFiles(event): void {
@@ -104,6 +109,7 @@ export class InvoiceUploadPage {
   }
 
   ionViewWillLeave() {
+    this.isLoading = true;
     this.pages = undefined;
     this.showUploader = false;
     this.showAttachmentComponent = false;

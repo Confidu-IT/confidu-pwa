@@ -781,6 +781,7 @@
     "ADD_DIAGNOSIS": "Erkrankung eingeben",
     "VET_VISIT": "Tierarztbesuch",
     "OBLIGATORY": "Mit Sternchen markierte Felder sind Pflichtfelder.",
+    "ROUTE_LABEL": "Ektoparasitenschutz",
     "PROGRESS": "Weiter",
     "REPEAT": "Wiederholen"
   },

@@ -155,7 +155,7 @@ export class ConsultationSchedulerPage {
   }
 
   private progressBooking(): void {
-    // this.presentLoading();
+    this.presentLoading();
 
     this.commonService.bookAppointment(
       this.user.za,
@@ -204,6 +204,7 @@ export class ConsultationSchedulerPage {
 
 
   ionViewWillLeave() {
+    this.loadingCtrl.dismiss();
     this.invalid = false;
     if (this.subscription) {
       this.subscription.unsubscribe();
