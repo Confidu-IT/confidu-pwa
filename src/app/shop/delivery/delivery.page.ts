@@ -98,6 +98,8 @@ export class DeliveryPage {
         }
       }
 
+      console.log('this.selectedPrescriptionDelivery', this.selectedPrescriptionDelivery)
+
       this.customer = resp.customer;
       this.warningMessage = resp.tooltips;
       this.hasPayment = resp.customer?.defaultPaymentMethodId;

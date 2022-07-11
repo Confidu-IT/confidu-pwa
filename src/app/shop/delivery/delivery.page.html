@@ -65,7 +65,8 @@
               </ng-container>
             </div>
 
-            <div class="standard-form" *ngIf="standardDeliveries">
+
+            <div class="standard-form" *ngIf="standardDeliveries && selectedPrescriptionDelivery !== 'courierService'">
               <h2>{{ 'DELIVERY_PAGE.FREE_HEADER' | translate }}</h2>
 
               <mat-radio-group class="delivery-button-group" [ngModel]="selectedStandardDelivery">
